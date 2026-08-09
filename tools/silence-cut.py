@@ -58,16 +58,22 @@ def histogram(vals):
 
 
 def segments(vals, fps):
-    keep = set()
-    for i, v in enumerate(vals):
-        if v > HARD:
-            keep.add(i)
-            j = i - 1
-            while j >= 0 and vals[j] > SOFT:
-                keep.add(j); j -= 1
-            j = i + 1
-            while j < len(vals) and vals[j] > SOFT:
-                keep.add(j); j += 1
+    # Walk each maximal >SOFT run ONCE and keep it whole if it contains any
+    # >HARD sample. Identical keep-set to expanding hysteresis outward from
+    # every loud sample, but O(n) instead of O(n^2) — the old form spent 7s on
+    # 20 minutes of footage and 0.002s is the same answer.
+    keep, n = set(), len(vals)
+    i = 0
+    while i < n:
+        if vals[i] > SOFT:
+            j = i
+            while j < n and vals[j] > SOFT:
+                j += 1
+            if any(vals[k] > HARD for k in range(i, j)):
+                keep.update(range(i, j))
+            i = j
+        else:
+            i += 1
 
     runs, run = [], None
     for i in range(len(vals)):

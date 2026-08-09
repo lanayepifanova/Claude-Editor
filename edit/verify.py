@@ -88,6 +88,15 @@ def main():
     if fpath.exists():
         fr = json.load(open(fpath))
         grid = fr["grid"]
+
+        def is_safe(sample, gx, gy):
+            """preprocess.py packs each sample as a hex bitmask; older analysis
+            dirs stored a full mean/variance cell grid. Read either."""
+            packed = sample.get("safe")
+            if packed is not None:
+                return bool(int(packed, 16) >> (gy*grid[0] + gx) & 1)
+            return sample["cells"][gy][gx]["safe"]
+
         for c in cards:
             box = card_box(c, res)
             cells = cells_for(box, res, grid)
@@ -95,7 +104,7 @@ def main():
             worst_t, worst = None, 1.0
             for s in fr["samples"]:
                 if not (c["start"] <= s["t"] <= c["start"] + c["duration"]): continue
-                safe = sum(1 for gx, gy in cells if s["cells"][gy][gx]["safe"])
+                safe = sum(1 for gx, gy in cells if is_safe(s, gx, gy))
                 frac = safe/len(cells)
                 if frac < worst: worst, worst_t = frac, s["t"]
             if worst_t is not None:

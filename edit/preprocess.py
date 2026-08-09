@@ -12,7 +12,8 @@ Produces:
     silence.json     the cut list from the locked recipe
     transcript.json  word timings on the CUT timeline
     framing.json     per-sample grid of where the subject is, so graphics can be
-                     placed without anyone looking at a frame
+                     placed without anyone looking at a frame. Each sample is a
+                     hex bitmask of the "safe to place here" cells.
 """
 import argparse, json, os, subprocess, sys, tempfile
 from pathlib import Path
@@ -64,14 +65,22 @@ def envelope(src):
 
 def segments(vals, fps):
     """Envelope -> kept segments, using the locked recipe."""
-    keep = set()
-    for i, v in enumerate(vals):
-        if v > HARD:
-            keep.add(i)
-            j = i - 1
-            while j >= 0 and vals[j] > SOFT: keep.add(j); j -= 1
-            j = i + 1
-            while j < len(vals) and vals[j] > SOFT: keep.add(j); j += 1
+    # Walk each maximal >SOFT run ONCE and keep it whole if it contains any
+    # >HARD sample. Identical keep-set to expanding hysteresis outward from
+    # every loud sample, but O(n) instead of O(n^2) — the old form spent 7s on
+    # 20 minutes of footage and 0.002s is the same answer.
+    keep, n = set(), len(vals)
+    i = 0
+    while i < n:
+        if vals[i] > SOFT:
+            j = i
+            while j < n and vals[j] > SOFT:
+                j += 1
+            if any(vals[k] > HARD for k in range(i, j)):
+                keep.update(range(i, j))
+            i = j
+        else:
+            i += 1
     runs, run_ = [], None
     for i in range(len(vals)):
         if i in keep:
@@ -134,45 +143,50 @@ def transcript(proof, model):
     return toks
 
 
-def framing(proof, duration):
+def framing(proof):
     """
     Sample the cut timeline and record, per cell, whether it's safe to place a
     graphic. 'Safe' = bright and flat, i.e. wall rather than subject.
 
     This is what removes the need to eyeball frames for placement.
+
+    ONE ffmpeg pass, streamed. ffmpeg does the luma conversion (format=gray)
+    and the sampling (fps), so Python only sees one byte per pixel.
+      out_range=full  matches the full-range 0.299/0.587/0.114 maths this used
+                      to do by hand; without it every mean is ~13% low.
+      round=up        matches `-ss t` semantics (first frame at or AFTER t), so
+                      a sample lands the same side of a jump cut as a seek would.
+    Only the `safe` verdict is ever read, so each 8x6 sample ships as a hex
+    bitmask (bit gy*GRID_W+gx) instead of 48 mean/variance pairs — 47x smaller,
+    which keeps framing.json far below the size where reading it would hurt.
     """
-    samples = []
-    t = 0.0
-    while t < duration:
-        raw = tempfile.NamedTemporaryFile(suffix=".rgb", delete=False).name
-        run(["ffmpeg", "-hide_banner", "-v", "error", "-y", "-ss", f"{t:.2f}",
-             "-i", proof, "-frames:v", "1",
-             "-vf", f"scale={GRID_W*8}:{GRID_H*8}", "-pix_fmt", "rgb24",
-             "-f", "rawvideo", raw])
-        try:
-            d = open(raw, "rb").read()
-        finally:
-            os.unlink(raw)
-        W, H = GRID_W*8, GRID_H*8
-        if len(d) < W*H*3:
-            t += FRAME_STEP; continue
-        cells = []
+    W, H = GRID_W * 8, GRID_H * 8
+    proc = subprocess.Popen(
+        ["ffmpeg", "-hide_banner", "-v", "error", "-i", proof,
+         "-vf", f"fps=1/{FRAME_STEP}:round=up,scale={W}:{H}:out_range=full,format=gray",
+         "-pix_fmt", "gray", "-f", "rawvideo", "-"], stdout=subprocess.PIPE)
+    samples, n = [], 0
+    while True:
+        d = proc.stdout.read(W * H)
+        if len(d) < W * H:
+            break
+        bits = 0
         for gy in range(GRID_H):
-            row = []
             for gx in range(GRID_W):
-                lum = []
-                for py in range(gy*8, gy*8+8):
-                    for px in range(gx*8, gx*8+8):
-                        o = (py*W + px)*3
-                        lum.append(0.299*d[o] + 0.587*d[o+1] + 0.114*d[o+2])
-                mean = sum(lum)/len(lum)
-                var = sum((x-mean)**2 for x in lum)/len(lum)
-                row.append({"m": round(mean), "v": round(var),
-                            "safe": bool(mean > SAFE_LUMA and var < SAFE_VAR)})
-            cells.append(row)
-        samples.append({"t": round(t, 2), "cells": cells})
-        t += FRAME_STEP
+                s = sq = 0
+                for py in range(gy * 8, gy * 8 + 8):
+                    base = py * W + gx * 8
+                    for v in d[base:base + 8]:
+                        s += v; sq += v * v
+                mean = s / 64.0
+                if mean > SAFE_LUMA and sq / 64.0 - mean * mean < SAFE_VAR:
+                    bits |= 1 << (gy * GRID_W + gx)
+        samples.append({"t": round(n * FRAME_STEP, 2), "safe": f"{bits:012x}"})
+        n += 1
+    proc.stdout.close()
+    proc.wait()
     return samples
+
 
 
 def main():
@@ -241,10 +255,11 @@ def main():
         print("4/4  framing … skipped")
     else:
         print("4/4  framing …")
-        fr = framing(proof, kept)
+        fr = framing(proof)
         json.dump({"grid": [GRID_W, GRID_H], "step": FRAME_STEP,
                    "safe_luma": SAFE_LUMA, "safe_var": SAFE_VAR,
-                   "samples": fr}, open(out/"framing.json", "w"))
+                   "format": "safe-bitmask", "samples": fr},
+                  open(out/"framing.json", "w"))
         print(f"     {len(fr)} samples on a {GRID_W}x{GRID_H} grid")
 
     print(f"\n-> {out}/  (nothing here needs to enter a conversation)")
