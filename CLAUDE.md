@@ -161,6 +161,14 @@ skin tones and a true white point first. Keep contrast crisp and blacks honest
 
 ---
 
+## Read this too
+
+`WORKING-NOTES.md` is a living document of how Lana works — how she phrases
+requests, what she reacts to, which preferences have been reversed, and the
+process lessons that cost time before. **Read it at the start of a session, and
+update it at the end of any session where a preference is established, reversed,
+or clarified.** This file is the settled spec; that one is the context behind it.
+
 ## Operating rules for Claude
 
 - Run `verify_premiere_connection` first. If it fails, stop and diagnose — don't
