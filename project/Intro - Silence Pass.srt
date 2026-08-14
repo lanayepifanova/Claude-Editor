@@ -1,0 +1,52 @@
+1
+00:00:00,030 --> 00:00:01,450
+This video that you're watching right now
+
+2
+00:00:01,450 --> 00:00:03,900
+has been edited 100% by Claude.
+
+3
+00:00:03,900 --> 00:00:05,840
+I asked Claude to get rid of dead space and
+
+4
+00:00:05,840 --> 00:00:07,700
+also add motion graphics in my video.
+
+5
+00:00:07,700 --> 00:00:09,150
+And I wanted to see if I could do this
+
+6
+00:00:09,150 --> 00:00:10,600
+without hiring a human editor.
+
+7
+00:00:10,600 --> 00:00:13,000
+I used two open-source GitHub repositories,
+
+8
+00:00:13,000 --> 00:00:14,960
+and I was very heavily inspired by the
+
+9
+00:00:14,960 --> 00:00:16,500
+tutorial on Jason's page here.
+
+10
+00:00:16,500 --> 00:00:17,810
+I'm very excited to see what I could
+
+11
+00:00:17,810 --> 00:00:18,800
+continue doing with Claude.
+
+12
+00:00:18,800 --> 00:00:19,790
+So I feel like there are so many
+
+13
+00:00:19,790 --> 00:00:21,100
+applications that I just don't know.
+

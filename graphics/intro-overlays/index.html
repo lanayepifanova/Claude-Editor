@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=3840, height=2160" />
+    <title>Intro Overlays</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 3840px; height: 2160px; overflow: hidden; background: transparent; }
+
+      :root {
+        --ink:    #000000;
+        --cream:  #FAF7F2;
+        --gold:   #B8860B;
+        --red:    #B32D1C;
+        --orange: #D97757;
+        --serif: Georgia, "Iowan Old Style", "Times New Roman", serif;
+        --sans:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+
+      #root { position: relative; width: 3840px; height: 2160px; }
+      .clip { position: absolute; inset: 0; display: grid; place-items: center; }
+      #rec  { position: absolute; inset: auto 200px auto auto; top: 190px; display: block; }
+      .card { position: relative; width: 3200px; text-align: center; }
+      /* the handoff sits lower in frame; the built-with card sits higher */
+      #c3 .card { margin-top: 0; }
+      #c4 .card { margin-top: -620px; }
+
+      /* flat cream edge, zero blur — a knockout, never a glow */
+      .lift {
+        text-shadow:
+          6px 0 0 rgba(250,247,242,1), -6px 0 0 rgba(250,247,242,1),
+          0 6px 0 rgba(250,247,242,1), 0 -6px 0 rgba(250,247,242,1),
+          4px 4px 0 rgba(250,247,242,1), -4px 4px 0 rgba(250,247,242,1),
+          4px -4px 0 rgba(250,247,242,1), -4px -4px 0 rgba(250,247,242,1);
+      }
+      .liftimg {
+        filter:
+          drop-shadow(5px 0 0 rgba(250,247,242,1)) drop-shadow(-5px 0 0 rgba(250,247,242,1))
+          drop-shadow(0 5px 0 rgba(250,247,242,1)) drop-shadow(0 -5px 0 rgba(250,247,242,1));
+      }
+
+      .eyebrow { font-family: var(--sans); font-size: 56px; font-weight: 900;
+                 letter-spacing: .34em; text-transform: uppercase;
+                 color: var(--ink); margin-bottom: 44px; }
+      .headline { font-family: var(--serif); font-size: 186px; font-weight: 700;
+                  line-height: 1.02; color: var(--ink); }
+
+      .shot-wrap { position: relative; display: inline-block; margin-top: 54px; }
+      .shot { display: block; width: 1900px; height: auto;
+              border: 10px solid #000; }
+      .shot-stamp { position: absolute; right: -90px; top: -90px;
+                    width: 240px; height: 240px; display: block; }
+
+      .rec-row { display: flex; align-items: center; gap: 24px; }
+      .dot { display: block; width: 40px; height: 40px; border-radius: 50%; background: var(--red); }
+      .rec-label { font-family: var(--sans); font-size: 44px; font-weight: 900;
+                   letter-spacing: .22em; color: var(--ink); }
+      .tc { font-family: "JetBrains Mono", monospace; font-size: 44px;
+            font-weight: 800; color: var(--ink); margin-left: 22px; }
+
+      .brief-row { display: flex; justify-content: space-between;
+                   width: 2600px; margin: 0 auto; align-items: flex-start; }
+      .items { display: inline-block; text-align: left; }
+      .item { display: flex; align-items: baseline; gap: 44px; }
+      .num { font-family: var(--sans); font-size: 58px; font-weight: 900;
+             letter-spacing: .12em; color: var(--red); min-width: 100px; }
+      .item-text { font-family: var(--serif); font-size: 128px; font-weight: 700;
+                   line-height: 1.06; color: var(--ink); }
+
+      .wave-wrap { position: relative; width: 2600px; height: 340px; margin: 46px auto 40px; }
+      .wave { position: absolute; left: 50%; top: 0; display: flex; align-items: flex-end;
+              gap: 5px; height: 240px; transform: translateX(-50%); }
+      #c2-wave  { width: 2600px; }
+      #c2-after { width: 884px; }
+      .bar { display: block; flex: 1 1 0; background: var(--ink);
+             transform-origin: bottom center; min-height: 12px; }
+      .bar.rm { background: var(--gold); }
+      .strike { position: absolute; display: block; height: 13px;
+                background: var(--red); transform-origin: left center; }
+      .wave-meta { position: absolute; left: 0; right: 0; top: 262px;
+                   font-family: "JetBrains Mono", monospace; font-size: 52px;
+                   font-weight: 800; color: var(--ink); text-align: center; }
+      #c2-meta-after { color: var(--red); }
+
+      .handoff { display: flex; align-items: center; justify-content: center; gap: 130px; }
+      .fig-wrap { position: relative; display: inline-block;
+                  width: 380px; height: 380px; }
+      .fig { display: block; width: 380px; height: 380px; }
+      .xbar { position: absolute; display: block; width: 440px; height: 20px;
+              background: var(--red); border-radius: 3px; }
+      .arrow { display: block; width: 240px; height: 18px; background: var(--red);
+               transform-origin: left center; }
+      .glyph { display: block; width: 340px; height: 340px; }
+      .circle-wrap { position: relative; display: inline-block; margin-top: 40px; }
+      .circle { position: absolute; left: 50%; top: 50%; width: 1280px; height: 660px;
+                margin: -330px 0 0 -640px; display: block; }
+
+      .check-list { display: inline-block; text-align: left; }
+      .crow { position: relative; display: flex; align-items: center; gap: 70px; }
+      .crow + .crow { margin-top: 38px; }
+      .clabel { font-family: var(--serif); font-size: 118px; font-weight: 700;
+                color: var(--ink); width: 1320px; }
+      .cmark { font-family: var(--sans); font-size: 112px; font-weight: 900;
+               color: var(--red); width: 120px; text-align: center; }
+      .cstrike { position: absolute; left: 0; top: 54%; display: block;
+                 width: 1320px; height: 14px; background: var(--red);
+                 transform-origin: left center; }
+      .cblank { width: 1320px; height: 14px; background: var(--ink); display: block; }
+
+      .split { position: relative; width: 2600px; height: 900px; margin: 0 auto; }
+      .gh { position: absolute; left: 50%; top: 0; width: 340px; height: 340px;
+            margin-left: -170px; display: block; }
+      .conn { position: absolute; left: 0; top: 0; width: 2600px; height: 700px; display: block; }
+      .tool { position: absolute; top: 600px; width: 1000px; text-align: center; }
+      .tool img { display: block; width: 250px; height: 250px; margin: 0 auto 34px; }
+      .tool .name { font-family: var(--serif); font-size: 92px; font-weight: 700;
+                    color: var(--ink); white-space: nowrap; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="21.12"
+         data-width="3840" data-height="2160" data-fps="60" data-layout-allow-overflow="true">
+
+      <!-- 1 — title (0.10-3.80) -->
+      <section id="c1" class="clip" data-start="0.10" data-duration="4.00" data-track-index="1">
+        <div class="card">
+          <div class="content" id="c1-content">
+            <h2 class="headline lift">Edited 100% by Claude</h2>
+            <div class="shot-wrap" id="c1-shotwrap">
+              <img class="shot liftimg" id="c1-shot" src=".media/images/premiere-shot.png" alt="" />
+              <img class="shot-stamp liftimg" id="c1-sig" src=".media/images/claude-sig.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rec" class="clip" data-start="0.10" data-duration="4.00" data-track-index="2">
+        <div class="rec-row lift" id="rec-row">
+          <span class="dot" id="rec-dot"></span>
+          <span class="rec-label">REC</span>
+          <span class="tc" id="rec-tc">00:00:00:00</span>
+        </div>
+      </section>
+
+      <!-- 2 — the brief: 01 left, 02 right, waveform beneath (3.90-8.30) -->
+      <section id="c2" class="clip" data-start="4.20" data-duration="3.75" data-track-index="1">
+        <div class="card">
+          <div class="content" id="c2-content">
+            <div class="brief-row">
+              <div class="items lift" id="c2-i1">
+                <div class="item">
+                  <span class="num">01</span><span class="item-text">Remove dead space</span>
+                </div>
+              </div>
+              <div class="items lift" id="c2-i2">
+                <div class="item">
+                  <span class="num">02</span><span class="item-text">Add motion graphics</span>
+                </div>
+              </div>
+            </div>
+            <div class="wave-wrap" id="c2-wavewrap">
+              <div class="wave liftimg" id="c2-wave"></div>
+              <div class="wave liftimg" id="c2-after"></div>
+              <div class="wave-meta lift" id="c2-meta">62.1s</div>
+              <div class="wave-meta lift" id="c2-meta-after">21.1s</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 — no human editor, the handoff alone (8.45-11.50) -->
+      <section id="c3" class="clip" data-start="8.00" data-duration="2.65" data-track-index="1">
+        <div class="card">
+          <div class="content" id="c3-content">
+            <div class="eyebrow lift">No human editor</div>
+            <div class="handoff">
+              <div class="fig-wrap">
+                <svg class="fig liftimg" id="c3-fig" viewBox="0 0 100 100" fill="none"
+                     stroke="#000000" stroke-width="6.4" stroke-linecap="round">
+                  <circle cx="50" cy="24" r="13" />
+                  <path d="M26 58c0-13 11-21 24-21s24 8 24 21" />
+                  <rect x="18" y="62" width="64" height="30" rx="3" />
+                  <path d="M30 74h40M30 82h26" />
+                </svg>
+                <span class="xbar liftimg" id="c3-x1" style="left:26px; top:48px"></span>
+                <span class="xbar liftimg" id="c3-x2" style="left:26px; top:332px"></span>
+              </div>
+              <span class="arrow" id="c3-arrow"></span>
+              <img class="glyph liftimg" id="c3-glyph" src=".media/images/claude-handoff.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4 — built with (11.45-14.85) -->
+      <section id="c4" class="clip" data-start="10.70" data-duration="4.20" data-track-index="1">
+        <div class="card">
+          <div class="content" id="c4-content">
+            <div class="eyebrow lift">Built with</div>
+            <div class="split">
+              <img class="gh liftimg" id="c4-gh" src=".media/images/logo_001.svg" alt="" />
+              <svg class="conn liftimg" id="c4-conn" viewBox="0 0 2600 700" fill="none"
+                   stroke="#B32D1C" stroke-width="20" stroke-linecap="round">
+                <path d="M1300 356 V440 H640 V596" />
+                <path d="M1300 356 V440 H1960 V596" />
+              </svg>
+              <div class="tool lift" id="c4-t1" style="left:140px">
+                <img class="liftimg" src=".media/images/premiere.png" alt="" />
+                <div class="name">Premiere Pro MCP</div>
+              </div>
+              <div class="tool lift" id="c4-t2" style="right:140px">
+                <img class="liftimg" src=".media/images/claude-tool.svg" alt="" />
+                <div class="name">HyperFrames</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5 — the checklist (17.95-19.80) -->
+      <section id="c5" class="clip" data-start="17.95" data-duration="3.17" data-track-index="1">
+        <div class="card">
+          <div class="content" id="c5-content">
+            <div class="check-list">
+              <div class="crow" id="c5-r1">
+                <span class="clabel lift">Silence removed</span>
+                <span class="cmark lift" id="c5-m1">&#10003;</span>
+                <span class="cstrike" id="c5-s1"></span>
+              </div>
+              <div class="crow" id="c5-r2">
+                <span class="clabel lift">Captions</span>
+                <span class="cmark lift" id="c5-m2">&#10003;</span>
+                <span class="cstrike" id="c5-s2"></span>
+              </div>
+              <div class="crow" id="c5-r3">
+                <span class="clabel lift">Motion graphics</span>
+                <span class="cmark lift" id="c5-m3">&#10003;</span>
+                <span class="cstrike" id="c5-s3"></span>
+              </div>
+              <div class="crow" id="c5-r4">
+                <span class="cblank liftimg"></span>
+                <span class="cmark lift">?</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <script>
+      const BARS = [{"h":0.168,"k":0},{"h":0.965,"k":0},{"h":1.0,"k":1},{"h":0.817,"k":1},{"h":0.863,"k":1},{"h":0.888,"k":1},{"h":0.808,"k":0},{"h":0.248,"k":0},{"h":0.114,"k":0},{"h":0.562,"k":0},{"h":1.0,"k":1},{"h":0.999,"k":1},{"h":0.866,"k":1},{"h":0.77,"k":1},{"h":1.0,"k":1},{"h":0.3,"k":0},{"h":0.71,"k":0},{"h":0.984,"k":1},{"h":0.909,"k":1},{"h":0.902,"k":1},{"h":0.704,"k":1},{"h":0.105,"k":0},{"h":0.081,"k":0},{"h":0.237,"k":0},{"h":0.114,"k":0},{"h":0.179,"k":0},{"h":0.13,"k":0},{"h":0.135,"k":0},{"h":0.154,"k":0},{"h":0.147,"k":0},{"h":0.998,"k":1},{"h":1.0,"k":1},{"h":1.0,"k":1},{"h":0.893,"k":0},{"h":0.06,"k":0},{"h":0.06,"k":0},{"h":0.06,"k":0},{"h":0.06,"k":0},{"h":0.168,"k":0},{"h":0.175,"k":0},{"h":0.17,"k":0},{"h":0.174,"k":0},{"h":0.212,"k":0},{"h":1.0,"k":1},{"h":1.0,"k":1},{"h":0.801,"k":1},{"h":0.843,"k":1},{"h":0.849,"k":1},{"h":0.867,"k":0},{"h":0.126,"k":0},{"h":0.285,"k":0},{"h":0.315,"k":0},{"h":0.328,"k":0},{"h":0.236,"k":0},{"h":0.302,"k":0},{"h":0.304,"k":0},{"h":0.255,"k":0},{"h":0.151,"k":0},{"h":0.123,"k":0},{"h":0.135,"k":0},{"h":0.163,"k":0},{"h":0.229,"k":0},{"h":0.2,"k":0},{"h":0.123,"k":0},{"h":0.144,"k":0},{"h":0.14,"k":0},{"h":0.157,"k":0},{"h":1.0,"k":1},{"h":0.981,"k":1},{"h":0.803,"k":1},{"h":0.755,"k":0},{"h":0.172,"k":0},{"h":1.0,"k":1},{"h":0.808,"k":1},{"h":0.831,"k":1},{"h":0.135,"k":0},{"h":0.107,"k":0},{"h":0.104,"k":0},{"h":0.169,"k":0},{"h":0.644,"k":0}];
+      (function buildWave() {
+        const wave = document.getElementById("c2-wave");
+        const wrap = document.getElementById("c2-wavewrap");
+        const after = document.getElementById("c2-after");
+        let ka = 0;
+        BARS.forEach(function (b, i) {
+          const el = document.createElement("span");
+          el.className = "bar" + (b.k ? "" : " rm");
+          el.id = "wb" + i;
+          el.style.height = Math.round(b.h * 240) + "px";
+          wave.appendChild(el);
+          if (b.k) {
+            const el2 = document.createElement("span");
+            el2.className = "bar"; el2.id = "wa" + ka++;
+            el2.style.height = Math.round(b.h * 240) + "px";
+            after.appendChild(el2);
+          }
+        });
+        let i = 0, n = 0;
+        while (i < BARS.length) {
+          if (BARS[i].k) { i++; continue; }
+          let j = i; while (j < BARS.length && !BARS[j].k) j++;
+          if (j - i >= 3) {
+            const s = document.createElement("span");
+            s.className = "strike"; s.id = "st" + n++;
+            s.style.left = (i / BARS.length * 100) + "%";
+            s.style.width = ((j - i) / BARS.length * 100) + "%";
+            s.style.top = "118px";
+            wrap.appendChild(s);
+          }
+          i = j;
+        }
+        wrap.dataset.strikes = n;
+      })();
+
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // Every card gets a longer, calmer entrance and a long hold before it leaves.
+      function cardIn(t, id)  { tl.fromTo("#" + id + "-content", { opacity: 0, y: 30 },
+                                 { opacity: 1, y: 0, duration: .55, ease: "power3.out" }, t + .12); }
+      function cardOut(e, id) { tl.to("#" + id + "-content",
+                                 { opacity: 0, y: -18, duration: .30, ease: "power2.in" }, e - .40); }
+
+      // 1 — title; the orange Claude mark turns once, clockwise
+      cardIn(0.10, "c1");
+      tl.fromTo("#c1-shotwrap", { opacity: 0, scale: .94, y: 24 },
+        { opacity: 1, scale: 1, y: 0, duration: .55, ease: "power3.out" }, 0.42);
+      tl.fromTo("#c1-sig", { opacity: 0, scale: .80, rotation: 0 },
+        { opacity: 1, scale: 1, rotation: 360, duration: 1.25, ease: "power3.out" }, 0.85);
+      cardOut(4.30, "c1");
+
+      tl.fromTo("#rec-row", { opacity: 0, x: 26 },
+        { opacity: 1, x: 0, duration: .40, ease: "power3.out" }, 0.16);
+      tl.to("#rec-dot", { opacity: .2, duration: .5, ease: "power1.inOut", yoyo: true, repeat: 3 }, 0.6);
+      const tc = { v: 0 };
+      tl.to(tc, { v: 3.8, duration: 3.8, ease: "none", onUpdate: function () {
+          const f = Math.floor(tc.v * 60), el = document.getElementById("rec-tc");
+          const p = function (n) { return String(n).padStart(2, "0"); };
+          if (el) el.textContent = "00:00:" + p(Math.floor(f / 60)) + ":" + p(f % 60);
+        } }, 0.16);
+      tl.to("#rec-row", { opacity: 0, duration: .26, ease: "power2.in" }, 3.80);
+
+      // 2 — the brief. 01 lands first; the waveform eats its silence;
+      // 02 pops the instant she says "also add" (5.84s). Both then hold.
+      cardIn(4.20, "c2");
+      tl.fromTo("#c2-i1", { opacity: 0, y: 24 },
+        { opacity: 1, y: 0, duration: .50, ease: "power3.out" }, 4.55);
+      tl.set("#c2-i2", { opacity: 0 }, 0);
+      BARS.forEach(function (b, i) {
+        tl.fromTo("#wb" + i, { scaleY: 0 },
+          { scaleY: 1, duration: .24, ease: "power2.out" }, 4.95 + i * 0.010);
+      });
+      const nStrikes = Number(document.getElementById("c2-wavewrap").dataset.strikes || 0);
+      for (let s2 = 0; s2 < nStrikes; s2++) {
+        tl.fromTo("#st" + s2, { scaleX: 0, opacity: 1 },
+          { scaleX: 1, duration: .34, ease: "power3.out" }, 5.85 + s2 * 0.085);
+      }
+      // "also add motion graphics in my video" begins at 5.84
+      tl.fromTo("#c2-i2", { opacity: 0, y: 24, scale: .94 },
+        { opacity: 1, y: 0, scale: 1, duration: .42, ease: "power3.out" }, 5.84);
+      tl.set("#c2-after", { opacity: 0 }, 0);
+      tl.set("#c2-meta-after", { opacity: 0 }, 0);
+      tl.to(".bar.rm", { scaleY: 0, opacity: 0, duration: .40, ease: "power2.in" }, 6.55);
+      tl.to(".strike", { opacity: 0, duration: .28 }, 6.60);
+      tl.to("#c2-wave", { opacity: 0, duration: .36, ease: "power2.inOut" }, 6.90);
+      tl.to("#c2-meta", { opacity: 0, duration: .30 }, 6.90);
+      tl.fromTo("#c2-after", { opacity: 0 }, { opacity: 1, duration: .52, ease: "power3.out" }, 7.02);
+      tl.to("#c2-meta-after", { opacity: 1, duration: .36 }, 7.16);
+      cardOut(7.95, "c2");
+
+      // 3 — the handoff, given the whole card to breathe
+      cardIn(8.00, "c3");
+      tl.fromTo("#c3-fig", { opacity: 0, x: -34 },
+        { opacity: 1, x: 0, duration: .55, ease: "power3.out" }, 8.40);
+      tl.fromTo("#c3-arrow", { scaleX: 0 },
+        { scaleX: 1, duration: .50, ease: "power3.out", transformOrigin: "left center" }, 8.95);
+      // red X strikes across the human editor, one stroke then the other
+      tl.set(["#c3-x1", "#c3-x2"], { scaleX: 0, opacity: 1 }, 0);
+      tl.fromTo("#c3-x1", { scaleX: 0, rotation: 45 },
+        { scaleX: 1, rotation: 45, duration: .26, ease: "power3.out",
+          transformOrigin: "left center" }, 9.00);
+      tl.fromTo("#c3-x2", { scaleX: 0, rotation: -45 },
+        { scaleX: 1, rotation: -45, duration: .26, ease: "power3.out",
+          transformOrigin: "left center" }, 9.18);
+      tl.to("#c3-fig", { opacity: .16, duration: .50, ease: "power2.inOut" }, 9.55);
+      tl.to(["#c3-x1", "#c3-x2"], { opacity: .30, duration: .50, ease: "power2.inOut" }, 9.55);
+      tl.fromTo("#c3-glyph", { opacity: 0, scale: .76, rotation: -20 },
+        { opacity: 1, scale: 1, rotation: 0, duration: .70, ease: "power3.out" }, 9.50);
+      tl.to("#c3-content", { opacity: 0, duration: .14, ease: "power2.in" }, 10.51);
+      tl.set("#c3-content", { opacity: 0 }, 10.70);
+
+      // 4 — built with
+      cardIn(10.70, "c4");
+      tl.fromTo("#c4-gh", { opacity: 0, scale: .76 },
+        { opacity: 1, scale: 1, duration: .50, ease: "power3.out" }, 11.08);
+      tl.fromTo("#c4-conn", { opacity: 0 }, { opacity: 1, duration: .40, ease: "power2.out" }, 11.50);
+      tl.fromTo("#c4-t1", { opacity: 0, y: 28 },
+        { opacity: 1, y: 0, duration: .45, ease: "power3.out" }, 11.80);
+      tl.fromTo("#c4-t2", { opacity: 0, y: 28 },
+        { opacity: 1, y: 0, duration: .45, ease: "power3.out" }, 12.00);
+      cardOut(14.90, "c4");
+
+      // 5 — the checklist, slow. Each line is struck, ticked, and allowed to
+      // sit before the next. The open question holds to the final frame.
+      cardIn(17.95, "c5");
+      tl.set(["#c5-s1", "#c5-s2", "#c5-s3"], { scaleX: 0 }, 0);
+      tl.set(["#c5-m1", "#c5-m2", "#c5-m3", "#c5-r4"], { opacity: 0 }, 0);
+      [1, 2, 3].forEach(function (n, i) {
+        const t = 18.45 + i * 0.65;
+        tl.to("#c5-s" + n, { scaleX: 1, duration: .45, ease: "power2.out" }, t);
+        tl.to("#c5-m" + n, { opacity: 1, duration: .30, ease: "power2.out" }, t + .30);
+      });
+      tl.fromTo("#c5-r4", { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: .55, ease: "power3.out" }, 20.45);
+      // no cardOut — the list stays on screen through the last frame
+
+      tl.seek(0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

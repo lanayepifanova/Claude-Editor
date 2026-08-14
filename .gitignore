@@ -1,0 +1,40 @@
+# ── Heavy media ───────────────────────────────────────────────────────────
+# Source footage and ProRes renders are hundreds of MB each and blow past
+# GitHub's 100 MB per-file limit. The compositions that generate them are
+# versioned instead — re-render with `npx hyperframes render`.
+footage/*
+!footage/.gitkeep
+output/*
+!output/.gitkeep
+*.mov
+*.MOV
+*.mp4
+*.wav
+
+# HyperFrames render scratch
+graphics/work-*/
+graphics/.*-transaction*/
+**/snapshots/
+**/renders/
+
+# ── Third-party media ─────────────────────────────────────────────────────
+# Jason Cooperson's avatar and video thumbnail are his, not ours. Kept local
+# so the credit card renders, not redistributed from this repo.
+graphics/jason-card/.media/images/jason_avatar.png
+graphics/jason-card/.media/images/jason_thumb.png
+
+# ── Premiere scratch / auto-saves ─────────────────────────────────────────
+*.prproj.autosave/
+Adobe Premiere Pro Auto-Save/
+*.pek
+*.cfa
+
+# ── OS / tooling ──────────────────────────────────────────────────────────
+.DS_Store
+node_modules/
+.hf-cache/
+
+# HyperFrames preview thumbnails (regenerated on demand)
+**/.thumbnails/
+# working backups
+*.bak
