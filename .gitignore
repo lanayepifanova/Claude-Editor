@@ -38,3 +38,6 @@ node_modules/
 **/.thumbnails/
 # working backups
 *.bak
+
+# The .prproj IS versioned (it's tiny and it's the actual edit) — but its
+# auto-save siblings are not.
