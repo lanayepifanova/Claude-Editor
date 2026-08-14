@@ -184,6 +184,9 @@ or clarified.** This file is the settled spec; that one is the context behind it
   than clobbering my active timeline.
 - **Ask before destructive/irreversible actions:** deleting media, overwriting an
   export, closing/saving over a project.
+- **Raw footage may be deleted only at the very end**, after the final export to
+  `output/` is confirmed on disk AND she has said this is the final export. Never
+  on an intermediate export. Footage is not in git.
 - If a tool returns `success: false`, report the exact error and run diagnostics
   before retrying.
 

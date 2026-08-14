@@ -149,7 +149,16 @@ the bin entry *before* deleting the file so nothing goes offline.
 
 ---
 
-## 5. Standing to-dos
+## 5. Standing instructions
+
+**Raw footage cleanup — end of project only.** Once the final video is exported to
+`output/` *and she has explicitly said it's the final export*, delete the source
+footage from `footage/`. Do not do this earlier, do not do it on an intermediate
+export, and do not infer it from a video merely looking finished. The trigger is
+her saying to export at the very end. Footage is irreplaceable and is not in git —
+confirm the export exists and plays before removing anything.
+
+## 5b. Standing to-dos
 
 - [ ] Duplicate 62.05s "Intro - Silence Pass" sequence still in the project
 - [ ] Superseded renders accumulate — sweep at the end of a session
