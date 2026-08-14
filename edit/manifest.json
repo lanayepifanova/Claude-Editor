@@ -1,0 +1,284 @@
+{
+  "project": "intro-to-claude-editor",
+  "source": "footage/Intro to Claude Editor.MOV",
+  "fps": 60,
+  "resolution": [
+    3840,
+    2160
+  ],
+  "duration": 21.12,
+  "sequence": "Intro - Silence Pass",
+  "style": {
+    "ink": "#000000",
+    "cream": "#FAF7F2",
+    "gold": "#B8860B",
+    "red": "#B32D1C",
+    "orange": "#D97757",
+    "serif": "Georgia, 'Iowan Old Style', 'Times New Roman', serif",
+    "sans": "'Helvetica Neue', Helvetica, Arial, sans-serif",
+    "mono": "'JetBrains Mono', monospace",
+    "edge": 6,
+    "sizes": {
+      "headline": 186,
+      "eyebrow": 56,
+      "item": 128,
+      "num": 58,
+      "toolName": 92
+    }
+  },
+  "motion": {
+    "in": 0.55,
+    "out": 0.3,
+    "ease_in": "power3.out",
+    "ease_out": "power2.in"
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "start": 0.1,
+      "duration": 4.0,
+      "track": 1,
+      "offsetY": 0,
+      "blocks": [
+        {
+          "type": "headline",
+          "text": "Edited 100% by Claude"
+        },
+        {
+          "type": "screenshot",
+          "src": ".media/images/premiere-shot.png",
+          "width": 1900,
+          "stamp": ".media/images/claude-sig.svg",
+          "stampSize": 240
+        }
+      ],
+      "beats": [
+        {
+          "target": "shot",
+          "at": 0.42,
+          "anim": "rise",
+          "dur": 0.55
+        },
+        {
+          "target": "stamp",
+          "at": 0.85,
+          "anim": "spin",
+          "dur": 1.25
+        }
+      ]
+    },
+    {
+      "id": "rec",
+      "start": 0.1,
+      "duration": 4.0,
+      "track": 2,
+      "anchor": "top-right",
+      "blocks": [
+        {
+          "type": "rec",
+          "runTo": 3.8
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "start": 4.2,
+      "duration": 3.75,
+      "track": 1,
+      "offsetY": 0,
+      "blocks": [
+        {
+          "type": "eyebrow",
+          "text": "The brief"
+        },
+        {
+          "type": "briefRow",
+          "left": {
+            "num": "01",
+            "text": "Remove dead space"
+          },
+          "right": {
+            "num": "02",
+            "text": "Add motion graphics"
+          }
+        },
+        {
+          "type": "waveform",
+          "bars": 80,
+          "beforeLabel": "62.1s",
+          "afterLabel": "21.1s"
+        }
+      ],
+      "beats": [
+        {
+          "target": "left",
+          "at": 4.55,
+          "anim": "rise",
+          "dur": 0.45
+        },
+        {
+          "target": "bars",
+          "at": 4.95,
+          "anim": "grow",
+          "stagger": 0.01
+        },
+        {
+          "target": "strikes",
+          "at": 5.85,
+          "anim": "strike",
+          "stagger": 0.085
+        },
+        {
+          "target": "right",
+          "at": 5.84,
+          "anim": "pop",
+          "dur": 0.42,
+          "cue": "also add"
+        },
+        {
+          "target": "collapse",
+          "at": 6.55
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "start": 8.0,
+      "duration": 2.65,
+      "track": 1,
+      "offsetY": 0,
+      "holdToNext": true,
+      "blocks": [
+        {
+          "type": "eyebrow",
+          "text": "No human editor"
+        },
+        {
+          "type": "handoff",
+          "from": "figure",
+          "to": ".media/images/claude-handoff.svg",
+          "strikeOut": true
+        }
+      ],
+      "beats": [
+        {
+          "target": "figure",
+          "at": 8.4,
+          "anim": "slide",
+          "dur": 0.55
+        },
+        {
+          "target": "arrow",
+          "at": 8.95,
+          "anim": "draw",
+          "dur": 0.5
+        },
+        {
+          "target": "xmark",
+          "at": 9.0,
+          "anim": "strike",
+          "dur": 0.26
+        },
+        {
+          "target": "glyph",
+          "at": 9.5,
+          "anim": "pop",
+          "dur": 0.7
+        }
+      ]
+    },
+    {
+      "id": "c4",
+      "start": 10.7,
+      "duration": 4.2,
+      "track": 1,
+      "offsetY": -310,
+      "blocks": [
+        {
+          "type": "eyebrow",
+          "text": "Built with"
+        },
+        {
+          "type": "split",
+          "root": ".media/images/logo_001.svg",
+          "left": {
+            "img": ".media/images/premiere.png",
+            "name": "Premiere Pro MCP"
+          },
+          "right": {
+            "img": ".media/images/claude-tool.svg",
+            "name": "HyperFrames"
+          }
+        }
+      ],
+      "beats": [
+        {
+          "target": "root",
+          "at": 11.08,
+          "anim": "pop",
+          "dur": 0.5
+        },
+        {
+          "target": "conn",
+          "at": 11.5,
+          "anim": "fade",
+          "dur": 0.4
+        },
+        {
+          "target": "left",
+          "at": 11.8,
+          "anim": "rise",
+          "dur": 0.45
+        },
+        {
+          "target": "right",
+          "at": 12.0,
+          "anim": "rise",
+          "dur": 0.45
+        }
+      ]
+    },
+    {
+      "id": "c5",
+      "start": 17.95,
+      "duration": 3.166667,
+      "track": 1,
+      "offsetY": 0,
+      "holdToEnd": true,
+      "blocks": [
+        {
+          "type": "checklist",
+          "rows": [
+            "Silence removed",
+            "Captions",
+            "Motion graphics"
+          ],
+          "openRow": true
+        }
+      ],
+      "beats": [
+        {
+          "target": "rows",
+          "at": 18.45,
+          "anim": "strike",
+          "stagger": 0.65
+        },
+        {
+          "target": "open",
+          "at": 20.45,
+          "anim": "rise",
+          "dur": 0.55
+        }
+      ]
+    }
+  ],
+  "externalCards": [
+    {
+      "id": "jason",
+      "project": "graphics/jason-card",
+      "start": 15.0,
+      "duration": 2.8,
+      "track": 2
+    }
+  ]
+}

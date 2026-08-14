@@ -41,3 +41,7 @@ node_modules/
 
 # The .prproj IS versioned (it's tiny and it's the actual edit) — but its
 # auto-save siblings are not.
+
+# Derived analysis — regenerate with edit/preprocess.py (envelope/framing are
+# small enough to keep; the proof render is not)
+edit/analysis/cut_proof.mp4

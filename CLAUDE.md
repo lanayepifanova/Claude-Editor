@@ -187,6 +187,21 @@ or clarified.** This file is the settled spec; that one is the context behind it
 - If a tool returns `success: false`, report the exact error and run diagnostics
   before retrying.
 
+## The edit pipeline (use this, not ad-hoc HTML)
+
+The video lives in `edit/manifest.json`. Analysis is computed once into
+`edit/analysis/`; compositions are **generated** by `edit/build.py` and must never
+be hand-edited. Checks come from `edit/verify.py` as text, not screenshots.
+
+```bash
+python3 edit/preprocess.py footage/clip.MOV --out edit/analysis   # once per video
+python3 edit/verify.py                                            # after every change
+python3 edit/build.py --out graphics/<project>/index.html         # then render
+```
+
+Pin beats to speech with `"cue": "<words>"` rather than a bare timestamp — verify
+re-checks the cue against the transcript and reports drift. See `edit/README.md`.
+
 ## Typical workflow
 
 1. `verify_premiere_connection` → confirm live.
