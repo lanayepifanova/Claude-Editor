@@ -190,6 +190,30 @@ or clarified.** This file is the settled spec; that one is the context behind it
 - If a tool returns `success: false`, report the exact error and run diagnostics
   before retrying.
 
+## Session hygiene — read before starting a new video
+
+**One video per session.** Context is re-sent every turn, so a session that has
+already made a video charges its whole history again on each message. Measured on
+this project: **435,000 tokens per turn versus ~6,000 to bootstrap fresh — 73x.**
+
+Before starting a new video, run:
+
+```bash
+python3 edit/session-cost.py     # exit 2 = start fresh now
+```
+
+**If Lana starts a new video in an already-long session** (she has said she may),
+do not just carry on — that is the expensive path she asked to avoid. Instead
+launch a subagent with a clean context to do the work:
+
+> Use the Agent tool (`general-purpose`). Give it only: the footage path, the
+> resolution/fps, what she asked for, and the instruction to read `NEW-VIDEO.md`
+> first. It bootstraps in a few thousand tokens, does the whole pipeline in its
+> own context, and returns a short report. The renders, analysis, and images stay
+> out of the main conversation entirely.
+
+`NEW-VIDEO.md` is that bootstrap document. Keep it current.
+
 ## The edit pipeline (use this, not ad-hoc HTML)
 
 The video lives in `edit/manifest.json`. Analysis is computed once into

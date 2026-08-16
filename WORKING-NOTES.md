@@ -170,6 +170,23 @@ per-video `fixes-*.json` is still required. Critically, **re-running the analysi
 re-transcribes and the errors relocate**, so pin every wrong variant seen, not
 just the latest one. Always read the full transcript back before rendering.
 
+**Session cost is the dominant expense — reset between videos.** Measured on this
+project: 1,285 turns, 1.2M output tokens, but **556M cache reads** because the
+whole history is re-sent every turn. That is 435K per turn against ~6K to
+bootstrap a fresh session from `NEW-VIDEO.md`. Run `edit/session-cost.py`; exit 2
+means stop. If she starts a new video anyway, delegate it to a subagent with a
+clean context rather than continuing inline — she explicitly asked for this.
+
+**Read captions as text before rendering.** `edit/review.py` prints the full
+wording plus flags odd tokens (it catches the `AI8` / `9S` pattern). A render is
+1-60 minutes and 45-100 MB; reading is free. Several rounds this session were
+spent rendering to discover a wrong word.
+
+**Verify renders with `edit/check_render.py`, not screenshots.** It measures the
+alpha channel of the rendered .mov and reports, as text, whether ink is present
+for each cue, whether it sits inside the caption band, and whether the gaps are
+clean. 77 images entered context this session, each re-sent on every later turn.
+
 **Disk discipline.** Each render is 0.5–1 GB. Delete superseded versions, and remove
 the bin entry *before* deleting the file so nothing goes offline.
 
