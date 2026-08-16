@@ -124,7 +124,7 @@ futures contracts will
 
 32
 00:00:28,053 --> 00:00:29,213
-die of in liquidity.
+die of thin liquidity.
 
 33
 00:00:29,263 --> 00:00:30,533
