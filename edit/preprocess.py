@@ -102,7 +102,19 @@ def segments(vals, fps):
 
 
 def proof_render(src, segs, out):
-    """Concat the kept segments — this IS the cut timeline."""
+    """Concat the kept segments — this IS the cut timeline.
+
+    One trim/atrim branch per segment. Measured: flat to ~120 segments, then it
+    degrades hard (2.9s at 20, 4.2s at 120, 14.2s at 250) while a single
+    `select='between(t,a,b)+...'` pass stays at 2.8s regardless. NOT swapped,
+    because select renumbers frames via setpts=N/FRAME_RATE/TB and the Premiere
+    retime in captions_overlay.py depends on these boundaries being exact. If a
+    long video ever makes this slow, that is the change to make — and the cut
+    boundaries must be re-verified against Premiere afterwards.
+    """
+    if len(segs) > 120:
+        print(f"     ! {len(segs)} segments — the trim/concat graph degrades past "
+              f"~120; see the note in proof_render()", file=sys.stderr)
     v = "".join(f"[0:v]trim={s}:{e},setpts=PTS-STARTPTS,scale=960:-2[v{i}];"
                 for i, (s, e) in enumerate(segs))
     a = "".join(f"[0:a:0]atrim={s}:{e},asetpts=PTS-STARTPTS[a{i}];"
@@ -238,6 +250,9 @@ def main():
     kept = sum(e-s for s, e in segs)
     json.dump({"recipe": {"hard_db": HARD, "soft_db": SOFT, "lead": LEAD,
                           "tail": TAIL, "min_gap": MIN_GAP, "min_seg": MIN_SEG},
+               # cleanup.py reads this to decide whether cut_proof.mp4 can be
+               # rebuilt. Without it a proof has to be assumed irreplaceable.
+               "source": a.media,
                "source_duration": round(dur, 3), "cut_duration": round(kept, 3),
                "removed_pct": round((dur-kept)/dur*100, 1),
                "segments": segs}, open(out/"silence.json", "w"), indent=1)

@@ -39,9 +39,11 @@ manifest.json  ◄── edits happen HERE (a few lines, not a file rewrite)
 
 ### `framing.json` — placing graphics without looking
 
-An 8×6 luminance/variance grid sampled every 0.5s: bright and flat means wall,
-so *"will this cover her face?"* becomes a lookup instead of a screenshot.
-Roughly 47% of a typical frame is placeable, all of it at the edges.
+An 8×6 grid sampled every 0.5s. Each cell is judged bright-and-flat (wall) or
+not, so *"will this cover her face?"* becomes a lookup instead of a screenshot.
+Roughly 47% of a typical frame is placeable, all of it at the edges. Only that
+verdict is stored — one hex bitmask per sample, ~3KB per video — so the file
+never becomes something expensive to read.
 
 ### Analysis-driven graphics
 

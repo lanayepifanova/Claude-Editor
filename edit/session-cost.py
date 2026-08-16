@@ -6,7 +6,11 @@ Context is re-sent on every turn, so a long session charges its whole history
 again each time you speak. This reads Claude Code's own transcript log and says
 plainly whether to keep going or start fresh.
 
-    python3 edit/session-cost.py
+    python3 edit/session-cost.py            # full report
+    python3 edit/session-cost.py --hook     # one line, only past HARD_CTX
+
+The --hook form is wired to UserPromptSubmit in .claude/settings.json, so the
+verdict arrives on its own instead of waiting for someone to remember it.
 """
 import json, sys
 from pathlib import Path
@@ -18,23 +22,31 @@ HARD_CTX  = 250_000
 
 
 def newest_log():
+    """This project's newest transcript, or None.
+
+    Exact slug match only, walking up from cwd so it still works from a
+    subdirectory. Deliberately NO cross-project fallback: silently measuring
+    some other project's session would give a confident wrong verdict on the
+    one decision here that actually costs money.
+    """
     root = Path.home() / ".claude" / "projects"
-    cwd = Path.cwd().resolve()
-    slug = str(cwd).replace("/", "-")
-    for d in (root / slug, *root.glob("*")):
-        if not d.is_dir():
-            continue
-        logs = sorted(d.glob("*.jsonl"), key=lambda p: p.stat().st_mtime, reverse=True)
-        if logs and (d.name == slug or str(cwd).replace("/", "-").endswith(d.name)):
-            return logs[0]
-    logs = sorted(root.glob("*/*.jsonl"), key=lambda p: p.stat().st_mtime, reverse=True)
-    return logs[0] if logs else None
+    here = Path.cwd().resolve()
+    for d in (here, *here.parents):
+        proj = root / str(d).replace("/", "-")
+        if proj.is_dir():
+            logs = sorted(proj.glob("*.jsonl"),
+                          key=lambda p: p.stat().st_mtime, reverse=True)
+            if logs:
+                return logs[0]
+    return None
 
 
 def main():
+    hook = "--hook" in sys.argv
     log = newest_log()
     if not log:
-        sys.exit("no session transcript found")
+        # in hook mode never block the prompt and never add noise
+        sys.exit(0 if hook else "no session transcript found")
     turns = out = reads = writes = 0
     for line in open(log, errors="ignore"):
         line = line.strip()
@@ -52,9 +64,19 @@ def main():
         reads += u.get("cache_read_input_tokens", 0) or 0
         writes += u.get("cache_creation_input_tokens", 0) or 0
     if not turns:
-        sys.exit("transcript has no usage data yet")
+        sys.exit(0 if hook else "transcript has no usage data yet")
 
     avg = reads / turns
+
+    if hook:
+        # Injected into context automatically. Stay terse — a verbose warning
+        # about context cost that itself costs context is self-defeating.
+        if avg >= HARD_CTX:
+            print(f"[session-cost] context {avg:,.0f}/turn — {avg/BOOTSTRAP:.0f}x a fresh "
+                  f"bootstrap. Finish the current step, then start a new session. "
+                  f"Resume state: edit/manifest.json, edit/analysis-*/, NEW-VIDEO.md.")
+        sys.exit(0)
+
     print(f"session : {log.name[:8]}…")
     print(f"turns   : {turns:,}")
     print(f"output  : {out:,} tokens   (the actual work)")

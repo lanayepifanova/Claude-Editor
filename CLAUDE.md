@@ -97,9 +97,11 @@ This produced captions I was very happy with. Reproduce it exactly.
 
 1. Transcribe the **cut** audio, never the original — timings must land on the
    edited timeline. Extract it from the ffmpeg proof render.
-2. `whisper-cli -m ~/.cache/whisper/ggml-base.en.bin -f cut.wav -oj -ml 1`
+2. `whisper-cli -m ~/.cache/whisper/ggml-small.en.bin -f cut.wav -oj -ml 1`
    (`-ml 1` gives word-level timings; installed via `brew install whisper-cpp`,
-   model in `~/.cache/whisper/`). Runs locally, nothing uploaded.
+   model in `~/.cache/whisper/`). Runs locally, nothing uploaded. **small.en,
+   not base.en** — base mangles finance/hardware jargon ("trade GPU out",
+   "Cash shuttle listed on Nimus"). `preprocess.py` defaults to small.en.
 3. Merge subword tokens back into whole words before grouping — whisper splits
    `don`+`'t` and `V`+`OD`.
 4. Group into single lines: **max 42 chars**, max 3.5s, min 0.7s. Break at
@@ -187,6 +189,17 @@ or clarified.** This file is the settled spec; that one is the context behind it
 - **Raw footage may be deleted only at the very end**, after the final export to
   `output/` is confirmed on disk AND she has said this is the final export. Never
   on an intermediate export. Footage is not in git.
+- **Reclaim disk with `edit/cleanup.py`, never with a hand-written `rm`.** It is
+  dry-run by default and physically cannot reach `footage/`, `output/`,
+  `project/`, or any analysis `.json`. Note the trap it exists to prevent:
+  deleting the footage turns every `cut_proof.mp4` into the last copy of that
+  cut, so cleanup refuses to remove a proof whose source clip is gone.
+
+  ```bash
+  python3 edit/cleanup.py --list                 # what exists, what it costs
+  python3 edit/cleanup.py --done <name>          # dry run for one project
+  python3 edit/cleanup.py --caches --apply       # caches, snapshots, junk
+  ```
 - If a tool returns `success: false`, report the exact error and run diagnostics
   before retrying.
 
@@ -201,6 +214,12 @@ Before starting a new video, run:
 ```bash
 python3 edit/session-cost.py     # exit 2 = start fresh now
 ```
+
+**This now fires on its own.** `.claude/settings.json` wires
+`session-cost.py --hook` to `UserPromptSubmit`, so once average context passes
+250k/turn a one-line directive to reset is injected automatically. It is silent
+below that. Nobody has to remember the command — but when the line appears,
+act on it rather than reading past it.
 
 **If Lana starts a new video in an already-long session** (she has said she may),
 do not just carry on — that is the expensive path she asked to avoid. Instead

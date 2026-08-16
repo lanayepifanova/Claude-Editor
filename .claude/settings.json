@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"${CLAUDE_PROJECT_DIR:-.}\" && python3 edit/session-cost.py --hook 2>/dev/null || true",
+            "timeout": 5,
+            "statusMessage": "Checking session cost"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -52,7 +52,11 @@ python3 edit/captions_overlay.py ... --timeline edit/analysis-<name>/premiere-cl
 - **Read the transcript before rendering.** `review.py`. Whisper's errors move
   between runs, so pin every wrong variant in `fixes-*.json`, not just the latest.
 - **Check the session cost** with `python3 edit/session-cost.py`. Exit code 2 means
-  stop and start fresh.
+  stop and start fresh. A `UserPromptSubmit` hook also injects a `[session-cost]`
+  line automatically past 250k/turn — when it appears, finish the step and reset.
+- **Reclaim disk with `python3 edit/cleanup.py`**, never a hand-written `rm`. It
+  refuses to delete a `cut_proof.mp4` once its source footage is gone, because
+  that proof is then the only copy of the cut.
 
 ## Handing off mid-project
 

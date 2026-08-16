@@ -37,6 +37,10 @@ python3 edit/preprocess.py footage/clip.MOV --out edit/analysis
 # per change: patch manifest.json, then
 python3 edit/verify.py            # text findings, no render needed
 python3 edit/build.py --out graphics/intro-overlays/index.html
+
+# housekeeping
+python3 edit/session-cost.py      # is this session worth continuing?
+python3 edit/cleanup.py --list    # what is safe to reclaim
 ```
 
 Render only once `verify.py` is clean. Most rounds never need one.
@@ -53,10 +57,15 @@ Render only once `verify.py` is clean. Most rounds never need one.
 
 ## framing.json
 
-An 8×6 grid sampled every 0.5s of the cut timeline. Each cell records mean
-luminance and variance; bright + flat = wall, so safe for a graphic. This is what
-removes the need to look at frames to decide placement — roughly 47% of this
-frame is placeable, all of it at the edges.
+An 8×6 grid sampled every 0.5s of the cut timeline. A cell is *safe* when it is
+bright and flat — wall rather than subject. This is what removes the need to look
+at frames to decide placement; roughly 47% of this frame is placeable, all of it
+at the edges.
+
+Only the safe/not-safe verdict is stored, as one hex bitmask per sample (bit
+`gy*8+gx`) — about 3KB per video instead of 160KB of mean/variance pairs nothing
+read. `verify.py` still understands the old per-cell layout, so an analysis dir
+restored from git history keeps working.
 
 ## Rules
 
