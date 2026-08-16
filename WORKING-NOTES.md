@@ -132,9 +132,13 @@ round trip is ~4 minutes of dead time.
 - Detailed screenshots inflate ProRes a lot (786 MB vs 535 MB) — many hard edges.
 
 **Premiere quirks:**
-- `export_frame`'s `time` argument doesn't map exactly; a "missing" graphic may just
-  be a frame landing in a gap between cards. Cross-check against the visible caption
-  before concluding something is broken.
+- **`export_frame` is unreliable — do not verify timing with it.** It ignores the
+  `sequenceId` (renders whichever sequence is active) AND effectively ignores the
+  time/playhead: asked for 30s on a 44s sequence it returned the opening frame.
+  It cost hours across this project, twice producing false alarms about correct
+  work (the "missing" 66% card, and caption sync). To verify what a graphic
+  actually shows at time T, extract from the **rendered .mov with ffmpeg** and
+  composite over the cut proof. Premiere is for assembly, not for inspection.
 - `export_sequence` fails with `MEDIA_ENCODER_NOT_INSTALLED` because it only looks
   directly in `/Applications`. AME lives at
   `/Applications/Adobe Media Encoder 2026/Adobe Media Encoder 2026.app`. Use
@@ -143,6 +147,18 @@ round trip is ~4 minutes of dead time.
   source of truth.
 - Premiere's bridge occasionally returns `Unexpected end of JSON input` under load.
   Just retry.
+
+**Re-place clips in Premiere after ANY change to the cut.** Changing
+`silence.json` (an override, a merge) regenerates the transcript and captions but
+does NOT touch Premiere. Forgetting this desynced a whole video by up to 6.7s and
+read as "captions feel a bit off". The cut, the captions, and Premiere must be
+updated as one unit.
+
+**Captions must be retimed onto Premiere's actual clip boundaries.** Premiere
+frame-snaps each segment, so its timeline runs slightly shorter than the ffmpeg
+cut the transcript was made from — about 2 frames by the end of a 45s video. Read
+the real clip starts out of Premiere and pass them to
+`captions_overlay.py --timeline`.
 
 **Disk discipline.** Each render is 0.5–1 GB. Delete superseded versions, and remove
 the bin entry *before* deleting the file so nothing goes offline.

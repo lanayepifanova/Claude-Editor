@@ -34,11 +34,22 @@ def run(cmd, **kw):
     return subprocess.run(cmd, capture_output=True, text=True, **kw)
 
 
+def sample_rate(src):
+    """Read the real rate — assuming 48k silently skews every window."""
+    r = run(["ffprobe", "-v", "error", "-select_streams", "a:0",
+             "-show_entries", "stream=sample_rate", "-of", "csv=p=0", src])
+    try:
+        return int(r.stdout.strip().split("\n")[0])
+    except Exception:
+        return 48000
+
+
 def envelope(src):
-    """Per-20ms RMS in dB."""
+    """Per-20ms RMS in dB, at the file's actual sample rate."""
+    sr = sample_rate(src)
     tmp = tempfile.NamedTemporaryFile(suffix=".txt", delete=False).name
     run(["ffmpeg", "-hide_banner", "-v", "error", "-i", src, "-map", "0:a:0",
-         "-af", f"asetnsamples=n={int(48000*WINDOW)},astats=metadata=1:reset=1,"
+         "-af", f"asetnsamples=n={int(sr*WINDOW)},astats=metadata=1:reset=1,"
                 f"ametadata=print:key=lavfi.astats.Overall.RMS_level:file={tmp}",
          "-f", "null", "-"])
     vals = []
@@ -171,6 +182,9 @@ def main():
     ap.add_argument("--fps", type=float, default=60.0)
     ap.add_argument("--model", default=str(Path.home()/".cache/whisper/ggml-base.en.bin"))
     ap.add_argument("--skip-framing", action="store_true")
+    ap.add_argument("--overrides", default="",
+                    help='JSON {"segments":{"0":{"out":4.80}}} — manual trims applied '
+                         'after detection, so the proof/transcript stay consistent')
     a = ap.parse_args()
 
     out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
@@ -184,6 +198,27 @@ def main():
 
     print("2/4  silence …")
     segs = segments(vals, a.fps)
+    if a.overrides and Path(a.overrides).exists():
+        ov = json.load(open(a.overrides)).get("segments", {})
+        for k, adj in ov.items():
+            i = int(k)
+            if i < 0:
+                i += len(segs)
+            if not (0 <= i < len(segs)):
+                print(f"     ! override {k} out of range"); continue
+            before = list(segs[i])
+            if "in" in adj:  segs[i][0] = round(adj["in"] * a.fps) / a.fps
+            if "out" in adj: segs[i][1] = round(adj["out"] * a.fps) / a.fps
+            print(f"     override seg {i}: {before[0]:.3f}-{before[1]:.3f} -> "
+                  f"{segs[i][0]:.3f}-{segs[i][1]:.3f}")
+        drop = sorted((i if i >= 0 else i + len(segs)
+                       for i in json.load(open(a.overrides)).get("drop", [])),
+                      reverse=True)
+        for i in drop:
+            if 0 <= i < len(segs):
+                print(f"     drop seg {i}: {segs[i][0]:.3f}-{segs[i][1]:.3f} "
+                      f"(absorbed by a neighbour)")
+                segs.pop(i)
     kept = sum(e-s for s, e in segs)
     json.dump({"recipe": {"hard_db": HARD, "soft_db": SOFT, "lead": LEAD,
                           "tail": TAIL, "min_gap": MIN_GAP, "min_seg": MIN_SEG},
