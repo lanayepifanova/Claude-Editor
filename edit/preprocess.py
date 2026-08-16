@@ -180,7 +180,9 @@ def main():
     ap.add_argument("media")
     ap.add_argument("--out", default="edit/analysis")
     ap.add_argument("--fps", type=float, default=60.0)
-    ap.add_argument("--model", default=str(Path.home()/".cache/whisper/ggml-base.en.bin"))
+    ap.add_argument("--model",
+                default=str(Path.home()/".cache/whisper/ggml-small.en.bin"),
+                help="whisper.cpp model. small.en is the default because base.en\n                      mangles finance/hardware jargon — it produced 'trade GPU out',\n                      'Cash shuttle listed on Nimus', and once inverted a sentence\n                      to 'you will not be able to trade'.")
     ap.add_argument("--skip-framing", action="store_true")
     ap.add_argument("--overrides", default="",
                     help='JSON {"segments":{"0":{"out":4.80}}} — manual trims applied '

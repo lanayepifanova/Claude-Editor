@@ -160,6 +160,16 @@ cut the transcript was made from — about 2 frames by the end of a 45s video. R
 the real clip starts out of Premiere and pass them to
 `captions_overlay.py --timeline`.
 
+**Transcription: use `small.en`, and expect errors to MOVE.** `base.en` mangles
+finance and hardware jargon — across one 45s video it produced "trade GPU out",
+"trade on Prudel", "Cash shuttle listed on Nimus", "Compu", "the AI8", and once
+inverted a sentence to "you will **not** be able to trade". `small.en` (466 MB,
+`~/.cache/whisper/ggml-small.en.bin`, now the default in `preprocess.py`) fixed
+five of those unaided. It is not perfect — it invented "listed on 9S" — so a
+per-video `fixes-*.json` is still required. Critically, **re-running the analysis
+re-transcribes and the errors relocate**, so pin every wrong variant seen, not
+just the latest one. Always read the full transcript back before rendering.
+
 **Disk discipline.** Each render is 0.5–1 GB. Delete superseded versions, and remove
 the bin entry *before* deleting the file so nothing goes offline.
 
