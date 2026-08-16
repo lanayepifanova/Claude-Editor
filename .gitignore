@@ -45,3 +45,7 @@ node_modules/
 # Derived analysis — regenerate with edit/preprocess.py (envelope/framing are
 # small enough to keep; the proof render is not)
 edit/analysis/cut_proof.mp4
+
+# Python bytecode
+__pycache__/
+*.pyc
