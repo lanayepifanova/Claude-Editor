@@ -74,5 +74,33 @@ premiere-pro-mcp --doctor
 
 ## Sources / upstream
 
-- Premiere MCP: `hetpatel-11/Adobe_Premiere_Pro_MCP` (283 tools; CEP bridge)
-- HyperFrames: `heygen-com/hyperframes` (HTML → MP4 motion graphics)
+Nothing on this machine reads from a GitHub checkout. `setup.sh` installs both
+engines from the **npm registry**, and what lands on disk is a complete copy —
+so these are provenance links and a restore path, not a live dependency. There
+are no local clones of either repo, and none are needed. (Verified 2026-08-17.)
+
+**Premiere Pro MCP** — drives Premiere; 283 tools + the CEP bridge panel
+
+- Upstream: <https://github.com/hetpatel-11/Adobe_Premiere_Pro_MCP>
+  (`main` @ `50f534b17639`, 2026-08-17)
+- npm: `adobe-premiere-pro-mcp` — <https://www.npmjs.com/package/adobe-premiere-pro-mcp>
+- Installed: **v1.1.7** at `/opt/homebrew/lib/node_modules/adobe-premiere-pro-mcp`
+- Also installs: CEP panel at
+  `~/Library/Application Support/Adobe/CEP/extensions/MCPBridgeCEP`
+- Wired up in `~/.claude.json` under `mcpServers.premiere-pro`
+- Restore: `npm install -g adobe-premiere-pro-mcp@1.1.7` (or re-run `setup.sh`)
+
+**HyperFrames** — HTML → MP4 motion graphics
+
+- Upstream: <https://github.com/heygen-com/hyperframes>
+  (`main` @ `37f8c48449d6`, 2026-08-17)
+- npm: `hyperframes` — <https://www.npmjs.com/package/hyperframes>
+- Installed: **v0.7.109**, run via `npx` (not a global binary), cached under
+  `~/.npm/_npx/`
+- Skills (the part Claude actually reads): `~/.claude/skills/hyperframes*` and
+  `~/.agents/skills/` — real files, ~5.5 MB
+- Render runtime (bundled Chrome + fonts): `~/.cache/hyperframes`, ~197 MB
+- Restore: `npx -y hyperframes skills update` (or re-run `setup.sh`)
+
+*Note:* neither upstream declares a license. Fine for using them as installed
+tools; worth checking before redistributing anything from them.
