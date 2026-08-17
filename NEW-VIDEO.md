@@ -15,11 +15,17 @@ Nothing else. Do not read old compositions or transcripts.
 
 ```bash
 # 1. analyse once (envelope, silence, transcript, framing)
-python3 edit/preprocess.py "footage/<clip>.mov" --out edit/analysis-<name> --fps <fps>
+#    fps is detected from the media and recorded in silence.json — pass --fps
+#    only to override. Everything downstream reads it from there.
+python3 edit/preprocess.py "footage/<clip>.mov" --out edit/analysis-<name>
 
 # 2. captions -> READ THEM before spending a render
+#    Orientation decides --y and line length (CLAUDE.md caption table):
+#      vertical  9:16  -> --res 1080x1920 --y 0.25 --maxw 0.72   (~24 chars)
+#      landscape 16:9  -> --res 1920x1080 --y 0.82 --size 48 --maxw 0.61  (~42)
+#    Check the real frame from the PROOF, not ffprobe on the source.
 python3 edit/captions_overlay.py --analysis edit/analysis-<name> \
-    --out graphics/<name>-captions --res <WxH> --y 0.25 --fps <fps> --maxw 0.72 \
+    --out graphics/<name>-captions --res <WxH> --y <0.25|0.82> --maxw <0.72|0.61> \
     --srt "project/<name>.srt" --fixes edit/fixes-<name>.json
 python3 edit/review.py "project/<name>.srt"        # <- approve wording HERE
 
@@ -30,6 +36,7 @@ python3 edit/verify.py
 (cd graphics/<name>-captions && FFMPEG_ENCODE_TIMEOUT_MS=3600000 \
    PRODUCER_ENABLE_CHUNKED_ENCODE=true \
    npx hyperframes render . --format mov -q high -f <fps> -o ../<name>-cap.mov)
+#  ^ <fps> = the fps in edit/analysis-<name>/silence.json
 
 # 5. verify the RENDER as text, never through Premiere
 python3 edit/check_render.py --render graphics/<name>-cap.mov \

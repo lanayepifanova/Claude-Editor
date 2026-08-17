@@ -190,6 +190,20 @@ clean. 77 images entered context this session, each re-sent on every later turn.
 **Disk discipline.** Each render is 0.5–1 GB. Delete superseded versions, and remove
 the bin entry *before* deleting the file so nothing goes offline.
 
+**The locked silence recipe is the floor — tightening it damages audio. Don't retest.**
+She asked for a more aggressive cut on 2026-08-16; I swept the parameters, built every
+candidate and re-transcribed each one. After a normal pass the envelope is no longer
+bimodal — the room-tone cluster is gone and only one continuous speech distribution is
+left, so there is no valley to move the threshold into. Measured on two clips: gentler
+pads (0.015/0.03) bought 1.4–2.1%, which is nothing; pads 0.01/0.02 with a 0.03 gap
+bought 4–7% but produced "gets **hosted**", "data **extract and** script", "Fire**call**";
+−33 dB bought 8–13% and produced "scrolling through **egg**", "from **Dithrada**", and
+truncated a clip's last sentence entirely. Whisper mis-hearing a word it previously got
+right is a reliable proxy for a clipped consonant — use it as the test. Verdict: she
+kept both cuts unchanged. **Further density has to come from cutting content at sentence
+boundaries, not from the silence pass.** Offer specific lines with timings and let her
+choose; she declined all of them this time, so don't assume trims are wanted.
+
 ---
 
 ## 5. Standing instructions
@@ -200,6 +214,49 @@ footage from `footage/`. Do not do this earlier, do not do it on an intermediate
 export, and do not infer it from a video merely looking finished. The trigger is
 her saying to export at the very end. Footage is irreplaceable and is not in git —
 confirm the export exists and plays before removing anything.
+
+**Caption orientation follows the footage.** Her rule, verbatim: "if a video is
+vertical, use vertical captions. if its horizontal, use horizontal captions." So check
+the real frame before choosing `--res` — and check it from the *proof*, not from
+`ffprobe` on the source, which reports rotated display dimensions and reported 1080x1920
+for footage that was actually 1920x1080. This matters more than it sounds: the 42-char
+broadcast caption line only physically fits in landscape. In 9:16 at 54px
+`captions_overlay.py` derives ~24 chars, which is why forcing 42 there breaks cues
+mid-clause. CLAUDE.md now carries this as a per-orientation table rather than a flat
+42; the number is derived from frame width, never hardcoded. Landscape: `--res 1920x1080 --y 0.82 --size 48
+--maxw 0.61 --mindur 0.7 --maxdur 3.5` gives exactly 42 chars in the lower third.
+Vertical keeps the tool's defaults (`--y 0.25`, 24 chars, 0.55/2.2) — `y` is measured
+from the top, and 0.25 keeps captions clear of the TikTok UI. (Established 2026-08-16.)
+
+**`output/` is hers alone — never delete from it.** Claude does not remove, overwrite
+or sweep anything in `output/` under any circumstances, including exports that look
+"superseded" or "old". She deletes those manually once the video is posted to
+Instagram and TikTok, and only she knows when that has happened. `edit/cleanup.py`
+already refuses `output/` by path — keep it that way and never hand-roll around it.
+(Established 2026-08-16.)
+
+**She cleans up finished projects herself, and that is expected.** Once a video is
+exported to `output/`, she deletes that project's footage, cut proofs, analysis dir,
+graphics and captions to reclaim storage — the export is the deliverable and the
+intermediates have no further use. So if an `edit/analysis-*/` directory or the
+footage for an already-exported video disappears mid-session, that is routine
+housekeeping, not data loss. Check whether the missing files belong to an *exported*
+project before saying anything. (Established 2026-08-16, after I escalated her own
+cleanup of the Reddit and GPU projects as a deletion mystery and burned a chunk of
+the session on it.)
+
+**The spec used to contradict itself, and it cost real time.** A 2026-08-17 audit found
+seven conflicts between CLAUDE.md, NEW-VIDEO.md and the code — most of them because
+`tools/silence-cut.py` and `tools/captions.py` were a second, stale implementation of
+the "locked" recipes that nothing but one CLAUDE.md line still referenced. They
+disagreed with `edit/preprocess.py` on sample rate (hardcoded 48k vs. detected) and
+still named `base.en`. `tools/` is deleted; `edit/` is the only implementation. The
+lesson: when a recipe is "locked", it must have exactly **one** implementation, and the
+docs must name that one. Two copies of a locked recipe silently diverge, and the second
+copy is the one someone reads. Same fix for fps — preprocess.py now detects it and
+records it in `silence.json`, and `captions_overlay.py` reads it from there instead of
+carrying its own default. The old split (60 in one file, 30 in another, every real video
+30) frame-snapped cut lists to a grid nothing else used. (Established 2026-08-17.)
 
 ## 5b. Standing to-dos
 

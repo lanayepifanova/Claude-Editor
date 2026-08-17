@@ -9,14 +9,25 @@ never needs a screenshot to place.
     python3 edit/captions_overlay.py --analysis edit/analysis-Reddit \
         --out graphics/reddit-captions --res 1080x1920 --y 0.25
 """
-import argparse, json, re
+import argparse, json, re, sys
 from pathlib import Path
 
 # TikTok-style: short punchy chunks, not broadcast single-lines
 MAX_CHARS = 26          # overwritten in main() from width / font size
 # never strand these at the end of a cue — they read as a dangling fragment
 ORPHAN = {"a","an","the","of","in","to","and","or","for","on","at","is","it",
-          "my","your","that","this","with","but","so","if","as","be","was"}
+          "my","your","that","this","with","but","so","if","as","be","was",
+          # interrogatives / relatives — a cue ending on one dangles hard
+          "which","who","what","when","where","why","how",
+          # modals and auxiliaries, always followed by their verb
+          "would","could","should","will","can","do","does","did","have","has",
+          # prepositions and determiners that bind forward to a noun
+          "into","onto","from","through","any","some","each","other","more",
+          "most","new","very","our","their","its","you","we","they",
+          # hedges that modify the word after them
+          "roughly","sometimes","just","like","really","also",
+          # noun-modifiers common in this footage ("AI agents", "SEO tool")
+          "ai","seo"}
 MAX_DUR   = 2.2
 MIN_DUR   = 0.55
 GAP_SPLIT = 0.45          # a pause this long starts a new cue
@@ -54,7 +65,8 @@ def group(words):
         if cur:
             txt = re.sub(r"\s+", " ", " ".join(w["w"] for w in cur)).strip()
             if txt:
-                cues.append({"start": cur[0]["t0"], "end": cur[-1]["t1"], "text": txt})
+                cues.append({"start": cur[0]["t0"], "end": cur[-1]["t1"], "text": txt,
+                             "words": list(cur)})
         cur = []
     for w in words:
         if cur:
@@ -74,6 +86,46 @@ def group(words):
         if re.search(r"[.!?]$", w["w"]):
             flush()
     flush()
+    # A cue can end up too short to read — usually a sentence tail like "post."
+    # left behind by the overflow split. Stretching its end (below) can't help
+    # when the next cue starts immediately, or when it is the last cue and the
+    # clip ends. So first move words BACKWARD across the boundary: the cue
+    # inherits the earlier word's t0 and gains real time on screen. Only borrow
+    # while both cues stay legal, and never empty the donor.
+    def txt_of(ws):
+        return re.sub(r"\s+", " ", " ".join(x["w"] for x in ws)).strip()
+    for i in range(len(cues) - 1, 0, -1):
+        c, prev = cues[i], cues[i-1]
+        while c["end"] - c["start"] < MIN_DUR and len(prev["words"]) > 1:
+            cand = prev["words"][-1]
+            if len(txt_of([cand] + c["words"])) > MAX_CHARS:
+                break
+            if c["end"] - cand["t0"] > MAX_DUR:
+                break
+            if re.search(r"[.!?]$", cand["w"]):
+                break                      # a sentence must end where its cue does
+            # Some sentences are spoken too fast for BOTH halves to clear
+            # MIN_DUR — 50 chars in 1.28s cannot split into two 0.7s cues. Taking
+            # every word we're allowed just moves the flash onto the donor, so
+            # stop at the balance point and leave two short cues rather than one
+            # unreadable one.
+            if cand["t0"] - prev["start"] < c["end"] - cand["t0"]:
+                break
+            moved = [prev["words"].pop()]
+            # borrowing must not leave the donor dangling on a function word —
+            # take those with it, so long as the receiver stays legal
+            while len(prev["words"]) > 1 and \
+                    prev["words"][-1]["w"].lower().strip(".,!?'\"") in ORPHAN and \
+                    not re.search(r"[.!?]$", prev["words"][-1]["w"]) and \
+                    len(txt_of([prev["words"][-1]] + moved + c["words"])) <= MAX_CHARS and \
+                    c["end"] - prev["words"][-1]["t0"] <= MAX_DUR and \
+                    prev["words"][-1]["t0"] - prev["start"] >= \
+                        c["end"] - prev["words"][-1]["t0"]:
+                moved.insert(0, prev["words"].pop())
+            c["words"][:0] = moved
+            for x in (c, prev):
+                x["start"], x["end"] = x["words"][0]["t0"], x["words"][-1]["t1"]
+                x["text"] = txt_of(x["words"])
     # enforce a readable minimum without colliding with the next cue
     for i, c in enumerate(cues):
         if c["end"] - c["start"] < MIN_DUR:
@@ -145,12 +197,15 @@ def build(cues, w, h, ypct, dur, fps, font, size, weight, maxw):
 
 
 def main():
+    global MAX_DUR, MIN_DUR
     ap = argparse.ArgumentParser()
     ap.add_argument("--analysis", required=True)
     ap.add_argument("--out", required=True, help="hyperframes project dir")
     ap.add_argument("--res", required=True, help="WxH")
     ap.add_argument("--y", type=float, default=0.25, help="vertical centre, 0-1")
-    ap.add_argument("--fps", type=float, default=30)
+    ap.add_argument("--fps", type=float, default=None,
+                    help="defaults to the fps preprocess.py detected and recorded "
+                         "in silence.json — pass this only to override")
     ap.add_argument("--font", default="Montserrat")
     ap.add_argument("--weight", type=int, default=800)
     ap.add_argument("--size", type=int, default=0, help="0 = scale from height")
@@ -158,14 +213,32 @@ def main():
                     help="max text width as a fraction of frame width")
     ap.add_argument("--srt", default="")
     ap.add_argument("--fixes", default="", help="JSON {wrong: right} applied to cue text")
+    ap.add_argument("--maxdur", type=float, default=MAX_DUR,
+                    help="longest a cue stays up. Default 2.2 is the vertical/social "
+                         "value; CLAUDE.md's broadcast spec is 3.5 for 16:9")
+    ap.add_argument("--mindur", type=float, default=MIN_DUR,
+                    help="shortest a cue stays up. Default 0.55 vertical/social; "
+                         "broadcast spec is 0.7")
     ap.add_argument("--timeline", default="",
                     help="premiere-clips.json — retime words onto Premiere's ACTUAL "
                          "clip boundaries, which differ from the ffmpeg cut by frame rounding")
     a = ap.parse_args()
 
+    MAX_DUR, MIN_DUR = a.maxdur, a.mindur
+
     an = Path(a.analysis)
     words = json.load(open(an/"transcript.json"))["words"]
-    dur = json.load(open(an/"silence.json"))["cut_duration"]
+    sil = json.load(open(an/"silence.json"))
+    dur = sil["cut_duration"]
+    # The overlay must sit on the same frame grid the cut was snapped to. Take it
+    # from the analysis rather than defaulting here — two defaults drift apart, and
+    # an overlay on a different grid than the cut list is a desync nobody sees
+    # until the render.
+    if a.fps is None:
+        a.fps = sil.get("fps")
+        if a.fps is None:
+            sys.exit(f"{an}/silence.json has no fps (analysed before fps was "
+                     f"recorded) — re-run preprocess.py or pass --fps")
     w, h = (int(x) for x in a.res.lower().split("x"))
     size = a.size or round(h * 0.028)          # ~2.8% of height
 
@@ -194,10 +267,19 @@ def main():
     if a.fixes and Path(a.fixes).exists():
         words, n = apply_fixes(words, json.load(open(a.fixes)))
         print(f"  applied {n} correction(s)")
+    # Whisper routinely stretches the FINAL token past the end of the audio
+    # (Firecrawl: "good." ended at 32.90s on a 30.87s cut). Uncapped, the last
+    # cue overruns the composition window, gets clipped at render, and flashes
+    # for a fraction of its intended time instead of holding.
+    words = [wd for wd in words if wd["t0"] < dur]
+    for wd in words:
+        wd["t1"] = min(wd["t1"], dur)
     global MAX_CHARS
     # Montserrat 800 averages ~0.58em per character; keep every cue on one line
     MAX_CHARS = max(12, int((w * a.maxw) / (size * 0.58)))
     cues = group(words)
+    for c in cues:                        # MIN_DUR padding can also overrun
+        c["end"] = min(c["end"], dur)
     html = build(cues, w, h, a.y, dur, a.fps, a.font, size, a.weight, a.maxw)
     out = Path(a.out); (out).mkdir(parents=True, exist_ok=True)
     (out/"index.html").write_text(html)

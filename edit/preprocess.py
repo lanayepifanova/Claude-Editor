@@ -45,6 +45,20 @@ def sample_rate(src):
         return 48000
 
 
+def frame_rate(src):
+    """Read the real fps. A default here is a trap: the pipeline frame-snaps the
+    cut list to this grid, so a wrong value silently shifts every segment and the
+    clip list stops matching the footage. Detect, never assume."""
+    r = run(["ffprobe", "-v", "error", "-select_streams", "v:0",
+             "-show_entries", "stream=r_frame_rate", "-of", "csv=p=0", src])
+    try:
+        num, den = r.stdout.strip().split("\n")[0].split("/")
+        fps = int(num) / int(den)
+        return round(fps, 3) if fps > 0 else None
+    except Exception:
+        return None
+
+
 def envelope(src):
     """Per-20ms RMS in dB, at the file's actual sample rate."""
     sr = sample_rate(src)
@@ -205,7 +219,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("media")
     ap.add_argument("--out", default="edit/analysis")
-    ap.add_argument("--fps", type=float, default=60.0)
+    ap.add_argument("--fps", type=float, default=None,
+                    help="frame grid to snap the cut to. Detected from the media "
+                         "when omitted — pass this only to override.")
     ap.add_argument("--model",
                 default=str(Path.home()/".cache/whisper/ggml-small.en.bin"),
                 help="whisper.cpp model. small.en is the default because base.en\n                      mangles finance/hardware jargon — it produced 'trade GPU out',\n                      'Cash shuttle listed on Nimus', and once inverted a sentence\n                      to 'you will not be able to trade'.")
@@ -214,6 +230,12 @@ def main():
                     help='JSON {"segments":{"0":{"out":4.80}}} — manual trims applied '
                          'after detection, so the proof/transcript stay consistent')
     a = ap.parse_args()
+
+    if a.fps is None:
+        a.fps = frame_rate(a.media)
+        if a.fps is None:
+            sys.exit("could not read fps from the media — pass --fps explicitly")
+        print(f"     fps {a.fps:g} (detected)")
 
     out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
 
@@ -253,6 +275,9 @@ def main():
                # cleanup.py reads this to decide whether cut_proof.mp4 can be
                # rebuilt. Without it a proof has to be assumed irreplaceable.
                "source": a.media,
+               # downstream (captions_overlay) reads fps from here rather than
+               # carrying a second default that can drift out of step with this one
+               "fps": a.fps,
                "source_duration": round(dur, 3), "cut_duration": round(kept, 3),
                "removed_pct": round((dur-kept)/dur*100, 1),
                "segments": segs}, open(out/"silence.json", "w"), indent=1)

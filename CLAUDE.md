@@ -57,9 +57,11 @@ Editor" (2026-08-15) and it is exactly what I want. Do not soften them.
 | Min segment kept | **0.08s** | Anything shorter is a blip, drop it |
 | Envelope resolution | **20ms** windows | 100ms is too coarse for word-level cuts |
 
-Run `tools/silence-cut.py` — it does the analysis and emits the exact clip list
-for `add_to_timeline_batch`. Do not eyeball this or use Premiere's built-in
-silence detection; both are far too conservative for this pacing.
+Run `edit/preprocess.py` — it measures the envelope, applies the recipe, and
+writes `silence.json` (the cut list, ready for `add_to_timeline_batch`) plus a
+`cut_proof.mp4`. It is the *only* implementation of this recipe. Do not eyeball
+this and do not use Premiere's built-in `detect_silence`; both are far too
+conservative for this pacing.
 
 *Method notes that matter:*
 - Always measure the RMS envelope first and check the histogram. Speech and
@@ -85,11 +87,25 @@ hiding them with an effect.
 dissolve only between distinct scenes or clear time jumps — never within a
 scene, never between two shots of the same subject. No other transition types.
 
-**Captions:** Single line, broadcast-style, at the lower third. Conventional
-and understated — legibility first, never decorative. Present for all spoken
-audio. Break lines on natural phrase boundaries, not mid-clause. Never let a
-caption cover a lower-third or an on-screen graphic — move the caption or move
-the graphic.
+**Captions:** Single line, conventional and understated — legibility first,
+never decorative. Present for all spoken audio. Break lines on natural phrase
+boundaries, not mid-clause. Never let a caption cover a lower-third or an
+on-screen graphic — move the caption or move the graphic.
+
+**Orientation decides length and position.** Her rule: vertical footage gets
+vertical captions, horizontal gets horizontal. Check the real frame from the
+*proof* — `ffprobe` on the source reports rotated display dimensions.
+
+| | Landscape 16:9 | Vertical 9:16 |
+|---|---|---|
+| Position | Lower third — `--y 0.82` | Upper quarter — `--y 0.25`, clears the TikTok UI |
+| Line length | ~42 chars | ~24 chars |
+| Flags | `--res 1920x1080 --y 0.82 --size 48 --maxw 0.61` | tool defaults (`--y 0.25`) |
+
+`--y` is measured from the **top** of the frame. Line length is *derived*, not
+set: `captions_overlay.py` computes it from frame width, font size and `--maxw`.
+The 42-char broadcast line only physically fits in landscape — in 9:16 the same
+spec is ~24 chars, which is why forcing 42 there breaks cues mid-clause.
 
 **Caption pipeline (locked, approved 2026-08-15 on "Intro to Claude Editor"):**
 
@@ -104,9 +120,11 @@ This produced captions I was very happy with. Reproduce it exactly.
    "Cash shuttle listed on Nimus"). `preprocess.py` defaults to small.en.
 3. Merge subword tokens back into whole words before grouping — whisper splits
    `don`+`'t` and `V`+`OD`.
-4. Group into single lines: **max 42 chars**, max 3.5s, min 0.7s. Break at
-   sentence punctuation first, then clauses, then length. Flush *before*
-   appending the token that would overflow, not after.
+4. Group into single lines: max 3.5s, min 0.7s, and the character budget for
+   the orientation (~42 landscape / ~24 vertical — see the caption table above;
+   the tool derives it, never hardcode it). Break at sentence punctuation first,
+   then clauses, then length. Flush *before* appending the token that would
+   overflow, not after.
 5. Fix known mis-hearings. **Whisper reliably hears "Claude" as "VOD".** Always
    check proper nouns and product names against the actual audio.
 6. Export `.srt` into `project/`, `import_media`, then `create_caption_track`.
@@ -114,7 +132,12 @@ This produced captions I was very happy with. Reproduce it exactly.
 Premiere has no caption-read API, so the `.srt` in `project/` is the source of
 truth — edit it there and re-import rather than retyping in Premiere.
 
-**Caption position:** Premiere exposes no caption API in its scripting DOM (the
+**Two caption routes.** The `.srt` + `create_caption_track` route above is for
+Premiere-native captions. Social/vertical cuts instead burn captions as a
+HyperFrames overlay via `edit/captions_overlay.py` — that route is scriptable
+end to end, positions with `--y`, and is what the orientation table above sizes.
+
+**Caption position (Premiere-native route only):** Premiere exposes no caption API in its scripting DOM (the
 sequence only surfaces `videoTracks`/`audioTracks`), so caption placement cannot
 be scripted. Premiere's default landed fine on the 2026-08-15 pass. If it ever
 needs moving: select all captions in the Text panel → Essential Graphics →
@@ -254,8 +277,10 @@ re-checks the cue against the transcript and reports drift. See `edit/README.md`
 2. Import everything from `footage/`.
 3. Watch/scan the footage; propose an edit plan (structure, beats, music).
 4. Build the rough cut on a new sequence.
-5. **Silence pass** — `detect_silence`, ripple-delete every gap. Do this before
-   any graphics work; it changes all downstream timings.
+5. **Silence pass** — `python3 edit/preprocess.py <clip> --out edit/analysis-<name>`,
+   then place `silence.json`'s segments with `add_to_timeline_batch`. Never
+   Premiere's `detect_silence` — see the locked recipe above. Do this before any
+   graphics work; it changes all downstream timings.
 6. **Caption pass** — transcribe, then build the caption track.
 7. Design motion graphics in HyperFrames → render → import → place.
 8. Add transitions, color, audio ducking.
