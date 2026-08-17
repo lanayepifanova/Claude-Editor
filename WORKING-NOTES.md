@@ -277,6 +277,20 @@ routine") **only applies once the export actually exists in `output/`**. Check `
 before concluding that missing footage is routine — that check is what separates
 housekeeping from an unrecoverable loss. (Established 2026-08-17.)
 
+**Commit the repo after every export, before cleanup — she asked for this
+explicitly.** Her words, 2026-08-17: "including all the files that are deleted in the
+edit, this should be updated in the repo each time please." So `git add -A` (deletions
+included), commit, push — the repo is meant to track each project's arrival *and* its
+cleanup, not drift out of date until someone notices. Ordering is the part that bites:
+on 2026-08-17 her cleanup ran between the export and the commit, and
+`graphics/firecrawl-captions/index.html` and `graphics/browser-use-captions/index.html`
+were still untracked when it did, so they went from disk to nothing with no git copy.
+`.gitignore` promises that heavy renders are safe to delete *because* "the compositions
+that generate them are versioned instead" — that promise only holds if the composition
+was committed first. Analysis dirs are the same story: once `transcript.json` is gone,
+the composition cannot even be regenerated. **Commit at export time, then let cleanup
+run.** (Established 2026-08-17.)
+
 ## 5b. Standing to-dos
 
 - [ ] Duplicate 62.05s "Intro - Silence Pass" sequence still in the project
