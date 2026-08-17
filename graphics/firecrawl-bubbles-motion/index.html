@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>firecrawl-bubbles-motion (baked)</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        margin: 0; width: 1920px; height: 1080px;
+        overflow: hidden; background: #000;
+      }
+      #src-video { width: 1920px; height: 1080px; object-fit: cover; }
+      .beat { position: absolute; inset: 0; }
+      .bubble { position: absolute; display: block; }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="29.6"
+      data-width="1920"
+      data-height="1080"
+    >
+      <video
+        id="src-video"
+        class="clip"
+        src="assets/source.mp4"
+        data-start="0"
+        data-duration="29.6"
+        data-track-index="0"
+        muted
+        playsinline
+      ></video>
+
+      <!-- b01  4.40-9.50s  "great for anyone building an AI agent, an SEO tool" -->
+      <div class="clip beat" id="b01" data-start="4.4" data-duration="5.1" data-track-index="1">
+        <img class="bubble" id="b01-p0" src="assets/bubbles/01-architecture--01.png" style="left:1180px;top:210px;width:330px;height:516px" alt="" />
+        <img class="bubble" id="b01-p1" src="assets/bubbles/01-architecture--05.png" style="left:1528px;top:210px;width:330px;height:514px" alt="" />
+      </div>
+
+      <!-- b02  10.30-14.30s  "turn your website into this very clean, structured dataset" -->
+      <div class="clip beat" id="b02" data-start="10.3" data-duration="4.0" data-track-index="1">
+        <img class="bubble" id="b02-p0" src="assets/bubbles/03-firecrawl-run--01.png" style="left:1100px;top:200px;width:780px;height:483px" alt="" />
+      </div>
+
+      <!-- b03  15.40-18.40s  "track product launches ... from different startups" -->
+      <div class="clip beat" id="b03" data-start="15.4" data-duration="3.0" data-track-index="1">
+        <img class="bubble" id="b03-p0" src="assets/bubbles/08-watchlist--01.png" style="left:1400px;top:140px;width:440px;height:216px" alt="" />
+        <img class="bubble" id="b03-p1" src="assets/bubbles/08-watchlist--02.png" style="left:1400px;top:374px;width:440px;height:216px" alt="" />
+        <img class="bubble" id="b03-p2" src="assets/bubbles/08-watchlist--05.png" style="left:1400px;top:608px;width:440px;height:212px" alt="" />
+      </div>
+
+      <!-- b04  20.70-23.24s  "handles all the complexities for you, and it's super fast" -->
+      <div class="clip beat" id="b04" data-start="20.7" data-duration="2.54" data-track-index="1">
+        <img class="bubble" id="b04-p0" src="assets/bubbles/02-pipeline--02.png" style="left:1330px;top:200px;width:520px;height:167px" alt="" />
+        <img class="bubble" id="b04-p1" src="assets/bubbles/02-pipeline--03.png" style="left:1330px;top:387px;width:520px;height:168px" alt="" />
+        <img class="bubble" id="b04-p2" src="assets/bubbles/02-pipeline--04.png" style="left:1330px;top:575px;width:520px;height:154px" alt="" />
+      </div>
+      <audio
+        id="src-audio"
+        src="assets/source.mp4"
+        data-start="0"
+        data-duration="29.6"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#b01-p0", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.28, ease: "power3.out" }, 4.4);
+      tl.fromTo("#b01-p1", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.28, ease: "power3.out" }, 4.49);
+      tl.fromTo("#b02-p0", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.28, ease: "power3.out" }, 10.3);
+      tl.fromTo("#b03-p0", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.28, ease: "power3.out" }, 15.4);
+      tl.fromTo("#b03-p1", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.28, ease: "power3.out" }, 15.49);
+      tl.fromTo("#b03-p2", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.28, ease: "power3.out" }, 15.58);
+      tl.fromTo("#b04-p0", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.28, ease: "power3.out" }, 20.7);
+      tl.fromTo("#b04-p1", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.28, ease: "power3.out" }, 20.79);
+      tl.fromTo("#b04-p2", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.28, ease: "power3.out" }, 20.88);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
