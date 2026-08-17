@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>browser-use-motion</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        margin: 0; width: 1920px; height: 1080px;
+        overflow: hidden; background: #000;
+      }
+      #src-video { width: 1920px; height: 1080px; object-fit: cover; }
+      .card { position: absolute; inset: 0; overflow: hidden; }
+      .plate { position: absolute; inset: 0; z-index: 1; }
+      .plate img { width: 1920px; height: 1080px; object-fit: cover; display: block; }
+      /* Opaque strips in the deck's own edge colour. They start covering the
+         whole frame and retract, so a beat cuts hard to the card's ground and
+         the slide builds across it — never a flash of footage mid-build. */
+      .cover { position: absolute; z-index: 2; transform-origin: right center; }
+      /* origin right: the strip shrinks rightward, so it uncovers left-to-right,
+         matching reading order and the decks' own left-to-right pipeline arrows. */
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="36.8"
+      data-width="1920"
+      data-height="1080"
+    >
+      <video
+        id="src-video"
+        class="clip"
+        src="assets/source.mp4"
+        data-start="0"
+        data-duration="36.8"
+        data-track-index="0"
+        muted
+        playsinline
+      ></video>
+
+      <!-- c01  0.25-2.85s  "So Claude can now read my Twitter feed" -->
+      <div class="clip card" id="c01" data-start="0.25" data-duration="2.6" data-track-index="1">
+        <div class="plate" id="c01-plate" data-layout-allow-overflow><img src="assets/slides/01-title.png" alt="" /></div>
+        <div class="cover" id="c01-h" style="left:0;top:0;width:100%;height:22%;background:#08090C"></div>
+        <div class="cover" id="c01-b0" style="left:0%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c01-b1" style="left:20%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c01-b2" style="left:40%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c01-b3" style="left:60%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c01-b4" style="left:80%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c01-f" style="left:0;top:90%;width:100%;height:10%;background:#08090C"></div>
+      </div>
+
+      <!-- c02  9.66-15.60s  "an open source Python framework called browser use" -->
+      <div class="clip card" id="c02" data-start="9.66" data-duration="5.94" data-track-index="1">
+        <div class="plate" id="c02-plate" data-layout-allow-overflow><img src="assets/slides/02-architecture.png" alt="" /></div>
+        <div class="cover" id="c02-h" style="left:0;top:0;width:100%;height:22%;background:#08090C"></div>
+        <div class="cover" id="c02-b0" style="left:0%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c02-b1" style="left:20%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c02-b2" style="left:40%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c02-b3" style="left:60%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c02-b4" style="left:80%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c02-f" style="left:0;top:90%;width:100%;height:10%;background:#08090C"></div>
+      </div>
+
+      <!-- c03  20.70-25.00s  "go through my X home feed, scroll through roughly a hundred posts" -->
+      <div class="clip card" id="c03" data-start="20.7" data-duration="4.3" data-track-index="1">
+        <div class="plate" id="c03-plate" data-layout-allow-overflow><img src="assets/slides/03-scrape.png" alt="" /></div>
+        <div class="cover" id="c03-h" style="left:0;top:0;width:100%;height:22%;background:#08090C"></div>
+        <div class="cover" id="c03-b0" style="left:0%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c03-b1" style="left:20%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c03-b2" style="left:40%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c03-b3" style="left:60%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c03-b4" style="left:80%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c03-f" style="left:0;top:90%;width:100%;height:10%;background:#08090C"></div>
+      </div>
+
+      <!-- c04  25.00-27.78s  "ignore the memes, engagement bait, and repeated stories" -->
+      <div class="clip card" id="c04" data-start="25.0" data-duration="2.78" data-track-index="1">
+        <div class="plate" id="c04-plate" data-layout-allow-overflow><img src="assets/slides/04-prefilter.png" alt="" /></div>
+        <div class="cover" id="c04-h" style="left:0;top:0;width:100%;height:22%;background:#08090C"></div>
+        <div class="cover" id="c04-b0" style="left:0%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c04-b1" style="left:20%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c04-b2" style="left:40%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c04-b3" style="left:60%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c04-b4" style="left:80%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c04-f" style="left:0;top:90%;width:100%;height:10%;background:#08090C"></div>
+      </div>
+
+      <!-- c05  27.78-32.72s  "find 10 things most relevant to AI agents, developer tools" -->
+      <div class="clip card" id="c05" data-start="27.78" data-duration="4.94" data-track-index="1">
+        <div class="plate" id="c05-plate" data-layout-allow-overflow><img src="assets/slides/05-triage.png" alt="" /></div>
+        <div class="cover" id="c05-h" style="left:0;top:0;width:100%;height:22%;background:#08090C"></div>
+        <div class="cover" id="c05-b0" style="left:0%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c05-b1" style="left:20%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c05-b2" style="left:40%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c05-b3" style="left:60%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c05-b4" style="left:80%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c05-f" style="left:0;top:90%;width:100%;height:10%;background:#08090C"></div>
+      </div>
+
+      <!-- c06  32.72-36.80s  "tell me what happened, why it matters, and give me the original post" -->
+      <div class="clip card" id="c06" data-start="32.72" data-duration="4.08" data-track-index="1">
+        <div class="plate" id="c06-plate" data-layout-allow-overflow><img src="assets/slides/06-output.png" alt="" /></div>
+        <div class="cover" id="c06-h" style="left:0;top:0;width:100%;height:22%;background:#08090C"></div>
+        <div class="cover" id="c06-b0" style="left:0%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c06-b1" style="left:20%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c06-b2" style="left:40%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c06-b3" style="left:60%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c06-b4" style="left:80%;top:22%;width:20%;height:68%;background:#08090C"></div>
+        <div class="cover" id="c06-f" style="left:0;top:90%;width:100%;height:10%;background:#08090C"></div>
+      </div>
+
+      <audio
+        id="src-audio"
+        src="assets/source.mp4"
+        data-start="0"
+        data-duration="36.8"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // c01 — 01-title.png
+      tl.fromTo("#c01-plate", { scale: 1 }, { scale: 1.022, duration: 2.6, ease: "none" }, 0.25);
+      tl.to("#c01-h", { scaleX: 0, duration: 0.34, ease: "power3.inOut" }, 0.25);
+      tl.to("#c01-b0", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 0.43);
+      tl.to("#c01-b1", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 0.485);
+      tl.to("#c01-b2", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 0.54);
+      tl.to("#c01-b3", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 0.595);
+      tl.to("#c01-b4", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 0.65);
+      tl.to("#c01-f", { opacity: 0, duration: 0.22, ease: "power2.out" }, 0.77);
+      // c02 — 02-architecture.png
+      tl.fromTo("#c02-plate", { scale: 1 }, { scale: 1.022, duration: 5.94, ease: "none" }, 9.66);
+      tl.to("#c02-h", { scaleX: 0, duration: 0.34, ease: "power3.inOut" }, 9.66);
+      tl.to("#c02-b0", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 9.84);
+      tl.to("#c02-b1", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 9.895);
+      tl.to("#c02-b2", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 9.95);
+      tl.to("#c02-b3", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 10.005);
+      tl.to("#c02-b4", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 10.06);
+      tl.to("#c02-f", { opacity: 0, duration: 0.22, ease: "power2.out" }, 10.18);
+      // c03 — 03-scrape.png
+      tl.fromTo("#c03-plate", { scale: 1 }, { scale: 1.022, duration: 4.3, ease: "none" }, 20.7);
+      tl.to("#c03-h", { scaleX: 0, duration: 0.34, ease: "power3.inOut" }, 20.7);
+      tl.to("#c03-b0", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 20.88);
+      tl.to("#c03-b1", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 20.935);
+      tl.to("#c03-b2", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 20.99);
+      tl.to("#c03-b3", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 21.045);
+      tl.to("#c03-b4", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 21.1);
+      tl.to("#c03-f", { opacity: 0, duration: 0.22, ease: "power2.out" }, 21.22);
+      // c04 — 04-prefilter.png
+      tl.fromTo("#c04-plate", { scale: 1 }, { scale: 1.022, duration: 2.78, ease: "none" }, 25.0);
+      tl.to("#c04-h", { scaleX: 0, duration: 0.34, ease: "power3.inOut" }, 25.0);
+      tl.to("#c04-b0", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 25.18);
+      tl.to("#c04-b1", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 25.235);
+      tl.to("#c04-b2", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 25.29);
+      tl.to("#c04-b3", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 25.345);
+      tl.to("#c04-b4", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 25.4);
+      tl.to("#c04-f", { opacity: 0, duration: 0.22, ease: "power2.out" }, 25.52);
+      // c05 — 05-triage.png
+      tl.fromTo("#c05-plate", { scale: 1 }, { scale: 1.022, duration: 4.94, ease: "none" }, 27.78);
+      tl.to("#c05-h", { scaleX: 0, duration: 0.34, ease: "power3.inOut" }, 27.78);
+      tl.to("#c05-b0", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 27.96);
+      tl.to("#c05-b1", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 28.015);
+      tl.to("#c05-b2", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 28.07);
+      tl.to("#c05-b3", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 28.125);
+      tl.to("#c05-b4", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 28.18);
+      tl.to("#c05-f", { opacity: 0, duration: 0.22, ease: "power2.out" }, 28.3);
+      // c06 — 06-output.png
+      tl.fromTo("#c06-plate", { scale: 1 }, { scale: 1.022, duration: 4.08, ease: "none" }, 32.72);
+      tl.to("#c06-h", { scaleX: 0, duration: 0.34, ease: "power3.inOut" }, 32.72);
+      tl.to("#c06-b0", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 32.9);
+      tl.to("#c06-b1", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 32.955);
+      tl.to("#c06-b2", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 33.01);
+      tl.to("#c06-b3", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 33.065);
+      tl.to("#c06-b4", { scaleX: 0, duration: 0.26, ease: "power3.inOut" }, 33.12);
+      tl.to("#c06-f", { opacity: 0, duration: 0.22, ease: "power2.out" }, 33.24);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

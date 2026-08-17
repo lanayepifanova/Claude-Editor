@@ -15,7 +15,11 @@ output/*
 graphics/work-*/
 graphics/.*-transaction*/
 **/snapshots/
+**/snapshots-*/
 **/renders/
+# Downscaled working copies of the PNG decks — regenerate from graphics/*-png/
+# with edit/build_slide_motion.py's staging step. The decks themselves ARE versioned.
+graphics/*-motion/assets/slides/
 
 # ── Third-party media ─────────────────────────────────────────────────────
 # Jason Cooperson's avatar and video thumbnail are his, not ours. Kept local
