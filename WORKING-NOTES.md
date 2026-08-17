@@ -258,8 +258,28 @@ records it in `silence.json`, and `captions_overlay.py` reads it from there inst
 carrying its own default. The old split (60 in one file, 30 in another, every real video
 30) frame-snapped cut lists to a grid nothing else used. (Established 2026-08-17.)
 
+**The masters for Firecrawl and Browser Use were deleted before either was ever
+exported, and the quality loss is permanent.** On 2026-08-17 she asked to export both
+("they are good to go"). `output/` was empty — neither had ever been exported — and
+`footage/` held only `.gitkeep`. `silence.json` still named the sources
+(`footage/Firecrawl.mov`, 57.48s; `footage/Browser Use.mov`, 81.02s). Both were gone:
+nothing in Trash, on `/Volumes/Claude`, in iCloud, in the Adobe media cache or preview
+folders, and nothing in a filesystem-wide sweep for large video. Footage is gitignored,
+so git could not help either. Neither video ever entered Premiere — `Demo.prproj` carries
+only `Reddit - Cut` and `GPU Hours - Cut` — so there was no sequence or preview render to
+fall back on. The **only** surviving picture was `cut_proof.mp4` at **960x540**, half the
+1920x1080 the captions were built for. She chose the salvage export: lanczos upscale to
+1080p with the natively-rendered 1080p overlay composited on top, so the text is sharp
+and the footage is soft. That softness is now baked into the deliverable and cannot be
+undone. The rule in this section was already right; what it was missing is that the
+housekeeping exemption below ("footage for an already-exported video disappearing is
+routine") **only applies once the export actually exists in `output/`**. Check `output/`
+before concluding that missing footage is routine — that check is what separates
+housekeeping from an unrecoverable loss. (Established 2026-08-17.)
+
 ## 5b. Standing to-dos
 
 - [ ] Duplicate 62.05s "Intro - Silence Pass" sequence still in the project
 - [ ] Superseded renders accumulate — sweep at the end of a session
 - [ ] Jason's avatar/thumbnail are git-ignored; a fresh clone can't render that card
+- [ ] Keep the Firecrawl / Browser Use `cut_proof.mp4` files until both are posted — they are the only caption-free copy of either cut

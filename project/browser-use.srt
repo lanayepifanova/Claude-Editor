@@ -1,0 +1,92 @@
+1
+00:00:00,110 --> 00:00:02,240
+So Claude can now read my Twitter feed.
+
+2
+00:00:02,240 --> 00:00:03,760
+Now I don't like scrolling through X,
+
+3
+00:00:03,760 --> 00:00:05,200
+there are some weird people on X.
+
+4
+00:00:05,200 --> 00:00:06,720
+But there's actually a ridiculous amount
+
+5
+00:00:06,720 --> 00:00:08,440
+of very useful information
+
+6
+00:00:08,440 --> 00:00:09,760
+that sometimes gets posted.
+
+7
+00:00:09,760 --> 00:00:11,740
+So I found an open source Python framework
+
+8
+00:00:11,740 --> 00:00:12,840
+called Browser Use.
+
+9
+00:00:12,840 --> 00:00:14,960
+It allows AI to control your web browser
+
+10
+00:00:14,960 --> 00:00:15,800
+kind of like a human would.
+
+11
+00:00:15,800 --> 00:00:17,440
+And for the local browser version,
+
+12
+00:00:17,440 --> 00:00:19,040
+you don't actually need an X API
+
+13
+00:00:19,040 --> 00:00:20,820
+or the Browser Use cloud API.
+
+14
+00:00:20,820 --> 00:00:22,070
+So what I told it to do was go
+
+15
+00:00:22,070 --> 00:00:23,550
+through my X home feed, scroll
+
+16
+00:00:23,550 --> 00:00:25,140
+through roughly like a hundred posts,
+
+17
+00:00:25,140 --> 00:00:26,780
+ignore the memes, engagement bait,
+
+18
+00:00:26,780 --> 00:00:29,090
+and repeated stories, then find 10 things
+
+19
+00:00:29,090 --> 00:00:31,040
+most relevant to AI agents, developer
+
+20
+00:00:31,040 --> 00:00:32,800
+tools, startups, and new products.
+
+21
+00:00:32,800 --> 00:00:34,560
+For each, tell me what happened,
+
+22
+00:00:34,560 --> 00:00:35,960
+why it matters, and give me
+
+23
+00:00:35,960 --> 00:00:36,800
+the original post.
+
