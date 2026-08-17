@@ -72,7 +72,7 @@ HTML = """<!doctype html>
       * {{ margin: 0; padding: 0; box-sizing: border-box; }}
       html, body {{
         margin: 0; width: 1920px; height: 1080px;
-        overflow: hidden; background: #000;
+        overflow: hidden; background: {page_bg};
       }}
       #src-video {{ width: 1920px; height: 1080px; object-fit: cover; }}
       .card {{ position: absolute; inset: 0; overflow: hidden; }}
@@ -95,26 +95,9 @@ HTML = """<!doctype html>
       data-width="1920"
       data-height="1080"
     >
-      <video
-        id="src-video"
-        class="clip"
-        src="assets/source.mp4"
-        data-start="0"
-        data-duration="{duration}"
-        data-track-index="0"
-        muted
-        playsinline
-      ></video>
-
+{media_open}
 {cards}
-      <audio
-        id="src-audio"
-        src="assets/source.mp4"
-        data-start="0"
-        data-duration="{duration}"
-        data-track-index="10"
-        data-volume="1"
-      ></audio>
+{media_close}
     </div>
 
     <script>
@@ -128,7 +111,33 @@ HTML = """<!doctype html>
 """
 
 
-def build(name, spec):
+VIDEO_BLOCK = """      <video
+        id="src-video"
+        class="clip"
+        src="assets/source.mp4"
+        data-start="0"
+        data-duration="{duration}"
+        data-track-index="0"
+        muted
+        playsinline
+      ></video>
+"""
+
+AUDIO_BLOCK = """      <audio
+        id="src-audio"
+        src="assets/source.mp4"
+        data-start="0"
+        data-duration="{duration}"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>"""
+
+
+def build(name, spec, variant="baked"):
+    """baked   -> index.html   : her cut + audio, cards burned on top
+       overlay -> overlay.html : cards only on transparency, for V2 in Premiere.
+                                 Same duration and same beat times, so it drops
+                                 at 00:00 and lines up with the cut underneath."""
     cards, tweens = [], []
     for i, (slide, tin, tout, cue) in enumerate(spec["beats"], start=1):
         cid = f"c{i:02d}"
@@ -179,10 +188,14 @@ def build(name, spec):
             f'ease: "power2.out" }}, {round(tin + FOOT_AT, 3)});'
         )
 
-    out = ROOT / "graphics" / name / "index.html"
+    overlay = variant == "overlay"
+    out = ROOT / "graphics" / name / ("overlay.html" if overlay else "index.html")
     out.write_text(HTML.format(
-        title=name,
+        title=f"{name} ({variant})",
         duration=spec["duration"],
+        page_bg="transparent" if overlay else "#000",
+        media_open="" if overlay else VIDEO_BLOCK.format(duration=spec["duration"]),
+        media_close="" if overlay else AUDIO_BLOCK.format(duration=spec["duration"]),
         cards="\n".join(cards),
         tweens="\n".join(tweens),
     ))
@@ -201,4 +214,5 @@ if __name__ == "__main__":
             assert tin >= prev_out - 1e-9, f"{name}/{slide}: overlaps previous beat"
             assert tout <= spec["duration"] + 1e-9, f"{name}/{slide}: runs past media"
             prev_out = tout
-        build(name, spec)
+        build(name, spec, "baked")
+        build(name, spec, "overlay")

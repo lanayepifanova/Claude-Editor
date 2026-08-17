@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1920, height=1080" />
-    <title>firecrawl-motion (baked)</title>
+    <title>firecrawl-motion (overlay)</title>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
       html, body {
         margin: 0; width: 1920px; height: 1080px;
-        overflow: hidden; background: #000;
+        overflow: hidden; background: transparent;
       }
       #src-video { width: 1920px; height: 1080px; object-fit: cover; }
       .card { position: absolute; inset: 0; overflow: hidden; }
@@ -32,16 +32,6 @@
       data-width="1920"
       data-height="1080"
     >
-      <video
-        id="src-video"
-        class="clip"
-        src="assets/source.mp4"
-        data-start="0"
-        data-duration="29.6"
-        data-track-index="0"
-        muted
-        playsinline
-      ></video>
 
       <!-- c01  4.40-9.50s  "This is great for anyone who's building an AI agent, an SEO tool" -->
       <div class="clip card" id="c01" data-start="4.4" data-duration="5.1" data-track-index="1">
@@ -91,14 +81,7 @@
         <div class="cover" id="c04-f" style="left:0;top:90%;width:100%;height:10%;background:#07080C"></div>
       </div>
 
-      <audio
-        id="src-audio"
-        src="assets/source.mp4"
-        data-start="0"
-        data-duration="29.6"
-        data-track-index="10"
-        data-volume="1"
-      ></audio>
+
     </div>
 
     <script>
