@@ -164,6 +164,18 @@ Never trust a save because the tool returned `success: true`. (Established 2026-
   directly in `/Applications`. AME lives at
   `/Applications/Adobe Media Encoder 2026/Adobe Media Encoder 2026.app`. Use
   `exportAsMediaDirect` via `execute_extendscript` instead.
+  The preset that works is AME's factory `H264 Match Source - High bitrate.epr`
+  (`/Applications/Adobe Media Encoder 2026/Adobe Media Encoder 2026.app/Contents/
+  MediaIO/systempresets/3F3F3F3F_4D6F6F56/`); `get_encoder_presets` returns an empty
+  list because factory preset enumeration isn't supported. Call it as
+  `seq.exportAsMediaDirect(outPath, presetPath, 0)` — `0` = entire sequence.
+- **That preset writes PCM audio into the .mp4, not AAC.** `pcm_s24le` in an MP4
+  container plays in Premiere and QuickTime but is rejected or silently muted by
+  several browsers and social uploaders, and it inflates the file ~25%. Always
+  `ffprobe` the export and, if audio is PCM, remux with
+  `ffmpeg -c:v copy -c:a aac -b:a 192k -movflags +faststart` — video is untouched,
+  so it costs nothing in quality. (Established 2026-08-18 exporting Firecrawl -
+  Photos: 46.6 MB PCM became 37.8 MB AAC.)
 - Caption tracks can't be read back via scripting — the `.srt` in `project/` is the
   source of truth.
 - Premiere's bridge occasionally returns `Unexpected end of JSON input` under load.
