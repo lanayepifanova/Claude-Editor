@@ -77,6 +77,8 @@ she pushed back with "it isn't updated". See §4.
 | Navy panels behind text | **No panels** |
 | "No decorative graphics" | **Decoration welcome** |
 | Corner-pinned cards | **Full-frame, centred** |
+| Full-frame graphic takeovers | **Panels floating over the video** (reversed 2026-08-17) |
+| The decks' own colour | **B&W with one accent hue kept** |
 
 ### Unresolved
 - **"A random blue target thing that keeps popping up"** — never identified. A
@@ -130,6 +132,25 @@ round trip is ~4 minutes of dead time.
 - Large-radius blurs are brutally expensive: the glow version took **36 minutes and
   1.7 GB**; the same composition with a hard edge took **4 minutes and 513 MB**.
 - Detailed screenshots inflate ProRes a lot (786 MB vs 535 MB) — many hard edges.
+
+**`app.project` is NOT the project you just opened — guard on the path before every
+mutation.** On 2026-08-17 this destroyed `Reddit - Cut` and `GPU Hours - Cut`. Premiere had
+three projects open at once and **two of them were named `Demo.prproj`** (the repo one and a
+default at `~/Documents/Adobe/Premiere Pro/26.0/`). `open_project` reported success and
+`list_sequences` showed the right sequences, but ExtendScript's `app.project` still pointed at
+a *different* open document, so the sequences were built against the wrong project and
+`save_project` wrote the wrong contents over `project/Demo.prproj` — 28,167 bytes down to
+16,321. Git had it tracked, so `git checkout -- project/Demo.prproj` restored it fully; that
+was the versioning saving it, not any care taken at the time. The procedure now:
+
+1. `cp project/Demo.prproj` somewhere first — belt and braces on top of git.
+2. Close every other open project (`closeDocument(0,0)`) so exactly **one** remains.
+3. Assert `app.project.path === <repo path>` and `app.projects.numProjects === 1` at the top
+   of every mutating script, and return `ABORT` otherwise.
+4. List the sequences **before** saving and confirm the old ones are still there.
+5. After saving, parse the `.prproj` on disk and confirm the names survived.
+
+Never trust a save because the tool returned `success: true`. (Established 2026-08-17.)
 
 **Premiere quirks:**
 - **`export_frame` is unreliable — do not verify timing with it.** It ignores the
