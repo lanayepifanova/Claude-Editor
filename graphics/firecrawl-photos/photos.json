@@ -1,0 +1,54 @@
+{
+ "ai agent": {
+  "file": "ai agent.png",
+  "mode": "knock",
+  "w": 636,
+  "h": 470
+ },
+ "data extraction": {
+  "file": "data extraction.png",
+  "mode": "knock",
+  "w": 1183,
+  "h": 488
+ },
+ "firecrawl": {
+  "file": "firecrawl.png",
+  "mode": "passthrough",
+  "w": 2031,
+  "h": 474
+ },
+ "love firecrawl": {
+  "file": "love firecrawl.png",
+  "mode": "knock",
+  "w": 2752,
+  "h": 1536
+ },
+ "product launches": {
+  "file": "product launches.mov",
+  "mode": "raw-video"
+ },
+ "seo tool": {
+  "file": "seo tool.png",
+  "mode": "knock",
+  "w": 678,
+  "h": 452
+ },
+ "structured dataset": {
+  "file": "structured dataset.png",
+  "mode": "raw",
+  "w": 2578,
+  "h": 1652
+ },
+ "student program": {
+  "file": "student program.png",
+  "mode": "knock",
+  "w": 700,
+  "h": 1058
+ },
+ "website": {
+  "file": "website.png",
+  "mode": "knock",
+  "w": 454,
+  "h": 297
+ }
+}
