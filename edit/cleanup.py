@@ -41,6 +41,51 @@ CACHE_PATTERNS = [
 ]
 
 
+# Generated graphics projects and extracted panel crops. Same principle as the
+# proof rule: reclaimable only when it can be REBUILT from something in git.
+# A *-motion dir is rebuildable when its composition HTML is committed (that is
+# exactly what was lost on 2026-08-17, when cleanup ran ahead of the commit).
+# A *-bubbles crop dir is rebuildable from the committed PNG decks via
+# edit/extract_panels.py, so it needs no HTML.
+GRAPHICS_GLOBS = ["graphics/*-motion", "graphics/*-bubbles"]
+
+
+def graphics_status(d):
+    """(ok, why) — may this generated graphics dir be deleted?"""
+    htmls = sorted(d.glob("*.html")) + sorted(d.glob("variants/*.html"))
+    if not htmls:
+        return True, "crops, regenerable by edit/extract_panels.py"
+    untracked = [h for h in htmls if not tracked(h)]
+    if untracked:
+        return False, ("composition not committed: "
+                       + ", ".join(h.name for h in untracked))
+    return True, f"{len(htmls)} composition(s) committed, re-render to rebuild"
+
+
+def cmd_graphics(apply, force):
+    freed = 0
+    found = False
+    for pat in GRAPHICS_GLOBS:
+        for d in sorted(ROOT.glob(pat)):
+            if not d.is_dir():
+                continue
+            found = True
+            ok, why = graphics_status(d)
+            print(f"\n{d.relative_to(ROOT)}  {human(size_of(d))}")
+            if not ok and not force:
+                print(f"  KEEPING — {why}")
+                print("    commit it first, or pass --force to discard it anyway.")
+                continue
+            if not ok:
+                print(f"  --force: discarding an uncommitted composition ({why})")
+            else:
+                print(f"  {why}")
+            freed += remove([d], apply)
+    if not found:
+        print("no generated graphics dirs")
+    return freed
+
+
 def human(n):
     for u in ("B", "KB", "MB", "GB"):
         if n < 1024 or u == "GB":
@@ -186,6 +231,8 @@ def main():
     ap.add_argument("--list", action="store_true", help="show projects and sizes")
     ap.add_argument("--done", nargs="+", metavar="NAME",
                     help="projects you have finished with")
+    ap.add_argument("--graphics", action="store_true",
+                    help="remove generated graphics projects and panel crops")
     ap.add_argument("--caches", action="store_true",
                     help="sweep node_modules, .hf-cache, __pycache__, snapshots, .DS_Store")
     ap.add_argument("--apply", action="store_true", help="actually delete (default: dry run)")
@@ -193,7 +240,7 @@ def main():
                     help="delete a proof even when its source clip is gone")
     a = ap.parse_args()
 
-    if not (a.list or a.done or a.caches):
+    if not (a.list or a.done or a.caches or a.graphics):
         ap.print_help()
         return
 
@@ -204,6 +251,8 @@ def main():
     freed = 0
     if a.done:
         freed += cmd_done(a.done, a.apply, a.force)
+    if a.graphics:
+        freed += cmd_graphics(a.apply, a.force)
     if a.caches:
         freed += cmd_caches(a.apply)
 
