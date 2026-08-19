@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>sonytsmc-photos-motion (overlay)</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        margin: 0; width: 1080px; height: 1920px;
+        overflow: hidden; background: transparent;
+      }
+      #src-video { width: 1080px; height: 1920px; object-fit: cover; }
+      .beat { position: absolute; inset: 0; }
+      .plate { position: absolute; display: block; }
+      /* a screen recording cannot live inside a timed wrapper, so it carries
+         its own timing and an untimed shell takes the fade */
+      .shell { position: absolute; }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="47.7"
+      data-width="1080"
+      data-height="1920"
+    >
+
+      <!-- p01  0.15-2.45s  "Sony and TSMC have signed a binding agreement" -->
+
+      <div class="clip beat" id="p01" data-start="0.15" data-duration="2.3" data-track-index="2">
+        <img class="plate" id="p01-img" src="../assets/photos/news piece.png" style="left:60px;top:1140px;width:960px;height:240px" alt="" />
+      </div>
+
+      <!-- p02  2.45-4.25s  "to build a chip factory" -->
+
+      <div class="clip beat" id="p02" data-start="2.45" data-duration="1.8" data-track-index="1">
+        <img class="plate" id="p02-img" src="../assets/photos/chip factory.png" style="left:80px;top:954px;width:920px;height:613px" alt="" />
+      </div>
+
+      <!-- p03  4.25-6.05s  "in Koshi City, which is in the Kumamoto prefecture" -->
+
+      <div class="clip beat" id="p03" data-start="4.25" data-duration="1.8" data-track-index="2">
+        <img class="plate" id="p03-img" src="../assets/photos/kumamoto.png" style="left:80px;top:954px;width:920px;height:613px" alt="" />
+      </div>
+
+      <!-- p04  6.05-8.00s  "in Japan." -->
+
+      <div class="clip beat" id="p04" data-start="6.05" data-duration="1.95" data-track-index="1">
+        <img class="plate" id="p04-img" src="../assets/photos/japan.png" style="left:80px;top:1002px;width:920px;height:516px" alt="" />
+      </div>
+
+      <!-- p05  8.00-10.30s  "the largest contract chip maker in the world" -->
+
+      <div class="clip beat" id="p05" data-start="8.0" data-duration="2.3" data-track-index="2">
+        <img class="plate" id="p05-img" src="../assets/photos/largest contract chipmaker.png" style="left:50px;top:1124px;width:980px;height:272px" alt="" />
+      </div>
+
+      <!-- p06  10.30-12.30s  "fabricates every processor on your phone" -->
+
+      <div class="clip beat" id="p06" data-start="10.3" data-duration="2.0" data-track-index="1">
+        <img class="plate" id="p06-img" src="../assets/photos/mobile processors.png" style="left:60px;top:990px;width:960px;height:540px" alt="" />
+      </div>
+
+      <!-- p07  12.30-14.40s  "every serious AI accelerator on the market" -->
+
+      <div class="clip beat" id="p07" data-start="12.3" data-duration="2.1" data-track-index="2">
+        <img class="plate" id="p07-img" src="../assets/photos/chip maker.png" style="left:80px;top:954px;width:920px;height:613px" alt="" />
+      </div>
+
+      <!-- p08  14.60-17.20s  "they're actually a minority partner" -->
+
+      <div class="clip beat" id="p08" data-start="14.6" data-duration="2.6" data-track-index="1">
+        <img class="plate" id="p08-img" src="../assets/photos/minority partners.png" style="left:90px;top:956px;width:900px;height:608px" alt="" />
+      </div>
+
+      <!-- p09  17.20-19.00s  "in a company that Sony controls." -->
+
+      <div class="clip beat" id="p09" data-start="17.2" data-duration="1.8" data-track-index="2">
+        <img class="plate" id="p09-img" src="../assets/photos/sony.png" style="left:160px;top:1187px;width:760px;height:146px" alt="" />
+      </div>
+
+      <!-- p10  19.00-21.00s  "What it will build is image sensors" -->
+
+      <div class="clip beat" id="p10" data-start="19.0" data-duration="2.0" data-track-index="1">
+        <img class="plate" id="p10-img" src="../assets/photos/image sensor 2.png" style="left:50px;top:1006px;width:980px;height:507px" alt="" />
+      </div>
+
+      <!-- p11  21.00-23.20s  "turn light into an electrical signal inside a camera" -->
+
+      <div class="clip beat" id="p11" data-start="21.0" data-duration="2.2" data-track-index="2">
+        <img class="plate" id="p11-img" src="../assets/photos/image sensor 3.png" style="left:50px;top:1006px;width:980px;height:507px" alt="" />
+      </div>
+
+      <!-- p12  23.40-25.60s  "the benchmark supplier of these to the phone industry" -->
+
+      <div class="clip beat" id="p12" data-start="23.4" data-duration="2.2" data-track-index="1">
+        <img class="plate" id="p12-img" src="../assets/photos/image sensors.png" style="left:140px;top:960px;width:800px;height:600px" alt="" />
+      </div>
+
+      <!-- p13  25.90-28.10s  "a design approach called stacking" -->
+
+      <div class="clip beat" id="p13" data-start="25.9" data-duration="2.2" data-track-index="2">
+        <img class="plate" id="p13-img" src="../assets/photos/chip stacking.png" style="left:260px;top:1084px;width:560px;height:352px" alt="" />
+      </div>
+
+      <!-- p14  28.10-30.30s  "the layer of pixels that catches the light" -->
+
+      <div class="clip beat" id="p14" data-start="28.1" data-duration="2.2" data-track-index="1">
+        <img class="plate" id="p14-img" src="../assets/photos/chipstaking 2.png" style="left:100px;top:966px;width:880px;height:587px" alt="" />
+      </div>
+
+      <!-- p15  30.30-32.35s  "bonded to a separate logic layer underneath it" -->
+
+      <div class="clip beat" id="p15" data-start="30.3" data-duration="2.05" data-track-index="2">
+        <img class="plate" id="p15-img" src="../assets/photos/high rise 3d chips.png" style="left:100px;top:966px;width:880px;height:587px" alt="" />
+      </div>
+
+      <!-- p16  32.35-34.40s  "using copper to copper connections." -->
+
+      <div class="clip beat" id="p16" data-start="32.35" data-duration="2.05" data-track-index="1">
+        <img class="plate" id="p16-img" src="../assets/photos/copper connections.png" style="left:90px;top:962px;width:900px;height:596px" alt="" />
+      </div>
+
+      <!-- p17  36.90-39.90s  "So volume production is actually not expected until 2029." -->
+
+      <div class="clip beat" id="p17" data-start="36.9" data-duration="3.0" data-track-index="2">
+        <img class="plate" id="p17-img" src="../assets/photos/chipmaking.png" style="left:90px;top:1007px;width:900px;height:506px" alt="" />
+      </div>
+
+      <!-- p18  40.10-43.30s  "before the plant's able to ship a single sensor" -->
+
+      <div class="clip beat" id="p18" data-start="40.1" data-duration="3.2" data-track-index="1">
+        <img class="plate" id="p18-img" src="../assets/photos/semiconductor.png" style="left:80px;top:954px;width:920px;height:613px" alt="" />
+      </div>
+
+      <!-- p19  43.50-45.55s  "For Sony, this is definitely a defining commitment." -->
+
+      <div class="clip beat" id="p19" data-start="43.5" data-duration="2.05" data-track-index="2">
+        <img class="plate" id="p19-img" src="../assets/photos/news piece 2.png" style="left:50px;top:970px;width:980px;height:580px" alt="" />
+      </div>
+
+      <!-- p20  45.65-47.60s  "And for TSMC, it's probably like a line item." -->
+
+      <div class="clip beat" id="p20" data-start="45.65" data-duration="1.95" data-track-index="1">
+        <img class="plate" id="p20-img" src="../assets/photos/tsmc.png" style="left:180px;top:977px;width:720px;height:566px" alt="" />
+      </div>
+
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // p01 — news piece  "Sony and TSMC have signed a binding agreement"
+      tl.fromTo("#p01-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 0.15);
+      tl.to("#p01-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 2.15);
+      // p02 — chip factory  "to build a chip factory"
+      tl.fromTo("#p02-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 2.45);
+      tl.to("#p02-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 3.95);
+      // p03 — kumamoto  "in Koshi City, which is in the Kumamoto prefecture"
+      tl.fromTo("#p03-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 4.25);
+      tl.to("#p03-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 5.75);
+      // p04 — japan  "in Japan."
+      tl.fromTo("#p04-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 6.05);
+      tl.to("#p04-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 7.7);
+      // p05 — largest contract chipmaker  "the largest contract chip maker in the world"
+      tl.fromTo("#p05-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 8.0);
+      tl.to("#p05-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 10.0);
+      // p06 — mobile processors  "fabricates every processor on your phone"
+      tl.fromTo("#p06-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 10.3);
+      tl.to("#p06-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 12.0);
+      // p07 — chip maker  "every serious AI accelerator on the market"
+      tl.fromTo("#p07-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 12.3);
+      tl.to("#p07-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 14.1);
+      // p08 — minority partners  "they're actually a minority partner"
+      tl.fromTo("#p08-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 14.6);
+      tl.to("#p08-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 16.9);
+      // p09 — sony  "in a company that Sony controls."
+      tl.fromTo("#p09-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 17.2);
+      tl.to("#p09-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 18.7);
+      // p10 — image sensor 2  "What it will build is image sensors"
+      tl.fromTo("#p10-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 19.0);
+      tl.to("#p10-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 20.7);
+      // p11 — image sensor 3  "turn light into an electrical signal inside a camera"
+      tl.fromTo("#p11-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 21.0);
+      tl.to("#p11-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 22.9);
+      // p12 — image sensors  "the benchmark supplier of these to the phone industry"
+      tl.fromTo("#p12-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 23.4);
+      tl.to("#p12-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 25.3);
+      // p13 — chip stacking  "a design approach called stacking"
+      tl.fromTo("#p13-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 25.9);
+      tl.to("#p13-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 27.8);
+      // p14 — chipstaking 2  "the layer of pixels that catches the light"
+      tl.fromTo("#p14-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 28.1);
+      tl.to("#p14-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 30.0);
+      // p15 — high rise 3d chips  "bonded to a separate logic layer underneath it"
+      tl.fromTo("#p15-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 30.3);
+      tl.to("#p15-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 32.05);
+      // p16 — copper connections  "using copper to copper connections."
+      tl.fromTo("#p16-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 32.35);
+      tl.to("#p16-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 34.1);
+      // p17 — chipmaking  "So volume production is actually not expected until 2029."
+      tl.fromTo("#p17-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 36.9);
+      tl.to("#p17-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 39.6);
+      // p18 — semiconductor  "before the plant's able to ship a single sensor"
+      tl.fromTo("#p18-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 40.1);
+      tl.to("#p18-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 43.0);
+      // p19 — news piece 2  "For Sony, this is definitely a defining commitment."
+      tl.fromTo("#p19-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 43.5);
+      tl.to("#p19-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 45.25);
+      // p20 — tsmc  "And for TSMC, it's probably like a line item."
+      tl.fromTo("#p20-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 45.65);
+      tl.to("#p20-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 47.3);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

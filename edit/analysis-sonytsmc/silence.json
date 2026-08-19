@@ -10,8 +10,8 @@
  "source": "footage/sonytsmc.mov",
  "fps": 30.0,
  "source_duration": 78.22,
- "cut_duration": 50.2,
- "removed_pct": 35.8,
+ "cut_duration": 47.7,
+ "removed_pct": 39.0,
  "segments": [
   [
    1.2666666666666666,
@@ -72,10 +72,6 @@
   [
    54.233333333333334,
    57.5
-  ],
-  [
-   59.666666666666664,
-   62.166666666666664
   ],
   [
    63.43333333333333,

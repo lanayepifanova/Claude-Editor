@@ -45,6 +45,41 @@ DECKS = {
             "student program.png":     {"mode": "knock"},
         },
     },
+    "sonytsmc": {
+        "src": "graphics/Sonytsmc-png",
+        "assets": {
+            # logos and white-ground diagrams knock out, so the mark sits ON the
+            # footage instead of reading as a pasted white rectangle
+            "tsmc.png":                       {"mode": "knock"},
+            "sony.jpeg":                      {"mode": "knock"},
+            # these two keep their white card: knocking it out drops the
+            # anti-aliased label text ("Contact Pads", "Sensor Chip") to a grey
+            # that dies over her hair. The diagram body looked better knocked,
+            # but unreadable labels make the diagram pointless — legibility wins.
+            "image sensor 2.png":             {"mode": "raw"},
+            "image sensor 3.png":             {"mode": "raw"},
+            "chip stacking.jpeg":             {"mode": "knock"},
+            # the three source screenshots keep their white card — they read as
+            # receipts, and knocking them would strip the highlight spans to
+            # semi-transparent blobs and leave the grey source chips floating
+            "largest contract chipmaker.png": {"mode": "raw"},
+            "news piece.png":                 {"mode": "raw"},
+            "news piece 2.png":               {"mode": "raw"},
+            # everything else carries its own ground
+            "chip factory.jpeg":              {"mode": "raw"},
+            "chip maker.jpeg":                {"mode": "raw"},
+            "copper connections.jpg":         {"mode": "raw"},
+            "chipmaking.jpeg":                {"mode": "raw"},
+            "chipstaking 2.jpeg":             {"mode": "raw"},
+            "high rise 3d chips.jpeg":        {"mode": "raw"},
+            "image sensors.jpeg":             {"mode": "raw"},
+            "japan.jpeg":                     {"mode": "raw"},
+            "kumamoto.jpeg":                  {"mode": "raw"},
+            "minority partners.png":          {"mode": "raw"},
+            "mobile processors.jpg":          {"mode": "raw"},
+            "semiconductor.jpeg":             {"mode": "raw"},
+        },
+    },
 }
 
 HI, LO = 246.0, 228.0

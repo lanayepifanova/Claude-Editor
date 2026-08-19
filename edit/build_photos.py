@@ -20,6 +20,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 
+# Landscape defaults. A project may override with "frame" and "band" — vertical
+# puts the burned-in caption at the TOP, so the legal area is below it, not above.
 FRAME_W, FRAME_H = 1920, 1080
 CAPTION_TOP = 845      # her burned-in caption; nothing may cross it
 SAFE_TOP = 120
@@ -31,6 +33,46 @@ SETTLE = 0.985         # scale it eases up from
 DISSOLVE = 0.30        # overlap between back-to-back graphics
 
 PROJECTS = {
+    "sonytsmc-photos-motion": {
+        "source": "sonytsmc.mov",
+        "deck": "sonytsmc",
+        "duration": 47.70,
+        "frame": (1080, 1920),
+        # captions are burned at y=25% (~440-525px), so the legal band starts
+        # well below them; the floor keeps graphics clear of TikTok's bottom UI.
+        # Centre y is 1260, not the 1090 first tried — at 1090 the taller plates
+        # topped out around y=784, which is mid-face on her framing. She asked
+        # for them lower; 1260 puts the tallest plate's top edge below her chin
+        # and still lands its bottom at 1566, inside the 1620 floor.
+        "band": (580, 1620),
+        # asset, in, out, width, centre x/y, the words it lands on
+        "beats": [
+            ("news piece",                 0.15,  2.45, 960, 540, 1260, "Sony and TSMC have signed a binding agreement"),
+            ("chip factory",               2.45,  4.25, 920, 540, 1260, "to build a chip factory"),
+            ("kumamoto",                   4.25,  6.05, 920, 540, 1260, "in Koshi City, which is in the Kumamoto prefecture"),
+            ("japan",                      6.05,  8.00, 920, 540, 1260, "in Japan."),
+            ("largest contract chipmaker", 8.00, 10.30, 980, 540, 1260, "the largest contract chip maker in the world"),
+            ("mobile processors",         10.30, 12.30, 960, 540, 1260, "fabricates every processor on your phone"),
+            ("chip maker",                12.30, 14.40, 920, 540, 1260, "every serious AI accelerator on the market"),
+            ("minority partners",         14.60, 17.20, 900, 540, 1260, "they're actually a minority partner"),
+            ("sony",                      17.20, 19.00, 760, 540, 1260, "in a company that Sony controls."),
+            ("image sensor 2",            19.00, 21.00, 980, 540, 1260, "What it will build is image sensors"),
+            ("image sensor 3",            21.00, 23.20, 980, 540, 1260, "turn light into an electrical signal inside a camera"),
+            ("image sensors",             23.40, 25.60, 800, 540, 1260, "the benchmark supplier of these to the phone industry"),
+            # 283x178 native — the smallest asset by far, so it is held back to
+            # 560 wide; anything larger shows the upscale
+            ("chip stacking",             25.90, 28.10, 560, 540, 1260, "a design approach called stacking"),
+            ("chipstaking 2",             28.10, 30.30, 880, 540, 1260, "the layer of pixels that catches the light"),
+            ("high rise 3d chips",        30.30, 32.35, 880, 540, 1260, "bonded to a separate logic layer underneath it"),
+            ("copper connections",        32.35, 34.40, 900, 540, 1260, "using copper to copper connections."),
+            # 34.40-36.90 deliberately clear — she mimes "side by side" with both
+            # hands there, and a graphic over it would bury the gesture
+            ("chipmaking",                36.90, 39.90, 900, 540, 1260, "So volume production is actually not expected until 2029."),
+            ("semiconductor",             40.10, 43.30, 920, 540, 1260, "before the plant's able to ship a single sensor"),
+            ("news piece 2",              43.50, 45.55, 980, 540, 1260, "For Sony, this is definitely a defining commitment."),
+            ("tsmc",                      45.65, 47.60, 720, 540, 1260, "And for TSMC, it's probably like a line item."),
+        ],
+    },
     "firecrawl-photos-motion": {
         "source": "Firecrawl.mp4",
         "deck": "firecrawl",
@@ -51,19 +93,19 @@ PROJECTS = {
 }
 
 HTML = """<!doctype html>
-<html lang="en" data-resolution="landscape">
+<html lang="en" data-resolution="{resolution}">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=1920, height=1080" />
+    <meta name="viewport" content="width={fw}, height={fh}" />
     <title>{title}</title>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
     <style>
       * {{ margin: 0; padding: 0; box-sizing: border-box; }}
       html, body {{
-        margin: 0; width: 1920px; height: 1080px;
+        margin: 0; width: {fw}px; height: {fh}px;
         overflow: hidden; background: {page_bg};
       }}
-      #src-video {{ width: 1920px; height: 1080px; object-fit: cover; }}
+      #src-video {{ width: {fw}px; height: {fh}px; object-fit: cover; }}
       .beat {{ position: absolute; inset: 0; }}
       .plate {{ position: absolute; display: block; }}
       /* a screen recording cannot live inside a timed wrapper, so it carries
@@ -77,8 +119,8 @@ HTML = """<!doctype html>
       data-composition-id="main"
       data-start="0"
       data-duration="{duration}"
-      data-width="1920"
-      data-height="1080"
+      data-width="{fw}"
+      data-height="{fh}"
     >
 {media_open}
 {beats}
@@ -120,6 +162,8 @@ AUDIO_BLOCK = """      <audio
 def build(name, spec, variant="baked"):
     photos = json.loads((ROOT / "graphics" / f"{spec['deck']}-photos" / "photos.json").read_text())
     html, tweens = [], []
+    fw, fh = spec.get("frame", (FRAME_W, FRAME_H))
+    band_top, band_bottom = spec.get("band", (SAFE_TOP, CAPTION_TOP))
 
     for i, (asset, tin, tout, width, cx, cy, cue) in enumerate(spec["beats"], start=1):
         bid = f"p{i:02d}"
@@ -132,10 +176,10 @@ def build(name, spec, variant="baked"):
         x, y = round(cx - width / 2), round(cy - h / 2)
 
         # a graphic that crossed the caption band would bury her burned-in text
-        assert y + h <= CAPTION_TOP, (
-            f"{name} '{asset}' reaches y={y + h}, crossing the caption band at {CAPTION_TOP}")
-        assert y >= SAFE_TOP, f"{name} '{asset}' too high (y={y})"
-        assert x >= EDGE and x + width <= FRAME_W - EDGE, (
+        assert y + h <= band_bottom, (
+            f"{name} '{asset}' reaches y={y + h}, past the legal band at {band_bottom}")
+        assert y >= band_top, f"{name} '{asset}' starts at y={y}, above the band at {band_top}"
+        assert x >= EDGE and x + width <= fw - EDGE, (
             f"{name} '{asset}' spans x={x}..{x + width}, outside the {EDGE}px margin")
 
         track = 1 + (i % 2)                 # alternate so a dissolve can overlap
@@ -174,9 +218,12 @@ def build(name, spec, variant="baked"):
         out.parent.mkdir(parents=True, exist_ok=True)
     else:
         out = ROOT / "graphics" / name / "index.html"
+        out.parent.mkdir(parents=True, exist_ok=True)
     body = HTML.format(
         title=f"{name} ({variant})",
         duration=spec["duration"],
+        fw=fw, fh=fh,
+        resolution="portrait" if fh > fw else "landscape",
         page_bg="transparent" if overlay else "#000",
         media_open="" if overlay else VIDEO_BLOCK.format(duration=spec["duration"]),
         media_close="" if overlay else AUDIO_BLOCK.format(duration=spec["duration"]),
@@ -191,6 +238,11 @@ def build(name, spec, variant="baked"):
 
 if __name__ == "__main__":
     for name, spec in PROJECTS.items():
+        # a deck whose plates have been cleaned off disk (its video is finished
+        # and its assets removed) is skipped rather than crashing the whole run
+        if not (ROOT / "graphics" / f"{spec['deck']}-photos" / "photos.json").exists():
+            print(f"{name}: no {spec['deck']}-photos/photos.json on disk, skipping")
+            continue
         prev_out, prev_name = 0.0, None
         for asset, tin, tout, *_ in spec["beats"]:
             assert tout > tin, f"{name}: '{asset}' zero length"
