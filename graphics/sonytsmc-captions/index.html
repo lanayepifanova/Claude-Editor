@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>captions</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:transparent; }
+      #root { position:relative; width:1080px; height:1920px; }
+      .cue {
+        position:absolute; left:0; right:0; top:25.0%;
+        transform:translateY(-50%);
+        display:flex; align-items:center; justify-content:center;
+        text-align:center;
+      }
+      .cue span {
+        display:inline-block; max-width:778px; white-space:nowrap;
+        font-family:'Montserrat', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+        font-weight:800; font-size:54px; line-height:1.18;
+        letter-spacing:-0.01em; color:#FFFFFF;
+        /* hard edge, zero blur — reads on any background, never looks glowy */
+        text-shadow:
+          4px 0 0 #000, -4px 0 0 #000, 0 4px 0 #000, 0 -4px 0 #000,
+          3px 3px 0 #000, -3px 3px 0 #000,
+          3px -3px 0 #000, -3px -3px 0 #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="50.2"
+         data-width="1080" data-height="1920" data-fps="30.0"
+         data-layout-allow-overflow="true">
+      <div id="cue0" class="clip cue" data-start="0.05" data-duration="0.62" data-track-index="1"><span>Sony and TSMC</span></div>
+      <div id="cue1" class="clip cue" data-start="0.67" data-duration="1.09" data-track-index="1"><span>have signed a binding</span></div>
+      <div id="cue2" class="clip cue" data-start="1.76" data-duration="0.9" data-track-index="1"><span>agreement to build</span></div>
+      <div id="cue3" class="clip cue" data-start="2.66" data-duration="0.89" data-track-index="1"><span>a chip factory</span></div>
+      <div id="cue4" class="clip cue" data-start="3.55" data-duration="0.77" data-track-index="1"><span>in Koshi City,</span></div>
+      <div id="cue5" class="clip cue" data-start="4.32" data-duration="1.14" data-track-index="1"><span>which is in the Kumamoto</span></div>
+      <div id="cue6" class="clip cue" data-start="5.46" data-duration="1.02" data-track-index="1"><span>prefecture in Japan.</span></div>
+      <div id="cue7" class="clip cue" data-start="6.48" data-duration="0.99" data-track-index="1"><span>TSMC is the largest</span></div>
+      <div id="cue8" class="clip cue" data-start="7.47" data-duration="1.08" data-track-index="1"><span>contract chip maker</span></div>
+      <div id="cue9" class="clip cue" data-start="8.55" data-duration="0.69" data-track-index="1"><span>in the world.</span></div>
+      <div id="cue10" class="clip cue" data-start="9.24" data-duration="0.69" data-track-index="1"><span>It is the company</span></div>
+      <div id="cue11" class="clip cue" data-start="9.93" data-duration="0.96" data-track-index="1"><span>that fabricates every</span></div>
+      <div id="cue12" class="clip cue" data-start="10.89" data-duration="1.07" data-track-index="1"><span>processor on your phone</span></div>
+      <div id="cue13" class="clip cue" data-start="11.96" data-duration="0.84" data-track-index="1"><span>and every serious</span></div>
+      <div id="cue14" class="clip cue" data-start="12.8" data-duration="0.75" data-track-index="1"><span>AI accelerator</span></div>
+      <div id="cue15" class="clip cue" data-start="13.55" data-duration="0.65" data-track-index="1"><span>on the market.</span></div>
+      <div id="cue16" class="clip cue" data-start="14.2" data-duration="0.64" data-track-index="1"><span>And in this venture,</span></div>
+      <div id="cue17" class="clip cue" data-start="14.84" data-duration="0.78" data-track-index="1"><span>they're actually</span></div>
+      <div id="cue18" class="clip cue" data-start="15.62" data-duration="0.85" data-track-index="1"><span>a minority partner</span></div>
+      <div id="cue19" class="clip cue" data-start="16.47" data-duration="0.83" data-track-index="1"><span>in a company that</span></div>
+      <div id="cue20" class="clip cue" data-start="17.3" data-duration="0.78" data-track-index="1"><span>Sony controls.</span></div>
+      <div id="cue21" class="clip cue" data-start="18.08" data-duration="0.84" data-track-index="1"><span>What it will build</span></div>
+      <div id="cue22" class="clip cue" data-start="18.92" data-duration="0.84" data-track-index="1"><span>is image sensors,</span></div>
+      <div id="cue23" class="clip cue" data-start="19.76" data-duration="0.57" data-track-index="1"><span>which are chips</span></div>
+      <div id="cue24" class="clip cue" data-start="20.33" data-duration="0.76" data-track-index="1"><span>that will turn light</span></div>
+      <div id="cue25" class="clip cue" data-start="21.09" data-duration="0.72" data-track-index="1"><span>into an electrical</span></div>
+      <div id="cue26" class="clip cue" data-start="21.81" data-duration="1.03" data-track-index="1"><span>signal inside a camera.</span></div>
+      <div id="cue27" class="clip cue" data-start="22.84" data-duration="0.64" data-track-index="1"><span>Sony is actually</span></div>
+      <div id="cue28" class="clip cue" data-start="23.48" data-duration="0.93" data-track-index="1"><span>the benchmark supplier</span></div>
+      <div id="cue29" class="clip cue" data-start="24.41" data-duration="0.78" data-track-index="1"><span>of these to the phone</span></div>
+      <div id="cue30" class="clip cue" data-start="25.19" data-duration="0.43" data-track-index="1"><span>industry.</span></div>
+      <div id="cue31" class="clip cue" data-start="25.64" data-duration="0.56" data-track-index="1"><span>And the reason</span></div>
+      <div id="cue32" class="clip cue" data-start="26.2" data-duration="0.75" data-track-index="1"><span>for this is a design</span></div>
+      <div id="cue33" class="clip cue" data-start="26.95" data-duration="0.63" data-track-index="1"><span>approach called</span></div>
+      <div id="cue34" class="clip cue" data-start="27.58" data-duration="0.45" data-track-index="1"><span>stacking,</span></div>
+      <div id="cue35" class="clip cue" data-start="28.05" data-duration="0.55" data-track-index="1"><span>where the layer</span></div>
+      <div id="cue36" class="clip cue" data-start="28.6" data-duration="0.87" data-track-index="1"><span>of pixels that catches</span></div>
+      <div id="cue37" class="clip cue" data-start="29.47" data-duration="0.87" data-track-index="1"><span>the light is actually</span></div>
+      <div id="cue38" class="clip cue" data-start="30.34" data-duration="0.76" data-track-index="1"><span>bonded to a separate</span></div>
+      <div id="cue39" class="clip cue" data-start="31.1" data-duration="1.08" data-track-index="1"><span>logic layer underneath</span></div>
+      <div id="cue40" class="clip cue" data-start="32.18" data-duration="0.52" data-track-index="1"><span>it using copper</span></div>
+      <div id="cue41" class="clip cue" data-start="32.72" data-duration="0.96" data-track-index="1"><span>to copper connections.</span></div>
+      <div id="cue42" class="clip cue" data-start="33.68" data-duration="0.39" data-track-index="1"><span>So sensing</span></div>
+      <div id="cue43" class="clip cue" data-start="34.09" data-duration="0.96" data-track-index="1"><span>and processing actually</span></div>
+      <div id="cue44" class="clip cue" data-start="35.05" data-duration="0.34" data-track-index="1"><span>sit on top</span></div>
+      <div id="cue45" class="clip cue" data-start="35.41" data-duration="0.91" data-track-index="1"><span>of each other instead</span></div>
+      <div id="cue46" class="clip cue" data-start="36.32" data-duration="0.64" data-track-index="1"><span>of side by side.</span></div>
+      <div id="cue47" class="clip cue" data-start="36.96" data-duration="0.88" data-track-index="1"><span>And TSMC is putting</span></div>
+      <div id="cue48" class="clip cue" data-start="37.84" data-duration="1.6" data-track-index="1"><span>around 282 billion yen.</span></div>
+      <div id="cue49" class="clip cue" data-start="39.44" data-duration="0.99" data-track-index="1"><span>So volume production</span></div>
+      <div id="cue50" class="clip cue" data-start="40.43" data-duration="1.15" data-track-index="1"><span>is actually not expected</span></div>
+      <div id="cue51" class="clip cue" data-start="41.58" data-duration="0.98" data-track-index="1"><span>until 2029.</span></div>
+      <div id="cue52" class="clip cue" data-start="42.56" data-duration="0.95" data-track-index="1"><span>That is roughly three</span></div>
+      <div id="cue53" class="clip cue" data-start="43.51" data-duration="1.12" data-track-index="1"><span>years before the plant's</span></div>
+      <div id="cue54" class="clip cue" data-start="44.63" data-duration="1.03" data-track-index="1"><span>able to ship a single</span></div>
+      <div id="cue55" class="clip cue" data-start="45.66" data-duration="0.4" data-track-index="1"><span>sensor.</span></div>
+      <div id="cue56" class="clip cue" data-start="46.08" data-duration="0.39" data-track-index="1"><span>For Sony,</span></div>
+      <div id="cue57" class="clip cue" data-start="46.49" data-duration="0.74" data-track-index="1"><span>this is definitely</span></div>
+      <div id="cue58" class="clip cue" data-start="47.23" data-duration="0.97" data-track-index="1"><span>a defining commitment.</span></div>
+      <div id="cue59" class="clip cue" data-start="48.2" data-duration="0.73" data-track-index="1"><span>And for TSMC, it's</span></div>
+      <div id="cue60" class="clip cue" data-start="48.93" data-duration="0.62" data-track-index="1"><span>probably like a</span></div>
+      <div id="cue61" class="clip cue" data-start="49.55" data-duration="0.61" data-track-index="1"><span>line item.</span></div>
+    </div>
+    <script>
+      // GENERATED by edit/captions_overlay.py — do not hand-edit.
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // captions cut in and out with the clip window — no tweens by design
+      tl.set("#root", { opacity: 1 }, 0);
+      tl.set("#root", { opacity: 1 }, 50.2);
+      tl.seek(0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

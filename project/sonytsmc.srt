@@ -1,0 +1,248 @@
+1
+00:00:00,050 --> 00:00:00,670
+Sony and TSMC
+
+2
+00:00:00,670 --> 00:00:01,760
+have signed a binding
+
+3
+00:00:01,760 --> 00:00:02,660
+agreement to build
+
+4
+00:00:02,660 --> 00:00:03,550
+a chip factory
+
+5
+00:00:03,550 --> 00:00:04,320
+in Koshi City,
+
+6
+00:00:04,320 --> 00:00:05,460
+which is in the Kumamoto
+
+7
+00:00:05,460 --> 00:00:06,480
+prefecture in Japan.
+
+8
+00:00:06,480 --> 00:00:07,470
+TSMC is the largest
+
+9
+00:00:07,470 --> 00:00:08,550
+contract chip maker
+
+10
+00:00:08,550 --> 00:00:09,240
+in the world.
+
+11
+00:00:09,240 --> 00:00:09,930
+It is the company
+
+12
+00:00:09,930 --> 00:00:10,890
+that fabricates every
+
+13
+00:00:10,890 --> 00:00:11,960
+processor on your phone
+
+14
+00:00:11,960 --> 00:00:12,800
+and every serious
+
+15
+00:00:12,800 --> 00:00:13,550
+AI accelerator
+
+16
+00:00:13,550 --> 00:00:14,200
+on the market.
+
+17
+00:00:14,200 --> 00:00:14,840
+And in this venture,
+
+18
+00:00:14,840 --> 00:00:15,620
+they're actually
+
+19
+00:00:15,620 --> 00:00:16,470
+a minority partner
+
+20
+00:00:16,470 --> 00:00:17,300
+in a company that
+
+21
+00:00:17,300 --> 00:00:18,080
+Sony controls.
+
+22
+00:00:18,080 --> 00:00:18,920
+What it will build
+
+23
+00:00:18,920 --> 00:00:19,760
+is image sensors,
+
+24
+00:00:19,760 --> 00:00:20,330
+which are chips
+
+25
+00:00:20,330 --> 00:00:21,090
+that will turn light
+
+26
+00:00:21,090 --> 00:00:21,810
+into an electrical
+
+27
+00:00:21,810 --> 00:00:22,840
+signal inside a camera.
+
+28
+00:00:22,840 --> 00:00:23,480
+Sony is actually
+
+29
+00:00:23,480 --> 00:00:24,410
+the benchmark supplier
+
+30
+00:00:24,410 --> 00:00:25,190
+of these to the phone
+
+31
+00:00:25,190 --> 00:00:25,620
+industry.
+
+32
+00:00:25,640 --> 00:00:26,200
+And the reason
+
+33
+00:00:26,200 --> 00:00:26,950
+for this is a design
+
+34
+00:00:26,950 --> 00:00:27,580
+approach called
+
+35
+00:00:27,580 --> 00:00:28,030
+stacking,
+
+36
+00:00:28,050 --> 00:00:28,600
+where the layer
+
+37
+00:00:28,600 --> 00:00:29,470
+of pixels that catches
+
+38
+00:00:29,470 --> 00:00:30,340
+the light is actually
+
+39
+00:00:30,340 --> 00:00:31,100
+bonded to a separate
+
+40
+00:00:31,100 --> 00:00:32,180
+logic layer underneath
+
+41
+00:00:32,180 --> 00:00:32,700
+it using copper
+
+42
+00:00:32,720 --> 00:00:33,680
+to copper connections.
+
+43
+00:00:33,680 --> 00:00:34,070
+So sensing
+
+44
+00:00:34,090 --> 00:00:35,050
+and processing actually
+
+45
+00:00:35,050 --> 00:00:35,390
+sit on top
+
+46
+00:00:35,410 --> 00:00:36,320
+of each other instead
+
+47
+00:00:36,320 --> 00:00:36,960
+of side by side.
+
+48
+00:00:36,960 --> 00:00:37,840
+And TSMC is putting
+
+49
+00:00:37,840 --> 00:00:39,440
+around 282 billion yen.
+
+50
+00:00:39,440 --> 00:00:40,430
+So volume production
+
+51
+00:00:40,430 --> 00:00:41,580
+is actually not expected
+
+52
+00:00:41,580 --> 00:00:42,560
+until 2029.
+
+53
+00:00:42,560 --> 00:00:43,510
+That is roughly three
+
+54
+00:00:43,510 --> 00:00:44,630
+years before the plant's
+
+55
+00:00:44,630 --> 00:00:45,660
+able to ship a single
+
+56
+00:00:45,660 --> 00:00:46,060
+sensor.
+
+57
+00:00:46,080 --> 00:00:46,470
+For Sony,
+
+58
+00:00:46,490 --> 00:00:47,230
+this is definitely
+
+59
+00:00:47,230 --> 00:00:48,200
+a defining commitment.
+
+60
+00:00:48,200 --> 00:00:48,930
+And for TSMC, it's
+
+61
+00:00:48,930 --> 00:00:49,550
+probably like a
+
+62
+00:00:49,550 --> 00:00:50,160
+line item.
+

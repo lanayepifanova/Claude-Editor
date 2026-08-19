@@ -152,6 +152,28 @@ was the versioning saving it, not any care taken at the time. The procedure now:
 
 Never trust a save because the tool returned `success: true`. (Established 2026-08-17.)
 
+**The 2026-08-17 clobber repeated on 2026-08-19 — because step 3 of the procedure
+above is not actually executable.** `evaluate_expression` rejects every argument
+spelling (`expression`, `code`, `returnValue`) and returns `{"type":"undefined"}`
+for all of them, so the `app.projects.numProjects === 1` assertion cannot be run
+through the bridge. Proceeding without it is what cost the four old sequences:
+two documents were open on the same path, the first `save_project` wrote the good
+one (41,176 bytes, five sequences, verified on disk), and the second wrote the
+*other* document over the same path (18,464 bytes, one sequence). No MCP call of
+mine touched the sequences — `app.project` simply resolved to a different document
+between the two saves.
+
+**The workable substitute is `get_project_info`'s `itemCount`** (or
+`list_project_items`): the good document reported 18 items, the stray one 3. Record
+it before the first mutation and re-check it before and after every save — a change
+means `app.project` moved and the next save will clobber. Also parse the `.prproj`
+on disk after *every* save, not just the last one; the 41 KB file was correct and
+the damage was only visible after the second save. Recovery here was free (git HEAD
+plus three 2026-08-18 autosaves each held all five sequences, and the autosave
+folder is the thing to copy out first), and Lana then chose to discard them —
+`Demo.prproj` is now Sony-only by her decision, not by the accident. (Re-established
+2026-08-19.)
+
 **Premiere quirks:**
 - **`export_frame` is unreliable — do not verify timing with it.** It ignores the
   `sequenceId` (renders whichever sequence is active) AND effectively ignores the
@@ -176,6 +198,20 @@ Never trust a save because the tool returned `success: true`. (Established 2026-
   `ffmpeg -c:v copy -c:a aac -b:a 192k -movflags +faststart` — video is untouched,
   so it costs nothing in quality. (Established 2026-08-18 exporting Firecrawl -
   Photos: 46.6 MB PCM became 37.8 MB AAC.)
+- **`get_sequence_structure` reports every clip's source `inPoint`/`outPoint` one
+  frame low** — durations and timeline positions are exact, only the source in/out
+  read 0.033s early. Seen on all 20 clips of `Sony TSMC - Cut` (2026-08-19), video
+  and audio alike, against in-points that were already on the frame grid. Don't
+  treat it as a placement error and don't "correct" the cut list for it. If it ever
+  matters, the check is whether the final frame of each kept segment carries energy
+  above the hysteresis floor — on that clip every one was room tone, so a one-frame
+  shift could not have clipped a word either way.
+- **`create_sequence_from_clips` rejects every argument spelling tried** and
+  `create_sequence` ignores frame rate, so the way to get a correctly-specced blank
+  timeline is `duplicate_sequence` with `clearContents=true` from a sequence that
+  already has the frame rate you want, then `set_sequence_resolution`. `Firecrawl -
+  Cut` is the clean exact-30fps donor (timebase 8467200000); `GPU Hours - Cut` is
+  30.00003 and `Reddit - Cut` is 29.97.
 - Caption tracks can't be read back via scripting — the `.srt` in `project/` is the
   source of truth.
 - Premiere's bridge occasionally returns `Unexpected end of JSON input` under load.
