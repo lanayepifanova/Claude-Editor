@@ -174,6 +174,19 @@ folder is the thing to copy out first), and Lana then chose to discard them —
 `Demo.prproj` is now Sony-only by her decision, not by the accident. (Re-established
 2026-08-19.)
 
+**A second Premiere save in the same session can land in a different document —
+`itemCount` is the check that works.** After the 2026-08-19 clobber, every save
+this session was bracketed with `get_project_info`: 3/3, 4/4, 5/5, 6/6 across
+four saves, and none moved. That is the assertion the written procedure wanted
+and could not express, because `evaluate_expression` cannot run one. Cheap, and
+it turns an invisible failure into a visible number.
+
+**`delete_project_item` reports success without deleting.** It returned
+`success: true, method: "deleteBin"` on an unused footage item that was still in
+the Project panel afterwards; `delete_multiple_project_items` then died with
+`deleteResults.filter is not a function`. Removing a project item is a manual
+step — say so rather than reporting it done.
+
 **Premiere quirks:**
 - **`export_frame` is unreliable — do not verify timing with it.** It ignores the
   `sequenceId` (renders whichever sequence is active) AND effectively ignores the
@@ -362,7 +375,9 @@ run.** (Established 2026-08-17.)
 
 ## 5b. Standing to-dos
 
-- [ ] Duplicate 62.05s "Intro - Silence Pass" sequence still in the project
-- [ ] Superseded renders accumulate — sweep at the end of a session
+- [x] Duplicate "Intro - Silence Pass" sequence — moot, the project is Sony-only now
+- [x] Superseded renders accumulate — **done 2026-08-19**: `cleanup.py --renders`
+      sweeps loose `graphics/*.mov|mp4` whose composition is committed. Four of
+      them were 1.5 GB after one video, and nothing else reached them.
 - [ ] Jason's avatar/thumbnail are git-ignored; a fresh clone can't render that card
 - [ ] Keep the Firecrawl / Browser Use `cut_proof.mp4` files until both are posted — they are the only caption-free copy of either cut

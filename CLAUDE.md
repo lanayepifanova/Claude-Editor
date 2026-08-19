@@ -163,6 +163,34 @@ motion-graphics reel.
   about *easing*, not about *ornament* — decorative elements still move fast
   and tight, they just don't have to justify themselves with information.
 
+**Photo / b-roll overlays (locked, approved 2026-08-19 on "Sony TSMC"):** Her
+own images laid over the cut, one per beat, each pinned to the words it lands
+on. Built with `edit/prep_photos.py` + `edit/build_photos.py` — never hand-written
+HTML. Name each source file for the phrase it belongs to; the stem is the
+manifest key, so **two files may not share a stem** (`chip stacking.jpeg` and
+`chip stacking.jpg` silently overwrote each other until one was renamed).
+
+| | Landscape 16:9 | Vertical 9:16 |
+|---|---|---|
+| Legal band | 120 – 845 (above the caption) | **580 – 1620** (below the caption, above TikTok UI) |
+| Centre | per beat | x 540, **y 1260** |
+| Width | per beat | ~900 (max 980) |
+| Hold | 1.9 – 4.3s | **1.8 – 3.2s** |
+
+- Captions sit at the *top* in vertical, so the graphics go *below* them — the
+  reverse of landscape. `build_photos.py` reads `frame` and `band` per project.
+- **y 1260, not 1090.** 1090 was the first pass and put the taller plates at
+  mid-face; she asked for them lower. 1260 clears her chin and still lands the
+  tallest plate's bottom at 1567, inside the 1620 floor.
+- **Knock out logos and line art; leave labelled diagrams on their card.** A
+  knocked-out brand mark reads as ink on the footage and is the look she wants.
+  But knocking a diagram whose labels are anti-aliased grey text drops them to an
+  unreadable smudge over her hair — legibility wins, so those keep the white
+  card. Screenshots keep their card too; knocking them strips highlight spans to
+  blobs.
+- **Leave a gesture alone.** Where she mimes something on camera, hold the frame
+  clear rather than covering it.
+
 **Titles / lower-thirds:** Lower-left, on the grid. Appear on the speaker's
 first sentence, dwell ~3s, then leave. Name in serif, role in sans caps below a
 hairline rule. One per person per video unless the segment changes.

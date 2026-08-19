@@ -21,6 +21,7 @@ Two rules make this safe to run without reading the code first:
    project/, and every .json in an analysis dir are unreachable from here even
    if a pattern is wrong.
 """
+import re
 import argparse, json, shutil, subprocess, sys
 from pathlib import Path
 
@@ -48,6 +49,52 @@ CACHE_PATTERNS = [
 # A *-bubbles crop dir is rebuildable from the committed PNG decks via
 # edit/extract_panels.py, so it needs no HTML.
 GRAPHICS_GLOBS = ["graphics/*-motion", "graphics/*-bubbles"]
+
+# Loose render files sitting directly in graphics/ — the .mov/.mp4 a composition
+# renders to. They are the biggest thing on disk by far (four of them were 1.5 GB
+# after one video) and nothing else swept them, so they piled up across sessions.
+# Same rebuildable test as everything here: a render may go only when the
+# composition that produces it is committed, matched by name — "sonytsmc-cap.mov"
+# and "sonytsmc-cap-v2.mov" both map to graphics/sonytsmc-captions/. No match
+# means KEEP, because an unmatched render might be the only copy of something.
+RENDER_GLOBS = ["graphics/*.mov", "graphics/*.mp4"]
+
+
+def render_source(f):
+    """(ok, why) — is this loose render rebuildable from a committed composition?"""
+    stem = re.sub(r"-v\d+$", "", f.stem)
+    for d in sorted(ROOT.glob("graphics/*")):
+        if not d.is_dir() or not d.name.startswith(stem):
+            continue
+        htmls = sorted(d.glob("*.html")) + sorted(d.glob("variants/*.html"))
+        committed = [h for h in htmls if tracked(h)]
+        if committed:
+            return True, f"re-render from {d.name}/{committed[0].name}"
+    return False, f"no committed composition matches '{stem}'"
+
+
+def cmd_renders(apply, force):
+    freed = 0
+    found = False
+    for pat in RENDER_GLOBS:
+        for f in sorted(ROOT.glob(pat)):
+            if not f.is_file():
+                continue
+            found = True
+            ok, why = render_source(f)
+            print(f"\n{f.relative_to(ROOT)}  {human(size_of(f))}")
+            if not ok and not force:
+                print(f"  KEEPING — {why}")
+                print("    commit the composition first, or pass --force.")
+                continue
+            if not ok:
+                print(f"  --force: discarding an unmatched render ({why})")
+            else:
+                print(f"  {why}")
+            freed += remove([f], apply)
+    if not found:
+        print("no loose renders in graphics/")
+    return freed
 
 
 def graphics_status(d):
@@ -233,6 +280,8 @@ def main():
                     help="projects you have finished with")
     ap.add_argument("--graphics", action="store_true",
                     help="remove generated graphics projects and panel crops")
+    ap.add_argument("--renders", action="store_true",
+                    help="remove loose .mov/.mp4 renders in graphics/ whose composition is committed")
     ap.add_argument("--caches", action="store_true",
                     help="sweep node_modules, .hf-cache, __pycache__, snapshots, .DS_Store")
     ap.add_argument("--apply", action="store_true", help="actually delete (default: dry run)")
@@ -240,7 +289,7 @@ def main():
                     help="delete a proof even when its source clip is gone")
     a = ap.parse_args()
 
-    if not (a.list or a.done or a.caches or a.graphics):
+    if not (a.list or a.done or a.caches or a.graphics or a.renders):
         ap.print_help()
         return
 
@@ -249,6 +298,8 @@ def main():
         return
 
     freed = 0
+    if a.renders:
+        freed += cmd_renders(a.apply, a.force)
     if a.done:
         freed += cmd_done(a.done, a.apply, a.force)
     if a.graphics:
