@@ -1,0 +1,236 @@
+1
+00:00:00,050 --> 00:00:01,220
+You can now rent living
+
+2
+00:00:01,220 --> 00:00:02,230
+human brain cells
+
+3
+00:00:02,230 --> 00:00:02,920
+to run your code.
+
+4
+00:00:02,920 --> 00:00:03,670
+A company called
+
+5
+00:00:03,670 --> 00:00:04,310
+Cortical Labs
+
+6
+00:00:04,310 --> 00:00:05,240
+is offering access
+
+7
+00:00:05,240 --> 00:00:06,640
+to biological computers
+
+8
+00:00:06,640 --> 00:00:07,240
+through a platform
+
+9
+00:00:07,240 --> 00:00:08,240
+called Cortical Cloud,
+
+10
+00:00:08,240 --> 00:00:09,050
+with plans starting
+
+11
+00:00:09,050 --> 00:00:10,360
+at around $300 a week.
+
+12
+00:00:10,360 --> 00:00:11,580
+These systems use actual
+
+13
+00:00:11,580 --> 00:00:12,590
+human neurons grown
+
+14
+00:00:12,590 --> 00:00:13,320
+from stem cells
+
+15
+00:00:13,320 --> 00:00:14,480
+and placed onto silicon
+
+16
+00:00:14,480 --> 00:00:15,440
+hardware.
+
+17
+00:00:15,440 --> 00:00:16,420
+Developers can interact
+
+18
+00:00:16,420 --> 00:00:16,720
+with them
+
+19
+00:00:16,740 --> 00:00:17,500
+through software,
+
+20
+00:00:17,500 --> 00:00:18,520
+including a Python API.
+
+21
+00:00:18,520 --> 00:00:19,280
+So instead of renting
+
+22
+00:00:19,280 --> 00:00:19,570
+compute
+
+23
+00:00:19,590 --> 00:00:20,470
+from a traditional cloud
+
+24
+00:00:20,470 --> 00:00:21,250
+provider, you're
+
+25
+00:00:21,250 --> 00:00:21,940
+effectively renting
+
+26
+00:00:21,940 --> 00:00:22,780
+access to a living
+
+27
+00:00:22,780 --> 00:00:23,510
+neural network
+
+28
+00:00:23,510 --> 00:00:24,670
+that can adapt and learn
+
+29
+00:00:24,670 --> 00:00:25,520
+from feedback.
+
+30
+00:00:25,520 --> 00:00:26,490
+That matters because
+
+31
+00:00:26,490 --> 00:00:27,340
+modern AI has a huge
+
+32
+00:00:27,340 --> 00:00:28,320
+scaling problem.
+
+33
+00:00:28,370 --> 00:00:29,160
+The larger our models
+
+34
+00:00:29,160 --> 00:00:29,510
+become,
+
+35
+00:00:29,530 --> 00:00:30,380
+the more electricity
+
+36
+00:00:30,380 --> 00:00:30,830
+and compute
+
+37
+00:00:30,850 --> 00:00:31,560
+they require,
+
+38
+00:00:31,560 --> 00:00:32,560
+and that cost just keeps
+
+39
+00:00:32,560 --> 00:00:33,520
+increasing.
+
+40
+00:00:33,520 --> 00:00:34,330
+Biological neurons are
+
+41
+00:00:34,330 --> 00:00:34,990
+incredibly energy
+
+42
+00:00:34,990 --> 00:00:35,680
+efficient compared
+
+43
+00:00:35,680 --> 00:00:36,330
+with conventional
+
+44
+00:00:36,330 --> 00:00:37,120
+computer hardware,
+
+45
+00:00:37,120 --> 00:00:38,190
+which is why researchers
+
+46
+00:00:38,190 --> 00:00:38,820
+are interested
+
+47
+00:00:38,820 --> 00:00:39,850
+in whether biological
+
+48
+00:00:39,850 --> 00:00:40,200
+computing
+
+49
+00:00:40,220 --> 00:00:41,000
+could eventually
+
+50
+00:00:41,000 --> 00:00:41,850
+complement or even
+
+51
+00:00:41,850 --> 00:00:42,960
+replace parts of today's
+
+52
+00:00:42,960 --> 00:00:44,040
+AI infrastructure.
+
+53
+00:00:44,040 --> 00:00:44,900
+We've spent decades
+
+54
+00:00:44,900 --> 00:00:45,990
+trying to make computers
+
+55
+00:00:45,990 --> 00:00:47,240
+behave more like brains.
+
+56
+00:00:47,240 --> 00:00:48,000
+Now we're actually
+
+57
+00:00:48,000 --> 00:00:48,970
+starting to experiment
+
+58
+00:00:48,970 --> 00:00:49,970
+with using actual brain
+
+59
+00:00:49,970 --> 00:00:51,040
+cells as the computer.
+
