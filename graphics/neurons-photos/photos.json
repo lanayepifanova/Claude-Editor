@@ -1,14 +1,14 @@
 {
+ "brain rotate": {
+  "file": "brain rotate.mov",
+  "mode": "raw-video",
+  "w": 786,
+  "h": 436
+ },
  "cl1 device": {
   "file": "cl1 device.mov",
   "mode": "raw-video",
   "w": 752,
-  "h": 436
- },
- "cloud compute": {
-  "file": "cloud compute.mov",
-  "mode": "raw-video",
-  "w": 786,
   "h": 436
  },
  "cortical pong": {
@@ -29,22 +29,10 @@
   "w": 786,
   "h": 436
  },
- "hidden layers": {
-  "file": "hidden layers.mov",
-  "mode": "raw-video",
-  "w": 786,
-  "h": 436
- },
  "lab hands": {
   "file": "lab hands.mov",
   "mode": "raw-video",
   "w": 752,
-  "h": 436
- },
- "living network": {
-  "file": "living network.mov",
-  "mode": "raw-video",
-  "w": 786,
   "h": 436
  },
  "mea chip": {
@@ -53,8 +41,8 @@
   "w": 752,
   "h": 436
  },
- "net layers": {
-  "file": "net layers.mov",
+ "neural network": {
+  "file": "neural network.mov",
   "mode": "raw-video",
   "w": 786,
   "h": 436
@@ -73,12 +61,6 @@
  },
  "stem cells": {
   "file": "stem cells.mov",
-  "mode": "raw-video",
-  "w": 786,
-  "h": 436
- },
- "why layers": {
-  "file": "why layers.mov",
   "mode": "raw-video",
   "w": 786,
   "h": 436

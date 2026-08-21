@@ -39,27 +39,33 @@ PLATE_H = 436          # x264 needs even dimensions; so do the widths below
 RECORDINGS = "footage/Screen*.mov"
 
 #  name, rec, in, out, want, width, crop "w:h:x:y" or None
+#
+# Holds are 3.0-4.2s here, not the 1.8-3.2s in the locked table: she watched the
+# first pass and said the skip was too fast, "I need like 3-5 seconds for each
+# video clip". Fewer, longer beats — 11 instead of 14.
 CLIPS = [
-    ("neuron label",   1,  1.50,  4.30, 2.70, 786, None),
-    ("cortical pong",  3,  0.00,  4.82, 3.05, 752, None),
-    ("cl1 device",     4,  2.00,  5.20, 2.80, 752, None),
-    ("lab hands",      4,  8.80, 12.60, 2.50, 752, None),
+    ("neuron label",   1,  1.50,  5.60, 3.90, 786, None),
+    ("cortical pong",  3,  0.00,  4.82, 3.80, 752, None),
+    ("cl1 device",     4,  2.00,  7.20, 3.90, 752, None),
     # the whole slide is a white rectangle of tiny labels at plate size — crop to
     # the neural-progenitor -> neuron path, which is the bit the line is about
-    ("stem cells",     5,  0.30,  5.00, 2.70, 786, "560:310:300:140"),
-    ("mea chip",       4,  0.00,  2.60, 2.60, 752, None),
-    # 22.0-26.5 still carries the yellow "Hidden layers" box and read as a near
-    # duplicate of the hidden-layers plate 7s later; this span is the plain pass
-    ("cloud compute",  2, 26.50, 31.00, 2.85, 786, None),
-    ("living network", 1, 22.80, 26.40, 3.00, 786, None),
-    ("hidden layers",  2, 14.00, 20.50, 2.80, 786, None),
-    ("why layers",     2, 41.00, 47.00, 2.55, 786, None),
-    ("neurons firing", 1, 43.00, 49.00, 2.90, 786, None),
+    ("stem cells",     5,  0.30,  5.50, 3.90, 786, "560:310:300:140"),
+    ("lab hands",      4,  8.80, 15.00, 4.15, 752, None),
+    # THE only place the black neural-network explainer is allowed. Her note:
+    # "the black neural network should be put only for the neural network
+    # section" — so it lands on "access to a living neural network that can
+    # adapt and learn from feedback" and nowhere else. The span runs into the
+    # pi-creatures asking "How does training work?", which is the adapt-and-learn
+    # half of that line.
+    ("neural network", 2, 26.50, 33.00, 4.10, 786, None),
+    ("brain rotate",   1,  8.00, 13.00, 3.10, 786, None),
+    ("neurons firing", 1, 43.00, 49.00, 3.90, 786, None),
     # same white-rectangle problem — crop to the one labelled colonies panel
-    ("dual smad",      5, 15.00, 25.00, 2.80, 786, "640:355:490:105"),
-    ("net layers",     2,  0.00,  5.00, 2.90, 786, None),
-    ("culture dish",   4, 15.50, 19.00, 2.85, 752, None),
+    ("dual smad",      5, 15.00, 25.00, 3.90, 786, "640:355:490:105"),
+    ("mea chip",       4,  0.00,  3.50, 3.15, 752, None),
+    ("culture dish",   4, 15.30, 19.20, 3.80, 752, None),
 ]
+
 
 
 def main():

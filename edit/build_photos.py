@@ -36,7 +36,7 @@ PROJECTS = {
     "neurons-photos-motion": {
         "source": "neurons.mp4",
         "deck": "neurons",
-        "duration": 49.71,
+        "duration": 49.633,
         "frame": (1080, 1920),
         # Her framing in this clip is much closer than Sony TSMC's: her chin sits
         # at ~1150, not ~950, so the locked centre y=1260 would have put every
@@ -46,24 +46,23 @@ PROJECTS = {
         # width falls out of each plate's aspect, which is why the numbers below
         # are 786 (1436x796 sources) and 752 (1436x832 sources).
         "band": (580, 1620),
-        # 27.9-31.3 and 42.8-45.8 are deliberately empty: she gestures into the
-        # plate area on "the more electricity" and on "behave more like brains",
-        # and a gesture gets left alone.
+        # Holds are 3.1-4.2s. The first pass ran 2.5-3.1s and she said the skip
+        # was too fast — "I need like 3-5 seconds for each video clip".
+        # 28.2-31.4 and 42.6-45.7 stay empty: she gestures into the plate area on
+        # "the more electricity" and mimes on "behave more like brains", and a
+        # gesture gets left alone.
         "beats": [
-            ("neuron label",   0.15,   2.88, 786, 540, 1398, "you can now rent living human brain cells"),
-            ("cortical pong",   2.95,   6.02, 752, 540, 1398, "A company called Cortical Labs"),
-            ("cl1 device",   6.10,   8.93, 752, 540, 1398, "through a platform called Cortical Cloud"),
-            ("lab hands",   9.00,  11.53, 752, 540, 1398, "at around $300 a week"),
-            ("stem cells",  11.60,  14.33, 786, 540, 1398, "human neurons grown from stem cells"),
-            ("mea chip",  14.40,  17.00, 752, 540, 1398, "and placed onto silicon hardware"),
-            ("cloud compute",  18.15,  21.02, 786, 540, 1398, "from a traditional cloud provider"),
-            ("living network",  21.10,  24.17, 786, 540, 1398, "access to a living neural network"),
-            ("hidden layers",  25.05,  27.88, 786, 540, 1398, "modern AI has a huge scaling problem"),
-            ("why layers",  31.30,  33.90, 786, 540, 1398, "and that cost just keeps increasing"),
-            ("neurons firing",  33.95,  36.88, 786, 540, 1398, "efficient compared with conventional computer hardware"),
-            ("dual smad",  36.95,  39.78, 786, 540, 1398, "which is why researchers are interested"),
-            ("net layers",  39.85,  42.78, 786, 540, 1398, "complement or even replace parts of today's AI infrastructure"),
-            ("culture dish",  45.75,  48.62, 752, 540, 1398, "starting to experiment with using actual brain cells"),
+            ("neuron label",    0.15,  4.12, 786, 540, 1398, "you can now rent living human brain cells to run your code"),
+            ("cortical pong",   4.20,  8.00, 752, 540, 1398, "A company called Cortical Labs is offering access"),
+            ("cl1 device",      8.10, 12.03, 752, 540, 1398, "called Cortical Cloud, with plans starting at around $300 a week"),
+            ("stem cells",     12.10, 16.07, 786, 540, 1398, "human neurons grown from stem cells"),
+            ("lab hands",      16.15, 20.32, 752, 540, 1398, "Developers can interact with them through software, including a Python API"),
+            ("neural network", 20.90, 25.03, 786, 540, 1398, "access to a living neural network that can adapt and learn from feedback"),
+            ("brain rotate",   25.10, 28.27, 786, 540, 1398, "That matters because modern AI has a huge scaling problem"),
+            ("neurons firing", 31.40, 35.33, 786, 540, 1398, "Biological neurons are incredibly energy efficient"),
+            ("dual smad",      35.40, 39.33, 786, 540, 1398, "which is why researchers are interested in whether biological computing"),
+            ("mea chip",       39.40, 42.57, 752, 540, 1398, "complement or even replace parts of today's AI infrastructure"),
+            ("culture dish",   45.75, 49.58, 752, 540, 1398, "starting to experiment with using actual brain cells as the computer"),
         ],
     },
     "sonytsmc-photos-motion": {
