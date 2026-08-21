@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>neurons-photos-motion (overlay)</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        margin: 0; width: 1080px; height: 1920px;
+        overflow: hidden; background: transparent;
+      }
+      #src-video { width: 1080px; height: 1920px; object-fit: cover; }
+      .beat { position: absolute; inset: 0; }
+      .plate { position: absolute; display: block; }
+      /* a screen recording cannot live inside a timed wrapper, so it carries
+         its own timing and an untimed shell takes the fade */
+      .shell { position: absolute; }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="49.71"
+      data-width="1080"
+      data-height="1920"
+    >
+
+      <!-- p01  0.15-2.88s  "you can now rent living human brain cells" -->
+
+      <div class="shell" id="p01-shell" style="left:147px;top:1180px;width:786px;height:436px">
+        <video class="clip" id="p01" src="../assets/photos/neuron label.mov" data-start="0.15" data-duration="2.73" data-track-index="2" style="width:786px;height:436px;object-fit:cover;display:block" muted playsinline></video>
+      </div>
+
+      <!-- p02  2.95-6.02s  "A company called Cortical Labs" -->
+
+      <div class="shell" id="p02-shell" style="left:164px;top:1180px;width:752px;height:436px">
+        <video class="clip" id="p02" src="../assets/photos/cortical pong.mov" data-start="2.95" data-duration="3.07" data-track-index="1" style="width:752px;height:436px;object-fit:cover;display:block" muted playsinline></video>
+      </div>
+
+      <!-- p03  6.10-8.93s  "through a platform called Cortical Cloud" -->
+
+      <div class="shell" id="p03-shell" style="left:164px;top:1180px;width:752px;height:436px">
+        <video class="clip" id="p03" src="../assets/photos/cl1 device.mov" data-start="6.1" data-duration="2.83" data-track-index="2" style="width:752px;height:436px;object-fit:cover;display:block" muted playsinline></video>
+      </div>
+
+      <!-- p04  9.00-11.53s  "at around $300 a week" -->
+
+      <div class="shell" id="p04-shell" style="left:164px;top:1180px;width:752px;height:436px">
+        <video class="clip" id="p04" src="../assets/photos/lab hands.mov" data-start="9.0" data-duration="2.53" data-track-index="1" style="width:752px;height:436px;object-fit:cover;display:block" muted playsinline></video>
+      </div>
+
+      <!-- p05  11.60-14.33s  "human neurons grown from stem cells" -->
+
+      <div class="shell" id="p05-shell" style="left:147px;top:1180px;width:786px;height:436px">
+        <video class="clip" id="p05" src="../assets/photos/stem cells.mov" data-start="11.6" data-duration="2.73" data-track-index="2" style="width:786px;height:436px;object-fit:cover;display:block" muted playsinline></video>
+      </div>
+
+      <!-- p06  14.40-17.00s  "and placed onto silicon hardware" -->
+
+      <div class="shell" id="p06-shell" style="left:164px;top:1180px;width:752px;height:436px">
+        <video class="clip" id="p06" src="../assets/photos/mea chip.mov" data-start="14.4" data-duration="2.6" data-track-index="1" style="width:752px;height:436px;object-fit:cover;display:block" muted playsinline></video>
+      </div>
+
+      <!-- p07  18.15-21.02s  "from a traditional cloud provider" -->
+
+      <div class="shell" id="p07-shell" style="left:147px;top:1180px;width:786px;height:436px">
+        <video class="clip" id="p07" src="../assets/photos/cloud compute.mov" data-start="18.15" data-duration="2.87" data-track-index="2" style="width:786px;height:436px;object-fit:cover;display:block" muted playsinline></video>
+      </div>
+
+      <!-- p08  21.10-24.17s  "access to a living neural network" -->
+
+      <div class="shell" id="p08-shell" style="left:147px;top:1180px;width:786px;height:436px">
+        <video class="clip" id="p08" src="../assets/photos/living network.mov" data-start="21.1" data-duration="3.07" data-track-index="1" style="width:786px;height:436px;object-fit:cover;display:block" muted playsinline></video>
+      </div>
+
+      <!-- p09  25.05-27.88s  "modern AI has a huge scaling problem" -->
+
+      <div class="shell" id="p09-shell" style="left:147px;top:1180px;width:786px;height:436px">
+        <video class="clip" id="p09" src="../assets/photos/hidden layers.mov" data-start="25.05" data-duration="2.83" data-track-index="2" style="width:786px;height:436px;object-fit:cover;display:block" muted playsinline></video>
+      </div>
+
+      <!-- p10  31.30-33.90s  "and that cost just keeps increasing" -->
+
+      <div class="shell" id="p10-shell" style="left:147px;top:1180px;width:786px;height:436px">
+        <video class="clip" id="p10" src="../assets/photos/why layers.mov" data-start="31.3" data-duration="2.6" data-track-index="1" style="width:786px;height:436px;object-fit:cover;display:block" muted playsinline></video>
+      </div>
+
+      <!-- p11  33.95-36.88s  "efficient compared with conventional computer hardware" -->
+
+      <div class="shell" id="p11-shell" style="left:147px;top:1180px;width:786px;height:436px">
+        <video class="clip" id="p11" src="../assets/photos/neurons firing.mov" data-start="33.95" data-duration="2.93" data-track-index="2" style="width:786px;height:436px;object-fit:cover;display:block" muted playsinline></video>
+      </div>
+
+      <!-- p12  36.95-39.78s  "which is why researchers are interested" -->
+
+      <div class="shell" id="p12-shell" style="left:147px;top:1180px;width:786px;height:436px">
+        <video class="clip" id="p12" src="../assets/photos/dual smad.mov" data-start="36.95" data-duration="2.83" data-track-index="1" style="width:786px;height:436px;object-fit:cover;display:block" muted playsinline></video>
+      </div>
+
+      <!-- p13  39.85-42.78s  "complement or even replace parts of today's AI infrastructure" -->
+
+      <div class="shell" id="p13-shell" style="left:147px;top:1180px;width:786px;height:436px">
+        <video class="clip" id="p13" src="../assets/photos/net layers.mov" data-start="39.85" data-duration="2.93" data-track-index="2" style="width:786px;height:436px;object-fit:cover;display:block" muted playsinline></video>
+      </div>
+
+      <!-- p14  45.75-48.62s  "starting to experiment with using actual brain cells" -->
+
+      <div class="shell" id="p14-shell" style="left:164px;top:1180px;width:752px;height:436px">
+        <video class="clip" id="p14" src="../assets/photos/culture dish.mov" data-start="45.75" data-duration="2.87" data-track-index="1" style="width:752px;height:436px;object-fit:cover;display:block" muted playsinline></video>
+      </div>
+
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // p01 — neuron label  "you can now rent living human brain cells"
+      tl.fromTo("#p01-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 0.15);
+      tl.to("#p01-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 2.58);
+      // p02 — cortical pong  "A company called Cortical Labs"
+      tl.fromTo("#p02-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 2.95);
+      tl.to("#p02-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 5.72);
+      // p03 — cl1 device  "through a platform called Cortical Cloud"
+      tl.fromTo("#p03-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 6.1);
+      tl.to("#p03-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 8.63);
+      // p04 — lab hands  "at around $300 a week"
+      tl.fromTo("#p04-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 9.0);
+      tl.to("#p04-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 11.23);
+      // p05 — stem cells  "human neurons grown from stem cells"
+      tl.fromTo("#p05-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 11.6);
+      tl.to("#p05-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 14.03);
+      // p06 — mea chip  "and placed onto silicon hardware"
+      tl.fromTo("#p06-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 14.4);
+      tl.to("#p06-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 16.7);
+      // p07 — cloud compute  "from a traditional cloud provider"
+      tl.fromTo("#p07-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 18.15);
+      tl.to("#p07-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 20.72);
+      // p08 — living network  "access to a living neural network"
+      tl.fromTo("#p08-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 21.1);
+      tl.to("#p08-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 23.87);
+      // p09 — hidden layers  "modern AI has a huge scaling problem"
+      tl.fromTo("#p09-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 25.05);
+      tl.to("#p09-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 27.58);
+      // p10 — why layers  "and that cost just keeps increasing"
+      tl.fromTo("#p10-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 31.3);
+      tl.to("#p10-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 33.6);
+      // p11 — neurons firing  "efficient compared with conventional computer hardware"
+      tl.fromTo("#p11-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 33.95);
+      tl.to("#p11-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 36.58);
+      // p12 — dual smad  "which is why researchers are interested"
+      tl.fromTo("#p12-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 36.95);
+      tl.to("#p12-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 39.48);
+      // p13 — net layers  "complement or even replace parts of today's AI infrastructure"
+      tl.fromTo("#p13-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 39.85);
+      tl.to("#p13-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 42.48);
+      // p14 — culture dish  "starting to experiment with using actual brain cells"
+      tl.fromTo("#p14-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 45.75);
+      tl.to("#p14-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 48.32);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

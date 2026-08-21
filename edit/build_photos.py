@@ -33,6 +33,39 @@ SETTLE = 0.985         # scale it eases up from
 DISSOLVE = 0.30        # overlap between back-to-back graphics
 
 PROJECTS = {
+    "neurons-photos-motion": {
+        "source": "neurons.mp4",
+        "deck": "neurons",
+        "duration": 49.71,
+        "frame": (1080, 1920),
+        # Her framing in this clip is much closer than Sony TSMC's: her chin sits
+        # at ~1150, not ~950, so the locked centre y=1260 would have put every
+        # plate across her mouth. Measured off the export with a ruler overlay and
+        # moved the band down — plates run 1180..1616, clearing her chin and still
+        # landing inside the 1620 TikTok floor. Height is fixed at 436 and the
+        # width falls out of each plate's aspect, which is why the numbers below
+        # are 786 (1436x796 sources) and 752 (1436x832 sources).
+        "band": (580, 1620),
+        # 27.9-31.3 and 42.8-45.8 are deliberately empty: she gestures into the
+        # plate area on "the more electricity" and on "behave more like brains",
+        # and a gesture gets left alone.
+        "beats": [
+            ("neuron label",   0.15,   2.88, 786, 540, 1398, "you can now rent living human brain cells"),
+            ("cortical pong",   2.95,   6.02, 752, 540, 1398, "A company called Cortical Labs"),
+            ("cl1 device",   6.10,   8.93, 752, 540, 1398, "through a platform called Cortical Cloud"),
+            ("lab hands",   9.00,  11.53, 752, 540, 1398, "at around $300 a week"),
+            ("stem cells",  11.60,  14.33, 786, 540, 1398, "human neurons grown from stem cells"),
+            ("mea chip",  14.40,  17.00, 752, 540, 1398, "and placed onto silicon hardware"),
+            ("cloud compute",  18.15,  21.02, 786, 540, 1398, "from a traditional cloud provider"),
+            ("living network",  21.10,  24.17, 786, 540, 1398, "access to a living neural network"),
+            ("hidden layers",  25.05,  27.88, 786, 540, 1398, "modern AI has a huge scaling problem"),
+            ("why layers",  31.30,  33.90, 786, 540, 1398, "and that cost just keeps increasing"),
+            ("neurons firing",  33.95,  36.88, 786, 540, 1398, "efficient compared with conventional computer hardware"),
+            ("dual smad",  36.95,  39.78, 786, 540, 1398, "which is why researchers are interested"),
+            ("net layers",  39.85,  42.78, 786, 540, 1398, "complement or even replace parts of today's AI infrastructure"),
+            ("culture dish",  45.75,  48.62, 752, 540, 1398, "starting to experiment with using actual brain cells"),
+        ],
+    },
     "sonytsmc-photos-motion": {
         "source": "sonytsmc.mov",
         "deck": "sonytsmc",

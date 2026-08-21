@@ -80,6 +80,30 @@ DECKS = {
             "semiconductor.jpeg":             {"mode": "raw"},
         },
     },
+    "neurons": {
+        "src": "graphics/Neurons-png",
+        # Her screen recordings, already spliced and sped up into plates by the
+        # step upstream of this one — each file is exactly the clip that plays.
+        # They carry their own ground (dark 3D animation, lab video, a white
+        # slide), so every one is "raw": knocking a background out of a screen
+        # recording does nothing useful and eats content.
+        "assets": {
+            "neuron label.mov":   {"mode": "raw"},
+            "cortical pong.mov":  {"mode": "raw"},
+            "cl1 device.mov":     {"mode": "raw"},
+            "lab hands.mov":      {"mode": "raw"},
+            "stem cells.mov":     {"mode": "raw"},
+            "mea chip.mov":       {"mode": "raw"},
+            "cloud compute.mov":  {"mode": "raw"},
+            "living network.mov": {"mode": "raw"},
+            "hidden layers.mov":  {"mode": "raw"},
+            "why layers.mov":     {"mode": "raw"},
+            "neurons firing.mov": {"mode": "raw"},
+            "dual smad.mov":      {"mode": "raw"},
+            "net layers.mov":     {"mode": "raw"},
+            "culture dish.mov":   {"mode": "raw"},
+        },
+    },
 }
 
 HI, LO = 246.0, 228.0
@@ -158,8 +182,13 @@ def main():
         if spec["mode"] == "raw" and name.lower().endswith(".mov"):
             dst = out_dir / name
             subprocess.run(["cp", str(src / name), str(dst)], check=True)
-            manifest[stem] = {"file": name, "mode": "raw-video"}
-            print(f"  {stem:22s} raw video")
+            wh = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0",
+                                 "-show_entries", "stream=width,height",
+                                 "-of", "csv=p=0:s=x", str(dst)],
+                                capture_output=True, text=True).stdout.strip()
+            vw, vh = (int(x) for x in wh.split("x"))
+            manifest[stem] = {"file": name, "mode": "raw-video", "w": vw, "h": vh}
+            print(f"  {stem:22s} raw video    {vw}x{vh}")
             continue
 
         a = read_rgba(src / name)
