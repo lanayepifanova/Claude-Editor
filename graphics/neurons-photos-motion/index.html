@@ -75,34 +75,40 @@
         <video class="clip" id="p06" src="assets/photos/neural network.mov" data-start="20.9" data-duration="4.13" data-track-index="1" style="width:786px;height:436px;object-fit:cover;display:block" muted playsinline></video>
       </div>
 
-      <!-- p07  25.10-28.27s  "That matters because modern AI has a huge scaling problem" -->
+      <!-- p07  25.10-28.20s  "That matters because modern AI has a huge scaling problem" -->
 
       <div class="shell" id="p07-shell" style="left:147px;top:1180px;width:786px;height:436px">
-        <video class="clip" id="p07" src="assets/photos/brain rotate.mov" data-start="25.1" data-duration="3.17" data-track-index="2" style="width:786px;height:436px;object-fit:cover;display:block" muted playsinline></video>
+        <video class="clip" id="p07" src="assets/photos/brain rotate.mov" data-start="25.1" data-duration="3.1" data-track-index="2" style="width:786px;height:436px;object-fit:cover;display:block" muted playsinline></video>
       </div>
 
-      <!-- p08  31.40-35.33s  "Biological neurons are incredibly energy efficient" -->
+      <!-- p08  28.30-31.35s  "the more electricity and compute they require" -->
 
-      <div class="shell" id="p08-shell" style="left:147px;top:1180px;width:786px;height:436px">
-        <video class="clip" id="p08" src="assets/photos/neurons firing.mov" data-start="31.4" data-duration="3.93" data-track-index="1" style="width:786px;height:436px;object-fit:cover;display:block" muted playsinline></video>
+      <div class="clip beat" id="p08" data-start="28.3" data-duration="3.05" data-track-index="1">
+        <img class="plate" id="p08-img" src="assets/photos/data center.png" style="left:213px;top:1180px;width:654px;height:436px" alt="" />
       </div>
 
-      <!-- p09  35.40-39.33s  "which is why researchers are interested in whether biological computing" -->
+      <!-- p09  31.45-34.50s  "and that cost just keeps increasing" -->
 
-      <div class="shell" id="p09-shell" style="left:147px;top:1180px;width:786px;height:436px">
-        <video class="clip" id="p09" src="assets/photos/dual smad.mov" data-start="35.4" data-duration="3.93" data-track-index="2" style="width:786px;height:436px;object-fit:cover;display:block" muted playsinline></video>
+      <div class="clip beat" id="p09" data-start="31.45" data-duration="3.05" data-track-index="2">
+        <img class="plate" id="p09-img" src="assets/photos/electricity cost.png" style="left:250px;top:1180px;width:581px;height:436px" alt="" />
       </div>
 
-      <!-- p10  39.40-42.57s  "complement or even replace parts of today's AI infrastructure" -->
+      <!-- p10  34.60-37.70s  "efficient compared with conventional computer hardware" -->
 
-      <div class="shell" id="p10-shell" style="left:164px;top:1180px;width:752px;height:436px">
-        <video class="clip" id="p10" src="assets/photos/mea chip.mov" data-start="39.4" data-duration="3.17" data-track-index="1" style="width:752px;height:436px;object-fit:cover;display:block" muted playsinline></video>
+      <div class="clip beat" id="p10" data-start="34.6" data-duration="3.1" data-track-index="1">
+        <img class="plate" id="p10-img" src="assets/photos/gpu power.png" style="left:90px;top:1180px;width:899px;height:436px" alt="" />
       </div>
 
-      <!-- p11  45.75-49.58s  "starting to experiment with using actual brain cells as the computer" -->
+      <!-- p11  37.80-42.45s  "in whether biological computing could eventually replace parts of today's AI infrastructure" -->
 
-      <div class="shell" id="p11-shell" style="left:164px;top:1180px;width:752px;height:436px">
-        <video class="clip" id="p11" src="assets/photos/culture dish.mov" data-start="45.75" data-duration="3.83" data-track-index="2" style="width:752px;height:436px;object-fit:cover;display:block" muted playsinline></video>
+      <div class="shell" id="p11-shell" style="left:147px;top:1180px;width:786px;height:436px">
+        <video class="clip" id="p11" src="assets/photos/dual smad.mov" data-start="37.8" data-duration="4.65" data-track-index="2" style="width:786px;height:436px;object-fit:cover;display:block" muted playsinline></video>
+      </div>
+
+      <!-- p12  45.75-49.58s  "starting to experiment with using actual brain cells as the computer" -->
+
+      <div class="shell" id="p12-shell" style="left:164px;top:1180px;width:752px;height:436px">
+        <video class="clip" id="p12" src="assets/photos/culture dish.mov" data-start="45.75" data-duration="3.83" data-track-index="1" style="width:752px;height:436px;object-fit:cover;display:block" muted playsinline></video>
       </div>
       <audio
         id="src-audio"
@@ -137,19 +143,22 @@
       tl.to("#p06-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 24.73);
       // p07 — brain rotate  "That matters because modern AI has a huge scaling problem"
       tl.fromTo("#p07-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 25.1);
-      tl.to("#p07-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 27.97);
-      // p08 — neurons firing  "Biological neurons are incredibly energy efficient"
-      tl.fromTo("#p08-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 31.4);
-      tl.to("#p08-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 35.03);
-      // p09 — dual smad  "which is why researchers are interested in whether biological computing"
-      tl.fromTo("#p09-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 35.4);
-      tl.to("#p09-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 39.03);
-      // p10 — mea chip  "complement or even replace parts of today's AI infrastructure"
-      tl.fromTo("#p10-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 39.4);
-      tl.to("#p10-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 42.27);
-      // p11 — culture dish  "starting to experiment with using actual brain cells as the computer"
-      tl.fromTo("#p11-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 45.75);
-      tl.to("#p11-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 49.28);
+      tl.to("#p07-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 27.9);
+      // p08 — data center  "the more electricity and compute they require"
+      tl.fromTo("#p08-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 28.3);
+      tl.to("#p08-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 31.05);
+      // p09 — electricity cost  "and that cost just keeps increasing"
+      tl.fromTo("#p09-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 31.45);
+      tl.to("#p09-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 34.2);
+      // p10 — gpu power  "efficient compared with conventional computer hardware"
+      tl.fromTo("#p10-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 34.6);
+      tl.to("#p10-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 37.4);
+      // p11 — dual smad  "in whether biological computing could eventually replace parts of today's AI infrastructure"
+      tl.fromTo("#p11-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 37.8);
+      tl.to("#p11-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 42.15);
+      // p12 — culture dish  "starting to experiment with using actual brain cells as the computer"
+      tl.fromTo("#p12-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 45.75);
+      tl.to("#p12-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 49.28);
       window.__timelines["main"] = tl;
     </script>
   </body>

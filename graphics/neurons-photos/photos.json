@@ -23,11 +23,29 @@
   "w": 752,
   "h": 436
  },
+ "data center": {
+  "file": "data center.png",
+  "mode": "raw",
+  "w": 1920,
+  "h": 1280
+ },
  "dual smad": {
   "file": "dual smad.mov",
   "mode": "raw-video",
   "w": 786,
   "h": 436
+ },
+ "electricity cost": {
+  "file": "electricity cost.png",
+  "mode": "raw",
+  "w": 480,
+  "h": 360
+ },
+ "gpu power": {
+  "file": "gpu power.png",
+  "mode": "raw",
+  "w": 820,
+  "h": 398
  },
  "lab hands": {
   "file": "lab hands.mov",

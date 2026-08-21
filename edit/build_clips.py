@@ -61,7 +61,7 @@ CLIPS = [
     ("brain rotate",   1,  8.00, 13.00, 3.10, 786, None),
     ("neurons firing", 1, 43.00, 49.00, 3.90, 786, None),
     # same white-rectangle problem — crop to the one labelled colonies panel
-    ("dual smad",      5, 15.00, 25.00, 3.90, 786, "640:355:490:105"),
+    ("dual smad",      5, 15.00, 27.00, 4.65, 786, "640:355:490:105"),
     ("mea chip",       4,  0.00,  3.50, 3.15, 752, None),
     ("culture dish",   4, 15.30, 19.20, 3.80, 752, None),
 ]

@@ -16,6 +16,7 @@ into the next instead of cutting.
 Never hand-edit the generated HTML — change BEATS and re-run.
 """
 import json
+import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -58,10 +59,15 @@ PROJECTS = {
             ("stem cells",     12.10, 16.07, 786, 540, 1398, "human neurons grown from stem cells"),
             ("lab hands",      16.15, 20.32, 752, 540, 1398, "Developers can interact with them through software, including a Python API"),
             ("neural network", 20.90, 25.03, 786, 540, 1398, "access to a living neural network that can adapt and learn from feedback"),
-            ("brain rotate",   25.10, 28.27, 786, 540, 1398, "That matters because modern AI has a huge scaling problem"),
-            ("neurons firing", 31.40, 35.33, 786, 540, 1398, "Biological neurons are incredibly energy efficient"),
-            ("dual smad",      35.40, 39.33, 786, 540, 1398, "which is why researchers are interested in whether biological computing"),
-            ("mea chip",       39.40, 42.57, 752, 540, 1398, "complement or even replace parts of today's AI infrastructure"),
+            ("brain rotate",   25.10, 28.20, 786, 540, 1398, "That matters because modern AI has a huge scaling problem"),
+            # the three stills she sent, laid across the whole energy argument:
+            # models grow -> the data centre -> what the electricity costs -> what
+            # the hardware actually draws. "neurons firing" and "mea chip" come
+            # out to make room; they stay in the deck if she wants them back.
+            ("data center",    28.30, 31.35, 654, 540, 1398, "the more electricity and compute they require"),
+            ("electricity cost", 31.45, 34.50, 581, 540, 1398, "and that cost just keeps increasing"),
+            ("gpu power",      34.60, 37.70, 899, 540, 1398, "efficient compared with conventional computer hardware"),
+            ("dual smad",      37.80, 42.45, 786, 540, 1398, "in whether biological computing could eventually replace parts of today's AI infrastructure"),
             ("culture dish",   45.75, 49.58, 752, 540, 1398, "starting to experiment with using actual brain cells as the computer"),
         ],
     },
@@ -265,6 +271,21 @@ def build(name, spec, variant="baked"):
     if overlay:
         body = body.replace('src="assets/', 'src="../assets/')
     out.write_text(body)
+
+    # Stage the deck's plates next to the composition the renderer will open.
+    # This used to be a hand-run `cp`, which meant a plate renamed in the deck
+    # left its predecessor behind and the render silently used the stale one.
+    # Mirror exactly what photos.json declares, and delete anything else.
+    src_dir = ROOT / "graphics" / f"{spec['deck']}-photos"
+    dst_dir = ROOT / "graphics" / name / "assets" / "photos"
+    dst_dir.mkdir(parents=True, exist_ok=True)
+    wanted = {meta["file"] for meta in photos.values()}
+    for stale in dst_dir.iterdir():
+        if stale.name not in wanted:
+            stale.unlink()
+    for f in wanted:
+        shutil.copy2(src_dir / f, dst_dir / f)
+
     print(f"{name} ({variant}): {len(spec['beats'])} graphics -> {out}")
 
 

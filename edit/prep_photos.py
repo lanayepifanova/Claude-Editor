@@ -99,6 +99,13 @@ DECKS = {
             "dual smad.mov":      {"mode": "raw"},
             "mea chip.mov":       {"mode": "raw"},
             "culture dish.mov":   {"mode": "raw"},
+            # three stills she sent for the electricity/compute-cost run.
+            # All carry their own dark ground, so none of them knock out.
+            "data center.webp":      {"mode": "raw"},
+            "electricity cost.jpg":  {"mode": "raw"},
+            # cropped to the table itself before it got here — the title and
+            # body paragraph above it are unreadable at plate size anyway
+            "gpu power.png":         {"mode": "raw"},
         },
     },
 }

@@ -53,3 +53,7 @@ edit/analysis/cut_proof.mp4
 # Python bytecode
 __pycache__/
 *.pyc
+
+# Render staging — build_photos.py mirrors the deck into each composition's
+# assets/photos/ on every run, so the copies are derived, not source.
+graphics/*-motion/assets/photos/
