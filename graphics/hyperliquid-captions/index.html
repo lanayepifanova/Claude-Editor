@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>captions</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:transparent; }
+      #root { position:relative; width:1080px; height:1920px; }
+      .cue {
+        position:absolute; left:0; right:0; top:25.0%;
+        transform:translateY(-50%);
+        display:flex; align-items:center; justify-content:center;
+        text-align:center;
+      }
+      .cue span {
+        display:inline-block; max-width:778px; white-space:nowrap;
+        font-family:'Montserrat', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+        font-weight:800; font-size:54px; line-height:1.18;
+        letter-spacing:-0.01em; color:#FFFFFF;
+        /* hard edge, zero blur — reads on any background, never looks glowy */
+        text-shadow:
+          4px 0 0 #000, -4px 0 0 #000, 0 4px 0 #000, 0 -4px 0 #000,
+          3px 3px 0 #000, -3px 3px 0 #000,
+          3px -3px 0 #000, -3px -3px 0 #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="50.8"
+         data-width="1080" data-height="1920" data-fps="30.0"
+         data-layout-allow-overflow="true">
+      <div id="cue0" class="clip cue" data-start="0.07" data-duration="0.46" data-track-index="1"><span>You've probably seen</span></div>
+      <div id="cue1" class="clip cue" data-start="0.55" data-duration="0.23" data-track-index="1"><span>this.</span></div>
+      <div id="cue2" class="clip cue" data-start="0.8" data-duration="0.85" data-track-index="1"><span>Donald Trump is trying</span></div>
+      <div id="cue3" class="clip cue" data-start="1.65" data-duration="0.94" data-track-index="1"><span>to bring Hyperliquid</span></div>
+      <div id="cue4" class="clip cue" data-start="2.59" data-duration="0.71" data-track-index="1"><span>into America.</span></div>
+      <div id="cue5" class="clip cue" data-start="3.46" data-duration="0.23" data-track-index="1"><span>So for those</span></div>
+      <div id="cue6" class="clip cue" data-start="3.71" data-duration="0.74" data-track-index="1"><span>of you that don't know</span></div>
+      <div id="cue7" class="clip cue" data-start="4.45" data-duration="0.69" data-track-index="1"><span>what Hyperliquid</span></div>
+      <div id="cue8" class="clip cue" data-start="5.14" data-duration="0.81" data-track-index="1"><span>is, it's an offshore</span></div>
+      <div id="cue9" class="clip cue" data-start="5.95" data-duration="0.96" data-track-index="1"><span>crypto gambling site</span></div>
+      <div id="cue10" class="clip cue" data-start="6.91" data-duration="0.86" data-track-index="1"><span>that Americans are</span></div>
+      <div id="cue11" class="clip cue" data-start="7.77" data-duration="0.77" data-track-index="1"><span>currently banned</span></div>
+      <div id="cue12" class="clip cue" data-start="8.54" data-duration="0.46" data-track-index="1"><span>from using.</span></div>
+      <div id="cue13" class="clip cue" data-start="9.02" data-duration="0.71" data-track-index="1"><span>So this is an exchange</span></div>
+      <div id="cue14" class="clip cue" data-start="9.73" data-duration="0.86" data-track-index="1"><span>where people are betting</span></div>
+      <div id="cue15" class="clip cue" data-start="10.59" data-duration="0.99" data-track-index="1"><span>on which way a price</span></div>
+      <div id="cue16" class="clip cue" data-start="11.58" data-duration="0.99" data-track-index="1"><span>is moving, but using</span></div>
+      <div id="cue17" class="clip cue" data-start="12.57" data-duration="0.93" data-track-index="1"><span>borrowed money.</span></div>
+      <div id="cue18" class="clip cue" data-start="13.54" data-duration="0.56" data-track-index="1"><span>It's actually now</span></div>
+      <div id="cue19" class="clip cue" data-start="14.1" data-duration="0.92" data-track-index="1"><span>the biggest of its kind.</span></div>
+      <div id="cue20" class="clip cue" data-start="15.02" data-duration="0.85" data-track-index="1"><span>Around 44% of</span></div>
+      <div id="cue21" class="clip cue" data-start="15.87" data-duration="0.63" data-track-index="1"><span>trading is kind</span></div>
+      <div id="cue22" class="clip cue" data-start="16.5" data-duration="0.88" data-track-index="1"><span>of like this now.</span></div>
+      <div id="cue23" class="clip cue" data-start="17.46" data-duration="0.57" data-track-index="1"><span>And Americans are</span></div>
+      <div id="cue24" class="clip cue" data-start="18.03" data-duration="0.78" data-track-index="1"><span>actually not legally</span></div>
+      <div id="cue25" class="clip cue" data-start="18.81" data-duration="0.73" data-track-index="1"><span>allowed near it.</span></div>
+      <div id="cue26" class="clip cue" data-start="19.58" data-duration="0.48" data-track-index="1"><span>And so last week</span></div>
+      <div id="cue27" class="clip cue" data-start="20.08" data-duration="0.79" data-track-index="1"><span>at a White House meeting</span></div>
+      <div id="cue28" class="clip cue" data-start="20.87" data-duration="1.12" data-track-index="1"><span>with crypto executives,</span></div>
+      <div id="cue29" class="clip cue" data-start="21.99" data-duration="0.71" data-track-index="1"><span>Trump said his own</span></div>
+      <div id="cue30" class="clip cue" data-start="22.7" data-duration="0.82" data-track-index="1"><span>regulator is working</span></div>
+      <div id="cue31" class="clip cue" data-start="23.52" data-duration="0.45" data-track-index="1"><span>on bringing</span></div>
+      <div id="cue32" class="clip cue" data-start="23.99" data-duration="0.75" data-track-index="1"><span>it into the country</span></div>
+      <div id="cue33" class="clip cue" data-start="24.74" data-duration="0.68" data-track-index="1"><span>fully legal.</span></div>
+      <div id="cue34" class="clip cue" data-start="25.46" data-duration="1.28" data-track-index="1"><span>Hyperliquid's people had</span></div>
+      <div id="cue35" class="clip cue" data-start="26.74" data-duration="0.91" data-track-index="1"><span>written to the SEC</span></div>
+      <div id="cue36" class="clip cue" data-start="27.65" data-duration="0.75" data-track-index="1"><span>asking to sort</span></div>
+      <div id="cue37" class="clip cue" data-start="28.4" data-duration="0.64" data-track-index="1"><span>of like legalize</span></div>
+      <div id="cue38" class="clip cue" data-start="29.11" data-duration="0.78" data-track-index="1"><span>something that doesn't</span></div>
+      <div id="cue39" class="clip cue" data-start="29.89" data-duration="0.63" data-track-index="1"><span>exist here yet,</span></div>
+      <div id="cue40" class="clip cue" data-start="30.52" data-duration="0.71" data-track-index="1"><span>which is the concept</span></div>
+      <div id="cue41" class="clip cue" data-start="31.23" data-duration="0.37" data-track-index="1"><span>of betting</span></div>
+      <div id="cue42" class="clip cue" data-start="31.62" data-duration="0.69" data-track-index="1"><span>on what a company</span></div>
+      <div id="cue43" class="clip cue" data-start="32.31" data-duration="0.79" data-track-index="1"><span>is worth before it</span></div>
+      <div id="cue44" class="clip cue" data-start="33.1" data-duration="0.62" data-track-index="1"><span>goes public.</span></div>
+      <div id="cue45" class="clip cue" data-start="33.72" data-duration="0.76" data-track-index="1"><span>Five of these markets</span></div>
+      <div id="cue46" class="clip cue" data-start="34.48" data-duration="0.81" data-track-index="1"><span>actually have already</span></div>
+      <div id="cue47" class="clip cue" data-start="35.29" data-duration="0.91" data-track-index="1"><span>run offshore, one being</span></div>
+      <div id="cue48" class="clip cue" data-start="36.2" data-duration="0.64" data-track-index="1"><span>SpaceX.</span></div>
+      <div id="cue49" class="clip cue" data-start="36.86" data-duration="0.62" data-track-index="1"><span>So if we think about</span></div>
+      <div id="cue50" class="clip cue" data-start="37.48" data-duration="0.72" data-track-index="1"><span>what this means right</span></div>
+      <div id="cue51" class="clip cue" data-start="38.2" data-duration="0.88" data-track-index="1"><span>now, getting a piece</span></div>
+      <div id="cue52" class="clip cue" data-start="39.08" data-duration="0.94" data-track-index="1"><span>of a company before it's</span></div>
+      <div id="cue53" class="clip cue" data-start="40.02" data-duration="0.86" data-track-index="1"><span>listed is only for rich</span></div>
+      <div id="cue54" class="clip cue" data-start="40.88" data-duration="0.74" data-track-index="1"><span>people and people</span></div>
+      <div id="cue55" class="clip cue" data-start="41.62" data-duration="0.64" data-track-index="1"><span>that have offshore</span></div>
+      <div id="cue56" class="clip cue" data-start="42.26" data-duration="0.42" data-track-index="1"><span>accounts.</span></div>
+      <div id="cue57" class="clip cue" data-start="42.7" data-duration="0.58" data-track-index="1"><span>And usually by the</span></div>
+      <div id="cue58" class="clip cue" data-start="43.28" data-duration="0.56" data-track-index="1"><span>time it reaches</span></div>
+      <div id="cue59" class="clip cue" data-start="43.84" data-duration="0.69" data-track-index="1"><span>you, the cheap part</span></div>
+      <div id="cue60" class="clip cue" data-start="44.53" data-duration="0.71" data-track-index="1"><span>is kind of over.</span></div>
+      <div id="cue61" class="clip cue" data-start="45.26" data-duration="1.23" data-track-index="1"><span>So if the SEC says yes,</span></div>
+      <div id="cue62" class="clip cue" data-start="46.49" data-duration="0.97" data-track-index="1"><span>that changes.</span></div>
+      <div id="cue63" class="clip cue" data-start="47.5" data-duration="0.71" data-track-index="1"><span>And if the SEC says</span></div>
+      <div id="cue64" class="clip cue" data-start="48.21" data-duration="0.85" data-track-index="1"><span>nothing, um, then</span></div>
+      <div id="cue65" class="clip cue" data-start="49.06" data-duration="0.76" data-track-index="1"><span>this was a very good</span></div>
+      <div id="cue66" class="clip cue" data-start="49.82" data-duration="0.76" data-track-index="1"><span>week for the token.</span></div>
+    </div>
+    <script>
+      // GENERATED by edit/captions_overlay.py — do not hand-edit.
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // captions cut in and out with the clip window — no tweens by design
+      tl.set("#root", { opacity: 1 }, 0);
+      tl.set("#root", { opacity: 1 }, 50.8);
+      tl.seek(0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
