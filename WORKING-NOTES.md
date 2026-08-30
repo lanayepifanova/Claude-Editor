@@ -5,7 +5,7 @@ established, reversed, or clarified.** `CLAUDE.md` is the *spec* (the settled
 rules); this is the *context* behind it — how she asks, what she reacts to, and
 what I've learned the hard way.
 
-Last updated: 2026-08-15 · after "Intro to Claude Editor" (62.1s → 21.1s)
+Last updated: 2026-08-29 · after "oil markets" (70.7s → 48.4s, captions-only route)
 
 ---
 
@@ -251,6 +251,25 @@ five of those unaided. It is not perfect — it invented "listed on 9S" — so a
 per-video `fixes-*.json` is still required. Critically, **re-running the analysis
 re-transcribes and the errors relocate**, so pin every wrong variant seen, not
 just the latest one. Always read the full transcript back before rendering.
+
+**Not every video goes through Premiere — sometimes the deliverable is just the
+captioned cut.** On 2026-08-29 the bridge was down and she said: "its ok i dont
+rlly need the premiere bridge right now since i dont need the graphics." So the
+pipeline has a shorter route that ends at `output/`: cut the **original** footage
+with the `silence.json` segments, composite the rendered caption overlay, encode
+H.264/AAC. No sequence, no assembly, no caption retiming onto Premiere's frame
+grid (that step only exists because Premiere snaps clips — ffmpeg does not, so
+the overlay and the cut share a frame count exactly: 1453 and 1453 here).
+
+Two things to get right on that route. **Cut from `footage/`, never from
+`cut_proof.mp4`** — the proof is half-resolution (960x1706 for 1080x1920
+footage) and using it is exactly what baked permanent softness into the
+Firecrawl export. And **check `output/` before writing**, since it is hers alone.
+There was no script for this; it is ~15 lines of ffmpeg `trim`/`concat` built
+from the segment pairs. Worth turning into `edit/burn.py` if she asks for it
+again. Verify the burn with a luma-difference `signalstats` read against the
+uncaptioned master rather than by eye — `check_render.py` only sees the overlay,
+not the composite. (Established 2026-08-29.)
 
 **Session cost is the dominant expense — reset between videos.** Measured on this
 project: 1,285 turns, 1.2M output tokens, but **556M cache reads** because the
