@@ -78,6 +78,14 @@ conservative for this pacing.
 *Only if a word sounds bitten off:* raise tail padding to 0.07s. Change nothing
 else. Never widen the gap threshold — the density is the point.
 
+*If she says something was "cut too soon" or "cut out", that is usually not the
+padding.* Speech quieter than the -35 dB trigger — a trailing word, the end of a
+sentence she drops her voice on — is deleted as room tone, and a brief dip inside
+one continuous phrase gets sliced by the 0.05s min-gap. Run
+`python3 edit/restore_speech.py edit/analysis-<name>`: it finds those runs inside
+the removed regions and writes `overrides-<name>.json`, then re-run `preprocess.py`
+with `--overrides`. The recipe itself stays exactly as locked.
+
 **Cuts:** Hard cuts by default. J/L cuts on dialogue so audio leads or trails
 the picture — this is what keeps aggressive silence removal from feeling
 choppy. Cut away to b-roll or a graphic over the ugliest jump cuts rather than

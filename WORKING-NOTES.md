@@ -6,7 +6,8 @@ rules); this is the *context* behind it — how she asks, what she reacts to, an
 what I've learned the hard way.
 
 Last updated: 2026-09-05 · after the four-video batch (hugging face, instinct,
-moonshot ai, polymarket) — captions-only route, now scripted as `edit/burn.py`
+moonshot ai, polymarket) — captions-only route, now scripted as `edit/burn.py`,
+plus the first "less cut" note she has ever given
 
 ---
 
@@ -317,6 +318,47 @@ clean. 77 images entered context this session, each re-sent on every later turn.
 
 **Disk discipline.** Each render is 0.5–1 GB. Delete superseded versions, and remove
 the bin entry *before* deleting the file so nothing goes offline.
+
+**She asked for LESS cut for the first time on 2026-09-05 — and the recipe was not
+the problem.** Her words: "make the instinct video less cut, there was some parts
+that were cut too soon", then two examples ("last few weeks", "not even public
+yet") and one on another clip ("the last bit for the '22b valuation' in the
+polymarket video was cut off"). The instinct to reach for the sanctioned tail-pad
+bump (0.04 -> 0.07) would have fixed none of them. What was actually happening:
+
+- **Quiet trailing speech never trips the -35 dB trigger and is deleted as room
+  tone.** "weeks" peaked at -39 dB and was removed with the 2.9s pause after it;
+  polymarket's closing "valuation" peaked at -35 and fell off the end the same way.
+- **A brief dip inside continuous speech gets sliced by the 0.05s min-gap.**
+  "public yet" is one unbroken 0.40s utterance; the pass punched a 0.16s hole in
+  the middle of it, so the phrase read as cut out.
+
+The fix is `edit/restore_speech.py`, which does NOT touch the locked recipe: it
+scans the REMOVED regions for runs above -45 dB lasting >=0.06s that are adjacent
+to a cut, and writes `overrides-<name>.json` extending the neighbouring segment
+over them. instinct +2.24s (12 spots), polymarket +1.49s (7). Run it after
+preprocess, then re-run preprocess with the overrides.
+
+**Only restore speech ADJACENT to the cut.** The first version extended to the
+last qualifying run anywhere in the gap, which reached a lone breath 3s into a
+pause and dragged the whole pause back with it — polymarket went 35s -> 46s. A
+blip alone in the middle of a long silence is a breath; only a run continuing
+from the cut (or leading into the next segment) is a clipped word.
+
+**A by-product worth knowing: re-cutting re-transcribes, and the fixes moved
+again.** "The valuation" became "The evaluation", "Polymarket" became "Poly
+Market", "Kalshi" became "CalShe" (a variant not in the fixes file from the first
+pass). Re-read every transcript after any change to the cut. The restored audio
+also finally resolved a line I could not make sense of: "sort of like mine" was
+"sort of like a fine line" — the words that made it parse had been cut out.
+
+**Cues shorter than a frame render as nothing.** `check_render.py` reported NO INK
+for "for" on instinct: the grouper left it as a 0.06s cue between two neighbours
+that started 0.02s later, so at 30fps the word never appeared on screen. Borrowing
+words backward and stretching the end both failed there because both neighbours
+were immediate. `captions_overlay.py` now merges any cue still under 0.20s into
+whichever neighbour can legally take it. This had been happening before anyone
+noticed — the first pass flagged the same pattern on two cues. (2026-09-05.)
 
 **The locked silence recipe is the floor — tightening it damages audio. Don't retest.**
 She asked for a more aggressive cut on 2026-08-16; I swept the parameters, built every

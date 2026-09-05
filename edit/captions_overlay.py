@@ -126,6 +126,38 @@ def group(words):
             for x in (c, prev):
                 x["start"], x["end"] = x["words"][0]["t0"], x["words"][-1]["t1"]
                 x["text"] = txt_of(x["words"])
+    # Borrowing cannot rescue a cue whose neighbours are both immediate: on
+    # "instinct", "for" survived as a 0.06s cue between two cues that started
+    # 0.02s later — under one frame at 30fps, so the word never appeared at all
+    # and check_render reported NO INK for it. Merge anything still below a
+    # frame-visible floor into whichever neighbour can legally take it.
+    VISIBLE = 0.20
+    i = 0
+    while i < len(cues):
+        c = cues[i]
+        if c["end"] - c["start"] >= VISIBLE:
+            i += 1
+            continue
+        merged = False
+        for j in (i + 1, i - 1):           # forward first: a stranded word leads
+            if not (0 <= j < len(cues)):
+                continue
+            other = cues[j]
+            ws = (c["words"] + other["words"]) if j > i else (other["words"] + c["words"])
+            if len(txt_of(ws)) > MAX_CHARS:
+                continue
+            if ws[-1]["t1"] - ws[0]["t0"] > MAX_DUR:
+                continue
+            other["words"] = ws
+            other["start"], other["end"] = ws[0]["t0"], ws[-1]["t1"]
+            other["text"] = txt_of(ws)
+            cues.pop(i)
+            merged = True
+            break
+        if not merged:
+            i += 1
+        elif i > 0:
+            i -= 1
     # enforce a readable minimum without colliding with the next cue
     for i, c in enumerate(cues):
         if c["end"] - c["start"] < MIN_DUR:
