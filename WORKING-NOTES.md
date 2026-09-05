@@ -333,6 +333,10 @@ bump (0.04 -> 0.07) would have fixed none of them. What was actually happening:
   "public yet" is one unbroken 0.40s utterance; the pass punched a 0.16s hole in
   the middle of it, so the phrase read as cut out.
 
+She approved the result outright ("perfect!!"), so this is settled: when she says
+something was cut too soon, restore the quiet speech — do not touch the recipe,
+and do not reach for the tail-pad bump first.
+
 The fix is `edit/restore_speech.py`, which does NOT touch the locked recipe: it
 scans the REMOVED regions for runs above -45 dB lasting >=0.06s that are adjacent
 to a cut, and writes `overrides-<name>.json` extending the neighbouring segment
