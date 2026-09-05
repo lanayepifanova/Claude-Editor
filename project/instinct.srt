@@ -1,0 +1,188 @@
+1
+00:00:00,020 --> 00:00:00,830
+The valuation
+
+2
+00:00:00,830 --> 00:00:01,920
+of this AI startup
+
+3
+00:00:01,920 --> 00:00:02,720
+from San Francisco
+
+4
+00:00:02,720 --> 00:00:03,510
+called Instinct
+
+5
+00:00:03,510 --> 00:00:04,540
+has just went from 100
+
+6
+00:00:04,540 --> 00:00:06,180
+million to 2.5 billion
+
+7
+00:00:06,180 --> 00:00:06,830
+dollars in just
+
+8
+00:00:06,830 --> 00:00:07,280
+the last few weeks.
+
+9
+00:00:07,300 --> 00:00:08,150
+They've raised around
+
+10
+00:00:08,150 --> 00:00:09,210
+350 million dollars
+
+11
+00:00:09,210 --> 00:00:09,680
+at this point
+
+12
+00:00:09,700 --> 00:00:10,530
+and the product is not
+
+13
+00:00:10,530 --> 00:00:11,200
+even public yet.
+
+14
+00:00:11,200 --> 00:00:11,930
+You have to be invited
+
+15
+00:00:11,930 --> 00:00:12,500
+to download.
+
+16
+00:00:12,500 --> 00:00:13,600
+The website's also super
+
+17
+00:00:13,600 --> 00:00:14,150
+mysterious
+
+18
+00:00:14,150 --> 00:00:14,270
+and
+
+19
+00:00:14,290 --> 00:00:15,600
+very, like, minimalistic.
+
+20
+00:00:15,600 --> 00:00:16,420
+And the founder is only
+
+21
+00:00:16,420 --> 00:00:17,200
+23 years old.
+
+22
+00:00:17,200 --> 00:00:17,670
+The product
+
+23
+00:00:17,690 --> 00:00:18,720
+is supposedly a personal
+
+24
+00:00:18,720 --> 00:00:19,580
+assistant that lives
+
+25
+00:00:19,580 --> 00:00:20,220
+on your computer
+
+26
+00:00:20,220 --> 00:00:20,690
+and can do things
+
+27
+00:00:20,710 --> 00:00:21,230
+like book flights
+
+28
+00:00:21,250 --> 00:00:22,050
+or make reservations
+
+29
+00:00:22,050 --> 00:00:22,480
+for you.
+
+30
+00:00:22,500 --> 00:00:23,210
+There are some users
+
+31
+00:00:23,210 --> 00:00:24,100
+that are concerned about
+
+32
+00:00:24,100 --> 00:00:24,900
+the amount of privacy
+
+33
+00:00:24,900 --> 00:00:25,500
+that you have to give up
+
+34
+00:00:25,500 --> 00:00:26,090
+because in order
+
+35
+00:00:26,090 --> 00:00:26,680
+to have the agent
+
+36
+00:00:26,680 --> 00:00:27,410
+just do everything
+
+37
+00:00:27,410 --> 00:00:27,470
+for
+
+38
+00:00:27,490 --> 00:00:27,760
+you,
+
+39
+00:00:27,780 --> 00:00:28,520
+you have to also give
+
+40
+00:00:28,520 --> 00:00:29,400
+it access to everything.
+
+41
+00:00:29,410 --> 00:00:29,870
+which will always
+
+42
+00:00:29,890 --> 00:00:30,560
+be sort of like mine.
+
+43
+00:00:30,560 --> 00:00:30,880
+Still one
+
+44
+00:00:30,900 --> 00:00:31,460
+of the craziest
+
+45
+00:00:31,460 --> 00:00:32,360
+evaluation jumps we've
+
+46
+00:00:32,360 --> 00:00:33,390
+seen, considering it's
+
+47
+00:00:33,390 --> 00:00:33,967
+still in private beta.
+

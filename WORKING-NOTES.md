@@ -5,7 +5,8 @@ established, reversed, or clarified.** `CLAUDE.md` is the *spec* (the settled
 rules); this is the *context* behind it — how she asks, what she reacts to, and
 what I've learned the hard way.
 
-Last updated: 2026-08-29 · after "oil markets" (70.7s → 48.4s, captions-only route)
+Last updated: 2026-09-05 · after the four-video batch (hugging face, instinct,
+moonshot ai, polymarket) — captions-only route, now scripted as `edit/burn.py`
 
 ---
 
@@ -270,6 +271,32 @@ from the segment pairs. Worth turning into `edit/burn.py` if she asks for it
 again. Verify the burn with a luma-difference `signalstats` read against the
 uncaptioned master rather than by eye — `check_render.py` only sees the overlay,
 not the composite. (Established 2026-08-29.)
+
+**That route is now `edit/burn.py`** — she asked for it a second time on
+2026-09-05 (four videos in one go), which was the trigger the note above named.
+It cuts from `footage/` per `silence.json`, composites the overlay, encodes
+H.264/AAC, refuses to overwrite anything already in `output/` without `--force`,
+and keeps the uncaptioned master so the burn can be re-verified later with
+`--verify-only`.
+
+**Verify the burn by counting changed PIXELS, not mean luma.** The first version
+of that check compared average luma between burn and master and reported "100% of
+frames carry ink" on all four videos — meaningless, because the two files are
+encoded separately and x264 noise alone reads ~1.0 YAVG, the same order as the
+text. Binarising the difference first (`lut=y='if(gt(val,60),255,0)'`) drops the
+noise and leaves the strokes; coverage then tracks the SRT closely (1246 inked
+frames against 1244 cue-covered on hugging face, 97% on the two videos with real
+gaps). A verification that passes on everything is not a verification.
+(Established 2026-09-05.)
+
+**Whisper can time a real word past the end of the cut, and dropping it loses
+speech.** `captions_overlay.py` discarded any word starting after
+`cut_duration`, which is right for a hallucinated trailing token but wrong for
+drift: on "instinct" the closing "beta." was timed at 34.14s on a 33.97s cut and
+vanished, so the last caption read "still in private". It now keeps a word that
+lands within 0.75s of the end and pulls it onto the final frames. Check the last
+cue of every video against the transcript tail — that is where this hides.
+(Established 2026-09-05.)
 
 **Session cost is the dominant expense — reset between videos.** Measured on this
 project: 1,285 turns, 1.2M output tokens, but **556M cache reads** because the

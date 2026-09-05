@@ -137,6 +137,19 @@ Premiere-native captions. Social/vertical cuts instead burn captions as a
 HyperFrames overlay via `edit/captions_overlay.py` — that route is scriptable
 end to end, positions with `--y`, and is what the orientation table above sizes.
 
+When the deliverable is just the captioned cut and no graphics are wanted,
+`edit/burn.py` finishes that route without Premiere at all: it cuts the original
+footage with `silence.json`, composites the rendered overlay, and writes
+H.264/AAC into `output/`. It never overwrites an existing export without
+`--force`, and it verifies the composite by measuring how much of each frame the
+ink actually changed.
+
+```bash
+python3 edit/burn.py --analysis edit/analysis-<name> \
+    --overlay graphics/<name>-cap.mov --out "output/<name>.mp4" \
+    --master graphics/<name>-master.mp4
+```
+
 **Caption position (Premiere-native route only):** Premiere exposes no caption API in its scripting DOM (the
 sequence only surfaces `videoTracks`/`audioTracks`), so caption placement cannot
 be scripted. Premiere's default landed fine on the 2026-08-15 pass. If it ever

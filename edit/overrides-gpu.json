@@ -1,9 +1,0 @@
-{
-  "segments": {
-    "0":  { "out": 4.80 },
-    "2":  { "out": 14.00 },
-    "-1": { "out": 77.90 }
-  },
-  "drop": [3],
-  "why": "seg 0: tail of 'GPU hours' runs to 4.80s. seg 2+3: 'trade crude oil' was split by a 67ms gap and the word clipped at 13.87 — merged into one take running to 14.00s. last seg: 'check that against' runs to 77.82s."
-}

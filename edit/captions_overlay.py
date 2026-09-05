@@ -271,8 +271,17 @@ def main():
     # (Firecrawl: "good." ended at 32.90s on a 30.87s cut). Uncapped, the last
     # cue overruns the composition window, gets clipped at render, and flashes
     # for a fraction of its intended time instead of holding.
-    words = [wd for wd in words if wd["t0"] < dur]
+    #
+    # The drift can push a word's START past the end too, and dropping those
+    # outright loses a word that is genuinely audible: on "instinct" the closing
+    # "beta." was timed at 34.14s on a 33.97s cut and vanished, leaving the last
+    # cue reading "still in private". So only discard a token that lands clearly
+    # outside the cut; pull a drifted one back onto the final frames instead.
+    slack = 0.75
+    words = [wd for wd in words if wd["t0"] < dur + slack]
     for wd in words:
+        if wd["t0"] >= dur:
+            wd["t0"] = max(0.0, dur - 1.0 / a.fps)
         wd["t1"] = min(wd["t1"], dur)
     global MAX_CHARS
     # Montserrat 800 averages ~0.58em per character; keep every cue on one line

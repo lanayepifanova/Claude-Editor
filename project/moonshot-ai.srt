@@ -1,0 +1,128 @@
+1
+00:00:00,060 --> 00:00:00,410
+Moonshot
+
+2
+00:00:00,430 --> 00:00:01,370
+AI, which is the company
+
+3
+00:00:01,370 --> 00:00:02,410
+that's behind the Kimi
+
+4
+00:00:02,410 --> 00:00:03,260
+K3 model, is now
+
+5
+00:00:03,260 --> 00:00:04,200
+reportedly filing
+
+6
+00:00:04,200 --> 00:00:05,600
+for a Hong Kong IPO.
+
+7
+00:00:05,600 --> 00:00:06,090
+This is now
+
+8
+00:00:06,110 --> 00:00:07,450
+at roughly a 50 billion
+
+9
+00:00:07,450 --> 00:00:08,580
+dollar valuation.
+
+10
+00:00:08,580 --> 00:00:09,100
+And this shows
+
+11
+00:00:09,120 --> 00:00:09,800
+how quickly these
+
+12
+00:00:09,800 --> 00:00:10,800
+Chinese model companies
+
+13
+00:00:10,800 --> 00:00:11,180
+are moving
+
+14
+00:00:11,200 --> 00:00:12,130
+from venture-backed
+
+15
+00:00:12,130 --> 00:00:12,620
+research labs
+
+16
+00:00:12,640 --> 00:00:13,880
+to the public markets.
+
+17
+00:00:13,880 --> 00:00:14,880
+A successful IPO here
+
+18
+00:00:14,880 --> 00:00:16,030
+would give the company
+
+19
+00:00:16,030 --> 00:00:16,950
+substantial capital
+
+20
+00:00:16,950 --> 00:00:17,880
+for chips, training
+
+21
+00:00:17,880 --> 00:00:18,500
+infrastructure,
+
+22
+00:00:18,500 --> 00:00:18,860
+and talent.
+
+23
+00:00:18,880 --> 00:00:19,880
+It would also starkly
+
+24
+00:00:19,880 --> 00:00:20,870
+contrast the private
+
+25
+00:00:20,870 --> 00:00:22,020
+financing model that's
+
+26
+00:00:22,020 --> 00:00:23,070
+mostly used by U.S.
+
+27
+00:00:23,070 --> 00:00:23,680
+AI labs.
+
+28
+00:00:23,680 --> 00:00:25,020
+Overall though, this IPO
+
+29
+00:00:25,020 --> 00:00:26,070
+will give investors
+
+30
+00:00:26,070 --> 00:00:26,840
+a new benchmark
+
+31
+00:00:26,840 --> 00:00:27,860
+for valuing China's
+
+32
+00:00:27,860 --> 00:00:28,600
+AI industry.
+
