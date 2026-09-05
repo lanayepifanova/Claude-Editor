@@ -21,7 +21,7 @@ Two rules make this safe to run without reading the code first:
    project/, and every .json in an analysis dir are unreachable from here even
    if a pattern is wrong.
 """
-import re
+import json, re
 import argparse, json, shutil, subprocess, sys
 from pathlib import Path
 
@@ -70,6 +70,18 @@ def render_source(f):
         committed = [h for h in htmls if tracked(h)]
         if committed:
             return True, f"re-render from {d.name}/{committed[0].name}"
+    # A burn master has no composition — it is the uncaptioned cut burn.py
+    # writes so the composite can be re-verified later. It is rebuildable from
+    # the footage plus silence.json, so it may go while that footage is still
+    # here; once the footage is deleted it is not rebuildable and this keeps it.
+    if stem.endswith("-master"):
+        name = stem[:-len("-master")]
+        sil = ROOT / f"edit/analysis-{name}/silence.json"
+        if sil.exists():
+            src = json.loads(sil.read_text()).get("source", "")
+            if src and (ROOT / src).exists():
+                return True, f"rebuild with burn.py --analysis edit/analysis-{name}"
+            return False, f"source footage for '{name}' is gone — this is the last cut"
     return False, f"no committed composition matches '{stem}'"
 
 
