@@ -4,7 +4,7 @@ An AI researcher
 
 2
 00:00:00,800 --> 00:00:01,780
-just quit Anthropic
+just quit Anthropic,
 
 3
 00:00:01,780 --> 00:00:02,220
@@ -24,7 +24,7 @@ us all.
 
 7
 00:00:04,560 --> 00:00:05,360
-Jacob Coxen spent
+Jacob Coxon spent
 
 8
 00:00:05,360 --> 00:00:06,340
@@ -32,7 +32,7 @@ the last three years
 
 9
 00:00:06,340 --> 00:00:07,020
-doing pre-training
+doing pretraining
 
 10
 00:00:07,020 --> 00:00:07,873

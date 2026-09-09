@@ -2,12 +2,15 @@
   "Enthropic": "Anthropic",
   "Antropic": "Anthropic",
   "anthropic": "Anthropic",
+  "quit anthropic": "quit Anthropic,",
   "open AI and anthropic": "OpenAI and Anthropic",
   "OpenAI anthropic": "OpenAI and Anthropic",
   "open AI": "OpenAI",
   "Huberinger": "Hubinger",
-  "Coxon": "Coxen",
-  "Cox man": "Coxen",
-  "Coxin": "Coxen",
+  "Coxen": "Coxon",
+  "Coxin": "Coxon",
+  "Cox man": "Coxon",
+  "pre-training": "pretraining",
+  "pre training": "pretraining",
   "10 percent": "10%"
 }
