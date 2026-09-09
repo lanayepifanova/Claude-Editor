@@ -43,11 +43,22 @@ def probe(path, stream="v:0", entries="width,height,nb_read_packets"):
     return st[0] if st else {}
 
 
-def build_master(src, segments, dest):
-    """Concat the kept segments straight out of the original footage."""
+def build_master(src, segments, dest, fps=30.0):
+    """Concat the kept segments straight out of the original footage.
+
+    The video trim ends half a frame early. Some cameras write frame
+    timestamps truncated rather than rounded (frame 108 of a 30fps clip lands
+    at 3.599999, not 3.600000), so trim's half-open [start, end) still admits
+    the frame sitting on the boundary and the segment comes back one frame
+    long. Two of ten segments did that on anthropic.mov, which put the master
+    2 frames ahead of the overlay. Backing the cut off by half a frame excludes
+    that frame whether the timestamp was truncated or exact, and cannot reach
+    the previous frame. Audio is sample-accurate and is left alone.
+    """
     parts, labels = [], []
+    half = 0.5 / fps
     for i, (a, b) in enumerate(segments):
-        parts.append(f"[0:v]trim=start={a:.6f}:end={b:.6f},setpts=PTS-STARTPTS[v{i}]")
+        parts.append(f"[0:v]trim=start={a:.6f}:end={b - half:.6f},setpts=PTS-STARTPTS[v{i}]")
         parts.append(f"[0:a]atrim=start={a:.6f}:end={b:.6f},asetpts=PTS-STARTPTS[a{i}]")
         labels.append(f"[v{i}][a{i}]")
     graph = ";".join(parts) + ";" + "".join(labels) + \
@@ -124,7 +135,7 @@ def main():
         print(f"1/2  cutting {len(segments)} segments from {os.path.basename(src)} "
               f"({sil['source_duration']:.1f}s -> {sil['cut_duration']:.1f}s, "
               f"{sil['removed_pct']}% removed)")
-        build_master(src, segments, master)
+        build_master(src, segments, master, sil.get("fps", 30.0))
 
         if args.overlay:
             v = probe(master)

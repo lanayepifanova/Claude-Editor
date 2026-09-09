@@ -1,0 +1,192 @@
+1
+00:00:00,110 --> 00:00:00,800
+An AI researcher
+
+2
+00:00:00,800 --> 00:00:01,780
+just quit Anthropic
+
+3
+00:00:01,780 --> 00:00:02,220
+warning
+
+4
+00:00:02,240 --> 00:00:03,040
+that the technology he
+
+5
+00:00:03,040 --> 00:00:03,760
+helped build could kill
+
+6
+00:00:03,760 --> 00:00:04,560
+us all.
+
+7
+00:00:04,560 --> 00:00:05,360
+Jacob Coxen spent
+
+8
+00:00:05,360 --> 00:00:06,340
+the last three years
+
+9
+00:00:06,340 --> 00:00:07,020
+doing pre-training
+
+10
+00:00:07,020 --> 00:00:07,873
+research at OpenAI
+
+11
+00:00:07,873 --> 00:00:08,640
+and Anthropic,
+
+12
+00:00:08,640 --> 00:00:09,410
+and on Tuesday he
+
+13
+00:00:09,410 --> 00:00:10,070
+announced his
+
+14
+00:00:10,070 --> 00:00:11,280
+resignation and accused
+
+15
+00:00:11,280 --> 00:00:12,480
+both companies of racing
+
+16
+00:00:12,480 --> 00:00:13,580
+towards self-improving
+
+17
+00:00:13,580 --> 00:00:14,470
+superintelligence
+
+18
+00:00:14,470 --> 00:00:15,140
+without acting
+
+19
+00:00:15,140 --> 00:00:15,920
+responsibly.
+
+20
+00:00:15,920 --> 00:00:16,380
+His concern
+
+21
+00:00:16,400 --> 00:00:17,280
+is that these systems
+
+22
+00:00:17,280 --> 00:00:18,230
+could become powerful
+
+23
+00:00:18,230 --> 00:00:18,880
+enough to break
+
+24
+00:00:18,880 --> 00:00:19,930
+into computer systems,
+
+25
+00:00:19,930 --> 00:00:20,900
+acquire resources,
+
+26
+00:00:20,900 --> 00:00:21,890
+and gain power beyond
+
+27
+00:00:21,890 --> 00:00:22,640
+human control.
+
+28
+00:00:22,640 --> 00:00:23,670
+Then Evan Hubinger,
+
+29
+00:00:23,670 --> 00:00:24,660
+who leads alignment
+
+30
+00:00:24,660 --> 00:00:26,080
+science at Anthropic,
+
+31
+00:00:26,080 --> 00:00:26,910
+responded and he
+
+32
+00:00:26,910 --> 00:00:27,630
+personally put
+
+33
+00:00:27,630 --> 00:00:28,730
+the chance of AI killing
+
+34
+00:00:28,730 --> 00:00:29,550
+all humans within
+
+35
+00:00:29,550 --> 00:00:30,530
+the next decade above
+
+36
+00:00:30,530 --> 00:00:31,850
+10%, and he said
+
+37
+00:00:31,850 --> 00:00:32,780
+Anthropic is trying
+
+38
+00:00:32,780 --> 00:00:33,860
+its best but doesn't yet
+
+39
+00:00:33,860 --> 00:00:34,800
+have a plan to solve
+
+40
+00:00:34,800 --> 00:00:35,180
+alignment
+
+41
+00:00:35,200 --> 00:00:36,290
+for superintelligence.
+
+42
+00:00:36,290 --> 00:00:36,990
+He also clarified
+
+43
+00:00:36,990 --> 00:00:37,690
+that he considers
+
+44
+00:00:37,690 --> 00:00:38,540
+the risk from current
+
+45
+00:00:38,540 --> 00:00:39,840
+models low and that his
+
+46
+00:00:39,840 --> 00:00:41,160
+concern is what happens
+
+47
+00:00:41,160 --> 00:00:42,290
+as AI becomes capable
+
+48
+00:00:42,290 --> 00:00:43,440
+of improving itself.
+

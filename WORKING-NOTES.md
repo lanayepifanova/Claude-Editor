@@ -5,9 +5,9 @@ established, reversed, or clarified.** `CLAUDE.md` is the *spec* (the settled
 rules); this is the *context* behind it — how she asks, what she reacts to, and
 what I've learned the hard way.
 
-Last updated: 2026-09-09 · after the OpenAI clip — first quietly-recorded source,
-where the locked recipe's absolute -35 dB threshold ate ~13s of real speech and the
-restoration threshold had to be moved into that clip's valley
+Last updated: 2026-09-09 · after the Anthropic clip — a source with NO room-tone
+cluster at all, where the tell was the envelope histogram rather than the duration,
+and where `restore_speech.py` alone could not reach the quietest words
 
 ---
 
@@ -395,6 +395,61 @@ restoration looks alarmingly large; it says whether the growth is real speech or
 it costs one preprocess run.
 
 Her verdict on this pacing is still pending as of the export. (Established 2026-09-09.)
+
+**A clip can have no room-tone cluster at all, and then the histogram — not the
+duration — is the tell.** `anthropic.mov` (2026-09-09) measured **-25.1 LUFS, -5.9 dBFS
+true peak**: only ~5 dB quiet, far less alarming than openai's -29.9, and the pass removed
+just **19%** where openai removed 42%. Both of those reassuring numbers were wrong. The
+envelope had **no valley to put a threshold in** — a continuous distribution rising from
+-57 straight through to a peak at -30, with a true noise floor at -71 populated by almost
+nothing. The median of the whole envelope was **-34.2 dB**, so the locked -35 sat
+essentially *at the midpoint of the speech itself*. A low removed-percentage is not
+evidence the cut is safe; on a clip with no pauses it just means there was little to
+remove. **Plot the histogram every time and find the valley before trusting -35.**
+
+The confirmation route that works, and costs one preprocess run: **gain the audio to about
+-18 LUFS and run the locked recipe completely untouched.** Here +7 dB gave 41.2s against
+the raw pass's 37.6s, and its transcript recovered every word the raw cut had lost. That
+number is the target the restoration has to hit.
+
+**`restore_speech.py` could not reach the quietest words on this clip, and lowering
+`--quiet-db` far enough would have undone the cut.** Trailing speech here ran much lower
+than on openai: "us all" sat at **-55..-59 dB** and "control" at -47..-55, against a -71
+floor. `--quiet-db -48` matched the control's duration (41.9s vs 41.2s) and recovered most
+losses, but -56 was needed to reach "us all" — and -56 restored 7.2s, leaving barely any
+cut at all. The answer was **-48 plus five hand-checked `overrides` spans**, not a deeper
+sweep. `preprocess.py --overrides` accepts `"in"` as well as `"out"`, which is what makes
+targeted repair possible.
+
+**Whisper will hallucinate a cut phrase back from context, so the transcript diff can
+give a FALSE PASS.** The -48 cut transcribed as "could kill us all" while the region
+holding "us all" (4.37-4.97) was still entirely removed — the language model simply
+completed the idiom. Reading the transcript is necessary and not sufficient. The check
+that does not lie is **peak level against the room-tone floor**: `astats` on the region
+gave peak -25.6 dB where true room tone peaks at -62.6, i.e. 37 dB above the floor —
+unambiguously speech, merely soft. Use RMS to find candidates and peak-vs-floor to decide.
+Conversely, a 0.4s run at -50..-56 flanked by speech is usually a **breath**, and breaths
+sit in the same RMS band as quiet speech; two such runs were left cut here and the words
+around them survived intact.
+
+**The last check is to transcribe the finished export.** `output/anthropic.mp4` came back
+word-for-word identical to the ground truth read off the original. That is the only check
+that covers the cut, the overrides, the caption timings and the burn at once.
+
+**`edit/burn.py` cut every segment one frame long on this camera — now fixed.** The master
+came out 1310 frames against the overlay's 1308 and burn.py refused to composite. The
+segments were all exactly on the 30fps grid; the fault was that this camera writes frame
+timestamps **truncated rather than rounded** (frame 108 lands at 3.599999, not 3.600000),
+so `trim`'s half-open `[start, end)` still admitted the frame sitting on the boundary.
+`build_master` now ends the **video** trim half a frame early — which excludes that frame
+whether the timestamp was truncated or exact, and cannot reach the previous one — and
+takes fps from `silence.json`. Audio is sample-accurate and is left alone.
+
+**A `fixes-*.json` entry must never carry punctuation.** `apply_fixes` strips punctuation
+when *matching* but emits the replacement **verbatim**, so an entry like
+`"Anthropic,": "Anthropic,"` matches every bare "anthropic" and injects a comma —
+producing "science at Anthropic,," and "Anthropic, is trying". Write bare words on both
+sides; the tool re-attaches the original trailing punctuation itself.
 
 **The locked silence recipe is the floor — tightening it damages audio. Don't retest.**
 She asked for a more aggressive cut on 2026-08-16; I swept the parameters, built every

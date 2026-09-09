@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>captions</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:transparent; }
+      #root { position:relative; width:1080px; height:1920px; }
+      .cue {
+        position:absolute; left:0; right:0; top:25.0%;
+        transform:translateY(-50%);
+        display:flex; align-items:center; justify-content:center;
+        text-align:center;
+      }
+      .cue span {
+        display:inline-block; max-width:778px; white-space:nowrap;
+        font-family:'Montserrat', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+        font-weight:800; font-size:54px; line-height:1.18;
+        letter-spacing:-0.01em; color:#FFFFFF;
+        /* hard edge, zero blur — reads on any background, never looks glowy */
+        text-shadow:
+          4px 0 0 #000, -4px 0 0 #000, 0 4px 0 #000, 0 -4px 0 #000,
+          3px 3px 0 #000, -3px 3px 0 #000,
+          3px -3px 0 #000, -3px -3px 0 #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="43.6"
+         data-width="1080" data-height="1920" data-fps="30.0"
+         data-layout-allow-overflow="true">
+      <div id="cue0" class="clip cue" data-start="0.11" data-duration="0.69" data-track-index="1"><span>An AI researcher</span></div>
+      <div id="cue1" class="clip cue" data-start="0.8" data-duration="0.98" data-track-index="1"><span>just quit Anthropic</span></div>
+      <div id="cue2" class="clip cue" data-start="1.78" data-duration="0.44" data-track-index="1"><span>warning</span></div>
+      <div id="cue3" class="clip cue" data-start="2.24" data-duration="0.8" data-track-index="1"><span>that the technology he</span></div>
+      <div id="cue4" class="clip cue" data-start="3.04" data-duration="0.72" data-track-index="1"><span>helped build could kill</span></div>
+      <div id="cue5" class="clip cue" data-start="3.76" data-duration="0.8" data-track-index="1"><span>us all.</span></div>
+      <div id="cue6" class="clip cue" data-start="4.56" data-duration="0.8" data-track-index="1"><span>Jacob Coxen spent</span></div>
+      <div id="cue7" class="clip cue" data-start="5.36" data-duration="0.98" data-track-index="1"><span>the last three years</span></div>
+      <div id="cue8" class="clip cue" data-start="6.34" data-duration="0.68" data-track-index="1"><span>doing pre-training</span></div>
+      <div id="cue9" class="clip cue" data-start="7.02" data-duration="0.853" data-track-index="1"><span>research at OpenAI</span></div>
+      <div id="cue10" class="clip cue" data-start="7.873" data-duration="0.767" data-track-index="1"><span>and Anthropic,</span></div>
+      <div id="cue11" class="clip cue" data-start="8.64" data-duration="0.77" data-track-index="1"><span>and on Tuesday he</span></div>
+      <div id="cue12" class="clip cue" data-start="9.41" data-duration="0.66" data-track-index="1"><span>announced his</span></div>
+      <div id="cue13" class="clip cue" data-start="10.07" data-duration="1.21" data-track-index="1"><span>resignation and accused</span></div>
+      <div id="cue14" class="clip cue" data-start="11.28" data-duration="1.2" data-track-index="1"><span>both companies of racing</span></div>
+      <div id="cue15" class="clip cue" data-start="12.48" data-duration="1.1" data-track-index="1"><span>towards self-improving</span></div>
+      <div id="cue16" class="clip cue" data-start="13.58" data-duration="0.89" data-track-index="1"><span>superintelligence</span></div>
+      <div id="cue17" class="clip cue" data-start="14.47" data-duration="0.67" data-track-index="1"><span>without acting</span></div>
+      <div id="cue18" class="clip cue" data-start="15.14" data-duration="0.78" data-track-index="1"><span>responsibly.</span></div>
+      <div id="cue19" class="clip cue" data-start="15.92" data-duration="0.46" data-track-index="1"><span>His concern</span></div>
+      <div id="cue20" class="clip cue" data-start="16.4" data-duration="0.88" data-track-index="1"><span>is that these systems</span></div>
+      <div id="cue21" class="clip cue" data-start="17.28" data-duration="0.95" data-track-index="1"><span>could become powerful</span></div>
+      <div id="cue22" class="clip cue" data-start="18.23" data-duration="0.65" data-track-index="1"><span>enough to break</span></div>
+      <div id="cue23" class="clip cue" data-start="18.88" data-duration="1.05" data-track-index="1"><span>into computer systems,</span></div>
+      <div id="cue24" class="clip cue" data-start="19.93" data-duration="0.97" data-track-index="1"><span>acquire resources,</span></div>
+      <div id="cue25" class="clip cue" data-start="20.9" data-duration="0.99" data-track-index="1"><span>and gain power beyond</span></div>
+      <div id="cue26" class="clip cue" data-start="21.89" data-duration="0.75" data-track-index="1"><span>human control.</span></div>
+      <div id="cue27" class="clip cue" data-start="22.64" data-duration="1.03" data-track-index="1"><span>Then Evan Hubinger,</span></div>
+      <div id="cue28" class="clip cue" data-start="23.67" data-duration="0.99" data-track-index="1"><span>who leads alignment</span></div>
+      <div id="cue29" class="clip cue" data-start="24.66" data-duration="1.42" data-track-index="1"><span>science at Anthropic,</span></div>
+      <div id="cue30" class="clip cue" data-start="26.08" data-duration="0.83" data-track-index="1"><span>responded and he</span></div>
+      <div id="cue31" class="clip cue" data-start="26.91" data-duration="0.72" data-track-index="1"><span>personally put</span></div>
+      <div id="cue32" class="clip cue" data-start="27.63" data-duration="1.1" data-track-index="1"><span>the chance of AI killing</span></div>
+      <div id="cue33" class="clip cue" data-start="28.73" data-duration="0.82" data-track-index="1"><span>all humans within</span></div>
+      <div id="cue34" class="clip cue" data-start="29.55" data-duration="0.98" data-track-index="1"><span>the next decade above</span></div>
+      <div id="cue35" class="clip cue" data-start="30.53" data-duration="1.32" data-track-index="1"><span>10%, and he said</span></div>
+      <div id="cue36" class="clip cue" data-start="31.85" data-duration="0.93" data-track-index="1"><span>Anthropic is trying</span></div>
+      <div id="cue37" class="clip cue" data-start="32.78" data-duration="1.08" data-track-index="1"><span>its best but doesn't yet</span></div>
+      <div id="cue38" class="clip cue" data-start="33.86" data-duration="0.94" data-track-index="1"><span>have a plan to solve</span></div>
+      <div id="cue39" class="clip cue" data-start="34.8" data-duration="0.38" data-track-index="1"><span>alignment</span></div>
+      <div id="cue40" class="clip cue" data-start="35.2" data-duration="1.09" data-track-index="1"><span>for superintelligence.</span></div>
+      <div id="cue41" class="clip cue" data-start="36.29" data-duration="0.7" data-track-index="1"><span>He also clarified</span></div>
+      <div id="cue42" class="clip cue" data-start="36.99" data-duration="0.7" data-track-index="1"><span>that he considers</span></div>
+      <div id="cue43" class="clip cue" data-start="37.69" data-duration="0.85" data-track-index="1"><span>the risk from current</span></div>
+      <div id="cue44" class="clip cue" data-start="38.54" data-duration="1.3" data-track-index="1"><span>models low and that his</span></div>
+      <div id="cue45" class="clip cue" data-start="39.84" data-duration="1.32" data-track-index="1"><span>concern is what happens</span></div>
+      <div id="cue46" class="clip cue" data-start="41.16" data-duration="1.13" data-track-index="1"><span>as AI becomes capable</span></div>
+      <div id="cue47" class="clip cue" data-start="42.29" data-duration="1.15" data-track-index="1"><span>of improving itself.</span></div>
+    </div>
+    <script>
+      // GENERATED by edit/captions_overlay.py — do not hand-edit.
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // captions cut in and out with the clip window — no tweens by design
+      tl.set("#root", { opacity: 1 }, 0);
+      tl.set("#root", { opacity: 1 }, 43.6);
+      tl.seek(0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
