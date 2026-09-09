@@ -5,9 +5,9 @@ established, reversed, or clarified.** `CLAUDE.md` is the *spec* (the settled
 rules); this is the *context* behind it — how she asks, what she reacts to, and
 what I've learned the hard way.
 
-Last updated: 2026-09-05 · after the four-video batch (hugging face, instinct,
-moonshot ai, polymarket) — captions-only route, now scripted as `edit/burn.py`,
-plus the first "less cut" note she has ever given
+Last updated: 2026-09-09 · after the OpenAI clip — first quietly-recorded source,
+where the locked recipe's absolute -35 dB threshold ate ~13s of real speech and the
+restoration threshold had to be moved into that clip's valley
 
 ---
 
@@ -363,6 +363,38 @@ words backward and stretching the end both failed there because both neighbours
 were immediate. `captions_overlay.py` now merges any cue still under 0.20s into
 whichever neighbour can legally take it. This had been happening before anyone
 noticed — the first pass flagged the same pattern on two cues. (2026-09-05.)
+
+**The recipe's -35 dB is an ABSOLUTE threshold, so it only means what it meant if the
+clip is recorded at the usual level. Check the loudness before trusting the cut.**
+`openai.mov` (2026-09-09) came in at **-29.9 LUFS integrated, -11.0 dBFS true peak** —
+roughly 12 dB under every clip the recipe was tuned on. The envelope was still cleanly
+bimodal (room tone clustered at -74 dB, speech at -36/-34), but -35 landed *on top of the
+speech cluster* rather than in the valley at -55..-64, so the pass cut 60.8s down to 35.5s
+and about **13 of those 25 removed seconds were words**. The damage was invisible in the
+duration and obvious in the transcript: the closing line "Navier-Stokes can blow up" came
+out as "they glow up", "in finite time" disappeared, "can be checked by" became "compact
+by". Two checks catch this and both are cheap:
+
+- `ffmpeg -af ebur128` on the source. Well under ~-20 LUFS means the threshold is sitting
+  too high inside the speech and the cut will eat quiet words.
+- **Transcribe the ORIGINAL with full context (`whisper-cli` without `-ml 1`) and diff it
+  against the cut's transcript.** Full-sentence context is markedly more accurate than the
+  word-level pass, so it doubles as the ground truth for the fixes file — it got
+  "formalized in Lean", "Clay Mathematics Institute" and "millions of messages" that the
+  `-ml 1` run rendered as "gleaned", "Klee" and "a million inches". Missing *content words*
+  in the cut (not just mangled ones) are the tell.
+
+The fix is still `restore_speech.py` and still no change to the recipe — but the default
+`--quiet-db -45` is not low enough on a quiet clip, because the trailing speech itself sits
+at -47..-53. **Put `--quiet-db` in the valley for that clip** (-50 here). Two independent
+routes agreed on where the cut belonged: `--quiet-db -50` gave 48.6s, and a control that
+gain-corrected the audio +12 dB and ran the locked recipe completely untouched gave 49.3s.
+Density did not suffer — the longest quiet run inside the finished 48.6s cut is **0.16s**,
+so the extra 13s is speech, not air. Worth running that +12 dB control any time the
+restoration looks alarmingly large; it says whether the growth is real speech or slop, and
+it costs one preprocess run.
+
+Her verdict on this pacing is still pending as of the export. (Established 2026-09-09.)
 
 **The locked silence recipe is the floor — tightening it damages audio. Don't retest.**
 She asked for a more aggressive cut on 2026-08-16; I swept the parameters, built every
