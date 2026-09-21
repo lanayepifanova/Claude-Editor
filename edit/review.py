@@ -40,6 +40,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("srt")
     ap.add_argument("--cues", action="store_true", help="list each cue with timing")
+    ap.add_argument("--maxchars", type=int, default=26,
+                    help="line budget to flag against. 26 is the 9:16 value; "
+                         "landscape derives ~42 (CLAUDE.md caption table). "
+                         "captions_overlay.py computes the real number from frame "
+                         "width and font size and prints it — pass that, rather "
+                         "than letting this second copy disagree with it.")
     a = ap.parse_args()
     cues = read(a.srt)
     if not cues:
@@ -66,13 +72,13 @@ def main():
         last = c["text"].rstrip(".,!?").split()[-1].lower() if c["text"].split() else ""
         if last in ODD_ENDINGS:
             flags.append(f"{c['start']:6.2f}s  ends on \"{last}\"  \"{c['text']}\"")
-    over = [c for c in cues if len(c["text"]) > 26]
+    over = [c for c in cues if len(c["text"]) > a.maxchars]
     multi = [c for c in cues if "\n" in c["text"]]
 
     print("-"*78)
     print(f"  {len(cues)} cues · avg {sum(c['end']-c['start'] for c in cues)/len(cues):.2f}s "
           f"on screen · longest {max(len(c['text']) for c in cues)} chars")
-    if over:  print(f"  ! {len(over)} cue(s) over 26 chars")
+    if over:  print(f"  ! {len(over)} cue(s) over {a.maxchars} chars")
     if multi: print(f"  ! {len(multi)} multi-line cue(s)")
     if flags:
         print(f"\n  worth checking ({len(flags)}):")

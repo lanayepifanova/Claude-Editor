@@ -19,6 +19,14 @@ Nothing else. Do not read old compositions or transcripts.
 #    only to override. Everything downstream reads it from there.
 python3 edit/preprocess.py "footage/<clip>.mov" --out edit/analysis-<name>
 
+# 1b. drop repeated takes — ALWAYS, she re-reads a line until she gets it right
+#     and only the LAST attempt is the keeper. Read the report before --apply;
+#     this deletes content, so a false positive loses a real sentence.
+python3 edit/retakes.py edit/analysis-<name>                    # report
+python3 edit/retakes.py edit/analysis-<name> --apply            # write overrides
+python3 edit/preprocess.py "footage/<clip>.mov" --out edit/analysis-<name> \
+    --overrides edit/overrides-<name>.json                      # re-cut
+
 # 2. captions -> READ THEM before spending a render
 #    Orientation decides --y and line length (CLAUDE.md caption table):
 #      vertical  9:16  -> --res 1080x1920 --y 0.25 --maxw 0.72   (~24 chars)
@@ -40,7 +48,9 @@ python3 edit/verify.py
 
 # 5. verify the RENDER as text, never through Premiere
 python3 edit/check_render.py --render graphics/<name>-cap.mov \
-    --srt "project/<name>.srt" --res <WxH>
+    --srt "project/<name>.srt" --res <WxH> --y <0.25|0.82>
+#  ^ pass the SAME --y the overlay was built with; the band follows it. Without
+#    it the check looks in the 9:16 band and reports NO INK on every landscape cue.
 
 # 6. assemble in Premiere, then re-read Premiere's real clip boundaries and
 #    retime captions onto them (Premiere frame-snaps; the ffmpeg cut does not)
@@ -58,6 +68,11 @@ python3 edit/captions_overlay.py ... --timeline edit/analysis-<name>/premiere-cl
   desynced a whole video by 6.7s.
 - **Read the transcript before rendering.** `review.py`. Whisper's errors move
   between runs, so pin every wrong variant in `fixes-*.json`, not just the latest.
+- **Content cuts before captions.** The retake pass moves every timing after it,
+  exactly as the silence pass does, so run it before transcribing for captions.
+- **`restore_speech.py`'s default `--quiet-db -45` assumes a quiet room.** Measure
+  the room-tone PEAK first (`astats` on a gap); if it is already near -40, that
+  default restores noise. See WORKING-NOTES.
 - **Check the session cost** with `python3 edit/session-cost.py`. Exit code 2 means
   stop and start fresh. A `UserPromptSubmit` hook also injects a `[session-cost]`
   line automatically past 250k/turn — when it appears, finish the step and reset.

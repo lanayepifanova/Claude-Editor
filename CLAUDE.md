@@ -86,6 +86,39 @@ one continuous phrase gets sliced by the 0.05s min-gap. Run
 the removed regions and writes `overrides-<name>.json`, then re-run `preprocess.py`
 with `--overrides`. The recipe itself stays exactly as locked.
 
+**Repeated takes (locked, her rule 2026-09-21):** *"If a sentence repeats twice,
+that means it's a retake, so cut out all repeats of that sentence or line besides
+the last one, since the last one is the usable take."* Treat this as standing
+policy on every video, not something to ask about each time — **the last take is
+always the keeper**, because she re-reads a line until she gets it right. The
+same holds for a run of three or more: only the final attempt survives.
+
+Run `python3 edit/retakes.py edit/analysis-<name>` *after* `preprocess.py`. It
+reads the word timings off the cut timeline, groups them into lines, and flags
+two shapes:
+
+- a **near-duplicate line** — the same sentence said again (difflib ratio
+  `>= --sim`, default 0.72, so a reworded retake like "an editing process you
+  like" / "an editing process **that** you like" still matches)
+- a **false start** — an abandoned run the next attempt restates from the top
+
+Only lines within `--window` (default 6) of each other are compared; a phrase
+that comes back a minute later is rhetoric, not a retake. It prints a report by
+default — **read it before `--apply`**, because this deletes content and a false
+positive silently loses a real sentence. `--apply` writes the doomed spans into
+`overrides-<name>.json` as a `remove` list in **source** time, then re-run
+`preprocess.py --overrides` to excise them. The silence recipe is not touched.
+
+`remove` is source-time rather than segment indices on purpose: detection re-runs
+every pass and the indices move, a source span does not, and a span landing
+mid-segment splits it (which `in`/`out` cannot do). Two seams to watch, both
+already handled in the tool but worth knowing when reading its output: whisper
+ends every word exactly where the next begins, so the doomed line's last word
+looks like it runs past the join it sits on — padding from there clips the first
+word of the take replacing it; and a leftover under 0.30s at either edge is not a
+word, it is the stub of the take just removed, so the span snaps out to the
+segment edge and takes it along.
+
 **Cuts:** Hard cuts by default. J/L cuts on dialogue so audio leads or trails
 the picture — this is what keeps aggressive silence removal from feeling
 choppy. Cut away to b-roll or a graphic over the ugliest jump cuts rather than
@@ -313,6 +346,7 @@ be hand-edited. Checks come from `edit/verify.py` as text, not screenshots.
 
 ```bash
 python3 edit/preprocess.py footage/clip.MOV --out edit/analysis   # once per video
+python3 edit/retakes.py edit/analysis                             # drop repeated takes
 python3 edit/verify.py                                            # after every change
 python3 edit/build.py --out graphics/<project>/index.html         # then render
 ```
@@ -330,11 +364,15 @@ re-checks the cue against the transcript and reports drift. See `edit/README.md`
    then place `silence.json`'s segments with `add_to_timeline_batch`. Never
    Premiere's `detect_silence` — see the locked recipe above. Do this before any
    graphics work; it changes all downstream timings.
-6. **Caption pass** — transcribe, then build the caption track.
-7. Design motion graphics in HyperFrames → render → import → place.
-8. Add transitions, color, audio ducking.
-9. Review pass against the "How I edit" rules above.
-10. Export to `output/`.
+6. **Retake pass** — `python3 edit/retakes.py edit/analysis-<name>`, read the
+   report, then `--apply` and re-run `preprocess.py --overrides`. Always, not
+   only when she mentions it. Content cuts go before captions, for the same
+   reason the silence pass does: they move every timing after them.
+7. **Caption pass** — transcribe, then build the caption track.
+8. Design motion graphics in HyperFrames → render → import → place.
+9. Add transitions, color, audio ducking.
+10. Review pass against the "How I edit" rules above.
+11. Export to `output/`.
 
 **If the bridge is dead:** CEP scans extensions and reads `PlayerDebugMode` only
 at Premiere launch. If the MCP Bridge panel is missing from Window → Extensions

@@ -43,7 +43,7 @@ def probe(path, stream="v:0", entries="width,height,nb_read_packets"):
     return st[0] if st else {}
 
 
-def build_master(src, segments, dest, fps=30.0):
+def build_master(src, segments, dest, fps=30.0, size=None):
     """Concat the kept segments straight out of the original footage.
 
     The video trim ends half a frame early. Some cameras write frame
@@ -62,7 +62,17 @@ def build_master(src, segments, dest, fps=30.0):
         parts.append(f"[0:a]atrim=start={a:.6f}:end={b:.6f},asetpts=PTS-STARTPTS[a{i}]")
         labels.append(f"[v{i}][a{i}]")
     graph = ";".join(parts) + ";" + "".join(labels) + \
-        f"concat=n={len(segments)}:v=1:a=1[v][a]"
+        f"concat=n={len(segments)}:v=1:a=1[vc][a]"
+    # The overlay is rendered at the DELIVERY size, which is not always the
+    # footage's size — chatcut.MOV is 4K and the landscape caption spec is
+    # 1920x1080. overlay=0:0 does not scale, so without this the captions land
+    # in the corner of the frame. Scale here, on the way out of the concat, so
+    # the master itself is the deliverable resolution and the frame counts
+    # still line up.
+    if size and (size[0], size[1]) != (0, 0):
+        graph += f";[vc]scale={size[0]}:{size[1]}:flags=lanczos[v]"
+    else:
+        graph += ";[vc]null[v]"
     run(["ffmpeg", "-y", "-i", src, "-filter_complex", graph,
          "-map", "[v]", "-map", "[a]",
          "-c:v", "libx264", "-preset", "slow", "-crf", "16", "-pix_fmt", "yuv420p",
@@ -135,11 +145,18 @@ def main():
         print(f"1/2  cutting {len(segments)} segments from {os.path.basename(src)} "
               f"({sil['source_duration']:.1f}s -> {sil['cut_duration']:.1f}s, "
               f"{sil['removed_pct']}% removed)")
-        build_master(src, segments, master, sil.get("fps", 30.0))
+        size = None
+        if args.overlay:
+            o = probe(args.overlay)
+            srcv = probe(src)
+            if (srcv["width"], srcv["height"]) != (o["width"], o["height"]):
+                size = (o["width"], o["height"])
+                print(f"     footage is {srcv['width']}x{srcv['height']}, overlay is "
+                      f"{size[0]}x{size[1]} — scaling the master to the overlay")
+        build_master(src, segments, master, sil.get("fps", 30.0), size)
 
         if args.overlay:
             v = probe(master)
-            o = probe(args.overlay)
             print(f"     master {v['width']}x{v['height']} {v['nb_read_packets']}f · "
                   f"overlay {o['width']}x{o['height']} {o['nb_read_packets']}f")
             if (v["width"], v["height"]) != (o["width"], o["height"]):

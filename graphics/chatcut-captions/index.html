@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>captions</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1920px; height:1080px; overflow:hidden; background:transparent; }
+      #root { position:relative; width:1920px; height:1080px; }
+      .cue {
+        position:absolute; left:0; right:0; top:82.0%;
+        transform:translateY(-50%);
+        display:flex; align-items:center; justify-content:center;
+        text-align:center;
+      }
+      .cue span {
+        display:inline-block; max-width:1171px; white-space:nowrap;
+        font-family:'Montserrat', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+        font-weight:800; font-size:48px; line-height:1.18;
+        letter-spacing:-0.01em; color:#FFFFFF;
+        /* hard edge, zero blur — reads on any background, never looks glowy */
+        text-shadow:
+          4px 0 0 #000, -4px 0 0 #000, 0 4px 0 #000, 0 -4px 0 #000,
+          3px 3px 0 #000, -3px 3px 0 #000,
+          3px -3px 0 #000, -3px -3px 0 #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="39.9"
+         data-width="1920" data-height="1080" data-fps="60.0"
+         data-layout-allow-overflow="true">
+      <div id="cue0" class="clip cue" data-start="0.02" data-duration="1.37" data-track-index="1"><span>This video that you're watching right now</span></div>
+      <div id="cue1" class="clip cue" data-start="1.39" data-duration="2.09" data-track-index="1"><span>has been edited entirely by Claude.</span></div>
+      <div id="cue2" class="clip cue" data-start="3.48" data-duration="1.39" data-track-index="1"><span>To set this up, open up Claude code</span></div>
+      <div id="cue3" class="clip cue" data-start="4.87" data-duration="1.01" data-track-index="1"><span>and paste in this prompt.</span></div>
+      <div id="cue4" class="clip cue" data-start="5.88" data-duration="1.66" data-track-index="1"><span>It installs a plugin called ChatCut,</span></div>
+      <div id="cue5" class="clip cue" data-start="7.54" data-duration="1.45" data-track-index="1"><span>which gives Claude an actual video editing</span></div>
+      <div id="cue6" class="clip cue" data-start="8.99" data-duration="0.93" data-track-index="1"><span>timeline to work with.</span></div>
+      <div id="cue7" class="clip cue" data-start="9.92" data-duration="1.43" data-track-index="1"><span>Once it's installed, start a new session</span></div>
+      <div id="cue8" class="clip cue" data-start="11.35" data-duration="0.89" data-track-index="1"><span>and add your footage.</span></div>
+      <div id="cue9" class="clip cue" data-start="12.24" data-duration="1.47" data-track-index="1"><span>I'd start by asking it to remove all</span></div>
+      <div id="cue10" class="clip cue" data-start="13.71" data-duration="1.33" data-track-index="1"><span>the pauses and repeated takes,</span></div>
+      <div id="cue11" class="clip cue" data-start="15.04" data-duration="1.49" data-track-index="1"><span>because apparently I need three attempts</span></div>
+      <div id="cue12" class="clip cue" data-start="16.53" data-duration="0.91" data-track-index="1"><span>to finish a sentence.</span></div>
+      <div id="cue13" class="clip cue" data-start="17.44" data-duration="1.48" data-track-index="1"><span>Then you can build up the edit from there.</span></div>
+      <div id="cue14" class="clip cue" data-start="18.92" data-duration="1.86" data-track-index="1"><span>Ask it to add captions, find some B-roll</span></div>
+      <div id="cue15" class="clip cue" data-start="20.78" data-duration="1.37" data-track-index="1"><span>for what you're explaining, or bring</span></div>
+      <div id="cue16" class="clip cue" data-start="22.15" data-duration="0.89" data-track-index="1"><span>in background music.</span></div>
+      <div id="cue17" class="clip cue" data-start="23.04" data-duration="1.38" data-track-index="1"><span>You don't have to describe the entire</span></div>
+      <div id="cue18" class="clip cue" data-start="24.42" data-duration="1.46" data-track-index="1"><span>video perfectly on your first try.</span></div>
+      <div id="cue19" class="clip cue" data-start="25.88" data-duration="1.64" data-track-index="1"><span>You can watch the cut, see what feels off,</span></div>
+      <div id="cue20" class="clip cue" data-start="27.52" data-duration="1.04" data-track-index="1"><span>and ask it to change that.</span></div>
+      <div id="cue21" class="clip cue" data-start="28.59" data-duration="1.53" data-track-index="1"><span>Everything is on an editable timeline.</span></div>
+      <div id="cue22" class="clip cue" data-start="30.12" data-duration="1.08" data-track-index="1"><span>You can also go in and move things</span></div>
+      <div id="cue23" class="clip cue" data-start="31.2" data-duration="0.66" data-track-index="1"><span>around yourself.</span></div>
+      <div id="cue24" class="clip cue" data-start="31.88" data-duration="1.09" data-track-index="1"><span>And once you get an editing process</span></div>
+      <div id="cue25" class="clip cue" data-start="32.97" data-duration="1.62" data-track-index="1"><span>that you like, you can save it as a skill</span></div>
+      <div id="cue26" class="clip cue" data-start="34.59" data-duration="1.14" data-track-index="1"><span>and reuse it with your next batch</span></div>
+      <div id="cue27" class="clip cue" data-start="35.73" data-duration="0.65" data-track-index="1"><span>of footage.</span></div>
+      <div id="cue28" class="clip cue" data-start="36.4" data-duration="1.62" data-track-index="1"><span>That's the part I'm interested in, getting</span></div>
+      <div id="cue29" class="clip cue" data-start="38.02" data-duration="0.99" data-track-index="1"><span>a workflow together that I can</span></div>
+      <div id="cue30" class="clip cue" data-start="39.01" data-duration="0.87" data-track-index="1"><span>actually keep using.</span></div>
+    </div>
+    <script>
+      // GENERATED by edit/captions_overlay.py — do not hand-edit.
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // captions cut in and out with the clip window — no tweens by design
+      tl.set("#root", { opacity: 1 }, 0);
+      tl.set("#root", { opacity: 1 }, 39.9);
+      tl.seek(0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

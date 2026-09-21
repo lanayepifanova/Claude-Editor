@@ -111,15 +111,23 @@ def main():
     ap.add_argument("--render", required=True)
     ap.add_argument("--srt", required=True)
     ap.add_argument("--res", required=True)
-    ap.add_argument("--band", default="0.18,0.34",
-                    help="expected vertical band for the text, as fractions")
+    ap.add_argument("--band", default="",
+                    help="expected vertical band for the text, as fractions. "
+                         "Derived from --y when omitted.")
+    ap.add_argument("--y", type=float, default=0.25,
+                    help="the --y that captions_overlay.py was given (0.25 "
+                         "vertical, 0.82 landscape). The band follows it. This "
+                         "used to be a hardcoded 0.18,0.34, which is the 9:16 "
+                         "band — running it against a landscape render reported "
+                         "NO INK for every cue because the ink was at 0.82.")
     ap.add_argument("--samples", type=int, default=8)
     a = ap.parse_args()
 
     if not Path(a.render).exists():
         sys.exit(f"render not found: {a.render}")
     w, h = (int(x) for x in a.res.lower().split("x"))
-    band = tuple(float(x) for x in a.band.split(","))
+    band = (tuple(float(x) for x in a.band.split(","))
+            if a.band else (max(0.0, a.y - 0.08), min(1.0, a.y + 0.08)))
     cues = read_srt(a.srt)
     if not cues:
         sys.exit("no cues in srt")

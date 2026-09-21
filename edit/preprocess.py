@@ -52,8 +52,11 @@ def frame_rate(src):
     r = run(["ffprobe", "-v", "error", "-select_streams", "v:0",
              "-show_entries", "stream=r_frame_rate", "-of", "csv=p=0", src])
     try:
-        num, den = r.stdout.strip().split("\n")[0].split("/")
-        fps = int(num) / int(den)
+        # ffprobe's csv writer can leave a trailing separator on the row
+        # (chatcut.MOV reports "60/1," ), so take only the rate itself.
+        field = r.stdout.strip().split("\n")[0].strip().strip(",")
+        num, den = (int(x) for x in field.split("/"))
+        fps = num / den
         return round(fps, 3) if fps > 0 else None
     except Exception:
         return None
@@ -113,6 +116,30 @@ def segments(vals, fps):
     while merged and merged[0][1] - merged[0][0] < EDGE_BLIP: merged.pop(0)
     while merged and merged[-1][1] - merged[-1][0] < EDGE_BLIP: merged.pop()
     return [[round(s*fps)/fps, round(e*fps)/fps] for s, e in merged]
+
+
+def excise(segs, spans, fps):
+    """Subtract source-time spans from the kept segments.
+
+    This is how a superseded retake leaves the cut (see retakes.py). It is
+    expressed in SOURCE time rather than as segment indices because detection
+    re-runs every pass and the indices move; a source span does not. A span
+    landing in the middle of a segment splits it, which `in`/`out` cannot do.
+    """
+    out = []
+    for s0, e0 in segs:
+        pieces = [[s0, e0]]
+        for rs, re_ in spans:
+            nxt = []
+            for a, b in pieces:
+                if re_ <= a or rs >= b:
+                    nxt.append([a, b]); continue
+                if rs > a: nxt.append([a, min(rs, b)])
+                if re_ < b: nxt.append([max(re_, a), b])
+            pieces = nxt
+        out += pieces
+    out = [[round(a*fps)/fps, round(b*fps)/fps] for a, b in out]
+    return [x for x in out if x[1] - x[0] >= MIN_SEG]
 
 
 def proof_render(src, segs, out):
@@ -227,8 +254,11 @@ def main():
                 help="whisper.cpp model. small.en is the default because base.en\n                      mangles finance/hardware jargon — it produced 'trade GPU out',\n                      'Cash shuttle listed on Nimus', and once inverted a sentence\n                      to 'you will not be able to trade'.")
     ap.add_argument("--skip-framing", action="store_true")
     ap.add_argument("--overrides", default="",
-                    help='JSON {"segments":{"0":{"out":4.80}}} — manual trims applied '
-                         'after detection, so the proof/transcript stay consistent')
+                    help='JSON {"segments":{"0":{"out":4.80}}, "drop":[3], '
+                         '"remove":[[94.1,104.3]]} — manual trims, dropped segments '
+                         'and source-time spans to excise (superseded retakes), '
+                         'applied after detection so the proof/transcript stay '
+                         'consistent')
     a = ap.parse_args()
 
     if a.fps is None:
@@ -269,6 +299,14 @@ def main():
                 print(f"     drop seg {i}: {segs[i][0]:.3f}-{segs[i][1]:.3f} "
                       f"(absorbed by a neighbour)")
                 segs.pop(i)
+        # source-time spans to excise — superseded retakes, from retakes.py
+        rem = json.load(open(a.overrides)).get("remove", [])
+        if rem:
+            before_n, before_s = len(segs), sum(e-s for s, e in segs)
+            segs = excise(segs, rem, a.fps)
+            print(f"     remove: {len(rem)} span(s) · {before_s:.2f}s -> "
+                  f"{sum(e-s for s, e in segs):.2f}s "
+                  f"({before_n} -> {len(segs)} segments)")
     kept = sum(e-s for s, e in segs)
     json.dump({"recipe": {"hard_db": HARD, "soft_db": SOFT, "lead": LEAD,
                           "tail": TAIL, "min_gap": MIN_GAP, "min_seg": MIN_SEG},

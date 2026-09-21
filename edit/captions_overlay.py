@@ -26,6 +26,13 @@ ORPHAN = {"a","an","the","of","in","to","and","or","for","on","at","is","it",
           "most","new","very","our","their","its","you","we","they",
           # hedges that modify the word after them
           "roughly","sometimes","just","like","really","also",
+          # subordinating conjunctions — a cue ending on one breaks mid-clause,
+          # which is exactly what the phrase-boundary rule forbids. Safe to add:
+          # the orphan pull only runs on an OVERFLOW flush, never on a flush at
+          # sentence punctuation, so a legitimate "...like I said before." is
+          # untouched.
+          "because","though","although","while","since","unless","until",
+          "whether","after","before",
           # noun-modifiers common in this footage ("AI agents", "SEO tool")
           "ai","seo"}
 MAX_DUR   = 2.2

@@ -5,9 +5,8 @@ established, reversed, or clarified.** `CLAUDE.md` is the *spec* (the settled
 rules); this is the *context* behind it — how she asks, what she reacts to, and
 what I've learned the hard way.
 
-Last updated: 2026-09-09 · after the Anthropic clip — a source with NO room-tone
-cluster at all, where the tell was the envelope histogram rather than the duration,
-and where `restore_speech.py` alone could not reach the quietest words
+Last updated: 2026-09-21 · after she asked for repeated takes to be cut down to the
+last one, and for that rule to be written into the instructions
 
 ---
 
@@ -451,6 +450,32 @@ when *matching* but emits the replacement **verbatim**, so an entry like
 producing "science at Anthropic,," and "Anthropic, is trying". Write bare words on both
 sides; the tool re-attaches the original trailing punctuation itself.
 
+**"Don't cut the dead space between 'kill us all'" — a pause *inside one phrase* is
+hers to keep, even when it is genuinely silent.** (2026-09-09, anthropic.) Every earlier
+note about this pass is about *speech* the recipe deleted; this one is not. The two
+0.133s removals at source 3.600-3.733 and 3.867-4.000 were real silence, correctly
+detected, and the 0.05s min-gap is doing exactly what the locked recipe says. She still
+wanted them back, because they fall between "could kill" and "us all" and cutting there
+chops the delivery of a single clause. The tell in the data was that whisper timed "kill"
+at **0.02s** on the cut timeline — a word that short means the pass sliced through it.
+
+So `restore_speech.py` is the wrong tool for this, and running it harder is the wrong
+instinct: there is no quiet speech to find. The fix is a hand `overrides` span that
+*merges across* the gaps — here seg 0 was extended to swallow segs 5 and 6, giving one
+continuous kept region 0.0-9.033 — which restores the pauses and changes nothing else.
+Cut went 43.60s -> 43.87s. **The recipe stayed exactly as locked; only the override moved.**
+
+Watch for this phrasing generally: **"don't cut X"** where X is a *phrase she delivers as
+one breath* means hold the whole span, silence included. That is different from **"X was
+cut out"** / **"cut too soon"**, which still means quiet speech was deleted and still
+routes to `restore_speech.py`.
+
+One thing that survived the re-cut and is worth flagging next time: the captions still
+break this phrase as "helped build could kill" / "us all." The 24-char vertical budget
+allows "could kill us all." as its own cue, but the grouper ends a cue on "kill" because
+only *leading* orphans are protected — it has no rule against stranding the object of a
+verb. Left alone here because she asked about the cut, not the caption.
+
 **The locked silence recipe is the floor — tightening it damages audio. Don't retest.**
 She asked for a more aggressive cut on 2026-08-16; I swept the parameters, built every
 candidate and re-transcribed each one. After a normal pass the envelope is no longer
@@ -464,6 +489,101 @@ right is a reliable proxy for a clipped consonant — use it as the test. Verdic
 kept both cuts unchanged. **Further density has to come from cutting content at sentence
 boundaries, not from the silence pass.** Offer specific lines with timings and let her
 choose; she declined all of them this time, so don't assume trims are wanted.
+
+**Repeated takes are hers to cut, and the LAST one is always the keeper.**
+(2026-09-21, chatcut.) Her words: *"if a sentence repeates twice, that means its a
+retake, so you should cut out out all repeats of that sentence or line besides the
+last one, since the last one is the usable take."* She asked for it to be written
+down as standing behaviour, so it is now in `CLAUDE.md` and in the `NEW-VIDEO.md`
+loop — run the pass on every video without being told. She says the quiet part out
+loud on this clip: *"apparently I need three attempts to finish a sentence."*
+
+The tool is `edit/retakes.py`, and it is deliberately a *separate* pass from the
+silence recipe — this removes **content**, which the locked recipe must never do.
+It groups the cut transcript into lines, compares only nearby ones, and flags a
+near-duplicate (difflib ratio, default 0.72) or a false start (a run the next
+attempt restates from the top). Here it found exactly one: "an editing process you
+like" against "an editing process **that** you like" at ratio 0.98 — a reworded
+retake, which is why the threshold is a ratio and not equality. Default is
+report-only; read it before `--apply`, because a false positive deletes a real
+sentence and nothing downstream will notice.
+
+Removals are written as a **source-time `remove` list** in `overrides-<name>.json`
+and excised by `preprocess.py --overrides` (new: `excise()`), not as segment
+indices. Indices move every time detection re-runs; a source span does not, and a
+span landing mid-segment splits it, which `in`/`out` cannot express.
+
+Two seams cost a round each and are now handled in the tool:
+- **Whisper ends every word exactly where the next one starts**, so the dying
+  take's last word ("footage.", t1 36.16) looked like it ran into the segment
+  holding the *replacement* take (starting 36.033). Padding from there ate 0.127s
+  off the good take's "And". Anchor the pad on the **neighbour's** segment, never
+  on the doomed line's own.
+- A leftover under 0.30s at either edge is not a word, it is the **stub of the
+  take just removed** — 0.12s of the dropped "And" survived as its own segment
+  because it cleared `MIN_SEG`. Spans now snap out to the segment edge.
+
+**`restore_speech.py`'s default `--quiet-db -45` assumes a quiet room, and this
+clip does not have one.** chatcut measured **-16.4 LUFS, 0.1 dBFS true peak** —
+the best-recorded clip in the project — but its **room tone peaks at -40 dB**
+(RMS -52), where anthropic's peaked at -62.6. Run at the default, restore_speech
+proposed 11 spots and +2.28s whose candidates peaked **-36 to -43 dB**, i.e. at or
+*below* the room-tone peak. Every one was noise. Restoring them would have put the
+dead air back — the opposite of what she asked for. **Loudness is not the tell;
+the room-tone PEAK is.** Measure it with `astats` on an actual gap before trusting
+any `--quiet-db`, and compare candidates against that number, not against -45.
+
+What *was* real on this clip was the 0.05s min-gap slicing **through** words rather
+than between them. Measuring the peak inside each sub-0.15s gap separated the two
+cleanly: seven gaps came back at -24.7 to -33.2 dB (7-15 dB above the -40 floor —
+speech), three at -36.2 to -37.4 (floor — genuinely between words). The tell in the
+transcript was whisper mangling "repeated takes" into "repeat a take" on the cut
+while the full-context read of the original got it right — the mis-hearing proxy
+from the 2026-08-16 sweep, firing exactly where the measurement pointed. Six hand
+`overrides` merges (0.55s total on a 40s cut) fixed it; the recipe was not touched.
+One of the seven was deliberately left out: its join sat inside the retake being
+removed, and merging it would have left a 0.117s stub after the excision — it
+cleared `MIN_SEG`, so nothing else would have caught it.
+
+**Delivery resolution is not always the footage's resolution, and three tools
+quietly assumed it was.** chatcut.MOV is the first 4K clip in the project (3840x2160
+at 60fps); every earlier one was 1080p, which is why nothing had ever disagreed.
+She chose a 1080p export, matching the landscape caption spec. Three things broke
+on that, all silent rather than loud:
+
+- **`burn.py` composited with `overlay=0:0`, which does not scale** — a 1920x1080
+  overlay would have landed in the top-left quarter of a 4K master. It now probes
+  both and scales the master to the overlay's size on the way out of the concat,
+  so the master itself is the deliverable resolution and the frame counts still
+  line up. (It caught the mismatch either way — `sys.exit("overlay resolution does
+  not match the cut")` — but catching it after the expensive master build is late.)
+- **`check_render.py`'s `--band` defaulted to `0.18,0.34`**, the 9:16 band for
+  `--y 0.25`. Run against a landscape render it reported **NO INK for all 11
+  sampled cues** while the render was perfect — the ink was at 0.82, outside the
+  band it was looking in. It now derives the band from a `--y` that matches the
+  one `captions_overlay.py` was given. A verification that fails on everything is
+  as useless as one that passes on everything.
+- **`review.py` hardcoded a 26-char line budget** while `captions_overlay.py`
+  derives the real one from frame width and font size (42 in landscape). It
+  flagged 22 of 31 perfectly legal cues. Now `--maxchars`. Same lesson as the
+  `tools/` split in 2026-08-17: a number with two copies is a number that will
+  disagree with itself.
+
+**`captions_overlay.py`'s ORPHAN list had no subordinating conjunctions**, so a
+cue ended on "...and repeated takes, **because**" — a mid-clause break, which the
+phrase-boundary rule in CLAUDE.md forbids. Added because/though/although/while/
+since/unless/until/whether/after/before. Safe, because the orphan pull only runs
+on an *overflow* flush, never on a flush at sentence punctuation, so a legitimate
+"...like I said before." is untouched. The break moved to "the pauses and repeated
+takes," / "because apparently I need three attempts". The known gap is still open:
+nothing protects the object of a verb, so cues can still end on "or bring" and
+"and move things".
+
+**`preprocess.py` could not read this camera's frame rate.** ffprobe reports
+`60/1,` with a trailing separator for chatcut.MOV, and `frame_rate()` died on
+`int("1,")`, exiting with the message but **code 0** — a silent no-op that looks
+like a completed run in a background task. The parse now strips the separator.
+Worth remembering that the exit code lied here, as it did for the ProRes renders.
 
 ---
 
