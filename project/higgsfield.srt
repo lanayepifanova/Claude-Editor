@@ -72,11 +72,11 @@ of Higgsfield, one
 
 19
 00:00:12,530 --> 00:00:13,360
-of the fastest growing
+of the fastest-growing
 
 20
 00:00:13,360 --> 00:00:13,920
-Gen AI startups
+GenAI startups
 
 21
 00:00:13,920 --> 00:00:14,440
@@ -188,7 +188,7 @@ distribution strategy.
 
 48
 00:00:38,080 --> 00:00:38,970
-Comment strategy,
+Comment “STRATEGY”,
 
 49
 00:00:38,970 --> 00:00:39,130
