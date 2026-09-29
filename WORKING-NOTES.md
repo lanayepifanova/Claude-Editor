@@ -536,6 +536,13 @@ openbinge close-up of a man played right before "is this guy" and read as Alex.
 the Alex photo is the bundled media-use `pop.mp3` at -12 dB, peaking ~-15 against her
 -6.8 dialogue. Her ask was "a little sound effect", so keep them small.
 
+**Approved: "perfect" on `output/higgsfield-edit-v4.mp4`** (2026-09-29). What she signed off
+on, to reuse: kit b-roll over the *whole* runtime (no bare stretches), 3-4.5s per clip; a
+person's photo only on the words that name them (~1s on "is this guy", not a 2s hold); one
+small pop on the reveal; and **every look-away cut** — twice she flagged a glance to the
+side that the level pass kept as a loud rustle. On a new video, check each short segment
+(<0.4s) in isolation for a head-turn before she has to point it out.
+
 ---
 
 ## 5. Standing instructions
