@@ -148,10 +148,10 @@ def proof_render(src, segs, out):
     One trim/atrim branch per segment. Measured: flat to ~120 segments, then it
     degrades hard (2.9s at 20, 4.2s at 120, 14.2s at 250) while a single
     `select='between(t,a,b)+...'` pass stays at 2.8s regardless. NOT swapped,
-    because select renumbers frames via setpts=N/FRAME_RATE/TB and the Premiere
-    retime in captions_overlay.py depends on these boundaries being exact. If a
-    long video ever makes this slow, that is the change to make — and the cut
-    boundaries must be re-verified against Premiere afterwards.
+    because select renumbers frames via setpts=N/FRAME_RATE/TB and burn.py's
+    export depends on these segment boundaries being exact. If a long video ever
+    makes this slow, that is the change to make — and the cut boundaries must be
+    re-verified against the proof afterwards.
     """
     if len(segs) > 120:
         print(f"     ! {len(segs)} segments — the trim/concat graph degrades past "

@@ -14,7 +14,7 @@ manifest.json  ◄── edits happen HERE (a few lines, not a file rewrite)
     ├─ build.py ──────► graphics/*/index.html   (generated, never hand-edited)
     └─ verify.py ─────► text findings           (not screenshots)
                             │
-                        hyperframes render ──► ProRes ──► Premiere
+                        hyperframes render ──► ProRes ──► burn.py ──► output/
 ```
 
 ## Why

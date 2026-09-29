@@ -135,9 +135,9 @@ AUDIO_BLOCK = """      <audio
 
 def build(name, spec, variant="baked"):
     """baked   -> index.html   : her cut + audio, cards burned on top
-       overlay -> overlay.html : cards only on transparency, for V2 in Premiere.
-                                 Same duration and same beat times, so it drops
-                                 at 00:00 and lines up with the cut underneath."""
+       overlay -> overlay.html : cards only on transparency, to composite over
+                                 the cut. Same duration and same beat times, so it
+                                 drops at 00:00 and lines up underneath."""
     cards, tweens = [], []
     for i, (slide, tin, tout, cue) in enumerate(spec["beats"], start=1):
         cid = f"c{i:02d}"

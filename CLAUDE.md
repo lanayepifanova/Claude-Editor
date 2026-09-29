@@ -9,24 +9,28 @@ needs to cut a video the way you would lives here.
 
 ---
 
-## The two engines
-
-**Premiere Pro MCP** — the bridge that lets Claude actually drive Premiere:
-importing footage, cutting the timeline, adding transitions, effects, exports.
-Always begin a session with `verify_premiere_connection` (read-only) to confirm
-the bridge is live before touching the project.
+## The engine
 
 **HyperFrames** — writes HTML/CSS, animates it, and records the animation into an
-MP4 (or transparent overlay). Use it for every title card, lower-third, motion
-graphic, callout, and animated element. Rendered graphics land in `graphics/`,
-then get imported into Premiere as clips.
+MP4 (or a transparent ProRes overlay). Use it for every title card, lower-third,
+motion graphic, callout, caption track and animated element. Compositions and
+their renders live in `graphics/`.
+
+**There is no NLE, on purpose.** Premiere Pro and its MCP bridge were removed on
+2026-09-21 — she asked for the studio to have no reliance on it. The cut is
+computed by `edit/preprocess.py`, graphics are rendered by HyperFrames, and
+`edit/burn.py` composites and encodes the finished video into `output/` with
+ffmpeg. The whole pipeline is scripts and files; nothing needs an application to
+be open, and nothing needs a human to touch a timeline. Do not propose Premiere,
+Final Cut, Resolve or any other timeline app as a step — if something genuinely
+cannot be done headlessly, say so plainly rather than reaching for one.
 
 ## Folder layout
 
-- `footage/`  — drop raw footage + audio here (Claude imports from here)
-- `graphics/` — HyperFrames renders motion graphics here
-- `output/`   — final exports
-- `project/`  — the `.prproj` Premiere project file(s)
+- `footage/`  — drop raw footage + audio here
+- `graphics/` — HyperFrames compositions and their renders
+- `output/`   — final exports (hers alone — never delete from it)
+- `project/`  — caption sidecars (`<name>.srt`), the editable source of the wording
 
 ---
 
@@ -58,10 +62,10 @@ Editor" (2026-08-15) and it is exactly what I want. Do not soften them.
 | Envelope resolution | **20ms** windows | 100ms is too coarse for word-level cuts |
 
 Run `edit/preprocess.py` — it measures the envelope, applies the recipe, and
-writes `silence.json` (the cut list, ready for `add_to_timeline_batch`) plus a
+writes `silence.json` (the cut list `burn.py` exports from) plus a
 `cut_proof.mp4`. It is the *only* implementation of this recipe. Do not eyeball
-this and do not use Premiere's built-in `detect_silence`; both are far too
-conservative for this pacing.
+this, and do not reach for an NLE's built-in silence detection — those are far
+too conservative for this pacing.
 
 *Method notes that matter:*
 - Always measure the RMS envelope first and check the histogram. Speech and
@@ -168,22 +172,20 @@ This produced captions I was very happy with. Reproduce it exactly.
    overflow, not after.
 5. Fix known mis-hearings. **Whisper reliably hears "Claude" as "VOD".** Always
    check proper nouns and product names against the actual audio.
-6. Export `.srt` into `project/`, `import_media`, then `create_caption_track`.
+6. Export `.srt` into `project/` alongside the overlay. It is the editable
+   source of truth for the *wording* — fix it there and re-run rather than
+   retyping anywhere else — and it is the file to hand to TikTok or YouTube if a
+   platform caption track is ever wanted on top of the burned-in one.
 
-Premiere has no caption-read API, so the `.srt` in `project/` is the source of
-truth — edit it there and re-import rather than retyping in Premiere.
+**Captions are burned in.** `edit/captions_overlay.py` renders them as a
+HyperFrames overlay: scriptable end to end, positioned with `--y`, and sized by
+the orientation table above.
 
-**Two caption routes.** The `.srt` + `create_caption_track` route above is for
-Premiere-native captions. Social/vertical cuts instead burn captions as a
-HyperFrames overlay via `edit/captions_overlay.py` — that route is scriptable
-end to end, positions with `--y`, and is what the orientation table above sizes.
-
-When the deliverable is just the captioned cut and no graphics are wanted,
-`edit/burn.py` finishes that route without Premiere at all: it cuts the original
-footage with `silence.json`, composites the rendered overlay, and writes
-H.264/AAC into `output/`. It never overwrites an existing export without
-`--force`, and it verifies the composite by measuring how much of each frame the
-ink actually changed.
+`edit/burn.py` then finishes the video: it cuts the original footage with
+`silence.json`, composites the rendered overlay, and writes H.264/AAC into
+`output/`. It never overwrites an existing export without `--force`, and it
+verifies the composite by measuring how much of each frame the ink actually
+changed.
 
 ```bash
 python3 edit/burn.py --analysis edit/analysis-<name> \
@@ -191,12 +193,11 @@ python3 edit/burn.py --analysis edit/analysis-<name> \
     --master graphics/<name>-master.mp4
 ```
 
-**Caption position (Premiere-native route only):** Premiere exposes no caption API in its scripting DOM (the
-sequence only surfaces `videoTracks`/`audioTracks`), so caption placement cannot
-be scripted. Premiere's default landed fine on the 2026-08-15 pass. If it ever
-needs moving: select all captions in the Text panel → Essential Graphics →
-Align and Transform → Position Y (~150–200px is a visible nudge on 4K). Mention
-after a caption pass that position is the one thing I have to eyeball.
+**Caption position is scriptable.** It is the `--y` flag on
+`captions_overlay.py`, measured from the top of the frame — 0.82 landscape, 0.25
+vertical. This used to be the one thing I had to eyeball and nudge by hand in a
+GUI; since Premiere was dropped it is just a number, so move it on request
+rather than telling me where to click.
 
 **Motion graphics style:** Editorial / print-inspired — rules, grids, a
 considered typographic hierarchy, magazine-layout logic. Serif for headlines,
@@ -259,8 +260,8 @@ skin tones and a true white point first. Keep contrast crisp and blacks honest
 (not crushed, not lifted). No stylized grade or film emulation unless asked.
 
 **Hard nos:**
-- No default Premiere title templates or Essential Graphics presets — every
-  graphic is built in HyperFrames
+- No canned title templates or graphics presets from any app — every graphic is
+  built in HyperFrames
 - No stock transition effects (zoom blur, page peel, spin, push)
 - No letterboxing or baked-in black bars
 - No music competing with dialogue
@@ -278,19 +279,17 @@ or clarified.** This file is the settled spec; that one is the context behind it
 
 ## Operating rules for Claude
 
-- Run `verify_premiere_connection` first. If it fails, stop and diagnose — don't
-  guess-edit against a dead bridge.
-- Inspect before mutating: `get_project_info`, `list_sequences`,
-  `get_active_sequence` before making changes.
-- Use **real imported media** — import files from `footage/` with `import_media`,
-  then place the returned item IDs on the timeline.
-- Keep the bridge temp dir consistent: `/tmp/premiere-mcp-bridge`.
-- Build motion graphics in HyperFrames → render to `graphics/` → import into
-  Premiere as a clip. Don't fake graphics with Premiere's built-in titles.
-- Prefer creating a **new, clearly named sequence** for a fresh assembly rather
-  than clobbering my active timeline.
+- Inspect before mutating: `ffprobe` the clip, read `silence.json`, run
+  `edit/verify.py` — check the real numbers before changing anything.
+- Use **the real footage** in `footage/`, at full resolution. Never cut from
+  `cut_proof.mp4`; it is half-res and the softness is permanent once exported.
+- Build motion graphics in HyperFrames → render to `graphics/` → composite with
+  `edit/burn.py`. Every graphic is authored as HTML, never drawn by hand.
+- Each video gets its **own clearly named** analysis dir, composition dir and
+  export — `edit/analysis-<name>`, `graphics/<name>-*`, `output/<name>.mp4` —
+  rather than overwriting the last one's.
 - **Ask before destructive/irreversible actions:** deleting media, overwriting an
-  export, closing/saving over a project.
+  export.
 - **Raw footage may be deleted only at the very end**, after the final export to
   `output/` is confirmed on disk AND she has said this is the final export. Never
   on an intermediate export. Footage is not in git.
@@ -356,24 +355,18 @@ re-checks the cue against the transcript and reports drift. See `edit/README.md`
 
 ## Typical workflow
 
-1. `verify_premiere_connection` → confirm live.
-2. Import everything from `footage/`.
-3. Watch/scan the footage; propose an edit plan (structure, beats, music).
-4. Build the rough cut on a new sequence.
-5. **Silence pass** — `python3 edit/preprocess.py <clip> --out edit/analysis-<name>`,
-   then place `silence.json`'s segments with `add_to_timeline_batch`. Never
-   Premiere's `detect_silence` — see the locked recipe above. Do this before any
-   graphics work; it changes all downstream timings.
-6. **Retake pass** — `python3 edit/retakes.py edit/analysis-<name>`, read the
+1. `ffprobe` the clip — resolution, fps, duration. Orientation decides the
+   caption spec, and fps is detected and recorded in `silence.json`.
+2. Watch/scan the footage; propose an edit plan (structure, beats, music).
+3. **Silence pass** — `python3 edit/preprocess.py <clip> --out edit/analysis-<name>`.
+   It writes `silence.json` (the cut list) and `cut_proof.mp4` (the cut itself).
+   See the locked recipe above. Do this before any graphics work; it changes all
+   downstream timings.
+4. **Retake pass** — `python3 edit/retakes.py edit/analysis-<name>`, read the
    report, then `--apply` and re-run `preprocess.py --overrides`. Always, not
    only when she mentions it. Content cuts go before captions, for the same
    reason the silence pass does: they move every timing after them.
-7. **Caption pass** — transcribe, then build the caption track.
-8. Design motion graphics in HyperFrames → render → import → place.
-9. Add transitions, color, audio ducking.
-10. Review pass against the "How I edit" rules above.
-11. Export to `output/`.
-
-**If the bridge is dead:** CEP scans extensions and reads `PlayerDebugMode` only
-at Premiere launch. If the MCP Bridge panel is missing from Window → Extensions
-or won't respond, restart Premiere — that resolves it in nearly every case.
+5. **Caption pass** — `captions_overlay.py` → `review.py` the wording → render.
+6. Design motion graphics in HyperFrames → render to `graphics/`.
+7. Composite and export — `edit/burn.py` → `output/`.
+8. Review pass against the "How I edit" rules above, then commit.

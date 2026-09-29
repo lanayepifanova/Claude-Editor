@@ -2,9 +2,9 @@
 """
 captions_overlay.py — transcript.json -> a HyperFrames caption overlay.
 
-Premiere exposes no caption-positioning API, so social-style captions are burned
-as a transparent overlay instead. Everything is driven by the analysis, so this
-never needs a screenshot to place.
+Social-style captions are burned as a transparent overlay, which edit/burn.py
+composites over the cut. Everything is driven by the analysis, so this never
+needs a screenshot to place.
 
     python3 edit/captions_overlay.py --analysis edit/analysis-Reddit \
         --out graphics/reddit-captions --res 1080x1920 --y 0.25
@@ -258,9 +258,6 @@ def main():
     ap.add_argument("--mindur", type=float, default=MIN_DUR,
                     help="shortest a cue stays up. Default 0.55 vertical/social; "
                          "broadcast spec is 0.7")
-    ap.add_argument("--timeline", default="",
-                    help="premiere-clips.json — retime words onto Premiere's ACTUAL "
-                         "clip boundaries, which differ from the ffmpeg cut by frame rounding")
     a = ap.parse_args()
 
     MAX_DUR, MIN_DUR = a.maxdur, a.mindur
@@ -280,28 +277,6 @@ def main():
                      f"recorded) — re-run preprocess.py or pass --fps")
     w, h = (int(x) for x in a.res.lower().split("x"))
     size = a.size or round(h * 0.028)          # ~2.8% of height
-
-    if a.timeline and Path(a.timeline).exists():
-        prem = json.load(open(a.timeline))
-        segs = json.load(open(an/"silence.json"))["segments"]
-        # my cut timeline: cumulative segment starts
-        mine, t = [], 0.0
-        for s_, e_ in segs:
-            mine.append((t, e_ - s_)); t += e_ - s_
-        n = min(len(mine), len(prem))
-        def remap(x):
-            for i in range(n):
-                m0, md = mine[i]
-                if m0 <= x < m0 + md or (i == n-1 and x >= m0):
-                    p0, p1 = prem[i]
-                    scale = (p1 - p0) / md if md > 0 else 1.0
-                    return round(p0 + (x - m0) * scale, 4)
-            return round(x, 4)
-        drift = max(abs(remap(m0) - m0) for m0, _ in mine)
-        for wd in words:                 # not `w` — that is the frame width
-            wd["t0"], wd["t1"] = remap(wd["t0"]), remap(wd["t1"])
-        dur = prem[n-1][1]
-        print(f"  retimed to Premiere's timeline (corrected up to {drift*1000:.0f}ms)")
 
     if a.fixes and Path(a.fixes).exists():
         words, n = apply_fixes(words, json.load(open(a.fixes)))

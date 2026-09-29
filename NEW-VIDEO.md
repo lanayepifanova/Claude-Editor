@@ -46,26 +46,34 @@ python3 edit/verify.py
    npx hyperframes render . --format mov -q high -f <fps> -o ../<name>-cap.mov)
 #  ^ <fps> = the fps in edit/analysis-<name>/silence.json
 
-# 5. verify the RENDER as text, never through Premiere
+# 5. verify the RENDER as text, never with a screenshot
 python3 edit/check_render.py --render graphics/<name>-cap.mov \
     --srt "project/<name>.srt" --res <WxH> --y <0.25|0.82>
 #  ^ pass the SAME --y the overlay was built with; the band follows it. Without
 #    it the check looks in the 9:16 band and reports NO INK on every landscape cue.
 
-# 6. assemble in Premiere, then re-read Premiere's real clip boundaries and
-#    retime captions onto them (Premiere frame-snaps; the ffmpeg cut does not)
-python3 edit/captions_overlay.py ... --timeline edit/analysis-<name>/premiere-clips.json
+# 6. cut, composite and export — no NLE, this IS the assembly step
+python3 edit/burn.py --analysis edit/analysis-<name> \
+    --overlay graphics/<name>-cap.mov --out "output/<name>.mp4" \
+    --master graphics/<name>-master.mp4
+#  ^ cuts from footage/ at full res (never from cut_proof.mp4), composites the
+#    overlay, and --verify measures the master-vs-final luma difference to prove
+#    the ink actually landed. It refuses to overwrite an existing export.
+
+# 7. commit — deletions included — BEFORE any cleanup runs
+git add -A && git commit -m "Cut and caption <name>"
 ```
 
 ## Invariants
 
 - **Batch instructions, render once.** A render is 1-60 min. If a change arrives
   mid-render, kill it (`pkill -f <output>.mov`) — do not let a stale render finish.
-- **Never verify through Premiere.** `export_frame` ignores both `sequenceId` and
-  time. Use `check_render.py`, or ffmpeg against the rendered `.mov`.
-- **Re-place clips in Premiere after ANY change to the cut.** Changing
-  `silence.json` regenerates captions but does not touch Premiere. Forgetting this
-  desynced a whole video by 6.7s.
+- **Verify as text, never as screenshots.** `check_render.py` for the overlay,
+  `burn.py --verify` for the composite, ffmpeg/ffprobe for anything else. Images
+  persist in context and are re-sent on every later turn.
+- **Re-run downstream after ANY change to the cut.** Changing `silence.json`
+  moves every timing after it, so captions, graphics and the export all have to
+  be rebuilt from it — never patch one and leave the others.
 - **Read the transcript before rendering.** `review.py`. Whisper's errors move
   between runs, so pin every wrong variant in `fixes-*.json`, not just the latest.
 - **Content cuts before captions.** The retake pass moves every timing after it,

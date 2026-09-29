@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>captions</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:transparent; }
+      #root { position:relative; width:1080px; height:1920px; }
+      .cue {
+        position:absolute; left:0; right:0; top:25.0%;
+        transform:translateY(-50%);
+        display:flex; align-items:center; justify-content:center;
+        text-align:center;
+      }
+      .cue span {
+        display:inline-block; max-width:778px; white-space:nowrap;
+        font-family:'Montserrat', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+        font-weight:800; font-size:54px; line-height:1.18;
+        letter-spacing:-0.01em; color:#FFFFFF;
+        /* hard edge, zero blur — reads on any background, never looks glowy */
+        text-shadow:
+          4px 0 0 #000, -4px 0 0 #000, 0 4px 0 #000, 0 -4px 0 #000,
+          3px 3px 0 #000, -3px 3px 0 #000,
+          3px -3px 0 #000, -3px -3px 0 #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="41.967"
+         data-width="1080" data-height="1920" data-fps="30.0"
+         data-layout-allow-overflow="true">
+      <div id="cue0" class="clip cue" data-start="0.03" data-duration="0.67" data-track-index="1"><span>One of the sharpest</span></div>
+      <div id="cue1" class="clip cue" data-start="0.7" data-duration="0.74" data-track-index="1"><span>marketing minds out</span></div>
+      <div id="cue2" class="clip cue" data-start="1.44" data-duration="0.56" data-track-index="1"><span>there right now</span></div>
+      <div id="cue3" class="clip cue" data-start="2.0" data-duration="0.84" data-track-index="1"><span>is this guy.</span></div>
+      <div id="cue4" class="clip cue" data-start="2.84" data-duration="0.89" data-track-index="1"><span>You've probably seen</span></div>
+      <div id="cue5" class="clip cue" data-start="3.73" data-duration="0.55" data-track-index="1"><span>these insanely viral</span></div>
+      <div id="cue6" class="clip cue" data-start="4.28" data-duration="1.09" data-track-index="1"><span>videos on Instagram,</span></div>
+      <div id="cue7" class="clip cue" data-start="5.37" data-duration="0.21" data-track-index="1"><span>and they're all made</span></div>
+      <div id="cue8" class="clip cue" data-start="5.6" data-duration="0.81" data-track-index="1"><span>from models from his</span></div>
+      <div id="cue9" class="clip cue" data-start="6.41" data-duration="1.07" data-track-index="1"><span>platform, Higgsfield.</span></div>
+      <div id="cue10" class="clip cue" data-start="7.48" data-duration="0.7" data-track-index="1"><span>His name is Alex</span></div>
+      <div id="cue11" class="clip cue" data-start="8.18" data-duration="0.62" data-track-index="1"><span>Mashrabov.</span></div>
+      <div id="cue12" class="clip cue" data-start="8.8" data-duration="0.7" data-track-index="1"><span>You've probably seen his</span></div>
+      <div id="cue13" class="clip cue" data-start="9.5" data-duration="0.58" data-track-index="1"><span>face here and there,</span></div>
+      <div id="cue14" class="clip cue" data-start="10.08" data-duration="0.61" data-track-index="1"><span>even if you don't know</span></div>
+      <div id="cue15" class="clip cue" data-start="10.69" data-duration="0.35" data-track-index="1"><span>his name.</span></div>
+      <div id="cue16" class="clip cue" data-start="11.06" data-duration="0.53" data-track-index="1"><span>He's the CEO</span></div>
+      <div id="cue17" class="clip cue" data-start="11.61" data-duration="0.92" data-track-index="1"><span>of Higgsfield, one</span></div>
+      <div id="cue18" class="clip cue" data-start="12.53" data-duration="0.83" data-track-index="1"><span>of the fastest growing</span></div>
+      <div id="cue19" class="clip cue" data-start="13.36" data-duration="0.56" data-track-index="1"><span>Gen AI startups</span></div>
+      <div id="cue20" class="clip cue" data-start="13.92" data-duration="0.52" data-track-index="1"><span>out there.</span></div>
+      <div id="cue21" class="clip cue" data-start="14.46" data-duration="0.53" data-track-index="1"><span>The reason you keep</span></div>
+      <div id="cue22" class="clip cue" data-start="15.01" data-duration="0.46" data-track-index="1"><span>seeing their videos</span></div>
+      <div id="cue23" class="clip cue" data-start="15.49" data-duration="0.96" data-track-index="1"><span>everywhere is because he</span></div>
+      <div id="cue24" class="clip cue" data-start="16.45" data-duration="0.83" data-track-index="1"><span>turned his users</span></div>
+      <div id="cue25" class="clip cue" data-start="17.28" data-duration="1.04" data-track-index="1"><span>into his marketing team.</span></div>
+      <div id="cue26" class="clip cue" data-start="18.32" data-duration="0.93" data-track-index="1"><span>And now he's basically</span></div>
+      <div id="cue27" class="clip cue" data-start="19.25" data-duration="0.67" data-track-index="1"><span>opened the door</span></div>
+      <div id="cue28" class="clip cue" data-start="19.92" data-duration="0.7" data-track-index="1"><span>for other companies</span></div>
+      <div id="cue29" class="clip cue" data-start="20.62" data-duration="0.64" data-track-index="1"><span>to compete with him</span></div>
+      <div id="cue30" class="clip cue" data-start="21.26" data-duration="0.48" data-track-index="1"><span>directly.</span></div>
+      <div id="cue31" class="clip cue" data-start="21.76" data-duration="0.56" data-track-index="1"><span>Higgsfield</span></div>
+      <div id="cue32" class="clip cue" data-start="22.32" data-duration="0.88" data-track-index="1"><span>has just launched</span></div>
+      <div id="cue33" class="clip cue" data-start="23.2" data-duration="1.06" data-track-index="1"><span>its API with endpoints</span></div>
+      <div id="cue34" class="clip cue" data-start="24.26" data-duration="0.82" data-track-index="1"><span>to their best models,</span></div>
+      <div id="cue35" class="clip cue" data-start="25.08" data-duration="1.57" data-track-index="1"><span>including Seedance,</span></div>
+      <div id="cue36" class="clip cue" data-start="26.65" data-duration="1.06" data-track-index="1"><span>Kling, Soul,</span></div>
+      <div id="cue37" class="clip cue" data-start="27.71" data-duration="1.25" data-track-index="1"><span>and Genjutsu.</span></div>
+      <div id="cue38" class="clip cue" data-start="28.99" data-duration="0.98" data-track-index="1"><span>On top of that, they're</span></div>
+      <div id="cue39" class="clip cue" data-start="29.97" data-duration="1.2" data-track-index="1"><span>offering a $20 million</span></div>
+      <div id="cue40" class="clip cue" data-start="31.17" data-duration="1.23" data-track-index="1"><span>cashback pool for all</span></div>
+      <div id="cue41" class="clip cue" data-start="32.4" data-duration="1.11" data-track-index="1"><span>API users until the end</span></div>
+      <div id="cue42" class="clip cue" data-start="33.51" data-duration="0.69" data-track-index="1"><span>of September.</span></div>
+      <div id="cue43" class="clip cue" data-start="34.2" data-duration="0.73" data-track-index="1"><span>And all you need</span></div>
+      <div id="cue44" class="clip cue" data-start="34.93" data-duration="1.03" data-track-index="1"><span>to do is grab an API key</span></div>
+      <div id="cue45" class="clip cue" data-start="35.96" data-duration="0.78" data-track-index="1"><span>and set up a clear</span></div>
+      <div id="cue46" class="clip cue" data-start="36.74" data-duration="1.34" data-track-index="1"><span>distribution strategy.</span></div>
+      <div id="cue47" class="clip cue" data-start="38.08" data-duration="0.89" data-track-index="1"><span>Comment strategy,</span></div>
+      <div id="cue48" class="clip cue" data-start="38.97" data-duration="0.16" data-track-index="1"><span>and I'll send</span></div>
+      <div id="cue49" class="clip cue" data-start="39.15" data-duration="0.59" data-track-index="1"><span>you the setup link</span></div>
+      <div id="cue50" class="clip cue" data-start="39.74" data-duration="1.27" data-track-index="1"><span>for the API and the $20</span></div>
+      <div id="cue51" class="clip cue" data-start="41.01" data-duration="0.957" data-track-index="1"><span>million cashback pool.</span></div>
+    </div>
+    <script>
+      // GENERATED by edit/captions_overlay.py — do not hand-edit.
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // captions cut in and out with the clip window — no tweens by design
+      tl.set("#root", { opacity: 1 }, 0);
+      tl.set("#root", { opacity: 1 }, 41.967);
+      tl.seek(0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

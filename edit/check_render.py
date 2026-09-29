@@ -2,9 +2,8 @@
 """
 check_render.py — verify a rendered overlay WITHOUT putting images in context.
 
-Replaces "export a frame from Premiere and look at it", which was both unreliable
-(export_frame ignores sequenceId and time) and expensive (every image persists in
-context and is re-sent on every later turn).
+Replaces "render a frame and look at it", which is expensive — every image
+persists in context and is re-sent on every later turn.
 
 Works by measuring the alpha channel of the rendered .mov: where there is ink,
 how much, and whether it lines up with the cue that the SRT says should be there.

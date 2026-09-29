@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 # =============================================================================
 #  Claude Video Editor — one-shot macOS installer
-#  Installs everything Claude needs to edit video inside Premiere Pro:
+#  Installs everything Claude needs to cut, caption and finish a video.
+#  There is no NLE here on purpose — Premiere and its MCP bridge were removed
+#  on 2026-09-21. ffmpeg does the cutting and compositing.
 #    - Homebrew (if missing)
 #    - Node.js 22+  (via your existing nvm, or Homebrew as fallback)
 #    - FFmpeg
-#    - adobe-premiere-pro-mcp  (the Premiere bridge) + its CEP panel
-#    - HyperFrames skills       (HTML -> motion-graphics engine)
+#    - whisper.cpp + the small.en model  (local caption timings)
+#    - HyperFrames skills                (HTML -> motion-graphics engine)
 #
 #  Safe to re-run. It skips anything already installed.
 #  Run from inside this folder:   bash setup.sh
@@ -88,15 +90,25 @@ else
 fi
 
 # ---------------------------------------------------------------------------
-# 5. Premiere Pro MCP bridge (global) + CEP panel
+# 5. whisper.cpp + the small.en model (caption timings, entirely local)
 # ---------------------------------------------------------------------------
-step "Adobe Premiere Pro MCP bridge"
-npm install -g adobe-premiere-pro-mcp || die "npm global install of adobe-premiere-pro-mcp failed."
-ok "adobe-premiere-pro-mcp installed"
-warn "Installing the CEP panel into Premiere + configuring Claude Desktop…"
-premiere-pro-mcp --install-cep || warn "--install-cep reported an issue (fine if Premiere isn't installed yet; re-run after installing Premiere)."
-echo "  Running doctor (non-fatal)…"
-premiere-pro-mcp --doctor || warn "doctor found issues — expected until Premiere is installed and the CEP bridge is started."
+step "whisper.cpp"
+if ! command -v whisper-cli >/dev/null 2>&1; then
+  brew install whisper-cpp || die "whisper-cpp install failed."
+fi
+ok "whisper-cli ready"
+
+# small.en, NOT base.en — base mangles finance/hardware jargon ("trade GPU out",
+# "Cash shuttle listed on Nimus"). preprocess.py defaults to this exact path.
+WHISPER_MODEL="$HOME/.cache/whisper/ggml-small.en.bin"
+if [ ! -f "$WHISPER_MODEL" ]; then
+  warn "Downloading the small.en model (~488 MB)…"
+  mkdir -p "$(dirname "$WHISPER_MODEL")"
+  curl -fL --progress-bar -o "$WHISPER_MODEL" \
+    "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.en.bin" \
+    || { rm -f "$WHISPER_MODEL"; die "model download failed."; }
+fi
+ok "small.en model at $WHISPER_MODEL"
 
 # ---------------------------------------------------------------------------
 # 6. HyperFrames skills (motion-graphics engine)
@@ -109,21 +121,17 @@ ok "HyperFrames skills attempted"
 # ---------------------------------------------------------------------------
 # Done
 # ---------------------------------------------------------------------------
-echo -e "\n${GREEN}Software install complete.${NC}"
+echo -e "\n${GREEN}Install complete — nothing else to configure.${NC}"
 cat <<'NEXT'
 
-NEXT — the few things that must happen inside Premiere (one time):
-  1. Open Adobe Premiere Pro.
-  2. Preferences > Plugins  ->  enable "UXP Plugins > Enable developer mode".
-  3. Quit and reopen Premiere Pro.
-  4. Window > Extensions > MCP Bridge (CEP).
-  5. Set  Temp Directory  to:  /tmp/premiere-mcp-bridge
-  6. Click  Save Configuration  ->  Start Bridge  ->  Test Connection.
+There is no app to open and no bridge to start. To make a video:
 
-THEN, in Claude:
-  - Restart the Claude desktop app so it picks up the new MCP server.
-  - Ask Claude:  "Run verify_premiere_connection. Make no changes."
-  - If that returns your Premiere build + open project, you're live.
+  1. Drop footage into  footage/
+  2. Fill in the "How I edit" section of  CLAUDE.md  with your style.
+  3. Ask Claude:  "Cut the silence out of footage/<clip>.mp4 and caption it."
+
+Claude follows NEW-VIDEO.md: analyse -> drop repeated takes -> caption ->
+render -> composite -> export to output/. Every step is verified as text.
 
 See SETUP.md in this folder for the full walkthrough and troubleshooting.
 NEXT

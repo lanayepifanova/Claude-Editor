@@ -1,8 +1,9 @@
 # Claude Editor
 
-A video editing studio that Claude operates end to end — cutting the timeline in
-Adobe Premiere Pro over an MCP bridge, and authoring captions and motion graphics
-as code that renders to transparent ProRes overlays.
+A video editing studio that Claude operates end to end from the command line —
+cutting, captioning and finishing video with no NLE, no timeline and no GUI.
+Captions and motion graphics are authored as code and render to transparent
+ProRes overlays, which ffmpeg composites over the cut.
 
 The edit is **data, not conversation**: footage is analysed once into JSON, and
 every subsequent decision is a small patch to a manifest rather than a rewrite.
@@ -32,9 +33,11 @@ manifest.json  ◄── edits happen HERE (a few lines, not a file rewrite)
     ├─ review.py ─────► captions as text, for approval BEFORE rendering
     ├─ verify.py ─────► structural findings, no render needed
     │
-    └─ hyperframes render ──► ProRes 4444 + alpha ──► Premiere V2/V3
+    └─ hyperframes render ──► ProRes 4444 + alpha
                                     │
                           check_render.py ──► verified via the alpha channel, as text
+                                    │
+                          burn.py ──────────► output/<name>.mp4   (H.264/AAC)
 ```
 
 ### `framing.json` — placing graphics without looking
@@ -100,7 +103,8 @@ in context and are re-sent on every later turn.
 
 ## Requirements
 
-macOS · Premiere Pro with the MCP bridge panel · Node 20+ · ffmpeg · whisper-cpp
+macOS · Node 22+ · ffmpeg · whisper-cpp. No Adobe software, no NLE, nothing that
+has to be open.
 
 See `SETUP.md`. Footage and renders are git-ignored — they exceed GitHub's file
 limit and regenerate from the compositions.
@@ -108,5 +112,5 @@ limit and regenerate from the compositions.
 ## Credits
 
 Inspired by [Jason Cooperson](https://www.youtube.com/@jasoncooperson)'s tutorial
-on driving Premiere Pro with Claude. Built on the Premiere Pro MCP bridge and
-HyperFrames.
+on driving an NLE with Claude — this studio started there and has since moved off
+it entirely. Built on HyperFrames.

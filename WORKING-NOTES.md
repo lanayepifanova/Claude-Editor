@@ -6,7 +6,7 @@ rules); this is the *context* behind it — how she asks, what she reacts to, an
 what I've learned the hard way.
 
 Last updated: 2026-09-21 · after she asked for repeated takes to be cut down to the
-last one, and for that rule to be written into the instructions
+last one, and then for Premiere Pro to be removed from the studio entirely
 
 ---
 
@@ -86,9 +86,10 @@ she pushed back with "it isn't updated". See §4.
   pixel scan found no blue in the overlays; the only blue is the Premiere Pro icon
   and Jason's avatar backdrop. She dropped it. If it reappears, ask her to point at
   a timecode.
-- **Caption position** — she asked to shift captions up, then said the default was
-  fine. Not scriptable (Premiere exposes no caption API); mention it after a
-  caption pass rather than assuming.
+- **Caption position** — *resolved 2026-09-21.* She asked to shift captions up,
+  then said the default was fine. It used to be unscriptable and something she
+  had to nudge by hand in a GUI; with captions burned as an overlay it is just
+  `captions_overlay.py --y`. Move it on request.
 
 ---
 
@@ -107,16 +108,16 @@ she pushed back with "it isn't updated". See §4.
 
 ## 4. Process lessons (the expensive ones)
 
-**A task is not done when the render finishes. It is done when Premiere has the
-file and I have verified it by exporting a frame from the sequence.** The loop is:
+**A task is not done when the render finishes. It is done when the file she will
+actually watch exists in `output/` and has been verified.** The loop is:
 
 ```
-edit HTML → render (~4 min) → import → swap clip → save → export_frame → LOOK
+edit HTML → render (~4 min) → burn.py → --verify → THEN say done
 ```
 
 Skipping the last two steps caused the single biggest friction in this project.
 She saw stale video repeatedly while I reported "done". If a render is still
-running, say **"not in Premiere yet"** — never "done".
+running, say **"still rendering"** — never "done".
 
 **Interrupting requests invalidate in-flight renders.** When a change arrives
 mid-render, kill the render (`pkill -f <output>.mov`), apply the change, restart.
@@ -134,114 +135,27 @@ round trip is ~4 minutes of dead time.
   1.7 GB**; the same composition with a hard edge took **4 minutes and 513 MB**.
 - Detailed screenshots inflate ProRes a lot (786 MB vs 535 MB) — many hard edges.
 
-**`app.project` is NOT the project you just opened — guard on the path before every
-mutation.** On 2026-08-17 this destroyed `Reddit - Cut` and `GPU Hours - Cut`. Premiere had
-three projects open at once and **two of them were named `Demo.prproj`** (the repo one and a
-default at `~/Documents/Adobe/Premiere Pro/26.0/`). `open_project` reported success and
-`list_sequences` showed the right sequences, but ExtendScript's `app.project` still pointed at
-a *different* open document, so the sequences were built against the wrong project and
-`save_project` wrote the wrong contents over `project/Demo.prproj` — 28,167 bytes down to
-16,321. Git had it tracked, so `git checkout -- project/Demo.prproj` restored it fully; that
-was the versioning saving it, not any care taken at the time. The procedure now:
+**Verify a render with ffmpeg, never by looking at a frame an app gave you.**
+The old route verified timing by asking Premiere to export a frame; it ignored
+both the sequence and the requested time, and cost hours across this project by
+twice raising false alarms about work that was already correct. Extract from the
+rendered `.mov` with ffmpeg and composite over the cut proof, or use
+`check_render.py` / `burn.py --verify`, which read the file itself and report as
+text. (Established 2026-08-17; the tool that caused it is gone as of 2026-09-21,
+the habit stays.)
 
-1. `cp project/Demo.prproj` somewhere first — belt and braces on top of git.
-2. Close every other open project (`closeDocument(0,0)`) so exactly **one** remains.
-3. Assert `app.project.path === <repo path>` and `app.projects.numProjects === 1` at the top
-   of every mutating script, and return `ABORT` otherwise.
-4. List the sequences **before** saving and confirm the old ones are still there.
-5. After saving, parse the `.prproj` on disk and confirm the names survived.
+**`ffprobe` every export before calling it delivered.** The old encoder quietly
+wrote PCM audio into an `.mp4` — it played fine locally but was rejected or
+silently muted by several browsers and social uploaders, and inflated the file
+~25%. `burn.py` writes AAC now, so this cannot recur on the current route, but
+the habit of probing the actual deliverable is what caught it.
 
-Never trust a save because the tool returned `success: true`. (Established 2026-08-17.)
-
-**The 2026-08-17 clobber repeated on 2026-08-19 — because step 3 of the procedure
-above is not actually executable.** `evaluate_expression` rejects every argument
-spelling (`expression`, `code`, `returnValue`) and returns `{"type":"undefined"}`
-for all of them, so the `app.projects.numProjects === 1` assertion cannot be run
-through the bridge. Proceeding without it is what cost the four old sequences:
-two documents were open on the same path, the first `save_project` wrote the good
-one (41,176 bytes, five sequences, verified on disk), and the second wrote the
-*other* document over the same path (18,464 bytes, one sequence). No MCP call of
-mine touched the sequences — `app.project` simply resolved to a different document
-between the two saves.
-
-**The workable substitute is `get_project_info`'s `itemCount`** (or
-`list_project_items`): the good document reported 18 items, the stray one 3. Record
-it before the first mutation and re-check it before and after every save — a change
-means `app.project` moved and the next save will clobber. Also parse the `.prproj`
-on disk after *every* save, not just the last one; the 41 KB file was correct and
-the damage was only visible after the second save. Recovery here was free (git HEAD
-plus three 2026-08-18 autosaves each held all five sequences, and the autosave
-folder is the thing to copy out first), and Lana then chose to discard them —
-`Demo.prproj` is now Sony-only by her decision, not by the accident. (Re-established
-2026-08-19.)
-
-**A second Premiere save in the same session can land in a different document —
-`itemCount` is the check that works.** After the 2026-08-19 clobber, every save
-this session was bracketed with `get_project_info`: 3/3, 4/4, 5/5, 6/6 across
-four saves, and none moved. That is the assertion the written procedure wanted
-and could not express, because `evaluate_expression` cannot run one. Cheap, and
-it turns an invisible failure into a visible number.
-
-**`delete_project_item` reports success without deleting.** It returned
-`success: true, method: "deleteBin"` on an unused footage item that was still in
-the Project panel afterwards; `delete_multiple_project_items` then died with
-`deleteResults.filter is not a function`. Removing a project item is a manual
-step — say so rather than reporting it done.
-
-**Premiere quirks:**
-- **`export_frame` is unreliable — do not verify timing with it.** It ignores the
-  `sequenceId` (renders whichever sequence is active) AND effectively ignores the
-  time/playhead: asked for 30s on a 44s sequence it returned the opening frame.
-  It cost hours across this project, twice producing false alarms about correct
-  work (the "missing" 66% card, and caption sync). To verify what a graphic
-  actually shows at time T, extract from the **rendered .mov with ffmpeg** and
-  composite over the cut proof. Premiere is for assembly, not for inspection.
-- `export_sequence` fails with `MEDIA_ENCODER_NOT_INSTALLED` because it only looks
-  directly in `/Applications`. AME lives at
-  `/Applications/Adobe Media Encoder 2026/Adobe Media Encoder 2026.app`. Use
-  `exportAsMediaDirect` via `execute_extendscript` instead.
-  The preset that works is AME's factory `H264 Match Source - High bitrate.epr`
-  (`/Applications/Adobe Media Encoder 2026/Adobe Media Encoder 2026.app/Contents/
-  MediaIO/systempresets/3F3F3F3F_4D6F6F56/`); `get_encoder_presets` returns an empty
-  list because factory preset enumeration isn't supported. Call it as
-  `seq.exportAsMediaDirect(outPath, presetPath, 0)` — `0` = entire sequence.
-- **That preset writes PCM audio into the .mp4, not AAC.** `pcm_s24le` in an MP4
-  container plays in Premiere and QuickTime but is rejected or silently muted by
-  several browsers and social uploaders, and it inflates the file ~25%. Always
-  `ffprobe` the export and, if audio is PCM, remux with
-  `ffmpeg -c:v copy -c:a aac -b:a 192k -movflags +faststart` — video is untouched,
-  so it costs nothing in quality. (Established 2026-08-18 exporting Firecrawl -
-  Photos: 46.6 MB PCM became 37.8 MB AAC.)
-- **`get_sequence_structure` reports every clip's source `inPoint`/`outPoint` one
-  frame low** — durations and timeline positions are exact, only the source in/out
-  read 0.033s early. Seen on all 20 clips of `Sony TSMC - Cut` (2026-08-19), video
-  and audio alike, against in-points that were already on the frame grid. Don't
-  treat it as a placement error and don't "correct" the cut list for it. If it ever
-  matters, the check is whether the final frame of each kept segment carries energy
-  above the hysteresis floor — on that clip every one was room tone, so a one-frame
-  shift could not have clipped a word either way.
-- **`create_sequence_from_clips` rejects every argument spelling tried** and
-  `create_sequence` ignores frame rate, so the way to get a correctly-specced blank
-  timeline is `duplicate_sequence` with `clearContents=true` from a sequence that
-  already has the frame rate you want, then `set_sequence_resolution`. `Firecrawl -
-  Cut` is the clean exact-30fps donor (timebase 8467200000); `GPU Hours - Cut` is
-  30.00003 and `Reddit - Cut` is 29.97.
-- Caption tracks can't be read back via scripting — the `.srt` in `project/` is the
-  source of truth.
-- Premiere's bridge occasionally returns `Unexpected end of JSON input` under load.
-  Just retry.
-
-**Re-place clips in Premiere after ANY change to the cut.** Changing
-`silence.json` (an override, a merge) regenerates the transcript and captions but
-does NOT touch Premiere. Forgetting this desynced a whole video by up to 6.7s and
-read as "captions feel a bit off". The cut, the captions, and Premiere must be
-updated as one unit.
-
-**Captions must be retimed onto Premiere's actual clip boundaries.** Premiere
-frame-snaps each segment, so its timeline runs slightly shorter than the ffmpeg
-cut the transcript was made from — about 2 frames by the end of a 45s video. Read
-the real clip starts out of Premiere and pass them to
-`captions_overlay.py --timeline`.
+**Re-run everything downstream after ANY change to the cut.** Changing
+`silence.json` (an override, a merge) moves every timing after it. Back when the
+assembly lived in a separate app, forgetting this desynced a whole video by up to
+6.7s and read to her as "captions feel a bit off". The cut, the captions, the
+graphics and the export are one unit — rebuild them together, never patch one and
+leave the rest.
 
 **Transcription: use `small.en`, and expect errors to MOVE.** `base.en` mangles
 finance and hardware jargon — across one 45s video it produced "trade GPU out",
@@ -253,14 +167,14 @@ per-video `fixes-*.json` is still required. Critically, **re-running the analysi
 re-transcribes and the errors relocate**, so pin every wrong variant seen, not
 just the latest one. Always read the full transcript back before rendering.
 
-**Not every video goes through Premiere — sometimes the deliverable is just the
-captioned cut.** On 2026-08-29 the bridge was down and she said: "its ok i dont
-rlly need the premiere bridge right now since i dont need the graphics." So the
-pipeline has a shorter route that ends at `output/`: cut the **original** footage
-with the `silence.json` segments, composite the rendered caption overlay, encode
-H.264/AAC. No sequence, no assembly, no caption retiming onto Premiere's frame
-grid (that step only exists because Premiere snaps clips — ffmpeg does not, so
-the overlay and the cut share a frame count exactly: 1453 and 1453 here).
+**The ffmpeg route to `output/` started as a fallback and became the whole
+pipeline.** On 2026-08-29 the Premiere bridge was down and she said: "its ok i
+dont rlly need the premiere bridge right now since i dont need the graphics." So
+a shorter route was built: cut the **original** footage with the `silence.json`
+segments, composite the rendered caption overlay, encode H.264/AAC. It turned out
+to be *better* than the route it replaced — nothing frame-snaps the segments, so
+the overlay and the cut share a frame count exactly (1453 and 1453 here) — and on
+2026-09-21 she removed Premiere altogether. This is now the only route.
 
 Two things to get right on that route. **Cut from `footage/`, never from
 `cut_proof.mp4`** — the proof is half-resolution (960x1706 for 1080x1920
@@ -585,9 +499,43 @@ nothing protects the object of a verb, so cues can still end on "or bring" and
 like a completed run in a background task. The parse now strips the separator.
 Worth remembering that the exit code lied here, as it did for the ProRes renders.
 
+**Some footage is variable-frame-rate, and `burn.py` now conforms it.** (2026-09-28,
+higgsfield.) The clip reports `r_frame_rate=30/1` but writes stamps off the 1/30 grid
+(3953 frames at an average 30.011fps, e.g. 48.235), so grid-aligned trims admitted a
+varying number of frames: master 1249f against the overlay's 1260f, and burn refused.
+Each branch is now `fps=N` before the trim, and the trim is in whole frames
+(`start_pts`/`end_pts`), because a seconds trim printed to 6 places rounded 65.0666…
+*up* past frame 1952 and dropped it. `avg_frame_rate` differing from `r_frame_rate`
+in ffprobe is the tell.
+
+Same clip, same pattern as openai/anthropic: -22.1 LUFS, room tone RMS -72 / peak -55,
+and the locked pass clipped "Higgsfield" to "Higgs", "marketing team" to "market" and
+"cashback pool" to "rule". The +4 dB control did not recover them; `restore_speech.py
+--quiet-db -50` did (38.1s -> 42.0s, candidates -32..-45 dB, all well above the -55
+floor). Whisper hears her CTA "Comment strategy" as "Common strategy", and the
+full-context read of the original drops the line entirely.
+
 ---
 
 ## 5. Standing instructions
+
+**No NLE, and don't offer one.** On 2026-09-21 she asked: *"can you delete all the
+stuff in this claude editor that has to do with the premiere pro mcp? because i
+don't want to rely on the premiere pro stuff, i dont want any reliance on it."*
+So Premiere, its MCP bridge, the CEP panel, the npm package and the
+`premiere-pro` entry in `~/.claude.json` were all removed, and the docs were
+rewritten around the ffmpeg route. The pipeline is now entirely scripts and
+files: `preprocess.py` cuts, HyperFrames renders, `burn.py` composites and
+encodes to `output/`. Do not propose Premiere, Final Cut, Resolve or any other
+timeline app — not as a step, not as a fallback, not as "we could also". If
+something genuinely cannot be done headlessly, say so plainly and stop there.
+The restore commands are at the bottom of `SETUP.md` if she ever reverses this,
+but she has to ask. (Established 2026-09-21.)
+
+**This also made caption position scriptable**, which had been the one thing she
+had to eyeball in a GUI — it is `captions_overlay.py --y` now. When a constraint
+disappears because a dependency did, say so; she had stopped asking for that
+nudge because the answer used to be "you have to do it by hand".
 
 **Raw footage cleanup — end of project only.** Once the final video is exported to
 `output/` *and she has explicitly said it's the final export*, delete the source
@@ -674,7 +622,8 @@ run.** (Established 2026-08-17.)
 
 ## 5b. Standing to-dos
 
-- [x] Duplicate "Intro - Silence Pass" sequence — moot, the project is Sony-only now
+- [x] Duplicate "Intro - Silence Pass" sequence — moot; the NLE is gone entirely
+      as of 2026-09-21
 - [x] Superseded renders accumulate — **done 2026-08-19**: `cleanup.py --renders`
       sweeps loose `graphics/*.mov|mp4` whose composition is committed. Four of
       them were 1.5 GB after one video, and nothing else reached them.

@@ -2,9 +2,9 @@
 """Captions-only route: cut the ORIGINAL footage, burn the caption overlay,
 encode H.264/AAC into output/.
 
-This is the short route that skips Premiere entirely (established 2026-08-29 on
-"oil markets"). It exists because the two traps here are easy to walk into by
-hand:
+This is THE export route (established 2026-08-29 on "oil markets"; the only one
+since Premiere was dropped on 2026-09-21). It exists because the two traps here
+are easy to walk into by hand:
 
   * cut from `footage/`, never from `cut_proof.mp4` — the proof is half
     resolution, and using it baked permanent softness into the Firecrawl export
@@ -46,19 +46,26 @@ def probe(path, stream="v:0", entries="width,height,nb_read_packets"):
 def build_master(src, segments, dest, fps=30.0, size=None):
     """Concat the kept segments straight out of the original footage.
 
-    The video trim ends half a frame early. Some cameras write frame
-    timestamps truncated rather than rounded (frame 108 of a 30fps clip lands
-    at 3.599999, not 3.600000), so trim's half-open [start, end) still admits
-    the frame sitting on the boundary and the segment comes back one frame
-    long. Two of ten segments did that on anthropic.mov, which put the master
-    2 frames ahead of the overlay. Backing the cut off by half a frame excludes
-    that frame whether the timestamp was truncated or exact, and cannot reach
-    the previous frame. Audio is sample-accurate and is left alone.
+    The video is trimmed in whole frames, never in seconds. Some cameras write
+    frame timestamps truncated rather than rounded (frame 108 of a 30fps clip
+    lands at 3.599999, not 3.600000), so a seconds trim's half-open
+    [start, end) admitted the boundary frame and put anthropic.mov's master
+    2 frames ahead of the overlay. Audio is sample-accurate and is left alone.
+
+    Each branch is conformed to constant fps before the trim. higgsfield.mov
+    writes variable timestamps (3953 frames at an average 30.011fps, stamps
+    like 48.235 off the 1/30 grid), so the same grid-aligned trims admitted a
+    varying number of frames and the master came out 1249f against the
+    overlay's 1260f. fps=N snaps every frame onto the grid the cut list and
+    the overlay were built on; on constant-rate footage it changes nothing.
+    After it the timebase is exactly 1/fps, so the trim is in whole frames
+    (start_pts/end_pts) — a seconds trim printed to 6 places rounded 65.0666…
+    UP past frame 1952 and dropped it, one frame on three segments.
     """
     parts, labels = [], []
-    half = 0.5 / fps
     for i, (a, b) in enumerate(segments):
-        parts.append(f"[0:v]trim=start={a:.6f}:end={b - half:.6f},setpts=PTS-STARTPTS[v{i}]")
+        fa, fb = round(a * fps), round(b * fps)
+        parts.append(f"[0:v]fps={fps:g},trim=start_pts={fa}:end_pts={fb},setpts=PTS-STARTPTS[v{i}]")
         parts.append(f"[0:a]atrim=start={a:.6f}:end={b:.6f},asetpts=PTS-STARTPTS[a{i}]")
         labels.append(f"[v{i}][a{i}]")
     graph = ";".join(parts) + ";" + "".join(labels) + \
