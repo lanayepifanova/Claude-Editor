@@ -110,6 +110,15 @@ DECKS = {
     },
 }
 
+DECKS["higgsfield"] = {
+    "src": "graphics/Higgsfield-png",
+    # media-kit clips, spliced and retimed upstream by build_clips.py. All carry
+    # their own ground (promo reels, UI), so none knock out.
+    "assets": {f"{n}.mov": {"mode": "raw"} for n in (
+        "genjutsu viral", "users marketing", "api hub",
+        "api live", "model list", "api key")},
+}
+
 HI, LO = 246.0, 228.0
 
 

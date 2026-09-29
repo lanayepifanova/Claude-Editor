@@ -128,6 +128,28 @@ PROJECTS = {
             ("student program",    23.98, 29.45, 380, 1560, 450, "they have a student program"),
         ],
     },
+    "higgsfield-photos-motion": {
+        "source": "higgsfield.mp4",
+        "deck": "higgsfield",
+        "duration": 41.967,
+        "frame": (1080, 1920),
+        # Same band as Sony TSMC: captions burn at y=25%, her chin sits at ~980,
+        # so 900x506 plates centred at 1260 run 1007..1513.
+        "band": (580, 1620),
+        # 7.40-14.40 is held clear for the photo of Alex she asked for in the
+        # script ("show the photo of Alex") — the kit has none. 37.9-end stays on
+        # her face for the "Comment STRATEGY" call to action. 28.95-33.95 is the
+        # $20M cashback card, a separate HyperFrames overlay (graphics/
+        # higgsfield-cashback) because nothing in the kit states that figure.
+        "beats": [
+            ("genjutsu viral",  2.80,  7.40, 900, 540, 1260, "insanely viral videos on Instagram"),
+            ("users marketing", 14.45, 18.20, 900, 540, 1260, "he turned his users into his marketing team"),
+            ("api hub",         18.30, 21.65, 900, 540, 1260, "opened the door for other companies to compete with him"),
+            ("api live",        21.70, 25.00, 900, 540, 1260, "Higgsfield has just launched its API"),
+            ("model list",      25.05, 28.90, 900, 540, 1260, "including Seedance, Kling, Soul, and Genjutsu"),
+            ("api key",         34.15, 37.80, 900, 540, 1260, "grab an API key and set up a clear distribution strategy"),
+        ],
+    },
 }
 
 HTML = """<!doctype html>

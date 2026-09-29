@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>higgsfield cashback</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      /* The $20M cashback pool card — the one beat the media kit has nothing for
+         (its promos only ever state discounts). Lands on "On top of that, they're
+         offering a $20 million cashback pool ... until the end of September",
+         28.95-33.95 on the higgsfield cut. Same band as the b-roll plates
+         (centre y 1260, under her chin, above the 1620 TikTok floor).
+         Her settled look: black ink, Georgia Bold, hard cream edge with zero
+         blur, no boxes; gold as the one accent, on the stamp only. */
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:transparent; }
+      #root { position:relative; width:1080px; height:1920px; }
+      #card { position:absolute; left:0; top:1030px; width:1080px; height:470px; }
+      .edge {
+        text-shadow:
+          5px 0 0 #FAF7F2, -5px 0 0 #FAF7F2, 0 5px 0 #FAF7F2, 0 -5px 0 #FAF7F2,
+          4px 4px 0 #FAF7F2, -4px 4px 0 #FAF7F2, 4px -4px 0 #FAF7F2, -4px -4px 0 #FAF7F2;
+      }
+      .kicker {
+        position:absolute; left:0; right:0; top:0; height:48px;
+        display:flex; align-items:center; justify-content:center; gap:22px;
+      }
+      .kicker span {
+        font-family:'Inter','Helvetica Neue',Arial,sans-serif; font-weight:800;
+        font-size:34px; letter-spacing:0.16em; color:#000;
+      }
+      .rule { width:150px; height:6px; background:#000; box-shadow:0 0 0 3px #FAF7F2; }
+      #rule-l { transform-origin:right center; }
+      #rule-r { transform-origin:left center; }
+      #amount {
+        position:absolute; left:0; right:0; top:52px; text-align:center;
+        font-family:Georgia,'Times New Roman',serif; font-weight:700;
+        font-size:250px; line-height:1; letter-spacing:-0.02em; color:#000;
+      }
+      #label {
+        position:absolute; left:0; right:0; top:318px; text-align:center;
+        font-family:'Inter','Helvetica Neue',Arial,sans-serif; font-weight:900;
+        font-size:66px; letter-spacing:0.06em; color:#000;
+      }
+      #sub {
+        position:absolute; left:0; right:0; top:410px; text-align:center;
+        font-family:'Inter','Helvetica Neue',Arial,sans-serif; font-weight:700;
+        font-size:36px; color:#000;
+      }
+      /* rubber stamp — decoration, stamped on as she says "end of September" */
+      #stamp {
+        position:absolute; left:772px; top:40px; width:230px; height:230px;
+        border:9px solid #E8B33A; border-radius:50%;
+        display:flex; flex-direction:column; align-items:center; justify-content:center;
+        font-family:'Inter','Helvetica Neue',Arial,sans-serif; font-weight:900;
+        color:#E8B33A; text-align:center; line-height:1.05;
+        box-shadow:0 0 0 4px #FAF7F2, inset 0 0 0 4px #FAF7F2;
+        text-shadow:3px 0 0 #FAF7F2,-3px 0 0 #FAF7F2,0 3px 0 #FAF7F2,0 -3px 0 #FAF7F2;
+      }
+      #stamp .s1 { font-size:26px; letter-spacing:0.14em; }
+      #stamp .s2 { font-size:58px; letter-spacing:0.02em; margin:4px 0; }
+      #stamp .s3 { font-size:26px; letter-spacing:0.14em; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="41.967"
+         data-width="1080" data-height="1920" data-fps="30.0"
+         data-layout-allow-overflow="true">
+      <div id="card" class="clip" data-start="28.95" data-duration="5.0" data-track-index="1">
+        <div class="kicker">
+          <div class="rule" id="rule-l"></div>
+          <span class="edge" id="kick">HIGGSFIELD API</span>
+          <div class="rule" id="rule-r"></div>
+        </div>
+        <div id="amount" class="edge">$20M</div>
+        <div id="label" class="edge">CASHBACK POOL</div>
+        <div id="sub" class="edge">for every API user</div>
+        <div id="stamp"><span class="s1">UNTIL</span><span class="s2">END</span><span class="s3">OF SEPT</span></div>
+      </div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.set("#root", { opacity: 1 }, 0);
+      // rules draw in, kicker cuts on
+      tl.fromTo(["#rule-l", "#rule-r"], { scaleX: 0 }, { scaleX: 1, duration: 0.25, ease: "power3.out" }, 28.95);
+      tl.fromTo("#kick", { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "power2.out" }, 29.0);
+      // the figure wipes on left-to-right as she reaches "$20 million" (30.26)
+      tl.fromTo("#amount", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.32, ease: "power3.out" }, 30.2);
+      // "cashback pool" (31.17)
+      tl.fromTo("#label", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.28, ease: "power3.out" }, 31.12);
+      // "for all API users" (32.00)
+      tl.fromTo("#sub", { opacity: 0 }, { opacity: 1, duration: 0.18, ease: "power2.out" }, 31.98);
+      // stamped on at "until the end of September" (32.96) — hits and stops, no bounce
+      tl.fromTo("#stamp", { opacity: 0, scale: 1.35, rotation: -4 }, { opacity: 1, scale: 1, rotation: -12, duration: 0.14, ease: "power4.in" }, 32.9);
+      // out
+      tl.to("#card", { opacity: 0, duration: 0.3, ease: "power2.in" }, 33.65);
+      tl.set("#root", { opacity: 1 }, 41.967);
+      tl.seek(0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

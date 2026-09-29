@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>higgsfield-photos-motion (baked)</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        margin: 0; width: 1080px; height: 1920px;
+        overflow: hidden; background: #000;
+      }
+      #src-video { width: 1080px; height: 1920px; object-fit: cover; }
+      .beat { position: absolute; inset: 0; }
+      .plate { position: absolute; display: block; }
+      /* a screen recording cannot live inside a timed wrapper, so it carries
+         its own timing and an untimed shell takes the fade */
+      .shell { position: absolute; }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="41.967"
+      data-width="1080"
+      data-height="1920"
+    >
+      <video
+        id="src-video"
+        class="clip"
+        src="assets/source.mp4"
+        data-start="0"
+        data-duration="41.967"
+        data-track-index="0"
+        muted
+        playsinline
+      ></video>
+
+      <!-- p01  2.80-7.40s  "insanely viral videos on Instagram" -->
+
+      <div class="shell" id="p01-shell" style="left:90px;top:1007px;width:900px;height:506px">
+        <video class="clip" id="p01" src="assets/photos/genjutsu viral.mov" data-start="2.8" data-duration="4.6" data-track-index="2" style="width:900px;height:506px;object-fit:cover;display:block" muted playsinline></video>
+      </div>
+
+      <!-- p02  14.45-18.20s  "he turned his users into his marketing team" -->
+
+      <div class="shell" id="p02-shell" style="left:90px;top:1007px;width:900px;height:506px">
+        <video class="clip" id="p02" src="assets/photos/users marketing.mov" data-start="14.45" data-duration="3.75" data-track-index="1" style="width:900px;height:506px;object-fit:cover;display:block" muted playsinline></video>
+      </div>
+
+      <!-- p03  18.30-21.65s  "opened the door for other companies to compete with him" -->
+
+      <div class="shell" id="p03-shell" style="left:90px;top:1007px;width:900px;height:506px">
+        <video class="clip" id="p03" src="assets/photos/api hub.mov" data-start="18.3" data-duration="3.35" data-track-index="2" style="width:900px;height:506px;object-fit:cover;display:block" muted playsinline></video>
+      </div>
+
+      <!-- p04  21.70-25.00s  "Higgsfield has just launched its API" -->
+
+      <div class="shell" id="p04-shell" style="left:90px;top:1007px;width:900px;height:506px">
+        <video class="clip" id="p04" src="assets/photos/api live.mov" data-start="21.7" data-duration="3.3" data-track-index="1" style="width:900px;height:506px;object-fit:cover;display:block" muted playsinline></video>
+      </div>
+
+      <!-- p05  25.05-28.90s  "including Seedance, Kling, Soul, and Genjutsu" -->
+
+      <div class="shell" id="p05-shell" style="left:90px;top:1007px;width:900px;height:506px">
+        <video class="clip" id="p05" src="assets/photos/model list.mov" data-start="25.05" data-duration="3.85" data-track-index="2" style="width:900px;height:506px;object-fit:cover;display:block" muted playsinline></video>
+      </div>
+
+      <!-- p06  34.15-37.80s  "grab an API key and set up a clear distribution strategy" -->
+
+      <div class="shell" id="p06-shell" style="left:90px;top:1007px;width:900px;height:506px">
+        <video class="clip" id="p06" src="assets/photos/api key.mov" data-start="34.15" data-duration="3.65" data-track-index="1" style="width:900px;height:506px;object-fit:cover;display:block" muted playsinline></video>
+      </div>
+      <audio
+        id="src-audio"
+        src="assets/source.mp4"
+        data-start="0"
+        data-duration="41.967"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // p01 — genjutsu viral  "insanely viral videos on Instagram"
+      tl.fromTo("#p01-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 2.8);
+      tl.to("#p01-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 7.1);
+      // p02 — users marketing  "he turned his users into his marketing team"
+      tl.fromTo("#p02-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 14.45);
+      tl.to("#p02-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 17.9);
+      // p03 — api hub  "opened the door for other companies to compete with him"
+      tl.fromTo("#p03-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 18.3);
+      tl.to("#p03-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 21.35);
+      // p04 — api live  "Higgsfield has just launched its API"
+      tl.fromTo("#p04-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 21.7);
+      tl.to("#p04-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 24.7);
+      // p05 — model list  "including Seedance, Kling, Soul, and Genjutsu"
+      tl.fromTo("#p05-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 25.05);
+      tl.to("#p05-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 28.6);
+      // p06 — api key  "grab an API key and set up a clear distribution strategy"
+      tl.fromTo("#p06-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 34.15);
+      tl.to("#p06-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 37.5);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

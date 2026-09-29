@@ -86,9 +86,17 @@ def build_master(src, segments, dest, fps=30.0, size=None):
          "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", dest])
 
 
-def composite(master, overlay, dest):
-    run(["ffmpeg", "-y", "-i", master, "-i", overlay,
-         "-filter_complex", "[0:v][1:v]overlay=0:0:format=auto:eof_action=pass[v]",
+def composite(master, overlays, dest):
+    """Stack the overlays in the order given — b-roll plates first, captions
+    last, so the caption is never under a plate."""
+    ins, graph, prev = [], [], "0:v"
+    for i, ov in enumerate(overlays, start=1):
+        ins += ["-i", ov]
+        out = "v" if i == len(overlays) else f"s{i}"
+        graph.append(f"[{prev}][{i}:v]overlay=0:0:format=auto:eof_action=pass[{out}]")
+        prev = out
+    run(["ffmpeg", "-y", "-i", master, *ins,
+         "-filter_complex", ";".join(graph),
          "-map", "[v]", "-map", "0:a",
          "-c:v", "libx264", "-preset", "slow", "-crf", "16", "-pix_fmt", "yuv420p",
          "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", dest])
@@ -122,7 +130,9 @@ def ink_fraction(master, burn):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--analysis", required=True, help="edit/analysis-<name>")
-    ap.add_argument("--overlay", help="rendered caption overlay (.mov with alpha)")
+    ap.add_argument("--overlay", action="append", default=[],
+                    help="rendered overlay (.mov with alpha). Repeat to stack "
+                         "several — give b-roll first and captions LAST")
     ap.add_argument("--out", required=True, help="final file, normally output/<name>.mp4")
     ap.add_argument("--master", help="where to keep the uncaptioned cut "
                                      "(default: alongside --out, .master.mp4)")
@@ -154,7 +164,7 @@ def main():
               f"{sil['removed_pct']}% removed)")
         size = None
         if args.overlay:
-            o = probe(args.overlay)
+            o = probe(args.overlay[-1])
             srcv = probe(src)
             if (srcv["width"], srcv["height"]) != (o["width"], o["height"]):
                 size = (o["width"], o["height"])
@@ -164,14 +174,17 @@ def main():
 
         if args.overlay:
             v = probe(master)
-            print(f"     master {v['width']}x{v['height']} {v['nb_read_packets']}f · "
-                  f"overlay {o['width']}x{o['height']} {o['nb_read_packets']}f")
-            if (v["width"], v["height"]) != (o["width"], o["height"]):
-                sys.exit("overlay resolution does not match the cut")
-            if abs(int(v["nb_read_packets"]) - int(o["nb_read_packets"])) > 1:
-                sys.exit("frame counts differ — the overlay was built from a "
-                         "different cut. Re-run captions_overlay.py.")
-            print("2/2  compositing captions")
+            for ov in args.overlay:
+                o = probe(ov)
+                print(f"     master {v['width']}x{v['height']} {v['nb_read_packets']}f · "
+                      f"{os.path.basename(ov)} {o['width']}x{o['height']} "
+                      f"{o['nb_read_packets']}f")
+                if (v["width"], v["height"]) != (o["width"], o["height"]):
+                    sys.exit(f"{ov}: overlay resolution does not match the cut")
+                if abs(int(v["nb_read_packets"]) - int(o["nb_read_packets"])) > 1:
+                    sys.exit(f"{ov}: frame counts differ — the overlay was built "
+                             "from a different cut. Rebuild it from this analysis.")
+            print(f"2/2  compositing {len(args.overlay)} overlay(s)")
             composite(master, args.overlay, args.out)
         else:
             print("2/2  no --overlay given; master only")

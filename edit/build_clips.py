@@ -19,13 +19,14 @@ slower"; this is where that decision lives.
 white rectangle at plate size. Cropping to the part that carries the meaning is
 what keeps legibility first.
 
-    python3 edit/build_clips.py            # writes graphics/Neurons-png/*.mov
+    python3 edit/build_clips.py --project neurons   # graphics/Neurons-png/*.mov
     python3 edit/prep_photos.py --deck neurons
     python3 edit/build_photos.py
 
 Plate height is fixed (PLATE_H) and the width follows each source's aspect, so
 the band maths in build_photos.py stays a single number per project.
 """
+import argparse
 import glob
 import subprocess
 import sys
@@ -34,8 +35,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 PLATE_H = 436          # x264 needs even dimensions; so do the widths below
 
-# Sorted glob order, which is how the five recordings land: 10.00.19, 10.14.02,
-# 9.55.40, 9.56.47, 9.59.11. Keyed 1-5 so the table below reads like a shot list.
+# Each project: where its plates go, its plate height, and a shot list. A clip's
+# source is either an int (1-based index into the sorted `recordings` glob) or a
+# path relative to the repo.
+#
+# Neurons: sorted glob order is how the five recordings land — 10.00.19,
+# 10.14.02, 9.55.40, 9.56.47, 9.59.11 — keyed 1-5 so the table reads like a
+# shot list.
 RECORDINGS = "footage/Screen*.mov"
 
 #  name, rec, in, out, want, width, crop "w:h:x:y" or None
@@ -66,34 +72,74 @@ CLIPS = [
     ("culture dish",   4, 15.30, 19.20, 3.80, 752, None),
 ]
 
+# Higgsfield (2026-09-29): her media kit, not screen recordings. Every source is
+# landscape, so plates are 900x506 (16:9 at the vertical plate width) sitting
+# under her chin. `want` is each beat's length on the cut, so the speed factor
+# is what fits the moment into the line it lands on.
+KIT = "footage/higgsfield-kit/"
+HIGGSFIELD = [
+    # astronaut with a Higgsfield cup, then the underwater swimmer — Genjutsu
+    ("genjutsu viral",   KIT + "Comment «JUTSU» to get the link 🖇What if creativity was the only limitHiggsfield Genjutsu lets  (1).mp4",
+                          12.00, 16.60, 4.60, 900, None),
+    # overhead crowd holding phones, "Subscribe & Generate" — users as the marketing
+    ("users marketing",  KIT + "Ever imagined being in a K-dramaCreate your own infinite K-Drama series with Higgsfield API.Comm.mp4",
+                          33.00, 37.50, 3.75, 900, None),
+    # the {API} chip wired out to other companies' apps
+    ("api hub",          KIT + "Launch 2.mp4", 62.00, 66.00, 3.35, 900, None),
+    ("api live",         KIT + "cuts/Higgsfield_API_Part_01.mp4", 1.50, 4.60, 3.30, 900, None),
+    # the one frame in the kit that names all four models she lists. It is an
+    # animated list, so the slow-down reads as the list settling, not as lag.
+    ("model list",       KIT + "1 day left to lock in up to 50% OFF Higgsfield API.Comment “API” to get the set link 🔗 Build yo.mp4",
+                          19.60, 21.40, 3.85, 900, None),
+    # the checklist, NOT the setup demo — the demo shows a live API key in full
+    ("api key",          KIT + "cuts/Higgsfield_API_Part_04.mp4", 0.00, 4.37, 3.65, 900, None),
+]
+
+PROJECTS = {
+    "neurons":    {"out": "graphics/Neurons-png",    "plate_h": PLATE_H, "clips": CLIPS},
+    "higgsfield": {"out": "graphics/Higgsfield-png", "plate_h": 506,     "clips": HIGGSFIELD},
+}
+
 
 
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--project", default="neurons", choices=sorted(PROJECTS))
+    proj = PROJECTS[ap.parse_args().project]
+    clips, plate_h = proj["clips"], proj["plate_h"]
+
     srcs = sorted(glob.glob(str(ROOT / RECORDINGS)))
-    if len(srcs) < 5:
-        sys.exit(f"expected 5 screen recordings under {RECORDINGS}, found {len(srcs)}")
-    out_dir = ROOT / "graphics" / "Neurons-png"
+    def source(ref):
+        if isinstance(ref, int):
+            if len(srcs) < ref:
+                sys.exit(f"expected screen recordings under {RECORDINGS}, found {len(srcs)}")
+            return srcs[ref - 1]
+        path = ROOT / ref
+        if not path.exists():
+            sys.exit(f"source is gone: {ref}")
+        return str(path)
+    out_dir = ROOT / proj["out"]
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    stems = [c[0] for c in CLIPS]
+    stems = [c[0] for c in clips]
     dupes = {s for s in stems if stems.count(s) > 1}
     # prep_photos keys its manifest on the stem, so a collision silently
     # overwrites a plate — the trap that cost a rename on Sony TSMC
     assert not dupes, f"two clips share a stem: {sorted(dupes)}"
 
-    for name, rec, tin, tout, want, width, crop in CLIPS:
+    for name, rec, tin, tout, want, width, crop in clips:
         factor = (tout - tin) / want
         # fps first: setpts before a frame-rate change gets undone by it
         vf = f"fps=30,setpts=PTS/{factor:.6f},"
         if crop:
             vf += f"crop={crop},"
-        vf += f"scale={width}:{PLATE_H}:flags=lanczos"
+        vf += f"scale={width}:{plate_h}:flags=lanczos"
         dst = out_dir / f"{name}.mov"
         # -ss/-to on the INPUT. `-t` on the output does not truncate a sped-up
         # stream and silently hands back the un-sped span instead.
         subprocess.run(
             ["ffmpeg", "-y", "-v", "error", "-ss", f"{tin}", "-to", f"{tout}",
-             "-i", srcs[rec - 1], "-an", "-vf", vf,
+             "-i", source(rec), "-an", "-vf", vf,
              "-c:v", "libx264", "-preset", "slow", "-crf", "18",
              "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(dst)],
             check=True)
@@ -102,7 +148,8 @@ def main():
              "-of", "default=nw=1:nk=1", str(dst)],
             capture_output=True, text=True).stdout.strip())
         drift = "" if abs(got - want) < 0.09 else "   <-- drift, re-pin the beat"
-        print(f"  {name:16s} rec{rec} {tin:5.1f}-{tout:5.1f}  x{factor:.2f}  "
+        label = f"rec{rec}" if isinstance(rec, int) else Path(rec).stem[:12]
+        print(f"  {name:16s} {label:12s} {tin:5.1f}-{tout:5.1f}  x{factor:.2f}  "
               f"-> {got:.2f}s (want {want:.2f}){drift}")
 
     print(f"-> {out_dir}")
