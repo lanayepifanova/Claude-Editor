@@ -86,7 +86,7 @@ HIGGSFIELD = [
     ("fill open",        KIT + "apps/Real Estate.mp4", 0.00, 1.90, 1.90, 900, None),
     # astronaut with a Higgsfield cup — Genjutsu
     ("genjutsu viral",   KIT + "Comment «JUTSU» to get the link 🖇What if creativity was the only limitHiggsfield Genjutsu lets  (1).mp4",
-                          12.00, 15.15, 3.15, 900, None),
+                          12.00, 16.45, 4.45, 900, None),
     # filler: Genjutsu "fix it in post" fashion walk, under "His name is Alex"
     ("fill fashion",     KIT + "Comment «JUTSU» to get the link 🖇What if creativity was the only limitHiggsfield Genjutsu lets  (1).mp4",
                           32.00, 35.50, 3.50, 900, None),
@@ -101,11 +101,11 @@ HIGGSFIELD = [
     # the one frame in the kit that names all four models she lists. It is an
     # animated list, so the slow-down reads as the list settling, not as lag.
     ("model list",       KIT + "1 day left to lock in up to 50% OFF Higgsfield API.Comment “API” to get the set link 🔗 Build yo.mp4",
-                          19.60, 21.40, 2.95, 900, None),
+                          19.60, 21.40, 2.80, 900, None),
     # the checklist, NOT the setup demo — the demo shows a live API key in full
     ("api key",          KIT + "cuts/Higgsfield_API_Part_04.mp4", 0.00, 4.37, 3.70, 900, None),
     # filler under the CTA: "Deploy your service using Higgsfield API" -> open.higgsfield.ai
-    ("fill deploy",      KIT + "Launch.mp4", 40.00, 44.00, 4.00, 900, None),
+    ("fill deploy",      KIT + "Launch.mp4", 40.00, 43.75, 3.75, 900, None),
 ]
 
 PROJECTS = {

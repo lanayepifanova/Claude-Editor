@@ -131,7 +131,7 @@ PROJECTS = {
     "higgsfield-photos-motion": {
         "source": "higgsfield.mp4",
         "deck": "higgsfield",
-        "duration": 41.067,
+        "duration": 40.6,
         "frame": (1080, 1920),
         # Same band as Sony TSMC: captions burn at y=25%, her chin sits at ~980,
         # so 900x506 plates centred at 1260 run 1007..1513.
@@ -141,19 +141,20 @@ PROJECTS = {
         # cashback card, a separate HyperFrames overlay (graphics/
         # higgsfield-cashback) — nothing in the kit states that figure.
         # "this guy" is 579x530 native, so it is held at 600 wide; any larger
-        # shows the upscale. Burn a pop under it: --sfx ...pop.mp3@1.95
+        # shows the upscale. Out on "You've" — she said it lingered at 2.25s.
+        # Burn a pop under it: --sfx ...pop.mp3@1.95
         "beats": [
             ("fill open",        0.00,  1.90, 900, 540, 1260, "One of the sharpest marketing minds out there right now"),
-            ("this guy",         1.95,  4.20, 600, 540, 1260, "is this guy."),
-            ("genjutsu viral",   4.25,  7.40, 900, 540, 1260, "insanely viral videos on Instagram"),
+            ("this guy",         1.95,  2.90, 600, 540, 1260, "is this guy."),
+            ("genjutsu viral",   2.95,  7.40, 900, 540, 1260, "insanely viral videos on Instagram"),
             ("fill fashion",     7.45, 10.95, 900, 540, 1260, "His name is Alex Mashrabov"),
             ("fill clips",      11.00, 14.40, 900, 540, 1260, "He's the CEO of Higgsfield"),
             ("users marketing", 14.45, 18.20, 900, 540, 1260, "he turned his users into his marketing team"),
             ("api hub",         18.30, 21.65, 900, 540, 1260, "opened the door for other companies to compete with him"),
             ("api live",        21.70, 25.00, 900, 540, 1260, "Higgsfield has just launched its API"),
-            ("model list",      25.05, 28.00, 900, 540, 1260, "including Seedance, Kling, Soul, and Genjutsu"),
-            ("api key",         33.25, 36.95, 900, 540, 1260, "grab an API key and set up a clear distribution strategy"),
-            ("fill deploy",     37.00, 41.00, 900, 540, 1260, "Comment STRATEGY, and I'll send you the setup link"),
+            ("model list",      25.05, 27.85, 900, 540, 1260, "including Seedance, Kling, Soul, and Genjutsu"),
+            ("api key",         33.08, 36.78, 900, 540, 1260, "grab an API key and set up a clear distribution strategy"),
+            ("fill deploy",     36.80, 40.55, 900, 540, 1260, "Comment STRATEGY, and I'll send you the setup link"),
         ],
     },
 }
