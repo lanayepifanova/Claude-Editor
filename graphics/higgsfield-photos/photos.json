@@ -17,6 +17,30 @@
   "w": 900,
   "h": 506
  },
+ "fill clips": {
+  "file": "fill clips.mov",
+  "mode": "raw-video",
+  "w": 900,
+  "h": 506
+ },
+ "fill deploy": {
+  "file": "fill deploy.mov",
+  "mode": "raw-video",
+  "w": 900,
+  "h": 506
+ },
+ "fill fashion": {
+  "file": "fill fashion.mov",
+  "mode": "raw-video",
+  "w": 900,
+  "h": 506
+ },
+ "fill open": {
+  "file": "fill open.mov",
+  "mode": "raw-video",
+  "w": 900,
+  "h": 506
+ },
  "genjutsu viral": {
   "file": "genjutsu viral.mov",
   "mode": "raw-video",
@@ -28,6 +52,12 @@
   "mode": "raw-video",
   "w": 900,
   "h": 506
+ },
+ "this guy": {
+  "file": "this guy.png",
+  "mode": "raw",
+  "w": 579,
+  "h": 530
  },
  "users marketing": {
   "file": "users marketing.mov",

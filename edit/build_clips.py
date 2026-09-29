@@ -78,9 +78,20 @@ CLIPS = [
 # is what fits the moment into the line it lands on.
 KIT = "footage/higgsfield-kit/"
 HIGGSFIELD = [
-    # astronaut with a Higgsfield cup, then the underwater swimmer — Genjutsu
+    # --- filler: she asked for the empty stretches to carry kit footage, "just
+    # to fill in the dead space" (2026-09-29). Picked for motion, not message.
+    # a Seedance house flythrough under the opening line. NOT a person: this
+    # plays right before "is this guy", and openbinge's close-up of a man read
+    # as if he were Alex.
+    ("fill open",        KIT + "apps/Real Estate.mp4", 0.00, 1.90, 1.90, 900, None),
+    # astronaut with a Higgsfield cup — Genjutsu
     ("genjutsu viral",   KIT + "Comment «JUTSU» to get the link 🖇What if creativity was the only limitHiggsfield Genjutsu lets  (1).mp4",
-                          12.00, 16.60, 4.60, 900, None),
+                          12.00, 15.15, 3.15, 900, None),
+    # filler: Genjutsu "fix it in post" fashion walk, under "His name is Alex"
+    ("fill fashion",     KIT + "Comment «JUTSU» to get the link 🖇What if creativity was the only limitHiggsfield Genjutsu lets  (1).mp4",
+                          32.00, 35.50, 3.50, 900, None),
+    # filler: Clip Factory's generated music-video shots, under "CEO of Higgsfield"
+    ("fill clips",       KIT + "apps/The Clip Factory/Clip Factory.mp4", 20.00, 23.40, 3.40, 900, None),
     # overhead crowd holding phones, "Subscribe & Generate" — users as the marketing
     ("users marketing",  KIT + "Ever imagined being in a K-dramaCreate your own infinite K-Drama series with Higgsfield API.Comm.mp4",
                           33.00, 37.50, 3.75, 900, None),
@@ -90,9 +101,11 @@ HIGGSFIELD = [
     # the one frame in the kit that names all four models she lists. It is an
     # animated list, so the slow-down reads as the list settling, not as lag.
     ("model list",       KIT + "1 day left to lock in up to 50% OFF Higgsfield API.Comment “API” to get the set link 🔗 Build yo.mp4",
-                          19.60, 21.40, 3.85, 900, None),
+                          19.60, 21.40, 2.95, 900, None),
     # the checklist, NOT the setup demo — the demo shows a live API key in full
-    ("api key",          KIT + "cuts/Higgsfield_API_Part_04.mp4", 0.00, 4.37, 3.65, 900, None),
+    ("api key",          KIT + "cuts/Higgsfield_API_Part_04.mp4", 0.00, 4.37, 3.70, 900, None),
+    # filler under the CTA: "Deploy your service using Higgsfield API" -> open.higgsfield.ai
+    ("fill deploy",      KIT + "Launch.mp4", 40.00, 44.00, 4.00, 900, None),
 ]
 
 PROJECTS = {

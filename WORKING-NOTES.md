@@ -515,6 +515,27 @@ and the locked pass clipped "Higgsfield" to "Higgs", "marketing team" to "market
 floor). Whisper hears her CTA "Comment strategy" as "Common strategy", and the
 full-context read of the original drops the line entirely.
 
+**`restore_speech.py` can restore a head-turn, not a word — she caught it.** (2026-09-29,
+higgsfield.) "There is a big pause between 'including' and 'Seedance' ... its like me
+looking to the side." The restore at `-50` had brought back 69.97-70.87: RMS -32, peak
+-23.6, far above the -55 floor, so it passed every level check. Transcribed **on its own**
+it came back as "(wind whooshing)" — clothing/hair rustle as she turned to look at her
+notes. On the cut timeline whisper had smeared "Seedance" across it, which hid it. Fix was
+a `remove` span; the recipe did not move. **Level alone cannot tell speech from a rustle.
+Transcribe each restored run in isolation before trusting it** — a blank or bracketed
+non-speech result means cut it.
+
+**She wants b-roll with no gaps — "fill in the dead space".** After seeing the first pass
+(message beats only, her face held clear between them), she asked for "random higgsfield
+videos from the media kit, just to fill in the dead space". So on a kit-driven video,
+plate the whole runtime, CTA included; filler is picked for motion and is named `fill *`
+in `build_clips.py`. One trap: **no stranger's face directly before a person reveal** — an
+openbinge close-up of a man played right before "is this guy" and read as Alex.
+
+**Sound effects go in at the burn**: `burn.py --sfx path@seconds[@gainDb]`. The pop on
+the Alex photo is the bundled media-use `pop.mp3` at -12 dB, peaking ~-15 against her
+-6.8 dialogue. Her ask was "a little sound effect", so keep them small.
+
 ---
 
 ## 5. Standing instructions

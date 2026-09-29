@@ -86,18 +86,37 @@ def build_master(src, segments, dest, fps=30.0, size=None):
          "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", dest])
 
 
-def composite(master, overlays, dest):
+def composite(master, overlays, dest, sfx=()):
     """Stack the overlays in the order given — b-roll plates first, captions
-    last, so the caption is never under a plate."""
+    last, so the caption is never under a plate.
+
+    `sfx` is [(path, seconds on the cut, gain dB)]. Each is delayed onto the
+    cut timeline and mixed UNDER the dialogue — amix with normalize=0, so her
+    voice keeps its level and the effect only adds. The voice always wins:
+    keep the gain low enough that the effect peaks well under her ~-6 dBFS.
+    """
     ins, graph, prev = [], [], "0:v"
     for i, ov in enumerate(overlays, start=1):
         ins += ["-i", ov]
         out = "v" if i == len(overlays) else f"s{i}"
         graph.append(f"[{prev}][{i}:v]overlay=0:0:format=auto:eof_action=pass[{out}]")
         prev = out
+    amap = "0:a"
+    if sfx:
+        labels = ["[0:a]"]
+        for k, (path, at, gain) in enumerate(sfx):
+            idx = len(overlays) + 1 + k
+            ins += ["-i", path]
+            ms = round(at * 1000)
+            graph.append(f"[{idx}:a]volume={gain}dB,"
+                         f"adelay={ms}|{ms}[fx{k}]")
+            labels.append(f"[fx{k}]")
+        graph.append("".join(labels) +
+                     f"amix=inputs={len(labels)}:duration=first:normalize=0[a]")
+        amap = "[a]"
     run(["ffmpeg", "-y", "-i", master, *ins,
          "-filter_complex", ";".join(graph),
-         "-map", "[v]", "-map", "0:a",
+         "-map", "[v]", "-map", amap,
          "-c:v", "libx264", "-preset", "slow", "-crf", "16", "-pix_fmt", "yuv420p",
          "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", dest])
 
@@ -133,6 +152,9 @@ def main():
     ap.add_argument("--overlay", action="append", default=[],
                     help="rendered overlay (.mov with alpha). Repeat to stack "
                          "several — give b-roll first and captions LAST")
+    ap.add_argument("--sfx", action="append", default=[],
+                    help="path@seconds[@gainDb] on the cut timeline, mixed under "
+                         "the dialogue (default -12 dB). Repeatable.")
     ap.add_argument("--out", required=True, help="final file, normally output/<name>.mp4")
     ap.add_argument("--master", help="where to keep the uncaptioned cut "
                                      "(default: alongside --out, .master.mp4)")
@@ -185,7 +207,13 @@ def main():
                     sys.exit(f"{ov}: frame counts differ — the overlay was built "
                              "from a different cut. Rebuild it from this analysis.")
             print(f"2/2  compositing {len(args.overlay)} overlay(s)")
-            composite(master, args.overlay, args.out)
+            sfx = []
+            for spec in args.sfx:
+                path, at, *g = spec.split("@")
+                sfx.append((path, float(at), float(g[0]) if g else -12.0))
+                if not os.path.exists(path):
+                    sys.exit(f"sound effect not found: {path}")
+            composite(master, args.overlay, args.out, sfx)
         else:
             print("2/2  no --overlay given; master only")
             return

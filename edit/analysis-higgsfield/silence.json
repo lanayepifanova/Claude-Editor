@@ -10,8 +10,8 @@
  "source": "footage/higgsfield.mov",
  "fps": 30.0,
  "source_duration": 131.74,
- "cut_duration": 41.967,
- "removed_pct": 68.1,
+ "cut_duration": 41.067,
+ "removed_pct": 68.8,
  "segments": [
   [
    4.3,
@@ -44,10 +44,6 @@
   [
    65.06666666666666,
    68.9
-  ],
-  [
-   69.96666666666667,
-   70.86666666666666
   ],
   [
    77.63333333333334,

@@ -114,9 +114,15 @@ DECKS["higgsfield"] = {
     "src": "graphics/Higgsfield-png",
     # media-kit clips, spliced and retimed upstream by build_clips.py. All carry
     # their own ground (promo reels, UI), so none knock out.
-    "assets": {f"{n}.mov": {"mode": "raw"} for n in (
-        "genjutsu viral", "users marketing", "api hub",
-        "api live", "model list", "api key")},
+    "assets": {
+        **{f"{n}.mov": {"mode": "raw"} for n in (
+            "fill open", "genjutsu viral", "fill fashion", "fill clips",
+            "users marketing", "api hub", "api live", "model list", "api key",
+            "fill deploy")},
+        # the photo of Alex she sent for "this guy". A studio portrait on a
+        # grey-blue sweep: it keeps its ground, knocking it would eat his hair.
+        "this guy.jpeg": {"mode": "raw"},
+    },
 }
 
 HI, LO = 246.0, 228.0

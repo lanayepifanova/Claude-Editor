@@ -131,23 +131,29 @@ PROJECTS = {
     "higgsfield-photos-motion": {
         "source": "higgsfield.mp4",
         "deck": "higgsfield",
-        "duration": 41.967,
+        "duration": 41.067,
         "frame": (1080, 1920),
         # Same band as Sony TSMC: captions burn at y=25%, her chin sits at ~980,
         # so 900x506 plates centred at 1260 run 1007..1513.
         "band": (580, 1620),
-        # 7.40-14.40 is held clear for the photo of Alex she asked for in the
-        # script ("show the photo of Alex") — the kit has none. 37.9-end stays on
-        # her face for the "Comment STRATEGY" call to action. 28.95-33.95 is the
-        # $20M cashback card, a separate HyperFrames overlay (graphics/
-        # higgsfield-cashback) because nothing in the kit states that figure.
+        # No dead space, her call: "fill in the dead space" with kit footage, so
+        # the "fill *" plates are motion, not message. 28.05-33.05 is the $20M
+        # cashback card, a separate HyperFrames overlay (graphics/
+        # higgsfield-cashback) — nothing in the kit states that figure.
+        # "this guy" is 579x530 native, so it is held at 600 wide; any larger
+        # shows the upscale. Burn a pop under it: --sfx ...pop.mp3@1.95
         "beats": [
-            ("genjutsu viral",  2.80,  7.40, 900, 540, 1260, "insanely viral videos on Instagram"),
+            ("fill open",        0.00,  1.90, 900, 540, 1260, "One of the sharpest marketing minds out there right now"),
+            ("this guy",         1.95,  4.20, 600, 540, 1260, "is this guy."),
+            ("genjutsu viral",   4.25,  7.40, 900, 540, 1260, "insanely viral videos on Instagram"),
+            ("fill fashion",     7.45, 10.95, 900, 540, 1260, "His name is Alex Mashrabov"),
+            ("fill clips",      11.00, 14.40, 900, 540, 1260, "He's the CEO of Higgsfield"),
             ("users marketing", 14.45, 18.20, 900, 540, 1260, "he turned his users into his marketing team"),
             ("api hub",         18.30, 21.65, 900, 540, 1260, "opened the door for other companies to compete with him"),
             ("api live",        21.70, 25.00, 900, 540, 1260, "Higgsfield has just launched its API"),
-            ("model list",      25.05, 28.90, 900, 540, 1260, "including Seedance, Kling, Soul, and Genjutsu"),
-            ("api key",         34.15, 37.80, 900, 540, 1260, "grab an API key and set up a clear distribution strategy"),
+            ("model list",      25.05, 28.00, 900, 540, 1260, "including Seedance, Kling, Soul, and Genjutsu"),
+            ("api key",         33.25, 36.95, 900, 540, 1260, "grab an API key and set up a clear distribution strategy"),
+            ("fill deploy",     37.00, 41.00, 900, 540, 1260, "Comment STRATEGY, and I'll send you the setup link"),
         ],
     },
 }
