@@ -682,3 +682,15 @@ Sources live in `graphics/<name>-broll-src/`, named by phrase. Where they came f
 company's own site, its corporate-presentation PDF and interview video frames, plus
 Wikimedia Commons. Frames from interview videos are often caught mid zoom or pan, so
 sample at 1s and pick a still moment.
+
+**A beat must hold whole frames, or the face flashes through at the join.** (2026-10-06,
+gladiator.) She saw "it gets back to my face like super briefly and it glitches", right after
+"267 million pounds of copper". Rounding each picture's start and duration on its own left
+one frame at three joins where neither picture was up. `build_broll.py` now snaps beats to
+integer frames, runs each picture one frame into the next and stacks the later one on top.
+Check it the same way: read the overlay's alpha per frame. The only see-through runs should
+be the RAW beats.
+
+**Sponsored video layout (gladiator):** captions at `--y 0.75`, with a permanent disclosure line,
+"Disseminated on behalf of Gladiator Metals Corp", at y 0.25 (36px, same hard-edged ink).
+Maps and charts fit between them (560-1340). Her ask; not yet a standing rule for every video.

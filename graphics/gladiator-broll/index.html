@@ -10,61 +10,70 @@
       html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: transparent; }
       .beat { position: absolute; inset: 0; overflow: hidden; }
       .beat img { position: absolute; inset: 0; width: 1080px; height: 1920px; display: block; }
+      /* the disclosure line: same hard-edged ink as the captions, smaller and lighter */
+      #banner { position: absolute; left: 0; width: 1080px; z-index: 1000;
+        display: flex; justify-content: center; transform: translateY(-50%); }
+      #banner span { max-width: 960px; text-align: center;
+        font-family: 'Montserrat', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+        font-weight: 700; font-size: 36px; line-height: 1.2; color: #FFFFFF;
+        text-shadow: 3px 0 0 #000, -3px 0 0 #000, 0 3px 0 #000, 0 -3px 0 #000,
+          2px 2px 0 #000, -2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000; }
     </style>
   </head>
   <body>
     <div id="root" data-composition-id="main" data-start="0" data-duration="91.567"
          data-width="1080" data-height="1920">
       <!-- b01 1.87-4.33  "the yukon" -->
-      <div class="clip beat" id="b01" data-start="1.8667" data-duration="2.4667" data-track-index="2"><img id="b01-img" src="assets/b01.jpg" alt="" /></div>
+      <div class="clip beat" id="b01" data-start="1.8667" data-duration="2.5000" data-track-index="2" style="z-index:1"><img id="b01-img" src="assets/b01.jpg" alt="" /></div>
       <!-- b02 4.33-7.97  "hudbay has spent" -->
-      <div class="clip beat" id="b02" data-start="4.3333" data-duration="3.6333" data-track-index="1"><img id="b02-img" src="assets/b02.jpg" alt="" /></div>
+      <div class="clip beat" id="b02" data-start="4.3333" data-duration="3.6667" data-track-index="1" style="z-index:2"><img id="b02-img" src="assets/b02.jpg" alt="" /></div>
       <!-- b03 7.97-11.17  "out of a 35" -->
-      <div class="clip beat" id="b03" data-start="7.9667" data-duration="3.2000" data-track-index="2"><img id="b03-img" src="assets/b03.jpg" alt="" /></div>
+      <div class="clip beat" id="b03" data-start="7.9667" data-duration="3.2333" data-track-index="2" style="z-index:3"><img id="b03-img" src="assets/b03.jpg" alt="" /></div>
       <!-- b04 11.17-14.00  "now the economics" -->
-      <div class="clip beat" id="b04" data-start="11.1667" data-duration="2.8333" data-track-index="1"><img id="b04-img" src="assets/b04.jpg" alt="" /></div>
+      <div class="clip beat" id="b04" data-start="11.1667" data-duration="2.8667" data-track-index="1" style="z-index:4"><img id="b04-img" src="assets/b04.jpg" alt="" /></div>
       <!-- b05 14.00-17.40  "for 40 years" -->
-      <div class="clip beat" id="b05" data-start="14.0000" data-duration="3.4000" data-track-index="2"><img id="b05-img" src="assets/b05.jpg" alt="" /></div>
+      <div class="clip beat" id="b05" data-start="14.0000" data-duration="3.4000" data-track-index="2" style="z-index:5"><img id="b05-img" src="assets/b05.jpg" alt="" /></div>
       <!-- b06 18.40-22.47  "gladiator metals trades" -->
-      <div class="clip beat" id="b06" data-start="18.4000" data-duration="4.0667" data-track-index="1"><img id="b06-img" src="assets/b06.jpg" alt="" /></div>
+      <div class="clip beat" id="b06" data-start="18.4000" data-duration="4.1000" data-track-index="1" style="z-index:6"><img id="b06-img" src="assets/b06.jpg" alt="" /></div>
       <!-- b07 22.47-24.63  "in the us and" -->
-      <div class="clip beat" id="b07" data-start="22.4667" data-duration="2.1667" data-track-index="2"><img id="b07-img" src="assets/b07.jpg" alt="" /></div>
+      <div class="clip beat" id="b07" data-start="22.4667" data-duration="2.2000" data-track-index="2" style="z-index:7"><img id="b07-img" src="assets/b07.jpg" alt="" /></div>
       <!-- b08 24.63-27.57  "in 2021 ceo" -->
-      <div class="clip beat" id="b08" data-start="24.6333" data-duration="2.9333" data-track-index="1"><img id="b08-img" src="assets/b08.jpg" alt="" /></div>
+      <div class="clip beat" id="b08" data-start="24.6333" data-duration="2.9667" data-track-index="1" style="z-index:8"><img id="b08-img" src="assets/b08.jpg" alt="" /></div>
       <!-- b09 27.57-30.67  "a yukon drilling" -->
-      <div class="clip beat" id="b09" data-start="27.5667" data-duration="3.1000" data-track-index="2"><img id="b09-img" src="assets/b09.jpg" alt="" /></div>
+      <div class="clip beat" id="b09" data-start="27.5667" data-duration="3.1333" data-track-index="2" style="z-index:9"><img id="b09-img" src="assets/b09.jpg" alt="" /></div>
       <!-- b10 30.67-33.80  "geologist marcus" -->
-      <div class="clip beat" id="b10" data-start="30.6667" data-duration="3.1333" data-track-index="1"><img id="b10-img" src="assets/b10.jpg" alt="" /></div>
+      <div class="clip beat" id="b10" data-start="30.6667" data-duration="3.1667" data-track-index="1" style="z-index:10"><img id="b10-img" src="assets/b10.jpg" alt="" /></div>
       <!-- b11 33.80-36.20  "and together they" -->
-      <div class="clip beat" id="b11" data-start="33.8000" data-duration="2.4000" data-track-index="2"><img id="b11-img" src="assets/b11.jpg" alt="" /></div>
+      <div class="clip beat" id="b11" data-start="33.8000" data-duration="2.4000" data-track-index="2" style="z-index:11"><img id="b11-img" src="assets/b11.jpg" alt="" /></div>
       <!-- b12 37.20-41.40  "cali park" -->
-      <div class="clip beat" id="b12" data-start="37.2000" data-duration="4.2000" data-track-index="1"><img id="b12-img" src="assets/b12.jpg" alt="" /></div>
+      <div class="clip beat" id="b12" data-start="37.2000" data-duration="4.2333" data-track-index="1" style="z-index:12"><img id="b12-img" src="assets/b12.jpg" alt="" /></div>
       <!-- b13 41.40-44.47  "cub east is" -->
-      <div class="clip beat" id="b13" data-start="41.4000" data-duration="3.0667" data-track-index="2"><img id="b13-img" src="assets/b13.jpg" alt="" /></div>
+      <div class="clip beat" id="b13" data-start="41.4000" data-duration="3.1000" data-track-index="2" style="z-index:13"><img id="b13-img" src="assets/b13.jpg" alt="" /></div>
       <!-- b14 44.47-48.27  "and one hole there" -->
-      <div class="clip beat" id="b14" data-start="44.4667" data-duration="3.8000" data-track-index="1"><img id="b14-img" src="assets/b14.jpg" alt="" /></div>
+      <div class="clip beat" id="b14" data-start="44.4667" data-duration="3.8333" data-track-index="1" style="z-index:14"><img id="b14-img" src="assets/b14.jpg" alt="" /></div>
       <!-- b15 48.27-50.47  "on the chief's trend" -->
-      <div class="clip beat" id="b15" data-start="48.2667" data-duration="2.2000" data-track-index="2"><img id="b15-img" src="assets/b15.jpg" alt="" /></div>
+      <div class="clip beat" id="b15" data-start="48.2667" data-duration="2.2333" data-track-index="2" style="z-index:15"><img id="b15-img" src="assets/b15.jpg" alt="" /></div>
       <!-- b16 50.47-53.23  "they hit 49.8" -->
-      <div class="clip beat" id="b16" data-start="50.4667" data-duration="2.7667" data-track-index="1"><img id="b16-img" src="assets/b16.jpg" alt="" /></div>
+      <div class="clip beat" id="b16" data-start="50.4667" data-duration="2.7667" data-track-index="1" style="z-index:16"><img id="b16-img" src="assets/b16.jpg" alt="" /></div>
       <!-- b17 54.43-58.43  "in july blackrock" -->
-      <div class="clip beat" id="b17" data-start="54.4333" data-duration="4.0000" data-track-index="2"><img id="b17-img" src="assets/b17.jpg" alt="" /></div>
+      <div class="clip beat" id="b17" data-start="54.4333" data-duration="4.0333" data-track-index="2" style="z-index:17"><img id="b17-img" src="assets/b17.jpg" alt="" /></div>
       <!-- b18 58.43-61.30  "gladiator now has" -->
-      <div class="clip beat" id="b18" data-start="58.4333" data-duration="2.8667" data-track-index="1"><img id="b18-img" src="assets/b18.jpg" alt="" /></div>
+      <div class="clip beat" id="b18" data-start="58.4333" data-duration="2.9000" data-track-index="1" style="z-index:18"><img id="b18-img" src="assets/b18.jpg" alt="" /></div>
       <!-- b19 61.30-65.20  "to five drill" -->
-      <div class="clip beat" id="b19" data-start="61.3000" data-duration="3.9000" data-track-index="2"><img id="b19-img" src="assets/b19.jpg" alt="" /></div>
+      <div class="clip beat" id="b19" data-start="61.3000" data-duration="3.9000" data-track-index="2" style="z-index:19"><img id="b19-img" src="assets/b19.jpg" alt="" /></div>
       <!-- b20 70.53-73.27  "gladiator is a" -->
-      <div class="clip beat" id="b20" data-start="70.5333" data-duration="2.7333" data-track-index="1"><img id="b20-img" src="assets/b20.jpg" alt="" /></div>
+      <div class="clip beat" id="b20" data-start="70.5333" data-duration="2.7667" data-track-index="1" style="z-index:20"><img id="b20-img" src="assets/b20.jpg" alt="" /></div>
       <!-- b21 73.27-75.57  "and exploration is one" -->
-      <div class="clip beat" id="b21" data-start="73.2667" data-duration="2.3000" data-track-index="2"><img id="b21-img" src="assets/b21.jpg" alt="" /></div>
+      <div class="clip beat" id="b21" data-start="73.2667" data-duration="2.3333" data-track-index="2" style="z-index:21"><img id="b21-img" src="assets/b21.jpg" alt="" /></div>
       <!-- b22 75.57-80.00  "the company's market cap" -->
-      <div class="clip beat" id="b22" data-start="75.5667" data-duration="4.4333" data-track-index="1"><img id="b22-img" src="assets/b22.jpg" alt="" /></div>
+      <div class="clip beat" id="b22" data-start="75.5667" data-duration="4.4667" data-track-index="1" style="z-index:22"><img id="b22-img" src="assets/b22.jpg" alt="" /></div>
       <!-- b23 80.00-83.57  "more advanced copper" -->
-      <div class="clip beat" id="b23" data-start="80.0000" data-duration="3.5667" data-track-index="2"><img id="b23-img" src="assets/b23.jpg" alt="" /></div>
+      <div class="clip beat" id="b23" data-start="80.0000" data-duration="3.6000" data-track-index="2" style="z-index:23"><img id="b23-img" src="assets/b23.jpg" alt="" /></div>
       <!-- b24 83.57-87.10  "but those companies" -->
-      <div class="clip beat" id="b24" data-start="83.5667" data-duration="3.5333" data-track-index="1"><img id="b24-img" src="assets/b24.jpg" alt="" /></div>
+      <div class="clip beat" id="b24" data-start="83.5667" data-duration="3.5667" data-track-index="1" style="z-index:24"><img id="b24-img" src="assets/b24.jpg" alt="" /></div>
       <!-- b25 87.10-90.80  "this is an investment" -->
-      <div class="clip beat" id="b25" data-start="87.1000" data-duration="3.7000" data-track-index="2"><img id="b25-img" src="assets/b25.jpg" alt="" /></div>
+      <div class="clip beat" id="b25" data-start="87.1000" data-duration="3.7000" data-track-index="2" style="z-index:25"><img id="b25-img" src="assets/b25.jpg" alt="" /></div>
+      <div class="clip" id="banner" data-start="0" data-duration="91.567" data-track-index="9" style="top:480px"><span>Disseminated on behalf of Gladiator Metals Corp</span></div>
     </div>
     <script>
       window.__timelines = window.__timelines || {};

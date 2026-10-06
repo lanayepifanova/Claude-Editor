@@ -38,13 +38,17 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 FW, FH = 1080, 1920
-FIT_BAND = (600, 1640)     # below the y=0.25 caption, above the TikTok UI floor
+FIT_BAND = (600, 1640)     # default: below a y=0.25 caption, above the TikTok UI floor
 PUSH = 1.06                # scale a picture eases up to over its beat
 
 PROJECTS = {
     "gladiator": {
         "analysis": "edit/analysis-gladiator",
         "src": "graphics/gladiator-broll-src",
+        # captions moved to y=0.75 and a disclosure line sits at y=0.25 for the
+        # whole video (her ask, 2026-10-06), so maps and charts fit BETWEEN them
+        "fit_band": (560, 1340),
+        "banner": ("Disseminated on behalf of Gladiator Metals Corp", 0.25),
         # (asset or "RAW", cue phrase in the cut transcript, mode, args, bg)
         "beats": [
             ("RAW",                       "imagine this"),
@@ -110,7 +114,7 @@ def resolve(words, beats, fps):
     return at
 
 
-def prep(src, dst, mode, args, bg):
+def prep(src, dst, mode, args, bg, band=FIT_BAND):
     w, h = probe(src)
     if mode == "cover":
         cx, cy, hf = args
@@ -124,10 +128,10 @@ def prep(src, dst, mode, args, bg):
     else:
         x0, y0, x1, y1 = args
         cw, ch = (x1 - x0) * w, (y1 - y0) * h
-        bh = FIT_BAND[1] - FIT_BAND[0]
+        bh = band[1] - band[0]
         s = min(FW / cw, bh / ch)
         sw, sh = int(cw * s) // 2 * 2, int(ch * s) // 2 * 2
-        top = FIT_BAND[0] + (bh - sh) // 2
+        top = band[0] + (bh - sh) // 2
         vf = (f"crop={int(cw)}:{int(ch)}:{int(x0 * w)}:{int(y0 * h)},"
               f"scale={sw}:{sh}:flags=lanczos,"
               f"pad={FW}:{FH}:{(FW - sw) // 2}:{top}:color={bg}")
@@ -147,6 +151,14 @@ HTML = """<!doctype html>
       html, body {{ margin: 0; width: {fw}px; height: {fh}px; overflow: hidden; background: transparent; }}
       .beat {{ position: absolute; inset: 0; overflow: hidden; }}
       .beat img {{ position: absolute; inset: 0; width: {fw}px; height: {fh}px; display: block; }}
+      /* the disclosure line: same hard-edged ink as the captions, smaller and lighter */
+      #banner {{ position: absolute; left: 0; width: {fw}px; z-index: 1000;
+        display: flex; justify-content: center; transform: translateY(-50%); }}
+      #banner span {{ max-width: 960px; text-align: center;
+        font-family: 'Montserrat', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+        font-weight: 700; font-size: 36px; line-height: 1.2; color: #FFFFFF;
+        text-shadow: 3px 0 0 #000, -3px 0 0 #000, 0 3px 0 #000, 0 -3px 0 #000,
+          2px 2px 0 #000, -2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000; }}
     </style>
   </head>
   <body>
@@ -173,6 +185,7 @@ def build(name, spec):
     words = words["words"] if isinstance(words, dict) else words
     beats = spec["beats"]
     at = resolve(words, beats, fps) + [dur]
+    frames = [round(t * fps) for t in at]  # integer frames, so joins cannot drift
 
     out = ROOT / "graphics" / f"{name}-broll"
     img = out / "assets"
@@ -182,7 +195,7 @@ def build(name, spec):
     src_dir = ROOT / spec["src"]
     html, tweens, n = [], [], 0
     for k, b in enumerate(beats):
-        tin, tout = at[k], at[k + 1]
+        tin, tout = frames[k] / fps, frames[k + 1] / fps
         length = tout - tin
         if b[0] == "RAW":
             print(f"  {tin:6.2f}-{tout:6.2f}  {length:4.2f}s  (her)   \"{b[1]}\"")
@@ -193,17 +206,28 @@ def build(name, spec):
         srcs = [p for p in src_dir.iterdir() if p.stem == asset]
         assert len(srcs) == 1, f"{asset}: expected one source, found {srcs}"
         fn = f"b{n:02d}.jpg"
-        prep(srcs[0], img / fn, mode, args, bg)
+        prep(srcs[0], img / fn, mode, args, bg, spec.get("fit_band", FIT_BAND))
         bid = f"b{n:02d}"
         flag = "" if 2.4 <= length <= 4.6 else "   <- check length"
         print(f"  {tin:6.2f}-{tout:6.2f}  {length:4.2f}s  {asset:26s} \"{cue}\"{flag}")
+        # Each picture runs one frame into the next and the later one is stacked
+        # above it. Rounding start and duration separately used to leave a single
+        # frame at three joins where neither was up, and her face flashed through
+        # (she caught it right after "267 million pounds of copper").
+        nxt_raw = k + 1 < len(beats) and beats[k + 1][0] == "RAW"
+        held = length + (0 if nxt_raw or k + 1 == len(beats) else 1 / fps)
         html.append(f'      <!-- {bid} {tin:.2f}-{tout:.2f}  "{cue}" -->\n'
                     f'      <div class="clip beat" id="{bid}" data-start="{tin:.4f}" '
-                    f'data-duration="{length:.4f}" data-track-index="{1 + n % 2}">'
+                    f'data-duration="{held:.4f}" data-track-index="{1 + n % 2}" '
+                    f'style="z-index:{n}">'
                     f'<img id="{bid}-img" src="assets/{fn}" alt="" /></div>')
         # transform-origin follows the crop centre, so the push leans into the subject
         tweens.append(f'      tl.fromTo("#{bid}-img", {{ scale: 1 }}, {{ scale: {PUSH}, '
                       f'duration: {length:.4f}, ease: "power1.out" }}, {tin:.4f});')
+    if spec.get("banner"):
+        text, y = spec["banner"]
+        html.append(f'      <div class="clip" id="banner" data-start="0" data-duration="{dur}" '
+                    f'data-track-index="9" style="top:{round(y * FH)}px"><span>{text}</span></div>')
     (out / "index.html").write_text(HTML.format(
         fw=FW, fh=FH, name=name, duration=dur,
         beats="\n".join(html), tweens="\n".join(tweens)))
