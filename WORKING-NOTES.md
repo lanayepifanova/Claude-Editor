@@ -657,3 +657,14 @@ run.** (Established 2026-08-17.)
       them were 1.5 GB after one video, and nothing else reached them.
 - [ ] Jason's avatar/thumbnail are git-ignored; a fresh clone can't render that card
 - [ ] Keep the Firecrawl / Browser Use `cut_proof.mp4` files until both are posted — they are the only caption-free copy of either cut
+
+**A video can arrive as several clips — join them first.** (2026-10-05, gladiator.) Three
+vertical takes recorded in sequence, one VFR (avg 29.997fps), one with mono audio. They
+were joined into `footage/gladiator-combined.mov` (fps=30, stereo, x264 crf 12, PCM) and
+the whole pipeline ran on that single source, so one `silence.json` drives one burn.
+Same loudness pattern as higgsfield (-22.3 LUFS, room RMS -67): `restore_speech.py
+--quiet-db -50` (+9.3s), then three hand overrides where the min-gap still sliced
+through a word — "just col|lapsed", "White|horse", "twenty|-seven". The tell each time
+was the cut transcript mis-hearing ("just left", "Whitehall", "through 27") while the
+same gap transcribed alone gave the missing syllable. Captions follow her script's
+spellings (C$, metres, Coynes, Cowley Park, Foran, Cashu Group) via `fixes-gladiator.json`.
