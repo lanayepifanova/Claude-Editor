@@ -668,3 +668,17 @@ through a word — "just col|lapsed", "White|horse", "twenty|-seven". The tell e
 was the cut transcript mis-hearing ("just left", "Whitehall", "through 27") while the
 same gap transcribed alone gave the missing syllable. Captions follow her script's
 spellings (C$, metres, Coynes, Cowley Park, Foran, Cashu Group) via `fixes-gladiator.json`.
+
+**Full-screen picture takeovers are a second b-roll look, alongside the floating plates.**
+(2026-10-06, gladiator.) Her ask: "a picture change every 3-4 seconds, ideally portrait and
+just takes over the entire screen", with her raw footage showing on the storytelling beats
+("Imagine this", "That is, until now", "So what have they found?", "Here's where it gets
+interesting", the sponsor disclosure). That fights the locked plate band in CLAUDE.md, so it
+lives in its own builder, `edit/build_broll.py`: each beat is pinned to a transcript cue, runs
+until the next one, and a `RAW` beat is a hole in the overlay. Photos are `cover`-cropped to
+9:16. Maps, charts and slides are `fit` into the 600-1640 band on a flat colour, so a crop
+never cuts off their labels and the caption never lands on them. Hard cuts with a slow 6% push.
+Sources live in `graphics/<name>-broll-src/`, named by phrase. Where they came from: the
+company's own site, its corporate-presentation PDF and interview video frames, plus
+Wikimedia Commons. Frames from interview videos are often caught mid zoom or pan, so
+sample at 1s and pick a still moment.
