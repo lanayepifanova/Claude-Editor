@@ -1,0 +1,340 @@
+1
+00:00:00,030 --> 00:00:01,800
+In this video, I'm going to run through 14
+
+2
+00:00:01,800 --> 00:00:03,360
+different types of aircraft to tell
+
+3
+00:00:03,360 --> 00:00:04,900
+the story of how we learned to fly.
+
+4
+00:00:04,900 --> 00:00:06,150
+So let's go through them one by one
+
+5
+00:00:06,150 --> 00:00:07,500
+and look at how they were designed.
+
+6
+00:00:07,500 --> 00:00:08,900
+Starting off, we have the glider.
+
+7
+00:00:08,900 --> 00:00:10,690
+Before anyone put an engine on a plane,
+
+8
+00:00:10,690 --> 00:00:12,230
+someone had to prove that a wing
+
+9
+00:00:12,230 --> 00:00:13,600
+could actually hold a person up.
+
+10
+00:00:13,600 --> 00:00:15,290
+And that person was Otto Lilienthal,
+
+11
+00:00:15,290 --> 00:00:17,300
+a German engineer in the 1890s.
+
+12
+00:00:17,300 --> 00:00:19,140
+He built his own gliders, which were big
+
+13
+00:00:19,140 --> 00:00:20,510
+curved wings made of fabric,
+
+14
+00:00:20,510 --> 00:00:21,180
+kind of like bat wings.
+
+15
+00:00:21,200 --> 00:00:22,750
+And he would hold onto the glider, run off
+
+16
+00:00:22,750 --> 00:00:24,200
+the top of a hill, and glide down.
+
+17
+00:00:24,200 --> 00:00:26,160
+And he did this over and over, about 2,000
+
+18
+00:00:26,160 --> 00:00:26,900
+times in total.
+
+19
+00:00:26,930 --> 00:00:28,690
+He even had a hill built for this exact
+
+20
+00:00:28,690 --> 00:00:30,900
+purpose, which was about 15 meters tall.
+
+21
+00:00:30,900 --> 00:00:32,200
+Just so he could launch into the wind
+
+22
+00:00:32,200 --> 00:00:33,100
+from any direction.
+
+23
+00:00:33,100 --> 00:00:35,500
+His longest glides went about 250 meters.
+
+24
+00:00:35,500 --> 00:00:36,970
+So his gliders had pretty much no
+
+25
+00:00:36,970 --> 00:00:37,900
+controls at all.
+
+26
+00:00:37,900 --> 00:00:40,060
+So he wasn't really able to steer, besides
+
+27
+00:00:40,060 --> 00:00:41,110
+when he swung his legs around
+
+28
+00:00:41,110 --> 00:00:42,100
+and moved his body around.
+
+29
+00:00:42,100 --> 00:00:43,750
+And that shifted the weight and the glider
+
+30
+00:00:43,750 --> 00:00:45,100
+would tilt in that direction.
+
+31
+00:00:45,100 --> 00:00:46,500
+And it's basically how a hang glider
+
+32
+00:00:46,500 --> 00:00:47,200
+works today.
+
+33
+00:00:47,200 --> 00:00:48,810
+He also wrote down everything he learned,
+
+34
+00:00:48,810 --> 00:00:50,100
+and one of his biggest findings
+
+35
+00:00:50,100 --> 00:00:51,760
+was that a curved wing makes much
+
+36
+00:00:51,760 --> 00:00:53,200
+more lift than a flat one.
+
+37
+00:00:53,200 --> 00:00:54,810
+And that curve is called camber,
+
+38
+00:00:54,810 --> 00:00:56,500
+and almost every wing today has it.
+
+39
+00:00:56,530 --> 00:00:58,380
+He published tables of how much lift
+
+40
+00:00:58,380 --> 00:01:00,590
+a curved wing makes at different angles,
+
+41
+00:01:00,590 --> 00:01:01,920
+and that gave the people after him
+
+42
+00:01:01,920 --> 00:01:03,000
+something to build on.
+
+43
+00:01:03,000 --> 00:01:04,730
+But obviously steering with your body only
+
+44
+00:01:04,730 --> 00:01:06,000
+works up to a certain point.
+
+45
+00:01:06,000 --> 00:01:07,640
+The design problem is that as you make
+
+46
+00:01:07,640 --> 00:01:09,470
+the wing bigger, the forces on it grow
+
+47
+00:01:09,470 --> 00:01:11,040
+much faster than your ability to move
+
+48
+00:01:11,040 --> 00:01:11,900
+your weight around.
+
+49
+00:01:11,900 --> 00:01:13,040
+So a bigger glider can carry
+
+50
+00:01:13,040 --> 00:01:14,430
+more, but it's also just much
+
+51
+00:01:14,430 --> 00:01:15,300
+harder to control.
+
+52
+00:01:15,300 --> 00:01:18,040
+In 1896, Lilienthal lost control, fell
+
+53
+00:01:18,040 --> 00:01:20,080
+about 15 meters, he broke his spine,
+
+54
+00:01:20,080 --> 00:01:21,400
+and he died the next day.
+
+55
+00:01:21,430 --> 00:01:22,640
+So today, these gliders are
+
+56
+00:01:22,640 --> 00:01:23,650
+called sailplanes.
+
+57
+00:01:23,650 --> 00:01:25,450
+They have really long, skinny wings,
+
+58
+00:01:25,450 --> 00:01:27,000
+some over 25 meters across.
+
+59
+00:01:27,000 --> 00:01:29,160
+And this shape basically means that every
+
+60
+00:01:29,160 --> 00:01:30,900
+wing leaks air around its tips,
+
+61
+00:01:30,900 --> 00:01:33,500
+which creates swirls called tip vortices.
+
+62
+00:01:33,500 --> 00:01:35,110
+And these swirls cause a bit of drag.
+
+63
+00:01:35,110 --> 00:01:37,380
+Basically, a long, narrow wing has less
+
+64
+00:01:37,380 --> 00:01:39,500
+tip compared to the rest of the wing,
+
+65
+00:01:39,500 --> 00:01:41,100
+so it wastes a lot less energy.
+
+66
+00:01:41,100 --> 00:01:43,050
+And engineers will call this, like, a high
+
+67
+00:01:43,050 --> 00:01:43,900
+aspect ratio.
+
+68
+00:01:43,900 --> 00:01:46,030
+So pilots are able to find pockets of warm
+
+69
+00:01:46,030 --> 00:01:47,700
+air that rise off the ground,
+
+70
+00:01:47,700 --> 00:01:48,600
+and they ride them upwards.
+
+71
+00:01:48,630 --> 00:01:50,020
+And that means that they can stay up
+
+72
+00:01:50,020 --> 00:01:51,500
+for hours without an engine.
+
+73
+00:01:51,500 --> 00:01:53,110
+And the best sailplanes travel more than
+
+74
+00:01:53,110 --> 00:01:54,310
+50 meters forward for every
+
+75
+00:01:54,310 --> 00:01:55,300
+meter that they drop.
+
+76
+00:01:55,300 --> 00:01:56,980
+There's one pilot that has flown over
+
+77
+00:01:56,980 --> 00:01:59,350
+3,000 kilometers in a single flight,
+
+78
+00:01:59,350 --> 00:02:01,320
+and a special research glider has climbed
+
+79
+00:02:01,320 --> 00:02:03,200
+above 23,000 meters.
+
+80
+00:02:03,200 --> 00:02:04,860
+So gliders basically proved that flying
+
+81
+00:02:04,860 --> 00:02:06,130
+was possible, but they had two
+
+82
+00:02:06,130 --> 00:02:06,900
+big problems.
+
+83
+00:02:06,900 --> 00:02:08,300
+There was no proper way to steer,
+
+84
+00:02:08,300 --> 00:02:09,550
+and there was no engine to keep
+
+85
+00:02:09,550 --> 00:02:10,400
+them in the air.
+

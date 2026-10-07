@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>captions</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1920px; height:1080px; overflow:hidden; background:transparent; }
+      #root { position:relative; width:1920px; height:1080px; }
+      .cue {
+        position:absolute; left:0; right:0; top:82.0%;
+        transform:translateY(-50%);
+        display:flex; align-items:center; justify-content:center;
+        text-align:center;
+      }
+      .cue span {
+        display:inline-block; max-width:1171px; white-space:nowrap;
+        font-family:'Montserrat', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+        font-weight:800; font-size:48px; line-height:1.18;
+        letter-spacing:-0.01em; color:#FFFFFF;
+        /* hard edge, zero blur — reads on any background, never looks glowy */
+        text-shadow:
+          4px 0 0 #000, -4px 0 0 #000, 0 4px 0 #000, 0 -4px 0 #000,
+          3px 3px 0 #000, -3px 3px 0 #000,
+          3px -3px 0 #000, -3px -3px 0 #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="130.633"
+         data-width="1920" data-height="1080" data-fps="30.0"
+         data-layout-allow-overflow="true">
+      <div id="cue0" class="clip cue" data-start="0.03" data-duration="1.77" data-track-index="1"><span>In this video, I'm going to run through 14</span></div>
+      <div id="cue1" class="clip cue" data-start="1.8" data-duration="1.56" data-track-index="1"><span>different types of aircraft to tell</span></div>
+      <div id="cue2" class="clip cue" data-start="3.36" data-duration="1.54" data-track-index="1"><span>the story of how we learned to fly.</span></div>
+      <div id="cue3" class="clip cue" data-start="4.9" data-duration="1.25" data-track-index="1"><span>So let's go through them one by one</span></div>
+      <div id="cue4" class="clip cue" data-start="6.15" data-duration="1.35" data-track-index="1"><span>and look at how they were designed.</span></div>
+      <div id="cue5" class="clip cue" data-start="7.5" data-duration="1.4" data-track-index="1"><span>Starting off, we have the glider.</span></div>
+      <div id="cue6" class="clip cue" data-start="8.9" data-duration="1.79" data-track-index="1"><span>Before anyone put an engine on a plane,</span></div>
+      <div id="cue7" class="clip cue" data-start="10.69" data-duration="1.54" data-track-index="1"><span>someone had to prove that a wing</span></div>
+      <div id="cue8" class="clip cue" data-start="12.23" data-duration="1.37" data-track-index="1"><span>could actually hold a person up.</span></div>
+      <div id="cue9" class="clip cue" data-start="13.6" data-duration="1.69" data-track-index="1"><span>And that person was Otto Lilienthal,</span></div>
+      <div id="cue10" class="clip cue" data-start="15.29" data-duration="2.01" data-track-index="1"><span>a German engineer in the 1890s.</span></div>
+      <div id="cue11" class="clip cue" data-start="17.3" data-duration="1.84" data-track-index="1"><span>He built his own gliders, which were big</span></div>
+      <div id="cue12" class="clip cue" data-start="19.14" data-duration="1.37" data-track-index="1"><span>curved wings made of fabric,</span></div>
+      <div id="cue13" class="clip cue" data-start="20.51" data-duration="0.67" data-track-index="1"><span>kind of like bat wings.</span></div>
+      <div id="cue14" class="clip cue" data-start="21.2" data-duration="1.55" data-track-index="1"><span>And he would hold onto the glider, run off</span></div>
+      <div id="cue15" class="clip cue" data-start="22.75" data-duration="1.45" data-track-index="1"><span>the top of a hill, and glide down.</span></div>
+      <div id="cue16" class="clip cue" data-start="24.2" data-duration="1.96" data-track-index="1"><span>And he did this over and over, about 2,000</span></div>
+      <div id="cue17" class="clip cue" data-start="26.16" data-duration="0.74" data-track-index="1"><span>times in total.</span></div>
+      <div id="cue18" class="clip cue" data-start="26.93" data-duration="1.76" data-track-index="1"><span>He even had a hill built for this exact</span></div>
+      <div id="cue19" class="clip cue" data-start="28.69" data-duration="2.21" data-track-index="1"><span>purpose, which was about 15 meters tall.</span></div>
+      <div id="cue20" class="clip cue" data-start="30.9" data-duration="1.3" data-track-index="1"><span>Just so he could launch into the wind</span></div>
+      <div id="cue21" class="clip cue" data-start="32.2" data-duration="0.9" data-track-index="1"><span>from any direction.</span></div>
+      <div id="cue22" class="clip cue" data-start="33.1" data-duration="2.4" data-track-index="1"><span>His longest glides went about 250 meters.</span></div>
+      <div id="cue23" class="clip cue" data-start="35.5" data-duration="1.47" data-track-index="1"><span>So his gliders had pretty much no</span></div>
+      <div id="cue24" class="clip cue" data-start="36.97" data-duration="0.93" data-track-index="1"><span>controls at all.</span></div>
+      <div id="cue25" class="clip cue" data-start="37.9" data-duration="2.16" data-track-index="1"><span>So he wasn't really able to steer, besides</span></div>
+      <div id="cue26" class="clip cue" data-start="40.06" data-duration="1.05" data-track-index="1"><span>when he swung his legs around</span></div>
+      <div id="cue27" class="clip cue" data-start="41.11" data-duration="0.99" data-track-index="1"><span>and moved his body around.</span></div>
+      <div id="cue28" class="clip cue" data-start="42.1" data-duration="1.65" data-track-index="1"><span>And that shifted the weight and the glider</span></div>
+      <div id="cue29" class="clip cue" data-start="43.75" data-duration="1.35" data-track-index="1"><span>would tilt in that direction.</span></div>
+      <div id="cue30" class="clip cue" data-start="45.1" data-duration="1.4" data-track-index="1"><span>And it's basically how a hang glider</span></div>
+      <div id="cue31" class="clip cue" data-start="46.5" data-duration="0.7" data-track-index="1"><span>works today.</span></div>
+      <div id="cue32" class="clip cue" data-start="47.2" data-duration="1.61" data-track-index="1"><span>He also wrote down everything he learned,</span></div>
+      <div id="cue33" class="clip cue" data-start="48.81" data-duration="1.29" data-track-index="1"><span>and one of his biggest findings</span></div>
+      <div id="cue34" class="clip cue" data-start="50.1" data-duration="1.66" data-track-index="1"><span>was that a curved wing makes much</span></div>
+      <div id="cue35" class="clip cue" data-start="51.76" data-duration="1.44" data-track-index="1"><span>more lift than a flat one.</span></div>
+      <div id="cue36" class="clip cue" data-start="53.2" data-duration="1.61" data-track-index="1"><span>And that curve is called camber,</span></div>
+      <div id="cue37" class="clip cue" data-start="54.81" data-duration="1.69" data-track-index="1"><span>and almost every wing today has it.</span></div>
+      <div id="cue38" class="clip cue" data-start="56.53" data-duration="1.85" data-track-index="1"><span>He published tables of how much lift</span></div>
+      <div id="cue39" class="clip cue" data-start="58.38" data-duration="2.21" data-track-index="1"><span>a curved wing makes at different angles,</span></div>
+      <div id="cue40" class="clip cue" data-start="60.59" data-duration="1.33" data-track-index="1"><span>and that gave the people after him</span></div>
+      <div id="cue41" class="clip cue" data-start="61.92" data-duration="1.08" data-track-index="1"><span>something to build on.</span></div>
+      <div id="cue42" class="clip cue" data-start="63.0" data-duration="1.73" data-track-index="1"><span>But obviously steering with your body only</span></div>
+      <div id="cue43" class="clip cue" data-start="64.73" data-duration="1.27" data-track-index="1"><span>works up to a certain point.</span></div>
+      <div id="cue44" class="clip cue" data-start="66.0" data-duration="1.64" data-track-index="1"><span>The design problem is that as you make</span></div>
+      <div id="cue45" class="clip cue" data-start="67.64" data-duration="1.83" data-track-index="1"><span>the wing bigger, the forces on it grow</span></div>
+      <div id="cue46" class="clip cue" data-start="69.47" data-duration="1.57" data-track-index="1"><span>much faster than your ability to move</span></div>
+      <div id="cue47" class="clip cue" data-start="71.04" data-duration="0.86" data-track-index="1"><span>your weight around.</span></div>
+      <div id="cue48" class="clip cue" data-start="71.9" data-duration="1.14" data-track-index="1"><span>So a bigger glider can carry</span></div>
+      <div id="cue49" class="clip cue" data-start="73.04" data-duration="1.39" data-track-index="1"><span>more, but it's also just much</span></div>
+      <div id="cue50" class="clip cue" data-start="74.43" data-duration="0.87" data-track-index="1"><span>harder to control.</span></div>
+      <div id="cue51" class="clip cue" data-start="75.3" data-duration="2.74" data-track-index="1"><span>In 1896, Lilienthal lost control, fell</span></div>
+      <div id="cue52" class="clip cue" data-start="78.04" data-duration="2.04" data-track-index="1"><span>about 15 meters, he broke his spine,</span></div>
+      <div id="cue53" class="clip cue" data-start="80.08" data-duration="1.32" data-track-index="1"><span>and he died the next day.</span></div>
+      <div id="cue54" class="clip cue" data-start="81.43" data-duration="1.21" data-track-index="1"><span>So today, these gliders are</span></div>
+      <div id="cue55" class="clip cue" data-start="82.64" data-duration="1.01" data-track-index="1"><span>called sailplanes.</span></div>
+      <div id="cue56" class="clip cue" data-start="83.65" data-duration="1.8" data-track-index="1"><span>They have really long, skinny wings,</span></div>
+      <div id="cue57" class="clip cue" data-start="85.45" data-duration="1.55" data-track-index="1"><span>some over 25 meters across.</span></div>
+      <div id="cue58" class="clip cue" data-start="87.0" data-duration="2.16" data-track-index="1"><span>And this shape basically means that every</span></div>
+      <div id="cue59" class="clip cue" data-start="89.16" data-duration="1.74" data-track-index="1"><span>wing leaks air around its tips,</span></div>
+      <div id="cue60" class="clip cue" data-start="90.9" data-duration="2.6" data-track-index="1"><span>which creates swirls called tip vortices.</span></div>
+      <div id="cue61" class="clip cue" data-start="93.5" data-duration="1.61" data-track-index="1"><span>And these swirls cause a bit of drag.</span></div>
+      <div id="cue62" class="clip cue" data-start="95.11" data-duration="2.27" data-track-index="1"><span>Basically, a long, narrow wing has less</span></div>
+      <div id="cue63" class="clip cue" data-start="97.38" data-duration="2.12" data-track-index="1"><span>tip compared to the rest of the wing,</span></div>
+      <div id="cue64" class="clip cue" data-start="99.5" data-duration="1.6" data-track-index="1"><span>so it wastes a lot less energy.</span></div>
+      <div id="cue65" class="clip cue" data-start="101.1" data-duration="1.95" data-track-index="1"><span>And engineers will call this, like, a high</span></div>
+      <div id="cue66" class="clip cue" data-start="103.05" data-duration="0.85" data-track-index="1"><span>aspect ratio.</span></div>
+      <div id="cue67" class="clip cue" data-start="103.9" data-duration="2.13" data-track-index="1"><span>So pilots are able to find pockets of warm</span></div>
+      <div id="cue68" class="clip cue" data-start="106.03" data-duration="1.67" data-track-index="1"><span>air that rise off the ground,</span></div>
+      <div id="cue69" class="clip cue" data-start="107.7" data-duration="0.9" data-track-index="1"><span>and they ride them upwards.</span></div>
+      <div id="cue70" class="clip cue" data-start="108.63" data-duration="1.39" data-track-index="1"><span>And that means that they can stay up</span></div>
+      <div id="cue71" class="clip cue" data-start="110.02" data-duration="1.48" data-track-index="1"><span>for hours without an engine.</span></div>
+      <div id="cue72" class="clip cue" data-start="111.5" data-duration="1.61" data-track-index="1"><span>And the best sailplanes travel more than</span></div>
+      <div id="cue73" class="clip cue" data-start="113.11" data-duration="1.2" data-track-index="1"><span>50 meters forward for every</span></div>
+      <div id="cue74" class="clip cue" data-start="114.31" data-duration="0.99" data-track-index="1"><span>meter that they drop.</span></div>
+      <div id="cue75" class="clip cue" data-start="115.3" data-duration="1.68" data-track-index="1"><span>There's one pilot that has flown over</span></div>
+      <div id="cue76" class="clip cue" data-start="116.98" data-duration="2.37" data-track-index="1"><span>3,000 kilometers in a single flight,</span></div>
+      <div id="cue77" class="clip cue" data-start="119.35" data-duration="1.97" data-track-index="1"><span>and a special research glider has climbed</span></div>
+      <div id="cue78" class="clip cue" data-start="121.32" data-duration="1.88" data-track-index="1"><span>above 23,000 meters.</span></div>
+      <div id="cue79" class="clip cue" data-start="123.2" data-duration="1.66" data-track-index="1"><span>So gliders basically proved that flying</span></div>
+      <div id="cue80" class="clip cue" data-start="124.86" data-duration="1.27" data-track-index="1"><span>was possible, but they had two</span></div>
+      <div id="cue81" class="clip cue" data-start="126.13" data-duration="0.77" data-track-index="1"><span>big problems.</span></div>
+      <div id="cue82" class="clip cue" data-start="126.9" data-duration="1.4" data-track-index="1"><span>There was no proper way to steer,</span></div>
+      <div id="cue83" class="clip cue" data-start="128.3" data-duration="1.25" data-track-index="1"><span>and there was no engine to keep</span></div>
+      <div id="cue84" class="clip cue" data-start="129.55" data-duration="0.85" data-track-index="1"><span>them in the air.</span></div>
+    </div>
+    <script>
+      // GENERATED by edit/captions_overlay.py — do not hand-edit.
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // captions cut in and out with the clip window — no tweens by design
+      tl.set("#root", { opacity: 1 }, 0);
+      tl.set("#root", { opacity: 1 }, 130.633);
+      tl.seek(0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

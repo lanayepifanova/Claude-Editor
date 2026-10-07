@@ -48,7 +48,7 @@ PROJECTS = {
         # captions moved to y=0.75 and a disclosure line sits at y=0.25 for the
         # whole video (her ask, 2026-10-06), so maps and charts fit BETWEEN them
         "fit_band": (560, 1340),
-        "banner": ("Disseminated on behalf of Gladiator Metals Corp", 0.25),
+        "banner": ("Disseminated on behalf of\nGladiator Metals Corp", 0.25),   # two rows, her ask
         # (asset or "RAW", cue phrase in the cut transcript, mode, args, bg)
         "beats": [
             ("RAW",                       "imagine this"),
@@ -227,7 +227,7 @@ def build(name, spec):
     if spec.get("banner"):
         text, y = spec["banner"]
         html.append(f'      <div class="clip" id="banner" data-start="0" data-duration="{dur}" '
-                    f'data-track-index="9" style="top:{round(y * FH)}px"><span>{text}</span></div>')
+                    f'data-track-index="9" style="top:{round(y * FH)}px"><span>{text.replace(chr(10), "<br>")}</span></div>')
     (out / "index.html").write_text(HTML.format(
         fw=FW, fh=FH, name=name, duration=dur,
         beats="\n".join(html), tweens="\n".join(tweens)))
