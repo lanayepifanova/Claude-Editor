@@ -1,0 +1,46 @@
+c00|1893 Lilienthal Maihoehe.jpg|Public domain|https://commons.wikimedia.org/wiki/File:1893_Lilienthal_Maihoehe.jpg
+c01|Alex Krajewsky Otto Lilienthal Gleitflug 1893.jpg|Public domain|https://commons.wikimedia.org/wiki/File:Alex_Krajewsky_Otto_Lilienthal_Gleitflug_1893.jpg
+c02|Lilienthal im unruhigen Gleitflug.jpg|Public domain|https://commons.wikimedia.org/wiki/File:Lilienthal_im_unruhigen_Gleitflug.jpg
+c03|LilienthalsTodesflug.jpg|Public domain|https://commons.wikimedia.org/wiki/File:LilienthalsTodesflug.jpg
+c04|Otto Lilienthal, Flugversuch in Berlin-Lichterfelde, um 1895.jpg|Public domain|https://commons.wikimedia.org/wiki/File:Otto_Lilienthal,_Flugversuch_in_Berlin-Lichterfelde,_um_1895.jpg
+c05|Otto Lilienthal Portrait.jpg|Public domain|https://commons.wikimedia.org/wiki/File:Otto_Lilienthal_Portrait.jpg
+c06|Otto Lilienthal gliding experiment LCCN2002722087.jpg|Public domain|https://commons.wikimedia.org/wiki/File:Otto_Lilienthal_gliding_experiment_LCCN2002722087.jpg
+c07|Otto Lilienthal gliding experiment ppmsca.02546.jpg|Public domain|https://commons.wikimedia.org/wiki/File:Otto_Lilienthal_gliding_experiment_ppmsca.02546.jpg
+c08|Otto is going to fly.jpg|Public domain|https://commons.wikimedia.org/wiki/File:Otto_is_going_to_fly.jpg
+c09|Tumarkin 002 029.jpg|Public domain|https://commons.wikimedia.org/wiki/File:Tumarkin_002_029.jpg
+c10|Die Gartenlaube (1896) b 0624 1.jpg|Public domain|https://commons.wikimedia.org/wiki/File:Die_Gartenlaube_(1896)_b_0624_1.jpg
+c11|Die Gartenlaube (1896) b 0624 2.jpg|Public domain|https://commons.wikimedia.org/wiki/File:Die_Gartenlaube_(1896)_b_0624_2.jpg
+c12|Die Gartenlaube (1896) b 0626.jpg|Public domain|https://commons.wikimedia.org/wiki/File:Die_Gartenlaube_(1896)_b_0626.jpg
+c13|Die Gartenlaube (1899) b 0565 3.jpg|Public domain|https://commons.wikimedia.org/wiki/File:Die_Gartenlaube_(1899)_b_0565_3.jpg
+c14|Flying machine.jpg|Public domain|https://commons.wikimedia.org/wiki/File:Flying_machine.jpg
+c15|Lilienthal steuerte sein Fluggerät durch Verlagern der Beine (27294479082).jpg|CC BY 2.0|https://commons.wikimedia.org/wiki/File:Lilienthal_steuerte_sein_Flugger%C3%A4t_durch_Verlagern_der_Beine_(27294479082).jpg
+c16|Lilienthals Flugzeug von oben (27359302856).jpg|CC BY 2.0|https://commons.wikimedia.org/wiki/File:Lilienthals_Flugzeug_von_oben_(27359302856).jpg
+c17|Normalsegelapparat1895.jpg|Public domain|https://commons.wikimedia.org/wiki/File:Normalsegelapparat1895.jpg
+c18|Otto Lilienthal patent DE-1893-84417.png|Public domain|https://commons.wikimedia.org/wiki/File:Otto_Lilienthal_patent_DE-1893-84417.png
+c19|Werkstattzeichnung des Normalsegelapparats.jpg|Public domain|https://commons.wikimedia.org/wiki/File:Werkstattzeichnung_des_Normalsegelapparats.jpg
+c20|Der Fliegeberg, Lilienthal-Denkmal.JPG|CC BY-SA 4.0|https://commons.wikimedia.org/wiki/File:Der_Fliegeberg,_Lilienthal-Denkmal.JPG
+c21|Fliegeberg Lilienthals in Berlin Lichterfelde.png|CC BY-SA 2.0|https://commons.wikimedia.org/wiki/File:Fliegeberg_Lilienthals_in_Berlin_Lichterfelde.png
+c22|Lignes de courant plaque, Otto Lilienthal.png|Public domain|https://commons.wikimedia.org/wiki/File:Lignes_de_courant_plaque,_Otto_Lilienthal.png
+c23|Lilienthal-Gleiter - Das erste Serienflugzeug der Welt (27116526810).jpg|CC BY 2.0|https://commons.wikimedia.org/wiki/File:Lilienthal-Gleiter_-_Das_erste_Serienflugzeug_der_Welt_(27116526810).jpg
+c24|LilienthalAuftriebsMessungen1874.jpg|Public domain|https://commons.wikimedia.org/wiki/File:LilienthalAuftriebsMessungen1874.jpg
+c25|LilienthalDoppeldecker 1895-10-19.jpg|Public domain|https://commons.wikimedia.org/wiki/File:LilienthalDoppeldecker_1895-10-19.jpg
+c26|LilienthalFliegekunst.png|Public domain|https://commons.wikimedia.org/wiki/File:LilienthalFliegekunst.png
+c27|Muenchen Deutsches Museum Lilienthal glider 01.jpg|CC BY-SA 4.0|https://commons.wikimedia.org/wiki/File:Muenchen_Deutsches_Museum_Lilienthal_glider_01.jpg
+c28|Rekonstruktion Großer Doppeldecker.jpg|CC BY-SA 3.0 de|https://commons.wikimedia.org/wiki/File:Rekonstruktion_Gro%C3%9Fer_Doppeldecker.jpg
+c29|Replica 1893 Lilienthal Normalsegelapparat (BAPC-124) (18898716622).jpg|CC BY-SA 2.0|https://commons.wikimedia.org/wiki/File:Replica_1893_Lilienthal_Normalsegelapparat_(BAPC-124)_(18898716622).jpg
+c30|Airplane vortex edit.jpg|Public domain|https://commons.wikimedia.org/wiki/File:Airplane_vortex_edit.jpg
+c31|Camber (PSF).jpg|Public domain|https://commons.wikimedia.org/wiki/File:Camber_(PSF).jpg
+c32|Eta open class sailplane.JPG|CC BY 3.0|https://commons.wikimedia.org/wiki/File:Eta_open_class_sailplane.JPG
+c33|Glider Nimbus-4DM.Go in flight. (7518660354).jpg|CC BY-SA 2.0|https://commons.wikimedia.org/wiki/File:Glider_Nimbus-4DM.Go_in_flight._(7518660354).jpg
+c34|Glider Nimbus-4DM (8307080126).jpg|CC BY-SA 2.0|https://commons.wikimedia.org/wiki/File:Glider_Nimbus-4DM_(8307080126).jpg
+c35|Hang gliding Brasil.jpg|CC BY 2.0|https://commons.wikimedia.org/wiki/File:Hang_gliding_Brasil.jpg
+c36|Hang gliding in Millau (5).jpg|CC BY-SA 4.0|https://commons.wikimedia.org/wiki/File:Hang_gliding_in_Millau_(5).jpg
+c37|Schempp-Hirth Nimbus 4 D-KHXX.jpg|CC BY-SA 3.0|https://commons.wikimedia.org/wiki/File:Schempp-Hirth_Nimbus_4_D-KHXX.jpg
+c38|Schleicher ASG 29 E D-KSMF.jpg|CC BY 4.0|https://commons.wikimedia.org/wiki/File:Schleicher_ASG_29_E_D-KSMF.jpg
+c39|Shimada K2012-MtKaba~MtTsukuba soaring DSC08277.jpg|CC BY-SA 3.0|https://commons.wikimedia.org/wiki/File:Shimada_K2012-MtKaba~MtTsukuba_soaring_DSC08277.jpg
+c40|Column or plume thermal model.jpg|Public domain|https://commons.wikimedia.org/wiki/File:Column_or_plume_thermal_model.jpg
+c41|Gedenkstein Gollenberg (Stölln) Otto Lilienthal.jpg|CC BY-SA 3.0|https://commons.wikimedia.org/wiki/File:Gedenkstein_Gollenberg_(St%C3%B6lln)_Otto_Lilienthal.jpg
+c42|Gleitwinkel-Glide ratio-Unghi de planare.jpg|CC BY-SA 4.0|https://commons.wikimedia.org/wiki/File:Gleitwinkel-Glide_ratio-Unghi_de_planare.jpg
+c43|Perlan II.jpg|CC BY-SA 4.0|https://commons.wikimedia.org/wiki/File:Perlan_II.jpg
+c44|Windward Performance Perlan II.jpg|CC BY-SA 4.0|https://commons.wikimedia.org/wiki/File:Windward_Performance_Perlan_II.jpg
+c45|Wingtip-vortices-makeover (simple).jpg|CC BY-SA 3.0|https://commons.wikimedia.org/wiki/File:Wingtip-vortices-makeover_(simple).jpg

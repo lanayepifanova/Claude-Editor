@@ -142,6 +142,26 @@ def excise(segs, spans, fps):
     return [x for x in out if x[1] - x[0] >= MIN_SEG]
 
 
+def hold(segs, spans, fps):
+    """Union source-time spans into the kept segments — the inverse of excise().
+
+    This is how a pause INSIDE a sentence is kept. The 0.05s min-gap slices
+    between words, which is the point between sentences but reads as choppy
+    mid-phrase; she asked for those pauses back ("SOME pauses are okay, just so
+    its not super choppy mid-sentence"). Source time for the same reason as
+    excise(): detection re-runs every pass and indices move. The recipe itself
+    is untouched — this only restores audio it removed.
+    """
+    spans = [[round(a*fps)/fps, round(b*fps)/fps] for a, b in spans]
+    merged = []
+    for a, b in sorted([list(x) for x in segs] + spans):
+        if merged and a <= merged[-1][1] + 1e-6:
+            merged[-1][1] = max(merged[-1][1], b)
+        else:
+            merged.append([a, b])
+    return merged
+
+
 def proof_render(src, segs, out):
     """Concat the kept segments — this IS the cut timeline.
 
@@ -255,7 +275,7 @@ def main():
     ap.add_argument("--skip-framing", action="store_true")
     ap.add_argument("--overrides", default="",
                     help='JSON {"segments":{"0":{"out":4.80}}, "drop":[3], '
-                         '"remove":[[94.1,104.3]]} — manual trims, dropped segments '
+                         '"remove":[[94.1,104.3]], "keep":[[12.4,12.9]]} — manual trims, dropped segments '
                          'and source-time spans to excise (superseded retakes), '
                          'applied after detection so the proof/transcript stay '
                          'consistent')
@@ -299,6 +319,13 @@ def main():
                 print(f"     drop seg {i}: {segs[i][0]:.3f}-{segs[i][1]:.3f} "
                       f"(absorbed by a neighbour)")
                 segs.pop(i)
+        # source-time spans to hold — pauses inside a sentence, see hold()
+        keep = json.load(open(a.overrides)).get("keep", [])
+        if keep:
+            before_s = sum(e-s for s, e in segs)
+            segs = hold(segs, keep, a.fps)
+            print(f"     keep: {len(keep)} span(s) · {before_s:.2f}s -> "
+                  f"{sum(e-s for s, e in segs):.2f}s")
         # source-time spans to excise — superseded retakes, from retakes.py
         rem = json.load(open(a.overrides)).get("remove", [])
         if rem:

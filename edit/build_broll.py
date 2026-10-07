@@ -20,6 +20,12 @@ Two ways to fill the frame:
                           the caption on a flat `bg`. For maps, charts and slides,
                           where cropping would cut off the labels that carry the
                           meaning and a caption must not sit on the graphic.
+  panel (x0, y0, x1, y1)  crop that box, then fit it whole inside the project's
+                          `panel` rectangle and leave the rest of the frame
+                          transparent. For landscape talking-heads with empty
+                          wall beside her — the picture sits in the space, she
+                          stays visible ("make it to the left in the empty space
+                          ... don't have the picture on me").
 
 Cuts are hard (CLAUDE.md: hard cut is the default); each picture gets a slow push
 so nothing holds still.
@@ -41,7 +47,62 @@ FW, FH = 1080, 1920
 FIT_BAND = (600, 1640)     # default: below a y=0.25 caption, above the TikTok UI floor
 PUSH = 1.06                # scale a picture eases up to over its beat
 
+FULL = (0.0, 0.0, 1.0, 1.0)
+
 PROJECTS = {
+    # Landscape talking-head: she sits right of centre with bare yellow wall to
+    # her left. Her leftmost extent over the whole cut is x~940 in 99% of frames
+    # (hands included), so pictures fit inside 70..900 x 70..800, above the
+    # y=0.82 caption. "make it to the left in the empty space ... don't have the
+    # picture on me". Sources: Wikimedia Commons, see gliders-broll-credits.txt.
+    "gliders": {
+        "analysis": "edit/analysis-gliders",
+        "src": "graphics/gliders-broll-src",
+        "frame": (1920, 1080),
+        "panel": (70, 70, 900, 800),
+        "beats": [
+            ("loc glide 1",                 "i'm going to run",        "panel", (0.04, 0.10, 0.96, 0.90)),
+            ("unruhiger gleitflug",         "so let's go through",     "panel", FULL),
+            ("munich museum glider",        "starting off",            "panel", FULL),
+            ("gartenlaube glide over hill", "someone had to prove",    "panel", FULL),
+            ("lilienthal portrait",         "and that person was",     "panel", FULL),
+            ("workshop drawing",            "he built his own",        "panel", FULL),
+            ("gartenlaube bat wings",       "kind of like bat",        "panel", FULL),
+            ("gartenlaube top of hill",     "run off the top",         "panel", FULL),
+            ("fliegeberg today",            "he even had a",           "panel", FULL),
+            ("going to fly",                "just so he could",        "panel", FULL),
+            ("sepia long glide",            "his longest glides",      "panel", FULL),
+            ("us patent",                   "so his gliders had",      "panel", FULL),
+            ("legs from below",             "besides when he",         "panel", FULL),
+            ("museum glider pilot",         "that shifted the",        "panel", FULL),
+            ("hang glider brazil",          "and it's basically how",  "panel", FULL),
+            ("fliegekunst plates",          "he also wrote down",      "panel", FULL),
+            ("curved plate streamlines",    "and one of his",          "panel", FULL),
+            ("camber diagram",              "and that curve is",       "panel", FULL),
+            ("lift measurements",           "he published tables",     "panel", FULL),
+            ("de patent",                   "and that gave the",       "panel", FULL),
+            ("lichterfelde 1895",           "but obviously steering",  "panel", FULL),
+            ("doppeldecker 1895",           "the design problem is",   "panel", FULL),
+            ("replica hangar",              "the forces on it",        "panel", FULL),
+            ("big biplane reconstruction",  "so a bigger glider",      "panel", FULL),
+            ("todesflug wreck",             "in 1896",                 "panel", FULL),
+            ("gollenberg memorial",         "he broke his",            "panel", FULL),
+            ("asg29 flight",                "so today",                "panel", FULL),
+            ("nimbus grey sky",             "they have really long",   "panel", FULL),
+            ("nimbus on grass",             "some over 25",            "panel", FULL),
+            ("sailplane blue sky",          "and this shape",          "panel", FULL),
+            ("vortex smoke",                "which creates swirls",    "panel", FULL),
+            ("nimbus blue sky",             "basically a long",        "panel", FULL),
+            ("eta on ground",               "and engineers will",      "panel", FULL),
+            ("thermal column",              "so pilots are able",      "panel", FULL),
+            ("cockpit wing view",           "and that means that",     "panel", FULL),
+            ("glide ratio diagram",         "and the best sailplanes", "panel", FULL),
+            ("asg29 flight",                "there's one pilot",       "panel", FULL),
+            ("perlan ii",                   "and a special research",  "panel", FULL),
+            ("loc glide 1",                 "so gliders basically",    "panel", (0.04, 0.10, 0.96, 0.90)),
+            ("normalsegelapparat 1895",     "but they had two",        "panel", FULL),
+        ],
+    },
     "gladiator": {
         "analysis": "edit/analysis-gladiator",
         "src": "graphics/gladiator-broll-src",
@@ -114,8 +175,22 @@ def resolve(words, beats, fps):
     return at
 
 
-def prep(src, dst, mode, args, bg, band=FIT_BAND):
+def prep(src, dst, mode, args, bg, band=FIT_BAND, panel=None):
     w, h = probe(src)
+    if mode == "panel":
+        x0, y0, x1, y1 = args
+        px0, py0, px1, py1 = panel
+        cw, ch = (x1 - x0) * w, (y1 - y0) * h
+        s = min((px1 - px0) / cw, (py1 - py0) / ch)
+        sw, sh = int(cw * s) // 2 * 2, int(ch * s) // 2 * 2
+        left = px0 + (px1 - px0 - sw) // 2
+        top = py0 + (py1 - py0 - sh) // 2
+        vf = (f"crop={int(cw)}:{int(ch)}:{int(x0 * w)}:{int(y0 * h)},"
+              f"scale={sw}:{sh}:flags=lanczos,format=rgba,"
+              f"pad={FW}:{FH}:{left}:{top}:color=0x00000000")
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-vf", vf,
+                        "-frames:v", "1", str(dst)], check=True)
+        return
     if mode == "cover":
         cx, cy, hf = args
         ch = hf * h
@@ -140,7 +215,7 @@ def prep(src, dst, mode, args, bg, band=FIT_BAND):
 
 
 HTML = """<!doctype html>
-<html lang="en" data-resolution="portrait">
+<html lang="en" data-resolution="{orient}">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width={fw}, height={fh}" />
@@ -178,6 +253,8 @@ HTML = """<!doctype html>
 
 
 def build(name, spec):
+    global FW, FH
+    FW, FH = spec.get("frame", (1080, 1920))
     an = ROOT / spec["analysis"]
     sil = json.loads((an / "silence.json").read_text())
     fps, dur = sil["fps"], round(sil["cut_duration"], 3)
@@ -205,8 +282,9 @@ def build(name, spec):
         bg = b[4] if len(b) > 4 else "#000"
         srcs = [p for p in src_dir.iterdir() if p.stem == asset]
         assert len(srcs) == 1, f"{asset}: expected one source, found {srcs}"
-        fn = f"b{n:02d}.jpg"
-        prep(srcs[0], img / fn, mode, args, bg, spec.get("fit_band", FIT_BAND))
+        fn = f"b{n:02d}.{'png' if mode == 'panel' else 'jpg'}"
+        prep(srcs[0], img / fn, mode, args, bg, spec.get("fit_band", FIT_BAND),
+             spec.get("panel"))
         bid = f"b{n:02d}"
         flag = "" if 2.4 <= length <= 4.6 else "   <- check length"
         print(f"  {tin:6.2f}-{tout:6.2f}  {length:4.2f}s  {asset:26s} \"{cue}\"{flag}")
@@ -221,7 +299,13 @@ def build(name, spec):
                     f'data-duration="{held:.4f}" data-track-index="{1 + n % 2}" '
                     f'style="z-index:{n}">'
                     f'<img id="{bid}-img" src="assets/{fn}" alt="" /></div>')
-        # transform-origin follows the crop centre, so the push leans into the subject
+        # transform-origin follows the crop centre, so the push leans into the subject;
+        # a panel is a small picture on a full-frame canvas, so it pushes from the
+        # panel's own centre or it would drift across the frame
+        if mode == "panel":
+            px0, py0, px1, py1 = spec["panel"]
+            tweens.append(f'      gsap.set("#{bid}-img", {{ transformOrigin: '
+                          f'"{(px0 + px1) / 2}px {(py0 + py1) / 2}px" }});')
         tweens.append(f'      tl.fromTo("#{bid}-img", {{ scale: 1 }}, {{ scale: {PUSH}, '
                       f'duration: {length:.4f}, ease: "power1.out" }}, {tin:.4f});')
     if spec.get("banner"):
@@ -230,6 +314,7 @@ def build(name, spec):
                     f'data-track-index="9" style="top:{round(y * FH)}px"><span>{text.replace(chr(10), "<br>")}</span></div>')
     (out / "index.html").write_text(HTML.format(
         fw=FW, fh=FH, name=name, duration=dur,
+        orient="portrait" if FH > FW else "landscape",
         beats="\n".join(html), tweens="\n".join(tweens)))
     print(f"{name}: {n} pictures -> {out / 'index.html'}")
 
