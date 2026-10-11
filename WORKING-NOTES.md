@@ -694,3 +694,16 @@ be the RAW beats.
 **Sponsored video layout (gladiator):** captions at `--y 0.75`, with a permanent disclosure line,
 "Disseminated on behalf of Gladiator Metals Corp", at y 0.25 (36px, same hard-edged ink).
 Maps and charts fit between them (560-1340). Her ask; not yet a standing rule for every video.
+
+**A three-attempt retake needs one hand span, not `retakes.py --apply` as written.**
+(2026-10-10, wright-flyer.) She said the "layout / canard" line three times. The tool
+flagged it as three separate small drops (two "The layout is..." openers and a 0.28s
+sliver), which would have left "So having an elevator at the front is called a" and the
+whole second attempt in the cut. The fix was to replace those with a single `remove`
+span from the first attempt's segment start to the keeper's segment start
+(187.567-225.5 source). Read the report against the timed transcript whenever a line
+repeats more than twice. Same clip: -22.3 LUFS, envelope valley at -48, so
+`restore_speech.py --quiet-db -48` (+11.7s; fixed "they cut" -> "they could trust",
+"back into it" -> "banked into a turn", "one dot" -> "one side"). Two sub-0.3s segments
+alone in long pauses transcribed as blank (clicks) and were removed. Captions follow her
+script's British spellings (metres, aluminium, realised, aerofoil) via `fixes-wright-flyer.json`.

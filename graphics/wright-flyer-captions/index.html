@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>captions</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1920px; height:1080px; overflow:hidden; background:transparent; }
+      #root { position:relative; width:1920px; height:1080px; }
+      .cue {
+        position:absolute; left:0; right:0; top:82.0%;
+        transform:translateY(-50%);
+        display:flex; align-items:center; justify-content:center;
+        text-align:center;
+      }
+      .cue span {
+        display:inline-block; max-width:1171px; white-space:nowrap;
+        font-family:'Montserrat', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+        font-weight:800; font-size:48px; line-height:1.18;
+        letter-spacing:-0.01em; color:#FFFFFF;
+        /* hard edge, zero blur — reads on any background, never looks glowy */
+        text-shadow:
+          4px 0 0 #000, -4px 0 0 #000, 0 4px 0 #000, 0 -4px 0 #000,
+          3px 3px 0 #000, -3px 3px 0 #000,
+          3px -3px 0 #000, -3px -3px 0 #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="131.3"
+         data-width="1920" data-height="1080" data-fps="30.0"
+         data-layout-allow-overflow="true">
+      <div id="cue0" class="clip cue" data-start="0.03" data-duration="1.65" data-track-index="1"><span>This is the famous Wright Flyer.</span></div>
+      <div id="cue1" class="clip cue" data-start="1.68" data-duration="1.8" data-track-index="1"><span>It was built by Wilbur and Orville Wright,</span></div>
+      <div id="cue2" class="clip cue" data-start="3.48" data-duration="1.77" data-track-index="1"><span>two famous brothers who ran a bike</span></div>
+      <div id="cue3" class="clip cue" data-start="5.25" data-duration="0.85" data-track-index="1"><span>shop in Ohio.</span></div>
+      <div id="cue4" class="clip cue" data-start="6.1" data-duration="1.78" data-track-index="1"><span>They read everything that Lilienthal wrote</span></div>
+      <div id="cue5" class="clip cue" data-start="7.88" data-duration="1.76" data-track-index="1"><span>and they built gliders using his tables</span></div>
+      <div id="cue6" class="clip cue" data-start="9.64" data-duration="1.56" data-track-index="1"><span>of how much lift a wing makes.</span></div>
+      <div id="cue7" class="clip cue" data-start="11.2" data-duration="2.13" data-track-index="1"><span>But in 1901, their glider made a lot less</span></div>
+      <div id="cue8" class="clip cue" data-start="13.33" data-duration="1.71" data-track-index="1"><span>lift than his numbers said it should.</span></div>
+      <div id="cue9" class="clip cue" data-start="15.04" data-duration="1.44" data-track-index="1"><span>So they built a small wind tunnel</span></div>
+      <div id="cue10" class="clip cue" data-start="16.48" data-duration="1.53" data-track-index="1"><span>in their bike shop and they tested around</span></div>
+      <div id="cue11" class="clip cue" data-start="18.01" data-duration="1.79" data-track-index="1"><span>200 different wing shapes to get numbers</span></div>
+      <div id="cue12" class="clip cue" data-start="19.8" data-duration="0.84" data-track-index="1"><span>that they could trust.</span></div>
+      <div id="cue13" class="clip cue" data-start="20.64" data-duration="1.46" data-track-index="1"><span>Their biggest idea was about steering.</span></div>
+      <div id="cue14" class="clip cue" data-start="22.1" data-duration="1.71" data-track-index="1"><span>So a plane in the air can rotate three</span></div>
+      <div id="cue15" class="clip cue" data-start="23.81" data-duration="1.465" data-track-index="1"><span>different ways and the Wright brothers</span></div>
+      <div id="cue16" class="clip cue" data-start="25.275" data-duration="1.325" data-track-index="1"><span>realised the pilot needs a separate</span></div>
+      <div id="cue17" class="clip cue" data-start="26.6" data-duration="1.02" data-track-index="1"><span>control for each one.</span></div>
+      <div id="cue18" class="clip cue" data-start="27.62" data-duration="1.78" data-track-index="1"><span>This is called the three-axis control</span></div>
+      <div id="cue19" class="clip cue" data-start="29.43" data-duration="2.85" data-track-index="1"><span>and every plane since then has used it.</span></div>
+      <div id="cue20" class="clip cue" data-start="32.28" data-duration="1.57" data-track-index="1"><span>The first control is for roll where one</span></div>
+      <div id="cue21" class="clip cue" data-start="33.85" data-duration="1.67" data-track-index="1"><span>wing drops and the other rises.</span></div>
+      <div id="cue22" class="clip cue" data-start="35.52" data-duration="1.85" data-track-index="1"><span>Lilienthal rolled his glider by shifting</span></div>
+      <div id="cue23" class="clip cue" data-start="37.37" data-duration="1.67" data-track-index="1"><span>his body but the Wrights used cables</span></div>
+      <div id="cue24" class="clip cue" data-start="39.04" data-duration="1.44" data-track-index="1"><span>to twist the wingtips in opposite</span></div>
+      <div id="cue25" class="clip cue" data-start="40.48" data-duration="2.12" data-track-index="1"><span>directions which is called wing warping</span></div>
+      <div id="cue26" class="clip cue" data-start="42.6" data-duration="1.53" data-track-index="1"><span>and that is how the plane backed</span></div>
+      <div id="cue27" class="clip cue" data-start="44.13" data-duration="0.75" data-track-index="1"><span>into a turn.</span></div>
+      <div id="cue28" class="clip cue" data-start="44.88" data-duration="1.48" data-track-index="1"><span>The second control is for pitch</span></div>
+      <div id="cue29" class="clip cue" data-start="46.36" data-duration="1.52" data-track-index="1"><span>where the nose tips up or down</span></div>
+      <div id="cue30" class="clip cue" data-start="47.88" data-duration="1.52" data-track-index="1"><span>and for that they put a small wing</span></div>
+      <div id="cue31" class="clip cue" data-start="49.4" data-duration="1.48" data-track-index="1"><span>at the front called the elevator.</span></div>
+      <div id="cue32" class="clip cue" data-start="50.88" data-duration="1.34" data-track-index="1"><span>The third control is for yaw</span></div>
+      <div id="cue33" class="clip cue" data-start="52.22" data-duration="2.14" data-track-index="1"><span>where the nose swings left or right</span></div>
+      <div id="cue34" class="clip cue" data-start="54.36" data-duration="1.17" data-track-index="1"><span>and for that they added</span></div>
+      <div id="cue35" class="clip cue" data-start="55.53" data-duration="1.03" data-track-index="1"><span>a rudder at the back.</span></div>
+      <div id="cue36" class="clip cue" data-start="56.56" data-duration="1.44" data-track-index="1"><span>And with a control for each of the three,</span></div>
+      <div id="cue37" class="clip cue" data-start="58.03" data-duration="1.54" data-track-index="1"><span>the pilot could hold the plane level</span></div>
+      <div id="cue38" class="clip cue" data-start="59.57" data-duration="1.27" data-track-index="1"><span>and turn it on purpose.</span></div>
+      <div id="cue39" class="clip cue" data-start="60.84" data-duration="1.62" data-track-index="1"><span>They also needed an engine and so no</span></div>
+      <div id="cue40" class="clip cue" data-start="62.46" data-duration="1.7" data-track-index="1"><span>manufacturer would build one engine</span></div>
+      <div id="cue41" class="clip cue" data-start="64.16" data-duration="2.12" data-track-index="1"><span>that was light enough so their mechanic,</span></div>
+      <div id="cue42" class="clip cue" data-start="66.28" data-duration="1.65" data-track-index="1"><span>Charlie Taylor, built it himself</span></div>
+      <div id="cue43" class="clip cue" data-start="67.93" data-duration="1.03" data-track-index="1"><span>in about six weeks.</span></div>
+      <div id="cue44" class="clip cue" data-start="68.96" data-duration="1.86" data-track-index="1"><span>It made around 12 horsepower and weighed</span></div>
+      <div id="cue45" class="clip cue" data-start="70.82" data-duration="2.09" data-track-index="1"><span>around 80 kilograms partly because he cast</span></div>
+      <div id="cue46" class="clip cue" data-start="72.91" data-duration="1.25" data-track-index="1"><span>the main body in aluminium</span></div>
+      <div id="cue47" class="clip cue" data-start="74.16" data-duration="1.4" data-track-index="1"><span>which was unusual back then.</span></div>
+      <div id="cue48" class="clip cue" data-start="75.56" data-duration="1.39" data-track-index="1"><span>They had to also design their own</span></div>
+      <div id="cue49" class="clip cue" data-start="76.95" data-duration="1.79" data-track-index="1"><span>propellers because nobody had worked out</span></div>
+      <div id="cue50" class="clip cue" data-start="78.74" data-duration="1.23" data-track-index="1"><span>what shape a propeller for</span></div>
+      <div id="cue51" class="clip cue" data-start="79.97" data-duration="1.07" data-track-index="1"><span>a plane should be.</span></div>
+      <div id="cue52" class="clip cue" data-start="81.04" data-duration="1.55" data-track-index="1"><span>And the Wrights realised that a propeller</span></div>
+      <div id="cue53" class="clip cue" data-start="82.59" data-duration="1.96" data-track-index="1"><span>blade is an aerofoil which is the same</span></div>
+      <div id="cue54" class="clip cue" data-start="84.55" data-duration="1.21" data-track-index="1"><span>curved shape as a wing</span></div>
+      <div id="cue55" class="clip cue" data-start="85.76" data-duration="0.99" data-track-index="1"><span>so they could design the blades</span></div>
+      <div id="cue56" class="clip cue" data-start="86.75" data-duration="1.4" data-track-index="1"><span>with the wing data from their own</span></div>
+      <div id="cue57" class="clip cue" data-start="88.15" data-duration="0.73" data-track-index="1"><span>wind tunnel.</span></div>
+      <div id="cue58" class="clip cue" data-start="88.88" data-duration="1.96" data-track-index="1"><span>They put two propellers behind the wings</span></div>
+      <div id="cue59" class="clip cue" data-start="90.84" data-duration="1.08" data-track-index="1"><span>spinning in opposite directions</span></div>
+      <div id="cue60" class="clip cue" data-start="91.92" data-duration="1.71" data-track-index="1"><span>so that their twisting forces cancelled</span></div>
+      <div id="cue61" class="clip cue" data-start="93.63" data-duration="2.09" data-track-index="1"><span>out and the plane didn't roll to one side.</span></div>
+      <div id="cue62" class="clip cue" data-start="95.72" data-duration="2.92" data-track-index="1"><span>And on December 17, 1903 at Kitty Hawk</span></div>
+      <div id="cue63" class="clip cue" data-start="98.64" data-duration="2.06" data-track-index="1"><span>in North Carolina, the first flight lasted</span></div>
+      <div id="cue64" class="clip cue" data-start="100.7" data-duration="2.34" data-track-index="1"><span>12 seconds and it went about 37 metres,</span></div>
+      <div id="cue65" class="clip cue" data-start="103.04" data-duration="1.75" data-track-index="1"><span>just shorter than the wingspan of a modern</span></div>
+      <div id="cue66" class="clip cue" data-start="104.79" data-duration="1.52" data-track-index="1"><span>airliner but it was the first time</span></div>
+      <div id="cue67" class="clip cue" data-start="106.31" data-duration="0.93" data-track-index="1"><span>that anyone had flown a plane</span></div>
+      <div id="cue68" class="clip cue" data-start="107.24" data-duration="1.8" data-track-index="1"><span>with an engine and actually controlled it.</span></div>
+      <div id="cue69" class="clip cue" data-start="109.04" data-duration="1.34" data-track-index="1"><span>They flew three more times that day</span></div>
+      <div id="cue70" class="clip cue" data-start="110.38" data-duration="1.7" data-track-index="1"><span>and on the last flight they stayed up</span></div>
+      <div id="cue71" class="clip cue" data-start="112.08" data-duration="2.01" data-track-index="1"><span>for 59 seconds and covered about</span></div>
+      <div id="cue72" class="clip cue" data-start="114.09" data-duration="1.19" data-track-index="1"><span>260 metres.</span></div>
+      <div id="cue73" class="clip cue" data-start="115.28" data-duration="1.16" data-track-index="1"><span>The layout was pretty interesting too</span></div>
+      <div id="cue74" class="clip cue" data-start="116.47" data-duration="1.37" data-track-index="1"><span>so having the elevator at the front</span></div>
+      <div id="cue75" class="clip cue" data-start="117.84" data-duration="1.76" data-track-index="1"><span>is called a canard layout and the wings</span></div>
+      <div id="cue76" class="clip cue" data-start="119.6" data-duration="1.32" data-track-index="1"><span>drooped down slightly at the tip.</span></div>
+      <div id="cue77" class="clip cue" data-start="120.92" data-duration="2.0" data-track-index="1"><span>So both choices made the plane pretty</span></div>
+      <div id="cue78" class="clip cue" data-start="122.92" data-duration="2.04" data-track-index="1"><span>unstable and it was very hard to fly.</span></div>
+      <div id="cue79" class="clip cue" data-start="124.96" data-duration="1.77" data-track-index="1"><span>It wobbled a lot and the pilot had to keep</span></div>
+      <div id="cue80" class="clip cue" data-start="126.73" data-duration="1.63" data-track-index="1"><span>correcting it the whole time so pretty</span></div>
+      <div id="cue81" class="clip cue" data-start="128.36" data-duration="1.41" data-track-index="1"><span>much only the Wright brothers</span></div>
+      <div id="cue82" class="clip cue" data-start="129.77" data-duration="0.95" data-track-index="1"><span>could handle it.</span></div>
+    </div>
+    <script>
+      // GENERATED by edit/captions_overlay.py — do not hand-edit.
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // captions cut in and out with the clip window — no tweens by design
+      tl.set("#root", { opacity: 1 }, 0);
+      tl.set("#root", { opacity: 1 }, 131.3);
+      tl.seek(0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
