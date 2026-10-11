@@ -707,3 +707,19 @@ repeats more than twice. Same clip: -22.3 LUFS, envelope valley at -48, so
 "back into it" -> "banked into a turn", "one dot" -> "one side"). Two sub-0.3s segments
 alone in long pauses transcribed as blank (clicks) and were removed. Captions follow her
 script's British spellings (metres, aluminium, realised, aerofoil) via `fixes-wright-flyer.json`.
+
+**Wright Flyer v2 (2026-10-11): mirrored, 40 pictures beside her, two silent moves cut.**
+She asked to "invert left to right, so that im on the right side" — that is
+`burn.py --mirror` (new), which flips the footage before compositing so captions and
+pictures stay readable. Mirrored, the gliders panel (70,70,900,800) fits unchanged.
+Her picture brief: match the script, and "use only relevant images surrounding the
+wright flyer" — so no generic airliner roll/pitch/yaw diagrams; the axis, canard and
+droop beats are titled crops of the Commons Wright Flyer three-view (built with ffmpeg
+into `graphics/wright-flyer-broll-src/* card.png`). She also flagged two silent moves:
+the reach for the camera after the last word, and a shift between "has used it" and
+"The first control". Both were runs `restore_speech.py` had kept (the second transcribed
+alone as "(upbeat music)"); both are `remove` spans now. Third clip in a row where she
+caught a restored rustle — transcribe every restored run over ~0.3s next to a long gap
+in isolation BEFORE the first export. A 40-photo panel overlay renders ~11 min and
+1.8 GB; pick cues from common words, not names, because whisper respells "Wrights" /
+"Lilienthal" on every re-cut and the cue lookup then fails.

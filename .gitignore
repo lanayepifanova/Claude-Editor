@@ -48,3 +48,7 @@ __pycache__/
 # Render staging — build_photos.py mirrors the deck into each composition's
 # assets/photos/ on every run, so the copies are derived, not source.
 graphics/*-motion/assets/photos/
+
+# build_broll.py regenerates each composition's plates from graphics/*-broll-src/
+# on every run, so the copies are derived, not source.
+graphics/*-broll/assets/

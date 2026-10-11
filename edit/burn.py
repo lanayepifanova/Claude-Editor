@@ -43,7 +43,7 @@ def probe(path, stream="v:0", entries="width,height,nb_read_packets"):
     return st[0] if st else {}
 
 
-def build_master(src, segments, dest, fps=30.0, size=None):
+def build_master(src, segments, dest, fps=30.0, size=None, mirror=False):
     """Concat the kept segments straight out of the original footage.
 
     The video is trimmed in whole frames, never in seconds. Some cameras write
@@ -80,6 +80,11 @@ def build_master(src, segments, dest, fps=30.0, size=None):
         graph += f";[vc]scale={size[0]}:{size[1]}:flags=lanczos[v]"
     else:
         graph += ";[vc]null[v]"
+    # Mirror the footage only — overlays are composited afterwards, so captions
+    # and pictures stay readable. Her ask on wright-flyer: "invert left to
+    # right, so that im on the right side instead of the left side".
+    if mirror:
+        graph = graph.replace("[v]", "[vm]") + ";[vm]hflip[v]"
     run(["ffmpeg", "-y", "-i", src, "-filter_complex", graph,
          "-map", "[v]", "-map", "[a]",
          "-c:v", "libx264", "-preset", "slow", "-crf", "16", "-pix_fmt", "yuv420p",
@@ -158,6 +163,8 @@ def main():
     ap.add_argument("--out", required=True, help="final file, normally output/<name>.mp4")
     ap.add_argument("--master", help="where to keep the uncaptioned cut "
                                      "(default: alongside --out, .master.mp4)")
+    ap.add_argument("--mirror", action="store_true",
+                    help="flip the footage left-to-right before compositing")
     ap.add_argument("--force", action="store_true",
                     help="allow overwriting an existing --out. output/ is hers.")
     ap.add_argument("--verify-only", action="store_true",
@@ -192,7 +199,7 @@ def main():
                 size = (o["width"], o["height"])
                 print(f"     footage is {srcv['width']}x{srcv['height']}, overlay is "
                       f"{size[0]}x{size[1]} — scaling the master to the overlay")
-        build_master(src, segments, master, sil.get("fps", 30.0), size)
+        build_master(src, segments, master, sil.get("fps", 30.0), size, args.mirror)
 
         if args.overlay:
             v = probe(master)
