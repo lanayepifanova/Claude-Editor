@@ -726,3 +726,15 @@ caught a restored rustle — transcribe every restored run over ~0.3s next to a 
 in isolation BEFORE the first export. A 40-photo panel overlay renders ~11 min and
 1.8 GB; pick cues from common words, not names, because whisper respells "Wrights" /
 "Lilienthal" on every re-cut and the cue lookup then fails.
+
+**Sopwith Camel (2026-10-11): two traps on a 1080p landscape clip.** ffprobe reports
+`r_frame_rate=30000/1` for this file (avg 30.014, VFR), so `preprocess.py` would have
+snapped the cut to a 30000fps grid — pass `--fps 30` when `r_frame_rate` is absurd.
+And `retakes.py` reported 0 on a clip with two real retakes, because she restarted
+mid-sentence with no pause ("...which is covered its-- It got its name from a hump...",
+"...one more weakness, which is the Camel had one more weakness..."), so whisper put
+both attempts in one line and there was no second line to compare. They only showed in
+the transcript after `restore_speech.py --quiet-db -48` (-20.8 LUFS, valley -66..-72;
+fixed "top ace", "1917", "a Camel", "left ones", "new ones", "long distances"). Read
+the transcript for a phrase repeating *inside* a sentence; the fix is a hand `remove`
+span from the abandoned attempt's segment start to the keeper's.
