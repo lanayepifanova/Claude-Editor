@@ -29,7 +29,8 @@ cannot be done headlessly, say so plainly rather than reaching for one.
 
 - `footage/`  — drop raw footage + audio here
 - `graphics/` — HyperFrames compositions and their renders
-- `output/`   — final exports (hers alone — never delete from it)
+- `output/`   — final exports (hers — delete only when she asks for a project to be
+  removed, then its exports go too; never on your own initiative)
 - `project/`  — caption sidecars (`<name>.srt`), the editable source of the wording
 
 ---

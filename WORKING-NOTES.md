@@ -585,12 +585,15 @@ mid-clause. CLAUDE.md now carries this as a per-orientation table rather than a 
 Vertical keeps the tool's defaults (`--y 0.25`, 24 chars, 0.55/2.2) — `y` is measured
 from the top, and 0.25 keeps captions clear of the TikTok UI. (Established 2026-08-16.)
 
-**`output/` is hers alone — never delete from it.** Claude does not remove, overwrite
-or sweep anything in `output/` under any circumstances, including exports that look
-"superseded" or "old". She deletes those manually once the video is posted to
-Instagram and TikTok, and only she knows when that has happened. `edit/cleanup.py`
-already refuses `output/` by path — keep it that way and never hand-roll around it.
-(Established 2026-08-16.)
+**`output/` is hers — delete from it only when she asks for a project to be removed.**
+Reversed 2026-10-11: after "remove all wright flyer footage and graphics and
+everything" left the two exports behind, she said "you can remove outputs too yes
+next time". So when she asks to clear a project, its exports in `output/` go with the
+footage, analysis, graphics and captions. Everything else from the original rule
+(2026-08-16) still holds: never remove, overwrite or sweep an export on Claude's own
+initiative, including ones that look "superseded" or "old" — only she knows whether a
+video has been posted. `edit/cleanup.py` still refuses `output/` by path; keep it that
+way, the removal is a deliberate step on her request.
 
 **She cleans up finished projects herself, and that is expected.** Once a video is
 exported to `output/`, she deletes that project's footage, cut proofs, analysis dir,
