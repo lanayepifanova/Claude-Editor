@@ -738,3 +738,12 @@ the transcript after `restore_speech.py --quiet-db -48` (-20.8 LUFS, valley -66.
 fixed "top ace", "1917", "a Camel", "left ones", "new ones", "long distances"). Read
 the transcript for a phrase repeating *inside* a sentence; the fix is a hand `remove`
 span from the abandoned attempt's segment start to the keeper's.
+
+**Sopwith Camel v2 (2026-10-11): mirrored, 31 pictures beside her.** "invert so that i
+go from left to right, also add in pictures now similar to the other airplane edits" =
+`burn.py --mirror` plus the `panel` look in `build_broll.py` (70,70,900,800), same as
+wright-flyer; she sits on the left in the raw footage, so the flip puts her on the right.
+Commons throttles hard now (429 with `retry-after`, on both the API and thumbnails):
+42 downloads took ~25 min, so honour the header, sleep between requests, and batch
+licence lookups into one `titles=a|b|c` query. Building a contact sheet in a shell
+`while read` loop needs `</dev/null` on ffmpeg or it eats the file list.
