@@ -27,6 +27,14 @@ Two ways to fill the frame:
                           stays visible ("make it to the left in the empty space
                           ... don't have the picture on me").
 
+  top   (cx, cy, h)       for a BACKDROP behind her (north-shore-uranium: she is
+                          matted out and composited over the pictures). She
+                          covers the centre and bottom of the frame, so a plain
+                          cover crop hides the subject behind her. This puts the
+                          sharp picture in the top TOP_H px, where it clears her
+                          head, and fades it into a blurred copy of itself that
+                          fills the rest of the frame.
+
 Cuts are hard (CLAUDE.md: hard cut is the default); each picture gets a slow push
 so nothing holds still.
 
@@ -46,6 +54,7 @@ ROOT = Path(__file__).resolve().parent.parent
 FW, FH = 1080, 1920
 FIT_BAND = (600, 1640)     # default: below a y=0.25 caption, above the TikTok UI floor
 PUSH = 1.06                # scale a picture eases up to over its beat
+TOP_H, TOP_FADE = 1240, 300  # "top" mode: sharp picture height, and its fade-out
 
 FULL = (0.0, 0.0, 1.0, 1.0)
 
@@ -190,6 +199,69 @@ PROJECTS = {
             ("vimy museum",       "and after the war",       "panel", FULL),
         ],
     },
+    # Vertical, she is MATTED OUT (hyperframes remove-background) and composited
+    # over these pictures: burn.py --overlay broll --overlay matte --overlay captions.
+    # Her ask after a 5s A/B test: "i like version A" = pictures as the background,
+    # not a plate on white. No RAW beats — the room is never seen. Captions at 0.75.
+    # Sources: Wikimedia Commons, see graphics/north-shore-uranium-broll-src/credits.json.
+    "north-shore-uranium": {
+        "analysis": "edit/analysis-north-shore-uranium",
+        "src": "graphics/north-shore-uranium-broll-src",
+        "beats": [
+            ("yellowcake",            "the united states",         "top", (0.5, 0.5, 1.0)),
+            ("cooling towers",        "to fuel its",               "top", (0.42, 0.7, 0.7)),
+            ("ore barrels",           "the other",                 "top", (0.45, 0.5, 1.0)),
+            ("inkai",                 "came from",                 "top", (0.6, 0.5, 1.0)),
+            ("kerr mcgee mill",       "it wasn't always",          "top", (0.55, 0.45, 0.9)),
+            ("hd074b",                "has produced over",         "top", (0.5, 0.5, 1.0)),
+            ("hd077",                 "in the 1960s",              "top", (0.5, 0.4, 0.8)),
+            ("hd083",                 "drilled more than",         "top", (0.45, 0.45, 0.8)),
+            ("ambrosia sign",         "then the uranium",          "top", (0.5, 0.6, 0.8)),
+            ("palo verde",            "now the demand",            "top", (0.5, 0.5, 1.0)),
+            ("akkuyu",                "have pledged",              "top", (0.5, 0.6, 0.9)),
+            ("server room",           "and microsoft",             "top", (0.5, 0.5, 1.0)),
+            ("tmi",                   "are all pursuing",          "top", (0.5, 0.55, 0.8)),
+            ("fuel pellets",          "the uranium price",         "top", (0.6, 0.5, 1.0)),
+            ("fuel rods",             "to around",                 "top", (0.6, 0.5, 1.0)),
+            ("doe flag",              "and the us government",     "top", (0.55, 0.6, 0.8)),
+            ("cabezon",               "north shore uranium is",    "top", (0.5, 0.45, 0.8)),
+            ("tmx",                   "it trades as",              "top", (0.4, 0.4, 0.9)),
+            ("salado",                "and it holds",              "top", (0.5, 0.5, 1.0)),
+            ("wohlers drilling",      "in august 2026",            "top", (0.55, 0.5, 0.9)),
+            ("hd060",                 "with 13 holes",             "top", (0.6, 0.45, 0.85)),
+            ("carnotite",             "on september 3rd",          "top", (0.5, 0.5, 1.0)),
+            ("core boxes",            "the best intercepts",       "top", (0.5, 0.5, 1.0)),
+            ("uraninite",             "and 12.5",                  "top", (0.55, 0.55, 0.8)),
+            ("unirad",                "the e means",               "top", (0.6, 0.5, 1.0)),
+            ("icpms",                 "and it has not",            "top", (0.5, 0.45, 1.0)),
+            ("roll front",            "all 21 intercepts",         "top", (0.5, 0.5, 1.0)),
+            ("crow butte",            "which matters because",     "top", (0.4, 0.5, 0.9)),
+            ("isl mine",              "recovery pumps",            "top", (0.5, 0.6, 0.8)),
+            ("honeymoon",             "so there is no",            "top", (0.5, 0.55, 0.8)),
+            ("karatau",               "is the main way",           "top", (0.5, 0.6, 0.9)),
+            ("zuni sandstone",        "and it only works",         "top", (0.5, 0.5, 1.0)),
+            ("cabezon portrait",      "the geology at",            "top", (0.5, 0.3, 0.6)),
+            ("roll deposit",          "but it still",              "top", (0.5, 0.45, 0.6)),
+            ("hammer",                "the chief executive",       "top", (0.5, 0.35, 0.6)),
+            ("andes",                 "a senior executive",        "top", (0.5, 0.45, 0.9)),
+            ("black hills",           "the chief financial",       "top", (0.5, 0.5, 1.0)),
+            ("sealed ore",            "came from",                 "top", (0.4, 0.6, 0.6)),
+            ("hd088b",                "a second round",            "top", (0.6, 0.35, 0.7)),
+            ("athabasca dunes",       "the company also holds",    "top", (0.6, 0.5, 1.0)),
+            ("wollaston",             "in saskatchewan",           "top", (0.5, 0.5, 1.0)),
+            ("tickers",               "the risks are",             "top", (0.5, 0.5, 1.0)),
+            ("exchange tower",        "worth about",               "top", (0.5, 0.5, 1.0)),
+            ("mesa",                  "no mine and",               "top", (0.6, 0.55, 0.9)),
+            ("bluewater mill",        "old work pointed",          "top", (0.45, 0.5, 1.0)),
+            ("mining atlas",          "but that is a",             "top", (0.5, 0.4, 0.6)),
+            ("st anthony mine",       "ni 43-101",                 "top", (0.45, 0.5, 1.0)),
+            ("kelly mine",            "exploration projects never","top", (0.55, 0.4, 0.9)),
+            ("vogtle construction",   "to raise more",             "top", (0.6, 0.4, 0.9)),
+            ("hd069",                 "you can read",              "top", (0.45, 0.5, 1.0)),
+            ("vogtle portrait",       "this was posted",           "top", (0.5, 0.62, 0.7)),
+            ("yellowcake",            "do your own",               "top", (0.5, 0.5, 1.0)),
+        ],
+    },
     "gladiator": {
         "analysis": "edit/analysis-gladiator",
         "src": "graphics/gladiator-broll-src",
@@ -278,6 +350,24 @@ def prep(src, dst, mode, args, bg, band=FIT_BAND, panel=None):
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-vf", vf,
                         "-frames:v", "1", str(dst)], check=True)
         return
+    if mode == "top":
+        cx, cy, hf = args
+        ch = hf * h
+        cw = ch * FW / TOP_H
+        if cw > w:
+            cw, ch = w, w * TOP_H / FW
+        x = min(max(cx * w - cw / 2, 0), w - cw)
+        y = min(max(cy * h - ch / 2, 0), h - ch)
+        fc = (f"[0]split[a][b];"
+              f"[a]scale={FW}:{FH}:force_original_aspect_ratio=increase,crop={FW}:{FH},"
+              f"gblur=sigma=45,eq=brightness=-0.06[bg];"
+              f"[b]crop={int(cw)}:{int(ch)}:{int(x)}:{int(y)},scale={FW}:{TOP_H}:flags=lanczos,"
+              f"format=rgba,geq=r='r(X,Y)':g='g(X,Y)':b='b(X,Y)':"
+              f"a='255*clip(({TOP_H}-Y)/{TOP_FADE},0,1)'[fg];"
+              f"[bg][fg]overlay=0:0,format=yuvj420p")
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-filter_complex", fc,
+                        "-frames:v", "1", "-q:v", "2", str(dst)], check=True)
+        return
     if mode == "cover":
         cx, cy, hf = args
         ch = hf * h
@@ -350,6 +440,8 @@ def build(name, spec):
     beats = spec["beats"]
     at = resolve(words, beats, fps) + [dur]
     frames = [round(t * fps) for t in at]  # integer frames, so joins cannot drift
+    if beats[0][0] != "RAW" and frames[0] <= 3:
+        frames[0] = 0                      # whisper starts word one at ~0.03s; no bare first frame
 
     out = ROOT / "graphics" / f"{name}-broll"
     img = out / "assets"

@@ -765,3 +765,17 @@ before believing a sentence is missing. Clip was -21.3 LUFS, valley at -48..-51,
 `restore_speech.py --quiet-db -48` (+8.9s). Captions take the script's spellings (Kerr-McGee,
 Rio Puerco, eU3O8, enCore, Azarga, centres, favourable) via `fixes-north-shore-uranium.json`
 but keep what she actually said where she departs from it ("On September 3rd", "27 feet").
+
+**North Shore Uranium v3 (2026-10-13): she is matted out and the pictures are the background.**
+Her ask: "isolate me ... and change the background", then after a 5s A/B test (pictures
+behind her vs. a plate on white) "i like version A. do this for the entire video".
+`npx hyperframes remove-background <master>.mp4 -o <name>-matte.mov` keeps her and the mic
+in her hand; 3.4 fps on CoreML, so ~25 min and 7 GB for 158s. The stack is
+`burn.py --overlay broll --overlay matte --overlay captions` (captions at `--y 0.75`).
+A plain `cover` crop hides every subject behind her — she fills the centre and bottom — so
+`build_broll.py` has a `top` mode: the sharp picture sits in the top 1240px, above her
+head, and fades into a blurred copy of itself. 52 beats, no RAW. The final burn reads two
+ProRes 4444 layers (16 GB) and took ~40 min; a 10-minute tool timeout does not kill it.
+ffmpeg's `tile` restarts when input pixel formats differ (grey vs RGB sources), so convert
+thumbnails to one format before building a contact sheet. Hook and disclosure line are
+still to come — she said "later" to both.
