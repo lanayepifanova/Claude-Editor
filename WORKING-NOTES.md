@@ -5,8 +5,7 @@ established, reversed, or clarified.** `CLAUDE.md` is the *spec* (the settled
 rules); this is the *context* behind it — how she asks, what she reacts to, and
 what I've learned the hard way.
 
-Last updated: 2026-09-21 · after she asked for repeated takes to be cut down to the
-last one, and then for Premiere Pro to be removed from the studio entirely
+Last updated: 2026-10-13 · after north-shore-uranium, a 7.5-minute take with a pasted script
 
 ---
 
@@ -747,3 +746,22 @@ Commons throttles hard now (429 with `retry-after`, on both the API and thumbnai
 42 downloads took ~25 min, so honour the header, sleep between requests, and batch
 licence lookups into one `titles=a|b|c` query. Building a contact sheet in a shell
 `while read` loop needs `</dev/null` on ffmpeg or it eats the file list.
+
+**North Shore Uranium (2026-10-13): a long practice take plus a pasted script — cut retakes
+from the script, not from `retakes.py`.** 453s of footage for a 158s read; she re-read 12
+lines, some five times, and drilled "Saskatchewan" about a dozen times on its own. Her brief:
+keep only the last version, and "most of the script is said fluidly, i don't typically do
+really short sentences, i usually finish either half or the whole sentence" — so a short
+fragment is a false start, and the keeper is the last *complete* run of the line. What worked:
+list every kept segment with its source times, transcribe each ambiguous one **in isolation**
+(the cut-timeline transcript smears words across segments and hid that seg "which matters…"
+was really the whole sentence re-said), then write one hand `remove` span per abandoned
+stretch, each edge placed in the silent gap between segments. 14 spans; `retakes.py` then
+reported 0, which is the check. The first 26s of the file is silence, and full-context
+whisper on the original collapses it and mis-times everything before 30s — trust the
+segment list, not those timestamps. Full-context whisper on the finished export also
+*skipped* three whole sentences that were present; re-transcribe the skipped stretch alone
+before believing a sentence is missing. Clip was -21.3 LUFS, valley at -48..-51, so
+`restore_speech.py --quiet-db -48` (+8.9s). Captions take the script's spellings (Kerr-McGee,
+Rio Puerco, eU3O8, enCore, Azarga, centres, favourable) via `fixes-north-shore-uranium.json`
+but keep what she actually said where she departs from it ("On September 3rd", "27 feet").

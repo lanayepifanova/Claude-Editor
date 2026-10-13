@@ -1,0 +1,652 @@
+1
+00:00:00,030 --> 00:00:01,230
+The United States uses
+
+2
+00:00:01,230 --> 00:00:02,840
+about 50 million pounds
+
+3
+00:00:02,840 --> 00:00:03,870
+of uranium a year
+
+4
+00:00:03,870 --> 00:00:04,750
+to fuel its nuclear
+
+5
+00:00:04,750 --> 00:00:05,930
+reactors, and it mines
+
+6
+00:00:05,930 --> 00:00:06,840
+about 2 million.
+
+7
+00:00:06,840 --> 00:00:07,760
+The other 96%
+
+8
+00:00:07,760 --> 00:00:08,530
+is imported,
+
+9
+00:00:08,530 --> 00:00:09,480
+and for decades much
+
+10
+00:00:09,480 --> 00:00:10,710
+of it came from Russia,
+
+11
+00:00:10,710 --> 00:00:11,480
+Kazakhstan,
+
+12
+00:00:11,480 --> 00:00:12,400
+and Uzbekistan.
+
+13
+00:00:12,400 --> 00:00:12,990
+It wasn't always
+
+14
+00:00:12,990 --> 00:00:13,500
+like that.
+
+15
+00:00:13,520 --> 00:00:14,370
+The Grants Uranium
+
+16
+00:00:14,370 --> 00:00:15,430
+District in New Mexico
+
+17
+00:00:15,430 --> 00:00:16,760
+has produced over 340
+
+18
+00:00:16,760 --> 00:00:17,620
+million pounds
+
+19
+00:00:17,620 --> 00:00:18,280
+of uranium.
+
+20
+00:00:18,280 --> 00:00:19,970
+In the 1960s and 70s,
+
+21
+00:00:19,970 --> 00:00:20,880
+the mining company
+
+22
+00:00:20,880 --> 00:00:21,890
+Kerr-McGee drilled
+
+23
+00:00:21,890 --> 00:00:23,120
+more than 1,100 holes
+
+24
+00:00:23,120 --> 00:00:23,820
+into one part
+
+25
+00:00:23,820 --> 00:00:25,240
+of it called Rio Puerco.
+
+26
+00:00:25,240 --> 00:00:26,260
+Then the uranium price
+
+27
+00:00:26,260 --> 00:00:26,930
+collapsed,
+
+28
+00:00:26,930 --> 00:00:27,860
+and the ground sat idle
+
+29
+00:00:27,860 --> 00:00:28,640
+for decades.
+
+30
+00:00:28,670 --> 00:00:29,700
+Now the demand is coming
+
+31
+00:00:29,700 --> 00:00:30,100
+back.
+
+32
+00:00:30,120 --> 00:00:31,390
+More than 20 countries
+
+33
+00:00:31,390 --> 00:00:32,440
+have pledged to triple
+
+34
+00:00:32,440 --> 00:00:33,380
+nuclear capacity by
+
+35
+00:00:33,380 --> 00:00:34,920
+2050, and Microsoft,
+
+36
+00:00:34,920 --> 00:00:36,200
+Google, Amazon, and Meta
+
+37
+00:00:36,200 --> 00:00:37,330
+are all pursuing nuclear
+
+38
+00:00:37,330 --> 00:00:38,140
+power for their AI
+
+39
+00:00:38,140 --> 00:00:38,920
+data centres.
+
+40
+00:00:38,920 --> 00:00:39,850
+The uranium price
+
+41
+00:00:39,850 --> 00:00:40,830
+has roughly tripled
+
+42
+00:00:40,830 --> 00:00:42,550
+since 2020 to around 85
+
+43
+00:00:42,550 --> 00:00:43,720
+US dollars a pound,
+
+44
+00:00:43,720 --> 00:00:44,550
+and the US government
+
+45
+00:00:44,550 --> 00:00:45,390
+has named uranium
+
+46
+00:00:45,390 --> 00:00:46,400
+a critical mineral.
+
+47
+00:00:46,400 --> 00:00:47,380
+North Shore Uranium
+
+48
+00:00:47,380 --> 00:00:48,490
+is a small exploration
+
+49
+00:00:48,490 --> 00:00:49,530
+company that has gone
+
+50
+00:00:49,530 --> 00:00:50,640
+back to Rio Puerco.
+
+51
+00:00:50,640 --> 00:00:51,700
+It trades as NSU
+
+52
+00:00:51,700 --> 00:00:52,930
+on the TSX Venture
+
+53
+00:00:52,930 --> 00:00:54,240
+Exchange and NSURF
+
+54
+00:00:54,240 --> 00:00:55,490
+in the US, and it holds
+
+55
+00:00:55,490 --> 00:00:56,400
+an option to earn up
+
+56
+00:00:56,400 --> 00:00:58,520
+to 87.5% of the project.
+
+57
+00:00:58,550 --> 00:00:59,680
+In August 2026,
+
+58
+00:00:59,680 --> 00:01:00,620
+it finished its first
+
+59
+00:01:00,620 --> 00:01:01,610
+drill program there,
+
+60
+00:01:01,610 --> 00:01:02,720
+with 13 holes placed
+
+61
+00:01:02,720 --> 00:01:03,460
+next to the old
+
+62
+00:01:03,460 --> 00:01:04,480
+Kerr-McGee holes.
+
+63
+00:01:04,480 --> 00:01:05,470
+On September 3rd,
+
+64
+00:01:05,470 --> 00:01:06,410
+it reported uranium
+
+65
+00:01:06,410 --> 00:01:07,460
+mineralization in all
+
+66
+00:01:07,460 --> 00:01:08,280
+13 holes.
+
+67
+00:01:08,280 --> 00:01:09,970
+The best intercepts were
+
+68
+00:01:09,970 --> 00:01:11,410
+27 feet at 0.3%
+
+69
+00:01:11,410 --> 00:01:13,600
+eU3O8 and 12.5 feet
+
+70
+00:01:13,600 --> 00:01:14,690
+at 0.33%
+
+71
+00:01:14,690 --> 00:01:15,840
+eU3O8.
+
+72
+00:01:15,840 --> 00:01:16,760
+The E means the grade
+
+73
+00:01:16,760 --> 00:01:17,530
+was estimated
+
+74
+00:01:17,530 --> 00:01:18,550
+from radiation readings
+
+75
+00:01:18,550 --> 00:01:19,530
+taken down the hole,
+
+76
+00:01:19,530 --> 00:01:20,620
+and it has not yet been
+
+77
+00:01:20,620 --> 00:01:22,060
+confirmed by lab assays.
+
+78
+00:01:22,060 --> 00:01:23,080
+All 21 intercepts were
+
+79
+00:01:23,080 --> 00:01:23,970
+below the water table,
+
+80
+00:01:23,970 --> 00:01:24,460
+which matters
+
+81
+00:01:24,480 --> 00:01:25,190
+because of a mining
+
+82
+00:01:25,190 --> 00:01:26,170
+method called in-situ
+
+83
+00:01:26,170 --> 00:01:26,800
+recovery.
+
+84
+00:01:26,830 --> 00:01:27,730
+In-situ recovery
+
+85
+00:01:27,730 --> 00:01:28,490
+pumps a solution
+
+86
+00:01:28,490 --> 00:01:29,210
+through sandstone
+
+87
+00:01:29,210 --> 00:01:30,210
+to dissolve the uranium
+
+88
+00:01:30,210 --> 00:01:30,540
+and bring
+
+89
+00:01:30,560 --> 00:01:31,390
+it to the surface,
+
+90
+00:01:31,390 --> 00:01:32,320
+so there is no open pit
+
+91
+00:01:32,320 --> 00:01:33,600
+and no underground mine.
+
+92
+00:01:33,600 --> 00:01:34,310
+It is the main way
+
+93
+00:01:34,310 --> 00:01:35,290
+uranium is produced
+
+94
+00:01:35,290 --> 00:01:36,160
+in the US, and it only
+
+95
+00:01:36,160 --> 00:01:36,820
+works on uranium
+
+96
+00:01:36,820 --> 00:01:37,960
+that sits in sandstone
+
+97
+00:01:37,960 --> 00:01:39,140
+below the water table.
+
+98
+00:01:39,140 --> 00:01:39,980
+The geology at Rio
+
+99
+00:01:39,980 --> 00:01:40,570
+Puerco appears
+
+100
+00:01:40,570 --> 00:01:41,030
+favourable
+
+101
+00:01:41,050 --> 00:01:41,940
+for it, but it still
+
+102
+00:01:41,940 --> 00:01:43,000
+has to be confirmed by
+
+103
+00:01:43,000 --> 00:01:44,000
+more testing.
+
+104
+00:01:44,000 --> 00:01:44,740
+The chief executive,
+
+105
+00:01:44,740 --> 00:01:45,370
+Brooke Clements,
+
+106
+00:01:45,370 --> 00:01:45,890
+is a geologist
+
+107
+00:01:45,910 --> 00:01:46,730
+with more than 40 years
+
+108
+00:01:46,730 --> 00:01:47,400
+of experience.
+
+109
+00:01:47,400 --> 00:01:48,120
+He was a senior
+
+110
+00:01:48,120 --> 00:01:49,320
+executive at Peregrine
+
+111
+00:01:49,320 --> 00:01:50,520
+Metals, which was sold
+
+112
+00:01:50,520 --> 00:01:51,840
+for 487 million US
+
+113
+00:01:51,840 --> 00:01:52,480
+dollars.
+
+114
+00:01:52,480 --> 00:01:53,280
+The chief financial
+
+115
+00:01:53,280 --> 00:01:53,890
+officer and one
+
+116
+00:01:53,890 --> 00:01:54,740
+of the directors came
+
+117
+00:01:54,740 --> 00:01:55,580
+from Azarga Uranium,
+
+118
+00:01:55,580 --> 00:01:56,450
+which was bought by
+
+119
+00:01:56,450 --> 00:01:57,320
+enCore Energy.
+
+120
+00:01:57,320 --> 00:01:58,160
+A second round of up
+
+121
+00:01:58,160 --> 00:01:59,380
+to 13 holes is expected
+
+122
+00:01:59,380 --> 00:02:00,220
+to start in the last
+
+123
+00:02:00,220 --> 00:02:01,640
+quarter of 2026.
+
+124
+00:02:01,640 --> 00:02:02,720
+The company also holds
+
+125
+00:02:02,720 --> 00:02:03,550
+two exploration
+
+126
+00:02:03,550 --> 00:02:04,070
+properties
+
+127
+00:02:04,090 --> 00:02:04,800
+in Saskatchewan's
+
+128
+00:02:04,800 --> 00:02:06,130
+Athabasca Basin, called
+
+129
+00:02:06,130 --> 00:02:07,560
+Falcon and West Bear.
+
+130
+00:02:07,560 --> 00:02:08,560
+The risks are real.
+
+131
+00:02:08,560 --> 00:02:09,310
+This is a very small
+
+132
+00:02:09,310 --> 00:02:10,485
+company worth about 16
+
+133
+00:02:10,485 --> 00:02:11,530
+million Canadian dollars
+
+134
+00:02:11,530 --> 00:02:12,760
+as of September 2026.
+
+135
+00:02:12,760 --> 00:02:13,750
+It has no mine and no
+
+136
+00:02:13,750 --> 00:02:14,710
+current resource
+
+137
+00:02:14,710 --> 00:02:15,480
+estimate.
+
+138
+00:02:15,480 --> 00:02:16,320
+Kerr-McGee's old work
+
+139
+00:02:16,320 --> 00:02:17,540
+pointed to about 11.4
+
+140
+00:02:17,540 --> 00:02:18,150
+million pounds
+
+141
+00:02:18,150 --> 00:02:18,640
+of uranium,
+
+142
+00:02:18,660 --> 00:02:19,760
+but that is a historical
+
+143
+00:02:19,760 --> 00:02:20,680
+estimate which does not
+
+144
+00:02:20,680 --> 00:02:21,645
+meet today's reporting
+
+145
+00:02:21,645 --> 00:02:23,030
+standard, NI 43-101,
+
+146
+00:02:23,030 --> 00:02:23,840
+and it should not
+
+147
+00:02:23,840 --> 00:02:24,840
+be relied upon.
+
+148
+00:02:24,870 --> 00:02:25,550
+Most exploration
+
+149
+00:02:25,550 --> 00:02:26,260
+projects never become
+
+150
+00:02:26,260 --> 00:02:27,070
+mines, and the company
+
+151
+00:02:27,070 --> 00:02:27,780
+may also need to raise
+
+152
+00:02:27,780 --> 00:02:28,230
+more money
+
+153
+00:02:28,250 --> 00:02:28,970
+which would dilute
+
+154
+00:02:28,970 --> 00:02:29,920
+existing shareholders.
+
+155
+00:02:29,920 --> 00:02:30,850
+You can read the drill
+
+156
+00:02:30,850 --> 00:02:31,610
+results yourself
+
+157
+00:02:31,610 --> 00:02:33,020
+at northshoreuranium.com.
+
+158
+00:02:33,020 --> 00:02:33,730
+This was posted
+
+159
+00:02:33,730 --> 00:02:34,700
+on behalf of North Shore
+
+160
+00:02:34,700 --> 00:02:35,620
+Uranium Ltd, so please
+
+161
+00:02:35,620 --> 00:02:36,680
+do your own research.
+
+162
+00:02:36,680 --> 00:02:37,500
+This is not investment
+
+163
+00:02:37,500 --> 00:02:37,900
+advice.
+

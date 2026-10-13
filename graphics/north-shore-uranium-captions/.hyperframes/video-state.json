@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "historyId": "44035f2c-1b67-4fb6-82dd-48d1fc93b562",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "index.html": {
+      "hash": "76bf289b45498d3d8a07b9afad34e298ad38d9cbd21934d85eca7ded952d72c9",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/44035f2c-1b67-4fb6-82dd-48d1fc93b562/blobs/76/76bf289b45498d3d8a07b9afad34e298ad38d9cbd21934d85eca7ded952d72c9"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "127d1217-4254-4174-a5e5-a0ed7e5eef6f",
+      "completedAt": 1791909950524,
+      "output": "/Users/lanayepifanova/Claude-Editor/graphics/north-shore-uranium-cap.mov",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
+}
