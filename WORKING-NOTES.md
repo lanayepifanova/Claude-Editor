@@ -779,3 +779,19 @@ ProRes 4444 layers (16 GB) and took ~40 min; a 10-minute tool timeout does not k
 ffmpeg's `tile` restarts when input pixel formats differ (grey vs RGB sources), so convert
 thumbnails to one format before building a contact sheet. Hook and disclosure line are
 still to come — she said "later" to both.
+
+**Interview (2026-10-15): mute the interviewer, keep the guest — speaker ID, not level.** Her ask:
+the interviewer's voice "in the background" muted, only the on-camera speaker unmuted, and isolate
+the speaker where they overlap. Footage is a 28-min 720p call recording; audio is effectively mono
+(L-R 28 dB down) and **both voices peak at -18 dB**, so no gate or channel split can do it. What
+worked: SpeechBrain ECAPA embeddings (`speechbrain/spkrec-ecapa-voxceleb`, local, no token) in a
+py3.11 venv, reference prints taken from transcript-obvious stretches (intro = interviewer, answers =
+guest), then scoring each **speech island** (sound between >=0.12s pauses) — per-word windows were
+too noisy because a 0.8s window at a turn edge hears both voices. Handoffs with no pause were split
+at the loudness dip that maximised the G/I difference, and **every split was confirmed by
+transcribing each half in isolation**. Result: 16 spans, 286.6s, kept as
+`edit/analysis-interview/mute.json`; video stream-copied, audio gated with 15ms ramps. Two traps:
+torch on **CPU ran ECAPA at 1.6x realtime (a 28-min pass would take ~100 min) — on `mps` it is 190x
+faster**, so always pass the MPS device; and **SepFormer (whamr16k) could not separate this audio** —
+both outputs carried both voices, likely because the interviewer arrives already codec-compressed
+through the call. There was no true overlap here, only fast handoffs, so precise splitting was enough.

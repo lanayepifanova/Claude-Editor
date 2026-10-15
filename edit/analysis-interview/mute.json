@@ -1,0 +1,22 @@
+{
+  "source": "footage/Interview.mp4",
+  "note": "Interviewer speech, muted. Source seconds. Edges sit in the pause between speakers; each mixed handoff was split at a loudness dip and both halves transcribed in isolation.",
+  "mute": [
+    [0.00, 36.36, "intro + Q1 'what was the first thing you said yes to'"],
+    [75.00, 92.43, "Q2 women in STEM club"],
+    [151.34, 156.14, "'No worries, we could just be like redo...'"],
+    [293.19, 327.41, "'Wow, that's incredible...' + Q3 head RHA"],
+    [480.81, 493.27, "'cool. So for those of the people...' Q4"],
+    [581.22, 583.02, "'I mean, it sounds like a lot already.'"],
+    [625.64, 642.98, "'Mmm. Okay, so you also run Baker's caregiving...' Q5"],
+    [757.10, 786.56, "'Mm-hmm/Okay, so you are obviously involved...' Q6"],
+    [803.67, 815.52, "Q6 restated after 'can you remind me of the question?'"],
+    [982.38, 1010.90, "'100%. Well, thank you...' Q7 campus-wide coordinator"],
+    [1133.21, 1161.98, "'These are all really good answers...' Q8 O-Week"],
+    [1362.82, 1369.10, "'I think it was something about...you kind of answered it'"],
+    [1454.89, 1487.76, "'Okay, well, thank you for all the advice...' Q9 horror films"],
+    [1610.69, 1613.64, "'Okay.' + 'it's been half a month'"],
+    [1624.99, 1632.82, "'There are really no rules, let's just go. Like, let's lump them all together.'"],
+    [1669.83, 1683.47, "outro"]
+  ]
+}
