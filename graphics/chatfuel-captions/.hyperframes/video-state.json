@@ -1,15 +1,31 @@
 {
   "version": 1,
   "historyId": "a0bf7818-62bf-467c-8cd4-3f520628fc49",
-  "currentRevision": null,
+  "currentRevision": "87521099-2204-4ff3-8bda-568db16ef669",
   "pendingChanges": false,
   "files": {
     "index.html": {
-      "hash": "0a3126bb9cd33b4b015c4e1de67cd51270fb8b4497f785f5605b817b407ab26f",
-      "content": "/Users/lanayepifanova/.cache/hyperframes/history/a0bf7818-62bf-467c-8cd4-3f520628fc49/blobs/0a/0a3126bb9cd33b4b015c4e1de67cd51270fb8b4497f785f5605b817b407ab26f"
+      "hash": "375e3f1ba8aeed8322f27d45b438c57e09f1fa4615d237bc9b033949447975f9",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/a0bf7818-62bf-467c-8cd4-3f520628fc49/blobs/37/375e3f1ba8aeed8322f27d45b438c57e09f1fa4615d237bc9b033949447975f9"
     }
   },
-  "revisions": {},
+  "revisions": {
+    "87521099-2204-4ff3-8bda-568db16ef669": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792530828426,
+      "endedAt": 1792530828427,
+      "files": {
+        "index.html": {
+          "before": "/Users/lanayepifanova/.cache/hyperframes/history/a0bf7818-62bf-467c-8cd4-3f520628fc49/blobs/0a/0a3126bb9cd33b4b015c4e1de67cd51270fb8b4497f785f5605b817b407ab26f",
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/a0bf7818-62bf-467c-8cd4-3f520628fc49/blobs/37/375e3f1ba8aeed8322f27d45b438c57e09f1fa4615d237bc9b033949447975f9"
+        }
+      }
+    }
+  },
   "checks": {
     "latest": null,
     "revisions": {},
@@ -22,13 +38,15 @@
   },
   "renders": {
     "latest": {
-      "id": "bebb2baf-7c90-45ad-b008-ddb1b476dc4e",
-      "completedAt": 1792527209246,
-      "output": "/Users/lanayepifanova/Claude-Editor/graphics/chatfuel-cap.mov",
+      "id": "9084e4d7-47c3-4ce4-98ea-2da3213ecfeb",
+      "completedAt": 1792530943154,
+      "output": "/Users/lanayepifanova/Claude-Editor/graphics/chatfuel-cap75.mov",
       "status": "completed",
-      "revision": null
+      "revision": "87521099-2204-4ff3-8bda-568db16ef669"
     },
-    "retainedRevisions": []
+    "retainedRevisions": [
+      "87521099-2204-4ff3-8bda-568db16ef669"
+    ]
   },
   "pendingArtifactCleanup": []
 }

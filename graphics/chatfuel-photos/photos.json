@@ -1,0 +1,50 @@
+{
+ "ai assistant": {
+  "file": "ai assistant.mov",
+  "mode": "raw-video",
+  "w": 972,
+  "h": 540
+ },
+ "booked": {
+  "file": "booked.png",
+  "mode": "raw",
+  "w": 1179,
+  "h": 655
+ },
+ "calendar": {
+  "file": "calendar.mov",
+  "mode": "raw-video",
+  "w": 972,
+  "h": 540
+ },
+ "chatfuel logo": {
+  "file": "chatfuel logo.png",
+  "mode": "passthrough",
+  "w": 939,
+  "h": 300
+ },
+ "end card": {
+  "file": "end card.mov",
+  "mode": "raw-video",
+  "w": 960,
+  "h": 540
+ },
+ "handoff": {
+  "file": "handoff.mov",
+  "mode": "raw-video",
+  "w": 972,
+  "h": 540
+ },
+ "lockscreen": {
+  "file": "lockscreen.png",
+  "mode": "raw",
+  "w": 1179,
+  "h": 655
+ },
+ "whatsapp reply": {
+  "file": "whatsapp reply.png",
+  "mode": "raw",
+  "w": 1179,
+  "h": 655
+ }
+}

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>chatfuel-photos-motion (baked)</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        margin: 0; width: 1080px; height: 1920px;
+        overflow: hidden; background: #000;
+      }
+      #src-video { width: 1080px; height: 1920px; object-fit: cover; }
+      .beat { position: absolute; inset: 0; }
+      .plate { position: absolute; display: block; }
+      /* a screen recording cannot live inside a timed wrapper, so it carries
+         its own timing and an untimed shell takes the fade */
+      .shell { position: absolute; }
+      .framed { border:2px solid #DADDE3; border-radius:22px; overflow:hidden; }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="52.933"
+      data-width="1080"
+      data-height="1920"
+    >
+      <video
+        id="src-video"
+        class="clip"
+        src="assets/source.mp4"
+        data-start="0"
+        data-duration="52.933"
+        data-track-index="0"
+        muted
+        playsinline
+      ></video>
+
+      <!-- p01  27.55-30.25s  "So while they're with the client, nobody answers the DMs" -->
+
+      <div class="clip beat" id="p01" data-start="27.55" data-duration="2.7" data-track-index="2">
+        <img class="plate framed" id="p01-img"src="assets/photos/lockscreen.png" style="left:54px;top:60px;width:972px;height:540px" alt="" />
+      </div>
+
+      <!-- p02  30.15-34.55s  "There's a whole new generation of AI assistants" -->
+
+      <div class="shell framed" id="p02-shell" style="left:54px;top:60px;width:972px;height:540px">
+        <video class="clip" id="p02" src="assets/photos/ai assistant.mov" data-start="30.15" data-duration="4.4" data-track-index="1" style="width:972px;height:540px;object-fit:cover;display:block" muted playsinline></video>
+      </div>
+
+      <!-- p03  34.50-36.65s  "the AI employee called Chatfuel" -->
+
+      <div class="clip beat" id="p03" data-start="34.5" data-duration="2.15" data-track-index="2">
+        <img class="plate" id="p03-img"src="assets/photos/chatfuel logo.png" style="left:190px;top:218px;width:700px;height:224px" alt="" />
+      </div>
+
+      <!-- p04  36.60-39.80s  "It answers every DM, comment, and WhatsApp message" -->
+
+      <div class="clip beat" id="p04" data-start="36.6" data-duration="3.2" data-track-index="1">
+        <img class="plate framed" id="p04-img"src="assets/photos/whatsapp reply.png" style="left:54px;top:60px;width:972px;height:540px" alt="" />
+      </div>
+
+      <!-- p05  39.75-41.60s  "books the appointment in their own calendar" -->
+
+      <div class="shell framed" id="p05-shell" style="left:54px;top:60px;width:972px;height:540px">
+        <video class="clip" id="p05" src="assets/photos/calendar.mov" data-start="39.75" data-duration="1.85" data-track-index="2" style="width:972px;height:540px;object-fit:cover;display:block" muted playsinline></video>
+      </div>
+
+      <!-- p06  41.55-44.85s  "hands over the buyers who are ready to pay" -->
+
+      <div class="shell framed" id="p06-shell" style="left:54px;top:60px;width:972px;height:540px">
+        <video class="clip" id="p06" src="assets/photos/handoff.mov" data-start="41.55" data-duration="3.3" data-track-index="1" style="width:972px;height:540px;object-fit:cover;display:block" muted playsinline></video>
+      </div>
+
+      <!-- p07  44.80-49.30s  "The owner keeps the work only they can do" -->
+
+      <div class="clip beat" id="p07" data-start="44.8" data-duration="4.5" data-track-index="2">
+        <img class="plate framed" id="p07-img"src="assets/photos/booked.png" style="left:54px;top:60px;width:972px;height:540px" alt="" />
+      </div>
+
+      <!-- p08  49.25-52.90s  "This video is sponsored by Chatfuel. Comment PINS" -->
+
+      <div class="shell framed" id="p08-shell" style="left:60px;top:60px;width:960px;height:540px">
+        <video class="clip" id="p08" src="assets/photos/end card.mov" data-start="49.25" data-duration="3.65" data-track-index="1" style="width:960px;height:540px;object-fit:cover;display:block" muted playsinline></video>
+      </div>
+      <audio
+        id="src-audio"
+        src="assets/source.mp4"
+        data-start="0"
+        data-duration="52.933"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // p01 — lockscreen  "So while they're with the client, nobody answers the DMs"
+      tl.fromTo("#p01-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 27.55);
+      tl.to("#p01-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 29.95);
+      // p02 — ai assistant  "There's a whole new generation of AI assistants"
+      tl.fromTo("#p02-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 30.15);
+      tl.to("#p02-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 34.25);
+      // p03 — chatfuel logo  "the AI employee called Chatfuel"
+      tl.fromTo("#p03-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 34.5);
+      tl.to("#p03-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 36.35);
+      // p04 — whatsapp reply  "It answers every DM, comment, and WhatsApp message"
+      tl.fromTo("#p04-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 36.6);
+      tl.to("#p04-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 39.5);
+      // p05 — calendar  "books the appointment in their own calendar"
+      tl.fromTo("#p05-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 39.75);
+      tl.to("#p05-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 41.3);
+      // p06 — handoff  "hands over the buyers who are ready to pay"
+      tl.fromTo("#p06-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 41.55);
+      tl.to("#p06-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 44.55);
+      // p07 — booked  "The owner keeps the work only they can do"
+      tl.fromTo("#p07-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 44.8);
+      tl.to("#p07-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 49.0);
+      // p08 — end card  "This video is sponsored by Chatfuel. Comment PINS"
+      tl.fromTo("#p08-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 49.25);
+      tl.to("#p08-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 52.6);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

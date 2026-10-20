@@ -157,6 +157,32 @@ PROJECTS = {
             ("fill deploy",     36.80, 40.55, 900, 540, 1260, "Comment STRATEGY, and I'll send you the setup link"),
         ],
     },
+    "chatfuel-photos-motion": {
+        "source": "chatfuel.mp4",
+        "deck": "chatfuel",
+        "duration": 52.933,
+        "frame": (1080, 1920),
+        # She is matted onto pure white with captions at y=0.75, and her head top
+        # sits at y 600-680, so plates go ABOVE her (centre y 330, 60..600) and are
+        # composited behind the matte. Her ask: "images on top of the white
+        # background (not replacing the background)" — so plates, never full-bleed.
+        "band": (40, 640),
+        # a white UI on a white background reads as nothing — hairline frame, flat,
+        # no shadow or glow
+        "framed_css": "border:2px solid #DADDE3; border-radius:22px; overflow:hidden;",
+        # Nothing in her Drive kit fits the economics half (stats, Adam Smith, the
+        # pin factory), so plates start on the salon/DM beat.
+        "beats": [
+            ("lockscreen",     27.55, 30.25, 972, 540, 330, "So while they're with the client, nobody answers the DMs"),
+            ("ai assistant",   30.15, 34.55, 972, 540, 330, "There's a whole new generation of AI assistants"),
+            ("chatfuel logo",  34.50, 36.65, 700, 540, 330, "the AI employee called Chatfuel"),
+            ("whatsapp reply", 36.60, 39.80, 972, 540, 330, "It answers every DM, comment, and WhatsApp message"),
+            ("calendar",       39.75, 41.60, 972, 540, 330, "books the appointment in their own calendar"),
+            ("handoff",        41.55, 44.85, 972, 540, 330, "hands over the buyers who are ready to pay"),
+            ("booked",         44.80, 49.30, 972, 540, 330, "The owner keeps the work only they can do"),
+            ("end card",       49.25, 52.90, 960, 540, 330, "This video is sponsored by Chatfuel. Comment PINS"),
+        ],
+    },
 }
 
 HTML = """<!doctype html>
@@ -178,6 +204,7 @@ HTML = """<!doctype html>
       /* a screen recording cannot live inside a timed wrapper, so it carries
          its own timing and an untimed shell takes the fade */
       .shell {{ position: absolute; }}
+      .framed {{ {framed_css} }}
     </style>
   </head>
   <body>
@@ -251,10 +278,13 @@ def build(name, spec, variant="baked"):
 
         track = 1 + (i % 2)                 # alternate so a dissolve can overlap
         html.append(f'      <!-- {bid}  {tin:.2f}-{tout:.2f}s  "{cue}" -->')
+        # only plates that carry their own ground get the frame; a knocked-out
+        # mark sits on the background as ink
+        framed = " framed" if spec.get("framed_css") and meta["mode"] in ("raw", "raw-video") else ""
 
         if meta["mode"] == "raw-video":
             html.append(
-                f'      <div class="shell" id="{bid}-shell" '
+                f'      <div class="shell{framed}" id="{bid}-shell" '
                 f'style="left:{x}px;top:{y}px;width:{width}px;height:{h}px">\n'
                 f'        <video class="clip" id="{bid}" src="assets/photos/{meta["file"]}" '
                 f'data-start="{tin}" data-duration="{dur}" data-track-index="{track}" '
@@ -266,7 +296,7 @@ def build(name, spec, variant="baked"):
             html.append(
                 f'      <div class="clip beat" id="{bid}" data-start="{tin}" '
                 f'data-duration="{dur}" data-track-index="{track}">\n'
-                f'        <img class="plate" id="{bid}-img" src="assets/photos/{meta["file"]}" '
+                f'        <img class="plate{framed}" id="{bid}-img"src="assets/photos/{meta["file"]}" '
                 f'style="left:{x}px;top:{y}px;width:{width}px;height:{h}px" alt="" />\n'
                 f'      </div>')
             target = f"#{bid}-img"
@@ -294,6 +324,7 @@ def build(name, spec, variant="baked"):
         page_bg="transparent" if overlay else "#000",
         media_open="" if overlay else VIDEO_BLOCK.format(duration=spec["duration"]),
         media_close="" if overlay else AUDIO_BLOCK.format(duration=spec["duration"]),
+        framed_css=spec.get("framed_css", ""),
         beats="\n\n".join(html),
         tweens="\n".join(tweens),
     )

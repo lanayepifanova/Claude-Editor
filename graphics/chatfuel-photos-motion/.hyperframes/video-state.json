@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "historyId": "897b8484-53d1-498a-ae00-706991cbd12b",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "assets/photos/ai assistant.mov": {
+      "hash": "b35c45c11dc78ddcf092be211db78425eb42bebba867f936276ea9be4d364a49",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/b3/b35c45c11dc78ddcf092be211db78425eb42bebba867f936276ea9be4d364a49"
+    },
+    "assets/photos/booked.png": {
+      "hash": "52673c35032c4d7639ea5af10c499acba7d58a3b90fe9357e9c73f37c657668b",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/52/52673c35032c4d7639ea5af10c499acba7d58a3b90fe9357e9c73f37c657668b"
+    },
+    "assets/photos/calendar.mov": {
+      "hash": "362d765e592f5acddb6291b3abdacdf498aefc1abd5fea79307693f4dd42995f",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/36/362d765e592f5acddb6291b3abdacdf498aefc1abd5fea79307693f4dd42995f"
+    },
+    "assets/photos/chatfuel logo.png": {
+      "hash": "de75560887a1c2da099afaf1d503dfdc67e51bfc7355d32f96610d2ed05a0b8d",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/de/de75560887a1c2da099afaf1d503dfdc67e51bfc7355d32f96610d2ed05a0b8d"
+    },
+    "assets/photos/end card.mov": {
+      "hash": "8f8796d64c10b09a1fb71044a824919f3355451e510d6995be555264b0d3f6c9",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/8f/8f8796d64c10b09a1fb71044a824919f3355451e510d6995be555264b0d3f6c9"
+    },
+    "assets/photos/handoff.mov": {
+      "hash": "8b0d0ab80e87bb8d2290075dda1ce195d5a17b0115e3c7c8343899bb1b21e078",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/8b/8b0d0ab80e87bb8d2290075dda1ce195d5a17b0115e3c7c8343899bb1b21e078"
+    },
+    "assets/photos/lockscreen.png": {
+      "hash": "2880ee349d2ebbc40cd852b03844e140648e1b173011aced033d9cd9fd35936f",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/28/2880ee349d2ebbc40cd852b03844e140648e1b173011aced033d9cd9fd35936f"
+    },
+    "assets/photos/whatsapp reply.png": {
+      "hash": "561de5b209c7a9eeb04f9e0d646f1eb03a27f44ab0f4ab87bf20d898529181ea",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/56/561de5b209c7a9eeb04f9e0d646f1eb03a27f44ab0f4ab87bf20d898529181ea"
+    },
+    "index.html": {
+      "hash": "197b86384d1a3be064988866eb345c12d879120af209bd3ac9becc06e45d2cbf",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/19/197b86384d1a3be064988866eb345c12d879120af209bd3ac9becc06e45d2cbf"
+    },
+    "variants/overlay.html": {
+      "hash": "615ff0f41d2130c484be7c65d55cca893b7028c993e3c09de6dca597147daa78",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/61/615ff0f41d2130c484be7c65d55cca893b7028c993e3c09de6dca597147daa78"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "baf01075-3dbd-4f03-a190-7c2b1f16980a",
+      "completedAt": 1792531028686,
+      "output": "/Users/lanayepifanova/Claude-Editor/graphics/chatfuel-broll.mov",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
+}

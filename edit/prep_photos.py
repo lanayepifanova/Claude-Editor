@@ -125,6 +125,22 @@ DECKS["higgsfield"] = {
     },
 }
 
+DECKS["chatfuel"] = {
+    "src": "graphics/chatfuel-broll-src",
+    # recordings from build_clips.py; phone stills are pre-cropped 1179x655 to the
+    # message that matters. All keep their own ground and get a hairline frame in
+    # build_photos so a white UI does not dissolve into her white background. The
+    # logo lockup already carries alpha.
+    "assets": {
+        **{f"{n}.mov": {"mode": "raw"} for n in (
+            "ai assistant", "calendar", "handoff", "end card")},
+        "lockscreen.png":     {"mode": "raw"},
+        "whatsapp reply.png": {"mode": "raw"},
+        "booked.png":         {"mode": "raw"},
+        "chatfuel logo.png":  {"mode": "passthrough"},
+    },
+}
+
 HI, LO = 246.0, 228.0
 
 

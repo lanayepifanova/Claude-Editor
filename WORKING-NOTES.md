@@ -809,3 +809,21 @@ room-tone peak -44, `restore_speech.py --quiet-db -48` (+3.3s) recovered "econom
 cut-timeline transcript HID by collapsing the repeat — found only by transcribing short
 segments next to long gaps in isolation; both are hand `remove` spans. She says "AI
 systems"/"AI system" where the script has "assistants"; captions follow her audio.
+
+**Chatfuel v2 (2026-10-20): plates ON the white, captions at the waist, small SFX.** Her ask:
+"put the images on top of the white background (not replacing the background)", assets from
+her Google Drive, captions "down to the 75% waist level", and "sound effects tastefully! like
+dings or swooshes". A public Drive folder downloads with `gdown --folder` in a scratch venv
+(67 files: product recordings 1920x968, phone screenshots 1179x2556, SVG logos; several
+files have no extension, so sniff with `file --mime-type`). Stack is
+`--overlay white --overlay broll --overlay matte --overlay cap75`: plates sit on the white
+ABOVE her head (head top y 600-680, so 972x540 plates centred y 330) and behind the matte.
+Built with build_clips/prep_photos/build_photos (`chatfuel` / `chatfuel-photos-motion`);
+build_photos gained a per-project `framed_css` hairline frame, because a white product UI
+on a white background otherwise disappears. The kit had nothing for the economics half
+(Adam Smith, pin factory), so plates start at 27.6s — offered to source those separately.
+SFX are media-use's bundled set (notification, whoosh, chime, pop, click-soft, ping) at
+gains putting each near -19 dBFS peak; prove they landed by subtracting the master's audio
+(residual -21..-25 dB at each cue, nothing elsewhere) — peak level alone does not move.
+Don't name a build_photos project `<deck>-photos`: that IS the deck dir and the build lands
+inside it.
