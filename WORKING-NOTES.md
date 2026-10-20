@@ -795,3 +795,17 @@ torch on **CPU ran ECAPA at 1.6x realtime (a 28-min pass would take ~100 min) �
 faster**, so always pass the MPS device; and **SepFormer (whamr16k) could not separate this audio** —
 both outputs carried both voices, likely because the interviewer arrives already codec-compressed
 through the call. There was no true overlap here, only fast handoffs, so precise splitting was enough.
+
+**Chatfuel (2026-10-20): cut, captioned, and matted onto pure white.** Her ask: "isolate the
+speaker so that the background is pure white". No new tool needed — a 1588-frame white
+ProRes plate (`ffmpeg -f lavfi color=white`) as the FIRST overlay, then the
+`remove-background` matte, then captions: `burn.py --overlay white --overlay matte --overlay cap`.
+burn's ink check reads 100% on this stack and means nothing; verify the plate instead
+(a corner crop reads Y 255 / UV 128 on every frame). White caption ink with the hard black
+edge reads fine on white. Clip: -22.5 LUFS, `r_frame_rate=30000/1` (pass `--fps 30`),
+room-tone peak -44, `restore_speech.py --quiet-db -48` (+3.3s) recovered "economics",
+"pin factory", "twenty", "labour", "DMs", "Chatfuel". Two in-sentence restarts
+("There's a whole new--", "The owner keeps the word.") that `retakes.py` missed and the
+cut-timeline transcript HID by collapsing the repeat — found only by transcribing short
+segments next to long gaps in isolation; both are hand `remove` spans. She says "AI
+systems"/"AI system" where the script has "assistants"; captions follow her audio.

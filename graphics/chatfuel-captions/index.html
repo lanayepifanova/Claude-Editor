@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>captions</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:transparent; }
+      #root { position:relative; width:1080px; height:1920px; }
+      .cue {
+        position:absolute; left:0; right:0; top:25.0%;
+        transform:translateY(-50%);
+        display:flex; align-items:center; justify-content:center;
+        text-align:center;
+      }
+      .cue span {
+        display:inline-block; max-width:778px; white-space:nowrap;
+        font-family:'Montserrat', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+        font-weight:800; font-size:54px; line-height:1.18;
+        letter-spacing:-0.01em; color:#FFFFFF;
+        /* hard edge, zero blur — reads on any background, never looks glowy */
+        text-shadow:
+          4px 0 0 #000, -4px 0 0 #000, 0 4px 0 #000, 0 -4px 0 #000,
+          3px 3px 0 #000, -3px 3px 0 #000,
+          3px -3px 0 #000, -3px -3px 0 #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="52.933"
+         data-width="1080" data-height="1920" data-fps="30.0"
+         data-layout-allow-overflow="true">
+      <div id="cue0" class="clip cue" data-start="0.02" data-duration="0.79" data-track-index="1"><span>Almost four out of five</span></div>
+      <div id="cue1" class="clip cue" data-start="0.81" data-duration="1.03" data-track-index="1"><span>businesses in America</span></div>
+      <div id="cue2" class="clip cue" data-start="1.84" data-duration="1.28" data-track-index="1"><span>have no paid employees.</span></div>
+      <div id="cue3" class="clip cue" data-start="3.12" data-duration="0.8" data-track-index="1"><span>That's more than 30</span></div>
+      <div id="cue4" class="clip cue" data-start="3.92" data-duration="0.8" data-track-index="1"><span>million people running</span></div>
+      <div id="cue5" class="clip cue" data-start="4.72" data-duration="0.96" data-track-index="1"><span>a business alone</span></div>
+      <div id="cue6" class="clip cue" data-start="5.68" data-duration="1.02" data-track-index="1"><span>and doing every job</span></div>
+      <div id="cue7" class="clip cue" data-start="6.7" data-duration="0.91" data-track-index="1"><span>themselves, which</span></div>
+      <div id="cue8" class="clip cue" data-start="7.61" data-duration="0.7" data-track-index="1"><span>goes against one</span></div>
+      <div id="cue9" class="clip cue" data-start="8.31" data-duration="0.8" data-track-index="1"><span>of the oldest ideas</span></div>
+      <div id="cue10" class="clip cue" data-start="9.11" data-duration="0.73" data-track-index="1"><span>in economics.</span></div>
+      <div id="cue11" class="clip cue" data-start="9.84" data-duration="1.62" data-track-index="1"><span>In 1776, Adam Smith</span></div>
+      <div id="cue12" class="clip cue" data-start="11.46" data-duration="0.74" data-track-index="1"><span>opened The Wealth</span></div>
+      <div id="cue13" class="clip cue" data-start="12.2" data-duration="0.88" data-track-index="1"><span>of Nations with a pin</span></div>
+      <div id="cue14" class="clip cue" data-start="13.08" data-duration="0.62" data-track-index="1"><span>factory.</span></div>
+      <div id="cue15" class="clip cue" data-start="13.7" data-duration="0.8" data-track-index="1"><span>Ten workers</span></div>
+      <div id="cue16" class="clip cue" data-start="14.5" data-duration="1.05" data-track-index="1"><span>who each did one step</span></div>
+      <div id="cue17" class="clip cue" data-start="15.55" data-duration="1.65" data-track-index="1"><span>made 48,000 pins a day.</span></div>
+      <div id="cue18" class="clip cue" data-start="17.2" data-duration="0.94" data-track-index="1"><span>And he reckoned that one</span></div>
+      <div id="cue19" class="clip cue" data-start="18.14" data-duration="1.02" data-track-index="1"><span>person doing every step</span></div>
+      <div id="cue20" class="clip cue" data-start="19.16" data-duration="0.75" data-track-index="1"><span>alone couldn't</span></div>
+      <div id="cue21" class="clip cue" data-start="19.91" data-duration="0.47" data-track-index="1"><span>even make twenty.</span></div>
+      <div id="cue22" class="clip cue" data-start="20.4" data-duration="0.37" data-track-index="1"><span>He called</span></div>
+      <div id="cue23" class="clip cue" data-start="20.79" data-duration="0.46" data-track-index="1"><span>that the division</span></div>
+      <div id="cue24" class="clip cue" data-start="21.27" data-duration="0.39" data-track-index="1"><span>of labour.</span></div>
+      <div id="cue25" class="clip cue" data-start="21.68" data-duration="0.98" data-track-index="1"><span>A solo business owner</span></div>
+      <div id="cue26" class="clip cue" data-start="22.66" data-duration="0.78" data-track-index="1"><span>has no one to divide</span></div>
+      <div id="cue27" class="clip cue" data-start="23.44" data-duration="0.72" data-track-index="1"><span>the labour with.</span></div>
+      <div id="cue28" class="clip cue" data-start="24.16" data-duration="0.59" data-track-index="1"><span>A salon owner</span></div>
+      <div id="cue29" class="clip cue" data-start="24.75" data-duration="0.85" data-track-index="1"><span>is the marketer,</span></div>
+      <div id="cue30" class="clip cue" data-start="25.6" data-duration="0.72" data-track-index="1"><span>the receptionist,</span></div>
+      <div id="cue31" class="clip cue" data-start="26.32" data-duration="0.9" data-track-index="1"><span>and the salesperson</span></div>
+      <div id="cue32" class="clip cue" data-start="27.22" data-duration="0.36" data-track-index="1"><span>at once.</span></div>
+      <div id="cue33" class="clip cue" data-start="27.6" data-duration="0.68" data-track-index="1"><span>So while they're</span></div>
+      <div id="cue34" class="clip cue" data-start="28.28" data-duration="1.05" data-track-index="1"><span>with the client, nobody</span></div>
+      <div id="cue35" class="clip cue" data-start="29.33" data-duration="0.87" data-track-index="1"><span>answers the DMs.</span></div>
+      <div id="cue36" class="clip cue" data-start="30.2" data-duration="0.49" data-track-index="1"><span>There's a whole</span></div>
+      <div id="cue37" class="clip cue" data-start="30.71" data-duration="0.51" data-track-index="1"><span>new generation</span></div>
+      <div id="cue38" class="clip cue" data-start="31.24" data-duration="0.84" data-track-index="1"><span>of AI systems</span></div>
+      <div id="cue39" class="clip cue" data-start="32.08" data-duration="0.66" data-track-index="1"><span>built for solving</span></div>
+      <div id="cue40" class="clip cue" data-start="32.74" data-duration="0.48" data-track-index="1"><span>this problem.</span></div>
+      <div id="cue41" class="clip cue" data-start="33.24" data-duration="0.8" data-track-index="1"><span>And a good example of</span></div>
+      <div id="cue42" class="clip cue" data-start="34.04" data-duration="1.08" data-track-index="1"><span>this is the AI employee</span></div>
+      <div id="cue43" class="clip cue" data-start="35.12" data-duration="1.0" data-track-index="1"><span>called Chatfuel.</span></div>
+      <div id="cue44" class="clip cue" data-start="36.12" data-duration="1.06" data-track-index="1"><span>It answers every DM,</span></div>
+      <div id="cue45" class="clip cue" data-start="37.18" data-duration="1.0" data-track-index="1"><span>comment, and WhatsApp</span></div>
+      <div id="cue46" class="clip cue" data-start="38.18" data-duration="1.11" data-track-index="1"><span>message in the owner's</span></div>
+      <div id="cue47" class="clip cue" data-start="39.29" data-duration="0.7" data-track-index="1"><span>own tone, books</span></div>
+      <div id="cue48" class="clip cue" data-start="39.99" data-duration="0.66" data-track-index="1"><span>the appointment</span></div>
+      <div id="cue49" class="clip cue" data-start="40.65" data-duration="0.87" data-track-index="1"><span>in their own calendar,</span></div>
+      <div id="cue50" class="clip cue" data-start="41.52" data-duration="0.63" data-track-index="1"><span>and hands over</span></div>
+      <div id="cue51" class="clip cue" data-start="42.15" data-duration="0.77" data-track-index="1"><span>the buyers who are ready</span></div>
+      <div id="cue52" class="clip cue" data-start="42.92" data-duration="0.9" data-track-index="1"><span>to pay with their whole</span></div>
+      <div id="cue53" class="clip cue" data-start="43.82" data-duration="0.98" data-track-index="1"><span>conversation attached.</span></div>
+      <div id="cue54" class="clip cue" data-start="44.8" data-duration="0.6" data-track-index="1"><span>The owner keeps</span></div>
+      <div id="cue55" class="clip cue" data-start="45.4" data-duration="0.47" data-track-index="1"><span>the work only</span></div>
+      <div id="cue56" class="clip cue" data-start="45.89" data-duration="0.31" data-track-index="1"><span>they can</span></div>
+      <div id="cue57" class="clip cue" data-start="46.22" data-duration="0.87" data-track-index="1"><span>do, which is the division</span></div>
+      <div id="cue58" class="clip cue" data-start="47.09" data-duration="0.61" data-track-index="1"><span>of labour Smith</span></div>
+      <div id="cue59" class="clip cue" data-start="47.7" data-duration="1.11" data-track-index="1"><span>described in a business</span></div>
+      <div id="cue60" class="clip cue" data-start="48.81" data-duration="0.41" data-track-index="1"><span>of one.</span></div>
+      <div id="cue61" class="clip cue" data-start="49.24" data-duration="0.92" data-track-index="1"><span>This video is sponsored</span></div>
+      <div id="cue62" class="clip cue" data-start="50.16" data-duration="0.64" data-track-index="1"><span>by Chatfuel.</span></div>
+      <div id="cue63" class="clip cue" data-start="50.8" data-duration="0.51" data-track-index="1"><span>Comment PINS</span></div>
+      <div id="cue64" class="clip cue" data-start="51.33" data-duration="0.93" data-track-index="1"><span>and their AI system</span></div>
+      <div id="cue65" class="clip cue" data-start="52.26" data-duration="0.673" data-track-index="1"><span>will send you the link.</span></div>
+    </div>
+    <script>
+      // GENERATED by edit/captions_overlay.py — do not hand-edit.
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // captions cut in and out with the clip window — no tweens by design
+      tl.set("#root", { opacity: 1 }, 0);
+      tl.set("#root", { opacity: 1 }, 52.933);
+      tl.seek(0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

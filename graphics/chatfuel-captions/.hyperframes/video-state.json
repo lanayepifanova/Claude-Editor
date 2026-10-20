@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "historyId": "a0bf7818-62bf-467c-8cd4-3f520628fc49",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "index.html": {
+      "hash": "0a3126bb9cd33b4b015c4e1de67cd51270fb8b4497f785f5605b817b407ab26f",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/a0bf7818-62bf-467c-8cd4-3f520628fc49/blobs/0a/0a3126bb9cd33b4b015c4e1de67cd51270fb8b4497f785f5605b817b407ab26f"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "bebb2baf-7c90-45ad-b008-ddb1b476dc4e",
+      "completedAt": 1792527209246,
+      "output": "/Users/lanayepifanova/Claude-Editor/graphics/chatfuel-cap.mov",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
+}
