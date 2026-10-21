@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>genjutsu-photos-motion (overlay)</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        margin: 0; width: 1080px; height: 1920px;
+        overflow: hidden; background: transparent;
+      }
+      #src-video { width: 1080px; height: 1920px; object-fit: cover; }
+      .beat { position: absolute; inset: 0; }
+      .plate { position: absolute; display: block; }
+      /* a screen recording cannot live inside a timed wrapper, so it carries
+         its own timing and an untimed shell takes the fade */
+      .shell { position: absolute; }
+      .framed { border:2px solid #BFC3CA; border-radius:18px; overflow:hidden; }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="52.333"
+      data-width="1080"
+      data-height="1920"
+    >
+
+      <!-- p01  0.00-4.55s  "A recent report from a16z found that the fastest growing AI businesses are actually consumer apps" -->
+
+      <div class="clip beat" id="p01" data-start="0.0" data-duration="4.55" data-track-index="2">
+        <img class="plate framed" id="p01-img"src="../assets/photos/consumer apps.png" style="left:50px;top:1262px;width:980px;height:297px" alt="" />
+      </div>
+
+      <!-- p02  4.50-9.10s  "Some of them have reached millions of users" -->
+
+      <div class="clip beat" id="p02" data-start="4.5" data-duration="4.6" data-track-index="1">
+        <img class="plate framed" id="p02-img"src="../assets/photos/millions of users.png" style="left:163px;top:1200px;width:754px;height:420px" alt="" />
+      </div>
+
+      <!-- p03  9.05-12.95s  "a consumer app around one thing people already want" -->
+
+      <div class="clip beat" id="p03" data-start="9.05" data-duration="3.9" data-track-index="2">
+        <img class="plate framed" id="p03-img"src="../assets/photos/people already want.png" style="left:50px;top:1247px;width:980px;height:326px" alt="" />
+      </div>
+
+      <!-- p04  21.05-25.95s  "the most viral trend on social media is Higgsfield Genjutsu" -->
+
+      <div class="clip beat" id="p04" data-start="21.05" data-duration="4.9" data-track-index="1">
+        <img class="plate framed" id="p04-img"src="../assets/photos/genjutsu trend.png" style="left:305px;top:1200px;width:470px;height:420px" alt="" />
+      </div>
+
+      <!-- p05  25.90-30.35s  "now available through an API, so you can plug it straight into your own app" -->
+
+      <div class="clip beat" id="p05" data-start="25.9" data-duration="4.45" data-track-index="2">
+        <img class="plate framed" id="p05-img"src="../assets/photos/plug into your app.png" style="left:226px;top:1200px;width:627px;height:420px" alt="" />
+      </div>
+
+      <!-- p06  31.40-35.30s  "gets back a video that they want to post" -->
+
+      <div class="shell framed" id="p06-shell" style="left:167px;top:1200px;width:746px;height:420px">
+        <video class="clip" id="p06" src="../assets/photos/your customer video.mov" data-start="31.4" data-duration="3.9" data-track-index="1" style="width:746px;height:420px;object-fit:cover;display:block" muted playsinline></video>
+      </div>
+
+      <!-- p07  48.60-52.25s  "Comment API and I'll send you a 30-day discount" -->
+
+      <div class="shell framed" id="p07-shell" style="left:167px;top:1200px;width:746px;height:420px">
+        <video class="clip" id="p07" src="../assets/photos/higgsfield api.mov" data-start="48.6" data-duration="3.65" data-track-index="2" style="width:746px;height:420px;object-fit:cover;display:block" muted playsinline></video>
+      </div>
+
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // p01 — consumer apps  "A recent report from a16z found that the fastest growing AI businesses are actually consumer apps"
+      tl.fromTo("#p01-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 0.0);
+      tl.to("#p01-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 4.25);
+      // p02 — millions of users  "Some of them have reached millions of users"
+      tl.fromTo("#p02-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 4.5);
+      tl.to("#p02-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 8.8);
+      // p03 — people already want  "a consumer app around one thing people already want"
+      tl.fromTo("#p03-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 9.05);
+      tl.to("#p03-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 12.65);
+      // p04 — genjutsu trend  "the most viral trend on social media is Higgsfield Genjutsu"
+      tl.fromTo("#p04-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 21.05);
+      tl.to("#p04-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 25.65);
+      // p05 — plug into your app  "now available through an API, so you can plug it straight into your own app"
+      tl.fromTo("#p05-img", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 25.9);
+      tl.to("#p05-img", { opacity: 0, duration: 0.3, ease: "power2.in" }, 30.05);
+      // p06 — your customer video  "gets back a video that they want to post"
+      tl.fromTo("#p06-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 31.4);
+      tl.to("#p06-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 35.0);
+      // p07 — higgsfield api  "Comment API and I'll send you a 30-day discount"
+      tl.fromTo("#p07-shell", { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 48.6);
+      tl.to("#p07-shell", { opacity: 0, duration: 0.3, ease: "power2.in" }, 51.95);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

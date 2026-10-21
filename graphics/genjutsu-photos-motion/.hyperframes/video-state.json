@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "historyId": "bd254de0-8184-4a89-93ad-0e9e581173c8",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "assets/photos/consumer apps.png": {
+      "hash": "e4e9c06148961ff3537b0bd4486f48cbc5fd69f1d46e0ee5d43b752bffd13cf1",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/e4/e4e9c06148961ff3537b0bd4486f48cbc5fd69f1d46e0ee5d43b752bffd13cf1"
+    },
+    "assets/photos/genjutsu trend.png": {
+      "hash": "30a14fb29e362766e5741050fe250c08a63605f2b22377514d4b64c426940962",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/30/30a14fb29e362766e5741050fe250c08a63605f2b22377514d4b64c426940962"
+    },
+    "assets/photos/higgsfield api.mov": {
+      "hash": "607f28543f70b36200006756599f2b5f1e84b682c71ba4a945f9443b65003b13",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/60/607f28543f70b36200006756599f2b5f1e84b682c71ba4a945f9443b65003b13"
+    },
+    "assets/photos/millions of users.png": {
+      "hash": "9182983fe249cf4b4e7e2deca06f3594232575e73e59c345c77f30a87c5eb1e7",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/91/9182983fe249cf4b4e7e2deca06f3594232575e73e59c345c77f30a87c5eb1e7"
+    },
+    "assets/photos/people already want.png": {
+      "hash": "00fbab209276995e41ae380b9345e9b53fe6150b5fa6e18a0b7505e90b0e789b",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/00/00fbab209276995e41ae380b9345e9b53fe6150b5fa6e18a0b7505e90b0e789b"
+    },
+    "assets/photos/plug into your app.png": {
+      "hash": "13aa77ad45fd0d3cbcc63390fb4343d9b936acef327f23ae6afc6cdadc9a0127",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/13/13aa77ad45fd0d3cbcc63390fb4343d9b936acef327f23ae6afc6cdadc9a0127"
+    },
+    "assets/photos/your customer video.mov": {
+      "hash": "f02bec2e4218d859eb7b257478f5e93cb89760137b276314f8480d7b027dda9c",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/f0/f02bec2e4218d859eb7b257478f5e93cb89760137b276314f8480d7b027dda9c"
+    },
+    "index.html": {
+      "hash": "53aac7d031901c91f690e705a4e152e1e278382ae8342dded433f411f2b76e32",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/53/53aac7d031901c91f690e705a4e152e1e278382ae8342dded433f411f2b76e32"
+    },
+    "variants/overlay.html": {
+      "hash": "9f5c8a44e48f69b831666d9ce66378d355dc89b92bc751e497ac44cc11e7f38e",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/9f/9f5c8a44e48f69b831666d9ce66378d355dc89b92bc751e497ac44cc11e7f38e"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "f20aeb02-d908-42b6-95c6-211c404eaa0d",
+      "completedAt": 1792601211817,
+      "output": "/Users/lanayepifanova/Claude-Editor/graphics/genjutsu-broll.mov",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
+}

@@ -122,10 +122,25 @@ CHATFUEL = [
     ("end card",      CF_KIT + "end card.mp4",     1.50, 5.15, 3.65, 960, None),
 ]
 
+# Genjutsu (2026-10-21): her second Higgsfield kit (footage/higgsfield kit/, with a
+# space — NOT the deleted higgsfield-kit/ above). Her chin sits at ~1190 on this
+# framing, so plates are 420 tall and run 1200..1620 under it. Both recordings
+# are 16:9 -> 746x420. The kit's "(edited)" copy is unreadable (no moov atom).
+GJ_KIT = "footage/higgsfield kit/"
+GENJUTSU = [
+    # a Genjutsu output: the dancer and the lit-phone crowd, the "video they want
+    # to post". The lit-phones half (6s on) is the more striking one.
+    ("your customer video", GJ_KIT + "\u0430\u0441\u043f\u043c\u0440\u0438\u043e\u0442\u043b\u0434.mp4", 6.00, 10.00, 3.90, 746, None),
+    # the API dashboard zooming onto "Create API key" — stops at 4.0s, before the
+    # dialog and well before the frame that shows a live key
+    ("higgsfield api",      GJ_KIT + "API_SCREEN.mp4", 0.30, 4.00, 3.65, 746, None),
+]
+
 PROJECTS = {
     "neurons":    {"out": "graphics/Neurons-png",    "plate_h": PLATE_H, "clips": CLIPS},
     "higgsfield": {"out": "graphics/Higgsfield-png", "plate_h": 506,     "clips": HIGGSFIELD},
     "chatfuel":   {"out": "graphics/chatfuel-broll-src", "plate_h": 540, "clips": CHATFUEL},
+    "genjutsu":   {"out": "graphics/genjutsu-broll-src", "plate_h": 420, "clips": GENJUTSU},
 }
 
 

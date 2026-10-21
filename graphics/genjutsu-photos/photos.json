@@ -1,0 +1,44 @@
+{
+ "consumer apps": {
+  "file": "consumer apps.png",
+  "mode": "raw",
+  "w": 1472,
+  "h": 446
+ },
+ "genjutsu trend": {
+  "file": "genjutsu trend.png",
+  "mode": "raw",
+  "w": 714,
+  "h": 638
+ },
+ "higgsfield api": {
+  "file": "higgsfield api.mov",
+  "mode": "raw-video",
+  "w": 746,
+  "h": 420
+ },
+ "millions of users": {
+  "file": "millions of users.png",
+  "mode": "raw",
+  "w": 1472,
+  "h": 820
+ },
+ "people already want": {
+  "file": "people already want.png",
+  "mode": "raw",
+  "w": 1472,
+  "h": 490
+ },
+ "plug into your app": {
+  "file": "plug into your app.png",
+  "mode": "raw",
+  "w": 1180,
+  "h": 790
+ },
+ "your customer video": {
+  "file": "your customer video.mov",
+  "mode": "raw-video",
+  "w": 746,
+  "h": 420
+ }
+}

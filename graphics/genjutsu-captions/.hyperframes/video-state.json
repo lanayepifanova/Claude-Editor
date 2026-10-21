@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "historyId": "a03f2897-bb90-4f6b-bef8-ad30384a1579",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "index.html": {
+      "hash": "fccf4d07fe06a6bb2c033697d3d27a17f75ad1b145b9f01f216b96622bf49edf",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/a03f2897-bb90-4f6b-bef8-ad30384a1579/blobs/fc/fccf4d07fe06a6bb2c033697d3d27a17f75ad1b145b9f01f216b96622bf49edf"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "824a207d-0dca-4133-9296-98c2921cc223",
+      "completedAt": 1792600975826,
+      "output": "/Users/lanayepifanova/Claude-Editor/graphics/genjutsu-cap.mov",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
+}

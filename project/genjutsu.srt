@@ -1,0 +1,272 @@
+1
+00:00:00,020 --> 00:00:00,800
+A recent report
+
+2
+00:00:00,800 --> 00:00:01,860
+from a16z found
+
+3
+00:00:01,860 --> 00:00:02,760
+that the fastest growing
+
+4
+00:00:02,760 --> 00:00:03,480
+AI businesses are
+
+5
+00:00:03,480 --> 00:00:05,260
+actually consumer apps.
+
+6
+00:00:05,260 --> 00:00:05,540
+Some of them
+
+7
+00:00:05,560 --> 00:00:06,150
+have reached millions
+
+8
+00:00:06,150 --> 00:00:06,970
+of users and passed $100
+
+9
+00:00:06,970 --> 00:00:07,420
+million in annual
+
+10
+00:00:07,440 --> 00:00:08,230
+recurring revenue
+
+11
+00:00:08,230 --> 00:00:09,300
+in under two years.
+
+12
+00:00:09,300 --> 00:00:09,930
+If I were starting
+
+13
+00:00:09,930 --> 00:00:10,720
+an AI business today,
+
+14
+00:00:10,720 --> 00:00:11,580
+I'd build a consumer app
+
+15
+00:00:11,580 --> 00:00:12,540
+around one thing people
+
+16
+00:00:12,540 --> 00:00:13,540
+already want.
+
+17
+00:00:13,540 --> 00:00:14,280
+The big AI companies
+
+18
+00:00:14,280 --> 00:00:15,080
+offer dozens of models
+
+19
+00:00:15,080 --> 00:00:15,750
+so they can't go all
+
+20
+00:00:15,750 --> 00:00:16,660
+in on any single one.
+
+21
+00:00:16,660 --> 00:00:17,120
+A new company
+
+22
+00:00:17,140 --> 00:00:17,930
+can do the opposite,
+
+23
+00:00:17,930 --> 00:00:18,810
+which is pick one thing,
+
+24
+00:00:18,810 --> 00:00:19,480
+do it really well,
+
+25
+00:00:19,480 --> 00:00:20,120
+and build a huge
+
+26
+00:00:20,120 --> 00:00:21,140
+audience around it.
+
+27
+00:00:21,140 --> 00:00:21,590
+Right now,
+
+28
+00:00:21,610 --> 00:00:22,420
+the most viral trend
+
+29
+00:00:22,420 --> 00:00:23,040
+on social media
+
+30
+00:00:23,040 --> 00:00:24,200
+is Higgsfield Genjutsu.
+
+31
+00:00:24,200 --> 00:00:24,800
+People can swap
+
+32
+00:00:24,800 --> 00:00:25,130
+their faces
+
+33
+00:00:25,150 --> 00:00:26,060
+onto trending videos.
+
+34
+00:00:26,060 --> 00:00:26,800
+And it's now available
+
+35
+00:00:26,800 --> 00:00:27,320
+through an API,
+
+36
+00:00:27,340 --> 00:00:27,800
+so you can plug
+
+37
+00:00:27,820 --> 00:00:28,190
+it straight
+
+38
+00:00:28,210 --> 00:00:28,940
+into your own app.
+
+39
+00:00:28,960 --> 00:00:29,900
+That means you can build
+
+40
+00:00:29,900 --> 00:00:30,660
+an entire app around
+
+41
+00:00:30,660 --> 00:00:31,480
+this one feature.
+
+42
+00:00:31,480 --> 00:00:32,290
+Your customer uploads
+
+43
+00:00:32,290 --> 00:00:33,060
+a clip and a few photos
+
+44
+00:00:33,060 --> 00:00:33,780
+of themselves, and
+
+45
+00:00:33,780 --> 00:00:34,370
+gets back a video
+
+46
+00:00:34,370 --> 00:00:35,620
+that they want to post.
+
+47
+00:00:35,620 --> 00:00:36,230
+Higgsfield handles
+
+48
+00:00:36,230 --> 00:00:36,690
+the generation
+
+49
+00:00:36,710 --> 00:00:37,160
+so you can build
+
+50
+00:00:37,180 --> 00:00:37,660
+the experience
+
+51
+00:00:37,680 --> 00:00:38,100
+around it.
+
+52
+00:00:38,120 --> 00:00:39,120
+The timing is good too.
+
+53
+00:00:39,120 --> 00:00:39,860
+Higgsfield has already
+
+54
+00:00:39,860 --> 00:00:40,370
+spent millions
+
+55
+00:00:40,390 --> 00:00:41,160
+of dollars on marketing
+
+56
+00:00:41,160 --> 00:00:41,870
+so people know the trend
+
+57
+00:00:41,870 --> 00:00:43,040
+and want to try it.
+
+58
+00:00:43,040 --> 00:00:43,930
+The company also doesn't
+
+59
+00:00:43,930 --> 00:00:44,620
+have its own mobile
+
+60
+00:00:44,620 --> 00:00:45,340
+or desktop app yet,
+
+61
+00:00:45,340 --> 00:00:46,180
+and the Genjutsu name
+
+62
+00:00:46,180 --> 00:00:46,980
+isn't trademarked,
+
+63
+00:00:46,980 --> 00:00:47,690
+so the consumer app
+
+64
+00:00:47,690 --> 00:00:48,620
+is still up for grabs.
+
+65
+00:00:48,620 --> 00:00:49,480
+Comment API and I'll
+
+66
+00:00:49,480 --> 00:00:50,360
+send you a 30-day
+
+67
+00:00:50,360 --> 00:00:51,380
+discount on all models
+
+68
+00:00:51,380 --> 00:00:52,333
+in the Higgsfield API.
+

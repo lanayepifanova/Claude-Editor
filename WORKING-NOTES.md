@@ -836,3 +836,15 @@ the *Wealth of Nations* scans on Commons are tiny (376px) — "Wealth of Nations
 title page, "…title RZ.jpg" is Vol. II. Check `LicenseShortName` in extmetadata for every file
 (one nail-salon photo was CC BY-SA and was dropped). Credits in
 `graphics/chatfuel-broll-src/credits.json`. Plates now run the whole video; 11 SFX total.
+
+**Genjutsu (2026-10-21): second Higgsfield video, kit-honest coverage with a gap list.**
+ffprobe says `r_frame_rate=120/1` (avg 29.84, VFR) — pass `--fps 30`. -21.5 LUFS, room-tone
+peak ~-40; `restore_speech.py` at the default -45 gave only short sibilant tails (peak -25..-30,
+10-15 dB over the floor, so real) and three min-gap merges inside "trending videos", "one
+feature", "try it"; no retakes. Her framing here is closer (chin ~1190), so plates are 420px
+tall centred y 1410 (band 1200-1620). The a16z charts are white/cream and sit over her cream
+sweater, so they take chatfuel's hairline `framed_css`. macOS screenshot names carry a
+U+202F narrow no-break space before "AM" — glob them, never type the name. The kit only
+honestly covered ~60% of the runtime; per her ask the rest is left bare and listed for her
+to source, rather than padded with repeats. `Higgsfield Genjutsu (edited).mp4` in the kit
+had no moov atom (incomplete copy) and was skipped.

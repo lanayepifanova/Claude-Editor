@@ -145,6 +145,21 @@ DECKS["chatfuel"] = {
     },
 }
 
+DECKS["genjutsu"] = {
+    "src": "graphics/genjutsu-broll-src",
+    # her second Higgsfield kit: two recordings retimed by build_clips.py, and
+    # five screenshots cropped to the part that reads at a 420px plate height
+    # (a16z charts, the Genjutsu card, the API code). All keep their own ground —
+    # the charts carry labelled text that knocking would smudge.
+    "assets": {
+        **{f"{n}.mov": {"mode": "raw"} for n in (
+            "your customer video", "higgsfield api")},
+        **{f"{n}.png": {"mode": "raw"} for n in (
+            "consumer apps", "millions of users", "people already want",
+            "genjutsu trend", "plug into your app")},
+    },
+}
+
 HI, LO = 246.0, 228.0
 
 

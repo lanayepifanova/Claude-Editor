@@ -192,6 +192,33 @@ PROJECTS = {
             ("end card",       49.25, 52.90, 960, 540, 330, "This video is sponsored by Chatfuel. Comment PINS"),
         ],
     },
+    "genjutsu-photos-motion": {
+        "source": "genjutsu.mp4",
+        "deck": "genjutsu",
+        "duration": 52.333,
+        "frame": (1080, 1920),
+        # Closer framing than the first higgsfield video: her chin sits at ~1190,
+        # so plates are 420px tall at most and centred y 1410 (1200..1620),
+        # under the chin and inside the TikTok floor. Captions are at y=0.25.
+        "band": (1200, 1620),
+        # the a16z charts are white/cream and land over her cream sweater, so
+        # every plate gets the flat hairline frame from chatfuel
+        "framed_css": "border:2px solid #BFC3CA; border-radius:18px; overflow:hidden;",
+        # Kit-honest coverage: 13.0-21.0 (big companies vs one-thing focus) and
+        # 35.3-48.6 (Higgsfield handles generation / marketing spend / no app,
+        # no trademark) are left bare on purpose — nothing in her kit fits them,
+        # and she asked to be told rather than have the kit repeated. 30.35-31.4
+        # ("an entire app around this one feature") is a 1s breath on her face.
+        "beats": [
+            ("consumer apps",       0.00,  4.55, 980, 540, 1410, "A recent report from a16z found that the fastest growing AI businesses are actually consumer apps"),
+            ("millions of users",   4.50,  9.10, 754, 540, 1410, "Some of them have reached millions of users"),
+            ("people already want", 9.05, 12.95, 980, 540, 1410, "a consumer app around one thing people already want"),
+            ("genjutsu trend",     21.05, 25.95, 470, 540, 1410, "the most viral trend on social media is Higgsfield Genjutsu"),
+            ("plug into your app", 25.90, 30.35, 627, 540, 1410, "now available through an API, so you can plug it straight into your own app"),
+            ("your customer video", 31.40, 35.30, 746, 540, 1410, "gets back a video that they want to post"),
+            ("higgsfield api",     48.60, 52.25, 746, 540, 1410, "Comment API and I'll send you a 30-day discount"),
+        ],
+    },
 }
 
 HTML = """<!doctype html>
