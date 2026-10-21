@@ -157,7 +157,19 @@ DECKS["genjutsu"] = {
         **{f"{n}.png": {"mode": "raw"} for n in (
             "consumer apps", "millions of users", "people already want",
             "genjutsu trend", "plug into your app")},
+        # v2 (2026-10-21): web-sourced logos and photos for the two bare
+        # stretches, credits in graphics/genjutsu-web-src/credits.json. The
+        # wordmarks are dark ink and would die over her brown hair, so they are
+        # laid on white cards (edit/logo_card.py) and keep that ground with the
+        # hairline frame; app icons and the USPTO seal carry their own ground
+        # inside their alpha, so they pass through.
+        **{f"{n}.png": {"mode": "raw"} for n in ("dozens of models", "know the trend")},
+        **{f"{n}.jpg": {"mode": "raw"} for n in ("a new company", "spent millions")},
+        **{f"{n}.png": {"mode": "passthrough"} for n in (
+            "pick one thing", "higgsfield handles", "mobile or desktop app",
+            "isnt trademarked")},
     },
+    "extra_src": ["graphics/genjutsu-web-src"],
 }
 
 HI, LO = 246.0, 228.0
@@ -218,12 +230,22 @@ def main():
     args = ap.parse_args()
 
     deck = DECKS[args.deck]
-    src = ROOT / deck["src"]
+    # a deck may draw on several source dirs (e.g. her kit plus a fresh
+    # directory of downloaded images with its credits.json); names stay unique
+    # across them because the stem is the manifest key
+    srcs = [ROOT / d for d in ([deck["src"]] + deck.get("extra_src", []))]
     out_dir = ROOT / "graphics" / f"{args.deck}-photos"
     out_dir.mkdir(parents=True, exist_ok=True)
 
     manifest = {}
-    on_disk = {f.name for f in src.iterdir() if not f.name.startswith(".")}
+    where = {}
+    for d in srcs:
+        for f in d.iterdir():
+            if f.name.startswith(".") or f.is_dir() or f.name == "credits.json":
+                continue
+            assert f.name not in where, f"{f.name} is in both {where.get(f.name)} and {d}"
+            where[f.name] = d
+    on_disk = set(where)
     known = set(deck["assets"])
     for missing in sorted(known - on_disk):
         print(f"  ! declared but not on disk: {missing}")
@@ -235,7 +257,7 @@ def main():
         stem = Path(name).stem
         if spec["mode"] == "raw" and name.lower().endswith(".mov"):
             dst = out_dir / name
-            subprocess.run(["cp", str(src / name), str(dst)], check=True)
+            subprocess.run(["cp", str(where[name] / name), str(dst)], check=True)
             wh = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0",
                                  "-show_entries", "stream=width,height",
                                  "-of", "csv=p=0:s=x", str(dst)],
@@ -245,7 +267,7 @@ def main():
             print(f"  {stem:22s} raw video    {vw}x{vh}")
             continue
 
-        a = read_rgba(src / name)
+        a = read_rgba(where[name] / name)
         if spec["mode"] == "knock":
             a = knock(a, spec.get("hi", HI), spec.get("lo", LO))
         elif spec["mode"] == "passthrough":

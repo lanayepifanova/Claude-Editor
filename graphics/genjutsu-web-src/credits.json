@@ -1,0 +1,22 @@
+{
+ "_note": "Sourced 2026-10-21 for genjutsu-v2. Logos are used editorially to name the company; trademarks belong to their owners. Commons files are the Commons PNG renders (1600-1920px thumbnails) of the listed file. Cards were built with edit/logo_card.py from the files in parts/.",
+ "dozens of models.png": {
+  "built": "python3 edit/logo_card.py 'graphics/genjutsu-web-src/dozens of models.png' 960 420 2 2 360 100 parts/openai.png parts/anthropic.png parts/gemini.png parts/meta.png",
+  "parts": ["parts/openai.png", "parts/anthropic.png", "parts/gemini.png", "parts/meta.png"]
+ },
+ "parts/openai.png": {"source": "https://commons.wikimedia.org/wiki/File:OpenAI_logo_2025_(wordmark).svg", "author": "OpenAI (from openai.com/brand)", "licence": "Public domain per Commons; trademarked"},
+ "parts/anthropic.png": {"source": "https://commons.wikimedia.org/wiki/File:Anthropic_logo.svg", "author": "Anthropic", "licence": "Public domain per Commons"},
+ "parts/gemini.png": {"source": "https://commons.wikimedia.org/wiki/File:Google_Gemini_logo_2025.svg", "author": "Google LLC", "licence": "Public domain per Commons; trademarked"},
+ "parts/meta.png": {"source": "https://commons.wikimedia.org/wiki/File:Meta_Platforms_Inc._logo.svg", "author": "Meta Platforms (from about.meta.com/brand/resources)", "licence": "Public domain per Commons; trademarked"},
+ "a new company.jpg": {"source": "https://commons.wikimedia.org/wiki/File:San_Francisco,_California_April_2022_Salesforce_Tower.jpg", "author": "Sharon Hahn Darlin (Flickr)", "licence": "CC BY 2.0"},
+ "pick one thing.png": {"source": "https://commons.wikimedia.org/wiki/File:Instagram_logo_2022.svg", "author": "Instagram (Meta)", "licence": "Public domain per Commons; trademarked"},
+ "higgsfield handles.png": {"source": "https://higgsfield.ai/pwa/icon-512.png", "author": "Higgsfield (official app icon from its web manifest)", "licence": "Official brand mark, used editorially"},
+ "spent millions.jpg": {"source": "https://static.higgsfield.ai/public/thumbnail/default.jpg", "author": "Higgsfield (official og:image of higgsfield.ai)", "licence": "Official marketing image, used editorially"},
+ "know the trend.png": {
+  "built": "python3 edit/logo_card.py 'graphics/genjutsu-web-src/know the trend.png' 746 420 1 1 560 150 parts/tiktok.png",
+  "parts": ["parts/tiktok.png"]
+ },
+ "parts/tiktok.png": {"source": "https://commons.wikimedia.org/wiki/File:Tiktok_logo_text.svg", "author": "ByteDance", "licence": "Public domain per Commons; trademarked"},
+ "mobile or desktop app.png": {"source": "https://commons.wikimedia.org/wiki/File:App_Store_(iOS).svg", "author": "Apple", "licence": "Public domain per Commons; trademarked"},
+ "isnt trademarked.png": {"source": "https://commons.wikimedia.org/wiki/File:Seal_of_the_United_States_Patent_and_Trademark_Office.svg", "author": "U.S. government (USPTO)", "licence": "Public domain (US federal work); insignia"}
+}

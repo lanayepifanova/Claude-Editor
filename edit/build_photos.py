@@ -204,18 +204,26 @@ PROJECTS = {
         # the a16z charts are white/cream and land over her cream sweater, so
         # every plate gets the flat hairline frame from chatfuel
         "framed_css": "border:2px solid #BFC3CA; border-radius:18px; overflow:hidden;",
-        # Kit-honest coverage: 13.0-21.0 (big companies vs one-thing focus) and
-        # 35.3-48.6 (Higgsfield handles generation / marketing spend / no app,
-        # no trademark) are left bare on purpose — nothing in her kit fits them,
-        # and she asked to be told rather than have the kit repeated. 30.35-31.4
-        # ("an entire app around this one feature") is a 1s breath on her face.
+        # v1 left 13.0-21.0 and 35.3-48.6 bare (nothing in her kit fit). v2
+        # (2026-10-21) fills them with web-sourced logos for "the tech San
+        # Francisco world" — graphics/genjutsu-web-src/credits.json. 30.35-31.4
+        # ("an entire app around this one feature") stays a 1s breath on her
+        # face: too short for a plate.
         "beats": [
             ("consumer apps",       0.00,  4.55, 980, 540, 1410, "A recent report from a16z found that the fastest growing AI businesses are actually consumer apps"),
             ("millions of users",   4.50,  9.10, 754, 540, 1410, "Some of them have reached millions of users"),
             ("people already want", 9.05, 12.95, 980, 540, 1410, "a consumer app around one thing people already want"),
+            ("dozens of models",   12.90, 16.70, 960, 540, 1410, "The big AI companies offer dozens of models"),
+            ("a new company",      16.65, 18.45, 655, 540, 1410, "A new company can do the opposite"),
+            ("pick one thing",     18.40, 21.10, 420, 540, 1410, "pick one thing, do it really well, and build a huge audience around it"),
             ("genjutsu trend",     21.05, 25.95, 470, 540, 1410, "the most viral trend on social media is Higgsfield Genjutsu"),
             ("plug into your app", 25.90, 30.35, 627, 540, 1410, "now available through an API, so you can plug it straight into your own app"),
             ("your customer video", 31.40, 35.30, 746, 540, 1410, "gets back a video that they want to post"),
+            ("higgsfield handles", 35.25, 38.10, 420, 540, 1410, "Higgsfield handles the generation"),
+            ("spent millions",     38.05, 41.20, 746, 540, 1410, "Higgsfield has already spent millions of dollars on marketing"),
+            ("know the trend",     41.15, 43.05, 746, 540, 1410, "so people know the trend and want to try it"),
+            ("mobile or desktop app", 43.00, 45.40, 420, 540, 1410, "doesn't have its own mobile or desktop app yet"),
+            ("isnt trademarked",   45.35, 48.65, 420, 540, 1410, "the Genjutsu name isn't trademarked"),
             ("higgsfield api",     48.60, 52.25, 746, 540, 1410, "Comment API and I'll send you a 30-day discount"),
         ],
     },

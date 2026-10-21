@@ -848,3 +848,17 @@ U+202F narrow no-break space before "AM" — glob them, never type the name. The
 honestly covered ~60% of the runtime; per her ask the rest is left bare and listed for her
 to source, rather than padded with repeats. `Higgsfield Genjutsu (edited).mp4` in the kit
 had no moov atom (incomplete copy) and was skipped.
+
+**Genjutsu v2 (2026-10-21): web logos fill the two bare stretches.** Her ask: "find images
+online ... with logos as much as possible and appeal to the tech san francisco world". Eight
+plates, sources and licences in `graphics/genjutsu-web-src/credits.json` (prep_photos now takes
+`extra_src` dirs, so downloads live apart from her kit). Commons hosts most big-tech logos as
+public-domain PNG renders (OpenAI, Anthropic, Gemini, Meta, Instagram, TikTok, App Store, USPTO
+seal); Higgsfield is not on Commons — its official 512px icon is in its web manifest
+(`higgsfield.ai/pwa/icon-512.png`) and its og:image is a usable official marketing still. **Dark
+wordmarks on transparent die over her brown hair**, so they go on a white card built by
+`edit/logo_card.py` (grid of official files, takes the hairline frame); app icons and the seal
+carry their own ground and pass through. CC BY-SA photos were skipped (Yahoo 101 billboard).
+**Record the burn's `--sfx` list** — v1's wasn't written down and had to be dug out of a session
+log; v2's 15 are: pop 0.05/21.05/18.40/38.05/43.00 @-16, whoosh-short 4.50/9.05/31.40/12.90/
+35.25/45.35 @-17, click-soft 25.90/16.65/41.15 @-16, ping 48.60 @-16 (media-use sfx).

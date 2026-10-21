@@ -1,9 +1,21 @@
 {
+ "a new company": {
+  "file": "a new company.png",
+  "mode": "raw",
+  "w": 1920,
+  "h": 1232
+ },
  "consumer apps": {
   "file": "consumer apps.png",
   "mode": "raw",
   "w": 1472,
   "h": 446
+ },
+ "dozens of models": {
+  "file": "dozens of models.png",
+  "mode": "raw",
+  "w": 960,
+  "h": 420
  },
  "genjutsu trend": {
   "file": "genjutsu trend.png",
@@ -17,11 +29,35 @@
   "w": 746,
   "h": 420
  },
+ "higgsfield handles": {
+  "file": "higgsfield handles.png",
+  "mode": "passthrough",
+  "w": 512,
+  "h": 512
+ },
+ "isnt trademarked": {
+  "file": "isnt trademarked.png",
+  "mode": "passthrough",
+  "w": 1913,
+  "h": 1913
+ },
+ "know the trend": {
+  "file": "know the trend.png",
+  "mode": "raw",
+  "w": 746,
+  "h": 420
+ },
  "millions of users": {
   "file": "millions of users.png",
   "mode": "raw",
   "w": 1472,
   "h": 820
+ },
+ "mobile or desktop app": {
+  "file": "mobile or desktop app.png",
+  "mode": "passthrough",
+  "w": 1920,
+  "h": 1920
  },
  "people already want": {
   "file": "people already want.png",
@@ -29,11 +65,23 @@
   "w": 1472,
   "h": 490
  },
+ "pick one thing": {
+  "file": "pick one thing.png",
+  "mode": "passthrough",
+  "w": 1920,
+  "h": 1920
+ },
  "plug into your app": {
   "file": "plug into your app.png",
   "mode": "raw",
   "w": 1180,
   "h": 790
+ },
+ "spent millions": {
+  "file": "spent millions.png",
+  "mode": "raw",
+  "w": 1200,
+  "h": 675
  },
  "your customer video": {
   "file": "your customer video.mov",

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "bd254de0-8184-4a89-93ad-0e9e581173c8",
-  "currentRevision": null,
+  "currentRevision": "333716a9-6e98-4730-aa81-b73eea8045de",
   "pendingChanges": false,
   "files": {
     "assets/photos/consumer apps.png": {
@@ -33,15 +33,99 @@
       "content": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/f0/f02bec2e4218d859eb7b257478f5e93cb89760137b276314f8480d7b027dda9c"
     },
     "index.html": {
-      "hash": "53aac7d031901c91f690e705a4e152e1e278382ae8342dded433f411f2b76e32",
-      "content": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/53/53aac7d031901c91f690e705a4e152e1e278382ae8342dded433f411f2b76e32"
+      "hash": "cf833e05be9ec40232047cbdc51d7c7ab1360481a9f5aa0bcfad2a12c01fbb27",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/cf/cf833e05be9ec40232047cbdc51d7c7ab1360481a9f5aa0bcfad2a12c01fbb27"
     },
     "variants/overlay.html": {
-      "hash": "9f5c8a44e48f69b831666d9ce66378d355dc89b92bc751e497ac44cc11e7f38e",
-      "content": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/9f/9f5c8a44e48f69b831666d9ce66378d355dc89b92bc751e497ac44cc11e7f38e"
+      "hash": "8ee1b8ffc8928c072f7eddcf0153916e2620da7b63631c98c4120701e9a6e6fc",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/8e/8ee1b8ffc8928c072f7eddcf0153916e2620da7b63631c98c4120701e9a6e6fc"
+    },
+    "assets/photos/spent millions.png": {
+      "hash": "0c3572229a9774ddbb3e006d849a11eecc6c290b8ae1b3294bb5613f6a661eae",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/0c/0c3572229a9774ddbb3e006d849a11eecc6c290b8ae1b3294bb5613f6a661eae"
+    },
+    "assets/photos/dozens of models.png": {
+      "hash": "f54ec2b8ab1d569c58036964814f9f88b4541b04090261805cfc9267c0546e72",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/f5/f54ec2b8ab1d569c58036964814f9f88b4541b04090261805cfc9267c0546e72"
+    },
+    "assets/photos/higgsfield handles.png": {
+      "hash": "dbcee9fb00b120e84740e5af0c344df01c5839471522d56415080c98f6e8b474",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/db/dbcee9fb00b120e84740e5af0c344df01c5839471522d56415080c98f6e8b474"
+    },
+    "assets/photos/isnt trademarked.png": {
+      "hash": "6863950833c3664e7fe11a2f962353c5e370ea8631f3542255a70845513d23ff",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/68/6863950833c3664e7fe11a2f962353c5e370ea8631f3542255a70845513d23ff"
+    },
+    "assets/photos/know the trend.png": {
+      "hash": "f6eea5c63f82e8b5f04fa90c2e0b5e9ef0b0dc932bb75e9f615edf7ca96db5c3",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/f6/f6eea5c63f82e8b5f04fa90c2e0b5e9ef0b0dc932bb75e9f615edf7ca96db5c3"
+    },
+    "assets/photos/pick one thing.png": {
+      "hash": "7c94c9fbda02dd6d715bf4f9af385309e399d832d49ac8fb1cb94ffa9b661098",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/7c/7c94c9fbda02dd6d715bf4f9af385309e399d832d49ac8fb1cb94ffa9b661098"
+    },
+    "assets/photos/mobile or desktop app.png": {
+      "hash": "c8d0bc72c56c07a42da16c9cff3850eb4b71f27419fd959f2b3e84da02b8d5c1",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/c8/c8d0bc72c56c07a42da16c9cff3850eb4b71f27419fd959f2b3e84da02b8d5c1"
+    },
+    "assets/photos/a new company.png": {
+      "hash": "babbe7c6c4e15b0222dd2226fd87cff53bcfc9f814d270ab44172c7d7758b2af",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/ba/babbe7c6c4e15b0222dd2226fd87cff53bcfc9f814d270ab44172c7d7758b2af"
     }
   },
-  "revisions": {},
+  "revisions": {
+    "333716a9-6e98-4730-aa81-b73eea8045de": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792602195580,
+      "endedAt": 1792602195634,
+      "files": {
+        "assets/photos/a new company.png": {
+          "before": null,
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/ba/babbe7c6c4e15b0222dd2226fd87cff53bcfc9f814d270ab44172c7d7758b2af"
+        },
+        "assets/photos/dozens of models.png": {
+          "before": null,
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/f5/f54ec2b8ab1d569c58036964814f9f88b4541b04090261805cfc9267c0546e72"
+        },
+        "assets/photos/higgsfield handles.png": {
+          "before": null,
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/db/dbcee9fb00b120e84740e5af0c344df01c5839471522d56415080c98f6e8b474"
+        },
+        "assets/photos/isnt trademarked.png": {
+          "before": null,
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/68/6863950833c3664e7fe11a2f962353c5e370ea8631f3542255a70845513d23ff"
+        },
+        "assets/photos/know the trend.png": {
+          "before": null,
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/f6/f6eea5c63f82e8b5f04fa90c2e0b5e9ef0b0dc932bb75e9f615edf7ca96db5c3"
+        },
+        "assets/photos/mobile or desktop app.png": {
+          "before": null,
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/c8/c8d0bc72c56c07a42da16c9cff3850eb4b71f27419fd959f2b3e84da02b8d5c1"
+        },
+        "assets/photos/pick one thing.png": {
+          "before": null,
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/7c/7c94c9fbda02dd6d715bf4f9af385309e399d832d49ac8fb1cb94ffa9b661098"
+        },
+        "assets/photos/spent millions.png": {
+          "before": null,
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/0c/0c3572229a9774ddbb3e006d849a11eecc6c290b8ae1b3294bb5613f6a661eae"
+        },
+        "index.html": {
+          "before": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/53/53aac7d031901c91f690e705a4e152e1e278382ae8342dded433f411f2b76e32",
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/cf/cf833e05be9ec40232047cbdc51d7c7ab1360481a9f5aa0bcfad2a12c01fbb27"
+        },
+        "variants/overlay.html": {
+          "before": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/9f/9f5c8a44e48f69b831666d9ce66378d355dc89b92bc751e497ac44cc11e7f38e",
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/bd254de0-8184-4a89-93ad-0e9e581173c8/blobs/8e/8ee1b8ffc8928c072f7eddcf0153916e2620da7b63631c98c4120701e9a6e6fc"
+        }
+      }
+    }
+  },
   "checks": {
     "latest": null,
     "revisions": {},
@@ -54,13 +138,15 @@
   },
   "renders": {
     "latest": {
-      "id": "f20aeb02-d908-42b6-95c6-211c404eaa0d",
-      "completedAt": 1792601211817,
-      "output": "/Users/lanayepifanova/Claude-Editor/graphics/genjutsu-broll.mov",
+      "id": "daa18b0b-1e0d-4409-82ff-3bb8c9cc4d09",
+      "completedAt": 1792602376459,
+      "output": "/Users/lanayepifanova/Claude-Editor/graphics/genjutsu-broll-v2.mov",
       "status": "completed",
-      "revision": null
+      "revision": "333716a9-6e98-4730-aa81-b73eea8045de"
     },
-    "retainedRevisions": []
+    "retainedRevisions": [
+      "333716a9-6e98-4730-aa81-b73eea8045de"
+    ]
   },
   "pendingArtifactCleanup": []
 }
