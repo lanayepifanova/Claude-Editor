@@ -827,3 +827,12 @@ gains putting each near -19 dBFS peak; prove they landed by subtracting the mast
 (residual -21..-25 dB at each cue, nothing elsewhere) — peak level alone does not move.
 Don't name a build_photos project `<deck>-photos`: that IS the deck dir and the build lands
 inside it.
+
+**Chatfuel v3 (2026-10-20): public-domain pictures for the economics half.** She said yes to
+sourcing them. Commons search with `incategory:"Photographs by Carol M. Highsmith"` is the fast
+route to PD American storefronts (Library of Congress gift, all public domain); the Encyclopédie
+"Épinglier" plate (Defehrt, 1762) is Smith's own pin factory and crops well to the workshop scene;
+the *Wealth of Nations* scans on Commons are tiny (376px) — "Wealth of Nations.jpg" is the Vol. I
+title page, "…title RZ.jpg" is Vol. II. Check `LicenseShortName` in extmetadata for every file
+(one nail-salon photo was CC BY-SA and was dropped). Credits in
+`graphics/chatfuel-broll-src/credits.json`. Plates now run the whole video; 11 SFX total.

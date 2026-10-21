@@ -170,9 +170,18 @@ PROJECTS = {
         # a white UI on a white background reads as nothing — hairline frame, flat,
         # no shadow or glow
         "framed_css": "border:2px solid #DADDE3; border-radius:22px; overflow:hidden;",
-        # Nothing in her Drive kit fits the economics half (stats, Adam Smith, the
-        # pin factory), so plates start on the salon/DM beat.
+        # Nothing in her Drive kit fits the economics half, so 0-27.6s is public
+        # domain from Commons (her "yes" to sourcing them) — see
+        # graphics/chatfuel-broll-src/credits.json. Portrait sources sit narrower
+        # at the same 540 height.
         "beats": [
+            ("storefronts",       0.00,  3.20, 972, 540, 330, "Almost four out of five businesses in America"),
+            ("solo shop",         3.10,  7.40, 972, 540, 330, "running a business alone and doing every job themselves"),
+            ("wealth of nations", 7.35,  9.90, 484, 540, 330, "one of the oldest ideas in economics"),
+            ("adam smith",        9.85, 13.75, 443, 540, 330, "In 1776, Adam Smith opened The Wealth of Nations"),
+            ("pin workshop",     13.70, 17.25, 972, 540, 330, "Ten workers who each did one step"),
+            ("pin plate",        17.20, 21.70, 703, 540, 330, "one person doing every step alone couldn't even make twenty"),
+            ("salon",            21.65, 27.60, 972, 540, 330, "A solo business owner has no one to divide the labour with"),
             ("lockscreen",     27.55, 30.25, 972, 540, 330, "So while they're with the client, nobody answers the DMs"),
             ("ai assistant",   30.15, 34.55, 972, 540, 330, "There's a whole new generation of AI assistants"),
             ("chatfuel logo",  34.50, 36.65, 700, 540, 330, "the AI employee called Chatfuel"),

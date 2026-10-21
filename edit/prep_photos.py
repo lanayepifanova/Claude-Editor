@@ -138,6 +138,10 @@ DECKS["chatfuel"] = {
         "whatsapp reply.png": {"mode": "raw"},
         "booked.png":         {"mode": "raw"},
         "chatfuel logo.png":  {"mode": "passthrough"},
+        # public-domain photos and engravings for the economics half
+        **{f"{n}.jpg": {"mode": "raw"} for n in (
+            "storefronts", "solo shop", "wealth of nations", "adam smith",
+            "pin workshop", "pin plate", "salon")},
     },
 }
 

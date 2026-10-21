@@ -1,4 +1,10 @@
 {
+ "adam smith": {
+  "file": "adam smith.png",
+  "mode": "raw",
+  "w": 902,
+  "h": 1100
+ },
  "ai assistant": {
   "file": "ai assistant.mov",
   "mode": "raw-video",
@@ -40,6 +46,42 @@
   "mode": "raw",
   "w": 1179,
   "h": 655
+ },
+ "pin plate": {
+  "file": "pin plate.png",
+  "mode": "raw",
+  "w": 1248,
+  "h": 958
+ },
+ "pin workshop": {
+  "file": "pin workshop.png",
+  "mode": "raw",
+  "w": 1180,
+  "h": 330
+ },
+ "salon": {
+  "file": "salon.png",
+  "mode": "raw",
+  "w": 1920,
+  "h": 1080
+ },
+ "solo shop": {
+  "file": "solo shop.png",
+  "mode": "raw",
+  "w": 1920,
+  "h": 1066
+ },
+ "storefronts": {
+  "file": "storefronts.png",
+  "mode": "raw",
+  "w": 1920,
+  "h": 1075
+ },
+ "wealth of nations": {
+  "file": "wealth of nations.png",
+  "mode": "raw",
+  "w": 752,
+  "h": 840
  },
  "whatsapp reply": {
   "file": "whatsapp reply.png",

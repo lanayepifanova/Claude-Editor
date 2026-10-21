@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "897b8484-53d1-498a-ae00-706991cbd12b",
-  "currentRevision": null,
+  "currentRevision": "46aec20d-2fc2-469c-82e3-a8029e809b38",
   "pendingChanges": false,
   "files": {
     "assets/photos/ai assistant.mov": {
@@ -37,15 +37,91 @@
       "content": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/56/561de5b209c7a9eeb04f9e0d646f1eb03a27f44ab0f4ab87bf20d898529181ea"
     },
     "index.html": {
-      "hash": "197b86384d1a3be064988866eb345c12d879120af209bd3ac9becc06e45d2cbf",
-      "content": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/19/197b86384d1a3be064988866eb345c12d879120af209bd3ac9becc06e45d2cbf"
+      "hash": "80f3d99073b01ce36f51c3e176264e14b6dd68e467ab900e8695b6519a160fdf",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/80/80f3d99073b01ce36f51c3e176264e14b6dd68e467ab900e8695b6519a160fdf"
     },
     "variants/overlay.html": {
-      "hash": "615ff0f41d2130c484be7c65d55cca893b7028c993e3c09de6dca597147daa78",
-      "content": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/61/615ff0f41d2130c484be7c65d55cca893b7028c993e3c09de6dca597147daa78"
+      "hash": "53e131306e9ec46b52224e547cdf41cd7b9d216740b8ce5ee22ed638c2d18bbb",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/53/53e131306e9ec46b52224e547cdf41cd7b9d216740b8ce5ee22ed638c2d18bbb"
+    },
+    "assets/photos/pin workshop.png": {
+      "hash": "4dd53b82fe5303b9921aae95a3bafd31a4a5384595ba06805f9da173e7c42d56",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/4d/4dd53b82fe5303b9921aae95a3bafd31a4a5384595ba06805f9da173e7c42d56"
+    },
+    "assets/photos/solo shop.png": {
+      "hash": "1dcf137497dc914e4f32284e0ac29d290bd092115fd39c44f4c00a4c2221d367",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/1d/1dcf137497dc914e4f32284e0ac29d290bd092115fd39c44f4c00a4c2221d367"
+    },
+    "assets/photos/wealth of nations.png": {
+      "hash": "f5a7a1a751b9b6cdb834b683560dede294b534c6d399993edf17c574d173d158",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/f5/f5a7a1a751b9b6cdb834b683560dede294b534c6d399993edf17c574d173d158"
+    },
+    "assets/photos/salon.png": {
+      "hash": "afa189ce6e8b7d300710bd7d032bb976184ff92008e6ace00727ebc9b578ce2a",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/af/afa189ce6e8b7d300710bd7d032bb976184ff92008e6ace00727ebc9b578ce2a"
+    },
+    "assets/photos/pin plate.png": {
+      "hash": "341a4f671a00bccae281d2882cf100d47e37f9ad9ea189b180e456062d61f0f0",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/34/341a4f671a00bccae281d2882cf100d47e37f9ad9ea189b180e456062d61f0f0"
+    },
+    "assets/photos/storefronts.png": {
+      "hash": "3b475f5c85e736d3e8664953dd89fd6232c07a1ab4889ac74e4cfedd153db950",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/3b/3b475f5c85e736d3e8664953dd89fd6232c07a1ab4889ac74e4cfedd153db950"
+    },
+    "assets/photos/adam smith.png": {
+      "hash": "e58107f43591907a40e07a38041a8cf417c3477425ad7c3a8be0b2ac61784402",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/e5/e58107f43591907a40e07a38041a8cf417c3477425ad7c3a8be0b2ac61784402"
     }
   },
-  "revisions": {},
+  "revisions": {
+    "46aec20d-2fc2-469c-82e3-a8029e809b38": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792542202218,
+      "endedAt": 1792542202275,
+      "files": {
+        "assets/photos/adam smith.png": {
+          "before": null,
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/e5/e58107f43591907a40e07a38041a8cf417c3477425ad7c3a8be0b2ac61784402"
+        },
+        "assets/photos/pin plate.png": {
+          "before": null,
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/34/341a4f671a00bccae281d2882cf100d47e37f9ad9ea189b180e456062d61f0f0"
+        },
+        "assets/photos/pin workshop.png": {
+          "before": null,
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/4d/4dd53b82fe5303b9921aae95a3bafd31a4a5384595ba06805f9da173e7c42d56"
+        },
+        "assets/photos/salon.png": {
+          "before": null,
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/af/afa189ce6e8b7d300710bd7d032bb976184ff92008e6ace00727ebc9b578ce2a"
+        },
+        "assets/photos/solo shop.png": {
+          "before": null,
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/1d/1dcf137497dc914e4f32284e0ac29d290bd092115fd39c44f4c00a4c2221d367"
+        },
+        "assets/photos/storefronts.png": {
+          "before": null,
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/3b/3b475f5c85e736d3e8664953dd89fd6232c07a1ab4889ac74e4cfedd153db950"
+        },
+        "assets/photos/wealth of nations.png": {
+          "before": null,
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/f5/f5a7a1a751b9b6cdb834b683560dede294b534c6d399993edf17c574d173d158"
+        },
+        "index.html": {
+          "before": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/19/197b86384d1a3be064988866eb345c12d879120af209bd3ac9becc06e45d2cbf",
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/80/80f3d99073b01ce36f51c3e176264e14b6dd68e467ab900e8695b6519a160fdf"
+        },
+        "variants/overlay.html": {
+          "before": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/61/615ff0f41d2130c484be7c65d55cca893b7028c993e3c09de6dca597147daa78",
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/897b8484-53d1-498a-ae00-706991cbd12b/blobs/53/53e131306e9ec46b52224e547cdf41cd7b9d216740b8ce5ee22ed638c2d18bbb"
+        }
+      }
+    }
+  },
   "checks": {
     "latest": null,
     "revisions": {},
@@ -58,13 +134,15 @@
   },
   "renders": {
     "latest": {
-      "id": "baf01075-3dbd-4f03-a190-7c2b1f16980a",
-      "completedAt": 1792531028686,
+      "id": "d296c59e-9406-4519-bcc3-171b142d989b",
+      "completedAt": 1792542361725,
       "output": "/Users/lanayepifanova/Claude-Editor/graphics/chatfuel-broll.mov",
       "status": "completed",
-      "revision": null
+      "revision": "46aec20d-2fc2-469c-82e3-a8029e809b38"
     },
-    "retainedRevisions": []
+    "retainedRevisions": [
+      "46aec20d-2fc2-469c-82e3-a8029e809b38"
+    ]
   },
   "pendingArtifactCleanup": []
 }
