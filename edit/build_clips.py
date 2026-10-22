@@ -108,20 +108,6 @@ HIGGSFIELD = [
     ("fill deploy",      KIT + "Launch.mp4", 40.00, 43.75, 3.75, 900, None),
 ]
 
-# Chatfuel (2026-10-20): her Drive kit of product recordings, 1920x968 UI. She is
-# matted onto white, so plates sit ABOVE her head (y 60-600) behind her, and the
-# crops are ~1.8:1 so a 972x540 plate keeps the UI text legible.
-CF_KIT = "footage/chatfuel-kit/"
-CHATFUEL = [
-    # the "Good morning!" AI Assistant home, typing out salon booking rules
-    ("ai assistant",  CF_KIT + "ai assistant.mp4", 0.50, 6.00, 4.40, 972, "1120:622:380:20"),
-    # Anna James's appointment card on the specialist calendar
-    ("calendar",      CF_KIT + "calendar.mp4",     6.00, 8.50, 1.85, 972, "1160:644:380:60"),
-    # the Quick summary the AI attaches when it hands the lead to a human
-    ("handoff",       CF_KIT + "handoff.mov",      3.50, 9.50, 3.30, 972, "1950:1083:1600:600"),
-    ("end card",      CF_KIT + "end card.mp4",     1.50, 5.15, 3.65, 960, None),
-]
-
 # Genjutsu (2026-10-21): her second Higgsfield kit (footage/higgsfield kit/, with a
 # space — NOT the deleted higgsfield-kit/ above). Her chin sits at ~1190 on this
 # framing, so plates are 420 tall and run 1200..1620 under it. Both recordings
@@ -139,7 +125,6 @@ GENJUTSU = [
 PROJECTS = {
     "neurons":    {"out": "graphics/Neurons-png",    "plate_h": PLATE_H, "clips": CLIPS},
     "higgsfield": {"out": "graphics/Higgsfield-png", "plate_h": 506,     "clips": HIGGSFIELD},
-    "chatfuel":   {"out": "graphics/chatfuel-broll-src", "plate_h": 540, "clips": CHATFUEL},
     "genjutsu":   {"out": "graphics/genjutsu-broll-src", "plate_h": 420, "clips": GENJUTSU},
 }
 

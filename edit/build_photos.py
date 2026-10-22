@@ -157,41 +157,6 @@ PROJECTS = {
             ("fill deploy",     36.80, 40.55, 900, 540, 1260, "Comment STRATEGY, and I'll send you the setup link"),
         ],
     },
-    "chatfuel-photos-motion": {
-        "source": "chatfuel.mp4",
-        "deck": "chatfuel",
-        "duration": 52.933,
-        "frame": (1080, 1920),
-        # She is matted onto pure white with captions at y=0.75, and her head top
-        # sits at y 600-680, so plates go ABOVE her (centre y 330, 60..600) and are
-        # composited behind the matte. Her ask: "images on top of the white
-        # background (not replacing the background)" — so plates, never full-bleed.
-        "band": (40, 640),
-        # a white UI on a white background reads as nothing — hairline frame, flat,
-        # no shadow or glow
-        "framed_css": "border:2px solid #DADDE3; border-radius:22px; overflow:hidden;",
-        # Nothing in her Drive kit fits the economics half, so 0-27.6s is public
-        # domain from Commons (her "yes" to sourcing them) — see
-        # graphics/chatfuel-broll-src/credits.json. Portrait sources sit narrower
-        # at the same 540 height.
-        "beats": [
-            ("storefronts",       0.00,  3.20, 972, 540, 330, "Almost four out of five businesses in America"),
-            ("solo shop",         3.10,  7.40, 972, 540, 330, "running a business alone and doing every job themselves"),
-            ("wealth of nations", 7.35,  9.90, 484, 540, 330, "one of the oldest ideas in economics"),
-            ("adam smith",        9.85, 13.75, 443, 540, 330, "In 1776, Adam Smith opened The Wealth of Nations"),
-            ("pin workshop",     13.70, 17.25, 972, 540, 330, "Ten workers who each did one step"),
-            ("pin plate",        17.20, 21.70, 703, 540, 330, "one person doing every step alone couldn't even make twenty"),
-            ("salon",            21.65, 27.60, 972, 540, 330, "A solo business owner has no one to divide the labour with"),
-            ("lockscreen",     27.55, 30.25, 972, 540, 330, "So while they're with the client, nobody answers the DMs"),
-            ("ai assistant",   30.15, 34.55, 972, 540, 330, "There's a whole new generation of AI assistants"),
-            ("chatfuel logo",  34.50, 36.65, 700, 540, 330, "the AI employee called Chatfuel"),
-            ("whatsapp reply", 36.60, 39.80, 972, 540, 330, "It answers every DM, comment, and WhatsApp message"),
-            ("calendar",       39.75, 41.60, 972, 540, 330, "books the appointment in their own calendar"),
-            ("handoff",        41.55, 44.85, 972, 540, 330, "hands over the buyers who are ready to pay"),
-            ("booked",         44.80, 49.30, 972, 540, 330, "The owner keeps the work only they can do"),
-            ("end card",       49.25, 52.90, 960, 540, 330, "This video is sponsored by Chatfuel. Comment PINS"),
-        ],
-    },
     "genjutsu-photos-motion": {
         "source": "genjutsu.mp4",
         "deck": "genjutsu",
@@ -202,7 +167,7 @@ PROJECTS = {
         # under the chin and inside the TikTok floor. Captions are at y=0.25.
         "band": (1200, 1620),
         # the a16z charts are white/cream and land over her cream sweater, so
-        # every plate gets the flat hairline frame from chatfuel
+        # every plate gets a flat hairline frame
         "framed_css": "border:2px solid #BFC3CA; border-radius:18px; overflow:hidden;",
         # v1 left 13.0-21.0 and 35.3-48.6 bare (nothing in her kit fit). v2
         # (2026-10-21) fills them with web-sourced logos for "the tech San

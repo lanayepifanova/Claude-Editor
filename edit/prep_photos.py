@@ -125,26 +125,6 @@ DECKS["higgsfield"] = {
     },
 }
 
-DECKS["chatfuel"] = {
-    "src": "graphics/chatfuel-broll-src",
-    # recordings from build_clips.py; phone stills are pre-cropped 1179x655 to the
-    # message that matters. All keep their own ground and get a hairline frame in
-    # build_photos so a white UI does not dissolve into her white background. The
-    # logo lockup already carries alpha.
-    "assets": {
-        **{f"{n}.mov": {"mode": "raw"} for n in (
-            "ai assistant", "calendar", "handoff", "end card")},
-        "lockscreen.png":     {"mode": "raw"},
-        "whatsapp reply.png": {"mode": "raw"},
-        "booked.png":         {"mode": "raw"},
-        "chatfuel logo.png":  {"mode": "passthrough"},
-        # public-domain photos and engravings for the economics half
-        **{f"{n}.jpg": {"mode": "raw"} for n in (
-            "storefronts", "solo shop", "wealth of nations", "adam smith",
-            "pin workshop", "pin plate", "salon")},
-    },
-}
-
 DECKS["genjutsu"] = {
     "src": "graphics/genjutsu-broll-src",
     # her second Higgsfield kit: two recordings retimed by build_clips.py, and
