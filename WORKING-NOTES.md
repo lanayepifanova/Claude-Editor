@@ -862,3 +862,15 @@ carry their own ground and pass through. CC BY-SA photos were skipped (Yahoo 101
 **Record the burn's `--sfx` list** — v1's wasn't written down and had to be dug out of a session
 log; v2's 15 are: pop 0.05/21.05/18.40/38.05/43.00 @-16, whoosh-short 4.50/9.05/31.40/12.90/
 35.25/45.35 @-17, click-soft 25.90/16.65/41.15 @-16, ping 48.60 @-16 (media-use sfx).
+
+**Empress Royalty (2026-10-22): pasted script, retakes by script, captions "at the bottom 75%".**
+That phrase means `--y 0.75` (same as gladiator / north-shore, both sponsored reads). 382.6s ->
+209.0s. -21.0 LUFS, room-tone peak -49, valley -51..-63, so `restore_speech.py --quiet-db -48`
+(+14s). `retakes.py` caught 5, but the real list was 9 hand `remove` spans, including two false
+starts of "Empress Royalty, which trades as", name drilling on the CEO line, and ~50s of
+"Tahuehueto" pronunciation practice. Transcribing **each segment alone** (exact segment bounds)
+was what settled every edge; wider isolated clips drift by 0.5s+. Her keeper says "Alexandra
+Sherron" (no "Woodyer") and "1.2 million ounces" (script: 1.25); captions follow the audio,
+both flagged to her. Disk was tight (~55 GB free): a 209s 1080x1920 ProRes render refused to
+start with 4 workers (needs ~52 GB of frames); `--workers 1` streams instead, 3.5 min.
+Same day: the higgsfield/genjutsu project was removed at her request (moved to the Trash).
