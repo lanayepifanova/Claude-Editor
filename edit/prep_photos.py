@@ -110,48 +110,6 @@ DECKS = {
     },
 }
 
-DECKS["higgsfield"] = {
-    "src": "graphics/Higgsfield-png",
-    # media-kit clips, spliced and retimed upstream by build_clips.py. All carry
-    # their own ground (promo reels, UI), so none knock out.
-    "assets": {
-        **{f"{n}.mov": {"mode": "raw"} for n in (
-            "fill open", "genjutsu viral", "fill fashion", "fill clips",
-            "users marketing", "api hub", "api live", "model list", "api key",
-            "fill deploy")},
-        # the photo of Alex she sent for "this guy". A studio portrait on a
-        # grey-blue sweep: it keeps its ground, knocking it would eat his hair.
-        "this guy.jpeg": {"mode": "raw"},
-    },
-}
-
-DECKS["genjutsu"] = {
-    "src": "graphics/genjutsu-broll-src",
-    # her second Higgsfield kit: two recordings retimed by build_clips.py, and
-    # five screenshots cropped to the part that reads at a 420px plate height
-    # (a16z charts, the Genjutsu card, the API code). All keep their own ground —
-    # the charts carry labelled text that knocking would smudge.
-    "assets": {
-        **{f"{n}.mov": {"mode": "raw"} for n in (
-            "your customer video", "higgsfield api")},
-        **{f"{n}.png": {"mode": "raw"} for n in (
-            "consumer apps", "millions of users", "people already want",
-            "genjutsu trend", "plug into your app")},
-        # v2 (2026-10-21): web-sourced logos and photos for the two bare
-        # stretches, credits in graphics/genjutsu-web-src/credits.json. The
-        # wordmarks are dark ink and would die over her brown hair, so they are
-        # laid on white cards (edit/logo_card.py) and keep that ground with the
-        # hairline frame; app icons and the USPTO seal carry their own ground
-        # inside their alpha, so they pass through.
-        **{f"{n}.png": {"mode": "raw"} for n in ("dozens of models", "know the trend")},
-        **{f"{n}.jpg": {"mode": "raw"} for n in ("a new company", "spent millions")},
-        **{f"{n}.png": {"mode": "passthrough"} for n in (
-            "pick one thing", "higgsfield handles", "mobile or desktop app",
-            "isnt trademarked")},
-    },
-    "extra_src": ["graphics/genjutsu-web-src"],
-}
-
 HI, LO = 246.0, 228.0
 
 
