@@ -34,6 +34,11 @@ Two ways to fill the frame:
                           sharp picture in the top TOP_H px, where it clears her
                           head, and fades it into a blurred copy of itself that
                           fills the rest of the frame.
+  topfit (x0, y0, x1, y1) the same backdrop for charts, slides, headshots and
+                          logos (empress): a `top` crop would cut their sides
+                          off, so the whole box is fitted inside the project's
+                          `fit_band` above her head, over a blurred copy of
+                          itself that fills the frame.
 
 Cuts are hard (CLAUDE.md: hard cut is the default); each picture gets a slow push
 so nothing holds still.
@@ -262,6 +267,81 @@ PROJECTS = {
             ("yellowcake",            "do your own",               "top", (0.5, 0.5, 1.0)),
         ],
     },
+    # Vertical, matted out over the pictures exactly like north-shore-uranium
+    # (2026-10-22): "isolate the speaker and have the background be different
+    # types of images". Photos use `top`; charts, slides, headshots and logos use
+    # `topfit` inside fit_band, the clear strip above her head. Sources: the
+    # Empress site and the Resource Stock Digest report she linked, plus
+    # Wikimedia Commons — graphics/empress-broll-src/credits.json.
+    "empress": {
+        "analysis": "edit/analysis-empress",
+        "src": "graphics/empress-broll-src",
+        "fit_band": (90, 660),
+        "beats": [
+            ("agricola shaft",        "mining royalties go",       "top",    (0.5, 0.35, 0.8)),
+            ("king portrait",         "the king's land",           "top",    (0.5, 0.35, 0.8)),
+            ("open pit",              "mining companies still",    "top",    (0.5, 0.5, 1.0)),
+            ("gold bars pile",        "and some companies do",     "top",    (0.5, 0.5, 1.0)),
+            ("shovel loading",        "a modern royalty",          "top",    (0.55, 0.5, 1.0)),
+            ("barrick mill",          "in return it gets",         "top",    (0.55, 0.5, 1.0)),
+            ("vancouver",             "in 2004 the",               "top",    (0.5, 0.5, 1.0)),
+            ("silver bar",            "came up with a",            "top",    (0.5, 0.5, 1.0)),
+            ("royalty model",         "a stream is the",           "topfit", FULL),
+            ("gold pour",             "a fixed low",              "top",    (0.6, 0.45, 1.0)),
+            ("haul truck",            "either way the",            "top",    (0.5, 0.5, 1.0)),
+            ("gold silver 1yr",       "so when gold",              "topfit", FULL),
+            ("gold bars pair",        "that is why the",           "top",    (0.5, 0.5, 1.0)),
+            ("royalty vs gold",       "since 2011 an",             "topfit", FULL),
+            ("open pit benches",      "compared with",             "top",    (0.5, 0.5, 1.0)),
+            ("empress logo",          "empress royalty which",     "topfit", FULL),
+            ("tsx building",          "on the tsx",                "top",    (0.5, 0.5, 1.0)),
+            ("empress deck cover",    "is a small company",        "topfit", FULL),
+            ("alexandra",             "its chief executive",       "topfit", FULL),
+            ("endeavour",             "mining investment bank",            "topfit", FULL),
+            ("david rhodes",          "david rhodes is",           "topfit", FULL),
+            ("endeavour partnership", "at endeavor they",          "topfit", FULL),
+            ("open pit truck",        "while the big",             "top",    (0.5, 0.5, 1.0)),
+            ("core samples",          "so they started",           "top",    (0.5, 0.5, 1.0)),
+            ("tahuehueto aerial",     "the clearest example",      "top",    (0.5, 0.5, 1.0)),
+            ("tahuehueto adit",       "which is run by",           "top",    (0.2, 0.5, 0.8)),
+            ("silver coins",          "empress paid",              "top",    (0.5, 0.5, 1.0)),
+            ("silver coins pair",     "of its price",              "top",    (0.5, 0.5, 1.0)),
+            ("tahuehueto mill",       "built the mine",            "top",    (0.5, 0.5, 1.0)),
+            ("cash hands",            "the stream has",                "top",    (0.5, 0.5, 1.0)),
+            ("dollar closeup",        "in the first quarter",      "top",    (0.5, 0.5, 1.0)),
+            ("gold bar big",         "more than four times",      "top",    (0.5, 0.5, 1.0)),
+            ("portfolio",             "one of the four",           "topfit", FULL),
+            ("antapite",              "on mines in peru",          "top",    (0.5, 0.5, 1.0)),
+            ("mountains",             "empress put",               "top",    (0.5, 0.5, 1.0)),
+            ("gold bars pile",       "they had brought in",       "top",    (0.5, 0.5, 1.0)),
+            ("revenue chart",         "revenue grew from",         "topfit", FULL),
+            ("gold bars pair",       "the year it reached",       "top",    (0.5, 0.5, 1.0)),
+            ("ivory savanna",         "in september 2026",         "top",    (0.5, 0.5, 1.0)),
+            ("tongon night",          "for a gold stream on",      "top",    (0.5, 0.5, 1.0)),
+            ("barrick mill",          "was built by",              "top",    (0.4, 0.5, 1.0)),
+            ("gold pour bw",          "and has produced over",     "top",    (0.5, 0.5, 1.0)),
+            ("tongon pit",            "under the announced",       "top",    (0.5, 0.5, 1.0)),
+            ("gold pour",            "and then a smaller",        "top",    (0.5, 0.5, 1.0)),
+            ("gold vein",             "for each ounce",            "top",    (0.5, 0.5, 1.0)),
+            ("endeavour",             "the deal came through",     "topfit", FULL),
+            ("london city",           "with the seller",           "top",    (0.5, 0.5, 1.0)),
+            ("cash hands",            "is also lending",           "top",    (0.5, 0.5, 1.0)),
+            ("stock certificate",     "so empress did not",        "top",    (0.5, 0.5, 1.0)),
+            ("contract pen",          "the deal still has",        "top",    (0.5, 0.5, 1.0)),
+            ("capital structure",     "is traded about",      "topfit", FULL),
+            ("tsx old",               "its peers average",         "top",    (0.5, 0.5, 1.0)),
+            ("gold silver 1yr",       "that estimate assumes",     "topfit", FULL),
+            ("galaxy underground",    "risks are real",            "top",    (0.5, 0.5, 1.0)),
+            ("gold vein",            "and on gold",               "top",    (0.5, 0.5, 1.0)),
+            ("tahuehueto aerial",     "much of its revenue",       "top",    (0.3, 0.5, 1.0)),
+            ("manica",                "the mines are in",          "top",    (0.5, 0.5, 1.0)),
+            ("abidjan night",        "which all carry",           "top",    (0.5, 0.5, 1.0)),
+            ("dollar closeup",        "the appian loan",           "top",    (0.4, 0.5, 1.0)),
+            ("tsx building",          "it is also a small",        "top",    (0.4, 0.5, 1.0)),
+            ("empress deck cover",    "you can read",              "topfit", FULL),
+            ("empress logo",          "this was posted",           "topfit", FULL),
+        ],
+    },
     "gladiator": {
         "analysis": "edit/analysis-gladiator",
         "src": "graphics/gladiator-broll-src",
@@ -365,6 +445,21 @@ def prep(src, dst, mode, args, bg, band=FIT_BAND, panel=None):
               f"format=rgba,geq=r='r(X,Y)':g='g(X,Y)':b='b(X,Y)':"
               f"a='255*clip(({TOP_H}-Y)/{TOP_FADE},0,1)'[fg];"
               f"[bg][fg]overlay=0:0,format=yuvj420p")
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-filter_complex", fc,
+                        "-frames:v", "1", "-q:v", "2", str(dst)], check=True)
+        return
+    if mode == "topfit":
+        x0, y0, x1, y1 = args
+        cw, ch = (x1 - x0) * w, (y1 - y0) * h
+        bh = band[1] - band[0]
+        s = min((FW - 80) / cw, bh / ch)
+        sw, sh = int(cw * s) // 2 * 2, int(ch * s) // 2 * 2
+        top = band[0] + (bh - sh) // 2
+        fc = (f"[0]crop={int(cw)}:{int(ch)}:{int(x0 * w)}:{int(y0 * h)},format=rgb24,split[a][b];"
+              f"[a]scale={FW}:{FH}:force_original_aspect_ratio=increase,crop={FW}:{FH},"
+              f"gblur=sigma=45,eq=brightness=-0.12[bg];"
+              f"[b]scale={sw}:{sh}:flags=lanczos[fg];"
+              f"[bg][fg]overlay={(FW - sw) // 2}:{top},format=yuvj420p")
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-filter_complex", fc,
                         "-frames:v", "1", "-q:v", "2", str(dst)], check=True)
         return

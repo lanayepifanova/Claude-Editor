@@ -883,3 +883,9 @@ third ("You can read the com-- you"). It takes ~2 min for 59 segments; do it bef
 export. Renders: a bare `npx` fails on a network blip and still exits 0, and two `--workers 1`
 renders stalled ("Chrome stopped answering") at 54% and 84% after 15+ min while the Mac sat
 idle. `caffeinate -dimsu` in front of the render fixed it (3 min). Always check the .mov's mtime.
+**Empress v3 (2026-10-22): matted out over 62 pictures, same stack as north-shore v3.** Sources: the
+Empress site and the Resource Stock Digest report she linked (mine heroes, headshots, deck charts),
+plus Commons for the history and market beats. Charts, slides, headshots and logos would lose their
+sides to a `top` crop, so `build_broll.py` gained `topfit`: the whole box fitted inside `fit_band`
+(90-660 here) over a blur of itself. Measure the band from the matte's alpha first: her head top
+never rose above 720px. The matte took ~20 min (190 ms/frame) and 8 GB; the 3-layer burn ~25 min.
