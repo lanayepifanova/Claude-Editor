@@ -889,3 +889,14 @@ plus Commons for the history and market beats. Charts, slides, headshots and log
 sides to a `top` crop, so `build_broll.py` gained `topfit`: the whole box fitted inside `fit_band`
 (90-660 here) over a blur of itself. Measure the band from the matte's alpha first: her head top
 never rose above 720px. The matte took ~20 min (190 ms/frame) and 8 GB; the 3-layer burn ~25 min.
+**Empress v4 (2026-10-23): "around 2 min 30" — trimmed 3:24 to 2:30.2 by cutting whole lines.** She
+asked how to shorten it; I offered numbered cut candidates with seconds saved, and she answered with a
+target length rather than picking numbers. Cut: the king's-land opening, CEO/chairman/Endeavour origin,
+"Luca built the mine", the Q1 $6.4M line, Tongon's Randgold/Barrick history and its 3.58%/0.5% terms,
+and the "read the financials at empressroyalty.com" line. Kept the risk block, valuation caveats and
+disclosures (sponsored). Kept "The deal came through Endeavour…" although it was on the list: without
+it "Appian is also lending" names Appian cold — check what a later line depends on before cutting.
+Whole segments come out by `remove` spans in the gaps between them, so no retake pass is needed, but
+whisper re-hears the remainder differently: new fixes were needed, and b-roll cues that matched v3's
+transcript ("is traded about", "its peers average") stopped matching. Never `sed` a cue in
+build_broll.py — the same phrase existed in north-shore's beats and got changed too.
