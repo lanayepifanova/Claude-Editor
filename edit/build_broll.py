@@ -35,7 +35,7 @@ Two ways to fill the frame:
                           head, and fades it into a blurred copy of itself that
                           fills the rest of the frame.
   topfit (x0, y0, x1, y1) the same backdrop for charts, slides, headshots and
-                          logos (empress): a `top` crop would cut their sides
+                          logos: a `top` crop would cut their sides
                           off, so the whole box is fitted inside the project's
                           `fit_band` above her head, over a blurred copy of
                           itself that fills the frame.
@@ -265,63 +265,6 @@ PROJECTS = {
             ("hd069",                 "you can read",              "top", (0.45, 0.5, 1.0)),
             ("vogtle portrait",       "this was posted",           "top", (0.5, 0.62, 0.7)),
             ("yellowcake",            "do your own",               "top", (0.5, 0.5, 1.0)),
-        ],
-    },
-    # Vertical, matted out over the pictures exactly like north-shore-uranium
-    # (2026-10-22): "isolate the speaker and have the background be different
-    # types of images". Photos use `top`; charts, slides, headshots and logos use
-    # `topfit` inside fit_band, the clear strip above her head. Sources: the
-    # Empress site and the Resource Stock Digest report she linked, plus
-    # Wikimedia Commons — graphics/empress-broll-src/credits.json.
-    "empress": {
-        "analysis": "edit/analysis-empress",
-        "src": "graphics/empress-broll-src",
-        "fit_band": (90, 660),
-        "beats": [
-            ("shovel loading",        "a modern royalty",          "top",    (0.55, 0.5, 1.0)),
-            ("barrick mill",          "in return it gets",         "top",    (0.55, 0.5, 1.0)),
-            ("vancouver",             "in 2004 the",               "top",    (0.5, 0.5, 1.0)),
-            ("silver bar",            "came up with a",            "top",    (0.5, 0.5, 1.0)),
-            ("royalty model",         "a stream is the",           "topfit", FULL),
-            ("gold pour",             "a fixed low",              "top",    (0.6, 0.45, 1.0)),
-            ("haul truck",            "either way the",            "top",    (0.5, 0.5, 1.0)),
-            ("gold silver 1yr",       "so when gold",              "topfit", FULL),
-            ("gold bars pair",        "that is why the",           "top",    (0.5, 0.5, 1.0)),
-            ("royalty vs gold",       "since 2011 an",             "topfit", FULL),
-            ("open pit benches",      "compared with",             "top",    (0.5, 0.5, 1.0)),
-            ("empress logo",          "empress royalty which",     "topfit", FULL),
-            ("tsx building",          "on the tsx",                "top",    (0.5, 0.5, 1.0)),
-            ("empress deck cover",    "is a small company",        "topfit", FULL),
-            ("tahuehueto aerial",     "the clearest example",      "top",    (0.5, 0.5, 1.0)),
-            ("tahuehueto adit",       "which is run by",           "top",    (0.2, 0.5, 0.8)),
-            ("silver coins",          "empress paid",              "top",    (0.5, 0.5, 1.0)),
-            ("silver coins pair",     "of its price",              "top",    (0.5, 0.5, 1.0)),
-            ("cash hands",            "the stream has",                "top",    (0.5, 0.5, 1.0)),
-            ("portfolio",             "one of the four",           "topfit", FULL),
-            ("antapite",              "on mines in peru",          "top",    (0.5, 0.5, 1.0)),
-            ("mountains",             "empress put",               "top",    (0.5, 0.5, 1.0)),
-            ("gold bars pile",       "they had brought in",       "top",    (0.5, 0.5, 1.0)),
-            ("revenue chart",         "revenue grew from",         "topfit", FULL),
-            ("gold bars pair",       "the year it reached",       "top",    (0.5, 0.5, 1.0)),
-            ("ivory savanna",         "in september 2026",         "top",    (0.5, 0.5, 1.0)),
-            ("tongon night",          "for a gold stream on",      "top",    (0.5, 0.5, 1.0)),
-            ("endeavour",             "the deal came through",     "topfit", FULL),
-            ("london city",           "with the seller",           "top",    (0.5, 0.5, 1.0)),
-            ("cash hands",            "is also lending",           "top",    (0.5, 0.5, 1.0)),
-            ("stock certificate",     "so empress did not",        "top",    (0.5, 0.5, 1.0)),
-            ("contract pen",          "the deal still has",        "top",    (0.5, 0.5, 1.0)),
-            ("capital structure",     "traded about",      "topfit", FULL),
-            ("tsx old",               "its peers",         "top",    (0.5, 0.5, 1.0)),
-            ("gold silver 1yr",       "that estimate assumes",     "topfit", FULL),
-            ("galaxy underground",    "risks are real",            "top",    (0.5, 0.5, 1.0)),
-            ("gold vein",            "and on gold",               "top",    (0.5, 0.5, 1.0)),
-            ("tahuehueto aerial",     "much of its revenue",       "top",    (0.3, 0.5, 1.0)),
-            ("manica",                "the mines are in",          "top",    (0.5, 0.5, 1.0)),
-            ("abidjan night",        "which all carry",           "top",    (0.5, 0.5, 1.0)),
-            ("dollar closeup",        "the appian loan",           "top",    (0.4, 0.5, 1.0)),
-            ("tsx building",          "small company worth",        "top",    (0.4, 0.5, 1.0)),
-            ("empress deck cover",    "so its shares can",         "topfit", FULL),
-            ("empress logo",          "this was posted",           "topfit", FULL),
         ],
     },
     "gladiator": {
