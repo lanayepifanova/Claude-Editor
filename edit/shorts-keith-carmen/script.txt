@@ -1,0 +1,325 @@
+0:00.00 >> All right, fantastic.
+0:01.32 Carmen, Lee, welcome to our fun show
+0:04.32 here at the Neo Cloud Summit.
+0:05.80 >> Yeah, thank you for having me.
+0:06.76 This is great.
+0:07.60 >> The Ignite studio is on fire today,
+0:09.70 and look who's the sponsor of it,
+0:10.78 Silicon Data and Computer Exchange.
+0:12.72 You're gonna tell us a little bit about Silicon Data
+0:14.84 just to get the ball rolling, okay?
+0:16.44 >> Yeah, so we're excited to be the sponsor of the studio.
+0:19.32 I saw the guest list.
+0:20.76 It's amazing, AI infrastructure leader.
+0:23.24 So we're excited to hear the point of view
+0:25.84 and the latest and greatest development.
+0:27.68 So Silicon Data, we are the referee for the Compute Stack.
+0:31.06 So with the Bloomberg terminal for Compute.
+0:33.38 So you can get compute indices, benchmarking services,
+0:36.88 get alternative data from Silicon Data.
+0:39.44 So our most famous product is the CME Futures Launch,
+0:42.96 gonna be based on Silicon Data's indices in three weeks.
+0:46.16 So it's quite exciting.
+0:47.52 >> Exciting, yeah.
+0:48.36 I like the combination of Bloomberg data
+0:51.56 with all the information going on in the compute industry.
+0:53.72 I haven't heard anything like it.
+0:55.96 So compute is a giant baby, right?
+0:59.00 We're still very early stage.
+1:00.68 But it's gigantic in scale as everyone talk about compute
+1:04.20 in trillions as a unit, as a price unit, right?
+1:06.80 It's kind of ridiculous.
+1:08.14 But the market definitely needs a lot more transparency,
+1:11.36 efficiency, right?
+1:12.44 And risk management too.
+1:13.76 That's what Silicon Data is here to provide.
+1:15.72 You saw Jensen's half a trillion capital formation table,
+1:19.04 right?
+1:19.88 All the people on the table,
+1:21.40 they need risk management layer.
+1:23.32 Without that, the capital formation
+1:25.24 is gonna be very expensive.
+1:26.80 We all know that, right?
+1:28.04 So the hedging out the longer tail risks,
+1:30.60 have the transparency on the rental prices going forward,
+1:34.16 hedging out residual value,
+1:35.96 lifespan of those asset class,
+1:38.08 all very critical to all the financiers and new clouds.
+1:41.92 >> How long have you been around with Silicon Data?
+1:43.68 >> Silicon Data two and a half years.
+1:45.04 >> It almost feels like it's been around for longer.
+1:46.52 >> I know you heard about us, Bob Holly Forever.
+1:49.04 We are the first player
+1:50.04 with the world's first GPU index provider.
+1:52.68 And everyone obviously, we architect the whole
+1:56.12 indices design process,
+1:57.56 normalization, we pioneered everything.
+1:59.84 >> Right, and as you were pioneering,
+2:01.28 you also understood what was going on in the world of GPU.
+2:04.84 >> Changed tremendously, right?
+2:06.80 When we started two and a half years ago,
+2:08.48 there was like what, three new cloud providers?
+2:11.20 Now we easily have 300 new cloud providers.
+2:13.52 >> Is that right? 300?
+2:14.36 >> It's awesome.
+2:15.20 We want consumers, you and me,
+2:17.16 to be transparent, have options, right?
+2:19.08 And also even given 300 new cloud providers globally,
+2:22.72 still not enough.
+2:23.56 >> There's a lot of questions too.
+2:24.80 So the transparency, the accuracy, the information,
+2:27.44 you need a fantastic source for this,
+2:29.20 and it's changing all the time.
+2:30.48 >> You need very unbiased third party,
+2:34.08 that's the referee, right?
+2:35.32 So Silicon Data does not have any principal exposure
+2:38.28 to anyone, we're here to measure, to report,
+2:41.20 to reflect the supply demand curve.
+2:42.64 >> And what gave you the idea for Compute Exchange?
+2:44.52 Obviously a lot, we poured out of this.
+2:46.16 >> Yeah, yeah, yeah.
+2:47.00 >> Compute Exchange is the flip side of the other side
+2:50.20 of the coin, which we do physical transactions of compute.
+2:54.04 So Compute Exchange is a neutral marketplace.
+2:56.60 What do I mean by that?
+2:57.80 We are unfortunately not a new cloud.
+2:59.92 We don't own anything.
+3:01.08 We love our providers.
+3:02.48 We have over 150 providers globally.
+3:04.94 Translate to through Compute Exchange, just like NASDAQ,
+3:08.24 you can procure GPU very efficiently.
+3:10.92 So obviously you have your friends
+3:12.36 that are even new clouds, we love them too.
+3:14.44 You can call 300 salespeople.
+3:16.48 It's great to connect with their friends,
+3:18.36 but may not be the most efficient way to procure GPUs.
+3:21.80 So Compute Exchange, you can RF-Hue any quantity,
+3:24.68 any chip designs, anyone in the world,
+3:27.80 and then you get a response back within 24 hours.
+3:30.24 >> So how many buyers do you have
+3:31.26 coming out of the platform?
+3:32.48 >> Oh my God, we have over billion notional RF-Hue
+3:35.32 every month. >> Wow.
+3:36.56 >> Every month.
+3:37.40 The number is going up over 1,000%.
+3:39.44 >> And how long has this been?
+3:40.68 >> Two and a half years.
+3:41.52 >> Again, it feels like it's been around forever.
+3:42.76 >> I know, I know.
+3:43.60 With OGs right now.
+3:44.56 >> Yeah, so the transaction volume is increasing.
+3:47.54 >> It's increasing to a point.
+3:48.88 We just can't, you know, we probably need 40%
+3:52.00 of our required GPU needs.
+3:54.98 We do secondary sales as well.
+3:57.08 So tons of people coming to me to buy second-hand GPUs.
+4:00.12 >> Oh. >> Right?
+4:00.96 So A100, H100, 509Os, AMD, we do a lot.
+4:05.60 >> So you see where the demand is,
+4:06.98 you see where the supply constraints are hitting hardest.
+4:09.76 >> Exactly, we do token as well.
+4:11.44 So obviously for silicon data, we have a data point of view
+4:14.76 and then through compute change, it's very contextual.
+4:17.62 I know what you need.
+4:18.60 You're looking for something very specific
+4:20.36 in a certain geolocation for some latency requirements, right?
+4:23.84 So we're very, obviously we're very excited
+4:26.40 about new cloud development.
+4:27.76 We're very concerned about, hey, you know,
+4:30.04 the speed of development, for example.
+4:31.68 >> Right, how about tokenomics?
+4:33.72 >> It is so fascinating, right?
+4:35.56 So token-- >> Mobile Surprise
+4:37.12 is not a class being taught now in schools.
+4:40.48 >> I mean, they should, I mean,
+4:42.20 it's really ongoing discussion.
+4:44.48 I don't think, so for GPU pricing,
+4:46.68 it's a lot more mature now.
+4:50.32 So you understand our campaign per GPU per hour,
+4:53.04 there's some price differentiation
+4:54.60 based on the server yourself, right?
+4:56.86 The performances are different.
+4:58.08 People expect some sort of variance.
+5:00.28 Token is a different animal where new token,
+5:03.26 the new LM comes out every other day, I guess, right?
+5:06.40 >> Yeah, what's today?
+5:07.80 >> Exactly, I mean, everything is going at lightning speed.
+5:11.52 Pricing, right?
+5:12.52 How do you figure out, even from provider point of view,
+5:14.56 how do I price my GPU?
+5:16.40 You pull up a token, cash pricing,
+5:18.32 like all those, it's confusing.
+5:21.20 Same time, the customers, right?
+5:23.66 How much are we paying?
+5:24.50 Everything's on demand pricing, right?
+5:26.40 'Cause any provider, token price, right?
+5:28.80 GPU, you can lock in your prices, which is good for us, right?
+5:31.84 You can have a certainty.
+5:33.36 For token, everything's on demand.
+5:34.76 So people can change pricing on yields through API.
+5:37.72 It's really any time, any minute, real time,
+5:40.88 they can change your quantization, right, latency.
+5:44.18 Again, transparency, latency piece
+5:46.00 is something we care a lot more about.
+5:48.52 >> Talk to me about opportunity that you're seeing.
+5:51.44 You're studying all this information
+5:53.42 and all what's happening in the real time market.
+5:55.44 So you're in the catbird seat
+5:57.36 in terms of looking down on this marketplace.
+5:59.24 What are you seeing for the next 12 to 18 months?
+6:01.84 >> We definitely want to,
+6:03.30 so we do see different layer of cake, as Jensen put it,
+6:06.60 right, 'cause we do liquidity layer for GPU, token,
+6:10.36 collocation energy from computer point of view.
+6:13.02 We have data from, again,
+6:14.64 collocation, data centers, GPU, token level.
+6:17.92 So we do see all the other cake.
+6:20.12 We're really passionate.
+6:21.48 I think there's so much opportunity to be captured.
+6:24.38 Every time, you know, the hardware layer,
+6:26.78 you see so many design houses coming up.
+6:28.96 You see people entering fat fabrication process, right?
+6:31.92 Elon's the terafat, right?
+6:34.24 You see people entering the model layer, right?
+6:36.20 Smaller model, large models and different modalities.
+6:39.22 You see people entering the application layer, right?
+6:41.80 There's a lot of agents coming online.
+6:43.76 It's amazing.
+6:44.92 We actually see opportunity every single layer of the cake.
+6:47.72 So at the end, come down to, you know,
+6:50.36 who can really win the customer use cases, right?
+6:53.24 We all know the customer star.
+6:55.12 They're the consumers, like you and me,
+6:56.88 who's into LGBT or cloud, right, whatever.
+6:59.38 Their enterprises looking really excited to, you know,
+7:02.80 optimize, increase their footprint.
+7:05.56 How can, as an industry, right,
+7:08.20 collectively provide solutions to enterprises?
+7:11.24 I think that's a key question.
+7:12.56 >> Yeah, you hear people in the market,
+7:15.36 obviously we're seeing the growth, we're living it,
+7:17.56 and it's a huge wave.
+7:18.96 But we hear a lot of people talking about
+7:21.00 a little bit of a bubble.
+7:22.98 What do you feel when you,
+7:24.36 what do you think when you hear that?
+7:26.20 >> Right, so we have defined the bubble, right?
+7:28.88 You can talk about individual company valuation.
+7:31.80 You can talk about particular asset class.
+7:34.32 You can talk about anything, right?
+7:36.12 And then bubble can mean, you know,
+7:37.72 you're gaining less than you thought you should be gaining.
+7:40.68 Like expect return will be, I don't know, 20%.
+7:43.48 You're, you know, ROI, but then you might get 5%.
+7:46.42 >> I think people are worried.
+7:47.26 >> Depends on the definition.
+7:48.10 >> Right, they're worried about the circular economy
+7:50.24 and the big deals and people raising a lot of debt.
+7:52.48 So now there used to be a lot of earnings power.
+7:54.56 >> So what I would say is you have to double click
+7:58.40 into a particular scenario.
+8:00.40 >> Yeah.
+8:01.24 >> For example, you and me buy cars, right?
+8:03.16 I assume you buy cars.
+8:04.36 So if I tell you buy a car, if you go to like Audi store
+8:07.48 or any store, right?
+8:09.18 They'll ask you, do you need a car loan, right?
+8:11.60 Usually there's affiliation between the car company
+8:15.32 and the financial services, right?
+8:17.34 So they find, they help you finance your car purchase
+8:20.20 to some degree, they charge interest.
+8:21.48 But hey, you buy a car, the car manufacturers are happy.
+8:24.80 You make a payment to the financial services
+8:27.20 of the car company.
+8:28.58 Is that circular economy?
+8:29.84 I don't know.
+8:30.68 I mean, they didn't help you help buy the car.
+8:32.88 >> Right.
+8:33.72 >> So for GPUs, it's interesting.
+8:35.72 A lot of traditional asset-backed lenders.
+8:38.40 So you think about aircraft lenders, right?
+8:40.88 So people, you know, American line buy new jet.
+8:43.72 They don't need to prove to the bank.
+8:45.48 Hey, look at, you know, all the clients
+8:47.64 that have one next year.
+8:48.76 >> Right.
+8:49.60 >> That's what I need to finance my aircraft.
+8:51.44 They don't need to do so.
+8:52.48 >> Yeah.
+8:53.32 >> The banks look at the aircraft itself
+8:54.64 and then say, hey, your aircraft is worth X million.
+8:58.16 Great, we'll give you, we'll finance you X percent.
+9:00.56 You don't need to give me a contract for your clients.
+9:02.88 It's ridiculous, right?
+9:04.08 So come to servers, everyone is off to the contract base.
+9:08.44 And then the asset-backed lending
+9:10.12 really hasn't even started yet, right?
+9:12.36 So I think it's interesting what in this like mixture
+9:14.98 of financing opportunities.
+9:16.84 So that aside, so I think it's very healthy
+9:20.32 for people to think there's a bubble, maybe a bubble,
+9:22.08 maybe not a bubble.
+9:23.28 The best way, every economy goes through cycles.
+9:26.16 Every commodity goes up and downs.
+9:28.12 All your guys electricity, anything.
+9:29.84 That's normal.
+9:30.88 What we do not want from an economy point of view
+9:34.16 is an overbuilt of any asset class.
+9:37.52 You want the market to correct the bubble.
+9:39.20 If there's a bubble, to correct bubble efficiently
+9:41.28 and quickly before it gets too big.
+9:43.20 So that's why you need financial instruments.
+9:45.20 'Cause right now there's no way for you to express opinion
+9:47.88 and say you want to, there's an overbuilt or something.
+9:50.48 You want to short it, right?
+9:51.68 That's if you want to say, hey, I think I know something
+9:54.40 people no one's knows, I want to short it.
+9:56.24 There's no mechanism for you to do so.
+9:58.20 With futures you can't, anyone can express opinions.
+10:01.20 You want long, you want short, it's a fair marketplaces.
+10:04.16 And the price transparency and discovery
+10:06.88 is what the market needs.
+10:08.16 And you don't have to ask me the question.
+10:09.40 You can look at the market rates.
+10:10.88 Oh, then people point to people and sell me it.
+10:12.60 Okay, it means something, right?
+10:14.60 So that's exactly the reason you need compute futures, right?
+10:17.76 For people to do price discovery.
+10:20.20 - It makes me wonder what you have next in store
+10:22.88 for compute exchange.
+10:24.00 - A lot, a lot.
+10:24.84 - Obviously you want to bring on more customers
+10:26.96 and see more volume.
+10:28.80 - So we are doing a lot of forward contracts.
+10:31.96 So forward, what does it mean, right?
+10:33.56 Meaning your client, you're looking for GPU ideally now,
+10:36.84 but you probably can't wait for another three months.
+10:39.60 So you're looking to secure a contract starting GM first.
+10:43.40 And then you enter a contract for another year,
+10:45.24 from GM first next year, right?
+10:46.72 So that we consider forward contracts.
+10:48.56 This is not happening now, it's in the future.
+10:51.16 So forward contracts bilateral, right?
+10:53.40 You sign with a provider.
+10:55.04 This precursor for physical delivery futures,
+10:58.60 that's what's going to happen, right?
+11:00.36 It's physical delivery futures traded again at exchange
+11:03.84 and took away the counterparty risks.
+11:06.84 And it took away the liquidity risks.
+11:09.64 If it's bilateral, you and me are stuck,
+11:11.56 where it's not our way to get out.
+11:13.12 We can trust each other, obviously.
+11:14.68 But for exchange trader, physical delivery futures,
+11:18.40 exchange take out margins.
+11:19.88 If you want to get out before the expiration date,
+11:22.40 you can sell someone else.
+11:23.88 So that's what we are working with.
+11:25.56 I think that will bring so much more transparency
+11:28.24 to our marketplaces than before.
+11:30.24 >> I love it.
+11:31.08 Well, we're going to have to keep an eye on you.
+11:33.24 This is an exciting space in real time, just so dynamic.
+11:37.24 >> Yeah, it is.
+11:38.28 >> Carmen, thanks for taking some time with us.
+11:39.96 Great to have you in the Ignite Studios.
+11:42.28 >> Thank you.

@@ -900,3 +900,9 @@ Whole segments come out by `remove` spans in the gaps between them, so no retake
 whisper re-hears the remainder differently: new fixes were needed, and b-roll cues that matched v3's
 transcript ("is traded about", "its peers average") stopped matching. Never `sed` a cue in
 build_broll.py — the same phrase existed in north-shore's beats and got changed too.
+
+**Shorts finding (2026-10-23, Keith Newman × Carmen Li): she wants a shortlist, then clips it
+herself.** "Find the script… good verbal hooks… after I approve the clip choices, we will
+actually clip it myself." Means 3–6 picks, 30–60s each, timestamps in source time, no renders.
+She asked for this to be saved because she'll ask again, so it's the `find-shorts` project
+skill (`.claude/skills/find-shorts/SKILL.md`).
