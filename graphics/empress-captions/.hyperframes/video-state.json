@@ -1,15 +1,31 @@
 {
   "version": 1,
   "historyId": "81a8865f-9a3a-49c2-9b4a-a3c17fcd919a",
-  "currentRevision": null,
+  "currentRevision": "d3ea1457-f685-4338-941f-d2930ce74edc",
   "pendingChanges": false,
   "files": {
     "index.html": {
-      "hash": "8d28e9e57db299958d9736c44c3bbc8437c862eea11dac80a0813f018f61cd7b",
-      "content": "/Users/lanayepifanova/.cache/hyperframes/history/81a8865f-9a3a-49c2-9b4a-a3c17fcd919a/blobs/8d/8d28e9e57db299958d9736c44c3bbc8437c862eea11dac80a0813f018f61cd7b"
+      "hash": "c178fe603bf3acbc9de7fef7137ffc3d0493460e2f686b78635d7afacecdc94a",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/81a8865f-9a3a-49c2-9b4a-a3c17fcd919a/blobs/c1/c178fe603bf3acbc9de7fef7137ffc3d0493460e2f686b78635d7afacecdc94a"
     }
   },
-  "revisions": {},
+  "revisions": {
+    "d3ea1457-f685-4338-941f-d2930ce74edc": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792710030915,
+      "endedAt": 1792710030915,
+      "files": {
+        "index.html": {
+          "before": "/Users/lanayepifanova/.cache/hyperframes/history/81a8865f-9a3a-49c2-9b4a-a3c17fcd919a/blobs/8d/8d28e9e57db299958d9736c44c3bbc8437c862eea11dac80a0813f018f61cd7b",
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/81a8865f-9a3a-49c2-9b4a-a3c17fcd919a/blobs/c1/c178fe603bf3acbc9de7fef7137ffc3d0493460e2f686b78635d7afacecdc94a"
+        }
+      }
+    }
+  },
   "checks": {
     "latest": null,
     "revisions": {},
@@ -22,13 +38,15 @@
   },
   "renders": {
     "latest": {
-      "id": "e1d16c4c-7027-4946-8671-410f3f7b69d9",
-      "completedAt": 1792687670390,
+      "id": "59a1dada-b3b7-4012-b730-88ee1075bb98",
+      "completedAt": 1792717327774,
       "output": "/Users/lanayepifanova/Claude-Editor/graphics/empress-cap.mov",
       "status": "completed",
-      "revision": null
+      "revision": "d3ea1457-f685-4338-941f-d2930ce74edc"
     },
-    "retainedRevisions": []
+    "retainedRevisions": [
+      "d3ea1457-f685-4338-941f-d2930ce74edc"
+    ]
   },
   "pendingArtifactCleanup": []
 }

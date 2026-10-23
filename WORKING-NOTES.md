@@ -874,3 +874,12 @@ Sherron" (no "Woodyer") and "1.2 million ounces" (script: 1.25); captions follow
 both flagged to her. Disk was tight (~55 GB free): a 209s 1080x1920 ProRes render refused to
 start with 4 workers (needs ~52 GB of frames); `--workers 1` streams instead, 3.5 min.
 Same day: the higgsfield/genjutsu project was removed at her request (moved to the Trash).
+**Empress v2 (2026-10-22): she caught two retakes the first pass missed — run the per-segment
+check on EVERY kept segment, not just the suspicious ones.** "Under the announced terms, Empress
+would receive" and "Appian is also lending Empress" were each a separate kept segment before the
+full take, but the cut-timeline transcript merged each one into its keeper, and so did the
+full-export diff, so nothing flagged them. Transcribing each kept segment alone found both plus a
+third ("You can read the com-- you"). It takes ~2 min for 59 segments; do it before the first
+export. Renders: a bare `npx` fails on a network blip and still exits 0, and two `--workers 1`
+renders stalled ("Chrome stopped answering") at 54% and 84% after 15+ min while the Mac sat
+idle. `caffeinate -dimsu` in front of the render fixed it (3 min). Always check the .mov's mtime.
