@@ -44,7 +44,8 @@ python3 edit/verify.py
 (cd graphics/<name>-captions && FFMPEG_ENCODE_TIMEOUT_MS=3600000 \
    PRODUCER_ENABLE_CHUNKED_ENCODE=true \
    npx hyperframes render . --format mov -q high -f <fps> -o ../<name>-cap.mov)
-#  ^ <fps> = the fps in edit/analysis-<name>/silence.json
+#  ^ <fps> = the fps in edit/analysis-<name>/silence.json — as an integer or a rational:
+#    23.976 must be passed as 24000/1001 (the CLI rejects the decimal: "Invalid fps")
 
 # 5. verify the RENDER as text, never with a screenshot
 python3 edit/check_render.py --render graphics/<name>-cap.mov \

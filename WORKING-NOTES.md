@@ -919,3 +919,27 @@ speech**: the first pass put Keith's card over Carmen's close-up. Use the scene-
 and the wide shot, where host sits left and guest right. Roles were best guesses ("Host, Ignite
 Studio"; "CEO, Silicon Data & Compute Exchange"), so confirm them. Export is a straight
 re-encode (crf 16, audio copied): `output/ignite-04-keith-carmen.mp4`.
+
+**Keith × Carmen shorts (2026-10-26): she approved all six, then said "clip those… follow
+whoever is on screen for the single shots… add captions… all 6 in a folder in output".**
+So "I'll clip it myself" changed to "you clip it". `edit/reframe.py` (new) cuts the source range,
+crops 9:16 around the largest face per camera shot (Haar cascades; a crop that's still within
+a shot and jumps at each cut, never pans), measures the baked-in letterbox (rows 34-1046 here),
+and writes a CRF-12 intermediate that preprocess/burn treat as the source. Exports in
+`output/keith-carmen-shorts/`. Lessons:
+- **The locked silence recipe assumes her own mic level.** This broadcast mix was -30.5 LUFS,
+  with the speech cluster at -37 dB, so -35 dB sat INSIDE the speech: 48% removed, 201 → 158
+  words. reframe.py now loudnorms to -18 LUFS, which puts speech at ~-25 and room tone at
+  ~-52. After that the unchanged recipe removed 9-17%. Check the histogram on any footage
+  she didn't record herself.
+- **Captions at y 0.65, not 0.75, on this set.** At 0.75 the text sat on her white
+  compute.exchange pillow: 48% of frames had >25% white behind it. At 0.65 (mid-chest, chin is
+  ~0.40) it's 2%. Measure the band's white-share before picking y on new footage.
+- `hyperframes render -f` takes `24000/1001`, not `23.976` ("Invalid fps").
+- The 23.976 overlay can come out 1-2 frames longer than the master, which burn.py refuses
+  past ±1. Trim the overlay's tail to the proof's frame count with `-frames:v N -c copy`.
+  Don't loosen the check.
+- whisper's ">>" speaker turns become "- " in cue text. Strip them with a `"- ": ""` fix. Fixes
+  run before grouping, so keep trailing punctuation out of fix keys and values.
+- Drop a leading "So" with a source-time `remove` at the envelope dip after it (~0.1-0.17s).
+- A `while read` loop around ffmpeg loses lines, because ffmpeg eats stdin. Use `< /dev/null`.

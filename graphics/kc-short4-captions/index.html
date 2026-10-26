@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>captions</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:transparent; }
+      #root { position:relative; width:1080px; height:1920px; }
+      .cue {
+        position:absolute; left:0; right:0; top:65.0%;
+        transform:translateY(-50%);
+        display:flex; align-items:center; justify-content:center;
+        text-align:center;
+      }
+      .cue span {
+        display:inline-block; max-width:778px; white-space:nowrap;
+        font-family:'Montserrat', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+        font-weight:800; font-size:54px; line-height:1.18;
+        letter-spacing:-0.01em; color:#FFFFFF;
+        /* hard edge, zero blur — reads on any background, never looks glowy */
+        text-shadow:
+          4px 0 0 #000, -4px 0 0 #000, 0 4px 0 #000, 0 -4px 0 #000,
+          3px 3px 0 #000, -3px 3px 0 #000,
+          3px -3px 0 #000, -3px -3px 0 #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="39.831"
+         data-width="1080" data-height="1920" data-fps="23.976"
+         data-layout-allow-overflow="true">
+      <div id="cue0" class="clip cue" data-start="0.03" data-duration="1.17" data-track-index="1"><span>Compute is a</span></div>
+      <div id="cue1" class="clip cue" data-start="1.2" data-duration="1.14" data-track-index="1"><span>giant baby, right?</span></div>
+      <div id="cue2" class="clip cue" data-start="2.34" data-duration="1.3" data-track-index="1"><span>We're still very early</span></div>
+      <div id="cue3" class="clip cue" data-start="3.64" data-duration="1.23" data-track-index="1"><span>stage, but it's gigantic</span></div>
+      <div id="cue4" class="clip cue" data-start="4.87" data-duration="1.16" data-track-index="1"><span>in scale, as everyone</span></div>
+      <div id="cue5" class="clip cue" data-start="6.03" data-duration="1.01" data-track-index="1"><span>talk about compute</span></div>
+      <div id="cue6" class="clip cue" data-start="7.04" data-duration="1.58" data-track-index="1"><span>in trillions as a unit,</span></div>
+      <div id="cue7" class="clip cue" data-start="8.62" data-duration="1.0" data-track-index="1"><span>as a price unit, right?</span></div>
+      <div id="cue8" class="clip cue" data-start="9.62" data-duration="0.96" data-track-index="1"><span>It's kind of ridiculous,</span></div>
+      <div id="cue9" class="clip cue" data-start="10.58" data-duration="0.69" data-track-index="1"><span>but the market</span></div>
+      <div id="cue10" class="clip cue" data-start="11.27" data-duration="1.31" data-track-index="1"><span>definitely needs a lot</span></div>
+      <div id="cue11" class="clip cue" data-start="12.58" data-duration="1.08" data-track-index="1"><span>more transparency,</span></div>
+      <div id="cue12" class="clip cue" data-start="13.66" data-duration="1.0" data-track-index="1"><span>efficiency, right?</span></div>
+      <div id="cue13" class="clip cue" data-start="14.66" data-duration="1.04" data-track-index="1"><span>And risk management too.</span></div>
+      <div id="cue14" class="clip cue" data-start="15.7" data-duration="0.85" data-track-index="1"><span>That's what Silicon Data</span></div>
+      <div id="cue15" class="clip cue" data-start="16.55" data-duration="0.71" data-track-index="1"><span>is here to provide.</span></div>
+      <div id="cue16" class="clip cue" data-start="17.26" data-duration="1.13" data-track-index="1"><span>You saw Jensen's half</span></div>
+      <div id="cue17" class="clip cue" data-start="18.39" data-duration="1.32" data-track-index="1"><span>a trillion capital</span></div>
+      <div id="cue18" class="clip cue" data-start="19.71" data-duration="1.19" data-track-index="1"><span>formation table, right?</span></div>
+      <div id="cue19" class="clip cue" data-start="20.9" data-duration="0.85" data-track-index="1"><span>All the people</span></div>
+      <div id="cue20" class="clip cue" data-start="21.75" data-duration="1.19" data-track-index="1"><span>on the table, they need</span></div>
+      <div id="cue21" class="clip cue" data-start="22.94" data-duration="1.14" data-track-index="1"><span>risk management layer.</span></div>
+      <div id="cue22" class="clip cue" data-start="24.08" data-duration="0.44" data-track-index="1"><span>Without</span></div>
+      <div id="cue23" class="clip cue" data-start="24.54" data-duration="0.91" data-track-index="1"><span>that, the capital</span></div>
+      <div id="cue24" class="clip cue" data-start="25.45" data-duration="0.79" data-track-index="1"><span>formation is gonna</span></div>
+      <div id="cue25" class="clip cue" data-start="26.24" data-duration="0.82" data-track-index="1"><span>be very expensive.</span></div>
+      <div id="cue26" class="clip cue" data-start="27.06" data-duration="0.96" data-track-index="1"><span>We all know that, right?</span></div>
+      <div id="cue27" class="clip cue" data-start="28.05" data-duration="0.88" data-track-index="1"><span>So the hedging</span></div>
+      <div id="cue28" class="clip cue" data-start="28.93" data-duration="0.84" data-track-index="1"><span>on the longer</span></div>
+      <div id="cue29" class="clip cue" data-start="29.77" data-duration="0.597" data-track-index="1"><span>tail risks,</span></div>
+      <div id="cue30" class="clip cue" data-start="30.367" data-duration="1.263" data-track-index="1"><span>have the transparency</span></div>
+      <div id="cue31" class="clip cue" data-start="31.63" data-duration="0.83" data-track-index="1"><span>on the rental prices</span></div>
+      <div id="cue32" class="clip cue" data-start="32.46" data-duration="1.32" data-track-index="1"><span>going forward, hedging</span></div>
+      <div id="cue33" class="clip cue" data-start="33.78" data-duration="1.04" data-track-index="1"><span>on residual value,</span></div>
+      <div id="cue34" class="clip cue" data-start="34.82" data-duration="1.55" data-track-index="1"><span>lifespan of those asset</span></div>
+      <div id="cue35" class="clip cue" data-start="36.37" data-duration="1.37" data-track-index="1"><span>class, all very critical</span></div>
+      <div id="cue36" class="clip cue" data-start="37.74" data-duration="1.12" data-track-index="1"><span>to all the financiers</span></div>
+      <div id="cue37" class="clip cue" data-start="38.86" data-duration="0.971" data-track-index="1"><span>and neoclouds.</span></div>
+    </div>
+    <script>
+      // GENERATED by edit/captions_overlay.py — do not hand-edit.
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // captions cut in and out with the clip window — no tweens by design
+      tl.set("#root", { opacity: 1 }, 0);
+      tl.set("#root", { opacity: 1 }, 39.831);
+      tl.seek(0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

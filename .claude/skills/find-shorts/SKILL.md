@@ -1,6 +1,6 @@
 ---
 name: find-shorts
-description: Parse a long video (interview, panel, talk) in footage/, pull its timestamped script, and shortlist 3–6 self-contained 30–60s clips with strong verbal hooks for YouTube Shorts / TikTok / Reels. Use when Lana asks to "find shorts", "find clips", "find hooks" or "cut this into shorts". Shortlist only — she approves and does the clipping herself.
+description: Parse a long video (interview, panel, talk) in footage/, pull its timestamped script, and shortlist 3–6 self-contained 30–60s clips with strong verbal hooks for YouTube Shorts / TikTok / Reels — then, once she approves and asks, cut them vertical (speaker-following crop) with captions. Use when Lana asks to "find shorts", "find clips", "find hooks" or "cut this into shorts".
 ---
 
 # Find shorts
@@ -52,6 +52,25 @@ asks for that after approving.
 
    Format reference: `edit/shorts-keith-carmen/shortlist.md`.
 5. In chat, show the ranked table plus a one-line reason for each pick. Ask her which to keep.
+
+## If she then says "clip them"
+
+The first time (Keith × Carmen, 2026-10-26) she approved the picks and then asked for them cut:
+vertical, following whoever is on screen, captioned, all in one `output/<name>-shorts/` folder.
+Per clip N:
+
+```bash
+python3 edit/reframe.py "footage/<clip>" --start <in> --end <out> --out graphics/<p>-short<N>-vertical.mp4
+python3 edit/preprocess.py graphics/<p>-short<N>-vertical.mp4 --out edit/analysis-<p>-short<N> --skip-framing
+#   check the head/tail words; drop a leading "So" etc. with a source-time `remove` override
+python3 edit/captions_overlay.py --analysis edit/analysis-<p>-short<N> --out graphics/<p>-short<N>-captions \
+    --res 1080x1920 --y <measured> --maxw 0.72 --srt project/<p>-short<N>.srt --fixes edit/fixes-<p>.json
+#   render with -f 24000/1001 for 23.976 footage and --workers 1; check_render.py; burn.py
+```
+
+Read WORKING-NOTES "Keith × Carmen shorts" first. It covers the loudness trap (the silence
+recipe ate half the speech of a broadcast mix), measuring caption y against the background
+(a white pillow), and the 1-2 frame overlay trim.
 
 ## Notes
 

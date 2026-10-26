@@ -1,0 +1,29 @@
+{
+ "source": "footage/Ignite Oct 2026/04 Keith Newman and Carmen Li Compute Exchange.mp4",
+ "start": 468.1,
+ "end": 512.88,
+ "active": [
+  34,
+  1012
+ ],
+ "crop": [
+  568,
+  1012
+ ],
+ "shots": [
+  {
+   "t0": 0.0,
+   "t1": 6.715,
+   "face_x": 918,
+   "crop_x": 632,
+   "found": true
+  },
+  {
+   "t0": 6.715,
+   "t1": 44.78,
+   "face_x": 929,
+   "crop_x": 644,
+   "found": true
+  }
+ ]
+}
