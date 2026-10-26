@@ -1,0 +1,36 @@
+{
+ "source": "footage/Ignite Oct 2026/11 Steven Hou Silicon Data and Alex Yeh SMI Cloud.mp4",
+ "start": 169.1,
+ "end": 215.0,
+ "active": [
+  34,
+  1012
+ ],
+ "crop": [
+  568,
+  1012
+ ],
+ "shots": [
+  {
+   "t0": 0.0,
+   "t1": 18.977,
+   "face_x": 830,
+   "crop_x": 546,
+   "found": true
+  },
+  {
+   "t0": 18.977,
+   "t1": 22.731,
+   "face_x": 710,
+   "crop_x": 426,
+   "found": true
+  },
+  {
+   "t0": 22.731,
+   "t1": 45.9,
+   "face_x": 819,
+   "crop_x": 534,
+   "found": true
+  }
+ ]
+}

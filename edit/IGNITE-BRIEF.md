@@ -85,6 +85,20 @@ Each agent handles ONE video, end to end, without asking her anything. Footage i
 - The caption tool's orphan-carry overflow (a 32-char cue) is fixed in the shared
   `captions_overlay.py` as of 2026-10-26, so no local patch is needed.
 
+## Lessons from 11
+- **Cut-transcript word times are on the CUT timeline.** A `remove` is in the vertical clip's
+  own (pre-cut) time, so place it from that clip's audio envelope, not from the cut transcript.
+  A tail trim placed from cut times clipped "people".
+- Whisper puts quote marks around reported speech, and the grouper then won't break at that
+  sentence end. Strip them in the fixes file. Check for 0.1–0.3s single-word cues
+  (`review.py --cues`) and merge them with a fix where you can.
+- A 25–31% silence removal can be legitimate (a guest who pauses a lot mid-answer), but only if
+  loudness is ~-18 LUFS and the histogram shows a clean valley. Report the numbers.
+- A guest's first single shot may come much later than the host's (11: 49.6s). Put the card
+  there rather than on a 2–4s shot.
+- Don't use Monitor for long encode chains: it kills its command at 30 min. Use
+  `run_in_background`.
+
 ## Shared-machine rules (other agents are running at the same time)
 - **One heavy encode at a time, and never run them in parallel within your own job.** The first batch ran the
   full composite and the reframes side by side across three agents on a 10-core / 16 GB Mac.

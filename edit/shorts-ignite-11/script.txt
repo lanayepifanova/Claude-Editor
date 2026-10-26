@@ -1,0 +1,212 @@
+0:00.00 - All right, well, thank you very much, Alex.
+0:03.92 Here we're catching up with Alex here from GMI Cloud
+0:07.32 and at the Neo Cloud Summit.
+0:10.24 Very excited to speak with you.
+0:11.52 Been a long time fan of your work
+0:13.08 and it's amazing to watch your progress
+0:15.52 and congrats on your recent fundraise.
+0:18.36 - Thank you, Steve.
+0:19.20 Happy to be here.
+0:20.40 - Yeah, so I guess, I come from a non-AI industry
+0:26.00 coming up as a point person,
+0:28.12 had a research at Silicon Data recently.
+0:30.00 So I'm watching this space with a lot of curiosity.
+0:32.60 The biggest question, the first question I had is,
+0:35.88 I've seen a lot of conversion
+0:38.04 from people who used to be in the crypto
+0:39.64 or Bitcoin mining industry converting this into AI.
+0:44.00 And what has been your journey been like
+0:45.52 and what do you think this,
+0:47.88 what does conversion mean for you?
+0:50.00 - Obviously, it's a treacherous journey like all startups,
+0:54.10 but I started a company about five and a half years ago.
+0:56.68 First two years were in Bitcoin mining
+0:58.88 and the latter have transitioned that to cloud
+1:02.04 and it's been a rocket shit ever since.
+1:04.36 But before that, I actually started,
+1:06.32 this is my second company.
+1:07.68 The first company in the crypto FinTech space,
+1:10.72 very lucky, sell that to a Hong Kong hedge fund,
+1:14.56 then became the youngest partner at headline,
+1:16.60 leading their crypto investments
+1:18.34 and then a couple of years then started GMI.
+1:21.64 And I know there's a lot of cohorts,
+1:24.88 same cohorts of founders that started in Bitcoin.
+1:27.96 I think there's a lot of parallelism starting in Bitcoin space.
+1:33.12 I bought a ton of land and power in rural America,
+1:40.04 which is kind of similar to what we're doing right now,
+1:42.36 building data centers, building cloud all over the world.
+1:45.56 So I think that's the similarity,
+1:47.48 but the transition was started
+1:50.22 because our customers about three years ago
+1:53.64 told me something called GPT-3 that came out
+1:56.94 and they need training.
+1:58.72 Doesn't know too much about Bitcoin mining,
+2:00.60 but they assumed I have a lot of GPU cards.
+2:02.60 So they're like, Alex, spare some cards.
+2:05.44 Do something called training.
+2:06.56 We'll pay, all right, okay, all right, let's do it.
+2:10.84 So it took me 10 months for this transition.
+2:14.44 Now I'm saying it's smooth, but it's nothing but smooth.
+2:18.12 It's not easy, that process.
+2:21.52 But it took us 10 months to give it to cloud,
+2:24.24 building on the team, from the software team,
+2:26.58 infrastructure, financing, marketing, everything.
+2:30.60 Yeah, so that's kind of the journey.
+2:32.32 - Do you think this journey of having, you know,
+2:35.44 interacted and built data centers
+2:37.12 that built with the physical space and the Bitcoin
+2:39.04 and the crypto space has given you a advantage
+2:41.64 to those that have not, and also a follow-up question
+2:44.56 on why do you think some convert it faster than others?
+2:47.62 And what-- - Yeah.
+2:49.20 I think we are actually the first wave of NCP that got in.
+2:54.12 It definitely gave us an edge because first,
+2:56.18 like we have a team and we have power and we have land.
+2:59.60 So we have experience on building data center fast.
+3:02.88 I was the one that innovated with modular data center.
+3:05.64 - Wow. - Right?
+3:06.72 Back then, I just call it containers.
+3:08.16 - Right. - How many containers do you have?
+3:09.68 Now it's like modular, this sounds more fancy.
+3:12.16 But, you know, I've done that before
+3:14.32 and gives an edge to move fast, right?
+3:18.08 - A lot of traditional VCs was like hesitant on like,
+3:20.80 "Okay, what to do?"
+3:22.40 But whereas, you know, founders or people in cryptos
+3:26.08 or Bitcoin space, we had the right foundation
+3:29.64 and the right team, a lot of ex-HPC folks
+3:33.28 that jumped into Bitcoin with me.
+3:36.16 And one of my, for example, one of my earliest,
+3:38.62 my first employee was a director of RMD
+3:42.72 and chassis director at Supermicro, right?
+3:45.82 Before giving me to bring with me to Bitcoin
+3:49.52 and then back to front, right?
+3:50.88 So we have like capital, we have people who are aggressive,
+3:54.48 move fast, startup culture,
+3:55.72 and also a bunch of HPC folks that helps transition.
+3:59.56 - I certainly noticed that one edge is indeed this,
+4:02.64 you know, willingness to hustle and move quickly
+4:04.88 and meet where the clients are.
+4:06.32 And as you can, at this market indeed
+4:08.28 is evolving very quickly.
+4:09.44 And I see a lot of the clouds increasingly are offering,
+4:12.84 you know, not just compute, but also inference.
+4:15.20 And now agentic use, how do you think about that?
+4:18.48 And also some of the managed service inference providers
+4:20.84 are also themselves acquiring compute
+4:22.88 because they see that running compute is very expensive.
+4:26.30 Also, we'd love to hear your perspective on that.
+4:28.92 - I would like to first explain
+4:30.08 the fundamental business model of cloud business.
+4:33.44 CPU cloud, GPU cloud search, doesn't matter.
+4:35.80 What is a cloud, right?
+4:37.44 What metrics are you judged on?
+4:39.52 It's on the uptime, right?
+4:41.24 It's on how much, how well is your compute utilized?
+4:47.04 Utilization rate, right?
+4:49.08 So if you look at an empty glass,
+4:52.02 you put in large big blocks of ice, what is that?
+4:55.30 That is the bare metal business, compute business,
+4:58.88 five-year contract, six-year contract, right?
+5:01.86 It gives you 250% bar.
+5:03.72 You start pouring in the pebbles.
+5:05.12 What is pebbles?
+5:05.96 Short-term contracts, right?
+5:08.40 Fill that in.
+5:09.48 And then what do you do?
+5:10.84 Point the sand, what is the sand?
+5:12.56 Token business, right?
+5:15.04 And dedicated endpoints, you can rent for months,
+5:19.64 weeks, hours, and then selling mass, right?
+5:22.88 The true tokens, as well as CPU VM.
+5:25.68 And you fill that up, pouring water in.
+5:27.84 So it's all about filling the cracks,
+5:29.44 filling the utilization rate.
+5:30.92 So that is the fundamental core business model of a cloud.
+5:34.54 So it makes sense for us to help people
+5:38.12 because people need not just blocks of compute,
+5:40.28 but they also need APIs.
+5:41.52 They also need CPUs, right?
+5:44.40 And so from the beginning,
+5:45.72 our company is built as a vertical stack, right?
+5:50.08 From the compute up to all the way to the agent layer.
+5:54.56 - And how do you differentiate from someone like Together AI
+5:57.48 that's also getting into provided compute?
+5:59.72 - I think fundamentally it's very difficult
+6:02.00 for a software tech company going to operations.
+6:05.42 This is a operation intensive, moving business.
+6:09.68 It's not where, I got this really amazing researchers,
+6:13.44 I cracked it, I got it.
+6:15.16 It's not that, right?
+6:16.56 This is grinding.
+6:17.84 24/7 SLA 99.95, what does that mean?
+6:21.96 That means swapping the plates
+6:23.00 when things are not going well.
+6:25.52 All the CPUs, the GPUs, the networking, the IB, the Rocky,
+6:30.38 the power, cooling, each part would flash over error code.
+6:34.72 And you gotta know, okay, I know what to do.
+6:37.28 I know how to swap things out.
+6:39.56 Day in, day out, across clusters.
+6:43.20 That's just on the hardware side.
+6:44.80 Manage, procurement, things are not delivered on time.
+6:48.24 It's not pushing a code.
+6:49.80 Research software companies are like,
+6:50.96 oh, I push a code, it's done.
+6:52.90 This is pushing people.
+6:53.92 How do you push people?
+6:54.96 It's not like, hey, deliver GPUs, no.
+6:57.84 You go there, you wind and die.
+6:59.72 You're like, hey, I really need this part.
+7:01.92 I know you have a big order with Google,
+7:03.72 but spares 10 servers.
+7:06.44 - I think you have famously said
+7:07.64 that AI infrastructure delivery date is a promise, right?
+7:10.84 - It's a promise, exactly.
+7:12.40 So I think that matters a lot.
+7:14.48 And how we differentiate from pure,
+7:17.56 I would say, inference company
+7:19.44 is because we have this operation excellence.
+7:22.28 It's not just that, but also two other factors will be,
+7:24.76 we operate clusters across East and West, US and Asia.
+7:28.36 And so we offer a differentiated approach to folks.
+7:32.44 And third will be the, I would say, the full stack approach,
+7:35.90 where we are a full stack company,
+7:37.66 from the bare metals to Kubernetes to the inference,
+7:41.12 as well as the agent inference.
+7:43.64 - So just to wrap up,
+7:45.12 there are now many, many new clouds, right?
+7:47.08 It's getting a very proud of space.
+7:49.20 And how do you see this market shaking out?
+7:51.96 And also you just recently did a very successful fundraise.
+7:54.52 What differentiates you from the rest of them?
+7:57.04 - Yeah, really great question.
+7:59.04 I would say, just give me takeaway if you like,
+8:01.36 just forget everything that I say, talk about, right?
+8:04.60 I'll say, number one is reliability and on time.
+8:09.20 Customer delivery is a promise, right?
+8:11.20 It's very important and essential to us,
+8:13.76 which is delivered a very large cluster to our customer.
+8:16.54 We deliver on the dot, exact same time.
+8:19.32 And reliable is impeccable as great, right?
+8:22.60 And this is, it sounds easy,
+8:26.12 but it's the grueling details in the operations, right?
+8:30.48 So number one, supply chain.
+8:32.36 Number two is, as we face a lot of political headwinds
+8:35.80 in the U.S., right?
+8:37.66 We have different spots of pockets of power
+8:41.12 at data center capacities all over the world, Asia and U.S.
+8:44.86 So I'm able to help U.S. companies to land beachhead in Asia
+8:49.78 tailored towards kind of local data restrictions
+8:52.54 or data private policies, right, in Asia and vice versa,
+8:56.32 helping Asia enterprise to go to U.S.
+8:59.04 So we have, it's not just like partnership mode,
+9:01.16 we have data center there, but we have actual W2 employees
+9:05.12 in Indonesia and Malaysia and Singapore and Thailand
+9:09.12 and Taiwan and Japan and same Korea,
+9:11.68 like people actually on the ground
+9:13.08 and support DC build out or sales or pre-sale or whatnot.
+9:17.36 - That's really impressive.
+9:18.76 Thank you very much, Alex, for stopping by today
+9:20.68 and real pleasure speaking with you.
+9:22.32 - Thank you, Steve.

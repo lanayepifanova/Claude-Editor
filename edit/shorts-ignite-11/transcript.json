@@ -1,0 +1,2364 @@
+{
+	"systeminfo": "WHISPER : COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | SME = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "small",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"text": {
+			"ctx": 448,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/lanayepifanova/.cache/whisper/ggml-small.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:03,920"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 3920
+			},
+			"text": " - All right, well, thank you very much, Alex."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:03,920",
+				"to": "00:00:07,320"
+			},
+			"offsets": {
+				"from": 3920,
+				"to": 7320
+			},
+			"text": " Here we're catching up with Alex here from GMI Cloud"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:07,320",
+				"to": "00:00:10,240"
+			},
+			"offsets": {
+				"from": 7320,
+				"to": 10240
+			},
+			"text": " and at the Neo Cloud Summit."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:10,240",
+				"to": "00:00:11,520"
+			},
+			"offsets": {
+				"from": 10240,
+				"to": 11520
+			},
+			"text": " Very excited to speak with you."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:11,520",
+				"to": "00:00:13,080"
+			},
+			"offsets": {
+				"from": 11520,
+				"to": 13080
+			},
+			"text": " Been a long time fan of your work"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:13,080",
+				"to": "00:00:15,520"
+			},
+			"offsets": {
+				"from": 13080,
+				"to": 15520
+			},
+			"text": " and it's amazing to watch your progress"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:15,520",
+				"to": "00:00:18,360"
+			},
+			"offsets": {
+				"from": 15520,
+				"to": 18360
+			},
+			"text": " and congrats on your recent fundraise."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:18,360",
+				"to": "00:00:19,200"
+			},
+			"offsets": {
+				"from": 18360,
+				"to": 19200
+			},
+			"text": " - Thank you, Steve."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:19,200",
+				"to": "00:00:20,400"
+			},
+			"offsets": {
+				"from": 19200,
+				"to": 20400
+			},
+			"text": " Happy to be here."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:20,400",
+				"to": "00:00:25,400"
+			},
+			"offsets": {
+				"from": 20400,
+				"to": 25400
+			},
+			"text": " - Yeah, so I guess, I come from a non-AI industry"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:26,000",
+				"to": "00:00:28,120"
+			},
+			"offsets": {
+				"from": 26000,
+				"to": 28120
+			},
+			"text": " coming up as a point person,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:28,120",
+				"to": "00:00:30,000"
+			},
+			"offsets": {
+				"from": 28120,
+				"to": 30000
+			},
+			"text": " had a research at Silicon Data recently."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:30,000",
+				"to": "00:00:32,600"
+			},
+			"offsets": {
+				"from": 30000,
+				"to": 32600
+			},
+			"text": " So I'm watching this space with a lot of curiosity."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:32,600",
+				"to": "00:00:35,880"
+			},
+			"offsets": {
+				"from": 32600,
+				"to": 35880
+			},
+			"text": " The biggest question, the first question I had is,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:35,880",
+				"to": "00:00:38,040"
+			},
+			"offsets": {
+				"from": 35880,
+				"to": 38040
+			},
+			"text": " I've seen a lot of conversion"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:38,040",
+				"to": "00:00:39,640"
+			},
+			"offsets": {
+				"from": 38040,
+				"to": 39640
+			},
+			"text": " from people who used to be in the crypto"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:39,640",
+				"to": "00:00:44,000"
+			},
+			"offsets": {
+				"from": 39640,
+				"to": 44000
+			},
+			"text": " or Bitcoin mining industry converting this into AI."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:44,000",
+				"to": "00:00:45,520"
+			},
+			"offsets": {
+				"from": 44000,
+				"to": 45520
+			},
+			"text": " And what has been your journey been like"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:45,520",
+				"to": "00:00:47,880"
+			},
+			"offsets": {
+				"from": 45520,
+				"to": 47880
+			},
+			"text": " and what do you think this,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:47,880",
+				"to": "00:00:50,000"
+			},
+			"offsets": {
+				"from": 47880,
+				"to": 50000
+			},
+			"text": " what does conversion mean for you?"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:50,000",
+				"to": "00:00:54,100"
+			},
+			"offsets": {
+				"from": 50000,
+				"to": 54100
+			},
+			"text": " - Obviously, it's a treacherous journey like all startups,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:54,100",
+				"to": "00:00:56,680"
+			},
+			"offsets": {
+				"from": 54100,
+				"to": 56680
+			},
+			"text": " but I started a company about five and a half years ago."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:56,680",
+				"to": "00:00:58,880"
+			},
+			"offsets": {
+				"from": 56680,
+				"to": 58880
+			},
+			"text": " First two years were in Bitcoin mining"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:58,880",
+				"to": "00:01:02,040"
+			},
+			"offsets": {
+				"from": 58880,
+				"to": 62040
+			},
+			"text": " and the latter have transitioned that to cloud"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:02,040",
+				"to": "00:01:04,360"
+			},
+			"offsets": {
+				"from": 62040,
+				"to": 64360
+			},
+			"text": " and it's been a rocket shit ever since."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:04,360",
+				"to": "00:01:06,320"
+			},
+			"offsets": {
+				"from": 64360,
+				"to": 66320
+			},
+			"text": " But before that, I actually started,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:06,320",
+				"to": "00:01:07,680"
+			},
+			"offsets": {
+				"from": 66320,
+				"to": 67680
+			},
+			"text": " this is my second company."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:07,680",
+				"to": "00:01:10,720"
+			},
+			"offsets": {
+				"from": 67680,
+				"to": 70720
+			},
+			"text": " The first company in the crypto FinTech space,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:10,720",
+				"to": "00:01:14,560"
+			},
+			"offsets": {
+				"from": 70720,
+				"to": 74560
+			},
+			"text": " very lucky, sell that to a Hong Kong hedge fund,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:14,560",
+				"to": "00:01:16,600"
+			},
+			"offsets": {
+				"from": 74560,
+				"to": 76600
+			},
+			"text": " then became the youngest partner at headline,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:16,600",
+				"to": "00:01:18,340"
+			},
+			"offsets": {
+				"from": 76600,
+				"to": 78340
+			},
+			"text": " leading their crypto investments"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:18,340",
+				"to": "00:01:21,640"
+			},
+			"offsets": {
+				"from": 78340,
+				"to": 81640
+			},
+			"text": " and then a couple of years then started GMI."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:21,640",
+				"to": "00:01:24,880"
+			},
+			"offsets": {
+				"from": 81640,
+				"to": 84880
+			},
+			"text": " And I know there's a lot of cohorts,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:24,880",
+				"to": "00:01:27,960"
+			},
+			"offsets": {
+				"from": 84880,
+				"to": 87960
+			},
+			"text": " same cohorts of founders that started in Bitcoin."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:27,960",
+				"to": "00:01:32,960"
+			},
+			"offsets": {
+				"from": 87960,
+				"to": 92960
+			},
+			"text": " I think there's a lot of parallelism starting in Bitcoin space."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:33,120",
+				"to": "00:01:38,120"
+			},
+			"offsets": {
+				"from": 93120,
+				"to": 98120
+			},
+			"text": " I bought a ton of land and power in rural America,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:40,040",
+				"to": "00:01:42,360"
+			},
+			"offsets": {
+				"from": 100040,
+				"to": 102360
+			},
+			"text": " which is kind of similar to what we're doing right now,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:42,360",
+				"to": "00:01:45,560"
+			},
+			"offsets": {
+				"from": 102360,
+				"to": 105560
+			},
+			"text": " building data centers, building cloud all over the world."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:45,560",
+				"to": "00:01:47,480"
+			},
+			"offsets": {
+				"from": 105560,
+				"to": 107480
+			},
+			"text": " So I think that's the similarity,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:47,480",
+				"to": "00:01:50,220"
+			},
+			"offsets": {
+				"from": 107480,
+				"to": 110220
+			},
+			"text": " but the transition was started"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:50,220",
+				"to": "00:01:53,640"
+			},
+			"offsets": {
+				"from": 110220,
+				"to": 113640
+			},
+			"text": " because our customers about three years ago"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:53,640",
+				"to": "00:01:56,940"
+			},
+			"offsets": {
+				"from": 113640,
+				"to": 116940
+			},
+			"text": " told me something called GPT-3 that came out"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:56,940",
+				"to": "00:01:58,720"
+			},
+			"offsets": {
+				"from": 116940,
+				"to": 118720
+			},
+			"text": " and they need training."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:58,720",
+				"to": "00:02:00,600"
+			},
+			"offsets": {
+				"from": 118720,
+				"to": 120600
+			},
+			"text": " Doesn't know too much about Bitcoin mining,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:00,600",
+				"to": "00:02:02,600"
+			},
+			"offsets": {
+				"from": 120600,
+				"to": 122600
+			},
+			"text": " but they assumed I have a lot of GPU cards."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:02,600",
+				"to": "00:02:05,440"
+			},
+			"offsets": {
+				"from": 122600,
+				"to": 125440
+			},
+			"text": " So they're like, Alex, spare some cards."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:05,440",
+				"to": "00:02:06,560"
+			},
+			"offsets": {
+				"from": 125440,
+				"to": 126560
+			},
+			"text": " Do something called training."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:06,560",
+				"to": "00:02:10,840"
+			},
+			"offsets": {
+				"from": 126560,
+				"to": 130840
+			},
+			"text": " We'll pay, all right, okay, all right, let's do it."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:10,840",
+				"to": "00:02:14,440"
+			},
+			"offsets": {
+				"from": 130840,
+				"to": 134440
+			},
+			"text": " So it took me 10 months for this transition."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:14,440",
+				"to": "00:02:18,120"
+			},
+			"offsets": {
+				"from": 134440,
+				"to": 138120
+			},
+			"text": " Now I'm saying it's smooth, but it's nothing but smooth."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:18,120",
+				"to": "00:02:21,520"
+			},
+			"offsets": {
+				"from": 138120,
+				"to": 141520
+			},
+			"text": " It's not easy, that process."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:21,520",
+				"to": "00:02:24,240"
+			},
+			"offsets": {
+				"from": 141520,
+				"to": 144240
+			},
+			"text": " But it took us 10 months to give it to cloud,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:24,240",
+				"to": "00:02:26,580"
+			},
+			"offsets": {
+				"from": 144240,
+				"to": 146580
+			},
+			"text": " building on the team, from the software team,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:26,580",
+				"to": "00:02:29,620"
+			},
+			"offsets": {
+				"from": 146580,
+				"to": 149620
+			},
+			"text": " infrastructure, financing, marketing, everything."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:30,600",
+				"to": "00:02:32,320"
+			},
+			"offsets": {
+				"from": 150600,
+				"to": 152320
+			},
+			"text": " Yeah, so that's kind of the journey."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:32,320",
+				"to": "00:02:35,440"
+			},
+			"offsets": {
+				"from": 152320,
+				"to": 155440
+			},
+			"text": " - Do you think this journey of having, you know,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:35,440",
+				"to": "00:02:37,120"
+			},
+			"offsets": {
+				"from": 155440,
+				"to": 157120
+			},
+			"text": " interacted and built data centers"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:37,120",
+				"to": "00:02:39,040"
+			},
+			"offsets": {
+				"from": 157120,
+				"to": 159040
+			},
+			"text": " that built with the physical space and the Bitcoin"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:39,040",
+				"to": "00:02:41,640"
+			},
+			"offsets": {
+				"from": 159040,
+				"to": 161640
+			},
+			"text": " and the crypto space has given you a advantage"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:41,640",
+				"to": "00:02:44,560"
+			},
+			"offsets": {
+				"from": 161640,
+				"to": 164560
+			},
+			"text": " to those that have not, and also a follow-up question"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:44,560",
+				"to": "00:02:47,620"
+			},
+			"offsets": {
+				"from": 164560,
+				"to": 167620
+			},
+			"text": " on why do you think some convert it faster than others?"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:47,620",
+				"to": "00:02:49,200"
+			},
+			"offsets": {
+				"from": 167620,
+				"to": 169200
+			},
+			"text": " And what-- - Yeah."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:49,200",
+				"to": "00:02:54,120"
+			},
+			"offsets": {
+				"from": 169200,
+				"to": 174120
+			},
+			"text": " I think we are actually the first wave of NCP that got in."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:54,120",
+				"to": "00:02:56,180"
+			},
+			"offsets": {
+				"from": 174120,
+				"to": 176180
+			},
+			"text": " It definitely gave us an edge because first,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:56,180",
+				"to": "00:02:59,600"
+			},
+			"offsets": {
+				"from": 176180,
+				"to": 179600
+			},
+			"text": " like we have a team and we have power and we have land."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:59,600",
+				"to": "00:03:02,880"
+			},
+			"offsets": {
+				"from": 179600,
+				"to": 182880
+			},
+			"text": " So we have experience on building data center fast."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:02,880",
+				"to": "00:03:05,640"
+			},
+			"offsets": {
+				"from": 182880,
+				"to": 185640
+			},
+			"text": " I was the one that innovated with modular data center."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:05,640",
+				"to": "00:03:06,720"
+			},
+			"offsets": {
+				"from": 185640,
+				"to": 186720
+			},
+			"text": " - Wow. - Right?"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:06,720",
+				"to": "00:03:08,160"
+			},
+			"offsets": {
+				"from": 186720,
+				"to": 188160
+			},
+			"text": " Back then, I just call it containers."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:08,160",
+				"to": "00:03:09,680"
+			},
+			"offsets": {
+				"from": 188160,
+				"to": 189680
+			},
+			"text": " - Right. - How many containers do you have?"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:09,680",
+				"to": "00:03:12,160"
+			},
+			"offsets": {
+				"from": 189680,
+				"to": 192160
+			},
+			"text": " Now it's like modular, this sounds more fancy."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:12,160",
+				"to": "00:03:14,320"
+			},
+			"offsets": {
+				"from": 192160,
+				"to": 194320
+			},
+			"text": " But, you know, I've done that before"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:14,320",
+				"to": "00:03:18,080"
+			},
+			"offsets": {
+				"from": 194320,
+				"to": 198080
+			},
+			"text": " and gives an edge to move fast, right?"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:18,080",
+				"to": "00:03:20,800"
+			},
+			"offsets": {
+				"from": 198080,
+				"to": 200800
+			},
+			"text": " - A lot of traditional VCs was like hesitant on like,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:20,800",
+				"to": "00:03:22,400"
+			},
+			"offsets": {
+				"from": 200800,
+				"to": 202400
+			},
+			"text": " \"Okay, what to do?\""
+		},
+		{
+			"timestamps": {
+				"from": "00:03:22,400",
+				"to": "00:03:26,080"
+			},
+			"offsets": {
+				"from": 202400,
+				"to": 206080
+			},
+			"text": " But whereas, you know, founders or people in cryptos"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:26,080",
+				"to": "00:03:29,640"
+			},
+			"offsets": {
+				"from": 206080,
+				"to": 209640
+			},
+			"text": " or Bitcoin space, we had the right foundation"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:29,640",
+				"to": "00:03:33,280"
+			},
+			"offsets": {
+				"from": 209640,
+				"to": 213280
+			},
+			"text": " and the right team, a lot of ex-HPC folks"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:33,280",
+				"to": "00:03:35,000"
+			},
+			"offsets": {
+				"from": 213280,
+				"to": 215000
+			},
+			"text": " that jumped into Bitcoin with me."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:36,160",
+				"to": "00:03:38,620"
+			},
+			"offsets": {
+				"from": 216160,
+				"to": 218620
+			},
+			"text": " And one of my, for example, one of my earliest,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:38,620",
+				"to": "00:03:42,720"
+			},
+			"offsets": {
+				"from": 218620,
+				"to": 222720
+			},
+			"text": " my first employee was a director of RMD"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:42,720",
+				"to": "00:03:45,820"
+			},
+			"offsets": {
+				"from": 222720,
+				"to": 225820
+			},
+			"text": " and chassis director at Supermicro, right?"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:45,820",
+				"to": "00:03:49,520"
+			},
+			"offsets": {
+				"from": 225820,
+				"to": 229520
+			},
+			"text": " Before giving me to bring with me to Bitcoin"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:49,520",
+				"to": "00:03:50,880"
+			},
+			"offsets": {
+				"from": 229520,
+				"to": 230880
+			},
+			"text": " and then back to front, right?"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:50,880",
+				"to": "00:03:54,480"
+			},
+			"offsets": {
+				"from": 230880,
+				"to": 234480
+			},
+			"text": " So we have like capital, we have people who are aggressive,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:54,480",
+				"to": "00:03:55,720"
+			},
+			"offsets": {
+				"from": 234480,
+				"to": 235720
+			},
+			"text": " move fast, startup culture,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:55,720",
+				"to": "00:03:59,560"
+			},
+			"offsets": {
+				"from": 235720,
+				"to": 239560
+			},
+			"text": " and also a bunch of HPC folks that helps transition."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:59,560",
+				"to": "00:04:02,640"
+			},
+			"offsets": {
+				"from": 239560,
+				"to": 242640
+			},
+			"text": " - I certainly noticed that one edge is indeed this,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:02,640",
+				"to": "00:04:04,880"
+			},
+			"offsets": {
+				"from": 242640,
+				"to": 244880
+			},
+			"text": " you know, willingness to hustle and move quickly"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:04,880",
+				"to": "00:04:06,320"
+			},
+			"offsets": {
+				"from": 244880,
+				"to": 246320
+			},
+			"text": " and meet where the clients are."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:06,320",
+				"to": "00:04:08,280"
+			},
+			"offsets": {
+				"from": 246320,
+				"to": 248280
+			},
+			"text": " And as you can, at this market indeed"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:08,280",
+				"to": "00:04:09,440"
+			},
+			"offsets": {
+				"from": 248280,
+				"to": 249440
+			},
+			"text": " is evolving very quickly."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:09,440",
+				"to": "00:04:12,840"
+			},
+			"offsets": {
+				"from": 249440,
+				"to": 252840
+			},
+			"text": " And I see a lot of the clouds increasingly are offering,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:12,840",
+				"to": "00:04:15,200"
+			},
+			"offsets": {
+				"from": 252840,
+				"to": 255200
+			},
+			"text": " you know, not just compute, but also inference."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:15,200",
+				"to": "00:04:18,480"
+			},
+			"offsets": {
+				"from": 255200,
+				"to": 258480
+			},
+			"text": " And now agentic use, how do you think about that?"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:18,480",
+				"to": "00:04:20,840"
+			},
+			"offsets": {
+				"from": 258480,
+				"to": 260840
+			},
+			"text": " And also some of the managed service inference providers"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:20,840",
+				"to": "00:04:22,880"
+			},
+			"offsets": {
+				"from": 260840,
+				"to": 262880
+			},
+			"text": " are also themselves acquiring compute"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:22,880",
+				"to": "00:04:26,300"
+			},
+			"offsets": {
+				"from": 262880,
+				"to": 266300
+			},
+			"text": " because they see that running compute is very expensive."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:26,300",
+				"to": "00:04:28,920"
+			},
+			"offsets": {
+				"from": 266300,
+				"to": 268920
+			},
+			"text": " Also, we'd love to hear your perspective on that."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:28,920",
+				"to": "00:04:30,080"
+			},
+			"offsets": {
+				"from": 268920,
+				"to": 270080
+			},
+			"text": " - I would like to first explain"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:30,080",
+				"to": "00:04:33,440"
+			},
+			"offsets": {
+				"from": 270080,
+				"to": 273440
+			},
+			"text": " the fundamental business model of cloud business."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:33,440",
+				"to": "00:04:35,800"
+			},
+			"offsets": {
+				"from": 273440,
+				"to": 275800
+			},
+			"text": " CPU cloud, GPU cloud search, doesn't matter."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:35,800",
+				"to": "00:04:37,440"
+			},
+			"offsets": {
+				"from": 275800,
+				"to": 277440
+			},
+			"text": " What is a cloud, right?"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:37,440",
+				"to": "00:04:39,520"
+			},
+			"offsets": {
+				"from": 277440,
+				"to": 279520
+			},
+			"text": " What metrics are you judged on?"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:39,520",
+				"to": "00:04:41,240"
+			},
+			"offsets": {
+				"from": 279520,
+				"to": 281240
+			},
+			"text": " It's on the uptime, right?"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:41,240",
+				"to": "00:04:46,240"
+			},
+			"offsets": {
+				"from": 281240,
+				"to": 286240
+			},
+			"text": " It's on how much, how well is your compute utilized?"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:47,040",
+				"to": "00:04:49,080"
+			},
+			"offsets": {
+				"from": 287040,
+				"to": 289080
+			},
+			"text": " Utilization rate, right?"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:49,080",
+				"to": "00:04:52,020"
+			},
+			"offsets": {
+				"from": 289080,
+				"to": 292020
+			},
+			"text": " So if you look at an empty glass,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:52,020",
+				"to": "00:04:55,300"
+			},
+			"offsets": {
+				"from": 292020,
+				"to": 295300
+			},
+			"text": " you put in large big blocks of ice, what is that?"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:55,300",
+				"to": "00:04:58,880"
+			},
+			"offsets": {
+				"from": 295300,
+				"to": 298880
+			},
+			"text": " That is the bare metal business, compute business,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:58,880",
+				"to": "00:05:01,860"
+			},
+			"offsets": {
+				"from": 298880,
+				"to": 301860
+			},
+			"text": " five-year contract, six-year contract, right?"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:01,860",
+				"to": "00:05:03,720"
+			},
+			"offsets": {
+				"from": 301860,
+				"to": 303720
+			},
+			"text": " It gives you 250% bar."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:03,720",
+				"to": "00:05:05,120"
+			},
+			"offsets": {
+				"from": 303720,
+				"to": 305120
+			},
+			"text": " You start pouring in the pebbles."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:05,120",
+				"to": "00:05:05,960"
+			},
+			"offsets": {
+				"from": 305120,
+				"to": 305960
+			},
+			"text": " What is pebbles?"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:05,960",
+				"to": "00:05:08,400"
+			},
+			"offsets": {
+				"from": 305960,
+				"to": 308400
+			},
+			"text": " Short-term contracts, right?"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:08,400",
+				"to": "00:05:09,480"
+			},
+			"offsets": {
+				"from": 308400,
+				"to": 309480
+			},
+			"text": " Fill that in."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:09,480",
+				"to": "00:05:10,840"
+			},
+			"offsets": {
+				"from": 309480,
+				"to": 310840
+			},
+			"text": " And then what do you do?"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:10,840",
+				"to": "00:05:12,560"
+			},
+			"offsets": {
+				"from": 310840,
+				"to": 312560
+			},
+			"text": " Point the sand, what is the sand?"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:12,560",
+				"to": "00:05:15,040"
+			},
+			"offsets": {
+				"from": 312560,
+				"to": 315040
+			},
+			"text": " Token business, right?"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:15,040",
+				"to": "00:05:19,640"
+			},
+			"offsets": {
+				"from": 315040,
+				"to": 319640
+			},
+			"text": " And dedicated endpoints, you can rent for months,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:19,640",
+				"to": "00:05:22,880"
+			},
+			"offsets": {
+				"from": 319640,
+				"to": 322880
+			},
+			"text": " weeks, hours, and then selling mass, right?"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:22,880",
+				"to": "00:05:25,680"
+			},
+			"offsets": {
+				"from": 322880,
+				"to": 325680
+			},
+			"text": " The true tokens, as well as CPU VM."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:25,680",
+				"to": "00:05:27,840"
+			},
+			"offsets": {
+				"from": 325680,
+				"to": 327840
+			},
+			"text": " And you fill that up, pouring water in."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:27,840",
+				"to": "00:05:29,440"
+			},
+			"offsets": {
+				"from": 327840,
+				"to": 329440
+			},
+			"text": " So it's all about filling the cracks,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:29,440",
+				"to": "00:05:30,920"
+			},
+			"offsets": {
+				"from": 329440,
+				"to": 330920
+			},
+			"text": " filling the utilization rate."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:30,920",
+				"to": "00:05:34,540"
+			},
+			"offsets": {
+				"from": 330920,
+				"to": 334540
+			},
+			"text": " So that is the fundamental core business model of a cloud."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:34,540",
+				"to": "00:05:38,120"
+			},
+			"offsets": {
+				"from": 334540,
+				"to": 338120
+			},
+			"text": " So it makes sense for us to help people"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:38,120",
+				"to": "00:05:40,280"
+			},
+			"offsets": {
+				"from": 338120,
+				"to": 340280
+			},
+			"text": " because people need not just blocks of compute,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:40,280",
+				"to": "00:05:41,520"
+			},
+			"offsets": {
+				"from": 340280,
+				"to": 341520
+			},
+			"text": " but they also need APIs."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:41,520",
+				"to": "00:05:44,400"
+			},
+			"offsets": {
+				"from": 341520,
+				"to": 344400
+			},
+			"text": " They also need CPUs, right?"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:44,400",
+				"to": "00:05:45,720"
+			},
+			"offsets": {
+				"from": 344400,
+				"to": 345720
+			},
+			"text": " And so from the beginning,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:45,720",
+				"to": "00:05:50,080"
+			},
+			"offsets": {
+				"from": 345720,
+				"to": 350080
+			},
+			"text": " our company is built as a vertical stack, right?"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:50,080",
+				"to": "00:05:53,480"
+			},
+			"offsets": {
+				"from": 350080,
+				"to": 353480
+			},
+			"text": " From the compute up to all the way to the agent layer."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:54,560",
+				"to": "00:05:57,480"
+			},
+			"offsets": {
+				"from": 354560,
+				"to": 357480
+			},
+			"text": " - And how do you differentiate from someone like Together AI"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:57,480",
+				"to": "00:05:59,720"
+			},
+			"offsets": {
+				"from": 357480,
+				"to": 359720
+			},
+			"text": " that's also getting into provided compute?"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:59,720",
+				"to": "00:06:02,000"
+			},
+			"offsets": {
+				"from": 359720,
+				"to": 362000
+			},
+			"text": " - I think fundamentally it's very difficult"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:02,000",
+				"to": "00:06:05,420"
+			},
+			"offsets": {
+				"from": 362000,
+				"to": 365420
+			},
+			"text": " for a software tech company going to operations."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:05,420",
+				"to": "00:06:09,680"
+			},
+			"offsets": {
+				"from": 365420,
+				"to": 369680
+			},
+			"text": " This is a operation intensive, moving business."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:09,680",
+				"to": "00:06:13,440"
+			},
+			"offsets": {
+				"from": 369680,
+				"to": 373440
+			},
+			"text": " It's not where, I got this really amazing researchers,"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:13,440",
+				"to": "00:06:15,160"
+			},
+			"offsets": {
+				"from": 373440,
+				"to": 375160
+			},
+			"text": " I cracked it, I got it."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:15,160",
+				"to": "00:06:16,560"
+			},
+			"offsets": {
+				"from": 375160,
+				"to": 376560
+			},
+			"text": " It's not that, right?"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:16,560",
+				"to": "00:06:17,840"
+			},
+			"offsets": {
+				"from": 376560,
+				"to": 377840
+			},
+			"text": " This is grinding."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:17,840",
+				"to": "00:06:21,960"
+			},
+			"offsets": {
+				"from": 377840,
+				"to": 381960
+			},
+			"text": " 24/7 SLA 99.95, what does that mean?"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:21,960",
+				"to": "00:06:23,000"
+			},
+			"offsets": {
+				"from": 381960,
+				"to": 383000
+			},
+			"text": " That means swapping the plates"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:23,000",
+				"to": "00:06:25,520"
+			},
+			"offsets": {
+				"from": 383000,
+				"to": 385520
+			},
+			"text": " when things are not going well."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:25,520",
+				"to": "00:06:30,380"
+			},
+			"offsets": {
+				"from": 385520,
+				"to": 390380
+			},
+			"text": " All the CPUs, the GPUs, the networking, the IB, the Rocky,"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:30,380",
+				"to": "00:06:34,720"
+			},
+			"offsets": {
+				"from": 390380,
+				"to": 394720
+			},
+			"text": " the power, cooling, each part would flash over error code."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:34,720",
+				"to": "00:06:37,280"
+			},
+			"offsets": {
+				"from": 394720,
+				"to": 397280
+			},
+			"text": " And you gotta know, okay, I know what to do."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:37,280",
+				"to": "00:06:39,560"
+			},
+			"offsets": {
+				"from": 397280,
+				"to": 399560
+			},
+			"text": " I know how to swap things out."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:39,560",
+				"to": "00:06:43,200"
+			},
+			"offsets": {
+				"from": 399560,
+				"to": 403200
+			},
+			"text": " Day in, day out, across clusters."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:43,200",
+				"to": "00:06:44,800"
+			},
+			"offsets": {
+				"from": 403200,
+				"to": 404800
+			},
+			"text": " That's just on the hardware side."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:44,800",
+				"to": "00:06:48,240"
+			},
+			"offsets": {
+				"from": 404800,
+				"to": 408240
+			},
+			"text": " Manage, procurement, things are not delivered on time."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:48,240",
+				"to": "00:06:49,800"
+			},
+			"offsets": {
+				"from": 408240,
+				"to": 409800
+			},
+			"text": " It's not pushing a code."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:49,800",
+				"to": "00:06:50,960"
+			},
+			"offsets": {
+				"from": 409800,
+				"to": 410960
+			},
+			"text": " Research software companies are like,"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:50,960",
+				"to": "00:06:52,900"
+			},
+			"offsets": {
+				"from": 410960,
+				"to": 412900
+			},
+			"text": " oh, I push a code, it's done."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:52,900",
+				"to": "00:06:53,920"
+			},
+			"offsets": {
+				"from": 412900,
+				"to": 413920
+			},
+			"text": " This is pushing people."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:53,920",
+				"to": "00:06:54,960"
+			},
+			"offsets": {
+				"from": 413920,
+				"to": 414960
+			},
+			"text": " How do you push people?"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:54,960",
+				"to": "00:06:57,840"
+			},
+			"offsets": {
+				"from": 414960,
+				"to": 417840
+			},
+			"text": " It's not like, hey, deliver GPUs, no."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:57,840",
+				"to": "00:06:59,720"
+			},
+			"offsets": {
+				"from": 417840,
+				"to": 419720
+			},
+			"text": " You go there, you wind and die."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:59,720",
+				"to": "00:07:01,920"
+			},
+			"offsets": {
+				"from": 419720,
+				"to": 421920
+			},
+			"text": " You're like, hey, I really need this part."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:01,920",
+				"to": "00:07:03,720"
+			},
+			"offsets": {
+				"from": 421920,
+				"to": 423720
+			},
+			"text": " I know you have a big order with Google,"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:03,720",
+				"to": "00:07:06,440"
+			},
+			"offsets": {
+				"from": 423720,
+				"to": 426440
+			},
+			"text": " but spares 10 servers."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:06,440",
+				"to": "00:07:07,640"
+			},
+			"offsets": {
+				"from": 426440,
+				"to": 427640
+			},
+			"text": " - I think you have famously said"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:07,640",
+				"to": "00:07:10,840"
+			},
+			"offsets": {
+				"from": 427640,
+				"to": 430840
+			},
+			"text": " that AI infrastructure delivery date is a promise, right?"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:10,840",
+				"to": "00:07:12,400"
+			},
+			"offsets": {
+				"from": 430840,
+				"to": 432400
+			},
+			"text": " - It's a promise, exactly."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:12,400",
+				"to": "00:07:14,480"
+			},
+			"offsets": {
+				"from": 432400,
+				"to": 434480
+			},
+			"text": " So I think that matters a lot."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:14,480",
+				"to": "00:07:17,560"
+			},
+			"offsets": {
+				"from": 434480,
+				"to": 437560
+			},
+			"text": " And how we differentiate from pure,"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:17,560",
+				"to": "00:07:19,440"
+			},
+			"offsets": {
+				"from": 437560,
+				"to": 439440
+			},
+			"text": " I would say, inference company"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:19,440",
+				"to": "00:07:22,280"
+			},
+			"offsets": {
+				"from": 439440,
+				"to": 442280
+			},
+			"text": " is because we have this operation excellence."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:22,280",
+				"to": "00:07:24,760"
+			},
+			"offsets": {
+				"from": 442280,
+				"to": 444760
+			},
+			"text": " It's not just that, but also two other factors will be,"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:24,760",
+				"to": "00:07:28,360"
+			},
+			"offsets": {
+				"from": 444760,
+				"to": 448360
+			},
+			"text": " we operate clusters across East and West, US and Asia."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:28,360",
+				"to": "00:07:32,440"
+			},
+			"offsets": {
+				"from": 448360,
+				"to": 452440
+			},
+			"text": " And so we offer a differentiated approach to folks."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:32,440",
+				"to": "00:07:35,900"
+			},
+			"offsets": {
+				"from": 452440,
+				"to": 455900
+			},
+			"text": " And third will be the, I would say, the full stack approach,"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:35,900",
+				"to": "00:07:37,660"
+			},
+			"offsets": {
+				"from": 455900,
+				"to": 457660
+			},
+			"text": " where we are a full stack company,"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:37,660",
+				"to": "00:07:41,120"
+			},
+			"offsets": {
+				"from": 457660,
+				"to": 461120
+			},
+			"text": " from the bare metals to Kubernetes to the inference,"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:41,120",
+				"to": "00:07:43,640"
+			},
+			"offsets": {
+				"from": 461120,
+				"to": 463640
+			},
+			"text": " as well as the agent inference."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:43,640",
+				"to": "00:07:45,120"
+			},
+			"offsets": {
+				"from": 463640,
+				"to": 465120
+			},
+			"text": " - So just to wrap up,"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:45,120",
+				"to": "00:07:47,080"
+			},
+			"offsets": {
+				"from": 465120,
+				"to": 467080
+			},
+			"text": " there are now many, many new clouds, right?"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:47,080",
+				"to": "00:07:49,200"
+			},
+			"offsets": {
+				"from": 467080,
+				"to": 469200
+			},
+			"text": " It's getting a very proud of space."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:49,200",
+				"to": "00:07:51,960"
+			},
+			"offsets": {
+				"from": 469200,
+				"to": 471960
+			},
+			"text": " And how do you see this market shaking out?"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:51,960",
+				"to": "00:07:54,520"
+			},
+			"offsets": {
+				"from": 471960,
+				"to": 474520
+			},
+			"text": " And also you just recently did a very successful fundraise."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:54,520",
+				"to": "00:07:57,040"
+			},
+			"offsets": {
+				"from": 474520,
+				"to": 477040
+			},
+			"text": " What differentiates you from the rest of them?"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:57,040",
+				"to": "00:07:59,040"
+			},
+			"offsets": {
+				"from": 477040,
+				"to": 479040
+			},
+			"text": " - Yeah, really great question."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:59,040",
+				"to": "00:08:01,360"
+			},
+			"offsets": {
+				"from": 479040,
+				"to": 481360
+			},
+			"text": " I would say, just give me takeaway if you like,"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:01,360",
+				"to": "00:08:04,600"
+			},
+			"offsets": {
+				"from": 481360,
+				"to": 484600
+			},
+			"text": " just forget everything that I say, talk about, right?"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:04,600",
+				"to": "00:08:08,120"
+			},
+			"offsets": {
+				"from": 484600,
+				"to": 488120
+			},
+			"text": " I'll say, number one is reliability and on time."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:09,200",
+				"to": "00:08:11,200"
+			},
+			"offsets": {
+				"from": 489200,
+				"to": 491200
+			},
+			"text": " Customer delivery is a promise, right?"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:11,200",
+				"to": "00:08:13,760"
+			},
+			"offsets": {
+				"from": 491200,
+				"to": 493760
+			},
+			"text": " It's very important and essential to us,"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:13,760",
+				"to": "00:08:16,540"
+			},
+			"offsets": {
+				"from": 493760,
+				"to": 496540
+			},
+			"text": " which is delivered a very large cluster to our customer."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:16,540",
+				"to": "00:08:19,320"
+			},
+			"offsets": {
+				"from": 496540,
+				"to": 499320
+			},
+			"text": " We deliver on the dot, exact same time."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:19,320",
+				"to": "00:08:22,600"
+			},
+			"offsets": {
+				"from": 499320,
+				"to": 502600
+			},
+			"text": " And reliable is impeccable as great, right?"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:22,600",
+				"to": "00:08:26,120"
+			},
+			"offsets": {
+				"from": 502600,
+				"to": 506120
+			},
+			"text": " And this is, it sounds easy,"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:26,120",
+				"to": "00:08:30,480"
+			},
+			"offsets": {
+				"from": 506120,
+				"to": 510480
+			},
+			"text": " but it's the grueling details in the operations, right?"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:30,480",
+				"to": "00:08:32,360"
+			},
+			"offsets": {
+				"from": 510480,
+				"to": 512360
+			},
+			"text": " So number one, supply chain."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:32,360",
+				"to": "00:08:35,800"
+			},
+			"offsets": {
+				"from": 512360,
+				"to": 515800
+			},
+			"text": " Number two is, as we face a lot of political headwinds"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:35,800",
+				"to": "00:08:37,660"
+			},
+			"offsets": {
+				"from": 515800,
+				"to": 517660
+			},
+			"text": " in the U.S., right?"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:37,660",
+				"to": "00:08:41,120"
+			},
+			"offsets": {
+				"from": 517660,
+				"to": 521120
+			},
+			"text": " We have different spots of pockets of power"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:41,120",
+				"to": "00:08:44,860"
+			},
+			"offsets": {
+				"from": 521120,
+				"to": 524860
+			},
+			"text": " at data center capacities all over the world, Asia and U.S."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:44,860",
+				"to": "00:08:49,780"
+			},
+			"offsets": {
+				"from": 524860,
+				"to": 529780
+			},
+			"text": " So I'm able to help U.S. companies to land beachhead in Asia"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:49,780",
+				"to": "00:08:52,540"
+			},
+			"offsets": {
+				"from": 529780,
+				"to": 532540
+			},
+			"text": " tailored towards kind of local data restrictions"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:52,540",
+				"to": "00:08:56,320"
+			},
+			"offsets": {
+				"from": 532540,
+				"to": 536320
+			},
+			"text": " or data private policies, right, in Asia and vice versa,"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:56,320",
+				"to": "00:08:59,040"
+			},
+			"offsets": {
+				"from": 536320,
+				"to": 539040
+			},
+			"text": " helping Asia enterprise to go to U.S."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:59,040",
+				"to": "00:09:01,160"
+			},
+			"offsets": {
+				"from": 539040,
+				"to": 541160
+			},
+			"text": " So we have, it's not just like partnership mode,"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:01,160",
+				"to": "00:09:05,120"
+			},
+			"offsets": {
+				"from": 541160,
+				"to": 545120
+			},
+			"text": " we have data center there, but we have actual W2 employees"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:05,120",
+				"to": "00:09:09,120"
+			},
+			"offsets": {
+				"from": 545120,
+				"to": 549120
+			},
+			"text": " in Indonesia and Malaysia and Singapore and Thailand"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:09,120",
+				"to": "00:09:11,680"
+			},
+			"offsets": {
+				"from": 549120,
+				"to": 551680
+			},
+			"text": " and Taiwan and Japan and same Korea,"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:11,680",
+				"to": "00:09:13,080"
+			},
+			"offsets": {
+				"from": 551680,
+				"to": 553080
+			},
+			"text": " like people actually on the ground"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:13,080",
+				"to": "00:09:17,360"
+			},
+			"offsets": {
+				"from": 553080,
+				"to": 557360
+			},
+			"text": " and support DC build out or sales or pre-sale or whatnot."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:17,360",
+				"to": "00:09:18,760"
+			},
+			"offsets": {
+				"from": 557360,
+				"to": 558760
+			},
+			"text": " - That's really impressive."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:18,760",
+				"to": "00:09:20,680"
+			},
+			"offsets": {
+				"from": 558760,
+				"to": 560680
+			},
+			"text": " Thank you very much, Alex, for stopping by today"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:20,680",
+				"to": "00:09:22,320"
+			},
+			"offsets": {
+				"from": 560680,
+				"to": 562320
+			},
+			"text": " and real pleasure speaking with you."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:22,320",
+				"to": "00:09:23,320"
+			},
+			"offsets": {
+				"from": 562320,
+				"to": 563320
+			},
+			"text": " - Thank you, Steve."
+		}
+	]
+}

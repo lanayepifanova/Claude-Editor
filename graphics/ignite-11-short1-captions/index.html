@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>captions</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:transparent; }
+      #root { position:relative; width:1080px; height:1920px; }
+      .cue {
+        position:absolute; left:0; right:0; top:65.0%;
+        transform:translateY(-50%);
+        display:flex; align-items:center; justify-content:center;
+        text-align:center;
+      }
+      .cue span {
+        display:inline-block; max-width:778px; white-space:nowrap;
+        font-family:'Montserrat', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+        font-weight:800; font-size:54px; line-height:1.18;
+        letter-spacing:-0.01em; color:#FFFFFF;
+        /* hard edge, zero blur — reads on any background, never looks glowy */
+        text-shadow:
+          4px 0 0 #000, -4px 0 0 #000, 0 4px 0 #000, 0 -4px 0 #000,
+          3px 3px 0 #000, -3px 3px 0 #000,
+          3px -3px 0 #000, -3px -3px 0 #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="40.332"
+         data-width="1080" data-height="1920" data-fps="23.976"
+         data-layout-allow-overflow="true">
+      <div id="cue0" class="clip cue" data-start="0.04" data-duration="1.0" data-track-index="1"><span>What is a cloud, right?</span></div>
+      <div id="cue1" class="clip cue" data-start="1.04" data-duration="0.8" data-track-index="1"><span>What metrics are</span></div>
+      <div id="cue2" class="clip cue" data-start="1.84" data-duration="0.76" data-track-index="1"><span>you judged on?</span></div>
+      <div id="cue3" class="clip cue" data-start="2.6" data-duration="0.61" data-track-index="1"><span>It's on the uptime,</span></div>
+      <div id="cue4" class="clip cue" data-start="3.21" data-duration="0.27" data-track-index="1"><span>right?</span></div>
+      <div id="cue5" class="clip cue" data-start="3.5" data-duration="1.1" data-track-index="1"><span>It's on how much,</span></div>
+      <div id="cue6" class="clip cue" data-start="4.6" data-duration="1.3" data-track-index="1"><span>how well is your</span></div>
+      <div id="cue7" class="clip cue" data-start="5.9" data-duration="1.02" data-track-index="1"><span>compute utilized?</span></div>
+      <div id="cue8" class="clip cue" data-start="6.92" data-duration="1.08" data-track-index="1"><span>Utilization rate, right?</span></div>
+      <div id="cue9" class="clip cue" data-start="8.0" data-duration="0.8" data-track-index="1"><span>So if you look</span></div>
+      <div id="cue10" class="clip cue" data-start="8.8" data-duration="0.96" data-track-index="1"><span>at an empty glass,</span></div>
+      <div id="cue11" class="clip cue" data-start="9.76" data-duration="1.04" data-track-index="1"><span>you put in large big</span></div>
+      <div id="cue12" class="clip cue" data-start="10.8" data-duration="0.88" data-track-index="1"><span>blocks of ice.</span></div>
+      <div id="cue13" class="clip cue" data-start="11.68" data-duration="0.84" data-track-index="1"><span>What is that?</span></div>
+      <div id="cue14" class="clip cue" data-start="12.52" data-duration="1.04" data-track-index="1"><span>That is the bare metal</span></div>
+      <div id="cue15" class="clip cue" data-start="13.56" data-duration="0.83" data-track-index="1"><span>business, compute</span></div>
+      <div id="cue16" class="clip cue" data-start="14.39" data-duration="0.84" data-track-index="1"><span>business, five year</span></div>
+      <div id="cue17" class="clip cue" data-start="15.23" data-duration="0.88" data-track-index="1"><span>contract, six year</span></div>
+      <div id="cue18" class="clip cue" data-start="16.11" data-duration="0.81" data-track-index="1"><span>contract, right?</span></div>
+      <div id="cue19" class="clip cue" data-start="16.92" data-duration="1.36" data-track-index="1"><span>It gives you a 50% bar.</span></div>
+      <div id="cue20" class="clip cue" data-start="18.28" data-duration="0.57" data-track-index="1"><span>You start pouring</span></div>
+      <div id="cue21" class="clip cue" data-start="18.85" data-duration="0.53" data-track-index="1"><span>in the pebble.</span></div>
+      <div id="cue22" class="clip cue" data-start="19.4" data-duration="0.84" data-track-index="1"><span>What is pebble?</span></div>
+      <div id="cue23" class="clip cue" data-start="20.24" data-duration="1.05" data-track-index="1"><span>Short term contract,</span></div>
+      <div id="cue24" class="clip cue" data-start="21.29" data-duration="0.33" data-track-index="1"><span>right?</span></div>
+      <div id="cue25" class="clip cue" data-start="21.64" data-duration="0.84" data-track-index="1"><span>Fill that in.</span></div>
+      <div id="cue26" class="clip cue" data-start="22.48" data-duration="0.82" data-track-index="1"><span>And then what do you do?</span></div>
+      <div id="cue27" class="clip cue" data-start="23.3" data-duration="0.84" data-track-index="1"><span>Pour in the sand.</span></div>
+      <div id="cue28" class="clip cue" data-start="24.14" data-duration="0.82" data-track-index="1"><span>What is the sand?</span></div>
+      <div id="cue29" class="clip cue" data-start="24.96" data-duration="0.84" data-track-index="1"><span>Token business, right?</span></div>
+      <div id="cue30" class="clip cue" data-start="25.8" data-duration="1.44" data-track-index="1"><span>And you know, dedicated</span></div>
+      <div id="cue31" class="clip cue" data-start="27.24" data-duration="0.6" data-track-index="1"><span>endpoints.</span></div>
+      <div id="cue32" class="clip cue" data-start="27.88" data-duration="1.4" data-track-index="1"><span>You can rent for months</span></div>
+      <div id="cue33" class="clip cue" data-start="29.28" data-duration="1.08" data-track-index="1"><span>or weeks or hours</span></div>
+      <div id="cue34" class="clip cue" data-start="30.36" data-duration="0.8" data-track-index="1"><span>and then serverless,</span></div>
+      <div id="cue35" class="clip cue" data-start="31.16" data-duration="0.28" data-track-index="1"><span>right?</span></div>
+      <div id="cue36" class="clip cue" data-start="31.46" data-duration="1.6" data-track-index="1"><span>Through tokens as well</span></div>
+      <div id="cue37" class="clip cue" data-start="33.06" data-duration="0.74" data-track-index="1"><span>as CPU VM.</span></div>
+      <div id="cue38" class="clip cue" data-start="33.8" data-duration="0.8" data-track-index="1"><span>And you fill that up,</span></div>
+      <div id="cue39" class="clip cue" data-start="34.6" data-duration="0.46" data-track-index="1"><span>pouring water in.</span></div>
+      <div id="cue40" class="clip cue" data-start="35.08" data-duration="0.61" data-track-index="1"><span>So it's all about</span></div>
+      <div id="cue41" class="clip cue" data-start="35.69" data-duration="0.71" data-track-index="1"><span>filling the cracks,</span></div>
+      <div id="cue42" class="clip cue" data-start="36.4" data-duration="0.86" data-track-index="1"><span>filling the utilization</span></div>
+      <div id="cue43" class="clip cue" data-start="37.26" data-duration="0.42" data-track-index="1"><span>rate. So</span></div>
+      <div id="cue44" class="clip cue" data-start="37.7" data-duration="1.46" data-track-index="1"><span>that is the fundamental</span></div>
+      <div id="cue45" class="clip cue" data-start="39.16" data-duration="0.67" data-track-index="1"><span>core business</span></div>
+      <div id="cue46" class="clip cue" data-start="39.83" data-duration="0.502" data-track-index="1"><span>model of the cloud.</span></div>
+    </div>
+    <script>
+      // GENERATED by edit/captions_overlay.py — do not hand-edit.
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // captions cut in and out with the clip window — no tweens by design
+      tl.set("#root", { opacity: 1 }, 0);
+      tl.set("#root", { opacity: 1 }, 40.332);
+      tl.seek(0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
