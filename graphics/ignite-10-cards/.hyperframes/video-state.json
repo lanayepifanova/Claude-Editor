@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "historyId": "02a6829b-c3fb-43af-842f-116b493cda0b",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "Figtree.ttf": {
+      "hash": "26ad3db9b31ff7dde67a91ff515d022d2f495cd506590699cf264f0bfe6fb714",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/02a6829b-c3fb-43af-842f-116b493cda0b/blobs/26/26ad3db9b31ff7dde67a91ff515d022d2f495cd506590699cf264f0bfe6fb714"
+    },
+    "index.html": {
+      "hash": "e22d7aa970a9b3df2948e8912b3f6813b2ac8490020f18a666da656d46207326",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/02a6829b-c3fb-43af-842f-116b493cda0b/blobs/e2/e22d7aa970a9b3df2948e8912b3f6813b2ac8490020f18a666da656d46207326"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "6c663c44-64a6-4af8-b1ea-f262ba0107f3",
+      "completedAt": 1793037192831,
+      "output": "/Users/lanayepifanova/Claude-Editor/graphics/ignite-10-cards.mov",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
+}

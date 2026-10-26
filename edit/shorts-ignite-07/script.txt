@@ -1,0 +1,311 @@
+0:00.00 - Joe, thanks for coming over to the studio.
+0:02.60 We are excited to have you here.
+0:04.60 - Thank you very much for the opportunity
+0:06.12 and inviting me to come in and speak with you.
+0:08.48 - You know, you're one of my, you know,
+0:10.20 I love obviously all the people in the video,
+0:12.16 but I'm really excited about your experiences,
+0:14.48 your background.
+0:15.32 Do you mind if we just jump in right away?
+0:16.84 - Yeah, of course.
+0:17.68 - 'Cause right now you're with Voltage Park,
+0:19.60 but before Voltage Park, you're working with Cisco's,
+0:22.52 high frequency trading.
+0:23.76 Tell me more about your previous experience.
+0:25.72 - Yeah, so right now, the company that I'm with
+0:28.64 was actually Lightning AI, which was a,
+0:31.44 it's a company that's combined to Voltage Park
+0:33.40 and Lightning AI, which provides AI as a service.
+0:37.88 So it's full stack.
+0:38.84 So we really focus on what we can bring to the AI builders,
+0:43.64 everything from the GPU infrastructure
+0:46.52 up into the software layer that allows them to,
+0:50.04 you know, kind of run that range of research,
+0:53.60 experimentation, training, infers and agenda workloads.
+0:57.56 And it's a platform that really makes it much simpler
+1:01.80 to bring AI into a level of operations and production
+1:06.64 and the accelerator rate.
+1:08.00 - That's awesome.
+1:08.84 And then before that, you were at Cisco
+1:10.48 and before they are high frequency trading.
+1:11.68 So tell me more.
+1:12.76 So you, what's the similarity differences
+1:15.48 between high frequency trading with high performance GPU,
+1:19.20 traditional versus new cloud?
+1:21.84 - Well, I mean, there's a lot of differences you get into
+1:24.80 when you're looking at high frequency trading.
+1:27.18 There's a lot more parallels that you get
+1:29.24 with your AI workloads and your AI infrastructure
+1:33.00 to traditional high performance computing.
+1:34.88 'Cause that's really where the, you know,
+1:36.48 the foundation of these technologies exist.
+1:39.90 When you really want to get into the similarities,
+1:44.08 you really have to understand what the behavior requirements
+1:47.76 are of the applications and how they're being delivered.
+1:51.02 Because in high frequency trading
+1:52.84 or really in electronic trading,
+1:54.48 'cause high frequency trading is just one of the
+1:59.60 strategies that you're using for electronic trading.
+2:04.16 But it all comes down into minimizing any blockages
+2:09.12 or bottlenecks you potentially have in the environment.
+2:11.36 So you can ensure that from the point that you go
+2:15.94 from a trading parlance, tick to trade and confirmation
+2:21.36 or into the AI is, you know, establishing a training run,
+2:25.76 time to result, or if you're talking about inference,
+2:28.46 from the time that you submit your prompt till the end token
+2:32.60 is finalized or your prompt returns.
+2:34.56 So there's a lot of commonality there.
+2:37.00 But from a scaling perspective
+2:38.92 and the tight synchronization that you have
+2:41.44 from an application, there's significantly more
+2:45.76 parallels between traditional high performance computing
+2:49.24 and AI workloads.
+2:52.28 >> Very, this is super exciting.
+2:53.60 I love to dig on a bit more.
+2:55.24 So we have seen new clouds as a industry
+2:59.56 growing tremendously in the past, what, two years, right?
+3:02.72 So love to hear, like beyond having the latest GPU,
+3:06.04 what actually differentiate a successful new cloud
+3:08.92 versus I guess a regular one?
+3:12.20 >> For us, and this is where we've really shown
+3:14.72 our differentiation.
+3:15.68 I mean, part of it is having the full stack
+3:17.72 and understanding all aspects of the full stack.
+3:20.54 But understanding that, you know,
+3:22.84 the reference architecture from a design perspective
+3:25.04 is a starting place.
+3:26.74 It is not something that's locked into stone.
+3:29.68 So we have taken a lot of time in our designs
+3:32.98 to really understand all the aspects from, you know,
+3:38.28 the data movement from storage into GPU memory,
+3:41.48 the inter-process communication, you know,
+3:44.00 for the matrix mathematics or tensor movement
+3:47.56 for trading, or for training.
+3:50.68 >> So trading, it pulls it off, right, trading, yes.
+3:54.00 >> And also as you get into distributed inference
+3:56.50 to ensure that you're able to maximize
+3:58.80 the amount of performance you're going to have.
+4:01.28 And that's where a lot of our differentiation comes into.
+4:04.36 We have a wide range of customers for our business models,
+4:08.88 which are both on demand as well as reserve.
+4:13.98 And within the reserve business,
+4:15.46 we do have foundation labs.
+4:19.40 And one of our key foundation labs has identified
+4:23.44 that they are in other data centers or other Neo Clouds
+4:27.04 where they're utilizing the same hardware,
+4:29.40 where they see a five to 8% higher performance
+4:32.20 in our environment on the same hardware
+4:34.88 than they do in other Neo Clouds.
+4:36.68 And that all comes down to what we do
+4:38.28 from an architectural perspective
+4:40.44 to ensure that we're able to keep everything moving
+4:43.74 in such a way that the GPUs are not waiting
+4:47.90 for their workloads.
+4:48.74 >> So when you say five to 8x better performance,
+4:51.88 is you mean like super, latency, or everything, stability?
+4:56.08 >> Yeah, it's five to 8% versus five to eight times,
+4:58.28 but five to 8% when you're talking about training
+5:00.32 of mixture of expert models,
+5:03.42 the terabytes, trillions of parameters, that's huge, totally.
+5:08.68 But it's what we do from completely non-oversubscribed
+5:14.56 high levels of redundancy in the environment.
+5:17.12 We make sure that there isn't going to be no choke points
+5:19.84 or if there is some kind of a failure,
+5:22.04 the network is resilient and recovers very, very quickly.
+5:26.36 So it does not impact the movement of the data
+5:29.68 and the AI work stream,
+5:30.80 whether we're talking training or inference.
+5:32.96 >> Wow, very cool.
+5:33.92 And I'm assuming clients and most enterprises,
+5:36.16 they really care about the high throughputs,
+5:38.52 the stability, right, and then the redundancy.
+5:40.56 >> Yeah, when we look at our customers,
+5:43.60 the last thing we want them to have to worry about
+5:46.08 is the underlying infrastructure.
+5:49.36 Because their whole focus,
+5:50.80 because they're researchers, they're scientists,
+5:52.94 they're a data science machine learning expert,
+5:55.44 AI optimization engineers,
+5:58.16 they want to focus on their code
+6:00.80 and how that system is actually operating.
+6:03.48 They don't want to have to be concerned
+6:05.16 that what is underlying that
+6:07.72 is going to be a problem for them.
+6:09.84 >> Right, very cool.
+6:10.80 So the stability and resiliency and performance
+6:13.64 is real key.
+6:14.88 >> So back to the question, right?
+6:16.92 So when they buying compute as a resource for your clients,
+6:22.46 are they buying compute in terms of a bad metal?
+6:25.92 Are they buying you for tokens stability?
+6:28.28 What's the most important thing to know?
+6:29.62 >> Yes. (laughs)
+6:31.48 Again, because we're offering reserve business
+6:35.88 as well as on demand,
+6:40.36 depending upon which model that they're coming in
+6:43.44 from a business perspective,
+6:44.84 we do have customers that are 100% bare metal only.
+6:49.48 We have others that are looking for much smaller
+6:53.52 use components for where they at in their AI work stream.
+6:57.64 Are they at an experimentation or a research phase
+7:00.32 where they do not need to have a large number of systems?
+7:03.64 So we have a lot of virtualized capabilities.
+7:06.92 We have managed services as well.
+7:08.66 So like managed Kubernetes, managed Slurm,
+7:11.92 to where they will look to us
+7:13.12 to provide that type of capability
+7:15.92 instead of they're having to kind of bring the entire stack.
+7:18.76 >> That's awesome.
+7:19.72 And then are you agnostic with the design houses of the chips
+7:22.84 or are you pretty much, you know?
+7:24.86 >> I mean, we've been pretty much an Nvidia shop.
+7:29.06 As we look at things going forward,
+7:31.44 there's always the aspect of needing to be cognizant
+7:35.08 of changes that are coming.
+7:37.60 And as we've seen over the last two, two and a half years
+7:41.36 where training has kind of been the majority
+7:44.56 of the AI workloads and some small amount of inference,
+7:49.24 we're starting to see that change more
+7:51.44 towards a lot more inference
+7:53.92 than we see from a training perspective.
+7:56.16 But we will always see training continue to grow,
+8:00.92 but not as fast as it has.
+8:02.92 Of maybe low double digit percentages year over year
+8:08.20 versus inference by I think some of the research firms
+8:14.08 expecting to see like by 2030,
+8:16.32 it's going to be like a 40% year over year growth
+8:18.60 just in inference business.
+8:20.60 And as we see the change in the size of the models
+8:25.24 and the token per second factors that people are looking for,
+8:30.34 we're also on the verge of really seeing a change
+8:33.48 in how inference is being delivered.
+8:35.88 Because today you're working with general purpose GPUs.
+8:40.02 And when you talk about inference,
+8:42.14 you're dealing with two very different pieces of it.
+8:46.56 Right, there's the pre-fill, which is compute intensive,
+8:48.82 and then there's the decode, which is memory intensive.
+8:51.76 And when we're doing this on the same GPU,
+8:53.68 general purpose GPU, there's trade offs
+8:56.68 from a performance perspective.
+8:58.52 So we are starting to move into an area
+9:00.60 of what's called disaggregated inference.
+9:04.04 So you have a GPU that is going to do the pre-fill.
+9:07.60 So you do that on one chip, and then on a second chip,
+9:10.24 you can actually do the decode.
+9:12.12 And so there's roughly 40 companies out there today
+9:15.90 that are doing inference optimized
+9:18.20 and decode optimized chipsets.
+9:21.28 So these are the changes that are,
+9:23.80 we're starting to build towards now.
+9:26.40 And this requires some changes
+9:28.44 in how you look at things within the infrastructure
+9:30.80 to ensure that you have that high level
+9:32.68 of low latency, low jitter communication
+9:35.24 between the pre-fill and the decode systems.
+9:37.84 >> I have so many questions for you.
+9:39.52 This is amazing.
+9:40.36 So are you saying that in the future a client come to you,
+9:43.28 they can be using all different
+9:45.56 potentially interesting chips,
+9:48.18 and then you will make a very smooth experience for them.
+9:50.44 They might not even experience better performances, right,
+9:53.16 at the end.
+9:54.40 Last question, I know we don't have that much time,
+9:56.30 is utilization and the pricing.
+9:59.06 Let's come up, right, linked.
+10:00.56 What do you think about utilization today
+10:01.96 and how can we get better?
+10:03.20 >> Well, I mean, for us,
+10:04.72 when I look at our utilization level and our occupancy level,
+10:07.60 we're greater than 90% occupancy.
+10:09.80 And so, you know, that has not been a problem for us.
+10:13.84 And it is, you know, we are growing very, very quickly.
+10:18.64 And I think, I mean, you will hear announcements
+10:20.56 on additional locations that we're going to be bringing up
+10:25.20 here in the near future.
+10:28.48 And when you get into the nuances of efficient use,
+10:34.36 so much of this is really predicated upon the workloads
+10:36.84 and how well those have been optimized by our customers.
+10:40.98 As you start to see the enterprises
+10:44.32 moving more out of their infancy,
+10:48.44 I guess you could say, in the AI world,
+10:51.32 is that the changes in what's going to happen
+10:58.48 in the knowledge level of skill sets
+11:00.40 that the enterprises have.
+11:02.10 Because they're having to compete with all the AI startups,
+11:05.36 frontier labs, hyperscalers, you know,
+11:08.16 who are at that bleeding edge.
+11:10.80 So they're getting, you know, kind of that top,
+11:12.44 you know, 5% of, you know, the talents, right.
+11:16.32 So in many cases, the enterprises
+11:19.64 aren't going to have those skill sets.
+11:20.96 They're going to start looking for the Neo Clouds
+11:25.24 that are providing, you know, a full stack AI as a service
+11:29.08 that can come in and say, here's my model,
+11:31.22 here's my data, go train it.
+11:34.06 And come back to me when you're ready
+11:35.68 to start fine tuning it.
+11:37.44 And so that post training work that's going to occur
+11:39.68 in the fine tuning and adding synthetic data
+11:41.60 if you do not have enough data.
+11:44.42 And the product that's delivered at the end
+11:49.00 is a fully trained inference ready model.
+11:54.28 And there's also some interesting aspects
+11:56.30 of what's going to happen when we start looking
+11:58.48 at what, you know, the models and the complexity.
+12:02.40 Because today, you know, we hear a lot
+12:04.04 about the mixture of experts, you know,
+12:06.32 these trillion, multi-trillion parameter models,
+12:09.00 you know, they can take, you know,
+12:10.16 two, three, four, you know, terabytes of data
+12:13.48 that get spread out across.
+12:15.26 In these cases, you have one large monolithic model
+12:17.60 and a whole bunch of expert networks
+12:20.52 that the routing, you know, will take that prompt
+12:23.04 and push it to.
+12:24.56 With the enterprise, because you're dealing
+12:26.72 with disparate data sets of finance and marketing
+12:30.44 and sales and administrative and purchasing,
+12:33.44 supply chain, these are all disparate data sets.
+12:37.80 And the contextual connection between all of these
+12:40.72 is by the subject matter experts
+12:42.52 in each of those different departments.
+12:46.16 If an exec wants information,
+12:48.20 he wants it relatively quickly,
+12:49.40 but it can take, you know, weeks to months
+12:51.96 for these teams to get together and put it.
+12:54.48 What we're, you know, what we're hearing about
+12:56.96 is kind of this next generation
+12:58.80 of what's called a coalition of experts.
+13:01.48 Where I have all these different models
+13:03.32 and I have the expert networks for each of those models,
+13:06.52 I send my prompt in, my prompt then formats
+13:09.80 that for each of the different expert networks,
+13:13.80 they get the result and then there is a layer,
+13:17.48 an orchestration in a, really,
+13:20.48 you can look at it as semantic routing
+13:22.48 and contextual connectivity that has to happen
+13:25.84 that then brings all that data back
+13:27.56 to give you that cohesive answer.
+13:30.84 So if I'm a CEO and I say, hey,
+13:34.20 what's happening with the $50 million
+13:35.76 I threw at this new product?
+13:38.12 I want to know an answer relatively quickly
+13:40.44 and not have to wait weeks or months
+13:41.96 because if I have to make a pivot.
+13:43.56 >> So you're not NeoCloud anymore,
+13:44.88 you are intelligent cloud.
+13:47.20 >> We have to be.
+13:48.04 >> Yeah, that's awesome.
+13:48.88 >> And really as a NeoCloud we have to understand
+13:51.56 what's happening, you know, on the platforms,
+13:54.68 on the GPUs, in memory to really get--
+13:57.92 >> You're the brain, you're the brain for enterprises,
+14:00.36 that's great. >> I see, yes.
+14:01.48 >> That's awesome, thanks for coming, Joe,
+14:02.84 this is awesome.
+14:03.96 >> Oh no, thank you very much for having me,
+14:05.24 I appreciate your time, appreciate the opportunity.
+14:07.16 >> Yeah, enjoy the conference.
+14:08.24 >> I will, thank you very much.
+14:09.72 >> Thank you.

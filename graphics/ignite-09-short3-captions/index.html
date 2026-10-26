@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>captions</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:transparent; }
+      #root { position:relative; width:1080px; height:1920px; }
+      .cue {
+        position:absolute; left:0; right:0; top:65.0%;
+        transform:translateY(-50%);
+        display:flex; align-items:center; justify-content:center;
+        text-align:center;
+      }
+      .cue span {
+        display:inline-block; max-width:778px; white-space:nowrap;
+        font-family:'Montserrat', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+        font-weight:800; font-size:54px; line-height:1.18;
+        letter-spacing:-0.01em; color:#FFFFFF;
+        /* hard edge, zero blur — reads on any background, never looks glowy */
+        text-shadow:
+          4px 0 0 #000, -4px 0 0 #000, 0 4px 0 #000, 0 -4px 0 #000,
+          3px 3px 0 #000, -3px 3px 0 #000,
+          3px -3px 0 #000, -3px -3px 0 #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="50.801"
+         data-width="1080" data-height="1920" data-fps="23.976"
+         data-layout-allow-overflow="true">
+      <div id="cue0" class="clip cue" data-start="0.03" data-duration="0.97" data-track-index="1"><span>Imagine a world</span></div>
+      <div id="cue1" class="clip cue" data-start="1.0" data-duration="1.37" data-track-index="1"><span>where, you know, you are</span></div>
+      <div id="cue2" class="clip cue" data-start="2.37" data-duration="1.49" data-track-index="1"><span>enterprises, you buy</span></div>
+      <div id="cue3" class="clip cue" data-start="3.86" data-duration="0.92" data-track-index="1"><span>GPUs, right?</span></div>
+      <div id="cue4" class="clip cue" data-start="4.8" data-duration="0.79" data-track-index="1"><span>Obviously you were</span></div>
+      <div id="cue5" class="clip cue" data-start="5.59" data-duration="1.02" data-track-index="1"><span>hoping to generate ROI</span></div>
+      <div id="cue6" class="clip cue" data-start="6.61" data-duration="0.93" data-track-index="1"><span>from the GPU</span></div>
+      <div id="cue7" class="clip cue" data-start="7.54" data-duration="0.93" data-track-index="1"><span>procurement, and then</span></div>
+      <div id="cue8" class="clip cue" data-start="8.47" data-duration="0.69" data-track-index="1"><span>you have service</span></div>
+      <div id="cue9" class="clip cue" data-start="9.16" data-duration="0.56" data-track-index="1"><span>offering.</span></div>
+      <div id="cue10" class="clip cue" data-start="9.72" data-duration="0.9" data-track-index="1"><span>However, you realize</span></div>
+      <div id="cue11" class="clip cue" data-start="10.62" data-duration="1.0" data-track-index="1"><span>that, hey, the GPU</span></div>
+      <div id="cue12" class="clip cue" data-start="11.62" data-duration="0.87" data-track-index="1"><span>prices are going all</span></div>
+      <div id="cue13" class="clip cue" data-start="12.49" data-duration="0.83" data-track-index="1"><span>over the place.</span></div>
+      <div id="cue14" class="clip cue" data-start="13.32" data-duration="1.14" data-track-index="1"><span>Not only to go up, I</span></div>
+      <div id="cue15" class="clip cue" data-start="14.46" data-duration="1.04" data-track-index="1"><span>have no idea to go up</span></div>
+      <div id="cue16" class="clip cue" data-start="15.5" data-duration="1.7" data-track-index="1"><span>and down 20%, 50%.</span></div>
+      <div id="cue17" class="clip cue" data-start="17.2" data-duration="0.84" data-track-index="1"><span>And you'll be concerned.</span></div>
+      <div id="cue18" class="clip cue" data-start="18.08" data-duration="0.62" data-track-index="1"><span>Uncertainty</span></div>
+      <div id="cue19" class="clip cue" data-start="18.7" data-duration="1.22" data-track-index="1"><span>is what kills business</span></div>
+      <div id="cue20" class="clip cue" data-start="19.92" data-duration="0.38" data-track-index="1"><span>planning</span></div>
+      <div id="cue21" class="clip cue" data-start="20.32" data-duration="1.24" data-track-index="1"><span>because uncertainty,</span></div>
+      <div id="cue22" class="clip cue" data-start="21.56" data-duration="0.657" data-track-index="1"><span>they will say, hey,</span></div>
+      <div id="cue23" class="clip cue" data-start="22.217" data-duration="0.563" data-track-index="1"><span>guess what?</span></div>
+      <div id="cue24" class="clip cue" data-start="22.78" data-duration="0.64" data-track-index="1"><span>I don't know what's</span></div>
+      <div id="cue25" class="clip cue" data-start="23.42" data-duration="0.66" data-track-index="1"><span>going to happen.</span></div>
+      <div id="cue26" class="clip cue" data-start="24.08" data-duration="0.88" data-track-index="1"><span>Let me just do less.</span></div>
+      <div id="cue27" class="clip cue" data-start="25.12" data-duration="0.43" data-track-index="1"><span>Or someone's going</span></div>
+      <div id="cue28" class="clip cue" data-start="25.57" data-duration="0.72" data-track-index="1"><span>to charge me a higher</span></div>
+      <div id="cue29" class="clip cue" data-start="26.29" data-duration="0.83" data-track-index="1"><span>premium interest rate</span></div>
+      <div id="cue30" class="clip cue" data-start="27.12" data-duration="0.96" data-track-index="1"><span>for whatever assets.</span></div>
+      <div id="cue31" class="clip cue" data-start="28.15" data-duration="0.79" data-track-index="1"><span>So that's not good</span></div>
+      <div id="cue32" class="clip cue" data-start="28.94" data-duration="1.052" data-track-index="1"><span>for anyone, let</span></div>
+      <div id="cue33" class="clip cue" data-start="29.992" data-duration="0.728" data-track-index="1"><span>alone Nvidia.</span></div>
+      <div id="cue34" class="clip cue" data-start="30.72" data-duration="0.68" data-track-index="1"><span>So what we come</span></div>
+      <div id="cue35" class="clip cue" data-start="31.4" data-duration="0.813" data-track-index="1"><span>in to say, hey,</span></div>
+      <div id="cue36" class="clip cue" data-start="32.213" data-duration="0.767" data-track-index="1"><span>guess what?</span></div>
+      <div id="cue37" class="clip cue" data-start="32.98" data-duration="0.63" data-track-index="1"><span>You don't</span></div>
+      <div id="cue38" class="clip cue" data-start="33.61" data-duration="0.63" data-track-index="1"><span>want volatility.</span></div>
+      <div id="cue39" class="clip cue" data-start="34.28" data-duration="0.627" data-track-index="1"><span>You can use futures</span></div>
+      <div id="cue40" class="clip cue" data-start="34.907" data-duration="0.733" data-track-index="1"><span>to hedge that.</span></div>
+      <div id="cue41" class="clip cue" data-start="35.64" data-duration="0.8" data-track-index="1"><span>And someone else,</span></div>
+      <div id="cue42" class="clip cue" data-start="36.44" data-duration="0.84" data-track-index="1"><span>their professional job</span></div>
+      <div id="cue43" class="clip cue" data-start="37.28" data-duration="0.99" data-track-index="1"><span>is managing volatility,</span></div>
+      <div id="cue44" class="clip cue" data-start="38.27" data-duration="0.31" data-track-index="1"><span>right?</span></div>
+      <div id="cue45" class="clip cue" data-start="38.6" data-duration="0.64" data-track-index="1"><span>So let them take</span></div>
+      <div id="cue46" class="clip cue" data-start="39.24" data-duration="1.22" data-track-index="1"><span>the volatility away. And</span></div>
+      <div id="cue47" class="clip cue" data-start="40.46" data-duration="0.98" data-track-index="1"><span>you have certainties.</span></div>
+      <div id="cue48" class="clip cue" data-start="41.46" data-duration="0.8" data-track-index="1"><span>You can plan better.</span></div>
+      <div id="cue49" class="clip cue" data-start="42.26" data-duration="0.5" data-track-index="1"><span>You can manage</span></div>
+      <div id="cue50" class="clip cue" data-start="42.78" data-duration="0.86" data-track-index="1"><span>your margin better.</span></div>
+      <div id="cue51" class="clip cue" data-start="43.66" data-duration="0.69" data-track-index="1"><span>The results might</span></div>
+      <div id="cue52" class="clip cue" data-start="44.35" data-duration="0.61" data-track-index="1"><span>be you generate</span></div>
+      <div id="cue53" class="clip cue" data-start="44.96" data-duration="0.84" data-track-index="1"><span>more businesses.</span></div>
+      <div id="cue54" class="clip cue" data-start="45.8" data-duration="0.65" data-track-index="1"><span>You can procure</span></div>
+      <div id="cue55" class="clip cue" data-start="46.45" data-duration="0.65" data-track-index="1"><span>more resources</span></div>
+      <div id="cue56" class="clip cue" data-start="47.1" data-duration="0.99" data-track-index="1"><span>at the range that you're</span></div>
+      <div id="cue57" class="clip cue" data-start="48.09" data-duration="0.71" data-track-index="1"><span>looking for.</span></div>
+      <div id="cue58" class="clip cue" data-start="48.96" data-duration="0.36" data-track-index="1"><span>It's actually</span></div>
+      <div id="cue59" class="clip cue" data-start="49.34" data-duration="0.43" data-track-index="1"><span>really good</span></div>
+      <div id="cue60" class="clip cue" data-start="49.79" data-duration="1.011" data-track-index="1"><span>for the whole ecosystem.</span></div>
+    </div>
+    <script>
+      // GENERATED by edit/captions_overlay.py — do not hand-edit.
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // captions cut in and out with the clip window — no tweens by design
+      tl.set("#root", { opacity: 1 }, 0);
+      tl.set("#root", { opacity: 1 }, 50.801);
+      tl.seek(0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

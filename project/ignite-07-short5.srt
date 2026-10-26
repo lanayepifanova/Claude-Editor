@@ -1,0 +1,152 @@
+1
+00:00:00,000 --> 00:00:01,810
+We've been pretty much
+
+2
+00:00:01,810 --> 00:00:03,360
+an NVIDIA shop.
+
+3
+00:00:03,360 --> 00:00:04,580
+As we look at things
+
+4
+00:00:04,580 --> 00:00:06,020
+going forward, there's
+
+5
+00:00:06,020 --> 00:00:06,920
+always the aspect
+
+6
+00:00:06,920 --> 00:00:07,440
+of needing
+
+7
+00:00:07,460 --> 00:00:08,300
+to be cognizant
+
+8
+00:00:08,300 --> 00:00:09,760
+of changes that are
+
+9
+00:00:09,760 --> 00:00:10,620
+coming.
+
+10
+00:00:10,620 --> 00:00:11,520
+As we've seen over
+
+11
+00:00:11,520 --> 00:00:12,430
+the last two, two
+
+12
+00:00:12,430 --> 00:00:13,200
+and a half years
+
+13
+00:00:13,200 --> 00:00:14,400
+where training has kind
+
+14
+00:00:14,400 --> 00:00:15,620
+of been the majority
+
+15
+00:00:15,620 --> 00:00:16,710
+of the AI workloads
+
+16
+00:00:16,710 --> 00:00:18,000
+and some small amount
+
+17
+00:00:18,000 --> 00:00:19,360
+of inference, we're
+
+18
+00:00:19,360 --> 00:00:20,310
+starting to see
+
+19
+00:00:20,310 --> 00:00:21,800
+that change more towards
+
+20
+00:00:21,800 --> 00:00:23,070
+a lot more inference
+
+21
+00:00:23,070 --> 00:00:23,640
+than we see
+
+22
+00:00:23,640 --> 00:00:24,560
+from a training
+
+23
+00:00:24,560 --> 00:00:25,680
+perspective.
+
+24
+00:00:25,680 --> 00:00:27,310
+But we will always see
+
+25
+00:00:27,310 --> 00:00:28,790
+training continue
+
+26
+00:00:28,790 --> 00:00:30,390
+to grow but not as fast
+
+27
+00:00:30,390 --> 00:00:31,920
+as it has, so maybe low
+
+28
+00:00:31,920 --> 00:00:33,800
+double digit percentages
+
+29
+00:00:33,800 --> 00:00:35,350
+year over year versus
+
+30
+00:00:35,350 --> 00:00:36,400
+inference.
+
+31
+00:00:36,400 --> 00:00:36,740
+I think
+
+32
+00:00:36,760 --> 00:00:37,790
+some of the research
+
+33
+00:00:37,790 --> 00:00:38,820
+firms are expecting
+
+34
+00:00:38,820 --> 00:00:40,450
+to see like by 2030 it's
+
+35
+00:00:40,450 --> 00:00:41,760
+going to be like a 40%
+
+36
+00:00:41,760 --> 00:00:42,790
+year over year growth
+
+37
+00:00:42,790 --> 00:00:43,640
+just in inference
+
+38
+00:00:43,640 --> 00:00:44,320
+business.
+

@@ -1,0 +1,57 @@
+{
+ "source": "footage/Ignite Oct 2026/10 Pheobe Lui The Information and Steven Hou Silcom Data.mp4",
+ "start": 659.0,
+ "end": 718.0,
+ "active": [
+  34,
+  1012
+ ],
+ "crop": [
+  568,
+  1012
+ ],
+ "shots": [
+  {
+   "t0": 0.0,
+   "t1": 12.095,
+   "face_x": 901,
+   "crop_x": 616,
+   "found": true
+  },
+  {
+   "t0": 12.095,
+   "t1": 13.18,
+   "face_x": 880,
+   "crop_x": 596,
+   "found": true
+  },
+  {
+   "t0": 13.18,
+   "t1": 28.362,
+   "face_x": 908,
+   "crop_x": 624,
+   "found": true
+  },
+  {
+   "t0": 28.362,
+   "t1": 33.242,
+   "face_x": 890,
+   "crop_x": 606,
+   "found": true
+  },
+  {
+   "t0": 33.242,
+   "t1": 57.933,
+   "face_x": 926,
+   "crop_x": 642,
+   "found": true
+  },
+  {
+   "t0": 57.933,
+   "t1": 59.0,
+   "face_x": 883,
+   "crop_x": 598,
+   "found": true
+  }
+ ]
+}

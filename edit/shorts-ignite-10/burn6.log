@@ -1,0 +1,8 @@
+1/2  cutting 25 segments from ignite-10-short6-vertical.mp4 (62.0s -> 51.8s, 16.5% removed)
+     master 1080x1920 1242f · ignite-10-short6-cap.mov 1080x1920 1243f
+2/2  compositing 1 overlay(s)
+     verifying burn against the uncaptioned master …
+     1241/1242 frames carry ink (100% of the cut) · peak coverage 1.0% of frame
+
+-> output/ignite-10-shorts/6 do you pay providers for their data.mp4  (44.1 MB)
+   master kept at graphics/ignite-10-short6-master.mp4

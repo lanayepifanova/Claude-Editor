@@ -1,0 +1,184 @@
+1
+00:00:00,010 --> 00:00:00,700
+Do you pay these
+
+2
+00:00:00,700 --> 00:00:01,170
+providers
+
+3
+00:00:01,190 --> 00:00:02,000
+for their data,
+
+4
+00:00:02,000 --> 00:00:02,760
+is that how that works?
+
+5
+00:00:02,760 --> 00:00:03,550
+So it depends
+
+6
+00:00:03,550 --> 00:00:04,760
+on the provider.
+
+7
+00:00:04,760 --> 00:00:05,840
+The smallest providers,
+
+8
+00:00:05,840 --> 00:00:07,040
+they voluntarily give us
+
+9
+00:00:07,040 --> 00:00:07,840
+data in exchange
+
+10
+00:00:07,840 --> 00:00:08,830
+for their market
+
+11
+00:00:08,830 --> 00:00:09,520
+intelligence
+
+12
+00:00:09,520 --> 00:00:10,630
+where we provide them
+
+13
+00:00:10,630 --> 00:00:11,870
+with anonymized market
+
+14
+00:00:11,870 --> 00:00:12,620
+intelligence
+
+15
+00:00:12,620 --> 00:00:13,600
+at the market level
+
+16
+00:00:13,600 --> 00:00:15,200
+for pricing and various
+
+17
+00:00:15,200 --> 00:00:16,000
+reasons.
+
+18
+00:00:16,000 --> 00:00:16,980
+The modestly bigger
+
+19
+00:00:16,980 --> 00:00:17,770
+ones, we do half
+
+20
+00:00:17,770 --> 00:00:18,500
+in-kind, half
+
+21
+00:00:18,500 --> 00:00:19,590
+commercial, and then
+
+22
+00:00:19,590 --> 00:00:20,900
+for the very big ones,
+
+23
+00:00:20,900 --> 00:00:21,890
+of course there
+
+24
+00:00:21,890 --> 00:00:22,930
+will be commercial
+
+25
+00:00:22,930 --> 00:00:23,640
+agreements
+
+26
+00:00:23,640 --> 00:00:24,330
+sort of struck
+
+27
+00:00:24,330 --> 00:00:25,310
+on whether or not
+
+28
+00:00:25,310 --> 00:00:27,488
+it is full or incomplete
+
+29
+00:00:27,488 --> 00:00:28,120
+visibility.
+
+30
+00:00:28,130 --> 00:00:29,980
+So that's why we said
+
+31
+00:00:29,980 --> 00:00:31,280
+it's a growing
+
+32
+00:00:31,280 --> 00:00:32,400
+process.
+
+33
+00:00:32,400 --> 00:00:33,970
+Some providers initially
+
+34
+00:00:33,970 --> 00:00:35,150
+are hesitant about
+
+35
+00:00:35,150 --> 00:00:36,320
+the idea of providing
+
+36
+00:00:36,320 --> 00:00:37,680
+data, but then I think
+
+37
+00:00:37,680 --> 00:00:39,090
+generally people are now
+
+38
+00:00:39,090 --> 00:00:40,095
+getting on board
+
+39
+00:00:40,095 --> 00:00:40,840
+with the idea
+
+40
+00:00:40,840 --> 00:00:41,980
+that transparency
+
+41
+00:00:41,980 --> 00:00:43,480
+is a good thing and it's
+
+42
+00:00:43,480 --> 00:00:45,190
+going to make the market
+
+43
+00:00:45,190 --> 00:00:46,470
+more trustworthy
+
+44
+00:00:46,470 --> 00:00:48,010
+and the bigger market
+
+45
+00:00:48,010 --> 00:00:49,770
+fundamentally is much
+
+46
+00:00:49,770 --> 00:00:51,800
+better for everybody.
+

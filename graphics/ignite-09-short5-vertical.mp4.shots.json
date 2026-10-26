@@ -1,0 +1,36 @@
+{
+ "source": "footage/Ignite Oct 2026/09 Pheobe Lui The Information and Carmen Li Compute Exchange.mp4",
+ "start": 136.95,
+ "end": 191.35,
+ "active": [
+  34,
+  1012
+ ],
+ "crop": [
+  568,
+  1012
+ ],
+ "shots": [
+  {
+   "t0": 0.0,
+   "t1": 49.549,
+   "face_x": 934,
+   "crop_x": 650,
+   "found": true
+  },
+  {
+   "t0": 49.549,
+   "t1": 52.219,
+   "face_x": 912,
+   "crop_x": 628,
+   "found": true
+  },
+  {
+   "t0": 52.219,
+   "t1": 54.4,
+   "face_x": null,
+   "crop_x": 628,
+   "found": false
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "source": "footage/Ignite Oct 2026/10 Pheobe Lui The Information and Steven Hou Silcom Data.mp4",
+ "start": 507.0,
+ "end": 569.0,
+ "active": [
+  34,
+  1012
+ ],
+ "crop": [
+  568,
+  1012
+ ],
+ "shots": [
+  {
+   "t0": 0.0,
+   "t1": 61.228,
+   "face_x": 897,
+   "crop_x": 612,
+   "found": true
+  },
+  {
+   "t0": 61.228,
+   "t1": 62.0,
+   "face_x": 885,
+   "crop_x": 600,
+   "found": true
+  }
+ ]
+}

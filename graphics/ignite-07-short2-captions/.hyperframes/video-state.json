@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "historyId": "084469c3-5fec-4eb7-b8d4-52723e6113e4",
+  "currentRevision": "6004bc8e-3d70-4022-b574-ebb6e3c8c578",
+  "pendingChanges": false,
+  "files": {
+    "index.html": {
+      "hash": "c41ad1c83fd78f4c153e0126bc790f10ecd3c7fd49a18d78dbf949bbae44b0e7",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/084469c3-5fec-4eb7-b8d4-52723e6113e4/blobs/c4/c41ad1c83fd78f4c153e0126bc790f10ecd3c7fd49a18d78dbf949bbae44b0e7"
+    }
+  },
+  "revisions": {
+    "6004bc8e-3d70-4022-b574-ebb6e3c8c578": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793048333151,
+      "endedAt": 1793048333152,
+      "files": {
+        "index.html": {
+          "before": "/Users/lanayepifanova/.cache/hyperframes/history/084469c3-5fec-4eb7-b8d4-52723e6113e4/blobs/0c/0cfba3deb79f5586ebcddd80c9ad277f3c171fd359d08306f6f82a9bd5f3a831",
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/084469c3-5fec-4eb7-b8d4-52723e6113e4/blobs/c4/c41ad1c83fd78f4c153e0126bc790f10ecd3c7fd49a18d78dbf949bbae44b0e7"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "2dbc7f01-e9b6-4a7f-a050-194e513f749e",
+      "completedAt": 1793048381372,
+      "output": "/Users/lanayepifanova/Claude-Editor/graphics/ignite-07-short2-cap.mov",
+      "status": "completed",
+      "revision": "6004bc8e-3d70-4022-b574-ebb6e3c8c578"
+    },
+    "retainedRevisions": [
+      "6004bc8e-3d70-4022-b574-ebb6e3c8c578"
+    ]
+  },
+  "pendingArtifactCleanup": []
+}

@@ -81,9 +81,12 @@ def group(words):
             gap = w["t0"] - cur[-1]["t1"]
             if len(prospective) > MAX_CHARS or gap >= GAP_SPLIT or \
                w["t1"] - cur[0]["t0"] > MAX_DUR:
-                # pull a trailing function word forward rather than stranding it
+                # pull a trailing function word forward rather than stranding it,
+                # but only while the next line still fits. Unguarded, this built
+                # a 32-char "what we do from an architectural" (Ignite 07, 2026-10-26)
                 while len(cur) > 1 and \
-                        cur[-1]["w"].lower().strip(".,!?'\"") in ORPHAN:
+                        cur[-1]["w"].lower().strip(".,!?'\"") in ORPHAN and \
+                        len(" ".join(x["w"] for x in [cur[-1]] + carry[::-1] + [w])) <= MAX_CHARS:
                     w2 = cur.pop()
                     carry.append(w2)
                 flush()

@@ -1,0 +1,3453 @@
+{
+	"systeminfo": "WHISPER : COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | SME = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "small",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"text": {
+			"ctx": 448,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/lanayepifanova/.cache/whisper/ggml-small.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,600"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2600
+			},
+			"text": " - Joe, thanks for coming over to the studio."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:02,600",
+				"to": "00:00:04,600"
+			},
+			"offsets": {
+				"from": 2600,
+				"to": 4600
+			},
+			"text": " We are excited to have you here."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:04,600",
+				"to": "00:00:06,120"
+			},
+			"offsets": {
+				"from": 4600,
+				"to": 6120
+			},
+			"text": " - Thank you very much for the opportunity"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:06,120",
+				"to": "00:00:08,480"
+			},
+			"offsets": {
+				"from": 6120,
+				"to": 8480
+			},
+			"text": " and inviting me to come in and speak with you."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:08,480",
+				"to": "00:00:10,200"
+			},
+			"offsets": {
+				"from": 8480,
+				"to": 10200
+			},
+			"text": " - You know, you're one of my, you know,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:10,200",
+				"to": "00:00:12,160"
+			},
+			"offsets": {
+				"from": 10200,
+				"to": 12160
+			},
+			"text": " I love obviously all the people in the video,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:12,160",
+				"to": "00:00:14,480"
+			},
+			"offsets": {
+				"from": 12160,
+				"to": 14480
+			},
+			"text": " but I'm really excited about your experiences,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:14,480",
+				"to": "00:00:15,320"
+			},
+			"offsets": {
+				"from": 14480,
+				"to": 15320
+			},
+			"text": " your background."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:15,320",
+				"to": "00:00:16,840"
+			},
+			"offsets": {
+				"from": 15320,
+				"to": 16840
+			},
+			"text": " Do you mind if we just jump in right away?"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:16,840",
+				"to": "00:00:17,680"
+			},
+			"offsets": {
+				"from": 16840,
+				"to": 17680
+			},
+			"text": " - Yeah, of course."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:17,680",
+				"to": "00:00:19,600"
+			},
+			"offsets": {
+				"from": 17680,
+				"to": 19600
+			},
+			"text": " - 'Cause right now you're with Voltage Park,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:19,600",
+				"to": "00:00:22,520"
+			},
+			"offsets": {
+				"from": 19600,
+				"to": 22520
+			},
+			"text": " but before Voltage Park, you're working with Cisco's,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:22,520",
+				"to": "00:00:23,760"
+			},
+			"offsets": {
+				"from": 22520,
+				"to": 23760
+			},
+			"text": " high frequency trading."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:23,760",
+				"to": "00:00:25,720"
+			},
+			"offsets": {
+				"from": 23760,
+				"to": 25720
+			},
+			"text": " Tell me more about your previous experience."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:25,720",
+				"to": "00:00:28,640"
+			},
+			"offsets": {
+				"from": 25720,
+				"to": 28640
+			},
+			"text": " - Yeah, so right now, the company that I'm with"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:28,640",
+				"to": "00:00:31,440"
+			},
+			"offsets": {
+				"from": 28640,
+				"to": 31440
+			},
+			"text": " was actually Lightning AI, which was a,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:31,440",
+				"to": "00:00:33,400"
+			},
+			"offsets": {
+				"from": 31440,
+				"to": 33400
+			},
+			"text": " it's a company that's combined to Voltage Park"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:33,400",
+				"to": "00:00:37,880"
+			},
+			"offsets": {
+				"from": 33400,
+				"to": 37880
+			},
+			"text": " and Lightning AI, which provides AI as a service."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:37,880",
+				"to": "00:00:38,840"
+			},
+			"offsets": {
+				"from": 37880,
+				"to": 38840
+			},
+			"text": " So it's full stack."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:38,840",
+				"to": "00:00:43,640"
+			},
+			"offsets": {
+				"from": 38840,
+				"to": 43640
+			},
+			"text": " So we really focus on what we can bring to the AI builders,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:43,640",
+				"to": "00:00:46,520"
+			},
+			"offsets": {
+				"from": 43640,
+				"to": 46520
+			},
+			"text": " everything from the GPU infrastructure"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:46,520",
+				"to": "00:00:50,040"
+			},
+			"offsets": {
+				"from": 46520,
+				"to": 50040
+			},
+			"text": " up into the software layer that allows them to,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:50,040",
+				"to": "00:00:53,600"
+			},
+			"offsets": {
+				"from": 50040,
+				"to": 53600
+			},
+			"text": " you know, kind of run that range of research,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:53,600",
+				"to": "00:00:57,560"
+			},
+			"offsets": {
+				"from": 53600,
+				"to": 57560
+			},
+			"text": " experimentation, training, infers and agenda workloads."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:57,560",
+				"to": "00:01:01,800"
+			},
+			"offsets": {
+				"from": 57560,
+				"to": 61800
+			},
+			"text": " And it's a platform that really makes it much simpler"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:01,800",
+				"to": "00:01:06,640"
+			},
+			"offsets": {
+				"from": 61800,
+				"to": 66640
+			},
+			"text": " to bring AI into a level of operations and production"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:06,640",
+				"to": "00:01:08,000"
+			},
+			"offsets": {
+				"from": 66640,
+				"to": 68000
+			},
+			"text": " and the accelerator rate."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:08,000",
+				"to": "00:01:08,840"
+			},
+			"offsets": {
+				"from": 68000,
+				"to": 68840
+			},
+			"text": " - That's awesome."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:08,840",
+				"to": "00:01:10,480"
+			},
+			"offsets": {
+				"from": 68840,
+				"to": 70480
+			},
+			"text": " And then before that, you were at Cisco"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:10,480",
+				"to": "00:01:11,680"
+			},
+			"offsets": {
+				"from": 70480,
+				"to": 71680
+			},
+			"text": " and before they are high frequency trading."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:11,680",
+				"to": "00:01:12,760"
+			},
+			"offsets": {
+				"from": 71680,
+				"to": 72760
+			},
+			"text": " So tell me more."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:12,760",
+				"to": "00:01:15,480"
+			},
+			"offsets": {
+				"from": 72760,
+				"to": 75480
+			},
+			"text": " So you, what's the similarity differences"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:15,480",
+				"to": "00:01:19,200"
+			},
+			"offsets": {
+				"from": 75480,
+				"to": 79200
+			},
+			"text": " between high frequency trading with high performance GPU,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:19,200",
+				"to": "00:01:21,840"
+			},
+			"offsets": {
+				"from": 79200,
+				"to": 81840
+			},
+			"text": " traditional versus new cloud?"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:21,840",
+				"to": "00:01:24,800"
+			},
+			"offsets": {
+				"from": 81840,
+				"to": 84800
+			},
+			"text": " - Well, I mean, there's a lot of differences you get into"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:24,800",
+				"to": "00:01:27,180"
+			},
+			"offsets": {
+				"from": 84800,
+				"to": 87180
+			},
+			"text": " when you're looking at high frequency trading."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:27,180",
+				"to": "00:01:29,240"
+			},
+			"offsets": {
+				"from": 87180,
+				"to": 89240
+			},
+			"text": " There's a lot more parallels that you get"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:29,240",
+				"to": "00:01:33,000"
+			},
+			"offsets": {
+				"from": 89240,
+				"to": 93000
+			},
+			"text": " with your AI workloads and your AI infrastructure"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:33,000",
+				"to": "00:01:34,880"
+			},
+			"offsets": {
+				"from": 93000,
+				"to": 94880
+			},
+			"text": " to traditional high performance computing."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:34,880",
+				"to": "00:01:36,480"
+			},
+			"offsets": {
+				"from": 94880,
+				"to": 96480
+			},
+			"text": " 'Cause that's really where the, you know,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:36,480",
+				"to": "00:01:39,900"
+			},
+			"offsets": {
+				"from": 96480,
+				"to": 99900
+			},
+			"text": " the foundation of these technologies exist."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:39,900",
+				"to": "00:01:44,080"
+			},
+			"offsets": {
+				"from": 99900,
+				"to": 104080
+			},
+			"text": " When you really want to get into the similarities,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:44,080",
+				"to": "00:01:47,760"
+			},
+			"offsets": {
+				"from": 104080,
+				"to": 107760
+			},
+			"text": " you really have to understand what the behavior requirements"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:47,760",
+				"to": "00:01:51,020"
+			},
+			"offsets": {
+				"from": 107760,
+				"to": 111020
+			},
+			"text": " are of the applications and how they're being delivered."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:51,020",
+				"to": "00:01:52,840"
+			},
+			"offsets": {
+				"from": 111020,
+				"to": 112840
+			},
+			"text": " Because in high frequency trading"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:52,840",
+				"to": "00:01:54,480"
+			},
+			"offsets": {
+				"from": 112840,
+				"to": 114480
+			},
+			"text": " or really in electronic trading,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:54,480",
+				"to": "00:01:57,360"
+			},
+			"offsets": {
+				"from": 114480,
+				"to": 117360
+			},
+			"text": " 'cause high frequency trading is just one of the"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:59,600",
+				"to": "00:02:04,160"
+			},
+			"offsets": {
+				"from": 119600,
+				"to": 124160
+			},
+			"text": " strategies that you're using for electronic trading."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:04,160",
+				"to": "00:02:09,120"
+			},
+			"offsets": {
+				"from": 124160,
+				"to": 129120
+			},
+			"text": " But it all comes down into minimizing any blockages"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:09,120",
+				"to": "00:02:11,360"
+			},
+			"offsets": {
+				"from": 129120,
+				"to": 131360
+			},
+			"text": " or bottlenecks you potentially have in the environment."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:11,360",
+				"to": "00:02:15,940"
+			},
+			"offsets": {
+				"from": 131360,
+				"to": 135940
+			},
+			"text": " So you can ensure that from the point that you go"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:15,940",
+				"to": "00:02:20,380"
+			},
+			"offsets": {
+				"from": 135940,
+				"to": 140380
+			},
+			"text": " from a trading parlance, tick to trade and confirmation"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:21,360",
+				"to": "00:02:25,760"
+			},
+			"offsets": {
+				"from": 141360,
+				"to": 145760
+			},
+			"text": " or into the AI is, you know, establishing a training run,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:25,760",
+				"to": "00:02:28,460"
+			},
+			"offsets": {
+				"from": 145760,
+				"to": 148460
+			},
+			"text": " time to result, or if you're talking about inference,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:28,460",
+				"to": "00:02:32,600"
+			},
+			"offsets": {
+				"from": 148460,
+				"to": 152600
+			},
+			"text": " from the time that you submit your prompt till the end token"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:32,600",
+				"to": "00:02:34,560"
+			},
+			"offsets": {
+				"from": 152600,
+				"to": 154560
+			},
+			"text": " is finalized or your prompt returns."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:34,560",
+				"to": "00:02:37,000"
+			},
+			"offsets": {
+				"from": 154560,
+				"to": 157000
+			},
+			"text": " So there's a lot of commonality there."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:37,000",
+				"to": "00:02:38,920"
+			},
+			"offsets": {
+				"from": 157000,
+				"to": 158920
+			},
+			"text": " But from a scaling perspective"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:38,920",
+				"to": "00:02:41,440"
+			},
+			"offsets": {
+				"from": 158920,
+				"to": 161440
+			},
+			"text": " and the tight synchronization that you have"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:41,440",
+				"to": "00:02:44,520"
+			},
+			"offsets": {
+				"from": 161440,
+				"to": 164520
+			},
+			"text": " from an application, there's significantly more"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:45,760",
+				"to": "00:02:49,240"
+			},
+			"offsets": {
+				"from": 165760,
+				"to": 169240
+			},
+			"text": " parallels between traditional high performance computing"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:49,240",
+				"to": "00:02:52,280"
+			},
+			"offsets": {
+				"from": 169240,
+				"to": 172280
+			},
+			"text": " and AI workloads."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:52,280",
+				"to": "00:02:53,600"
+			},
+			"offsets": {
+				"from": 172280,
+				"to": 173600
+			},
+			"text": " >> Very, this is super exciting."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:53,600",
+				"to": "00:02:55,240"
+			},
+			"offsets": {
+				"from": 173600,
+				"to": 175240
+			},
+			"text": " I love to dig on a bit more."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:55,240",
+				"to": "00:02:59,560"
+			},
+			"offsets": {
+				"from": 175240,
+				"to": 179560
+			},
+			"text": " So we have seen new clouds as a industry"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:59,560",
+				"to": "00:03:02,720"
+			},
+			"offsets": {
+				"from": 179560,
+				"to": 182720
+			},
+			"text": " growing tremendously in the past, what, two years, right?"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:02,720",
+				"to": "00:03:06,040"
+			},
+			"offsets": {
+				"from": 182720,
+				"to": 186040
+			},
+			"text": " So love to hear, like beyond having the latest GPU,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:06,040",
+				"to": "00:03:08,920"
+			},
+			"offsets": {
+				"from": 186040,
+				"to": 188920
+			},
+			"text": " what actually differentiate a successful new cloud"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:08,920",
+				"to": "00:03:10,400"
+			},
+			"offsets": {
+				"from": 188920,
+				"to": 190400
+			},
+			"text": " versus I guess a regular one?"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:12,200",
+				"to": "00:03:14,720"
+			},
+			"offsets": {
+				"from": 192200,
+				"to": 194720
+			},
+			"text": " >> For us, and this is where we've really shown"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:14,720",
+				"to": "00:03:15,680"
+			},
+			"offsets": {
+				"from": 194720,
+				"to": 195680
+			},
+			"text": " our differentiation."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:15,680",
+				"to": "00:03:17,720"
+			},
+			"offsets": {
+				"from": 195680,
+				"to": 197720
+			},
+			"text": " I mean, part of it is having the full stack"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:17,720",
+				"to": "00:03:20,540"
+			},
+			"offsets": {
+				"from": 197720,
+				"to": 200540
+			},
+			"text": " and understanding all aspects of the full stack."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:20,540",
+				"to": "00:03:22,840"
+			},
+			"offsets": {
+				"from": 200540,
+				"to": 202840
+			},
+			"text": " But understanding that, you know,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:22,840",
+				"to": "00:03:25,040"
+			},
+			"offsets": {
+				"from": 202840,
+				"to": 205040
+			},
+			"text": " the reference architecture from a design perspective"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:25,040",
+				"to": "00:03:26,740"
+			},
+			"offsets": {
+				"from": 205040,
+				"to": 206740
+			},
+			"text": " is a starting place."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:26,740",
+				"to": "00:03:29,680"
+			},
+			"offsets": {
+				"from": 206740,
+				"to": 209680
+			},
+			"text": " It is not something that's locked into stone."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:29,680",
+				"to": "00:03:32,980"
+			},
+			"offsets": {
+				"from": 209680,
+				"to": 212980
+			},
+			"text": " So we have taken a lot of time in our designs"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:32,980",
+				"to": "00:03:37,980"
+			},
+			"offsets": {
+				"from": 212980,
+				"to": 217980
+			},
+			"text": " to really understand all the aspects from, you know,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:38,280",
+				"to": "00:03:41,480"
+			},
+			"offsets": {
+				"from": 218280,
+				"to": 221480
+			},
+			"text": " the data movement from storage into GPU memory,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:41,480",
+				"to": "00:03:44,000"
+			},
+			"offsets": {
+				"from": 221480,
+				"to": 224000
+			},
+			"text": " the inter-process communication, you know,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:44,000",
+				"to": "00:03:47,560"
+			},
+			"offsets": {
+				"from": 224000,
+				"to": 227560
+			},
+			"text": " for the matrix mathematics or tensor movement"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:47,560",
+				"to": "00:03:50,680"
+			},
+			"offsets": {
+				"from": 227560,
+				"to": 230680
+			},
+			"text": " for trading, or for training."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:50,680",
+				"to": "00:03:54,000"
+			},
+			"offsets": {
+				"from": 230680,
+				"to": 234000
+			},
+			"text": " >> So trading, it pulls it off, right, trading, yes."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:54,000",
+				"to": "00:03:56,500"
+			},
+			"offsets": {
+				"from": 234000,
+				"to": 236500
+			},
+			"text": " >> And also as you get into distributed inference"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:56,500",
+				"to": "00:03:58,800"
+			},
+			"offsets": {
+				"from": 236500,
+				"to": 238800
+			},
+			"text": " to ensure that you're able to maximize"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:58,800",
+				"to": "00:04:01,280"
+			},
+			"offsets": {
+				"from": 238800,
+				"to": 241280
+			},
+			"text": " the amount of performance you're going to have."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:01,280",
+				"to": "00:04:04,360"
+			},
+			"offsets": {
+				"from": 241280,
+				"to": 244360
+			},
+			"text": " And that's where a lot of our differentiation comes into."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:04,360",
+				"to": "00:04:08,880"
+			},
+			"offsets": {
+				"from": 244360,
+				"to": 248880
+			},
+			"text": " We have a wide range of customers for our business models,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:08,880",
+				"to": "00:04:13,880"
+			},
+			"offsets": {
+				"from": 248880,
+				"to": 253880
+			},
+			"text": " which are both on demand as well as reserve."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:13,980",
+				"to": "00:04:15,460"
+			},
+			"offsets": {
+				"from": 253980,
+				"to": 255460
+			},
+			"text": " And within the reserve business,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:15,460",
+				"to": "00:04:19,400"
+			},
+			"offsets": {
+				"from": 255460,
+				"to": 259400
+			},
+			"text": " we do have foundation labs."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:19,400",
+				"to": "00:04:23,440"
+			},
+			"offsets": {
+				"from": 259400,
+				"to": 263440
+			},
+			"text": " And one of our key foundation labs has identified"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:23,440",
+				"to": "00:04:27,040"
+			},
+			"offsets": {
+				"from": 263440,
+				"to": 267040
+			},
+			"text": " that they are in other data centers or other Neo Clouds"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:27,040",
+				"to": "00:04:29,400"
+			},
+			"offsets": {
+				"from": 267040,
+				"to": 269400
+			},
+			"text": " where they're utilizing the same hardware,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:29,400",
+				"to": "00:04:32,200"
+			},
+			"offsets": {
+				"from": 269400,
+				"to": 272200
+			},
+			"text": " where they see a five to 8% higher performance"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:32,200",
+				"to": "00:04:34,880"
+			},
+			"offsets": {
+				"from": 272200,
+				"to": 274880
+			},
+			"text": " in our environment on the same hardware"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:34,880",
+				"to": "00:04:36,680"
+			},
+			"offsets": {
+				"from": 274880,
+				"to": 276680
+			},
+			"text": " than they do in other Neo Clouds."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:36,680",
+				"to": "00:04:38,280"
+			},
+			"offsets": {
+				"from": 276680,
+				"to": 278280
+			},
+			"text": " And that all comes down to what we do"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:38,280",
+				"to": "00:04:40,440"
+			},
+			"offsets": {
+				"from": 278280,
+				"to": 280440
+			},
+			"text": " from an architectural perspective"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:40,440",
+				"to": "00:04:43,740"
+			},
+			"offsets": {
+				"from": 280440,
+				"to": 283740
+			},
+			"text": " to ensure that we're able to keep everything moving"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:43,740",
+				"to": "00:04:46,680"
+			},
+			"offsets": {
+				"from": 283740,
+				"to": 286680
+			},
+			"text": " in such a way that the GPUs are not waiting"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:47,900",
+				"to": "00:04:48,740"
+			},
+			"offsets": {
+				"from": 287900,
+				"to": 288740
+			},
+			"text": " for their workloads."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:48,740",
+				"to": "00:04:51,880"
+			},
+			"offsets": {
+				"from": 288740,
+				"to": 291880
+			},
+			"text": " >> So when you say five to 8x better performance,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:51,880",
+				"to": "00:04:56,080"
+			},
+			"offsets": {
+				"from": 291880,
+				"to": 296080
+			},
+			"text": " is you mean like super, latency, or everything, stability?"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:56,080",
+				"to": "00:04:58,280"
+			},
+			"offsets": {
+				"from": 296080,
+				"to": 298280
+			},
+			"text": " >> Yeah, it's five to 8% versus five to eight times,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:58,280",
+				"to": "00:05:00,320"
+			},
+			"offsets": {
+				"from": 298280,
+				"to": 300320
+			},
+			"text": " but five to 8% when you're talking about training"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:00,320",
+				"to": "00:05:03,420"
+			},
+			"offsets": {
+				"from": 300320,
+				"to": 303420
+			},
+			"text": " of mixture of expert models,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:03,420",
+				"to": "00:05:07,660"
+			},
+			"offsets": {
+				"from": 303420,
+				"to": 307660
+			},
+			"text": " the terabytes, trillions of parameters, that's huge, totally."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:08,680",
+				"to": "00:05:13,680"
+			},
+			"offsets": {
+				"from": 308680,
+				"to": 313680
+			},
+			"text": " But it's what we do from completely non-oversubscribed"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:14,560",
+				"to": "00:05:17,120"
+			},
+			"offsets": {
+				"from": 314560,
+				"to": 317120
+			},
+			"text": " high levels of redundancy in the environment."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:17,120",
+				"to": "00:05:19,840"
+			},
+			"offsets": {
+				"from": 317120,
+				"to": 319840
+			},
+			"text": " We make sure that there isn't going to be no choke points"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:19,840",
+				"to": "00:05:22,040"
+			},
+			"offsets": {
+				"from": 319840,
+				"to": 322040
+			},
+			"text": " or if there is some kind of a failure,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:22,040",
+				"to": "00:05:26,360"
+			},
+			"offsets": {
+				"from": 322040,
+				"to": 326360
+			},
+			"text": " the network is resilient and recovers very, very quickly."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:26,360",
+				"to": "00:05:29,680"
+			},
+			"offsets": {
+				"from": 326360,
+				"to": 329680
+			},
+			"text": " So it does not impact the movement of the data"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:29,680",
+				"to": "00:05:30,800"
+			},
+			"offsets": {
+				"from": 329680,
+				"to": 330800
+			},
+			"text": " and the AI work stream,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:30,800",
+				"to": "00:05:32,960"
+			},
+			"offsets": {
+				"from": 330800,
+				"to": 332960
+			},
+			"text": " whether we're talking training or inference."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:32,960",
+				"to": "00:05:33,920"
+			},
+			"offsets": {
+				"from": 332960,
+				"to": 333920
+			},
+			"text": " >> Wow, very cool."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:33,920",
+				"to": "00:05:36,160"
+			},
+			"offsets": {
+				"from": 333920,
+				"to": 336160
+			},
+			"text": " And I'm assuming clients and most enterprises,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:36,160",
+				"to": "00:05:38,520"
+			},
+			"offsets": {
+				"from": 336160,
+				"to": 338520
+			},
+			"text": " they really care about the high throughputs,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:38,520",
+				"to": "00:05:40,560"
+			},
+			"offsets": {
+				"from": 338520,
+				"to": 340560
+			},
+			"text": " the stability, right, and then the redundancy."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:40,560",
+				"to": "00:05:43,600"
+			},
+			"offsets": {
+				"from": 340560,
+				"to": 343600
+			},
+			"text": " >> Yeah, when we look at our customers,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:43,600",
+				"to": "00:05:46,080"
+			},
+			"offsets": {
+				"from": 343600,
+				"to": 346080
+			},
+			"text": " the last thing we want them to have to worry about"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:46,080",
+				"to": "00:05:49,360"
+			},
+			"offsets": {
+				"from": 346080,
+				"to": 349360
+			},
+			"text": " is the underlying infrastructure."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:49,360",
+				"to": "00:05:50,800"
+			},
+			"offsets": {
+				"from": 349360,
+				"to": 350800
+			},
+			"text": " Because their whole focus,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:50,800",
+				"to": "00:05:52,940"
+			},
+			"offsets": {
+				"from": 350800,
+				"to": 352940
+			},
+			"text": " because they're researchers, they're scientists,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:52,940",
+				"to": "00:05:55,440"
+			},
+			"offsets": {
+				"from": 352940,
+				"to": 355440
+			},
+			"text": " they're a data science machine learning expert,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:55,440",
+				"to": "00:05:57,240"
+			},
+			"offsets": {
+				"from": 355440,
+				"to": 357240
+			},
+			"text": " AI optimization engineers,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:58,160",
+				"to": "00:06:00,800"
+			},
+			"offsets": {
+				"from": 358160,
+				"to": 360800
+			},
+			"text": " they want to focus on their code"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:00,800",
+				"to": "00:06:03,480"
+			},
+			"offsets": {
+				"from": 360800,
+				"to": 363480
+			},
+			"text": " and how that system is actually operating."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:03,480",
+				"to": "00:06:05,160"
+			},
+			"offsets": {
+				"from": 363480,
+				"to": 365160
+			},
+			"text": " They don't want to have to be concerned"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:05,160",
+				"to": "00:06:07,720"
+			},
+			"offsets": {
+				"from": 365160,
+				"to": 367720
+			},
+			"text": " that what is underlying that"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:07,720",
+				"to": "00:06:09,840"
+			},
+			"offsets": {
+				"from": 367720,
+				"to": 369840
+			},
+			"text": " is going to be a problem for them."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:09,840",
+				"to": "00:06:10,800"
+			},
+			"offsets": {
+				"from": 369840,
+				"to": 370800
+			},
+			"text": " >> Right, very cool."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:10,800",
+				"to": "00:06:13,640"
+			},
+			"offsets": {
+				"from": 370800,
+				"to": 373640
+			},
+			"text": " So the stability and resiliency and performance"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:13,640",
+				"to": "00:06:14,880"
+			},
+			"offsets": {
+				"from": 373640,
+				"to": 374880
+			},
+			"text": " is real key."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:14,880",
+				"to": "00:06:16,920"
+			},
+			"offsets": {
+				"from": 374880,
+				"to": 376920
+			},
+			"text": " >> So back to the question, right?"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:16,920",
+				"to": "00:06:21,920"
+			},
+			"offsets": {
+				"from": 376920,
+				"to": 381920
+			},
+			"text": " So when they buying compute as a resource for your clients,"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:22,460",
+				"to": "00:06:25,920"
+			},
+			"offsets": {
+				"from": 382460,
+				"to": 385920
+			},
+			"text": " are they buying compute in terms of a bad metal?"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:25,920",
+				"to": "00:06:28,280"
+			},
+			"offsets": {
+				"from": 385920,
+				"to": 388280
+			},
+			"text": " Are they buying you for tokens stability?"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:28,280",
+				"to": "00:06:29,620"
+			},
+			"offsets": {
+				"from": 388280,
+				"to": 389620
+			},
+			"text": " What's the most important thing to know?"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:29,620",
+				"to": "00:06:31,480"
+			},
+			"offsets": {
+				"from": 389620,
+				"to": 391480
+			},
+			"text": " >> Yes. (laughs)"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:31,480",
+				"to": "00:06:35,880"
+			},
+			"offsets": {
+				"from": 391480,
+				"to": 395880
+			},
+			"text": " Again, because we're offering reserve business"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:35,880",
+				"to": "00:06:40,360"
+			},
+			"offsets": {
+				"from": 395880,
+				"to": 400360
+			},
+			"text": " as well as on demand,"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:40,360",
+				"to": "00:06:43,440"
+			},
+			"offsets": {
+				"from": 400360,
+				"to": 403440
+			},
+			"text": " depending upon which model that they're coming in"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:43,440",
+				"to": "00:06:44,840"
+			},
+			"offsets": {
+				"from": 403440,
+				"to": 404840
+			},
+			"text": " from a business perspective,"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:44,840",
+				"to": "00:06:49,480"
+			},
+			"offsets": {
+				"from": 404840,
+				"to": 409480
+			},
+			"text": " we do have customers that are 100% bare metal only."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:49,480",
+				"to": "00:06:53,520"
+			},
+			"offsets": {
+				"from": 409480,
+				"to": 413520
+			},
+			"text": " We have others that are looking for much smaller"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:53,520",
+				"to": "00:06:57,640"
+			},
+			"offsets": {
+				"from": 413520,
+				"to": 417640
+			},
+			"text": " use components for where they at in their AI work stream."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:57,640",
+				"to": "00:07:00,320"
+			},
+			"offsets": {
+				"from": 417640,
+				"to": 420320
+			},
+			"text": " Are they at an experimentation or a research phase"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:00,320",
+				"to": "00:07:03,640"
+			},
+			"offsets": {
+				"from": 420320,
+				"to": 423640
+			},
+			"text": " where they do not need to have a large number of systems?"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:03,640",
+				"to": "00:07:06,920"
+			},
+			"offsets": {
+				"from": 423640,
+				"to": 426920
+			},
+			"text": " So we have a lot of virtualized capabilities."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:06,920",
+				"to": "00:07:08,660"
+			},
+			"offsets": {
+				"from": 426920,
+				"to": 428660
+			},
+			"text": " We have managed services as well."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:08,660",
+				"to": "00:07:11,040"
+			},
+			"offsets": {
+				"from": 428660,
+				"to": 431040
+			},
+			"text": " So like managed Kubernetes, managed Slurm,"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:11,920",
+				"to": "00:07:13,120"
+			},
+			"offsets": {
+				"from": 431920,
+				"to": 433120
+			},
+			"text": " to where they will look to us"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:13,120",
+				"to": "00:07:15,920"
+			},
+			"offsets": {
+				"from": 433120,
+				"to": 435920
+			},
+			"text": " to provide that type of capability"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:15,920",
+				"to": "00:07:18,760"
+			},
+			"offsets": {
+				"from": 435920,
+				"to": 438760
+			},
+			"text": " instead of they're having to kind of bring the entire stack."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:18,760",
+				"to": "00:07:19,720"
+			},
+			"offsets": {
+				"from": 438760,
+				"to": 439720
+			},
+			"text": " >> That's awesome."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:19,720",
+				"to": "00:07:22,840"
+			},
+			"offsets": {
+				"from": 439720,
+				"to": 442840
+			},
+			"text": " And then are you agnostic with the design houses of the chips"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:22,840",
+				"to": "00:07:24,860"
+			},
+			"offsets": {
+				"from": 442840,
+				"to": 444860
+			},
+			"text": " or are you pretty much, you know?"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:24,860",
+				"to": "00:07:27,720"
+			},
+			"offsets": {
+				"from": 444860,
+				"to": 447720
+			},
+			"text": " >> I mean, we've been pretty much an Nvidia shop."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:29,060",
+				"to": "00:07:31,440"
+			},
+			"offsets": {
+				"from": 449060,
+				"to": 451440
+			},
+			"text": " As we look at things going forward,"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:31,440",
+				"to": "00:07:35,080"
+			},
+			"offsets": {
+				"from": 451440,
+				"to": 455080
+			},
+			"text": " there's always the aspect of needing to be cognizant"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:35,080",
+				"to": "00:07:37,600"
+			},
+			"offsets": {
+				"from": 455080,
+				"to": 457600
+			},
+			"text": " of changes that are coming."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:37,600",
+				"to": "00:07:41,360"
+			},
+			"offsets": {
+				"from": 457600,
+				"to": 461360
+			},
+			"text": " And as we've seen over the last two, two and a half years"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:41,360",
+				"to": "00:07:44,560"
+			},
+			"offsets": {
+				"from": 461360,
+				"to": 464560
+			},
+			"text": " where training has kind of been the majority"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:44,560",
+				"to": "00:07:49,240"
+			},
+			"offsets": {
+				"from": 464560,
+				"to": 469240
+			},
+			"text": " of the AI workloads and some small amount of inference,"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:49,240",
+				"to": "00:07:51,440"
+			},
+			"offsets": {
+				"from": 469240,
+				"to": 471440
+			},
+			"text": " we're starting to see that change more"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:51,440",
+				"to": "00:07:53,920"
+			},
+			"offsets": {
+				"from": 471440,
+				"to": 473920
+			},
+			"text": " towards a lot more inference"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:53,920",
+				"to": "00:07:56,160"
+			},
+			"offsets": {
+				"from": 473920,
+				"to": 476160
+			},
+			"text": " than we see from a training perspective."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:56,160",
+				"to": "00:08:00,920"
+			},
+			"offsets": {
+				"from": 476160,
+				"to": 480920
+			},
+			"text": " But we will always see training continue to grow,"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:00,920",
+				"to": "00:08:02,920"
+			},
+			"offsets": {
+				"from": 480920,
+				"to": 482920
+			},
+			"text": " but not as fast as it has."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:02,920",
+				"to": "00:08:07,920"
+			},
+			"offsets": {
+				"from": 482920,
+				"to": 487920
+			},
+			"text": " Of maybe low double digit percentages year over year"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:08,200",
+				"to": "00:08:13,200"
+			},
+			"offsets": {
+				"from": 488200,
+				"to": 493200
+			},
+			"text": " versus inference by I think some of the research firms"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:14,080",
+				"to": "00:08:16,320"
+			},
+			"offsets": {
+				"from": 494080,
+				"to": 496320
+			},
+			"text": " expecting to see like by 2030,"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:16,320",
+				"to": "00:08:18,600"
+			},
+			"offsets": {
+				"from": 496320,
+				"to": 498600
+			},
+			"text": " it's going to be like a 40% year over year growth"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:18,600",
+				"to": "00:08:20,600"
+			},
+			"offsets": {
+				"from": 498600,
+				"to": 500600
+			},
+			"text": " just in inference business."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:20,600",
+				"to": "00:08:24,260"
+			},
+			"offsets": {
+				"from": 500600,
+				"to": 504260
+			},
+			"text": " And as we see the change in the size of the models"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:25,240",
+				"to": "00:08:30,240"
+			},
+			"offsets": {
+				"from": 505240,
+				"to": 510240
+			},
+			"text": " and the token per second factors that people are looking for,"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:30,340",
+				"to": "00:08:33,480"
+			},
+			"offsets": {
+				"from": 510340,
+				"to": 513480
+			},
+			"text": " we're also on the verge of really seeing a change"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:33,480",
+				"to": "00:08:35,880"
+			},
+			"offsets": {
+				"from": 513480,
+				"to": 515880
+			},
+			"text": " in how inference is being delivered."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:35,880",
+				"to": "00:08:40,020"
+			},
+			"offsets": {
+				"from": 515880,
+				"to": 520020
+			},
+			"text": " Because today you're working with general purpose GPUs."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:40,020",
+				"to": "00:08:42,140"
+			},
+			"offsets": {
+				"from": 520020,
+				"to": 522140
+			},
+			"text": " And when you talk about inference,"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:42,140",
+				"to": "00:08:46,560"
+			},
+			"offsets": {
+				"from": 522140,
+				"to": 526560
+			},
+			"text": " you're dealing with two very different pieces of it."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:46,560",
+				"to": "00:08:48,820"
+			},
+			"offsets": {
+				"from": 526560,
+				"to": 528820
+			},
+			"text": " Right, there's the pre-fill, which is compute intensive,"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:48,820",
+				"to": "00:08:51,760"
+			},
+			"offsets": {
+				"from": 528820,
+				"to": 531760
+			},
+			"text": " and then there's the decode, which is memory intensive."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:51,760",
+				"to": "00:08:53,680"
+			},
+			"offsets": {
+				"from": 531760,
+				"to": 533680
+			},
+			"text": " And when we're doing this on the same GPU,"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:53,680",
+				"to": "00:08:56,680"
+			},
+			"offsets": {
+				"from": 533680,
+				"to": 536680
+			},
+			"text": " general purpose GPU, there's trade offs"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:56,680",
+				"to": "00:08:58,520"
+			},
+			"offsets": {
+				"from": 536680,
+				"to": 538520
+			},
+			"text": " from a performance perspective."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:58,520",
+				"to": "00:09:00,600"
+			},
+			"offsets": {
+				"from": 538520,
+				"to": 540600
+			},
+			"text": " So we are starting to move into an area"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:00,600",
+				"to": "00:09:04,040"
+			},
+			"offsets": {
+				"from": 540600,
+				"to": 544040
+			},
+			"text": " of what's called disaggregated inference."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:04,040",
+				"to": "00:09:07,600"
+			},
+			"offsets": {
+				"from": 544040,
+				"to": 547600
+			},
+			"text": " So you have a GPU that is going to do the pre-fill."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:07,600",
+				"to": "00:09:10,240"
+			},
+			"offsets": {
+				"from": 547600,
+				"to": 550240
+			},
+			"text": " So you do that on one chip, and then on a second chip,"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:10,240",
+				"to": "00:09:12,120"
+			},
+			"offsets": {
+				"from": 550240,
+				"to": 552120
+			},
+			"text": " you can actually do the decode."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:12,120",
+				"to": "00:09:15,900"
+			},
+			"offsets": {
+				"from": 552120,
+				"to": 555900
+			},
+			"text": " And so there's roughly 40 companies out there today"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:15,900",
+				"to": "00:09:18,200"
+			},
+			"offsets": {
+				"from": 555900,
+				"to": 558200
+			},
+			"text": " that are doing inference optimized"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:18,200",
+				"to": "00:09:21,280"
+			},
+			"offsets": {
+				"from": 558200,
+				"to": 561280
+			},
+			"text": " and decode optimized chipsets."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:21,280",
+				"to": "00:09:23,800"
+			},
+			"offsets": {
+				"from": 561280,
+				"to": 563800
+			},
+			"text": " So these are the changes that are,"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:23,800",
+				"to": "00:09:26,400"
+			},
+			"offsets": {
+				"from": 563800,
+				"to": 566400
+			},
+			"text": " we're starting to build towards now."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:26,400",
+				"to": "00:09:28,440"
+			},
+			"offsets": {
+				"from": 566400,
+				"to": 568440
+			},
+			"text": " And this requires some changes"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:28,440",
+				"to": "00:09:30,800"
+			},
+			"offsets": {
+				"from": 568440,
+				"to": 570800
+			},
+			"text": " in how you look at things within the infrastructure"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:30,800",
+				"to": "00:09:32,680"
+			},
+			"offsets": {
+				"from": 570800,
+				"to": 572680
+			},
+			"text": " to ensure that you have that high level"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:32,680",
+				"to": "00:09:35,240"
+			},
+			"offsets": {
+				"from": 572680,
+				"to": 575240
+			},
+			"text": " of low latency, low jitter communication"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:35,240",
+				"to": "00:09:37,840"
+			},
+			"offsets": {
+				"from": 575240,
+				"to": 577840
+			},
+			"text": " between the pre-fill and the decode systems."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:37,840",
+				"to": "00:09:39,520"
+			},
+			"offsets": {
+				"from": 577840,
+				"to": 579520
+			},
+			"text": " >> I have so many questions for you."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:39,520",
+				"to": "00:09:40,360"
+			},
+			"offsets": {
+				"from": 579520,
+				"to": 580360
+			},
+			"text": " This is amazing."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:40,360",
+				"to": "00:09:43,280"
+			},
+			"offsets": {
+				"from": 580360,
+				"to": 583280
+			},
+			"text": " So are you saying that in the future a client come to you,"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:43,280",
+				"to": "00:09:45,560"
+			},
+			"offsets": {
+				"from": 583280,
+				"to": 585560
+			},
+			"text": " they can be using all different"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:45,560",
+				"to": "00:09:48,180"
+			},
+			"offsets": {
+				"from": 585560,
+				"to": 588180
+			},
+			"text": " potentially interesting chips,"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:48,180",
+				"to": "00:09:50,440"
+			},
+			"offsets": {
+				"from": 588180,
+				"to": 590440
+			},
+			"text": " and then you will make a very smooth experience for them."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:50,440",
+				"to": "00:09:53,160"
+			},
+			"offsets": {
+				"from": 590440,
+				"to": 593160
+			},
+			"text": " They might not even experience better performances, right,"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:53,160",
+				"to": "00:09:54,400"
+			},
+			"offsets": {
+				"from": 593160,
+				"to": 594400
+			},
+			"text": " at the end."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:54,400",
+				"to": "00:09:56,300"
+			},
+			"offsets": {
+				"from": 594400,
+				"to": 596300
+			},
+			"text": " Last question, I know we don't have that much time,"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:56,300",
+				"to": "00:09:59,060"
+			},
+			"offsets": {
+				"from": 596300,
+				"to": 599060
+			},
+			"text": " is utilization and the pricing."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:59,060",
+				"to": "00:10:00,560"
+			},
+			"offsets": {
+				"from": 599060,
+				"to": 600560
+			},
+			"text": " Let's come up, right, linked."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:00,560",
+				"to": "00:10:01,960"
+			},
+			"offsets": {
+				"from": 600560,
+				"to": 601960
+			},
+			"text": " What do you think about utilization today"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:01,960",
+				"to": "00:10:03,200"
+			},
+			"offsets": {
+				"from": 601960,
+				"to": 603200
+			},
+			"text": " and how can we get better?"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:03,200",
+				"to": "00:10:04,720"
+			},
+			"offsets": {
+				"from": 603200,
+				"to": 604720
+			},
+			"text": " >> Well, I mean, for us,"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:04,720",
+				"to": "00:10:07,600"
+			},
+			"offsets": {
+				"from": 604720,
+				"to": 607600
+			},
+			"text": " when I look at our utilization level and our occupancy level,"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:07,600",
+				"to": "00:10:09,800"
+			},
+			"offsets": {
+				"from": 607600,
+				"to": 609800
+			},
+			"text": " we're greater than 90% occupancy."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:09,800",
+				"to": "00:10:13,840"
+			},
+			"offsets": {
+				"from": 609800,
+				"to": 613840
+			},
+			"text": " And so, you know, that has not been a problem for us."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:13,840",
+				"to": "00:10:17,100"
+			},
+			"offsets": {
+				"from": 613840,
+				"to": 617100
+			},
+			"text": " And it is, you know, we are growing very, very quickly."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:18,640",
+				"to": "00:10:20,560"
+			},
+			"offsets": {
+				"from": 618640,
+				"to": 620560
+			},
+			"text": " And I think, I mean, you will hear announcements"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:20,560",
+				"to": "00:10:25,200"
+			},
+			"offsets": {
+				"from": 620560,
+				"to": 625200
+			},
+			"text": " on additional locations that we're going to be bringing up"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:25,200",
+				"to": "00:10:26,440"
+			},
+			"offsets": {
+				"from": 625200,
+				"to": 626440
+			},
+			"text": " here in the near future."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:28,480",
+				"to": "00:10:33,480"
+			},
+			"offsets": {
+				"from": 628480,
+				"to": 633480
+			},
+			"text": " And when you get into the nuances of efficient use,"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:34,360",
+				"to": "00:10:36,840"
+			},
+			"offsets": {
+				"from": 634360,
+				"to": 636840
+			},
+			"text": " so much of this is really predicated upon the workloads"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:36,840",
+				"to": "00:10:39,920"
+			},
+			"offsets": {
+				"from": 636840,
+				"to": 639920
+			},
+			"text": " and how well those have been optimized by our customers."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:40,980",
+				"to": "00:10:44,320"
+			},
+			"offsets": {
+				"from": 640980,
+				"to": 644320
+			},
+			"text": " As you start to see the enterprises"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:44,320",
+				"to": "00:10:48,440"
+			},
+			"offsets": {
+				"from": 644320,
+				"to": 648440
+			},
+			"text": " moving more out of their infancy,"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:48,440",
+				"to": "00:10:51,320"
+			},
+			"offsets": {
+				"from": 648440,
+				"to": 651320
+			},
+			"text": " I guess you could say, in the AI world,"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:51,320",
+				"to": "00:10:56,320"
+			},
+			"offsets": {
+				"from": 651320,
+				"to": 656320
+			},
+			"text": " is that the changes in what's going to happen"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:58,480",
+				"to": "00:11:00,400"
+			},
+			"offsets": {
+				"from": 658480,
+				"to": 660400
+			},
+			"text": " in the knowledge level of skill sets"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:00,400",
+				"to": "00:11:02,100"
+			},
+			"offsets": {
+				"from": 660400,
+				"to": 662100
+			},
+			"text": " that the enterprises have."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:02,100",
+				"to": "00:11:05,360"
+			},
+			"offsets": {
+				"from": 662100,
+				"to": 665360
+			},
+			"text": " Because they're having to compete with all the AI startups,"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:05,360",
+				"to": "00:11:08,160"
+			},
+			"offsets": {
+				"from": 665360,
+				"to": 668160
+			},
+			"text": " frontier labs, hyperscalers, you know,"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:08,160",
+				"to": "00:11:10,800"
+			},
+			"offsets": {
+				"from": 668160,
+				"to": 670800
+			},
+			"text": " who are at that bleeding edge."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:10,800",
+				"to": "00:11:12,440"
+			},
+			"offsets": {
+				"from": 670800,
+				"to": 672440
+			},
+			"text": " So they're getting, you know, kind of that top,"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:12,440",
+				"to": "00:11:16,320"
+			},
+			"offsets": {
+				"from": 672440,
+				"to": 676320
+			},
+			"text": " you know, 5% of, you know, the talents, right."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:16,320",
+				"to": "00:11:19,640"
+			},
+			"offsets": {
+				"from": 676320,
+				"to": 679640
+			},
+			"text": " So in many cases, the enterprises"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:19,640",
+				"to": "00:11:20,960"
+			},
+			"offsets": {
+				"from": 679640,
+				"to": 680960
+			},
+			"text": " aren't going to have those skill sets."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:20,960",
+				"to": "00:11:25,240"
+			},
+			"offsets": {
+				"from": 680960,
+				"to": 685240
+			},
+			"text": " They're going to start looking for the Neo Clouds"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:25,240",
+				"to": "00:11:29,080"
+			},
+			"offsets": {
+				"from": 685240,
+				"to": 689080
+			},
+			"text": " that are providing, you know, a full stack AI as a service"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:29,080",
+				"to": "00:11:31,220"
+			},
+			"offsets": {
+				"from": 689080,
+				"to": 691220
+			},
+			"text": " that can come in and say, here's my model,"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:31,220",
+				"to": "00:11:34,060"
+			},
+			"offsets": {
+				"from": 691220,
+				"to": 694060
+			},
+			"text": " here's my data, go train it."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:34,060",
+				"to": "00:11:35,680"
+			},
+			"offsets": {
+				"from": 694060,
+				"to": 695680
+			},
+			"text": " And come back to me when you're ready"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:35,680",
+				"to": "00:11:37,440"
+			},
+			"offsets": {
+				"from": 695680,
+				"to": 697440
+			},
+			"text": " to start fine tuning it."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:37,440",
+				"to": "00:11:39,680"
+			},
+			"offsets": {
+				"from": 697440,
+				"to": 699680
+			},
+			"text": " And so that post training work that's going to occur"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:39,680",
+				"to": "00:11:41,600"
+			},
+			"offsets": {
+				"from": 699680,
+				"to": 701600
+			},
+			"text": " in the fine tuning and adding synthetic data"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:41,600",
+				"to": "00:11:43,160"
+			},
+			"offsets": {
+				"from": 701600,
+				"to": 703160
+			},
+			"text": " if you do not have enough data."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:44,420",
+				"to": "00:11:49,000"
+			},
+			"offsets": {
+				"from": 704420,
+				"to": 709000
+			},
+			"text": " And the product that's delivered at the end"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:49,000",
+				"to": "00:11:54,000"
+			},
+			"offsets": {
+				"from": 709000,
+				"to": 714000
+			},
+			"text": " is a fully trained inference ready model."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:54,280",
+				"to": "00:11:56,300"
+			},
+			"offsets": {
+				"from": 714280,
+				"to": 716300
+			},
+			"text": " And there's also some interesting aspects"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:56,300",
+				"to": "00:11:58,480"
+			},
+			"offsets": {
+				"from": 716300,
+				"to": 718480
+			},
+			"text": " of what's going to happen when we start looking"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:58,480",
+				"to": "00:12:01,120"
+			},
+			"offsets": {
+				"from": 718480,
+				"to": 721120
+			},
+			"text": " at what, you know, the models and the complexity."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:02,400",
+				"to": "00:12:04,040"
+			},
+			"offsets": {
+				"from": 722400,
+				"to": 724040
+			},
+			"text": " Because today, you know, we hear a lot"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:04,040",
+				"to": "00:12:06,320"
+			},
+			"offsets": {
+				"from": 724040,
+				"to": 726320
+			},
+			"text": " about the mixture of experts, you know,"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:06,320",
+				"to": "00:12:09,000"
+			},
+			"offsets": {
+				"from": 726320,
+				"to": 729000
+			},
+			"text": " these trillion, multi-trillion parameter models,"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:09,000",
+				"to": "00:12:10,160"
+			},
+			"offsets": {
+				"from": 729000,
+				"to": 730160
+			},
+			"text": " you know, they can take, you know,"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:10,160",
+				"to": "00:12:13,480"
+			},
+			"offsets": {
+				"from": 730160,
+				"to": 733480
+			},
+			"text": " two, three, four, you know, terabytes of data"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:13,480",
+				"to": "00:12:15,260"
+			},
+			"offsets": {
+				"from": 733480,
+				"to": 735260
+			},
+			"text": " that get spread out across."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:15,260",
+				"to": "00:12:17,600"
+			},
+			"offsets": {
+				"from": 735260,
+				"to": 737600
+			},
+			"text": " In these cases, you have one large monolithic model"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:17,600",
+				"to": "00:12:20,520"
+			},
+			"offsets": {
+				"from": 737600,
+				"to": 740520
+			},
+			"text": " and a whole bunch of expert networks"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:20,520",
+				"to": "00:12:23,040"
+			},
+			"offsets": {
+				"from": 740520,
+				"to": 743040
+			},
+			"text": " that the routing, you know, will take that prompt"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:23,040",
+				"to": "00:12:24,560"
+			},
+			"offsets": {
+				"from": 743040,
+				"to": 744560
+			},
+			"text": " and push it to."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:24,560",
+				"to": "00:12:26,720"
+			},
+			"offsets": {
+				"from": 744560,
+				"to": 746720
+			},
+			"text": " With the enterprise, because you're dealing"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:26,720",
+				"to": "00:12:30,440"
+			},
+			"offsets": {
+				"from": 746720,
+				"to": 750440
+			},
+			"text": " with disparate data sets of finance and marketing"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:30,440",
+				"to": "00:12:33,440"
+			},
+			"offsets": {
+				"from": 750440,
+				"to": 753440
+			},
+			"text": " and sales and administrative and purchasing,"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:33,440",
+				"to": "00:12:37,800"
+			},
+			"offsets": {
+				"from": 753440,
+				"to": 757800
+			},
+			"text": " supply chain, these are all disparate data sets."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:37,800",
+				"to": "00:12:40,720"
+			},
+			"offsets": {
+				"from": 757800,
+				"to": 760720
+			},
+			"text": " And the contextual connection between all of these"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:40,720",
+				"to": "00:12:42,520"
+			},
+			"offsets": {
+				"from": 760720,
+				"to": 762520
+			},
+			"text": " is by the subject matter experts"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:42,520",
+				"to": "00:12:44,640"
+			},
+			"offsets": {
+				"from": 762520,
+				"to": 764640
+			},
+			"text": " in each of those different departments."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:46,160",
+				"to": "00:12:48,200"
+			},
+			"offsets": {
+				"from": 766160,
+				"to": 768200
+			},
+			"text": " If an exec wants information,"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:48,200",
+				"to": "00:12:49,400"
+			},
+			"offsets": {
+				"from": 768200,
+				"to": 769400
+			},
+			"text": " he wants it relatively quickly,"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:49,400",
+				"to": "00:12:51,960"
+			},
+			"offsets": {
+				"from": 769400,
+				"to": 771960
+			},
+			"text": " but it can take, you know, weeks to months"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:51,960",
+				"to": "00:12:54,480"
+			},
+			"offsets": {
+				"from": 771960,
+				"to": 774480
+			},
+			"text": " for these teams to get together and put it."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:54,480",
+				"to": "00:12:56,960"
+			},
+			"offsets": {
+				"from": 774480,
+				"to": 776960
+			},
+			"text": " What we're, you know, what we're hearing about"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:56,960",
+				"to": "00:12:58,800"
+			},
+			"offsets": {
+				"from": 776960,
+				"to": 778800
+			},
+			"text": " is kind of this next generation"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:58,800",
+				"to": "00:13:01,480"
+			},
+			"offsets": {
+				"from": 778800,
+				"to": 781480
+			},
+			"text": " of what's called a coalition of experts."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:01,480",
+				"to": "00:13:03,320"
+			},
+			"offsets": {
+				"from": 781480,
+				"to": 783320
+			},
+			"text": " Where I have all these different models"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:03,320",
+				"to": "00:13:06,520"
+			},
+			"offsets": {
+				"from": 783320,
+				"to": 786520
+			},
+			"text": " and I have the expert networks for each of those models,"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:06,520",
+				"to": "00:13:09,800"
+			},
+			"offsets": {
+				"from": 786520,
+				"to": 789800
+			},
+			"text": " I send my prompt in, my prompt then formats"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:09,800",
+				"to": "00:13:13,800"
+			},
+			"offsets": {
+				"from": 789800,
+				"to": 793800
+			},
+			"text": " that for each of the different expert networks,"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:13,800",
+				"to": "00:13:17,480"
+			},
+			"offsets": {
+				"from": 793800,
+				"to": 797480
+			},
+			"text": " they get the result and then there is a layer,"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:17,480",
+				"to": "00:13:20,480"
+			},
+			"offsets": {
+				"from": 797480,
+				"to": 800480
+			},
+			"text": " an orchestration in a, really,"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:20,480",
+				"to": "00:13:22,480"
+			},
+			"offsets": {
+				"from": 800480,
+				"to": 802480
+			},
+			"text": " you can look at it as semantic routing"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:22,480",
+				"to": "00:13:25,840"
+			},
+			"offsets": {
+				"from": 802480,
+				"to": 805840
+			},
+			"text": " and contextual connectivity that has to happen"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:25,840",
+				"to": "00:13:27,560"
+			},
+			"offsets": {
+				"from": 805840,
+				"to": 807560
+			},
+			"text": " that then brings all that data back"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:27,560",
+				"to": "00:13:30,840"
+			},
+			"offsets": {
+				"from": 807560,
+				"to": 810840
+			},
+			"text": " to give you that cohesive answer."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:30,840",
+				"to": "00:13:34,200"
+			},
+			"offsets": {
+				"from": 810840,
+				"to": 814200
+			},
+			"text": " So if I'm a CEO and I say, hey,"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:34,200",
+				"to": "00:13:35,760"
+			},
+			"offsets": {
+				"from": 814200,
+				"to": 815760
+			},
+			"text": " what's happening with the $50 million"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:35,760",
+				"to": "00:13:38,120"
+			},
+			"offsets": {
+				"from": 815760,
+				"to": 818120
+			},
+			"text": " I threw at this new product?"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:38,120",
+				"to": "00:13:40,440"
+			},
+			"offsets": {
+				"from": 818120,
+				"to": 820440
+			},
+			"text": " I want to know an answer relatively quickly"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:40,440",
+				"to": "00:13:41,960"
+			},
+			"offsets": {
+				"from": 820440,
+				"to": 821960
+			},
+			"text": " and not have to wait weeks or months"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:41,960",
+				"to": "00:13:43,560"
+			},
+			"offsets": {
+				"from": 821960,
+				"to": 823560
+			},
+			"text": " because if I have to make a pivot."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:43,560",
+				"to": "00:13:44,880"
+			},
+			"offsets": {
+				"from": 823560,
+				"to": 824880
+			},
+			"text": " >> So you're not NeoCloud anymore,"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:44,880",
+				"to": "00:13:47,200"
+			},
+			"offsets": {
+				"from": 824880,
+				"to": 827200
+			},
+			"text": " you are intelligent cloud."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:47,200",
+				"to": "00:13:48,040"
+			},
+			"offsets": {
+				"from": 827200,
+				"to": 828040
+			},
+			"text": " >> We have to be."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:48,040",
+				"to": "00:13:48,880"
+			},
+			"offsets": {
+				"from": 828040,
+				"to": 828880
+			},
+			"text": " >> Yeah, that's awesome."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:48,880",
+				"to": "00:13:51,560"
+			},
+			"offsets": {
+				"from": 828880,
+				"to": 831560
+			},
+			"text": " >> And really as a NeoCloud we have to understand"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:51,560",
+				"to": "00:13:54,680"
+			},
+			"offsets": {
+				"from": 831560,
+				"to": 834680
+			},
+			"text": " what's happening, you know, on the platforms,"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:54,680",
+				"to": "00:13:57,920"
+			},
+			"offsets": {
+				"from": 834680,
+				"to": 837920
+			},
+			"text": " on the GPUs, in memory to really get--"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:57,920",
+				"to": "00:14:00,360"
+			},
+			"offsets": {
+				"from": 837920,
+				"to": 840360
+			},
+			"text": " >> You're the brain, you're the brain for enterprises,"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:00,360",
+				"to": "00:14:01,480"
+			},
+			"offsets": {
+				"from": 840360,
+				"to": 841480
+			},
+			"text": " that's great. >> I see, yes."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:01,480",
+				"to": "00:14:02,840"
+			},
+			"offsets": {
+				"from": 841480,
+				"to": 842840
+			},
+			"text": " >> That's awesome, thanks for coming, Joe,"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:02,840",
+				"to": "00:14:03,960"
+			},
+			"offsets": {
+				"from": 842840,
+				"to": 843960
+			},
+			"text": " this is awesome."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:03,960",
+				"to": "00:14:05,240"
+			},
+			"offsets": {
+				"from": 843960,
+				"to": 845240
+			},
+			"text": " >> Oh no, thank you very much for having me,"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:05,240",
+				"to": "00:14:07,160"
+			},
+			"offsets": {
+				"from": 845240,
+				"to": 847160
+			},
+			"text": " I appreciate your time, appreciate the opportunity."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:07,160",
+				"to": "00:14:08,240"
+			},
+			"offsets": {
+				"from": 847160,
+				"to": 848240
+			},
+			"text": " >> Yeah, enjoy the conference."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:08,240",
+				"to": "00:14:09,720"
+			},
+			"offsets": {
+				"from": 848240,
+				"to": 849720
+			},
+			"text": " >> I will, thank you very much."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:09,720",
+				"to": "00:14:10,560"
+			},
+			"offsets": {
+				"from": 849720,
+				"to": 850560
+			},
+			"text": " >> Thank you."
+		}
+	]
+}

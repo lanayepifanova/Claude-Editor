@@ -1,0 +1,150 @@
+load_backend: loaded BLAS backend from /opt/homebrew/Cellar/ggml/0.20.0/libexec/libggml-blas.so
+ggml_metal_device_init: tensor API disabled for pre-M5 and pre-A19 devices
+ggml_metal_library_init: using embedded metal library
+ggml_metal_library_init: loaded in 38.608 sec
+ggml_metal_rsets_init: creating a residency set collection (keep_alive = 180 s)
+ggml_metal_device_init: GPU name:   MTL0 (Apple M4)
+ggml_metal_device_init: GPU family: MTLGPUFamilyApple9  (1009)
+ggml_metal_device_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_device_init: GPU family: MTLGPUFamilyMetal4  (5002)
+ggml_metal_device_init: simdgroup reduction   = true
+ggml_metal_device_init: simdgroup matrix mul. = true
+ggml_metal_device_init: has unified memory    = true
+ggml_metal_device_init: has bfloat            = true
+ggml_metal_device_init: has tensor            = false
+ggml_metal_device_init: use residency sets    = true
+ggml_metal_device_init: use shared buffers    = true
+ggml_metal_device_init: recommendedMaxWorkingSetSize  = 12713.12 MB
+load_backend: loaded MTL backend from /opt/homebrew/Cellar/ggml/0.20.0/libexec/libggml-metal.so
+load_backend: loaded CPU backend from /opt/homebrew/Cellar/ggml/0.20.0/libexec/libggml-cpu-apple_m4.so
+read_audio_data: reading audio data from 'edit/shorts-ignite-10/audio.wav' ...
+read_audio_data: trying to decode with miniaudio
+
+[00:00:00.000 --> 00:00:04.480]   Hi, good afternoon. We're coming to you live from the NeoCloud Summit in San Francisco.
+[00:00:04.480 --> 00:00:09.120]   I'm Phoebe Liu. I'm a reporter covering AI infrastructure and semiconductors at the
+[00:00:09.120 --> 00:00:13.520]   Information, a tech and business publication. Joining me here is Steve Ho, head of research
+[00:00:13.520 --> 00:00:17.440]   at Silicon Data. Thanks for being here. Thank you very much for having me, Phoebe. Very nice to
+[00:00:17.440 --> 00:00:21.600]   meet you. Yeah. Would love to start by hearing a little bit more about your role. What exactly
+[00:00:21.600 --> 00:00:26.000]   are you researching? What kinds of things are top of mind for you in terms of kind of GPUs and
+[00:00:26.000 --> 00:00:31.280]   their value, which I think is, yeah. Great. So, first of all, a bit of background by myself.
+[00:00:32.160 --> 00:00:37.440]   As head of research at Silicon Data, I've only been this role for about four or five months.
+[00:00:38.560 --> 00:00:42.960]   Previously, I was head of index research at Bloomberg Indices and prior to which I was
+[00:00:42.960 --> 00:00:49.040]   senior research at quantum hedge fund called AQR Capital. Got my PhD in financial econometrics and
+[00:00:49.040 --> 00:00:55.920]   macro from the University of Michigan in 2018. So, I met Carmen Lee, the founder and CEO of
+[00:00:55.920 --> 00:01:00.880]   Silicon Data at Bloomberg. When she started the company in 2004, I was very curious about the
+[00:01:00.880 --> 00:01:06.720]   space and the whole idea is to try to bring data transparency to the otherwise fast growing,
+[00:01:06.720 --> 00:01:13.280]   exciting, but opaque space that is AI, right, physical AI. And we are looking at ways of
+[00:01:14.000 --> 00:01:19.360]   tracking and creating data to describe the various layers of the market, whether it's the compute
+[00:01:19.360 --> 00:01:24.880]   layer, whether it's the model layer, with terms of tokens, and also other aspects of the economics
+[00:01:24.880 --> 00:01:30.960]   of data centers and so on. The idea is to try to create as much data transparency as possible
+[00:01:30.960 --> 00:01:37.040]   and create benchmarks that can be trusted and then that becomes the basis for financial derivatives
+[00:01:37.040 --> 00:01:42.240]   such as futures contracts or options that could be used to then manage risk. There's a lot of
+[00:01:42.240 --> 00:01:46.560]   known knowledge that we want to leverage from traditional capital markets to help create more
+[00:01:46.560 --> 00:01:53.360]   capital efficiency in this fast growing space that is now, I think, thirsty for more financial
+[00:01:53.360 --> 00:01:59.360]   capital and also operating a pretty low financial capital, financial capital efficiency in various
+[00:01:59.360 --> 00:02:03.680]   pockets. Super interesting. We'd love to hear a little bit more about how you go about getting
+[00:02:03.680 --> 00:02:09.520]   your data and how you decide kind of what data goes into the indices. Yeah. So, first of all,
+[00:02:09.520 --> 00:02:16.000]   like in my role, I look a lot at the different types of data points that we can track that was
+[00:02:16.000 --> 00:02:22.800]   useful and for our GPU indices, we track all the data we can find and we primarily have two types
+[00:02:22.800 --> 00:02:27.760]   of data. We have quota prices and we have transaction prices. The majority of the data
+[00:02:27.760 --> 00:02:34.560]   points are today still quota prices and then it's a growing minority at transaction prices. We took
+[00:02:34.560 --> 00:02:40.000]   the deliver approach of using both types of data and the reason is because this is a market that is
+[00:02:40.000 --> 00:02:44.640]   still young in many ways immature. You don't get enough transactions throughout the day. If you
+[00:02:44.640 --> 00:02:50.480]   only use transaction data, you run the risk of being over-indexed on whether the transaction
+[00:02:50.480 --> 00:02:54.320]   happened to have taken place, especially if you happen to have sourced your transaction
+[00:02:54.960 --> 00:03:00.400]   data from a small number of providers. You're reflecting those providers pricing decisions
+[00:03:00.400 --> 00:03:05.200]   rather than the fall in the market. So, what we do is that to give you a quick example, if somebody
+[00:03:05.200 --> 00:03:11.600]   had three GPUs and they ran it out for 275 an hour, the next one I wouldn't just assume is 275. I
+[00:03:11.600 --> 00:03:15.760]   would take a look at what everyone else is listing. If everyone else is listing at $4 an hour, it's
+[00:03:15.760 --> 00:03:21.920]   supposed to be crazy to run another one to 75. Basically, you want to look at the entire market
+[00:03:21.920 --> 00:03:26.320]   as much as possible and recognizing also the essential features that are going to carry a
+[00:03:26.320 --> 00:03:36.880]   premium, whether it's location, whether it's memory, CPU, provider type, term length. The same way,
+[00:03:36.880 --> 00:03:40.560]   if you run it in a single measurement apartment, you will care about the location, whether you are
+[00:03:40.560 --> 00:03:46.000]   East Village or Soho or Harlem and you will take a simple average. You want to control these things.
+[00:03:46.000 --> 00:03:52.240]   The fact that a long-term contract, of course, is going to be cheaper because you are saving
+[00:03:52.240 --> 00:03:57.200]   that landlord, the provider, the inconvenience of having to search for a new tenant all the time.
+[00:03:57.200 --> 00:04:03.680]   So, that's why we use all of the above approach and to make the appropriate normalization so that
+[00:04:03.680 --> 00:04:09.040]   we have them maximally. Apple's comparable data points, which then consolidate into
+[00:04:09.040 --> 00:04:15.760]   single indices per GPU variant. How do you consolidate those into indices? Is it the
+[00:04:15.760 --> 00:04:20.720]   average of all the different specs and locations? How does that math work? Not asking for your
+[00:04:20.720 --> 00:04:27.520]   secret recipe or anything. We call it machine learning, but it is basically glorified regression
+[00:04:27.520 --> 00:04:32.960]   type of analysis where you essentially control for features that we deem to be important that
+[00:04:32.960 --> 00:04:41.520]   are generally recognized. What are the top five? Geolocation, the spec, whether it is CPU and
+[00:04:41.520 --> 00:04:48.560]   memory, there is also the term length. Provider type is another one. We have a number of key
+[00:04:48.560 --> 00:04:55.920]   features that we deem as important. Once we control for those things, we then have a pretty
+[00:04:55.920 --> 00:05:01.360]   stringent qualification process on the providers that we deem as being eligible. If they have
+[00:05:01.360 --> 00:05:07.440]   minimum number of nodes in the inventory and have minimum of 90 days of continuous reporting that
+[00:05:07.440 --> 00:05:11.360]   looks regular, they become eligible to be considered, at which point we have a quarterly
+[00:05:11.360 --> 00:05:15.840]   committee consideration to see which ones should be included. In the beginning, when the market was
+[00:05:15.840 --> 00:05:20.640]   relatively small, including new providers will actually lead to large adjustments in the level
+[00:05:20.640 --> 00:05:28.480]   of the index. Nowadays, we have almost 100 providers and the newer chips of course have fewer
+[00:05:28.480 --> 00:05:33.280]   because they are not as widely deployed, but generally speaking, the idea is that we have
+[00:05:33.280 --> 00:05:37.760]   more providers. Adding new providers will not change the level of the index very much and in
+[00:05:37.760 --> 00:05:43.600]   fact, that is what we see because all of large numbers kick in. Do you pay these providers for
+[00:05:43.600 --> 00:05:48.640]   their data? Is that how that works? It depends on the provider. The smallest providers, they
+[00:05:48.640 --> 00:05:53.920]   voluntarily give us data in exchange for their market intelligence where we provide them with
+[00:05:53.920 --> 00:05:59.200]   anonymized market intelligence at the market level for pricing and various reasons. The
+[00:05:59.200 --> 00:06:04.560]   modestly bigger ones, we do half in-kind, half commercial and then for the very big ones,
+[00:06:04.560 --> 00:06:10.640]   of course, there will be commercial agreements struck on whether or not it is full or incomplete
+[00:06:10.640 --> 00:06:19.200]   or visibility. That's why we said it is a growing process. Some providers initially are, I think,
+[00:06:19.200 --> 00:06:25.040]   hesitant about the idea of providing data, but then I think generally people are now getting
+[00:06:25.040 --> 00:06:31.120]   on board with the idea that transparency is a good thing and it is going to make the market
+[00:06:31.120 --> 00:06:37.600]   more trustworthy and the bigger market fundamentally is much better for everybody.
+[00:06:38.960 --> 00:06:43.520]   You guys were the first GPU index, but now there are also others. What makes you different?
+[00:06:45.440 --> 00:06:52.000]   I think different people have different approaches to data, a source of data, how they want to hand
+[00:06:52.000 --> 00:06:58.480]   the data. Some people take the deliver approach of only including transactions. I think that you
+[00:06:58.480 --> 00:07:04.000]   can also tell when you just plot the two indices side by side. On the normal terminal, for example,
+[00:07:04.000 --> 00:07:11.280]   you see some of the variants being listed and there is a reason why. Some are more volatile
+[00:07:11.280 --> 00:07:17.680]   than others and that comes down to design choice. More broadly, I think there are
+[00:07:18.240 --> 00:07:27.600]   methodological differences as well that goes beyond data source. We take the pretty deliberate
+[00:07:29.920 --> 00:07:36.320]   approach thinking about this as a financial benchmark that could be trusted and I guess
+[00:07:36.320 --> 00:07:40.480]   that's our differentiation. That makes sense. I saw a chart that I think you posted on X
+[00:07:40.480 --> 00:07:45.600]   recently about some token prices going down quite a bit over this last quarter and that
+[00:07:45.600 --> 00:07:51.840]   kind of affecting anthropics ARR. Can you break that down for us? That index caught quite a bit
+[00:07:51.840 --> 00:07:56.880]   of attention. It's our token index. It's actually kind of a misnomer. People misunderstand it. It's
+[00:07:56.880 --> 00:08:01.440]   either a price index or a volume index. It's actually neither. It is an expenditure-weighted
+[00:08:01.440 --> 00:08:07.440]   price index that tells you the average price of the models being used to normalize your million
+[00:08:07.440 --> 00:08:13.360]   tokens. You can almost think of it as like imagine this is not tokens. This is like a car company.
+[00:08:13.360 --> 00:08:18.480]   They sell a luxury car and it's a normal ordinary car. The ordinary sedan suddenly gets a lot of
+[00:08:18.480 --> 00:08:23.360]   adoption because cars are now being widely used. That's going to pull down the average of the price
+[00:08:23.360 --> 00:08:27.360]   of the car sold. But meanwhile, you're going to see a lot more cars on the street. The same thing
+[00:08:27.360 --> 00:08:32.720]   here. If you have cheap flash models that are being widely deployed and that's satiating the
+[00:08:32.720 --> 00:08:38.240]   everyday tasks, that's going to comprise the vast majority of the tokens used. We will normally
+[00:08:38.240 --> 00:08:44.000]   normalize, but it's going to also pull down the price of the model and also probably the margin
+[00:08:44.000 --> 00:08:49.920]   of the model to the extent that these frontier labs really charge the most and sort of get the
+[00:08:49.920 --> 00:08:54.480]   best margin from their most powerful models and face competition as you come down in model
+[00:08:54.480 --> 00:08:59.360]   capabilities. That's probably not great for their valuation. This is all fundamentally
+[00:08:59.360 --> 00:09:04.400]   juxtaposing valuation with fundamentals. Anybody would love to have the level of growth even as
+[00:09:04.400 --> 00:09:09.600]   today that Enthropy enjoys, but we are already being valued at somewhere between one to two
+[00:09:09.600 --> 00:09:14.400]   trillion dollars. I think then you start giving people a bit of pause on whether or not the
+[00:09:14.400 --> 00:09:20.000]   exponential growth on the ARR, so to speak, the revenue growth can be sustained if there is
+[00:09:20.000 --> 00:09:27.360]   increasing competition and usage makes shifting away from frontier reasoning towards everyday
+[00:09:27.360 --> 00:09:34.480]   agentic use. Super interesting, and last just curious macro question for me. If prices for
+[00:09:34.480 --> 00:09:40.560]   GPUs per hour end up going back down, how do you think that will kind of affect the AI economy to
+[00:09:40.560 --> 00:09:46.000]   be super proud about it? So it depends on the reason, right? So you know, generally speaking,
+[00:09:47.360 --> 00:09:53.760]   even though GPU rental per hour per cheap variant is going up, all of the rental rates are going up,
+[00:09:53.760 --> 00:09:59.040]   but even A100's rental rate is going up since the start of the year now is holding about steady,
+[00:09:59.040 --> 00:10:04.880]   and then B200, B300 have gone up significantly over the last few months. But if you think about
+[00:10:04.880 --> 00:10:10.320]   from a total super point of view how much you're actually getting per GPU hour, you're getting way
+[00:10:10.320 --> 00:10:16.000]   more intelligence and getting way more number of tokens on the more expensive chips. So in a sense,
+[00:10:16.000 --> 00:10:20.400]   market is quite intelligence rational about the fact that you pay more because you get more output
+[00:10:20.400 --> 00:10:27.680]   per hour. And do you measure GPU kind of usefulness over time? Because you have an index to do that,
+[00:10:27.680 --> 00:10:32.160]   right? We have a silicon mark, which is a fiscal benchmark. It's not an index. Is it ongoing though?
+[00:10:32.160 --> 00:10:39.360]   It is ongoing. We continuously monitor GPU performance and health throughout the globe,
+[00:10:39.360 --> 00:10:44.400]   you know, in a random sample fashion in order to, you know, because we are anticipating eventually
+[00:10:44.400 --> 00:10:50.800]   moving towards a world of physically delivered futures. And more on that, stay tuned. But in the
+[00:10:50.800 --> 00:10:59.360]   meantime, but your question regarding whether the compute price is going down, I think that is a
+[00:10:59.360 --> 00:11:03.680]   different question. If all of the compute front end rental rates start going down, you can have a
+[00:11:03.680 --> 00:11:08.960]   scenario where, you know, maybe demand for AI isn't, you know, quite catching up with supply. I mean,
+[00:11:08.960 --> 00:11:12.480]   that's the trillion dollar, literally the trillion dollar question, right? You know, everyone is
+[00:11:12.480 --> 00:11:17.200]   currently anticipating that there's going to be continuously exponential growth in demand,
+[00:11:17.200 --> 00:11:23.920]   whereas supply is growing linearly with all sorts of headwinds coming from not just physical
+[00:11:23.920 --> 00:11:28.480]   constraints, power, lack of space, but also political pushback. Do you feel like today there
+[00:11:28.480 --> 00:11:34.160]   are chips that are sitting there not able to be plugged in and turned on? I mean, we don't
+[00:11:34.160 --> 00:11:38.960]   track that per se, but we have seen news reports of due to a lack of power and the various physical
+[00:11:38.960 --> 00:11:45.600]   constraints and you're unable to deploy all of the chips, you know, that may be available. So today,
+[00:11:45.600 --> 00:11:51.360]   people say that the shortage is not in the chip anymore, but in power and other forms of, you know,
+[00:11:52.080 --> 00:11:57.040]   like cooling system and so on. And Elon is running around the world looking for turbines.
+[00:11:57.040 --> 00:12:01.280]   Yes. Well, we'll end it there. Thank you so, so much for your insight. Really appreciate it.
+[00:12:01.280 --> 00:12:03.040]   Thank you very much for your time.
+output_json: saving output to 'edit/shorts-ignite-10/transcript.json'

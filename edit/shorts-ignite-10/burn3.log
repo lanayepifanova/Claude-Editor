@@ -1,0 +1,8 @@
+1/2  cutting 19 segments from ignite-10-short3-vertical.mp4 (57.6s -> 49.3s, 14.4% removed)
+     master 1080x1920 1182f · ignite-10-short3-cap.mov 1080x1920 1182f
+2/2  compositing 1 overlay(s)
+     verifying burn against the uncaptioned master …
+     1179/1182 frames carry ink (100% of the cut) · peak coverage 1.0% of frame
+
+-> output/ignite-10-shorts/3 pricing a GPU like a NYC apartment.mp4  (41.6 MB)
+   master kept at graphics/ignite-10-short3-master.mp4

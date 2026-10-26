@@ -1,0 +1,22 @@
+{
+ "source": "footage/Ignite Oct 2026/07 Carmen Li Compute Exchange &Drew Pletcher Lighting.mp4",
+ "start": 676.15,
+ "end": 714.1,
+ "active": [
+  34,
+  1012
+ ],
+ "crop": [
+  568,
+  1012
+ ],
+ "shots": [
+  {
+   "t0": 0.0,
+   "t1": 37.95,
+   "face_x": 910,
+   "crop_x": 626,
+   "found": true
+  }
+ ]
+}

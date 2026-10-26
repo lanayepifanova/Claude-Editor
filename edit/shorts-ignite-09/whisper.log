@@ -1,0 +1,142 @@
+load_backend: loaded BLAS backend from /opt/homebrew/Cellar/ggml/0.20.0/libexec/libggml-blas.so
+ggml_metal_device_init: tensor API disabled for pre-M5 and pre-A19 devices
+ggml_metal_library_init: using embedded metal library
+ggml_metal_library_init: loaded in 0.077 sec
+ggml_metal_rsets_init: creating a residency set collection (keep_alive = 180 s)
+ggml_metal_device_init: GPU name:   MTL0 (Apple M4)
+ggml_metal_device_init: GPU family: MTLGPUFamilyApple9  (1009)
+ggml_metal_device_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_device_init: GPU family: MTLGPUFamilyMetal4  (5002)
+ggml_metal_device_init: simdgroup reduction   = true
+ggml_metal_device_init: simdgroup matrix mul. = true
+ggml_metal_device_init: has unified memory    = true
+ggml_metal_device_init: has bfloat            = true
+ggml_metal_device_init: has tensor            = false
+ggml_metal_device_init: use residency sets    = true
+ggml_metal_device_init: use shared buffers    = true
+ggml_metal_device_init: recommendedMaxWorkingSetSize  = 12713.12 MB
+load_backend: loaded MTL backend from /opt/homebrew/Cellar/ggml/0.20.0/libexec/libggml-metal.so
+load_backend: loaded CPU backend from /opt/homebrew/Cellar/ggml/0.20.0/libexec/libggml-cpu-apple_m4.so
+read_audio_data: reading audio data from 'edit/shorts-ignite-09/audio.wav' ...
+read_audio_data: trying to decode with miniaudio
+
+[00:00:00.000 --> 00:00:08.000]   Hi, good afternoon. This is Phoebe Liu. I'm a reporter covering AI infrastructure and semiconductors at the Information, Tech and Business publication.
+[00:00:08.000 --> 00:00:17.000]   I'm here at the NeoCloud Summit in San Francisco with Carmen Lee, the CEO of two companies, Silicon Data and Compute Exchange. It's great to be here.
+[00:00:17.000 --> 00:00:19.000]   Thank you for having me.
+[00:00:19.000 --> 00:00:24.000]   Yeah, what's been top of mind for you these days? I know you're running around and doing a lot across the country.
+[00:00:24.000 --> 00:00:26.000]   A lot across the world.
+[00:00:26.000 --> 00:00:36.000]   Yeah. So you probably resonate with me. The past six months has absolutely been insane for every single layer of the cake, right?
+[00:00:36.000 --> 00:00:37.000]   You've been keeping us busy.
+[00:00:37.000 --> 00:00:45.000]   No, it's just so much going on. I'm trying to keep the industry happy, right, by running transparency. So Silicon, thank you for Silicon Data.
+[00:00:45.000 --> 00:00:54.000]   Obviously, we're all getting ready for the future to launch at CME, which we're looking at a few weeks within a month, ideally.
+[00:00:54.000 --> 00:01:03.000]   So working with CFTC and other regulatory bodies to make sure people are aligned, understood the contract well, understood the business as well.
+[00:01:03.000 --> 00:01:08.000]   So it's been really exciting and obviously working with natural hedgers, right? So they're going to use the contract.
+[00:01:08.000 --> 00:01:17.000]   We're going to be talking about risk management, launching calculations around prices, correlations, how to use the tool effectively, the hedging mechanisms.
+[00:01:17.000 --> 00:01:26.000]   So therefore, CME is for Silicon Data side. For computing side, we've been launching a lot of new matching platforms.
+[00:01:26.000 --> 00:01:33.000]   So we are very heavily involved with secondary sales on GPUs. So we see tons of transactions happening for secondary sales.
+[00:01:33.000 --> 00:01:41.000]   We're also doing a lot with marketplaces. We've been expanding the team quite a bit in the West Coast area. So it's a lot of things going on. I know, it's great.
+[00:01:41.000 --> 00:01:48.000]   Yeah, on the compute futures side, we'd love to hear a little bit more about how that process is going with the CFTC. Like what questions are they asking you?
+[00:01:48.000 --> 00:01:52.000]   Where in that process are you? It's in regulatory review.
+[00:01:52.000 --> 00:01:58.000]   It is. So we're actually very excited by the involvement of all different government regulatory bodies.
+[00:01:58.000 --> 00:02:08.000]   So we have information sharing sessions with Treasury departments, with different teams, with the Commerce department, with CFTC obviously, with CME many times a week, right?
+[00:02:08.000 --> 00:02:12.000]   So it's been amazing. Are you spending a lot of time in DC then?
+[00:02:12.000 --> 00:02:17.000]   Over Zoom, and I'm always going there as well. So a lot of great conversation.
+[00:02:17.000 --> 00:02:26.000]   If you look at the public available information, which is the comment is public, right? You see the comments, it's all reasonable, right?
+[00:02:26.000 --> 00:02:37.000]   The things we witnessed two and a half years ago. So one of the questions, for example, is, hey, you know, in everyone's mind, the biggest player in the cloud space are hyper skillers.
+[00:02:37.000 --> 00:02:53.000]   Majority transactions from them, which is 100% correct observation. The concern would be valid if our only data sources is, what if your data source is only three of them, isn't, you know, that's harmful, been manipulated, right?
+[00:02:53.000 --> 00:03:06.000]   100% legit question. That was the case two and a half years ago when we entered the space. There were three, four, five major hyper skillers, three new cloud providers possibly back then, right?
+[00:03:06.000 --> 00:03:12.000]   But now we're at a whole summit of them. Exactly. Now we have over 300 new cloud providers on your platform. All contributors, right?
+[00:03:12.000 --> 00:03:29.000]   Number two is our indices, we choose to launch with CME, it's process called new cloud GPU indices translate to we don't even take one single data for hyper skillers for the precise reason that regulators are concerned about.
+[00:03:29.000 --> 00:03:37.000]   Separately, with the hyper skillers indices for A100, H100, which people can observe, risk management, but it's completely separate indices.
+[00:03:37.000 --> 00:03:49.000]   The one we'll be launching futures with are the ones that's new cloud-centric, concentrated. Translate to we have over 100 providers, we take 40 providers into new cloud index calculation.
+[00:03:49.000 --> 00:03:54.000]   No provider has more than 3.5% weights on my indices.
+[00:03:54.000 --> 00:03:59.000]   How do you weigh the different providers? There's so many different insights. There are many complications, exactly.
+[00:03:59.000 --> 00:04:08.000]   So we have separate index committee based on the weights of data sources. So every time we add, delete, modify the weights, it has to go through approval for index committees.
+[00:04:08.000 --> 00:04:13.000]   Obviously, we'll get linements with CMEs and everyone will open interest on my indices, right?
+[00:04:13.000 --> 00:04:22.000]   So it's a very thoughtful process. Again, we're following all ISCO principles. That's every other index provider is supposed to do.
+[00:04:22.000 --> 00:04:30.000]   Yeah, and I guess the new clouds, I would think if I were a new cloud, I don't want to share pricing data with anyone besides the customers.
+[00:04:30.000 --> 00:04:35.000]   How do you kind of convince them to give that data to you? And I assume you anonymize it, and yeah.
+[00:04:35.000 --> 00:04:43.000]   Your intuition is 100% right. We 100% demonize it. You never see me talking to you about, "Hey, here are my providers of the world," right?
+[00:04:43.000 --> 00:04:49.000]   The exact reason, number one, selfishly, I don't want people to know so they can manipulate my data.
+[00:04:49.000 --> 00:04:54.000]   Even the new cloud provider, they do not know if their data points are used for my index calculation.
+[00:04:54.000 --> 00:05:00.000]   I have the right to use that data. It doesn't mean I will. And actually, I am not in the decision-making on that.
+[00:05:00.000 --> 00:05:04.000]   We have separate index committee decided which one to use and what's the weight from that.
+[00:05:04.000 --> 00:05:10.000]   Let's assume that we use your data sources as one data provider. You do not know that, but we do use you, for example.
+[00:05:10.000 --> 00:05:13.000]   It doesn't translate to we'll use every single data point of yours.
+[00:05:13.000 --> 00:05:18.000]   You do a real trade with some of the customers, but that's your favorite customer. You give them the best price in the world.
+[00:05:18.000 --> 00:05:21.000]   It's a real trade. We get the data from you every day.
+[00:05:21.000 --> 00:05:27.000]   We see that it comes in and we say, "Hey, this data is 2 cent deviation away from whatever price we set."
+[00:05:27.000 --> 00:05:34.000]   It's a real trade, but it's one of anomalies. It has no impact on market supply demand curve, actually, right?
+[00:05:34.000 --> 00:05:36.000]   We're going to throw that data point out.
+[00:05:36.000 --> 00:05:44.000]   There's a lot of process we go through to make sure all data we get in is actually normalized and then it's actually being used by the marketplaces.
+[00:05:44.000 --> 00:05:46.000]   It's a lot of nuance in data ingestion.
+[00:05:46.000 --> 00:05:54.000]   Yeah, for sure. The CFTC, when you're talking to them, what kind of market manipulation are they worried about?
+[00:05:54.000 --> 00:05:55.000]   What could happen?
+[00:05:55.000 --> 00:05:58.000]   Yes. Everything across your eyes is called principles, right?
+[00:05:58.000 --> 00:06:04.000]   The biggest risk for adding this provider, not just GPUs or any token, is manipulation.
+[00:06:04.000 --> 00:06:10.000]   Number one, I shouldn't manipulate data myself. Do I have a conflict of interest?
+[00:06:10.000 --> 00:06:15.000]   Let's assume as index providers, I own GPUs. Let's assume I own tons of GPUs.
+[00:06:15.000 --> 00:06:24.000]   What are my interests for my indexes? One price goes up, right? Because it's my assets. That's around all over again, right?
+[00:06:24.000 --> 00:06:28.000]   I don't know how my audience is on. Remember, around errors, right?
+[00:06:28.000 --> 00:06:35.000]   So you do not want any index provider has principle exposures to the assets they try to measure.
+[00:06:35.000 --> 00:06:43.000]   Translate to you cannot be a referee and the player at the same time, if you're doing two things at the same time,
+[00:06:43.000 --> 00:06:49.000]   you have the interest, you have the conflict of interest to manipulate indices. That is not only wrong.
+[00:06:49.000 --> 00:06:53.000]   It's also against every single compliance rules we have, right?
+[00:06:53.000 --> 00:07:00.000]   So silicon data, we do have no principle exposures. We do not own anything, or short, long or short, in a principle asset we try to measure.
+[00:07:00.000 --> 00:07:06.000]   So that's critical. Number one, the provider shouldn't have any conflict of interest as asset they try to measure, no conflict of interest.
+[00:07:06.000 --> 00:07:09.000]   Duration risk, long term risk, short term risk, anything.
+[00:07:09.000 --> 00:07:16.000]   Number two is you're not supposed to be manipulated by others. I'd say if I have two data sources, they all transaction prices.
+[00:07:16.000 --> 00:07:21.000]   Well, hey, you know who you are. You see how high quality you are with me. You can print something and be manipulated.
+[00:07:21.000 --> 00:07:31.000]   Or some other third party, they have a vicious goal in mind. They will manipulate you. You want them to manipulate me.
+[00:07:31.000 --> 00:07:40.000]   As an index provider, you don't want that happening. That's why our methodology is so robust, right? Number one, no index provider is more than 3.5% waste of my index construction.
+[00:07:40.000 --> 00:07:50.000]   Number two, on demand prices volatile, which is what we want. They are more elastic. Not only only use that, we look at reserve prices, right?
+[00:07:50.000 --> 00:07:56.000]   We don't want to use reserve prices to figure out demand rates based on reserve curve. So it's very hard to manipulate reserve prices.
+[00:07:56.000 --> 00:08:05.000]   So our methodology is extremely robust, where not only we have diversification of providers, which you have 95% coverages, we also look at ultimate duration risks.
+[00:08:05.000 --> 00:08:09.000]   So you said we should be looking at a few weeks, so like end of this calendar?
+[00:08:09.000 --> 00:08:19.000]   I'm hoping, I mean, what Carmen wants to do is obviously early November. That will be a great post comment period, which is early November.
+[00:08:19.000 --> 00:08:24.000]   We want to make sure people are comfortable from risk point of view, from process point of view.
+[00:08:24.000 --> 00:08:34.000]   Good thing is, we're not reinventing the wheel. CME future is very vanilla future contract for the exact CME, product design, pipeline, data distribution, everything.
+[00:08:34.000 --> 00:08:39.000]   People should just, you know, by the time it launches, bring up a ticker and you're ready to go.
+[00:08:39.000 --> 00:08:46.000]   Yeah, curious question. How does Nvidia feel about this? Because I would say like three years ago, they would have wanted GPU prices to just go up, up, up.
+[00:08:46.000 --> 00:08:52.000]   But the existence of a futures market might mean people are trying to hedge against prices going down.
+[00:08:52.000 --> 00:09:00.000]   So I think if I were Nvidia, all right, so I want a very vibrant, I want a very sustainable economy.
+[00:09:00.000 --> 00:09:09.000]   I want everyone to use my resources, my computer, my GPUs, and produce a huge ROI that will keep encouraging them to buy more, right?
+[00:09:09.000 --> 00:09:17.000]   If the ROI doesn't work, guess what? I'm not going to buy GPUs. If every dollar is spent with Nvidia, I can't generate X amount in return. Why would I do so?
+[00:09:17.000 --> 00:09:26.000]   So it's in their interest to make sure people get ROI. Okay, imagine a world where, you know, you are enterprises, you buy GPUs, right?
+[00:09:26.000 --> 00:09:32.000]   Obviously, you were hoping to generate ROI from the GPU procurement. And then you have service offering.
+[00:09:32.000 --> 00:09:40.000]   However, you realize that, hey, the GPU prices are going all over the place. Not only to go up, I have no idea to go up and down 20%, 50%.
+[00:09:40.000 --> 00:09:46.000]   And you'll be concerned. Uncertainty is what kills business planning. Because uncertainty, they will say, hey, guess what?
+[00:09:46.000 --> 00:09:52.000]   I don't know what's going to happen. Let me just do less. Or someone's going to charge me a higher premium interest rate for whatever assets.
+[00:09:52.000 --> 00:09:58.000]   So that's not good for anyone, let alone Nvidia. So what we come in to say, hey, guess what?
+[00:09:58.000 --> 00:10:05.000]   You don't want volatility. You can use future to hash that. And someone else, their professional job is managing volatility, right?
+[00:10:05.000 --> 00:10:11.000]   So let them take the volatility away. And you have certainties. You can plan better. You can manage your margin better.
+[00:10:11.000 --> 00:10:17.000]   The results might be you generate more businesses. You can procure more resources at the range that you're looking for.
+[00:10:17.000 --> 00:10:25.000]   It's actually really good for the whole ecosystem. You've got Nvidia, for TSMC, for new cloud providers, for clients like you and me, for customers.
+[00:10:25.000 --> 00:10:35.000]   That makes sense. Yeah, just to close, curious if you have a prediction for what these markets will look like 12 months from now, if that's even possible.
+[00:10:35.000 --> 00:10:37.000]   I don't know how far enough. I don't know how far I am.
+[00:10:37.000 --> 00:10:38.000]   You have a lot of data.
+[00:10:38.000 --> 00:10:43.000]   I just love data. So what we see, so we have term structure curve in platform rates.
+[00:10:43.000 --> 00:10:50.000]   So basically the market consensus view, what they think the price will be in the future for the next 36 months.
+[00:10:50.000 --> 00:10:57.000]   Market consensus doesn't mean it's right. Last year, November, market consensus, the price will keep coming down.
+[00:10:57.000 --> 00:10:59.000]   Obviously, we know happened this year, right?
+[00:10:59.000 --> 00:11:04.000]   So the terms, even though the market consensus might not be right, right now, the term structure depends on chips.
+[00:11:04.000 --> 00:11:09.000]   The B200 is still contangled. Minimum price, people think that the trade higher.
+[00:11:09.000 --> 00:11:15.000]   The H100, A100 pretty flattened, so people expect a similar long price range for the next 36 months.
+[00:11:15.000 --> 00:11:20.000]   What's interesting is from computing point of view, because we've been dealing with physical transactions.
+[00:11:20.000 --> 00:11:25.000]   Again, when usual marketplaces, we always don't have price go up and down. We want liquidity.
+[00:11:25.000 --> 00:11:27.000]   We want general liquidity for every single layer of the cake.
+[00:11:27.000 --> 00:11:30.000]   For what computers you see is tremendous activity.
+[00:11:30.000 --> 00:11:34.000]   You don't physically shift the chip back and forth.
+[00:11:34.000 --> 00:11:39.000]   Well, we do reserve contracts, forward contracts, and also second ratio for yourselves.
+[00:11:39.000 --> 00:11:42.000]   So you can actually procure physical services shipped to your door, right?
+[00:11:42.000 --> 00:11:46.000]   So all activities have been going up through the rules.
+[00:11:46.000 --> 00:11:50.000]   We have seen over a billion notion of RFQ every single month.
+[00:11:50.000 --> 00:11:59.000]   And the interesting thing is we see a variety of customer bases, enterprises, AI startups, some of your services companies, government agencies.
+[00:11:59.000 --> 00:12:02.000]   We see one note, all to 20,000 notes.
+[00:12:02.000 --> 00:12:08.000]   Let's translate to all different use cases, all different sort of stage of AI adoption.
+[00:12:08.000 --> 00:12:12.000]   So we definitely see a lot of vibrancy from that point of view.
+[00:12:12.000 --> 00:12:14.000]   So I don't know, I think the market is going to become hotter.
+[00:12:14.000 --> 00:12:19.000]   Hotter is activity-wise. I don't know the price, but activity-wise is going to definitely be hotter.
+[00:12:19.000 --> 00:12:23.000]   Super interesting. We could talk to you all day. Thank you so so much for your insight.
+[00:12:23.000 --> 00:12:24.000]   Thank you for having me. This is great.
+output_json: saving output to 'edit/shorts-ignite-09/transcript.json'

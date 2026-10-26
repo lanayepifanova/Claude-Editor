@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>captions</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:transparent; }
+      #root { position:relative; width:1080px; height:1920px; }
+      .cue {
+        position:absolute; left:0; right:0; top:75.0%;
+        transform:translateY(-50%);
+        display:flex; align-items:center; justify-content:center;
+        text-align:center;
+      }
+      .cue span {
+        display:inline-block; max-width:778px; white-space:nowrap;
+        font-family:'Montserrat', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+        font-weight:800; font-size:54px; line-height:1.18;
+        letter-spacing:-0.01em; color:#FFFFFF;
+        /* hard edge, zero blur — reads on any background, never looks glowy */
+        text-shadow:
+          4px 0 0 #000, -4px 0 0 #000, 0 4px 0 #000, 0 -4px 0 #000,
+          3px 3px 0 #000, -3px 3px 0 #000,
+          3px -3px 0 #000, -3px -3px 0 #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="30.531"
+         data-width="1080" data-height="1920" data-fps="23.976"
+         data-layout-allow-overflow="true">
+      <div id="cue0" class="clip cue" data-start="0.04" data-duration="1.24" data-track-index="1"><span>In many cases,</span></div>
+      <div id="cue1" class="clip cue" data-start="1.28" data-duration="0.98" data-track-index="1"><span>the enterprises aren't</span></div>
+      <div id="cue2" class="clip cue" data-start="2.26" data-duration="0.42" data-track-index="1"><span>going to have those</span></div>
+      <div id="cue3" class="clip cue" data-start="2.7" data-duration="0.96" data-track-index="1"><span>skill sets, so they're</span></div>
+      <div id="cue4" class="clip cue" data-start="3.66" data-duration="1.58" data-track-index="1"><span>going to start looking</span></div>
+      <div id="cue5" class="clip cue" data-start="5.24" data-duration="1.45" data-track-index="1"><span>for the neoclouds</span></div>
+      <div id="cue6" class="clip cue" data-start="6.69" data-duration="1.54" data-track-index="1"><span>that are providing</span></div>
+      <div id="cue7" class="clip cue" data-start="8.23" data-duration="0.94" data-track-index="1"><span>a full stack</span></div>
+      <div id="cue8" class="clip cue" data-start="9.17" data-duration="1.26" data-track-index="1"><span>AI as a service</span></div>
+      <div id="cue9" class="clip cue" data-start="10.43" data-duration="0.49" data-track-index="1"><span>that can come</span></div>
+      <div id="cue10" class="clip cue" data-start="10.94" data-duration="0.86" data-track-index="1"><span>in and say, "Here's</span></div>
+      <div id="cue11" class="clip cue" data-start="11.8" data-duration="0.58" data-track-index="1"><span>my model.</span></div>
+      <div id="cue12" class="clip cue" data-start="12.38" data-duration="1.0" data-track-index="1"><span>Here's my data.</span></div>
+      <div id="cue13" class="clip cue" data-start="13.38" data-duration="0.84" data-track-index="1"><span>Go train it and come</span></div>
+      <div id="cue14" class="clip cue" data-start="14.22" data-duration="0.94" data-track-index="1"><span>back to me when you're</span></div>
+      <div id="cue15" class="clip cue" data-start="15.16" data-duration="0.64" data-track-index="1"><span>ready to start</span></div>
+      <div id="cue16" class="clip cue" data-start="15.8" data-duration="0.68" data-track-index="1"><span>fine-tuning</span></div>
+      <div id="cue17" class="clip cue" data-start="16.48" data-duration="0.3" data-track-index="1"><span>it," and</span></div>
+      <div id="cue18" class="clip cue" data-start="16.8" data-duration="1.03" data-track-index="1"><span>so that post-training</span></div>
+      <div id="cue19" class="clip cue" data-start="17.83" data-duration="0.71" data-track-index="1"><span>work that's going</span></div>
+      <div id="cue20" class="clip cue" data-start="18.54" data-duration="0.31" data-track-index="1"><span>to occur</span></div>
+      <div id="cue21" class="clip cue" data-start="18.87" data-duration="0.74" data-track-index="1"><span>in the fine-tuning</span></div>
+      <div id="cue22" class="clip cue" data-start="19.61" data-duration="0.94" data-track-index="1"><span>and adding synthetic</span></div>
+      <div id="cue23" class="clip cue" data-start="20.55" data-duration="1.84" data-track-index="1"><span>data if you do not</span></div>
+      <div id="cue24" class="clip cue" data-start="22.39" data-duration="1.43" data-track-index="1"><span>have enough</span></div>
+      <div id="cue25" class="clip cue" data-start="23.82" data-duration="1.02" data-track-index="1"><span>data.</span></div>
+      <div id="cue26" class="clip cue" data-start="24.88" data-duration="1.24" data-track-index="1"><span>The product that's</span></div>
+      <div id="cue27" class="clip cue" data-start="26.12" data-duration="1.36" data-track-index="1"><span>delivered at the end</span></div>
+      <div id="cue28" class="clip cue" data-start="27.48" data-duration="1.2" data-track-index="1"><span>is a fully trained</span></div>
+      <div id="cue29" class="clip cue" data-start="28.68" data-duration="1.851" data-track-index="1"><span>inference-ready model.</span></div>
+    </div>
+    <script>
+      // GENERATED by edit/captions_overlay.py — do not hand-edit.
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // captions cut in and out with the clip window — no tweens by design
+      tl.set("#root", { opacity: 1 }, 0);
+      tl.set("#root", { opacity: 1 }, 30.531);
+      tl.seek(0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
