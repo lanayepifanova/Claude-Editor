@@ -906,3 +906,16 @@ herself.** "Find the script… good verbal hooks… after I approve the clip cho
 actually clip it myself." Means 3–6 picks, 30–60s each, timestamps in source time, no renders.
 She asked for this to be saved because she'll ask again, so it's the `find-shorts` project
 skill (`.claude/skills/find-shorts/SKILL.md`).
+
+**Ignite Oct 2026 speaker cards (2026-10-26, 04 Keith Newman × Carmen Li): pending her approval,
+then roll out to the other nine Ignite videos.** Her ask: name cards "similar to the screenshots in
+Editing Examples" (YC style: white plate, orange gradient bar, black/orange corner tab, bold sans
+name over regular role), swipe in, hold 5-10s, swipe out, opening only. No silence pass, retakes or
+captions on these: the interview plays untouched and only the first ~17s is touched. Tool is
+`edit/speaker_cards.py` with a per-video `edit/cards-<name>.json`, so it's one JSON per video.
+The footage is 23.976 fps multicam with a baked letterbox (picture 34-1046, from cropdetect).
+HyperFrames rejects decimal fps, so pass `24000/1001`. **Time each card to the shots, not the
+speech**: the first pass put Keith's card over Carmen's close-up. Use the scene-detect cut list
+and the wide shot, where host sits left and guest right. Roles were best guesses ("Host, Ignite
+Studio"; "CEO, Silicon Data & Compute Exchange"), so confirm them. Export is a straight
+re-encode (crf 16, audio copied): `output/ignite-04-keith-carmen.mp4`.
