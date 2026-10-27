@@ -12,12 +12,14 @@ Drew right. A 9:16 crop has to re-centre per shot.
 
 | # | Title / hook | In → Out | Length |
 |---|---|---|---|
-| 1 | **"Same GPUs, 5–8% faster"** | 4:19.4 → 5:08.7 | 49s |
+| 1 | ~~"Same GPUs, 5–8% faster"~~ **removed: ad** | 4:19.4 → 5:08.7 | 49s |
 | 2 | **"Coalition of experts"** | 12:54.5 → 13:48.0 | 54s |
 | 3 | **"Prefill vs decode: split inference across chips"** | 8:35.9 → 9:26.4 | 51s |
 | 4 | **"Here's my model, here's my data, go train it"** | 11:16.3 → 11:54.0 | 38s |
 | 5 | **"Inference is about to outgrow training"** | 7:24.9 → 8:20.6 | 56s |
-| 6 | **"Over 90% occupancy"** | 10:00.6 → 10:41.0 | 40s |
+| 6 | ~~"Over 90% occupancy"~~ **removed: ad** | 10:00.6 → 10:41.0 | 40s |
+| 7 | **"What HFT and AI have in common"** | 1:51.3 → 2:51.6 | 50s |
+| 8 | **"Mixture of experts vs. the enterprise"** | 12:02.6 → 12:53.1 | 43s |
 
 1. **5–8% faster** — opens "One of our key foundation labs has identified… they see a five to 8%
    higher performance in our environment on the same hardware than they do in other neoclouds."
@@ -59,3 +61,25 @@ hears Joe even when prompted with Drew) · "new cloud" / "Neo Clouds" → neoclo
 "pre-fill" → prefill · "infers and agenda workloads" → inference and agentic workloads ·
 "bad metal" → bare metal · "Lighting" (filename) → Lightning AI · "for trading, or for training"
 (self-correction) · "5 to 8x" is Carmen's real mishearing, not a transcription error.
+
+### Replacement round (2026-10-27): no ads
+
+#1 and #6 were deleted as pitches for Lightning AI ("higher performance in our environment than
+other neoclouds"; "we're over 90%… announcements coming"). Replacements (cut times are envelope-
+checked source time, final lengths after the silence pass):
+
+7. **What HFT and AI have in common**: 111.34 → 171.60 s. Opens "In high-frequency trading, or
+   really in electronic trading…" (leading "Because" dropped), tick-to-trade vs. time-to-result /
+   prompt-to-final-token, closes "significantly more parallels between traditional
+   high-performance computing and AI workloads." No company mentioned.
+8. **Mixture of experts vs. the enterprise**: 722.56 → 773.12 s. Opens "Today, we hear a lot
+   about the mixture of experts…" (leading "'Cause" dropped), one monolithic model plus routed
+   expert networks vs. enterprise data siloed by department, closes "it can take weeks to months
+   for these teams to get together." (trailing "and put it" cut). This is the setup to #2 but stops
+   before #2's in-point, with no overlap.
+
+Rejected as promotional: 3:02.7 "what differentiates a successful neocloud" ("this is where we've
+shown our differentiation"), 4:48–5:32 "non-oversubscribed, redundancy" (tail of the 5–8% brag),
+5:40 "the last thing we want our customers to worry about", 6:31 bare metal / managed Slurm (a
+list of the offerings), 0:25 Lightning AI intro. 10:41–11:16 (enterprises lose the top 5% of
+talent) is not a pitch, but it's the setup for #4, it makes the same point, and it runs under 30s.
