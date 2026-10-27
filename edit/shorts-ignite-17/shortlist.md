@@ -13,12 +13,13 @@ short (≤8s) on this video.
 
 | # | Title / hook | In → Out | Length |
 |---|---|---|---|
-| 1 | **"Save half your money on reserved GPUs"** | 9:20.95 → 10:16.10 | 55s |
+| 1 | ~~"Save half your money on reserved GPUs"~~ removed: ad | 9:20.95 → 10:16.10 | 55s |
 | 2 | **"Agents will be the main consumers of compute"** | 2:55.00 → 3:34.75 | 40s |
 | 3 | **"Long compute physically, short it on futures"** | 6:02.52 → 6:57.25 | 55s |
-| 4 | **"It's not just about ARR, it's about IRR"** | 11:21.30 → 12:04.25 | 43s |
+| 4 | ~~"It's not just about ARR, it's about IRR"~~ removed: ad | 11:21.30 → 12:04.25 | 43s |
 | 5 | **"Everyone is just market making on compute"** | 7:40.29 → 8:23.20 | 43s |
-| 6 | **"A global compute grid, sold back like electricity"** | 2:08.67 → 2:51.35 | 43s |
+| 6 | ~~"A global compute grid, sold back like electricity"~~ removed: ad | 2:08.67 → 2:51.35 | 43s |
+| 7 | **"Developers already let agents rent GPUs"** (replacement) | 4:18.30 → 5:16.60 | 58s src → 46.9s cut |
 
 1. **Spot market** — opens "Let's say you are an inference company… you need to reserve 1,024
    GPUs for three years." Peak vs. off-peak, "on average you only use 50% of the compute hours
@@ -44,6 +45,29 @@ short (≤8s) on this video.
    buy and sell compute." Jasper: "We wanted to build the first global compute grid… take compute
    elastically, but also sell it back just like electricity," plus the orchestration layer that
    moves a workload whenever it finds a better price.
+
+## Replacement round (2026-10-27): no ads
+
+Shorts 1, 4 and 6 were deleted as Hyperbolic pitches. Only ONE replacement cleared the
+no-pitch test on this video:
+
+7. **Agents rent GPUs** — opens "Developers are the most technology-forward group, right?…
+   they actually don't code anymore." Developers already tell an agent to rent GPUs through an
+   API or MCP; with recursive self-improvement, agents will "self-improve… try to survive and
+   keep growing," so "they need a way to programmatically consume compute." Hyperbolic is
+   named once as the example API; the point (agents as direct compute buyers) holds with the
+   name bleeped. Out stops before "And so Hyperbolic also gonna be built for that future."
+   Distinct from #2 (agents won't do sales/contracts) — this one is the "already happening →
+   self-improving agents" evidence.
+
+Rejected as promotional or unusable: 0:30–1:35 "what is Hyperbolic / Forge / 300 neoclouds"
+(company intro); 1:35–2:08 customers list (brag); 5:29–6:02 "do you own compute… so strong
+demand we cannot fulfill" (capacity claim); 8:29–9:05 "we started on serverless inference…
+that's why we built the aggregation layer" (origin story ending on the product, also
+overlaps #5's open-source point); 10:17–11:21 Kubernetes/roadmap (product); 9:18–9:46 the
+50%-utilization setup alone (only ~28s, and it is the head of deleted #1); 12:13–12:33
+Steven's ice-cubes/sand glass analogy (good but ~17s); 7:18–7:39 Steven's "everyone is
+becoming everybody" (~21s, runs into #5's cold open).
 
 ## Bench
 
