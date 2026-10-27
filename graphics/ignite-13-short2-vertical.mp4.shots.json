@@ -1,0 +1,22 @@
+{
+ "source": "footage/Ignite Oct 2026/13 Steven Hou Silicon Data and Liran Zvibel Weka.mp4",
+ "start": 308.55,
+ "end": 357.6,
+ "active": [
+  34,
+  1012
+ ],
+ "crop": [
+  568,
+  1012
+ ],
+ "shots": [
+  {
+   "t0": 0.0,
+   "t1": 49.05,
+   "face_x": 1022,
+   "crop_x": 738,
+   "found": true
+  }
+ ]
+}

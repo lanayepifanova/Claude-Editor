@@ -1,0 +1,252 @@
+{
+	"systeminfo": "WHISPER : COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | SME = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "small",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"text": {
+			"ctx": 448,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/lanayepifanova/.cache/whisper/ggml-small.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:00,000"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 0
+			},
+			"text": ""
+		},
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:00,450"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 450
+			},
+			"text": " And"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:00,450",
+				"to": "00:00:00,700"
+			},
+			"offsets": {
+				"from": 450,
+				"to": 700
+			},
+			"text": " then"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:00,700",
+				"to": "00:00:00,890"
+			},
+			"offsets": {
+				"from": 700,
+				"to": 890
+			},
+			"text": ","
+		},
+		{
+			"timestamps": {
+				"from": "00:00:00,890",
+				"to": "00:00:01,490"
+			},
+			"offsets": {
+				"from": 890,
+				"to": 1490
+			},
+			"text": " even"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:01,490",
+				"to": "00:00:01,880"
+			},
+			"offsets": {
+				"from": 1490,
+				"to": 1880
+			},
+			"text": " though"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:01,880",
+				"to": "00:00:02,080"
+			},
+			"offsets": {
+				"from": 1880,
+				"to": 2080
+			},
+			"text": " we"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:02,080",
+				"to": "00:00:02,470"
+			},
+			"offsets": {
+				"from": 2080,
+				"to": 2470
+			},
+			"text": " didn"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:02,470",
+				"to": "00:00:02,670"
+			},
+			"offsets": {
+				"from": 2470,
+				"to": 2670
+			},
+			"text": "'t"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:02,670",
+				"to": "00:00:03,070"
+			},
+			"offsets": {
+				"from": 2670,
+				"to": 3070
+			},
+			"text": " plan"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:03,070",
+				"to": "00:00:03,370"
+			},
+			"offsets": {
+				"from": 3070,
+				"to": 3370
+			},
+			"text": " for"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:03,370",
+				"to": "00:00:03,600"
+			},
+			"offsets": {
+				"from": 3370,
+				"to": 3600
+			},
+			"text": " it"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:03,600",
+				"to": "00:00:03,620"
+			},
+			"offsets": {
+				"from": 3600,
+				"to": 3620
+			},
+			"text": ","
+		},
+		{
+			"timestamps": {
+				"from": "00:00:03,620",
+				"to": "00:00:03,870"
+			},
+			"offsets": {
+				"from": 3620,
+				"to": 3870
+			},
+			"text": " the"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:03,870",
+				"to": "00:00:04,270"
+			},
+			"offsets": {
+				"from": 3870,
+				"to": 4270
+			},
+			"text": " first"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:04,270",
+				"to": "00:00:05,240"
+			},
+			"offsets": {
+				"from": 4270,
+				"to": 5240
+			},
+			"text": " customers"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:05,240",
+				"to": "00:00:05,360"
+			},
+			"offsets": {
+				"from": 5240,
+				"to": 5360
+			},
+			"text": " were"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:05,360",
+				"to": "00:00:05,790"
+			},
+			"offsets": {
+				"from": 5360,
+				"to": 5790
+			},
+			"text": " using"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:05,790",
+				"to": "00:00:05,990"
+			},
+			"offsets": {
+				"from": 5790,
+				"to": 5990
+			},
+			"text": " Gmail"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:05,990",
+				"to": "00:00:06,000"
+			},
+			"offsets": {
+				"from": 5990,
+				"to": 6000
+			},
+			"text": "."
+		}
+	]
+}

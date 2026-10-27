@@ -1,0 +1,160 @@
+1
+00:00:00,050 --> 00:00:01,280
+You've observed
+
+2
+00:00:01,280 --> 00:00:02,680
+that there is actually
+
+3
+00:00:02,680 --> 00:00:03,760
+a difference between
+
+4
+00:00:03,760 --> 00:00:04,840
+a neocloud that serves
+
+5
+00:00:04,840 --> 00:00:06,040
+a single off-taker
+
+6
+00:00:06,040 --> 00:00:07,360
+as a tenant, versus one
+
+7
+00:00:07,360 --> 00:00:08,050
+that operates
+
+8
+00:00:08,050 --> 00:00:09,120
+an independent cloud
+
+9
+00:00:09,120 --> 00:00:09,900
+that behaves quite
+
+10
+00:00:09,900 --> 00:00:10,560
+differently.
+
+11
+00:00:10,560 --> 00:00:11,130
+Can you tell us a little
+
+12
+00:00:11,130 --> 00:00:11,540
+bit about that?
+
+13
+00:00:11,560 --> 00:00:12,560
+Yeah.
+
+14
+00:00:12,560 --> 00:00:13,140
+So to begin
+
+15
+00:00:13,140 --> 00:00:13,980
+with, they fund
+
+16
+00:00:13,980 --> 00:00:15,280
+in an entirely different
+
+17
+00:00:15,280 --> 00:00:15,700
+way.
+
+18
+00:00:15,720 --> 00:00:16,560
+So the ones
+
+19
+00:00:16,560 --> 00:00:18,420
+with a single off-taker
+
+20
+00:00:18,420 --> 00:00:20,200
+get debt in a different
+
+21
+00:00:20,200 --> 00:00:20,840
+way.
+
+22
+00:00:20,840 --> 00:00:21,850
+They first find
+
+23
+00:00:21,850 --> 00:00:23,230
+the off-taker, then
+
+24
+00:00:23,230 --> 00:00:24,690
+they go and use that one
+
+25
+00:00:24,690 --> 00:00:26,400
+for the underwriting.
+
+26
+00:00:26,450 --> 00:00:27,740
+And usually they end up
+
+27
+00:00:27,740 --> 00:00:29,140
+being much more capital
+
+28
+00:00:29,140 --> 00:00:30,430
+efficient, capital
+
+29
+00:00:30,430 --> 00:00:31,310
+effective,
+
+30
+00:00:31,310 --> 00:00:32,600
+but also the end price
+
+31
+00:00:32,600 --> 00:00:33,640
+is way lower.
+
+32
+00:00:33,640 --> 00:00:34,500
+So if you're a single
+
+33
+00:00:34,500 --> 00:00:35,520
+off-taker and you think
+
+34
+00:00:35,520 --> 00:00:36,550
+you can take everything
+
+35
+00:00:36,550 --> 00:00:37,520
+a neocloud can give
+
+36
+00:00:37,520 --> 00:00:38,620
+you, you're going to get
+
+37
+00:00:38,620 --> 00:00:39,480
+a much better deal.
+
+38
+00:00:39,480 --> 00:00:39,920
+And I'm sure
+
+39
+00:00:39,940 --> 00:00:40,503
+this is something
+
+40
+00:00:40,503 --> 00:00:41,920
+you see at Silicon Data.
+
