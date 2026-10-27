@@ -974,3 +974,9 @@ advertisement of one of the neocloud's businesses. i don't need advertisements l
 you just hype up someone's business."* A short has to teach something about the market. The
 guest's company may be the example, never the payoff. The rule and its bleep test are in the
 find-shorts skill.
+
+**Team-facing output layout (2026-10-27).** She uploads `output/` to the Silicon Data team
+folder, so each Ignite video is one folder, `output/Ignite NN - Host x Guest (Company)/`. It
+holds `… - Full Interview.mp4`, `Shorts/Short N - Title.mp4` (numbered 1..N with no gaps) and
+`YouTube title and description.txt`. Use plain, readable names, not slugs. The old
+`output/ignite-NN-*` paths in commit messages and shortlists are historical.
