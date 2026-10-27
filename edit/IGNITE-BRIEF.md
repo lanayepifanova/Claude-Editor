@@ -107,6 +107,15 @@ Each agent handles ONE video, end to end, without asking her anything. Footage i
 - If a short drops under 30s after the silence pass, widen the in/out to the next payoff line.
 - zsh `for p in "a b"` doesn't split words. Use comma pairs or arrays.
 
+## Lessons from 15
+- **On long wide shots, `reframe.py` follows the largest face, which may be the listener.**
+  Read `.shots.json` against who is talking. Where it's wrong, pin the crop locally (15 used
+  `edit/shorts-ignite-15/tools/reframe5.sh` as the model) and say so in your report.
+- The white-share check is fooled by pale clothing. Decide y from the contact sheet. 0.70
+  clears Steven's logo.
+- An in-point that drops "So" can bite the next word. Probe candidate in-points with a short
+  isolated whisper run.
+
 ## Shared-machine rules (other agents are running at the same time)
 - **One heavy encode at a time, and never run them in parallel within your own job.** The first batch ran the
   full composite and the reframes side by side across three agents on a 10-core / 16 GB Mac.

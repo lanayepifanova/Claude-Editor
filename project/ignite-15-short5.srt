@@ -1,0 +1,156 @@
+1
+00:00:00,040 --> 00:00:01,800
+Even waiting 30 seconds,
+
+2
+00:00:01,800 --> 00:00:02,390
+although it doesn't
+
+3
+00:00:02,390 --> 00:00:03,120
+sound that long,
+
+4
+00:00:03,120 --> 00:00:04,560
+is actually a long time.
+
+5
+00:00:04,560 --> 00:00:05,660
+Because when I'm trying
+
+6
+00:00:05,660 --> 00:00:06,320
+to do this live
+
+7
+00:00:06,320 --> 00:00:07,360
+in a meeting or when I'm
+
+8
+00:00:07,360 --> 00:00:08,600
+trying to do multiplayer
+
+9
+00:00:08,600 --> 00:00:09,740
+with another partner,
+
+10
+00:00:09,740 --> 00:00:10,340
+it's always
+
+11
+00:00:10,340 --> 00:00:10,734
+this question
+
+12
+00:00:10,754 --> 00:00:11,427
+of should I
+
+13
+00:00:11,427 --> 00:00:11,856
+ask the
+
+14
+00:00:11,876 --> 00:00:12,900
+AI to do it or should I
+
+15
+00:00:12,900 --> 00:00:14,080
+just do it myself?
+
+16
+00:00:14,080 --> 00:00:14,640
+Which one's going
+
+17
+00:00:14,640 --> 00:00:15,135
+to be faster?
+
+18
+00:00:15,155 --> 00:00:16,100
+So that's why people
+
+19
+00:00:16,100 --> 00:00:16,860
+come to Cerebras,
+
+20
+00:00:16,860 --> 00:00:17,830
+is we actually deliver
+
+21
+00:00:17,830 --> 00:00:18,880
+the fastest inference
+
+22
+00:00:18,880 --> 00:00:19,880
+in the world.
+
+23
+00:00:19,880 --> 00:00:21,220
+The way we do that is by
+
+24
+00:00:21,220 --> 00:00:22,490
+having a huge amount
+
+25
+00:00:22,490 --> 00:00:23,390
+of SRAM memory
+
+26
+00:00:23,390 --> 00:00:24,810
+and compute on the same
+
+27
+00:00:24,810 --> 00:00:26,320
+piece of silicon.
+
+28
+00:00:26,360 --> 00:00:26,810
+It allows us
+
+29
+00:00:26,830 --> 00:00:27,880
+to have incredibly high
+
+30
+00:00:27,880 --> 00:00:28,710
+memory bandwidth
+
+31
+00:00:28,710 --> 00:00:29,390
+that we optimize
+
+32
+00:00:29,390 --> 00:00:30,360
+for, and inference
+
+33
+00:00:30,360 --> 00:00:31,520
+is very memory bandwidth
+
+34
+00:00:31,520 --> 00:00:32,320
+constrained.
+
+35
+00:00:32,320 --> 00:00:32,980
+That allows us
+
+36
+00:00:32,980 --> 00:00:34,080
+to generate much faster
+
+37
+00:00:34,080 --> 00:00:34,950
+tokens and deliver
+
+38
+00:00:34,950 --> 00:00:35,830
+better experience
+
+39
+00:00:35,830 --> 00:00:36,400
+to users.
+

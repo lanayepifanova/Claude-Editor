@@ -1,0 +1,180 @@
+1
+00:00:00,060 --> 00:00:01,844
+Why do we need
+
+2
+00:00:01,844 --> 00:00:02,800
+Cerebras when we already
+
+3
+00:00:02,800 --> 00:00:04,720
+have the NVIDIA GPUs?
+
+4
+00:00:04,720 --> 00:00:05,970
+So, first there's two
+
+5
+00:00:05,970 --> 00:00:07,360
+parts of an AI workload.
+
+6
+00:00:07,360 --> 00:00:08,180
+First is training
+
+7
+00:00:08,180 --> 00:00:08,620
+the model.
+
+8
+00:00:08,640 --> 00:00:09,250
+That's the act
+
+9
+00:00:09,250 --> 00:00:10,020
+of actually teaching
+
+10
+00:00:10,020 --> 00:00:10,780
+the model, making
+
+11
+00:00:10,780 --> 00:00:11,400
+it intelligent.
+
+12
+00:00:11,400 --> 00:00:12,260
+The second part
+
+13
+00:00:12,260 --> 00:00:13,050
+is inference,
+
+14
+00:00:13,050 --> 00:00:13,660
+which is the act
+
+15
+00:00:13,660 --> 00:00:14,380
+of actually using
+
+16
+00:00:14,380 --> 00:00:15,000
+the model.
+
+17
+00:00:15,000 --> 00:00:16,380
+So that's when we send
+
+18
+00:00:16,380 --> 00:00:17,760
+a request to ChatGPT
+
+19
+00:00:17,760 --> 00:00:18,500
+and we get a response
+
+20
+00:00:18,500 --> 00:00:18,820
+back.
+
+21
+00:00:18,840 --> 00:00:19,770
+So with inference,
+
+22
+00:00:19,770 --> 00:00:20,350
+there's a lot
+
+23
+00:00:20,350 --> 00:00:21,120
+of different points
+
+24
+00:00:21,120 --> 00:00:22,160
+that you can optimize
+
+25
+00:00:22,160 --> 00:00:22,500
+for.
+
+26
+00:00:22,520 --> 00:00:24,030
+NVIDIA GPUs were
+
+27
+00:00:24,030 --> 00:00:25,960
+designed to be very good
+
+28
+00:00:25,960 --> 00:00:27,680
+at running high batches
+
+29
+00:00:27,680 --> 00:00:28,810
+where they can run a lot
+
+30
+00:00:28,810 --> 00:00:29,840
+of parallel compute.
+
+31
+00:00:29,900 --> 00:00:31,470
+However, the high batch
+
+32
+00:00:31,470 --> 00:00:32,550
+comes at the cost
+
+33
+00:00:32,550 --> 00:00:34,040
+of interactivity.
+
+34
+00:00:34,040 --> 00:00:35,048
+Within inference, there
+
+35
+00:00:35,048 --> 00:00:35,720
+are workloads
+
+36
+00:00:35,720 --> 00:00:36,400
+where you need a lot
+
+37
+00:00:36,400 --> 00:00:37,340
+of real-time user
+
+38
+00:00:37,340 --> 00:00:38,320
+interactivity.
+
+39
+00:00:38,320 --> 00:00:39,600
+So, for example, think
+
+40
+00:00:39,600 --> 00:00:40,570
+of if you're trying
+
+41
+00:00:40,570 --> 00:00:40,920
+to code
+
+42
+00:00:40,940 --> 00:00:41,840
+with an AI agent.
+
+43
+00:00:41,840 --> 00:00:42,740
+You want your request
+
+44
+00:00:42,740 --> 00:00:43,690
+to come back as quickly
+
+45
+00:00:43,690 --> 00:00:44,400
+as possible.
+

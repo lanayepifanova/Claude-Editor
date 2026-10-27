@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>captions</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:transparent; }
+      #root { position:relative; width:1080px; height:1920px; }
+      .cue {
+        position:absolute; left:0; right:0; top:70.0%;
+        transform:translateY(-50%);
+        display:flex; align-items:center; justify-content:center;
+        text-align:center;
+      }
+      .cue span {
+        display:inline-block; max-width:778px; white-space:nowrap;
+        font-family:'Montserrat', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+        font-weight:800; font-size:54px; line-height:1.18;
+        letter-spacing:-0.01em; color:#FFFFFF;
+        /* hard edge, zero blur — reads on any background, never looks glowy */
+        text-shadow:
+          4px 0 0 #000, -4px 0 0 #000, 0 4px 0 #000, 0 -4px 0 #000,
+          3px 3px 0 #000, -3px 3px 0 #000,
+          3px -3px 0 #000, -3px -3px 0 #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="36.495"
+         data-width="1080" data-height="1920" data-fps="23.976"
+         data-layout-allow-overflow="true">
+      <div id="cue0" class="clip cue" data-start="0.04" data-duration="1.76" data-track-index="1"><span>Even waiting 30 seconds,</span></div>
+      <div id="cue1" class="clip cue" data-start="1.8" data-duration="0.59" data-track-index="1"><span>although it doesn't</span></div>
+      <div id="cue2" class="clip cue" data-start="2.39" data-duration="0.73" data-track-index="1"><span>sound that long,</span></div>
+      <div id="cue3" class="clip cue" data-start="3.12" data-duration="1.44" data-track-index="1"><span>is actually a long time.</span></div>
+      <div id="cue4" class="clip cue" data-start="4.56" data-duration="1.1" data-track-index="1"><span>Because when I'm trying</span></div>
+      <div id="cue5" class="clip cue" data-start="5.66" data-duration="0.66" data-track-index="1"><span>to do this live</span></div>
+      <div id="cue6" class="clip cue" data-start="6.32" data-duration="1.04" data-track-index="1"><span>in a meeting or when I'm</span></div>
+      <div id="cue7" class="clip cue" data-start="7.36" data-duration="1.24" data-track-index="1"><span>trying to do multiplayer</span></div>
+      <div id="cue8" class="clip cue" data-start="8.6" data-duration="1.14" data-track-index="1"><span>with another partner,</span></div>
+      <div id="cue9" class="clip cue" data-start="9.74" data-duration="0.6" data-track-index="1"><span>it's always</span></div>
+      <div id="cue10" class="clip cue" data-start="10.34" data-duration="0.394" data-track-index="1"><span>this question</span></div>
+      <div id="cue11" class="clip cue" data-start="10.754" data-duration="0.673" data-track-index="1"><span>of should I</span></div>
+      <div id="cue12" class="clip cue" data-start="11.427" data-duration="0.429" data-track-index="1"><span>ask the</span></div>
+      <div id="cue13" class="clip cue" data-start="11.876" data-duration="1.024" data-track-index="1"><span>AI to do it or should I</span></div>
+      <div id="cue14" class="clip cue" data-start="12.9" data-duration="1.18" data-track-index="1"><span>just do it myself?</span></div>
+      <div id="cue15" class="clip cue" data-start="14.08" data-duration="0.56" data-track-index="1"><span>Which one's going</span></div>
+      <div id="cue16" class="clip cue" data-start="14.64" data-duration="0.495" data-track-index="1"><span>to be faster?</span></div>
+      <div id="cue17" class="clip cue" data-start="15.155" data-duration="0.945" data-track-index="1"><span>So that's why people</span></div>
+      <div id="cue18" class="clip cue" data-start="16.1" data-duration="0.76" data-track-index="1"><span>come to Cerebras,</span></div>
+      <div id="cue19" class="clip cue" data-start="16.86" data-duration="0.97" data-track-index="1"><span>is we actually deliver</span></div>
+      <div id="cue20" class="clip cue" data-start="17.83" data-duration="1.05" data-track-index="1"><span>the fastest inference</span></div>
+      <div id="cue21" class="clip cue" data-start="18.88" data-duration="1.0" data-track-index="1"><span>in the world.</span></div>
+      <div id="cue22" class="clip cue" data-start="19.88" data-duration="1.34" data-track-index="1"><span>The way we do that is by</span></div>
+      <div id="cue23" class="clip cue" data-start="21.22" data-duration="1.27" data-track-index="1"><span>having a huge amount</span></div>
+      <div id="cue24" class="clip cue" data-start="22.49" data-duration="0.9" data-track-index="1"><span>of SRAM memory</span></div>
+      <div id="cue25" class="clip cue" data-start="23.39" data-duration="1.42" data-track-index="1"><span>and compute on the same</span></div>
+      <div id="cue26" class="clip cue" data-start="24.81" data-duration="1.51" data-track-index="1"><span>piece of silicon.</span></div>
+      <div id="cue27" class="clip cue" data-start="26.36" data-duration="0.45" data-track-index="1"><span>It allows us</span></div>
+      <div id="cue28" class="clip cue" data-start="26.83" data-duration="1.05" data-track-index="1"><span>to have incredibly high</span></div>
+      <div id="cue29" class="clip cue" data-start="27.88" data-duration="0.83" data-track-index="1"><span>memory bandwidth</span></div>
+      <div id="cue30" class="clip cue" data-start="28.71" data-duration="0.68" data-track-index="1"><span>that we optimize</span></div>
+      <div id="cue31" class="clip cue" data-start="29.39" data-duration="0.97" data-track-index="1"><span>for, and inference</span></div>
+      <div id="cue32" class="clip cue" data-start="30.36" data-duration="1.16" data-track-index="1"><span>is very memory bandwidth</span></div>
+      <div id="cue33" class="clip cue" data-start="31.52" data-duration="0.8" data-track-index="1"><span>constrained.</span></div>
+      <div id="cue34" class="clip cue" data-start="32.32" data-duration="0.66" data-track-index="1"><span>That allows us</span></div>
+      <div id="cue35" class="clip cue" data-start="32.98" data-duration="1.1" data-track-index="1"><span>to generate much faster</span></div>
+      <div id="cue36" class="clip cue" data-start="34.08" data-duration="0.87" data-track-index="1"><span>tokens and deliver</span></div>
+      <div id="cue37" class="clip cue" data-start="34.95" data-duration="0.88" data-track-index="1"><span>better experience</span></div>
+      <div id="cue38" class="clip cue" data-start="35.83" data-duration="0.57" data-track-index="1"><span>to users.</span></div>
+    </div>
+    <script>
+      // GENERATED by edit/captions_overlay.py — do not hand-edit.
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // captions cut in and out with the clip window — no tweens by design
+      tl.set("#root", { opacity: 1 }, 0);
+      tl.set("#root", { opacity: 1 }, 36.495);
+      tl.seek(0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+{
+ "source": "footage/Ignite Oct 2026/15 Steven Hou Silicon Data and Angela Young Cerebras.mp4",
+ "start": 702.5,
+ "end": 741.9,
+ "active": [
+  34,
+  1012
+ ],
+ "crop": [
+  568,
+  1012
+ ],
+ "shots": [
+  {
+   "t0": 0.0,
+   "t1": 39.039,
+   "face_x": 928,
+   "crop_x": 642,
+   "found": true
+  },
+  {
+   "t0": 39.039,
+   "t1": 39.4,
+   "face_x": 826,
+   "crop_x": 540,
+   "found": true
+  }
+ ]
+}

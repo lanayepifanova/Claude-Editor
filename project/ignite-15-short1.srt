@@ -1,0 +1,176 @@
+1
+00:00:00,060 --> 00:00:01,220
+This is the largest chip
+
+2
+00:00:01,220 --> 00:00:02,230
+in the world, it's
+
+3
+00:00:02,230 --> 00:00:02,840
+an actual--
+
+4
+00:00:02,900 --> 00:00:03,360
+Is it actually
+
+5
+00:00:03,380 --> 00:00:03,850
+the largest chip
+
+6
+00:00:03,870 --> 00:00:04,360
+in the world?
+
+7
+00:00:04,380 --> 00:00:05,150
+It is the actual chip
+
+8
+00:00:05,150 --> 00:00:05,790
+that's ever been
+
+9
+00:00:05,790 --> 00:00:06,480
+productionized.
+
+10
+00:00:06,480 --> 00:00:08,030
+It's about 50 times
+
+11
+00:00:08,030 --> 00:00:09,400
+larger than a GPU.
+
+12
+00:00:09,460 --> 00:00:10,230
+That's pretty cool,
+
+13
+00:00:10,230 --> 00:00:10,800
+and you're the first
+
+14
+00:00:10,800 --> 00:00:11,480
+to bring a prop,
+
+15
+00:00:11,480 --> 00:00:12,230
+and that's one hell
+
+16
+00:00:12,230 --> 00:00:12,780
+of a prop.
+
+17
+00:00:12,830 --> 00:00:14,220
+We were, thank
+
+18
+00:00:14,220 --> 00:00:15,760
+you, we were the first
+
+19
+00:00:15,760 --> 00:00:16,680
+to be able to build
+
+20
+00:00:16,680 --> 00:00:17,800
+a chip of this size,
+
+21
+00:00:17,800 --> 00:00:18,590
+because not only
+
+22
+00:00:18,590 --> 00:00:19,480
+is it about the chip
+
+23
+00:00:19,480 --> 00:00:20,540
+architecture, it's
+
+24
+00:00:20,540 --> 00:00:21,540
+actually also about
+
+25
+00:00:21,540 --> 00:00:22,800
+the power and cooling.
+
+26
+00:00:22,800 --> 00:00:23,690
+So to be able
+
+27
+00:00:23,690 --> 00:00:24,580
+to run a chip
+
+28
+00:00:24,580 --> 00:00:25,860
+like this requires
+
+29
+00:00:25,860 --> 00:00:27,160
+a huge amount of thought
+
+30
+00:00:27,160 --> 00:00:28,780
+into the design of dense
+
+31
+00:00:28,780 --> 00:00:30,400
+power delivery, as well
+
+32
+00:00:30,400 --> 00:00:31,000
+as cooling,
+
+33
+00:00:31,000 --> 00:00:32,800
+which we did eight years
+
+34
+00:00:32,800 --> 00:00:33,780
+ago, and we were ahead
+
+35
+00:00:33,780 --> 00:00:34,540
+of the industry in
+
+36
+00:00:34,540 --> 00:00:35,200
+doing that.
+
+37
+00:00:35,200 --> 00:00:36,110
+A lot of folks now are
+
+38
+00:00:36,110 --> 00:00:37,090
+working on larger
+
+39
+00:00:37,090 --> 00:00:38,550
+reticle sizes, bringing
+
+40
+00:00:38,550 --> 00:00:39,250
+memory and compute
+
+41
+00:00:39,250 --> 00:00:40,360
+closer together, and I
+
+42
+00:00:40,360 --> 00:00:41,440
+think we were one step
+
+43
+00:00:41,440 --> 00:00:42,360
+ahead of the market
+
+44
+00:00:42,360 --> 00:00:43,085
+in getting that started.
+
