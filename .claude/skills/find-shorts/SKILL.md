@@ -51,7 +51,9 @@ asks for that after approving.
      be the *example*, but the clip has to teach something true of the whole market (an
      analogy, a mechanism, a number about the industry). Test: would it still be worth posting
      with the company name bleeped? If not, it's an ad. Watch the tail too, since a good insight
-     often ends on "…that's why people come to us".
+     often ends on "…that's why people come to us". **Exception: the host companies**
+     (Silicon Data / Compute Exchange, who run Ignite). Plugs for them are fine, and she confirmed
+     this 2026-10-27. The rule is about guests' businesses.
    - A host question works as a cold open when it states the topic crisply. Offer it as
      "optional cold open" with its own timestamps. Don't silently include it.
 4. Write `edit/shorts-<name>/shortlist.md`. Include:

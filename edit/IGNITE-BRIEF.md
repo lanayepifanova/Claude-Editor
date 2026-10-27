@@ -143,3 +143,18 @@ Each agent handles ONE video, end to end, without asking her anything. Footage i
 2. A table of the six shorts: title, source in→out, final length.
 3. Caption fixes that were uncertain (lines worth her listening to, with timestamps).
 4. Anything that went wrong or a lesson worth adding to WORKING-NOTES (one line each).
+
+## Replacement round (2026-10-27): no ads
+Lana deleted every short that was an advertisement for the guest's business, and asked for
+replacements. Read the **"No company pitches"** bullet in `.claude/skills/find-shorts/SKILL.md`
+and apply it strictly. Plugs for the hosts (Silicon Data / Compute Exchange) are fine.
+- Your video already has its transcript (`edit/shorts-ignite-<NN>/script.txt`), a shortlist and
+  a bench. Don't redo Part A or the shorts that survive.
+- Pick replacements that are NOT pitches and don't overlap a surviving short. The bench is a
+  start, but re-read the script. **Quality beats count**: if the video lacks enough
+  non-promotional material, deliver fewer and say so. Never deliver a borderline pitch to fill
+  a slot.
+- Number new shorts from 7 up (`ignite-<NN>-short7`, …), and name the output files
+  `<N> <title>.mp4` with that same N. Use the caption y and fixes file already chosen for your
+  video unless the new clip's framing says otherwise.
+- Update `shortlist.md`: mark the deleted ones "removed: ad" and add the new ones.
