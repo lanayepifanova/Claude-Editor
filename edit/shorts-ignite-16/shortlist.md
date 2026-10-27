@@ -12,10 +12,11 @@ whisper runs (whisper's own word times drift up to ~1s here). Full script: `scri
 |---|---|---|---|
 | 1 | **"Solar farms get paid minus $10"** | 8:19.2 → 9:06.5 | 47s |
 | 2 | **"Seven years to plug into the grid"** | 2:03.6 → 2:50.8 | 47s |
-| 3 | **"An energy-first neocloud"** | 0:33.7 → 1:16.7 | 43s |
+| 3 | ~~"An energy-first neocloud"~~ — **removed: ad** | 0:33.7 → 1:16.7 | 43s |
 | 4 | **"Training was built big, inference runs small"** | 3:32.4 → 4:20.6 | 48s |
 | 5 | **"The time value of compute"** | 4:50.4 → 5:43.0 | 53s |
-| 6 | **"Demand for AI is just infinite"** | 9:19.2 → 9:56.7 | 38s |
+| 6 | ~~"Demand for AI is just infinite"~~ — **removed: ad** | 9:19.2 → 9:56.7 | 38s |
+| 7 | **"What power traders actually trade"** (replacement, no-ads round) | 7:45.4 → 8:18.3 | 33s raw → 28.3s cut |
 
 1. **Minus $10** — opens "If you take congestion to the extreme, you get to curtailment."
    Sun shining, wind blowing, oversupply: "at 12pm in California, if you own a solar farm…
@@ -39,6 +40,27 @@ whisper runs (whisper's own word times drift up to ~1s here). Full script: `scri
 6. **Infinite demand** — "As you know, the demand for AI is just infinite… the scarce piece is
    energy… by end of 2027 roughly 100 megawatts… primarily in Europe… North America… massive
    demand in Asia and the Middle East as well." Number close.
+
+**Removed 2026-10-27 as ads:** #3 is the company intro ("Ambra Compute is a startup…"); #6 turns
+into "we've done an amazing job locking sites… 100 MW by 2027".
+
+7. **Congestion** (replacement) — Steven: "Right now, where are you finding these pockets, so to
+   speak?" Bianca: "I'm a trader by background… what you trade is congestion, and congestion
+   arises when there's a difference in price between supply and demand… because the energy
+   cannot flow because there's not enough capacity." Teaches a grid-market mechanism; no company
+   claim in it (the margins brag just before, at 7:34–7:45, is excluded). Ends at 8:18.3, just before
+   #1's in-point, so it plays as a prequel to #1 without overlapping. 28.3s after the silence
+   pass, under the 30s floor: it can't be widened, because the head is the margins pitch and the tail is #1.
+
+## Replacement round: rejected as promotional or too thin
+- 1:17–2:03 "Going small is brilliant, and I'm not saying that just because it's my company":
+  the set-up to #2, self-promotional framing.
+- 4:20–4:50 "our operating margins are better than anybody else": a brag.
+- 5:43–6:00 Nvidia Inception partner, "can't disclose much but our product…": a pitch.
+- 6:20–7:13 "Heterogeneous beats homogeneous": the answer to "what differentiates Ambra", plus a
+  plug for Colosseum. The general line ("any heterogeneous system is better") lasts only ~10s.
+- 7:20–7:46 "Our moat is the energy… edge in operating margins": a pitch.
+- 2:52–3:35 Steven's trade-off question: a host question with no answer inside it (the answer is #4).
 
 ## Bench
 
