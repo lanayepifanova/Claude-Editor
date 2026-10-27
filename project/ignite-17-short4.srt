@@ -1,0 +1,124 @@
+1
+00:00:00,020 --> 00:00:01,100
+Fundamentally, we're
+
+2
+00:00:01,100 --> 00:00:02,227
+like the multi-cloud
+
+3
+00:00:02,227 --> 00:00:03,520
+orchestration layer
+
+4
+00:00:03,520 --> 00:00:05,150
+and we wanted to tell
+
+5
+00:00:05,150 --> 00:00:06,340
+the suppliers
+
+6
+00:00:06,340 --> 00:00:07,100
+that actually
+
+7
+00:00:07,100 --> 00:00:07,900
+if you just work
+
+8
+00:00:07,900 --> 00:00:08,800
+with Hyperbolic,
+
+9
+00:00:08,800 --> 00:00:09,900
+your unit economics are
+
+10
+00:00:09,900 --> 00:00:10,860
+gonna look much, much
+
+11
+00:00:10,860 --> 00:00:11,690
+better because
+
+12
+00:00:11,690 --> 00:00:13,130
+for infrastructure, it's
+
+13
+00:00:13,130 --> 00:00:14,200
+not just about ARR, it's
+
+14
+00:00:14,200 --> 00:00:14,880
+about IRR.
+
+15
+00:00:14,940 --> 00:00:15,720
+Absolutely. Right.
+
+16
+00:00:15,720 --> 00:00:17,540
+And so if they just sell
+
+17
+00:00:17,540 --> 00:00:19,120
+offtake contracts for $4
+
+18
+00:00:19,120 --> 00:00:20,380
+for B200, B300,
+
+19
+00:00:20,380 --> 00:00:21,050
+comparing
+
+20
+00:00:21,050 --> 00:00:22,030
+that to
+
+21
+00:00:22,030 --> 00:00:22,750
+like, you can actually
+
+22
+00:00:22,750 --> 00:00:23,640
+work with Hyperbolic,
+
+23
+00:00:23,640 --> 00:00:24,900
+you sell on-demand
+
+24
+00:00:24,900 --> 00:00:26,600
+tokens or any solutions
+
+25
+00:00:26,600 --> 00:00:27,440
+that we can build,
+
+26
+00:00:27,440 --> 00:00:28,180
+you're gonna increase
+
+27
+00:00:28,180 --> 00:00:29,080
+their revenue even by
+
+28
+00:00:29,080 --> 00:00:30,260
+just one or two dollars,
+
+29
+00:00:30,260 --> 00:00:31,313
+their IRR is gonna
+
+30
+00:00:31,313 --> 00:00:32,300
+change from 30% to
+
+31
+00:00:32,300 --> 00:00:33,200
+100% plus.
+

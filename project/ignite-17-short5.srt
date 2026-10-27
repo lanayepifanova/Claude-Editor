@@ -1,0 +1,116 @@
+1
+00:00:00,020 --> 00:00:01,390
+Do you also anticipate
+
+2
+00:00:01,390 --> 00:00:02,920
+yourself entering,
+
+3
+00:00:02,920 --> 00:00:04,000
+providing tokens
+
+4
+00:00:04,000 --> 00:00:05,960
+and selling tokens?
+
+5
+00:00:06,040 --> 00:00:07,480
+Yeah, so I would say
+
+6
+00:00:07,480 --> 00:00:08,920
+my thought
+
+7
+00:00:08,920 --> 00:00:10,320
+is fundamentally,
+
+8
+00:00:10,320 --> 00:00:11,230
+everyone, all
+
+9
+00:00:11,230 --> 00:00:12,600
+the inference players,
+
+10
+00:00:12,600 --> 00:00:13,395
+they're just trying
+
+11
+00:00:13,395 --> 00:00:14,220
+to reserve long-term
+
+12
+00:00:14,220 --> 00:00:15,235
+compute and break
+
+13
+00:00:15,235 --> 00:00:16,240
+it out short-term
+
+14
+00:00:16,240 --> 00:00:17,410
+to have the premium
+
+15
+00:00:17,410 --> 00:00:18,920
+of providing liquidity
+
+16
+00:00:18,920 --> 00:00:19,575
+and just change
+
+17
+00:00:19,575 --> 00:00:20,340
+that to tokens.
+
+18
+00:00:20,340 --> 00:00:21,690
+And the translation,
+
+19
+00:00:21,690 --> 00:00:22,420
+like turning compute
+
+20
+00:00:22,420 --> 00:00:23,430
+to tokens, actually
+
+21
+00:00:23,430 --> 00:00:24,200
+they mainly use
+
+22
+00:00:24,200 --> 00:00:25,210
+like the open source
+
+23
+00:00:25,210 --> 00:00:26,855
+technology and that moat
+
+24
+00:00:26,855 --> 00:00:28,430
+is gonna gradually
+
+25
+00:00:28,430 --> 00:00:29,400
+reduce.
+
+26
+00:00:29,420 --> 00:00:30,240
+And in the end,
+
+27
+00:00:30,240 --> 00:00:30,933
+everyone's just trying
+
+28
+00:00:30,933 --> 00:00:31,627
+to do market
+
+29
+00:00:31,627 --> 00:00:32,320
+making on compute.
+

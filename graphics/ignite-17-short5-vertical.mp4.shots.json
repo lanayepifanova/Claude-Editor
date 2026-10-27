@@ -1,0 +1,44 @@
+{
+ "source": "footage/Ignite Oct 2026/17 Steven Hou Silicon Data and Jasper Zhang Hyperbolic.mp4",
+ "start": 460.29,
+ "end": 502.55,
+ "active": [
+  34,
+  1012
+ ],
+ "crop": [
+  568,
+  1012
+ ],
+ "shots": [
+  {
+   "t0": 0.0,
+   "t1": 6.298,
+   "face_x": 844,
+   "crop_x": 558,
+   "found": true
+  },
+  {
+   "t0": 6.298,
+   "t1": 18.227,
+   "face_x": 812,
+   "crop_x": 526,
+   "found": true
+  },
+  {
+   "t0": 18.227,
+   "t1": 20.437,
+   "face_x": 524,
+   "crop_x": 1110,
+   "found": true,
+   "pinned": true
+  },
+  {
+   "t0": 20.437,
+   "t1": 42.91,
+   "face_x": 854,
+   "crop_x": 568,
+   "found": true
+  }
+ ]
+}

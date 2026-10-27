@@ -1,0 +1,280 @@
+0:00.00 - All right, welcome back to NeoCloud SF.
+0:03.24 My name is Steve Ho.
+0:04.64 I'm the head of research at Silicon Data.
+0:06.68 And right now I have the great pleasure
+0:09.08 of interviewing my friend Jasper from Hyperbolic.
+0:13.34 Good to see you, my friend.
+0:14.52 - Thanks for inviting me, excited to be here.
+0:16.80 - So yeah, I mean, Jasper and I have been friends for a while
+0:20.16 and honestly, I'm very excited about this interview
+0:22.28 because I actually get to learn a lot more
+0:24.12 about hyperbolic questions I've had for a long time.
+0:26.24 So for our audience, why don't you start by telling us
+0:28.68 in a few words, what is hyperbolic?
+0:30.72 - Yeah, I would say hyperbolic is a unified AI platform
+0:33.44 that turn and aggregate heterogeneous fragmented compute
+0:37.12 into one unified layer that people can access
+0:40.56 and manage compute.
+0:42.08 - Okay, so what does that mean specifically?
+0:44.08 So far I've interviewed someone from Cerebras
+0:46.04 and Cerebras is getting into the business
+0:48.00 of selling tokens and compute and you know,
+0:51.72 another girl just now, she was doing micro clusters.
+0:54.04 What is hyperbolic that does
+0:55.96 in terms of bringing together heterogeneity?
+0:58.36 - Yeah, so I would say there are more than 300 new clouds
+1:02.24 across the world and the numbers just keep growing
+1:04.76 and it's been a painful experience for customers,
+1:07.96 AI companies to access compute and build AI workload.
+1:11.40 And so what we do is we have a technology solution
+1:14.56 called Forge, it's a unified control plan,
+1:17.16 allow us to take any bandwidth cluster,
+1:19.64 attach it to our control plan, virtualize it
+1:21.40 so that it can be shared across the world
+1:24.16 and among different users.
+1:25.68 And on top of that, we also have acquisition solutions
+1:28.64 for them to schedule workloads.
+1:30.56 - So who is a typical user of hyperbolic today?
+1:35.24 - So I would say currently we're focusing
+1:37.16 on AI native companies, so we have like big customer
+1:40.36 like Modo, Hixfield, Heygen, et cetera.
+1:43.96 But like we're also supporting the smaller guys
+1:46.48 like AI researchers and AI labs.
+1:48.76 And I would say anyone who need compute
+1:51.04 and want to run workloads can come to hyperbolic
+1:53.60 and get the benefits of ran GPU for flexible terms
+1:59.76 and then manage them across the whole fleet.
+2:03.32 And lastly, whenever they don't need the compute,
+2:05.36 they also can sell it back to their platform.
+2:08.08 - So you are basically a compute platform,
+2:12.28 someone can access computer, but also a compute,
+2:14.48 so to speak, a trading place that you are,
+2:16.00 someone is able to actually buy and sell compute.
+2:18.64 - We wanted to build the first global compute grid.
+2:21.48 So like people can take compute elastically,
+2:24.60 but they also sell it back just like electricity.
+2:27.04 And then on top of that,
+2:28.32 we also wanted to build the orchestration layer
+2:31.96 so that developers don't need to worry
+2:34.48 about their hardware itself.
+2:36.08 They can just say, I want to run this model,
+2:38.64 I want to run this workload.
+2:39.72 And the system can automatically schedule the workload
+2:43.32 to the right compute.
+2:44.40 And whenever they find a better price,
+2:46.80 they're going to release this, sell it back
+2:49.08 and then put it on the new compute.
+2:51.64 And the other thing that we're very excited about
+2:55.12 is right now we're currently serving humans.
+2:58.80 You just asked us like what our customers are,
+3:01.16 but I would say as we, I would see on the market
+3:04.12 and our fundamental belief is that we think agents
+3:07.88 going to be the main consumers of compute.
+3:11.88 And so for them, they're not going to wind and die
+3:13.88 with 20, 30 new cloud sales.
+3:16.42 They're not going to sign a contract for three year.
+3:18.40 All they need is they need a programmable way
+3:21.88 to see all the available compute globally
+3:25.24 and we'll be able to just provision the compute
+3:28.96 for the duration that they want
+3:30.24 and being able to move them around whenever they need.
+3:35.36 - Oh, fascinating.
+3:36.20 So you are saying that sounds like you're describing
+3:39.16 a genetic, you know, a programmatic access of a compute.
+3:41.72 And I do want to, you know, dive into that.
+3:44.76 And also we have previously mentioned this, you know,
+3:48.20 your current customers that are choosing you
+3:50.70 over other, you know, forms of compute.
+3:52.32 But let's think about the agentic programmatic use
+3:55.32 of compute right at the moment.
+3:56.54 So right now the most popular agents
+3:58.44 that are being offered in consumers is Muse from Ella, right?
+4:01.88 And XAI has, you know, a rock box.
+4:06.60 - Yeah.
+4:07.60 - What is the environment, are you envisioning that,
+4:11.20 you know, AI agent will start using the type of compute
+4:13.60 that you are offering?
+4:14.88 - Yeah, so I would say we are already starting, like,
+4:18.44 developers are the most like technology forward group, right?
+4:23.66 And so we're starting seeing like many developers,
+4:27.08 like they actually don't code anymore, right?
+4:29.56 And so they will basically just ask their agents
+4:31.90 to say, write these codes for me.
+4:33.20 And then most important, they also need to rank GPUs.
+4:36.90 And in this case, they just ask the agent, like,
+4:39.24 go to hyperbolic, check the API or MCP.
+4:42.40 And they just like ran any number of GPUs that they want
+4:46.28 for any duration.
+4:47.40 So that's like the current stage.
+4:49.24 I would say as AI, like getting more and more mature,
+4:54.94 we'll expect that, we're starting hearing like,
+4:57.36 recursive self-improvement.
+4:58.48 And so we think that agents are actually gonna kind of like,
+5:02.88 self-improvement is out and they're gonna have their own
+5:05.32 like intelligence and try to like kind of survive
+5:08.28 and keep growing.
+5:09.68 And so in this case, they need a way
+5:12.84 to programmatically consume compute.
+5:15.82 And so hyperbolic also gonna be built for that future.
+5:20.04 And whenever they have like new interaction,
+5:22.04 they have new knowledge, they want to improve themselves.
+5:24.84 They also can consume from hyperbolic
+5:26.48 and train their own model.
+5:29.16 >> So does hyperbolic own compute?
+5:32.34 >> So I would say mainly what we want to work with partners,
+5:37.62 most of a compute kind of like work with different partners.
+5:40.68 We have like partners in different locations in the US
+5:44.16 or Europe or in like Asia, et cetera.
+5:48.26 But then we also are exploring ways
+5:50.92 to expand our compute fleet.
+5:54.20 We have so strong demand that we cannot fulfill
+5:56.72 at this moment.
+5:57.68 And so we'll just try to find any ways to get compute.
+6:02.08 So originally we thought we can just be the open
+6:05.24 product model, we don't need to own any assets.
+6:07.60 We don't need to reserve any assets.
+6:10.88 We just need to build a platform
+6:13.00 and everyone's just like providing compute to us.
+6:15.74 That was true at the beginning.
+6:16.92 That's like we launched our own demand GPU platform
+6:19.32 in June, 2025 and quickly get a lot of adoption.
+6:22.92 But as everyone knows, like the market getting tighter
+6:27.08 and tighter and we are forced to starting thinking
+6:30.92 about reserving compute from some of our partners
+6:33.92 to give them baseline guarantee,
+6:35.76 but then also allow us to continue growth.
+6:39.24 So in this case, we kind of long compute,
+6:43.92 although we don't long compute.
+6:45.56 And that's why we are actively looking at the cassette
+6:47.60 of the routers.
+6:49.12 So we're basically trying to long on the physical side
+6:51.64 and when the lever is like sticking data
+6:53.16 in other indices to short on the future side.
+6:57.50 - Love to hear that.
+6:59.04 That's really interesting.
+6:59.88 So essentially what you're saying is that
+7:02.90 you are reserving compute from your cloud partners,
+7:07.48 which then you would in turn provide on demand
+7:10.24 to your customers.
+7:12.00 At the same time, you're also acquiring your own compute
+7:14.56 in order to also have the availability of inventory.
+7:17.52 That's very interesting.
+7:18.36 And we're seeing a similar trends of increasingly
+7:20.48 some of these managed service companies,
+7:22.24 some of your countless clients that are increased
+7:26.04 finding themselves also acquiring compute, right?
+7:27.60 Together AI, famously, right?
+7:29.12 They started owning compute because they find it
+7:31.18 very expensive to keep renting.
+7:33.28 And this seems to be a trend that it seems that everyone
+7:36.64 is becoming everybody in a little bit of a ways.
+7:39.96 So do you also anticipate yourself entering,
+7:43.32 providing tokens and selling tokens?
+7:47.00 - Yeah, so I would say my thought is fundamentally
+7:53.18 everyone, all the inference player,
+7:57.24 they just trying to resume long term compute
+7:59.48 and breaking out a short term to have the premium
+8:03.00 of providing liquidity and just change that to tokens.
+8:06.32 And the translations like turning compute to tokens,
+8:09.72 actually they mainly use like the open source technology
+8:13.40 and that mode is going to gradually reduce with,
+8:18.60 and in the end everyone just like trying to do
+8:20.92 market making on compute.
+8:23.36 And so I would say we're also exploring that direction.
+8:29.12 I don't know if you know, but early 2024
+8:31.76 we actually like mainly focused on service inference.
+8:36.12 At the time like the market was still not there yet.
+8:38.36 And we kind of realized that most people actually
+8:42.12 they want compute and open source is going to take over
+8:45.20 the inference layer and as long as they have compute
+8:48.32 they can build whatever they want.
+8:50.08 And so that's why we think actually like building
+8:54.04 the acquisition layer, building aggregation layer
+8:56.74 and allowing people to sell back to improve,
+8:59.92 to reduce the idle time is going to impact
+9:02.96 the unique dynamics of tokens.
+9:05.08 - And what do you do with the compute
+9:06.36 when people sell it back to you?
+9:07.62 - So, we're like planning to launch SPOT instances
+9:14.92 this month and SPOT is indescribable.
+9:17.36 - Yeah, indescribable.
+9:18.60 And then whenever, let's say you are inference companies,
+9:23.64 you reserve because of the market is so tight,
+9:25.96 you need to reserve like a 1,024 GPUs for three years.
+9:29.68 But then like at peak hours, I say from 9 a.m. to 9 p.m.
+9:34.02 you need like a 1,000, 1,000 GPUs but I'll pick,
+9:37.60 you only need 200.
+9:38.96 Then it's gonna, your utilization is gonna be like this.
+9:42.00 And probably on average you only use 50% of the compute hours
+9:45.12 that you reserve.
+9:46.82 So in this case, you can actually resound our hyperbolic.
+9:52.56 So we will, our virtualization solution
+9:55.16 can actually virtualize the cluster
+9:56.84 so that you can only use the specific amounts of GPUs
+9:59.52 that you need.
+10:00.36 And the rest can actually be relisted on our SPOT market.
+10:03.68 And now other people can consume it.
+10:05.12 And because it's indescribable,
+10:06.28 so whenever you need one to take back the compute,
+10:08.98 you can actually do it
+10:10.04 and it's not gonna impact your workload.
+10:12.30 But then you actually save half of your dollars,
+10:14.96 half of your money to run the same workload.
+10:17.00 - So are you creating a software to help your customers
+10:19.48 to identify the times when they can actually do them
+10:21.88 automatically instead of having them to do it?
+10:23.84 - Yeah, so that's the other thing that we're also exploring.
+10:27.08 So, I mean, we launched Kubernetes
+10:30.12 on top of the virtualization layer.
+10:31.88 And so now like, yeah, we can help the customers
+10:35.24 to monitor the utilization.
+10:36.72 And whenever they idle, they can just,
+10:38.56 we automatically resound to the smart market.
+10:41.88 - That's super exciting.
+10:42.72 So tell us something that's also,
+10:45.60 you're looking forward to building out
+10:46.84 over the next 12 months,
+10:47.76 things people should be looking out for.
+10:50.04 - Yeah, I would say we just like want to make sure
+10:53.36 that we have all the technologies,
+10:55.76 the solutions that the customers want.
+10:58.40 We like, like right now we're more focusing
+11:02.04 on providing compute,
+11:02.88 but I would say, yeah, naturally the token side is exciting.
+11:06.74 And we think that now that we have ways
+11:09.64 to solve the idle compute problem,
+11:12.64 then actually the unique knowledge will be better.
+11:15.16 We wanted to kind of invest a lot more
+11:17.12 on the supply compute, go-to-market side.
+11:21.42 Fundamentally we are like the multi-cloud acquisition layer.
+11:25.80 And we wanted to tell the suppliers
+11:30.32 that actually if you just work with hyperbolic,
+11:33.52 your unique number is going to look much, much better
+11:36.20 because for infrastructure, it's not just about IRR.
+11:40.26 It's about IRR.
+11:41.22 - Absolutely.
+11:42.30 - And so if they just sell off-tech contracts
+11:46.18 for $4 for B200, B300, comparing that to like,
+11:50.72 you can actually work with hyperbolic,
+11:52.32 you sell on-demand, not like tokens
+11:54.16 or any solutions that we can build.
+11:56.76 You're going to increase their revenue
+11:58.94 even by just one or two dollars.
+12:00.96 Their IRR are going to change from 30% to 100% plus.
+12:04.44 And that means that they have better,
+12:06.52 they can recycle their cash easier
+12:09.08 and then they also can raise more money
+12:10.68 because the capital provider is going to be better.
+12:13.08 - Earlier I was talking to Alex from GMI Cloud
+12:15.58 and he was giving a great analogy of filling a glass
+12:18.60 initially with big ice cubes and then pebbles
+12:20.50 and then sand and then water,
+12:22.20 basically creating more and more systematic efficiencies
+12:25.04 and I'm really genuinely excited
+12:26.76 about all the different innovations
+12:28.40 from different directions of creating such efficiencies
+12:30.32 and always learn so much from you,
+12:32.32 just for every time I talk.
+12:33.18 And thank you so much for stopping by
+12:35.16 and yeah, look forward to chatting again.
+12:37.50 - Thanks, yeah.

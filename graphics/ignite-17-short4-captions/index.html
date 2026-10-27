@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>captions</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:transparent; }
+      #root { position:relative; width:1080px; height:1920px; }
+      .cue {
+        position:absolute; left:0; right:0; top:75.0%;
+        transform:translateY(-50%);
+        display:flex; align-items:center; justify-content:center;
+        text-align:center;
+      }
+      .cue span {
+        display:inline-block; max-width:778px; white-space:nowrap;
+        font-family:'Montserrat', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+        font-weight:800; font-size:54px; line-height:1.18;
+        letter-spacing:-0.01em; color:#FFFFFF;
+        /* hard edge, zero blur — reads on any background, never looks glowy */
+        text-shadow:
+          4px 0 0 #000, -4px 0 0 #000, 0 4px 0 #000, 0 -4px 0 #000,
+          3px 3px 0 #000, -3px 3px 0 #000,
+          3px -3px 0 #000, -3px -3px 0 #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="33.2"
+         data-width="1080" data-height="1920" data-fps="23.976"
+         data-layout-allow-overflow="true">
+      <div id="cue0" class="clip cue" data-start="0.02" data-duration="1.08" data-track-index="1"><span>Fundamentally, we're</span></div>
+      <div id="cue1" class="clip cue" data-start="1.1" data-duration="1.127" data-track-index="1"><span>like the multi-cloud</span></div>
+      <div id="cue2" class="clip cue" data-start="2.227" data-duration="1.293" data-track-index="1"><span>orchestration layer</span></div>
+      <div id="cue3" class="clip cue" data-start="3.52" data-duration="1.63" data-track-index="1"><span>and we wanted to tell</span></div>
+      <div id="cue4" class="clip cue" data-start="5.15" data-duration="1.19" data-track-index="1"><span>the suppliers</span></div>
+      <div id="cue5" class="clip cue" data-start="6.34" data-duration="0.76" data-track-index="1"><span>that actually</span></div>
+      <div id="cue6" class="clip cue" data-start="7.1" data-duration="0.8" data-track-index="1"><span>if you just work</span></div>
+      <div id="cue7" class="clip cue" data-start="7.9" data-duration="0.9" data-track-index="1"><span>with Hyperbolic,</span></div>
+      <div id="cue8" class="clip cue" data-start="8.8" data-duration="1.1" data-track-index="1"><span>your unit economics are</span></div>
+      <div id="cue9" class="clip cue" data-start="9.9" data-duration="0.96" data-track-index="1"><span>gonna look much, much</span></div>
+      <div id="cue10" class="clip cue" data-start="10.86" data-duration="0.83" data-track-index="1"><span>better because</span></div>
+      <div id="cue11" class="clip cue" data-start="11.69" data-duration="1.44" data-track-index="1"><span>for infrastructure, it's</span></div>
+      <div id="cue12" class="clip cue" data-start="13.13" data-duration="1.07" data-track-index="1"><span>not just about ARR, it's</span></div>
+      <div id="cue13" class="clip cue" data-start="14.2" data-duration="0.68" data-track-index="1"><span>about IRR.</span></div>
+      <div id="cue14" class="clip cue" data-start="14.94" data-duration="0.78" data-track-index="1"><span>Absolutely. Right.</span></div>
+      <div id="cue15" class="clip cue" data-start="15.72" data-duration="1.82" data-track-index="1"><span>And so if they just sell</span></div>
+      <div id="cue16" class="clip cue" data-start="17.54" data-duration="1.58" data-track-index="1"><span>offtake contracts for $4</span></div>
+      <div id="cue17" class="clip cue" data-start="19.12" data-duration="1.26" data-track-index="1"><span>for B200, B300,</span></div>
+      <div id="cue18" class="clip cue" data-start="20.38" data-duration="0.67" data-track-index="1"><span>comparing</span></div>
+      <div id="cue19" class="clip cue" data-start="21.05" data-duration="0.98" data-track-index="1"><span>that to</span></div>
+      <div id="cue20" class="clip cue" data-start="22.03" data-duration="0.72" data-track-index="1"><span>like, you can actually</span></div>
+      <div id="cue21" class="clip cue" data-start="22.75" data-duration="0.89" data-track-index="1"><span>work with Hyperbolic,</span></div>
+      <div id="cue22" class="clip cue" data-start="23.64" data-duration="1.26" data-track-index="1"><span>you sell on-demand</span></div>
+      <div id="cue23" class="clip cue" data-start="24.9" data-duration="1.7" data-track-index="1"><span>tokens or any solutions</span></div>
+      <div id="cue24" class="clip cue" data-start="26.6" data-duration="0.84" data-track-index="1"><span>that we can build,</span></div>
+      <div id="cue25" class="clip cue" data-start="27.44" data-duration="0.74" data-track-index="1"><span>you're gonna increase</span></div>
+      <div id="cue26" class="clip cue" data-start="28.18" data-duration="0.9" data-track-index="1"><span>their revenue even by</span></div>
+      <div id="cue27" class="clip cue" data-start="29.08" data-duration="1.18" data-track-index="1"><span>just one or two dollars,</span></div>
+      <div id="cue28" class="clip cue" data-start="30.26" data-duration="1.053" data-track-index="1"><span>their IRR is gonna</span></div>
+      <div id="cue29" class="clip cue" data-start="31.313" data-duration="0.987" data-track-index="1"><span>change from 30% to</span></div>
+      <div id="cue30" class="clip cue" data-start="32.3" data-duration="0.9" data-track-index="1"><span>100% plus.</span></div>
+    </div>
+    <script>
+      // GENERATED by edit/captions_overlay.py — do not hand-edit.
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // captions cut in and out with the clip window — no tweens by design
+      tl.set("#root", { opacity: 1 }, 0);
+      tl.set("#root", { opacity: 1 }, 33.2);
+      tl.seek(0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
