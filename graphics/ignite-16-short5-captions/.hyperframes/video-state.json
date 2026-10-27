@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "historyId": "4c9999f4-eab4-4072-afbd-e45296426fc2",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "index.html": {
+      "hash": "2ad8663b6d56c92e4563d827ef28119299b976127a1b291d8d9b95cbb46b208f",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/4c9999f4-eab4-4072-afbd-e45296426fc2/blobs/2a/2ad8663b6d56c92e4563d827ef28119299b976127a1b291d8d9b95cbb46b208f"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "2ef9b116-f36a-4508-8f88-c30e348269c9",
+      "completedAt": 1793088468912,
+      "output": "/Users/lanayepifanova/Claude-Editor/graphics/ignite-16-short5-cap.mov",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
+}

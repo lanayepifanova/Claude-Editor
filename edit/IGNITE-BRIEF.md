@@ -116,6 +116,13 @@ Each agent handles ONE video, end to end, without asking her anything. Footage i
 - An in-point that drops "So" can bite the next word. Probe candidate in-points with a short
   isolated whisper run.
 
+## Lessons from 16
+- Decide caption y from the guest's clothing too, not only Steven's. On 16, Bianca's cream top
+  pushed captions to **0.78**.
+- Full-transcript word times can run about 1s late. Set in/out from envelope gaps plus short
+  isolated whisper probes. `edit/shorts-ignite-16/tools/gaps.py` and `probe.sh` do this.
+- Isolated probes invent a leading "So"/"And". Check suspect head words against the envelope.
+
 ## Shared-machine rules (other agents are running at the same time)
 - **One heavy encode at a time, and never run them in parallel within your own job.** The first batch ran the
   full composite and the reframes side by side across three agents on a 10-core / 16 GB Mac.

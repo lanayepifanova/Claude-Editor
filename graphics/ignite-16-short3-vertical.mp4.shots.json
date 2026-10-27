@@ -1,0 +1,29 @@
+{
+ "source": "footage/Ignite Oct 2026/16 Steven Hou Silicon Data and Bianca Ambra Compute.mp4",
+ "start": 33.72,
+ "end": 76.7,
+ "active": [
+  34,
+  1012
+ ],
+ "crop": [
+  568,
+  1012
+ ],
+ "shots": [
+  {
+   "t0": 0.0,
+   "t1": 43.001,
+   "face_x": 816,
+   "crop_x": 530,
+   "found": true
+  },
+  {
+   "t0": 43.001,
+   "t1": 42.98,
+   "face_x": 817,
+   "crop_x": 532,
+   "found": true
+  }
+ ]
+}

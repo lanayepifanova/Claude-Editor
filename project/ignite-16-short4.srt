@@ -1,0 +1,144 @@
+1
+00:00:00,020 --> 00:00:00,875
+I think there
+
+2
+00:00:00,875 --> 00:00:02,300
+is, you know, a big
+
+3
+00:00:02,300 --> 00:00:03,600
+shift that is happening
+
+4
+00:00:03,600 --> 00:00:04,280
+in the energy
+
+5
+00:00:04,280 --> 00:00:05,680
+and AI space,
+
+6
+00:00:05,680 --> 00:00:07,410
+which is we're moving
+
+7
+00:00:07,410 --> 00:00:09,480
+from a training-centric
+
+8
+00:00:09,480 --> 00:00:10,280
+type of era
+
+9
+00:00:10,280 --> 00:00:11,660
+to an inference-centric
+
+10
+00:00:11,660 --> 00:00:12,960
+type of era.
+
+11
+00:00:12,960 --> 00:00:14,260
+The AI infrastructure,
+
+12
+00:00:14,260 --> 00:00:15,600
+hyperscaler, these
+
+13
+00:00:15,600 --> 00:00:16,550
+massive clusters,
+
+14
+00:00:16,550 --> 00:00:17,440
+has been designed
+
+15
+00:00:17,440 --> 00:00:18,500
+for training rather
+
+16
+00:00:18,500 --> 00:00:19,200
+than inference.
+
+17
+00:00:19,200 --> 00:00:20,530
+Inference runs much
+
+18
+00:00:20,530 --> 00:00:21,510
+better in small
+
+19
+00:00:21,510 --> 00:00:22,400
+distributed
+
+20
+00:00:22,400 --> 00:00:24,170
+infrastructures, closer
+
+21
+00:00:24,170 --> 00:00:25,120
+to end users running
+
+22
+00:00:25,120 --> 00:00:26,280
+on very cheap power,
+
+23
+00:00:26,300 --> 00:00:27,260
+because it's going
+
+24
+00:00:27,260 --> 00:00:28,050
+to be extremely
+
+25
+00:00:28,050 --> 00:00:29,230
+competitive in terms
+
+26
+00:00:29,230 --> 00:00:30,440
+of margins very soon.
+
+27
+00:00:30,440 --> 00:00:31,240
+It is already,
+
+28
+00:00:31,240 --> 00:00:32,300
+and there's plenty
+
+29
+00:00:32,300 --> 00:00:32,960
+of extremely
+
+30
+00:00:32,960 --> 00:00:34,360
+token-hungry companies
+
+31
+00:00:34,360 --> 00:00:35,300
+that are running
+
+32
+00:00:35,300 --> 00:00:36,400
+on very low margins.
+
+33
+00:00:36,400 --> 00:00:37,200
+They are desperate
+
+34
+00:00:37,200 --> 00:00:37,710
+for compute,
+
+35
+00:00:37,730 --> 00:00:38,535
+and they need compute
+
+36
+00:00:38,535 --> 00:00:39,720
+to serve inference.
+
