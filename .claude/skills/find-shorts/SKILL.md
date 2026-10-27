@@ -42,6 +42,16 @@ asks for that after approving.
    - **30–60s**, with a little room under 60s so she can trim.
    - **Spread across the video**, with no two picks covering the same point. Where two
      overlap, offer one as an *alt in/out*.
+   - **No company pitches** (her rule 2026-10-27; she deleted Ignite 12 #3, "Networking for AI
+     and nothing else", saying it "felt like a direct advertisement… I don't need
+     advertisements like that where you just hype up someone's business"). Reject a clip whose
+     payoff is the guest's own company: "what differentiates you / why choose X / what does X
+     do" answers, "we're the only / the fastest / the best", team bios, customer-results brags,
+     capacity or growth claims, and "work with us and you'll save" lines. A guest's company may
+     be the *example*, but the clip has to teach something true of the whole market (an
+     analogy, a mechanism, a number about the industry). Test: would it still be worth posting
+     with the company name bleeped? If not, it's an ad. Watch the tail too, since a good insight
+     often ends on "…that's why people come to us".
    - A host question works as a cold open when it states the topic crisply. Offer it as
      "optional cold open" with its own timestamps. Don't silently include it.
 4. Write `edit/shorts-<name>/shortlist.md`. Include:

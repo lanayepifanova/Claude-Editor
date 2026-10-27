@@ -966,3 +966,11 @@ that generalise:
 - **The machine is 10 cores / 16 GB.** Run two video agents at a time at most, with one heavy
   encode each, under `nice -n 10`. Three in parallel pushed load to 190 and swapped. A full
   composite under contention can take hours.
+
+**No ads in shorts (2026-10-27).** She deleted Ignite 12 #3 ("Networking for AI and nothing
+else": Steven asks "what differentiates Upscale… when should neoclouds choose Upscale", and
+Aravindh answers "we're the only networking company that…"). Her words: *"felt like a direct
+advertisement of one of the neocloud's businesses. i don't need advertisements like that where
+you just hype up someone's business."* A short has to teach something about the market. The
+guest's company may be the example, never the payoff. The rule and its bleep test are in the
+find-shorts skill.
