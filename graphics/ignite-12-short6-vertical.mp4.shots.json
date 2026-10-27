@@ -1,0 +1,57 @@
+{
+ "source": "footage/Ignite Oct 2026/12 Steven Hou Silicon Data and Aravindh Srikumar Upscale AI.mp4",
+ "start": 4.25,
+ "end": 52.15,
+ "active": [
+  34,
+  1012
+ ],
+ "crop": [
+  568,
+  1012
+ ],
+ "shots": [
+  {
+   "t0": 0.0,
+   "t1": 1.835,
+   "face_x": 782,
+   "crop_x": 498,
+   "found": true
+  },
+  {
+   "t0": 1.835,
+   "t1": 6.465,
+   "face_x": 1375,
+   "crop_x": 1090,
+   "found": true
+  },
+  {
+   "t0": 6.465,
+   "t1": 11.011,
+   "face_x": 894,
+   "crop_x": 610,
+   "found": true
+  },
+  {
+   "t0": 11.011,
+   "t1": 16.225,
+   "face_x": 838,
+   "crop_x": 554,
+   "found": true
+  },
+  {
+   "t0": 16.225,
+   "t1": 47.339,
+   "face_x": 878,
+   "crop_x": 594,
+   "found": true
+  },
+  {
+   "t0": 47.339,
+   "t1": 47.9,
+   "face_x": 852,
+   "crop_x": 568,
+   "found": true
+  }
+ ]
+}

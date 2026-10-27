@@ -1,0 +1,136 @@
+1
+00:00:00,040 --> 00:00:00,730
+The team
+
+2
+00:00:00,730 --> 00:00:02,790
+that we have assembled
+
+3
+00:00:02,790 --> 00:00:04,770
+at Upscale so far are
+
+4
+00:00:04,770 --> 00:00:06,040
+network veterans
+
+5
+00:00:06,040 --> 00:00:07,840
+who have really produced
+
+6
+00:00:07,840 --> 00:00:09,057
+10 generations of ASICs
+
+7
+00:00:09,057 --> 00:00:10,265
+and that are deployed
+
+8
+00:00:10,265 --> 00:00:11,600
+in hyperscaler networks.
+
+9
+00:00:11,600 --> 00:00:12,910
+We've also, the team
+
+10
+00:00:12,910 --> 00:00:13,760
+has also produced
+
+11
+00:00:13,760 --> 00:00:14,620
+systems that are
+
+12
+00:00:14,620 --> 00:00:15,280
+state of the art.
+
+13
+00:00:15,280 --> 00:00:17,030
+And for the matter,
+
+14
+00:00:17,030 --> 00:00:18,370
+our CEO did the first
+
+15
+00:00:18,370 --> 00:00:19,600
+Ethernet routers
+
+16
+00:00:19,600 --> 00:00:21,120
+and also the software
+
+17
+00:00:21,120 --> 00:00:21,460
+team.
+
+18
+00:00:21,480 --> 00:00:22,380
+Our software team
+
+19
+00:00:22,380 --> 00:00:23,180
+hails from all
+
+20
+00:00:23,180 --> 00:00:24,040
+the hyperscalers
+
+21
+00:00:24,040 --> 00:00:25,540
+where networks are now
+
+22
+00:00:25,540 --> 00:00:27,160
+scaling, AI is scaling.
+
+23
+00:00:27,160 --> 00:00:27,820
+You gotta build
+
+24
+00:00:27,820 --> 00:00:28,310
+a software
+
+25
+00:00:28,330 --> 00:00:29,200
+that is purpose built
+
+26
+00:00:29,240 --> 00:00:30,100
+that is efficient,
+
+27
+00:00:30,100 --> 00:00:30,720
+but at the same time
+
+28
+00:00:30,720 --> 00:00:31,600
+has to scale, right?
+
+29
+00:00:31,600 --> 00:00:32,990
+So these two are
+
+30
+00:00:32,990 --> 00:00:33,680
+very,
+
+31
+00:00:33,680 --> 00:00:34,800
+very differentiated
+
+32
+00:00:34,800 --> 00:00:35,300
+as compared
+
+33
+00:00:35,320 --> 00:00:36,370
+to any other networking
+
+34
+00:00:36,370 --> 00:00:36,995
+company out there.
+

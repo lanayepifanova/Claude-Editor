@@ -99,6 +99,14 @@ Each agent handles ONE video, end to end, without asking her anything. Footage i
 - Don't use Monitor for long encode chains: it kills its command at 30 min. Use
   `run_in_background`.
 
+## Lessons from 12
+- Steven Hou wears a white "Silicon Data" sweatshirt logo at about y 0.62. On his videos,
+  0.65 sits right on it; 12 used **0.70**. Check the contact sheet.
+- Whisper adds a leading "And" to almost any clip start, so a leftover "And" may not be a
+  clipped word. Probe it with a short isolated whisper run, and drop it with a caption fix.
+- If a short drops under 30s after the silence pass, widen the in/out to the next payoff line.
+- zsh `for p in "a b"` doesn't split words. Use comma pairs or arrays.
+
 ## Shared-machine rules (other agents are running at the same time)
 - **One heavy encode at a time, and never run them in parallel within your own job.** The first batch ran the
   full composite and the reframes side by side across three agents on a 10-core / 16 GB Mac.

@@ -1,0 +1,29 @@
+{
+ "source": "footage/Ignite Oct 2026/12 Steven Hou Silicon Data and Aravindh Srikumar Upscale AI.mp4",
+ "start": 400.25,
+ "end": 446.75,
+ "active": [
+  34,
+  1012
+ ],
+ "crop": [
+  568,
+  1012
+ ],
+ "shots": [
+  {
+   "t0": 0.0,
+   "t1": 15.974,
+   "face_x": 858,
+   "crop_x": 574,
+   "found": true
+  },
+  {
+   "t0": 15.974,
+   "t1": 46.5,
+   "face_x": 872,
+   "crop_x": 588,
+   "found": true
+  }
+ ]
+}

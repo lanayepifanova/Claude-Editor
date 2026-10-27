@@ -1,0 +1,156 @@
+1
+00:00:00,060 --> 00:00:01,010
+What has happened
+
+2
+00:00:01,010 --> 00:00:02,120
+in the past six years,
+
+3
+00:00:02,120 --> 00:00:03,850
+if you follow the trend,
+
+4
+00:00:03,850 --> 00:00:05,680
+compute has scaled 25X.
+
+5
+00:00:05,680 --> 00:00:06,500
+During the same
+
+6
+00:00:06,500 --> 00:00:07,630
+duration, network
+
+7
+00:00:07,630 --> 00:00:08,790
+has only grown by
+
+8
+00:00:08,790 --> 00:00:09,730
+8X when it comes
+
+9
+00:00:09,730 --> 00:00:10,120
+to bandwidth
+
+10
+00:00:10,140 --> 00:00:10,720
+performance.
+
+11
+00:00:10,720 --> 00:00:11,640
+I think personally,
+
+12
+00:00:11,640 --> 00:00:12,330
+the reason
+
+13
+00:00:12,330 --> 00:00:13,720
+is until the advent
+
+14
+00:00:13,720 --> 00:00:14,820
+of AI, the computer
+
+15
+00:00:14,820 --> 00:00:15,400
+networks had two
+
+16
+00:00:15,400 --> 00:00:16,280
+different elements.
+
+17
+00:00:16,280 --> 00:00:17,150
+Network was always
+
+18
+00:00:17,150 --> 00:00:18,380
+treated as a separate
+
+19
+00:00:18,380 --> 00:00:19,800
+entity outside compute.
+
+20
+00:00:19,800 --> 00:00:20,930
+So these two can evolve
+
+21
+00:00:20,930 --> 00:00:22,240
+at different levels
+
+22
+00:00:22,240 --> 00:00:22,660
+and speed.
+
+23
+00:00:22,680 --> 00:00:23,310
+But what we are
+
+24
+00:00:23,310 --> 00:00:24,280
+realizing when it comes
+
+25
+00:00:24,280 --> 00:00:25,830
+to AI networks
+
+26
+00:00:25,830 --> 00:00:26,760
+is these two are not
+
+27
+00:00:26,760 --> 00:00:27,690
+really different
+
+28
+00:00:27,690 --> 00:00:28,280
+entities.
+
+29
+00:00:28,340 --> 00:00:29,200
+So networking
+
+30
+00:00:29,200 --> 00:00:30,150
+is becoming part
+
+31
+00:00:30,150 --> 00:00:31,040
+of the compute
+
+32
+00:00:31,040 --> 00:00:31,490
+because
+
+33
+00:00:31,510 --> 00:00:32,500
+it has to linearly
+
+34
+00:00:32,500 --> 00:00:33,080
+scale.
+
+35
+00:00:33,080 --> 00:00:33,930
+Essentially, what we're
+
+36
+00:00:33,930 --> 00:00:35,050
+trying to do is produce
+
+37
+00:00:35,050 --> 00:00:36,160
+a large computer,
+
+38
+00:00:36,160 --> 00:00:36,960
+just distributed
+
+39
+00:00:36,960 --> 00:00:37,621
+across the data center.
+
