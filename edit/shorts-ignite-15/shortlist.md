@@ -16,7 +16,8 @@ sits left, Angela right. She holds the wafer-scale chip up on camera in pick 1.
 | 2 | **"Power is the new currency"** | 11:42.5 → 12:21.9 | 39s |
 | 3 | **"Why not just use NVIDIA GPUs?"** | 2:13.3 → 3:08.8 | 56s |
 | 4 | **"Why a chip company runs its own cloud"** | 8:34.3 → 9:20.1 | 46s |
-| 5 | **"Waiting 30 seconds is a long time"** | 3:22.4 → 4:08.0 | 46s |
+| 5 | ~~"Waiting 30 seconds is a long time"~~ removed: ad | 3:22.4 → 4:08.0 | 46s |
+| 7 | **"Why there are so many inference chips now"** (replacement) | 5:02.7 → 6:06.3 | 51s (64s source, 19% silence) |
 | 6 | **"Not every chip company will survive"** | 7:16.3 → 7:53.2 | 37s |
 
 1. **Largest chip** — opens "This is the largest chip in the world… about 50 times larger than a
@@ -31,13 +32,32 @@ sits left, Angela right. She holds the wafer-scale chip up on camera in pick 1.
    "you want your request to come back as quickly as possible."
 4. **Own cloud** — "We first launched inference in 2024… most of our customers don't have their
    own data centers," ends "why we decided to bring up our own cloud and sell direct."
-5. **30 seconds** — "Even waiting 30 seconds, although it doesn't sound that long, is actually a
+5. **removed: ad** (2026-10-27, Lana deleted it: lands on "that's why people come to Cerebras, the fastest inference in the world"). **30 seconds** — "Even waiting 30 seconds, although it doesn't sound that long, is actually a
    long time… should I just do it myself?" Then fastest inference via SRAM on the same silicon,
    memory bandwidth; ends "much faster tokens and deliver better experience to users."
 6. **Consolidation** — "Always an ebb and flow of new products being created and then
    consolidation… certainly not every company that's making a chip right now will be
    successful," ends "the companies that are able to continue innovating are the ones that will
    survive."
+7. **Why so many inference chips** (replacement, no-ads round) — Angela on why the market is
+   suddenly crowded: "I think the reason why you see a multitude of inference chip companies now
+   is that workload has solidified… being used at production scale," so hardware can be built for
+   it and tuned for a trade-off ("interactivity, low power per token, high batch"). Ends "we'll
+   continue to see this trend of additional companies coming to the market for inference. I think
+   it's actually a really good thing." Answers Steven's "what differentiates Cerebras" question
+   with a market mechanism instead; Cerebras appears once as an example. Single static shot of
+   Angela. Sets up #6 (proliferation here, consolidation there) without repeating it.
+
+## Rejected as promotional (no-ads round)
+
+- "Good luck, let us know how it goes" (9:20–9:54): payoff is Cerebras's customer-success model
+  and "higher revenue, higher engagement, higher retention for our customers".
+- "We actually do both" (10:43–11:38): Cerebras's go-to-market, "we've been very successful".
+- "We're going 3D" (12:25–12:59): next-gen Cerebras hardware announcement.
+- Steven's Silicon Mark aside (7:53–8:33): a host plug, but its payoff is "Cerebras… consistently
+  the fastest", which is a guest brag.
+- Excel / "30 seconds" opener alone (3:08–3:40): only ~30s before the Cerebras pitch, and too
+  thin without it.
 
 ## Bench
 
