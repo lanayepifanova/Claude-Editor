@@ -943,3 +943,26 @@ and writes a CRF-12 intermediate that preprocess/burn treat as the source. Expor
   run before grouping, so keep trailing punctuation out of fix keys and values.
 - Drop a leading "So" with a source-time `remove` at the envelope dip after it (~0.1-0.17s).
 - A `while read` loop around ffmpeg loses lines, because ffmpeg eats stdin. Use `< /dev/null`.
+
+**Ignite batch (2026-10-26/27): "do the same shorts clipping (i trust your 6 clip judgements)
+and also add the speaker cards [to] the other videos… repeat the process".** She gave no
+approval round. 07, 09, 10, 11, 12, 13, 15, 16 and 17 each got a full-interview card export
+(`output/ignite-NN-<slug>.mp4`) and six shorts (`output/ignite-NN-shorts/`), one subagent per
+video, driven by `edit/IGNITE-BRIEF.md`. The per-video lessons are in that brief. The ones
+that generalise:
+- **Caption y depends on the people, not the format.** Logos and pale or white clothing moved
+  it to 0.65 / 0.70 / 0.75 / 0.78 / 0.80 across one event. The white-share number gets fooled
+  by pale yellow or cream, so decide from the white-share AND one small contact sheet.
+- **reframe.py's "largest face" can follow the listener on long wide shots** (12, 15, 17). Read
+  `.shots.json` against who is talking and pin the crop where it's wrong. A speaker/crop
+  override in the shared tool is still to do.
+- **Silence removal of 20-30% can be legitimate** with a guest who pauses mid-answer. It's only
+  a red flag if loudness isn't ~-18 LUFS or the histogram has no clean valley.
+- **Set in/out and head trims from the envelope plus short isolated whisper probes.** Whisper
+  word times drift up to ~1s near joins. Probes invent leading "So"/"And", and whisper drops
+  words in a clip's first ~0.3s. Check the head and tail words.
+- **Names and roles: say only what's on tape.** Filenames had typos (Pheobe Lui, Silcom, SMI),
+  and most guests never give a title. Keep cards generic and list the guesses for her.
+- **The machine is 10 cores / 16 GB.** Run two video agents at a time at most, with one heavy
+  encode each, under `nice -n 10`. Three in parallel pushed load to 190 and swapped. A full
+  composite under contention can take hours.
