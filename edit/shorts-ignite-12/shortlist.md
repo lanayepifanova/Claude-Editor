@@ -14,10 +14,11 @@ right — the 9:16 crop re-centres per shot.
 |---|---|---|---|
 | 1 | **"Compute grew 25X. The network grew 8X."** | 1:10.2 → 2:02.2 | 52s |
 | 2 | **"Does Upscale compete with NVIDIA?"** | 6:40.4 → 7:13.1 | 33s |
-| 3 | **"The only company doing networking for AI and nothing else"** | 8:41.5 → 9:36.8 | 55s |
+| 3 | ~~"The only company doing networking for AI and nothing else"~~ **removed: ad** | 8:41.5 → 9:36.8 | 55s |
 | 4 | **"The network is the bottleneck"** | 2:43.1 → 3:23.1 | 40s |
-| 5 | **"Ten generations of ASICs"** | 9:40.5 → 10:27.2 | 47s |
-| 6 | **"Pure-play AI networking"** | 0:15.1 → 0:52.2 | 37s |
+| 5 | ~~"Ten generations of ASICs"~~ **removed: ad** | 9:40.5 → 10:27.2 | 47s |
+| 6 | ~~"Pure-play AI networking"~~ **removed: ad** | 0:15.1 → 0:52.2 | 37s |
+| 7 | **"Not one technology suits every need"** (replacement) | 7:59.2 → 8:40.6 | 30s cut |
 
 1. **25X vs 8X** — opens "In the past six years, if you follow the trend, compute has scaled
    25X. During the same duration, network has only grown by 8X." Explains why: networking used
@@ -47,6 +48,30 @@ right — the 9:16 crop re-centres per shot.
    familiar, can you tell us what Upscale AI does?") then "Upscale does pure-play AI
    networking … bring in any XPU, any GPU, any NIC … build heterogeneous networks in the
    future." Company intro; weakest hook, but a useful explainer.
+
+## Replacement round (2026-10-27): no ads
+
+Lana deleted #3, #5 and #6 as Upscale pitches. Only one replacement passed the
+"no company pitches" test without overlapping a surviving short:
+
+7. **"Not one technology suits every need"**, 7:59.24 → 8:40.6 source (41.4s; 30.2s after the
+   silence pass and one false-start cut). Opens "If you look at NVIDIA, NVIDIA is also investing
+   in heterogeneous AI through Groq and others, which are enabled by Ethernet," and ends "the
+   customer really has the choice to actually choose between the different technologies … scale
+   the data center and … scale the AI for the future." Upscale is never named; the point is
+   that NVIDIA itself is hedging beyond NVLink and no single interconnect fits every buyer. The
+   false start "not one technology is going to be, as I talked about, purpose built," was
+   removed (it also pointed back into the interview). Same answer as #2 but a different point:
+   #2 is "complementary, we're a partner"; #7 is "even NVIDIA is going heterogeneous".
+
+Rejected in this round:
+- 2:02 → 2:43, the "CPUs on one substrate" analogy. Not a pitch, but it is the bridge between
+  #1 and #4 and lands on the same 25X/8X "network hasn't scaled" point. A third short on it
+  would repeat.
+- Token Fabric (3:23 → 5:37), Sky Fabrics / Sky OS / Sky Command (5:37 → 6:28): product
+  explainers for Upscale's own stack. Ads.
+- 7:13 → 7:54: overlaps #2 and turns into "what we do for Sky Fabrics".
+- 8:41 → end: the deleted #3 and #5 (differentiators, team).
 
 ## Bench
 
