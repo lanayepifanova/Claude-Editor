@@ -980,3 +980,28 @@ folder, so each Ignite video is one folder, `output/Ignite NN - Host x Guest (Co
 holds `… - Full Interview.mp4`, `Shorts/Short N - Title.mp4` (numbered 1..N with no gaps) and
 `YouTube title and description.txt`. Use plain, readable names, not slugs. The old
 `output/ignite-NN-*` paths in commit messages and shortlists are historical.
+
+**Silicon Data logo + gold caption highlights (2026-10-29).** She approved one sample (Ignite 11
+#1), then said "do this with all the shorts, add a logo at the top for the longer form videos too".
+- **Logo:** `graphics/brand/silicon-data-white.png` is the official mark knocked out to white on
+  transparent (the source PNG has an opaque near-black plate). Shorts: top-left, 300px wide,
+  110px down, ~92% opacity, soft drop shadow. Top-left because the platforms' search icons sit
+  top-right. Long form: `silicon-data-white-1080p.png` (shadow baked in, 270px mark) at 52,62,
+  inside the baked letterbox (picture rows 34-1046 on every Ignite source).
+- **Highlights:** gold `#E8B33A` on the key term in ~20-30% of cues, same black edge as the rest.
+  One JSON list of phrases per short, `edit/highlights-<tag>.json`. Matched inside a single cue
+  and lit on every occurrence. Never the guest's company as a payoff (the no-ads rule).
+- **Tools:** `captions_overlay.py --highlight --logo` for new builds. `edit/brand_overlay.py`
+  restyles an already-shipped overlay without regrouping, so cue wording and timing stay
+  byte-identical.
+- **Output layout changed:** `output/` holds only `Long Form/` (`Ignite NN - Host x Guest
+  (Company).mp4`) and `Short Form/` (`Ignite NN - <title>.mp4`), not one folder per video. The
+  YouTube titles and descriptions go in one Google Doc with a thumbnail slot per video. The
+  source texts are in `project/youtube/`.
+- **Don't use h264_videotoolbox for deliverables.** Under CPU load it threw "Error encoding
+  frame: -12912" and dropped 3-9 frames mid-video in 4 of 9 long forms. Timestamps survive, so
+  the drop shows as a freeze, not as drift. Frame-count every export against its source.
+  libx264 never dropped a frame.
+- **burn.py always rebuilds the master** (an x264 preset-slow pass). When an approved master
+  already exists for the same cut, composite with `burn.composite()` and check with
+  `burn.py --verify-only --master`. Guard it with a frame-count match against the overlay.

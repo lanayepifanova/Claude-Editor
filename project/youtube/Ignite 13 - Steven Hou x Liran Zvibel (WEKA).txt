@@ -1,0 +1,20 @@
+YouTube title: Why a 98% Cache Hit Rate Means 5x More AI Tokens
+
+YouTube description:
+
+How can the same GPUs deliver five times the tokens? Liran Zvibel, co-founder of WEKA, talks with Steven Hou, Head of Research at Silicon Data, about why training is a race but inference is an economics problem, and how reusing work that has already been computed cuts what the GPUs have to do.
+
+Silicon Data is the independent referee of the compute market. It publishes GPU price indices and benchmarks and holds no positions of its own, so it can measure supply and demand without bias. Its indices are the basis for compute futures with CME Group.
+
+WEKA builds a storage and memory platform for AI and GPU compute. Started in late 2013, it first worked with GPU customers in 2017 and 2018, and its Augmented Memory Grid is aimed at caching for inference.
+
+In this conversation:
+• WEKA's start, and the GPU customers it found before anyone called it AI
+• Training as Formula One, inference as economics
+• What separates the neoclouds that will last from the rest
+• Single-offtaker neoclouds versus clouds serving the long tail
+• Augmented Memory Grid, and how going from 90% to 98% cache hits means 5x the tokens
+
+Silicon Data: https://www.silicondata.com/
+
+#AI #AIInference #Storage #Neocloud #AIInfrastructure

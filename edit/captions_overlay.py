@@ -9,7 +9,7 @@ needs a screenshot to place.
     python3 edit/captions_overlay.py --analysis edit/analysis-Reddit \
         --out graphics/reddit-captions --res 1080x1920 --y 0.25
 """
-import argparse, json, re, sys
+import argparse, json, re, shutil, sys
 from pathlib import Path
 
 # TikTok-style: short punchy chunks, not broadcast single-lines
@@ -63,6 +63,62 @@ def apply_fixes(words, fixes):
             else:
                 i += 1
     return words, n
+
+
+def mark_highlights(words, phrases):
+    """Flag every word inside a highlighted phrase. Matched as word sequences,
+    case- and punctuation-blind, after fixes so the corrected spelling is what
+    gets matched. Every occurrence lights up — pick phrases specific enough."""
+    norm = lambda x: x.lower().strip(".,!?'\"")
+    n, missed = 0, []
+    for ph in phrases:
+        pt = [norm(x) for x in ph.split()]
+        hits = 0
+        for i in range(len(words) - len(pt) + 1):
+            if [norm(words[i+k]["w"]) for k in range(len(pt))] == pt:
+                for k in range(len(pt)):
+                    words[i+k]["hl"] = True
+                hits += 1
+        n += hits
+        if not hits:
+            missed.append(ph)
+    return n, missed
+
+
+def cue_html(c):
+    """Cue words as HTML, gold <em> runs on highlighted words. Trailing
+    punctuation stays white so the accent sits on the word alone."""
+    out = []
+    for w in c["words"]:
+        t = w["w"].strip()
+        if not t:
+            continue
+        if w.get("hl"):
+            m = re.match(r"^(.*?)([.,!?]*)$", t)
+            out.append(f"<em>{m.group(1)}</em>{m.group(2)}")
+        else:
+            out.append(t)
+    return re.sub(r"</em> <em>", " ", " ".join(out))
+
+
+HL_CSS = "\n      /* key words in the gold accent, same edge — emphasis, not decoration */" \
+         "\n      .cue em { font-style:normal; color:#E8B33A; }"
+
+
+def logo_markup(logo, dur):
+    """(css, tag) for a static brand mark held for the whole cut — no entrance,
+    it is a watermark. Shared with brand_overlay.py."""
+    if not logo:
+        return "", ""
+    css = f"""
+      #logo {{
+        position:absolute; top:{logo["top"]}px; {logo["side"]}:{logo["inset"]}px;
+        width:{logo["w"]}px; height:auto; opacity:{logo["opacity"]};
+        filter:drop-shadow(0 2px 6px rgba(0,0,0,0.55));
+      }}"""
+    tag = (f'      <img id="logo" class="clip" src="{logo["src"]}" data-start="0" '
+           f'data-duration="{dur}" data-track-index="2" />')
+    return css, tag
 
 
 def group(words):
@@ -176,7 +232,7 @@ def group(words):
     return [c for c in cues if c["end"] > c["start"]]
 
 
-def build(cues, w, h, ypct, dur, fps, font, size, weight, maxw):
+def build(cues, w, h, ypct, dur, fps, font, size, weight, maxw, logo=None):
     edge = max(3, round(size * 0.075))          # hard dark edge, no blur
     e2 = round(edge * 0.7)
     secs, tl = [], []
@@ -184,9 +240,12 @@ def build(cues, w, h, ypct, dur, fps, font, size, weight, maxw):
         d = round(c["end"] - c["start"], 3)
         secs.append(
             f'      <div id="cue{i}" class="clip cue" data-start="{round(c["start"],3)}" '
-            f'data-duration="{d}" data-track-index="1"><span>{c["text"]}</span></div>')
+            f'data-duration="{d}" data-track-index="1"><span>{cue_html(c)}</span></div>')
         # deliberately no tween — the framework's clip window switches it on and
         # off instantly. Any fade here would read as a transition.
+    logo_css, logo_tag = logo_markup(logo, dur)
+    if logo_tag:
+        secs.append(logo_tag)
     return f"""<!doctype html>
 <html lang="en">
   <head>
@@ -215,6 +274,7 @@ def build(cues, w, h, ypct, dur, fps, font, size, weight, maxw):
           {e2}px {e2}px 0 #000, -{e2}px {e2}px 0 #000,
           {e2}px -{e2}px 0 #000, -{e2}px -{e2}px 0 #000;
       }}
+{HL_CSS}{logo_css}
     </style>
   </head>
   <body>
@@ -255,6 +315,13 @@ def main():
                     help="max text width as a fraction of frame width")
     ap.add_argument("--srt", default="")
     ap.add_argument("--fixes", default="", help="JSON {wrong: right} applied to cue text")
+    ap.add_argument("--highlight", default="",
+                    help="JSON list of phrases to set in the gold accent")
+    ap.add_argument("--logo", default="", help="PNG brand mark, pinned to a top corner")
+    ap.add_argument("--logo-corner", choices=["left", "right"], default="left")
+    ap.add_argument("--logo-w", type=int, default=300, help="logo width, px")
+    ap.add_argument("--logo-top", type=int, default=110,
+                    help="px from the top; clears the phone status bar")
     ap.add_argument("--maxdur", type=float, default=MAX_DUR,
                     help="longest a cue stays up. Default 2.2 is the vertical/social "
                          "value; CLAUDE.md's broadcast spec is 3.5 for 16:9")
@@ -300,14 +367,26 @@ def main():
         if wd["t0"] >= dur:
             wd["t0"] = max(0.0, dur - 1.0 / a.fps)
         wd["t1"] = min(wd["t1"], dur)
+    if a.highlight:
+        n, missed = mark_highlights(words, json.load(open(a.highlight)))
+        print(f"  highlighted {n} phrase occurrence(s)")
+        for ph in missed:
+            print(f"  WARNING highlight not found in transcript: {ph!r}")
     global MAX_CHARS
     # Montserrat 800 averages ~0.58em per character; keep every cue on one line
     MAX_CHARS = max(12, int((w * a.maxw) / (size * 0.58)))
     cues = group(words)
     for c in cues:                        # MIN_DUR padding can also overrun
         c["end"] = min(c["end"], dur)
-    html = build(cues, w, h, a.y, dur, a.fps, a.font, size, a.weight, a.maxw)
     out = Path(a.out); (out).mkdir(parents=True, exist_ok=True)
+    logo = None
+    if a.logo:
+        # the renderer serves the project dir, so the mark has to live inside it
+        src = Path(a.logo)
+        shutil.copy(src, out/src.name)
+        logo = {"src": src.name, "side": a.logo_corner, "inset": round(w * 0.055),
+                "top": a.logo_top, "w": a.logo_w, "opacity": 0.92}
+    html = build(cues, w, h, a.y, dur, a.fps, a.font, size, a.weight, a.maxw, logo)
     (out/"index.html").write_text(html)
 
     if a.srt:

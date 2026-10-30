@@ -1,0 +1,11 @@
+[
+ "general purpose GPU",
+ "prefill",
+ "compute",
+ "decode",
+ "memory",
+ "trade-offs",
+ "disaggregated inference",
+ "40 companies",
+ "decode-optimized"
+]

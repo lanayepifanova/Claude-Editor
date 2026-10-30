@@ -1,0 +1,20 @@
+YouTube title: What Happens When AI Agents Start Buying Their Own Compute?
+
+YouTube description:
+
+What happens when AI agents become the main buyers of compute? Jasper Zhang of Hyperbolic talks with Steven Hou, Head of Research at Silicon Data, about pooling fragmented GPU capacity into one layer, why agents will need programmatic access to compute, and how reserved GPUs that sit idle could be resold.
+
+Silicon Data is the independent referee of the compute market. It publishes GPU price indices and benchmarks and holds no positions of its own, so it can measure supply and demand without bias. Its indices are the basis for compute futures with CME Group.
+
+Hyperbolic pools GPU capacity from cloud partners into a single control layer, where customers can rent compute on flexible terms and sell back what they don't use.
+
+In this conversation:
+• More than 300 neoclouds, and linking their clusters into one control plane
+• Why agents, not humans, may become the main consumers of compute
+• Partnering versus owning compute as the market gets tighter
+• Turning compute into tokens, and whether that edge lasts as open source improves
+• Reselling idle reserved GPUs on a spot market, and what it does to returns
+
+Silicon Data: https://www.silicondata.com/
+
+#AI #GPU #AIAgents #Neocloud #AIInfrastructure
