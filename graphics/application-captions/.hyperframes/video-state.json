@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "historyId": "ab46fa45-0dab-4f41-9058-1e2c94991d7f",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "index.html": {
+      "hash": "971f6e1f95c6105143d3f164f62647726dee5a395159d92777c619391ce32872",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/ab46fa45-0dab-4f41-9058-1e2c94991d7f/blobs/97/971f6e1f95c6105143d3f164f62647726dee5a395159d92777c619391ce32872"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "e340b261-55b8-4efa-94c5-fc1321e4b6bc",
+      "completedAt": 1793414021661,
+      "output": "/Users/lanayepifanova/Claude-Editor/graphics/application-cap.mov",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
+}

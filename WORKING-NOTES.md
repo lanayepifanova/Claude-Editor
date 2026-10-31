@@ -1005,3 +1005,20 @@ holds `… - Full Interview.mp4`, `Shorts/Short N - Title.mp4` (numbered 1..N wi
 - **burn.py always rebuilds the master** (an x264 preset-slow pass). When an approved master
   already exists for the same cut, composite with `burn.composite()` and check with
   `burn.py --verify-only --master`. Guard it with a frame-count match against the overlay.
+
+**Pillar tags on shorts (2026-10-30).** Every short in `output/Short Form/` starts with its
+pillar: `[SM] SiliconMark` (physical GPU performance, benchmarks, hardware differences),
+`[RP] Reference Price` (indexes, futures, settlement, index integrity), `[CP] Cloud Providers`
+(what to pay or charge, transparency, cost of capital, how neoclouds work). The goal is one
+asset from each pillar every week. Each pillar has its own subfolder, e.g. `output/Short Form/[SM] SiliconMark/`, and file names
+start with the tag: `[SM] Ignite NN - <title>.mp4`. Tag and file new shorts when they are
+exported.
+
+**Application (2026-10-30): SXSW application video, landscape, plus an essay from it.** 226.8s ->
+148.7s. Same 30000/1 r_frame_rate trap as Sopwith (`--fps 30`). -21.3 LUFS, room RMS -65 / peak -47,
+`restore_speech.py --quiet-db -48` (+7.7s) plus a hand `out` on the last segment, because the final
+"application" was clipped to "app". `retakes.py` caught 3 of 7 retakes; the Poppy line alone had
+~6 attempts. The rest were hand `remove` spans read off the full-context transcript of the original.
+She then asked for the transcript as an essay to paste into Google Docs. Write it in the terminal as
+plain prose from the retake-free cut, and flag any guessed name or fact. Whisper hears her name as
+"Lani Pifanova", so it is pinned in `fixes-application.json`.
