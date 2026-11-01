@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "historyId": "f133308a-e2df-444e-ba4e-f14c9e17a331",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "index.html": {
+      "hash": "c734cdec79bdab6db618e71aae7102e647e7fa47be06e3108c6d2eb630bb983b",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/f133308a-e2df-444e-ba4e-f14c9e17a331/blobs/c7/c734cdec79bdab6db618e71aae7102e647e7fa47be06e3108c6d2eb630bb983b"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "ba62c65c-9452-4173-9e2c-773a664a6f52",
+      "completedAt": 1793571128341,
+      "output": "/Users/lanayepifanova/Claude-Editor/graphics/kingsmen-cap.mov",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
+}

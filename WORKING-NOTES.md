@@ -1022,3 +1022,15 @@ exported.
 She then asked for the transcript as an essay to paste into Google Docs. Write it in the terminal as
 plain prose from the retake-free cut, and flag any guessed name or fact. Whisper hears her name as
 "Lani Pifanova", so it is pinned in `fixes-application.json`.
+
+**Kingsmen (2026-11-01): pasted script, sponsored read, "cut dead space and add captions".** 134.9s ->
+83.4s. Rotation -90 on a 1920x1080 stream (proof 960x1706, so vertical). -23.6 LUFS, room cluster
+-48, valley -42..-40, so `restore_speech.py --quiet-db -42` (+3.2s, tails and 0.07-0.2s mid-phrase
+slices only). `retakes.py` caught only the full repeat of "And most of the story… on the way";
+transcribing every kept segment alone found two more false starts ("Miners have been taught /
+taking--" with ~9s of dead air, and "That's why after all that money, that district never…"). Five
+hand `remove` spans, then `retakes.py` reported 0. Captions at `--y 0.75` per the sponsored-read
+precedent (band white-share 5.8%). Fixes: Kingsman->Kingsmen, Peral->Parral, ton->tonne, Cash
+Group->Cashu Group, principle->principal. She says "bought" (script: brought), "United States",
+"would have to deal", "in northern state", "can dilute" and "Please do your own research"; the
+captions follow the audio. Disk had 11 GB free: `--workers 1` render took 1.5 min, burn ~10 min.
