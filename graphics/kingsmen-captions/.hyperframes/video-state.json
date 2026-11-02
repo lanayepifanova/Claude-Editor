@@ -1,15 +1,31 @@
 {
   "version": 1,
   "historyId": "f133308a-e2df-444e-ba4e-f14c9e17a331",
-  "currentRevision": null,
+  "currentRevision": "85e459e1-c254-49d5-942b-a85298f1ec3b",
   "pendingChanges": false,
   "files": {
     "index.html": {
-      "hash": "c734cdec79bdab6db618e71aae7102e647e7fa47be06e3108c6d2eb630bb983b",
-      "content": "/Users/lanayepifanova/.cache/hyperframes/history/f133308a-e2df-444e-ba4e-f14c9e17a331/blobs/c7/c734cdec79bdab6db618e71aae7102e647e7fa47be06e3108c6d2eb630bb983b"
+      "hash": "ad9bbebd3814fbdc1ff6f906652b0f296239b752608e9ae3a28bf7d93cb25ba1",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/f133308a-e2df-444e-ba4e-f14c9e17a331/blobs/ad/ad9bbebd3814fbdc1ff6f906652b0f296239b752608e9ae3a28bf7d93cb25ba1"
     }
   },
-  "revisions": {},
+  "revisions": {
+    "85e459e1-c254-49d5-942b-a85298f1ec3b": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793638404964,
+      "endedAt": 1793638404965,
+      "files": {
+        "index.html": {
+          "before": "/Users/lanayepifanova/.cache/hyperframes/history/f133308a-e2df-444e-ba4e-f14c9e17a331/blobs/c7/c734cdec79bdab6db618e71aae7102e647e7fa47be06e3108c6d2eb630bb983b",
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/f133308a-e2df-444e-ba4e-f14c9e17a331/blobs/ad/ad9bbebd3814fbdc1ff6f906652b0f296239b752608e9ae3a28bf7d93cb25ba1"
+        }
+      }
+    }
+  },
   "checks": {
     "latest": null,
     "revisions": {},
@@ -22,13 +38,15 @@
   },
   "renders": {
     "latest": {
-      "id": "ba62c65c-9452-4173-9e2c-773a664a6f52",
-      "completedAt": 1793571128341,
+      "id": "7c07f35e-2f68-47f0-9a2a-edfea34e0f34",
+      "completedAt": 1793638487308,
       "output": "/Users/lanayepifanova/Claude-Editor/graphics/kingsmen-cap.mov",
       "status": "completed",
-      "revision": null
+      "revision": "85e459e1-c254-49d5-942b-a85298f1ec3b"
     },
-    "retainedRevisions": []
+    "retainedRevisions": [
+      "85e459e1-c254-49d5-942b-a85298f1ec3b"
+    ]
   },
   "pendingArtifactCleanup": []
 }

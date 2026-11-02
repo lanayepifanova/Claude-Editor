@@ -10,8 +10,8 @@
  "source": "footage/Kingsmen.MP4",
  "fps": 30.0,
  "source_duration": 134.92,
- "cut_duration": 83.433,
- "removed_pct": 38.2,
+ "cut_duration": 83.267,
+ "removed_pct": 38.3,
  "segments": [
   [
    3.033333333333333,
@@ -47,7 +47,7 @@
   ],
   [
    56.86666666666667,
-   60.233333333333334
+   60.06666666666667
   ],
   [
    61.666666666666664,

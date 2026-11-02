@@ -1,0 +1,40 @@
+     fps 30 (detected)
+1/4  envelope …
+     6746 windows · 134.92s
+2/4  silence …
+     override seg 0: 2.767-3.033 -> 2.767-8.267
+     override seg 2: 8.600-11.267 -> 8.600-16.967
+     override seg 7: 17.267-20.833 -> 17.067-20.833
+     override seg 10: 26.233-27.167 -> 26.233-27.267
+     override seg 12: 39.633-41.267 -> 39.633-41.367
+     override seg 13: 41.700-45.400 -> 41.700-49.267
+     override seg 16: 52.967-56.367 -> 52.967-56.467
+     override seg 17: 56.867-60.100 -> 56.867-60.067
+     override seg 20: 64.833-69.067 -> 64.833-71.167
+     override seg 22: 71.600-75.400 -> 71.600-80.300
+     override seg 25: 92.467-94.033 -> 92.467-94.133
+     override seg 27: 107.200-108.833 -> 107.200-114.267
+     override seg 31: 115.433-118.167 -> 115.433-118.267
+     override seg 32: 118.433-121.433 -> 118.433-121.667
+     override seg 35: 125.300-128.633 -> 125.300-131.600
+     drop seg 37: 131.467-131.600 (absorbed by a neighbour)
+     drop seg 36: 128.767-131.400 (absorbed by a neighbour)
+     drop seg 33: 121.500-121.667 (absorbed by a neighbour)
+     drop seg 29: 111.500-114.267 (absorbed by a neighbour)
+     drop seg 28: 108.900-111.267 (absorbed by a neighbour)
+     drop seg 23: 75.733-80.067 (absorbed by a neighbour)
+     drop seg 21: 69.233-71.067 (absorbed by a neighbour)
+     drop seg 14: 45.667-49.267 (absorbed by a neighbour)
+     drop seg 6: 15.733-16.867 (absorbed by a neighbour)
+     drop seg 5: 15.200-15.467 (absorbed by a neighbour)
+     drop seg 4: 12.200-15.133 (absorbed by a neighbour)
+     drop seg 3: 11.333-12.033 (absorbed by a neighbour)
+     drop seg 1: 3.100-8.267 (absorbed by a neighbour)
+     remove: 5 span(s) · 91.90s -> 83.27s (26 -> 21 segments)
+     21 segments · 134.9s -> 83.3s (38% removed)
+3/4  cut proof + transcript …
+     328 words
+4/4  framing …
+     167 samples on a 8x6 grid
+
+-> edit/analysis-kingsmen/  (nothing here needs to enter a conversation)

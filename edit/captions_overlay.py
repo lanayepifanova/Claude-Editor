@@ -137,6 +137,19 @@ def group(words):
             gap = w["t0"] - cur[-1]["t1"]
             if len(prospective) > MAX_CHARS or gap >= GAP_SPLIT or \
                w["t1"] - cur[0]["t0"] > MAX_DUR:
+                # Break at the last clause comma rather than mid-clause, when the
+                # tail still fits on the next line ("as KNG and KNGRF, set / out to
+                # change that" — Kingsmen, 2026-11-02, once a tightened cut removed
+                # the gap that used to force the break at the comma).
+                ks = [i for i, x in enumerate(cur[:-1]) if re.search(r"[,;:]$", x["w"])]
+                # Only a single stranded word: moving longer tails cascades into
+                # worse splits on the following lines.
+                if ks and ks[-1] == len(cur) - 2:
+                    tail = cur[ks[-1] + 1:]
+                    if len(" ".join(x["w"] for x in tail + [w])) <= MAX_CHARS and \
+                            w["t1"] - tail[0]["t0"] <= MAX_DUR:
+                        del cur[ks[-1] + 1:]
+                        carry.extend(reversed(tail))
                 # pull a trailing function word forward rather than stranding it,
                 # but only while the next line still fits. Unguarded, this built
                 # a 32-char "what we do from an architectural" (Ignite 07, 2026-10-26)

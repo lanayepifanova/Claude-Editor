@@ -1034,3 +1034,10 @@ precedent (band white-share 5.8%). Fixes: Kingsman->Kingsmen, Peral->Parral, ton
 Group->Cashu Group, principle->principal. She says "bought" (script: brought), "United States",
 "would have to deal", "in northern state", "can dilute" and "Please do your own research"; the
 captions follow the audio. Disk had 11 GB free: `--workers 1` render took 1.5 min, burn ~10 min.
+**Kingsmen v2 (2026-11-02): "awkward gap between 'which trades as' and 'KNG'".** It was not a cut
+gap but restore_speech's tail extension: seg out 60.10 -> 60.24 kept ~0.2s of -40 dB room tone
+after "as" (the word ends at 60.04). Pinned `out` 60.07. A restore extension can itself be the
+"awkward pause" — when she flags one, read the envelope at that seam before anything else. The
+re-cut re-transcribed differently ("results aren't getting", "the drill hits"), now pinned, and
+`captions_overlay.py` gained a rule: on overflow, a single word stranded after a comma moves to
+the next line (a wider version cascaded into worse splits).
