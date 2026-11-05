@@ -1,9 +1,0 @@
-1/2  cutting 21 segments from Kingsmen.MP4 (134.9s -> 83.4s, 38.2% removed)
-     footage is 1920x1080, overlay is 1080x1920 — scaling the master to the overlay
-     master 1080x1920 2503f · kingsmen-cap.mov 1080x1920 2503f
-2/2  compositing 1 overlay(s)
-     verifying burn against the uncaptioned master …
-     2482/2503 frames carry ink (99% of the cut) · peak coverage 0.9% of frame
-
--> output/Kingsmen.mp4  (125.9 MB)
-   master kept at graphics/kingsmen-master.mp4
