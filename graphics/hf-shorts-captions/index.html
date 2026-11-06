@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>captions</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family:"Inter"; src:url("Inter-Medium.ttf") format("truetype"); font-weight:500; font-style:normal; }
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:transparent; }
+      #root { position:relative; width:1080px; height:1920px; }
+      .cue {
+        position:absolute; left:0; right:0; top:25.0%;
+        transform:translateY(-50%);
+        display:flex; align-items:center; justify-content:center;
+        text-align:center;
+      }
+      .cue span {
+        display:inline-block; max-width:778px; white-space:nowrap;
+        font-family:'Inter', sans-serif;
+        font-weight:500; font-size:54px; line-height:1.18;
+        letter-spacing:-0.01em; color:#FFFFFF;
+        /* hard edge, zero blur — reads on any background, never looks glowy */
+        text-shadow:
+          4px 0 0 #09090B, -4px 0 0 #09090B, 0 4px 0 #09090B, 0 -4px 0 #09090B,
+          3px 3px 0 #09090B, -3px 3px 0 #09090B,
+          3px -3px 0 #09090B, -3px -3px 0 #09090B;
+      }
+
+      /* key words in brand Sky, same edge — emphasis, not decoration */
+      .cue em { font-style:normal; color:#67DEF9; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="49.367"
+         data-width="1080" data-height="1920" data-fps="30.0"
+         data-layout-allow-overflow="true">
+      <div id="cue0" class="clip cue" data-start="0.03" data-duration="1.08" data-track-index="1"><span>I didn't edit a single</span></div>
+      <div id="cue1" class="clip cue" data-start="1.11" data-duration="1.09" data-track-index="1"><span>second of this video.</span></div>
+      <div id="cue2" class="clip cue" data-start="2.2" data-duration="0.74" data-track-index="1"><span>Claude did.</span></div>
+      <div id="cue3" class="clip cue" data-start="2.94" data-duration="0.92" data-track-index="1"><span>No After Effects,</span></div>
+      <div id="cue4" class="clip cue" data-start="3.86" data-duration="0.86" data-track-index="1"><span>no Premiere Pro,</span></div>
+      <div id="cue5" class="clip cue" data-start="4.72" data-duration="0.62" data-track-index="1"><span>one prompt,</span></div>
+      <div id="cue6" class="clip cue" data-start="5.34" data-duration="0.84" data-track-index="1"><span>and the whole video</span></div>
+      <div id="cue7" class="clip cue" data-start="6.18" data-duration="0.48" data-track-index="1"><span>was edited.</span></div>
+      <div id="cue8" class="clip cue" data-start="6.68" data-duration="0.85" data-track-index="1"><span>And I know nothing about</span></div>
+      <div id="cue9" class="clip cue" data-start="7.53" data-duration="0.67" data-track-index="1"><span>video editing.</span></div>
+      <div id="cue10" class="clip cue" data-start="8.2" data-duration="0.76" data-track-index="1"><span>Watch how the titles</span></div>
+      <div id="cue11" class="clip cue" data-start="8.96" data-duration="0.76" data-track-index="1"><span>appear behind me,</span></div>
+      <div id="cue12" class="clip cue" data-start="9.72" data-duration="0.71" data-track-index="1"><span>the photos flow</span></div>
+      <div id="cue13" class="clip cue" data-start="10.43" data-duration="0.51" data-track-index="1"><span>into frame,</span></div>
+      <div id="cue14" class="clip cue" data-start="10.96" data-duration="0.75" data-track-index="1"><span>and the whole mood</span></div>
+      <div id="cue15" class="clip cue" data-start="11.71" data-duration="1.17" data-track-index="1"><span>changes with the colors.</span></div>
+      <div id="cue16" class="clip cue" data-start="12.88" data-duration="0.96" data-track-index="1"><span>All I gave it was one</span></div>
+      <div id="cue17" class="clip cue" data-start="13.84" data-duration="1.28" data-track-index="1"><span>photo, a short script,</span></div>
+      <div id="cue18" class="clip cue" data-start="15.12" data-duration="1.24" data-track-index="1"><span>and a reference video.</span></div>
+      <div id="cue19" class="clip cue" data-start="16.36" data-duration="0.23" data-track-index="1"><span>I made</span></div>
+      <div id="cue20" class="clip cue" data-start="16.61" data-duration="0.91" data-track-index="1"><span>this with Higgsfield</span></div>
+      <div id="cue21" class="clip cue" data-start="17.52" data-duration="1.23" data-track-index="1"><span>Genjutsu for Reels right</span></div>
+      <div id="cue22" class="clip cue" data-start="18.75" data-duration="0.81" data-track-index="1"><span>inside Claude.</span></div>
+      <div id="cue23" class="clip cue" data-start="19.56" data-duration="0.7" data-track-index="1"><span>You don't need to spend</span></div>
+      <div id="cue24" class="clip cue" data-start="20.26" data-duration="0.9" data-track-index="1"><span>months learning Premiere</span></div>
+      <div id="cue25" class="clip cue" data-start="21.16" data-duration="0.87" data-track-index="1"><span>Pro or After Effects</span></div>
+      <div id="cue26" class="clip cue" data-start="22.03" data-duration="0.61" data-track-index="1"><span>to make videos</span></div>
+      <div id="cue27" class="clip cue" data-start="22.64" data-duration="0.6" data-track-index="1"><span>like this.</span></div>
+      <div id="cue28" class="clip cue" data-start="23.24" data-duration="0.65" data-track-index="1"><span>Just pick a video</span></div>
+      <div id="cue29" class="clip cue" data-start="23.89" data-duration="0.84" data-track-index="1"><span>of yours that already</span></div>
+      <div id="cue30" class="clip cue" data-start="24.73" data-duration="0.55" data-track-index="1"><span>did well or one</span></div>
+      <div id="cue31" class="clip cue" data-start="25.28" data-duration="0.84" data-track-index="1"><span>of their templates,</span></div>
+      <div id="cue32" class="clip cue" data-start="26.12" data-duration="0.84" data-track-index="1"><span>add your script,</span></div>
+      <div id="cue33" class="clip cue" data-start="26.96" data-duration="0.8" data-track-index="1"><span>and upload your photo.</span></div>
+      <div id="cue34" class="clip cue" data-start="27.79" data-duration="1.11" data-track-index="1"><span>Genjutsu for Reels turns</span></div>
+      <div id="cue35" class="clip cue" data-start="28.9" data-duration="1.18" data-track-index="1"><span>it into a fully edited</span></div>
+      <div id="cue36" class="clip cue" data-start="30.08" data-duration="0.81" data-track-index="1"><span>video in just a few</span></div>
+      <div id="cue37" class="clip cue" data-start="30.89" data-duration="0.63" data-track-index="1"><span>clicks.</span></div>
+      <div id="cue38" class="clip cue" data-start="31.52" data-duration="0.42" data-track-index="1"><span>You don't even</span></div>
+      <div id="cue39" class="clip cue" data-start="31.96" data-duration="0.72" data-track-index="1"><span>have to film yourself</span></div>
+      <div id="cue40" class="clip cue" data-start="32.68" data-duration="1.02" data-track-index="1"><span>because a photo works.</span></div>
+      <div id="cue41" class="clip cue" data-start="33.7" data-duration="0.84" data-track-index="1"><span>Here's how to try it.</span></div>
+      <div id="cue42" class="clip cue" data-start="34.54" data-duration="0.45" data-track-index="1"><span>First,</span></div>
+      <div id="cue43" class="clip cue" data-start="35.01" data-duration="1.37" data-track-index="1"><span>connect Higgsfield MCP</span></div>
+      <div id="cue44" class="clip cue" data-start="36.38" data-duration="1.06" data-track-index="1"><span>to Claude from the setup</span></div>
+      <div id="cue45" class="clip cue" data-start="37.44" data-duration="0.82" data-track-index="1"><span>page on Higgsfield's</span></div>
+      <div id="cue46" class="clip cue" data-start="38.26" data-duration="0.3" data-track-index="1"><span>site.</span></div>
+      <div id="cue47" class="clip cue" data-start="38.58" data-duration="1.37" data-track-index="1"><span>Then type /short,</span></div>
+      <div id="cue48" class="clip cue" data-start="39.95" data-duration="0.72" data-track-index="1"><span>add your reference,</span></div>
+      <div id="cue49" class="clip cue" data-start="40.67" data-duration="0.43" data-track-index="1"><span>your script,</span></div>
+      <div id="cue50" class="clip cue" data-start="41.12" data-duration="0.82" data-track-index="1"><span>and your own materials,</span></div>
+      <div id="cue51" class="clip cue" data-start="41.94" data-duration="0.58" data-track-index="1"><span>and generate.</span></div>
+      <div id="cue52" class="clip cue" data-start="42.52" data-duration="0.68" data-track-index="1"><span>And this is what</span></div>
+      <div id="cue53" class="clip cue" data-start="43.2" data-duration="0.56" data-track-index="1"><span>came out.</span></div>
+      <div id="cue54" class="clip cue" data-start="43.76" data-duration="0.85" data-track-index="1"><span>New users get</span></div>
+      <div id="cue55" class="clip cue" data-start="44.61" data-duration="1.51" data-track-index="1"><span>a three-day free trial</span></div>
+      <div id="cue56" class="clip cue" data-start="46.12" data-duration="0.96" data-track-index="1"><span>of the MCP.</span></div>
+      <div id="cue57" class="clip cue" data-start="47.08" data-duration="0.97" data-track-index="1"><span>Comment Reels, and I'll</span></div>
+      <div id="cue58" class="clip cue" data-start="48.05" data-duration="0.59" data-track-index="1"><span>send you the command</span></div>
+      <div id="cue59" class="clip cue" data-start="48.64" data-duration="0.727" data-track-index="1"><span>and setup link.</span></div>
+    </div>
+    <script>
+      // GENERATED by edit/captions_overlay.py — do not hand-edit.
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // captions cut in and out with the clip window — no tweens by design
+      tl.set("#root", { opacity: 1 }, 0);
+      tl.set("#root", { opacity: 1 }, 49.367);
+      tl.seek(0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
