@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>captions</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family:"Inter"; src:url("Inter-Medium.ttf") format("truetype"); font-weight:500; font-style:normal; }
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:transparent; }
+      #root { position:relative; width:1080px; height:1920px; }
+      .cue {
+        position:absolute; left:0; right:0; top:77.5%;
+        transform:translateY(-50%);
+        display:flex; align-items:center; justify-content:center;
+        text-align:center;
+      }
+      .cue span {
+        display:inline-block; max-width:778px; white-space:nowrap;
+        font-family:'Inter', sans-serif;
+        font-weight:500; font-size:54px; line-height:1.18;
+        letter-spacing:-0.01em; color:#FFFFFF;
+        /* hard edge, zero blur — reads on any background, never looks glowy */
+        text-shadow:
+          4px 0 0 #09090B, -4px 0 0 #09090B, 0 4px 0 #09090B, 0 -4px 0 #09090B,
+          3px 3px 0 #09090B, -3px 3px 0 #09090B,
+          3px -3px 0 #09090B, -3px -3px 0 #09090B;
+      }
+      /* key words in brand Sky, same edge — emphasis, not decoration */
+      .cue em { font-style:normal; color:#67DEF9; }
+      #logo {
+        position:absolute; top:110px; left:59px;
+        width:300px; height:60px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="43.71"
+         data-width="1080" data-height="1920" data-fps="23.976"
+         data-layout-allow-overflow="true">
+      <div id="cue0" class="clip cue" data-start="0.03" data-duration="1.3" data-track-index="1"><span>What we're hearing about</span></div>
+      <div id="cue1" class="clip cue" data-start="1.33" data-duration="1.15" data-track-index="1"><span>is kind of this next</span></div>
+      <div id="cue2" class="clip cue" data-start="2.48" data-duration="1.09" data-track-index="1"><span>generation of what's</span></div>
+      <div id="cue3" class="clip cue" data-start="3.57" data-duration="0.91" data-track-index="1"><span>called a <em>coalition</em></span></div>
+      <div id="cue4" class="clip cue" data-start="4.48" data-duration="0.88" data-track-index="1"><span>of experts, where I</span></div>
+      <div id="cue5" class="clip cue" data-start="5.36" data-duration="1.13" data-track-index="1"><span>have all these different</span></div>
+      <div id="cue6" class="clip cue" data-start="6.49" data-duration="0.59" data-track-index="1"><span>models and I</span></div>
+      <div id="cue7" class="clip cue" data-start="7.08" data-duration="1.26" data-track-index="1"><span>have the <em>expert networks</em></span></div>
+      <div id="cue8" class="clip cue" data-start="8.34" data-duration="0.8" data-track-index="1"><span>for each of those</span></div>
+      <div id="cue9" class="clip cue" data-start="9.14" data-duration="0.36" data-track-index="1"><span>models.</span></div>
+      <div id="cue10" class="clip cue" data-start="9.52" data-duration="0.99" data-track-index="1"><span><em>I send my prompt</em></span></div>
+      <div id="cue11" class="clip cue" data-start="10.51" data-duration="1.3" data-track-index="1"><span>in, my prompt then</span></div>
+      <div id="cue12" class="clip cue" data-start="11.81" data-duration="0.59" data-track-index="1"><span>formats</span></div>
+      <div id="cue13" class="clip cue" data-start="12.4" data-duration="0.5" data-track-index="1"><span>that for</span></div>
+      <div id="cue14" class="clip cue" data-start="12.92" data-duration="1.19" data-track-index="1"><span>each of the different</span></div>
+      <div id="cue15" class="clip cue" data-start="14.11" data-duration="0.97" data-track-index="1"><span><em>expert networks</em>,</span></div>
+      <div id="cue16" class="clip cue" data-start="15.08" data-duration="1.12" data-track-index="1"><span>they get the results</span></div>
+      <div id="cue17" class="clip cue" data-start="16.2" data-duration="0.74" data-track-index="1"><span>and then there</span></div>
+      <div id="cue18" class="clip cue" data-start="16.94" data-duration="1.42" data-track-index="1"><span>is a layer,</span></div>
+      <div id="cue19" class="clip cue" data-start="18.36" data-duration="1.02" data-track-index="1"><span>an <em>orchestration</em></span></div>
+      <div id="cue20" class="clip cue" data-start="19.38" data-duration="1.65" data-track-index="1"><span>and really, you can look</span></div>
+      <div id="cue21" class="clip cue" data-start="21.03" data-duration="0.87" data-track-index="1"><span>at it as semantic</span></div>
+      <div id="cue22" class="clip cue" data-start="21.9" data-duration="1.31" data-track-index="1"><span>routing and contextual</span></div>
+      <div id="cue23" class="clip cue" data-start="23.21" data-duration="0.79" data-track-index="1"><span>connectivity</span></div>
+      <div id="cue24" class="clip cue" data-start="24.0" data-duration="1.12" data-track-index="1"><span>that has to happen</span></div>
+      <div id="cue25" class="clip cue" data-start="25.12" data-duration="0.97" data-track-index="1"><span>that then brings all</span></div>
+      <div id="cue26" class="clip cue" data-start="26.09" data-duration="1.32" data-track-index="1"><span>that data back to give</span></div>
+      <div id="cue27" class="clip cue" data-start="27.41" data-duration="1.43" data-track-index="1"><span>you that cohesive</span></div>
+      <div id="cue28" class="clip cue" data-start="28.84" data-duration="0.9" data-track-index="1"><span>answer.</span></div>
+      <div id="cue29" class="clip cue" data-start="29.77" data-duration="1.79" data-track-index="1"><span>So if I'm a CEO and I</span></div>
+      <div id="cue30" class="clip cue" data-start="31.56" data-duration="0.77" data-track-index="1"><span>say, hey, what's</span></div>
+      <div id="cue31" class="clip cue" data-start="32.33" data-duration="0.97" data-track-index="1"><span>happening with the $50</span></div>
+      <div id="cue32" class="clip cue" data-start="33.3" data-duration="0.63" data-track-index="1"><span>million I threw</span></div>
+      <div id="cue33" class="clip cue" data-start="33.93" data-duration="0.89" data-track-index="1"><span>at this new product, I</span></div>
+      <div id="cue34" class="clip cue" data-start="34.82" data-duration="1.05" data-track-index="1"><span>wanna know an answer</span></div>
+      <div id="cue35" class="clip cue" data-start="35.87" data-duration="1.09" data-track-index="1"><span><em>relatively quickly</em></span></div>
+      <div id="cue36" class="clip cue" data-start="36.96" data-duration="0.87" data-track-index="1"><span>and not have to wait</span></div>
+      <div id="cue37" class="clip cue" data-start="37.83" data-duration="0.69" data-track-index="1"><span><em>weeks or months</em></span></div>
+      <div id="cue38" class="clip cue" data-start="38.52" data-duration="0.61" data-track-index="1"><span>because if I</span></div>
+      <div id="cue39" class="clip cue" data-start="39.13" data-duration="0.83" data-track-index="1"><span>have to make <em>a pivot</em>.</span></div>
+      <div id="cue40" class="clip cue" data-start="40.0" data-duration="1.01" data-track-index="1"><span>So you're <em>not a neocloud</em></span></div>
+      <div id="cue41" class="clip cue" data-start="41.01" data-duration="0.65" data-track-index="1"><span>anymore, you're</span></div>
+      <div id="cue42" class="clip cue" data-start="41.66" data-duration="1.5" data-track-index="1"><span>an <em>intelligent cloud</em>.</span></div>
+      <div id="cue43" class="clip cue" data-start="43.23" data-duration="0.48" data-track-index="1"><span>We have to be.</span></div>
+      <img id="logo" class="clip" src="silicon-data-white.png" width="300" height="60" data-start="0" data-duration="43.71" data-track-index="2" />
+    </div>
+    <script>
+      // GENERATED by edit/captions_overlay.py — do not hand-edit.
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // captions cut in and out with the clip window — no tweens by design
+      tl.set("#root", { opacity: 1 }, 0);
+      tl.set("#root", { opacity: 1 }, 43.71);
+      tl.seek(0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
