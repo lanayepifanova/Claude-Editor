@@ -1,5 +1,5 @@
 {"res": "1920x1080", "fps": "24000/1001", "safe": [34, 1046],
  "cards": [
-  {"name": "Phoebe Liu", "role": "Reporter, The Information", "side": "left",  "in": 0.3, "out": 5.6},
-  {"name": "Carmen Li", "role": "CEO, Silicon Data & Compute Exchange", "side": "right", "in": 12.0, "out": 17.4}
+  {"name": "Phoebe Liu", "role": "Reporter, The Information", "side": "left",  "in": 0.1, "out": 8.6},
+  {"name": "Carmen Li", "role": "CEO, Silicon Data & Compute Exchange", "side": "right", "in": 38.8, "out": 47.3}
  ]}
