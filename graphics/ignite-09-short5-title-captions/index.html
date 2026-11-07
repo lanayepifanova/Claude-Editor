@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>captions</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family:"Inter"; src:url("Inter-Medium.ttf") format("truetype"); font-weight:500; font-style:normal; }
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:transparent; }
+      #root { position:relative; width:1080px; height:1920px; }
+      .cue {
+        position:absolute; left:0; right:0; top:77.5%;
+        transform:translateY(-50%);
+        display:flex; align-items:center; justify-content:center;
+        text-align:center;
+      }
+      .cue span {
+        display:inline-block; max-width:778px; white-space:nowrap;
+        font-family:'Inter', sans-serif;
+        font-weight:500; font-size:54px; line-height:1.18;
+        letter-spacing:-0.01em; color:#FFFFFF;
+        /* hard edge, zero blur — reads on any background, never looks glowy */
+        text-shadow:
+          4px 0 0 #09090B, -4px 0 0 #09090B, 0 4px 0 #09090B, 0 -4px 0 #09090B,
+          3px 3px 0 #09090B, -3px 3px 0 #09090B,
+          3px -3px 0 #09090B, -3px -3px 0 #09090B;
+      }
+      /* key words in brand Sky, same edge — emphasis, not decoration */
+      .cue em { font-style:normal; color:#67DEF9; }
+      #logo {
+        position:absolute; top:110px; left:59px;
+        width:300px; height:60px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="46.547"
+         data-width="1080" data-height="1920" data-fps="23.976"
+         data-layout-allow-overflow="true">
+      <div id="cue0" class="clip cue" data-start="0.02" data-duration="0.998" data-track-index="1"><span>If you look</span></div>
+      <div id="cue1" class="clip cue" data-start="1.018" data-duration="0.997" data-track-index="1"><span>at the publicly</span></div>
+      <div id="cue2" class="clip cue" data-start="2.015" data-duration="0.665" data-track-index="1"><span>available information,</span></div>
+      <div id="cue3" class="clip cue" data-start="2.68" data-duration="1.26" data-track-index="1"><span>which is the comment</span></div>
+      <div id="cue4" class="clip cue" data-start="3.94" data-duration="0.78" data-track-index="1"><span>is public, right?</span></div>
+      <div id="cue5" class="clip cue" data-start="4.72" data-duration="0.88" data-track-index="1"><span>You see the comments,</span></div>
+      <div id="cue6" class="clip cue" data-start="5.6" data-duration="1.68" data-track-index="1"><span>it's all reasonable,</span></div>
+      <div id="cue7" class="clip cue" data-start="7.28" data-duration="0.56" data-track-index="1"><span>right?</span></div>
+      <div id="cue8" class="clip cue" data-start="7.84" data-duration="1.13" data-track-index="1"><span>The things we witnessed</span></div>
+      <div id="cue9" class="clip cue" data-start="8.97" data-duration="0.68" data-track-index="1"><span>two and a half</span></div>
+      <div id="cue10" class="clip cue" data-start="9.65" data-duration="0.59" data-track-index="1"><span>years ago.</span></div>
+      <div id="cue11" class="clip cue" data-start="10.24" data-duration="0.74" data-track-index="1"><span>So one of the questions,</span></div>
+      <div id="cue12" class="clip cue" data-start="10.98" data-duration="1.04" data-track-index="1"><span>for example, is, hey,</span></div>
+      <div id="cue13" class="clip cue" data-start="12.02" data-duration="1.59" data-track-index="1"><span>you know, in everyone's</span></div>
+      <div id="cue14" class="clip cue" data-start="13.61" data-duration="1.78" data-track-index="1"><span>mind, the <em>biggest player</em></span></div>
+      <div id="cue15" class="clip cue" data-start="15.39" data-duration="1.44" data-track-index="1"><span>in the cloud space are</span></div>
+      <div id="cue16" class="clip cue" data-start="16.83" data-duration="1.49" data-track-index="1"><span><em>hyperscalers</em>, majority</span></div>
+      <div id="cue17" class="clip cue" data-start="18.32" data-duration="1.12" data-track-index="1"><span>transactions from them,</span></div>
+      <div id="cue18" class="clip cue" data-start="19.44" data-duration="1.55" data-track-index="1"><span>which is <em>100% correct</em></span></div>
+      <div id="cue19" class="clip cue" data-start="20.99" data-duration="0.83" data-track-index="1"><span>observation.</span></div>
+      <div id="cue20" class="clip cue" data-start="21.82" data-duration="0.832" data-track-index="1"><span>The concern</span></div>
+      <div id="cue21" class="clip cue" data-start="22.652" data-duration="1.249" data-track-index="1"><span>would be valid</span></div>
+      <div id="cue22" class="clip cue" data-start="23.901" data-duration="2.081" data-track-index="1"><span>if our only data source</span></div>
+      <div id="cue23" class="clip cue" data-start="25.982" data-duration="1.678" data-track-index="1"><span>is, what if your data</span></div>
+      <div id="cue24" class="clip cue" data-start="27.66" data-duration="0.81" data-track-index="1"><span>source is <em>only three</em></span></div>
+      <div id="cue25" class="clip cue" data-start="28.47" data-duration="0.37" data-track-index="1"><span>of them?</span></div>
+      <div id="cue26" class="clip cue" data-start="28.86" data-duration="1.025" data-track-index="1"><span>Isn't, you know, that's</span></div>
+      <div id="cue27" class="clip cue" data-start="29.885" data-duration="0.79" data-track-index="1"><span>harmful, being</span></div>
+      <div id="cue28" class="clip cue" data-start="30.675" data-duration="0.825" data-track-index="1"><span><em>manipulated</em>, right?</span></div>
+      <div id="cue29" class="clip cue" data-start="31.5" data-duration="1.34" data-track-index="1"><span>100% legit question.</span></div>
+      <div id="cue30" class="clip cue" data-start="32.84" data-duration="1.09" data-track-index="1"><span>That was the case two</span></div>
+      <div id="cue31" class="clip cue" data-start="33.93" data-duration="1.07" data-track-index="1"><span>and a half years ago</span></div>
+      <div id="cue32" class="clip cue" data-start="35.0" data-duration="0.576" data-track-index="1"><span>when we entered</span></div>
+      <div id="cue33" class="clip cue" data-start="35.576" data-duration="0.364" data-track-index="1"><span>the space.</span></div>
+      <div id="cue34" class="clip cue" data-start="35.96" data-duration="1.24" data-track-index="1"><span>There were three, four,</span></div>
+      <div id="cue35" class="clip cue" data-start="37.2" data-duration="1.36" data-track-index="1"><span>five major <em>hyperscalers</em>,</span></div>
+      <div id="cue36" class="clip cue" data-start="38.56" data-duration="1.43" data-track-index="1"><span>you know, <em>three neocloud</em></span></div>
+      <div id="cue37" class="clip cue" data-start="39.99" data-duration="1.31" data-track-index="1"><span>providers possibly back</span></div>
+      <div id="cue38" class="clip cue" data-start="41.3" data-duration="0.78" data-track-index="1"><span>then, right?</span></div>
+      <div id="cue39" class="clip cue" data-start="42.11" data-duration="0.58" data-track-index="1"><span>Now we're at a whole</span></div>
+      <div id="cue40" class="clip cue" data-start="42.69" data-duration="0.63" data-track-index="1"><span>summit of them.</span></div>
+      <div id="cue41" class="clip cue" data-start="43.37" data-duration="0.69" data-track-index="1"><span>Exactly, now</span></div>
+      <div id="cue42" class="clip cue" data-start="44.06" data-duration="1.33" data-track-index="1"><span>we have <em>over 300</em></span></div>
+      <div id="cue43" class="clip cue" data-start="45.39" data-duration="0.644" data-track-index="1"><span><em>neocloud providers</em></span></div>
+      <div id="cue44" class="clip cue" data-start="46.034" data-duration="0.513" data-track-index="1"><span>on our platform.</span></div>
+      <img id="logo" class="clip" src="silicon-data-white.png" width="300" height="60" data-start="0" data-duration="46.547" data-track-index="2" />
+    </div>
+    <script>
+      // GENERATED by edit/captions_overlay.py — do not hand-edit.
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // captions cut in and out with the clip window — no tweens by design
+      tl.set("#root", { opacity: 1 }, 0);
+      tl.set("#root", { opacity: 1 }, 46.547);
+      tl.seek(0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
