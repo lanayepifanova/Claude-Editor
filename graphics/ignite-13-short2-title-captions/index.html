@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>captions</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family:"Inter"; src:url("Inter-Medium.ttf") format("truetype"); font-weight:500; font-style:normal; }
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:transparent; }
+      #root { position:relative; width:1080px; height:1920px; }
+      .cue {
+        position:absolute; left:0; right:0; top:77.5%;
+        transform:translateY(-50%);
+        display:flex; align-items:center; justify-content:center;
+        text-align:center;
+      }
+      .cue span {
+        display:inline-block; max-width:778px; white-space:nowrap;
+        font-family:'Inter', sans-serif;
+        font-weight:500; font-size:54px; line-height:1.18;
+        letter-spacing:-0.01em; color:#FFFFFF;
+        /* hard edge, zero blur — reads on any background, never looks glowy */
+        text-shadow:
+          4px 0 0 #09090B, -4px 0 0 #09090B, 0 4px 0 #09090B, 0 -4px 0 #09090B,
+          3px 3px 0 #09090B, -3px 3px 0 #09090B,
+          3px -3px 0 #09090B, -3px -3px 0 #09090B;
+      }
+      /* key words in brand Sky, same edge — emphasis, not decoration */
+      .cue em { font-style:normal; color:#67DEF9; }
+      #logo {
+        position:absolute; top:110px; left:59px;
+        width:300px; height:60px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="36.286"
+         data-width="1080" data-height="1920" data-fps="23.976"
+         data-layout-allow-overflow="true">
+      <div id="cue0" class="clip cue" data-start="0.01" data-duration="0.78" data-track-index="1"><span>Inference</span></div>
+      <div id="cue1" class="clip cue" data-start="0.79" data-duration="1.11" data-track-index="1"><span>is a fundamentally</span></div>
+      <div id="cue2" class="clip cue" data-start="1.9" data-duration="1.26" data-track-index="1"><span>different problem.</span></div>
+      <div id="cue3" class="clip cue" data-start="3.16" data-duration="0.89" data-track-index="1"><span>Inference</span></div>
+      <div id="cue4" class="clip cue" data-start="4.05" data-duration="1.31" data-track-index="1"><span>is how everyone</span></div>
+      <div id="cue5" class="clip cue" data-start="5.36" data-duration="1.96" data-track-index="1"><span>is actually <em>making money</em></span></div>
+      <div id="cue6" class="clip cue" data-start="7.32" data-duration="1.04" data-track-index="1"><span>out of AI.</span></div>
+      <div id="cue7" class="clip cue" data-start="8.36" data-duration="1.01" data-track-index="1"><span>How do you actually make</span></div>
+      <div id="cue8" class="clip cue" data-start="9.37" data-duration="0.91" data-track-index="1"><span>it in production?</span></div>
+      <div id="cue9" class="clip cue" data-start="10.28" data-duration="1.48" data-track-index="1"><span>It needs to be scalable</span></div>
+      <div id="cue10" class="clip cue" data-start="11.76" data-duration="1.25" data-track-index="1"><span>and you have to make</span></div>
+      <div id="cue11" class="clip cue" data-start="13.01" data-duration="0.55" data-track-index="1"><span><em>ends meet</em>.</span></div>
+      <div id="cue12" class="clip cue" data-start="13.56" data-duration="1.41" data-track-index="1"><span>So inference is about</span></div>
+      <div id="cue13" class="clip cue" data-start="14.97" data-duration="0.87" data-track-index="1"><span><em>economics</em>.</span></div>
+      <div id="cue14" class="clip cue" data-start="15.84" data-duration="1.19" data-track-index="1"><span>Inference is about</span></div>
+      <div id="cue15" class="clip cue" data-start="17.03" data-duration="1.54" data-track-index="1"><span>how much am I paying</span></div>
+      <div id="cue16" class="clip cue" data-start="18.57" data-duration="0.87" data-track-index="1"><span>for <em>the power</em>?</span></div>
+      <div id="cue17" class="clip cue" data-start="19.44" data-duration="0.95" data-track-index="1"><span>How much am I paying</span></div>
+      <div id="cue18" class="clip cue" data-start="20.39" data-duration="0.97" data-track-index="1"><span>for <em>the capital</em>?</span></div>
+      <div id="cue19" class="clip cue" data-start="21.36" data-duration="1.68" data-track-index="1"><span>How much is the overall</span></div>
+      <div id="cue20" class="clip cue" data-start="23.04" data-duration="0.68" data-track-index="1"><span><em>OPEX cost</em>?</span></div>
+      <div id="cue21" class="clip cue" data-start="23.72" data-duration="1.96" data-track-index="1"><span>And then <em>how valuable</em></span></div>
+      <div id="cue22" class="clip cue" data-start="25.68" data-duration="1.47" data-track-index="1"><span>are the tokens that I'm</span></div>
+      <div id="cue23" class="clip cue" data-start="27.15" data-duration="0.61" data-track-index="1"><span>delivering?</span></div>
+      <div id="cue24" class="clip cue" data-start="27.77" data-duration="1.22" data-track-index="1"><span>And <em>how many tokens</em> I</span></div>
+      <div id="cue25" class="clip cue" data-start="28.99" data-duration="0.97" data-track-index="1"><span>can deliver?</span></div>
+      <div id="cue26" class="clip cue" data-start="29.96" data-duration="1.41" data-track-index="1"><span>So it's a fundamentally</span></div>
+      <div id="cue27" class="clip cue" data-start="31.37" data-duration="1.43" data-track-index="1"><span>different question.</span></div>
+      <div id="cue28" class="clip cue" data-start="32.8" data-duration="1.04" data-track-index="1"><span>People that do it</span></div>
+      <div id="cue29" class="clip cue" data-start="33.84" data-duration="0.85" data-track-index="1"><span>well solve</span></div>
+      <div id="cue30" class="clip cue" data-start="34.69" data-duration="1.11" data-track-index="1"><span>it in a fundamentally</span></div>
+      <div id="cue31" class="clip cue" data-start="35.8" data-duration="0.486" data-track-index="1"><span>different way.</span></div>
+      <img id="logo" class="clip" src="silicon-data-white.png" width="300" height="60" data-start="0" data-duration="36.286" data-track-index="2" />
+    </div>
+    <script>
+      // GENERATED by edit/captions_overlay.py — do not hand-edit.
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // captions cut in and out with the clip window — no tweens by design
+      tl.set("#root", { opacity: 1 }, 0);
+      tl.set("#root", { opacity: 1 }, 36.286);
+      tl.seek(0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
