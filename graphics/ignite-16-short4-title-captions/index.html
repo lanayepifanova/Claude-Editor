@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>captions</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family:"Inter"; src:url("Inter-Medium.ttf") format("truetype"); font-weight:500; font-style:normal; }
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:transparent; }
+      #root { position:relative; width:1080px; height:1920px; }
+      .cue {
+        position:absolute; left:0; right:0; top:77.5%;
+        transform:translateY(-50%);
+        display:flex; align-items:center; justify-content:center;
+        text-align:center;
+      }
+      .cue span {
+        display:inline-block; max-width:778px; white-space:nowrap;
+        font-family:'Inter', sans-serif;
+        font-weight:500; font-size:54px; line-height:1.18;
+        letter-spacing:-0.01em; color:#FFFFFF;
+        /* hard edge, zero blur — reads on any background, never looks glowy */
+        text-shadow:
+          4px 0 0 #09090B, -4px 0 0 #09090B, 0 4px 0 #09090B, 0 -4px 0 #09090B,
+          3px 3px 0 #09090B, -3px 3px 0 #09090B,
+          3px -3px 0 #09090B, -3px -3px 0 #09090B;
+      }
+      /* key words in brand Sky, same edge — emphasis, not decoration */
+      .cue em { font-style:normal; color:#67DEF9; }
+      #logo {
+        position:absolute; top:110px; left:59px;
+        width:300px; height:60px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="39.79"
+         data-width="1080" data-height="1920" data-fps="23.976"
+         data-layout-allow-overflow="true">
+      <div id="cue0" class="clip cue" data-start="0.02" data-duration="0.855" data-track-index="1"><span>I think there</span></div>
+      <div id="cue1" class="clip cue" data-start="0.875" data-duration="1.425" data-track-index="1"><span>is, you know, a big</span></div>
+      <div id="cue2" class="clip cue" data-start="2.3" data-duration="1.3" data-track-index="1"><span><em>shift</em> that is happening</span></div>
+      <div id="cue3" class="clip cue" data-start="3.6" data-duration="0.68" data-track-index="1"><span>in the energy</span></div>
+      <div id="cue4" class="clip cue" data-start="4.28" data-duration="1.4" data-track-index="1"><span>and AI space,</span></div>
+      <div id="cue5" class="clip cue" data-start="5.68" data-duration="1.73" data-track-index="1"><span>which is we're moving</span></div>
+      <div id="cue6" class="clip cue" data-start="7.41" data-duration="2.07" data-track-index="1"><span>from a <em>training-centric</em></span></div>
+      <div id="cue7" class="clip cue" data-start="9.48" data-duration="0.8" data-track-index="1"><span>type of era</span></div>
+      <div id="cue8" class="clip cue" data-start="10.28" data-duration="1.38" data-track-index="1"><span>to an <em>inference-centric</em></span></div>
+      <div id="cue9" class="clip cue" data-start="11.66" data-duration="1.3" data-track-index="1"><span>type of era.</span></div>
+      <div id="cue10" class="clip cue" data-start="12.96" data-duration="1.3" data-track-index="1"><span>The AI infrastructure,</span></div>
+      <div id="cue11" class="clip cue" data-start="14.26" data-duration="1.34" data-track-index="1"><span>hyperscaler, these</span></div>
+      <div id="cue12" class="clip cue" data-start="15.6" data-duration="0.95" data-track-index="1"><span><em>massive clusters</em>,</span></div>
+      <div id="cue13" class="clip cue" data-start="16.55" data-duration="0.89" data-track-index="1"><span>has been designed</span></div>
+      <div id="cue14" class="clip cue" data-start="17.44" data-duration="1.06" data-track-index="1"><span>for training rather</span></div>
+      <div id="cue15" class="clip cue" data-start="18.5" data-duration="0.7" data-track-index="1"><span>than inference.</span></div>
+      <div id="cue16" class="clip cue" data-start="19.2" data-duration="1.33" data-track-index="1"><span>Inference runs much</span></div>
+      <div id="cue17" class="clip cue" data-start="20.53" data-duration="0.98" data-track-index="1"><span><em>better in small</em></span></div>
+      <div id="cue18" class="clip cue" data-start="21.51" data-duration="0.89" data-track-index="1"><span>distributed</span></div>
+      <div id="cue19" class="clip cue" data-start="22.4" data-duration="1.77" data-track-index="1"><span>infrastructures, closer</span></div>
+      <div id="cue20" class="clip cue" data-start="24.17" data-duration="0.95" data-track-index="1"><span>to end users running</span></div>
+      <div id="cue21" class="clip cue" data-start="25.12" data-duration="1.16" data-track-index="1"><span>on very <em>cheap power</em>,</span></div>
+      <div id="cue22" class="clip cue" data-start="26.3" data-duration="0.96" data-track-index="1"><span>because it's going</span></div>
+      <div id="cue23" class="clip cue" data-start="27.26" data-duration="0.79" data-track-index="1"><span>to be extremely</span></div>
+      <div id="cue24" class="clip cue" data-start="28.05" data-duration="1.18" data-track-index="1"><span>competitive in terms</span></div>
+      <div id="cue25" class="clip cue" data-start="29.23" data-duration="1.21" data-track-index="1"><span>of margins very soon.</span></div>
+      <div id="cue26" class="clip cue" data-start="30.44" data-duration="0.8" data-track-index="1"><span>It is already,</span></div>
+      <div id="cue27" class="clip cue" data-start="31.24" data-duration="1.06" data-track-index="1"><span>and there's plenty</span></div>
+      <div id="cue28" class="clip cue" data-start="32.3" data-duration="0.66" data-track-index="1"><span>of extremely</span></div>
+      <div id="cue29" class="clip cue" data-start="32.96" data-duration="1.4" data-track-index="1"><span><em>token-hungry</em> companies</span></div>
+      <div id="cue30" class="clip cue" data-start="34.36" data-duration="0.94" data-track-index="1"><span>that are running</span></div>
+      <div id="cue31" class="clip cue" data-start="35.3" data-duration="1.1" data-track-index="1"><span>on <em>very low margins</em>.</span></div>
+      <div id="cue32" class="clip cue" data-start="36.4" data-duration="0.8" data-track-index="1"><span>They are <em>desperate</em></span></div>
+      <div id="cue33" class="clip cue" data-start="37.2" data-duration="0.51" data-track-index="1"><span>for compute,</span></div>
+      <div id="cue34" class="clip cue" data-start="37.73" data-duration="0.805" data-track-index="1"><span>and they need compute</span></div>
+      <div id="cue35" class="clip cue" data-start="38.535" data-duration="1.185" data-track-index="1"><span>to serve inference.</span></div>
+      <img id="logo" class="clip" src="silicon-data-white.png" width="300" height="60" data-start="0" data-duration="39.79" data-track-index="2" />
+    </div>
+    <script>
+      // GENERATED by edit/captions_overlay.py — do not hand-edit.
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // captions cut in and out with the clip window — no tweens by design
+      tl.set("#root", { opacity: 1 }, 0);
+      tl.set("#root", { opacity: 1 }, 39.79);
+      tl.seek(0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
