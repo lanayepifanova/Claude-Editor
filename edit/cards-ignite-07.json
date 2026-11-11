@@ -1,5 +1,0 @@
-{"res": "1920x1080", "fps": "24000/1001", "safe": [34, 1046],
- "cards": [
-  {"name": "Carmen Li", "role": "CEO, Silicon Data & Compute Exchange", "side": "left",  "in": 0.1, "out": 8.6},
-  {"name": "Drew Pletcher", "role": "Lightning AI", "side": "right", "in": 25.35, "out": 33.85}
- ]}

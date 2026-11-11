@@ -1,8 +1,0 @@
-source 1920x1080 @ 23.976  active rows 34-1046  crop 568x1012
-  shot    0.00-   2.71s  face_x   875  crop_x 590
-  shot    2.71-  10.93s  face_x   882  crop_x 598
-  shot   10.93-  14.26s  face_x  1502  crop_x 1216
-  shot   14.26-  25.15s  face_x   920  crop_x 634
-  shot   25.15-  26.86s  face_x   882  crop_x 598
-  shot   26.86-  43.00s  face_x   896  crop_x 612
-wrote graphics/ignite-10-short5-vertical.mp4  (6 shots, 0 without a face)

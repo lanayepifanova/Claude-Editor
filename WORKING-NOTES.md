@@ -1067,3 +1067,64 @@ Traps: a font-family named "Serif" rendered as sans in the render browser (macOS
 snapshot looked fine — use unique names (HFSerif); check the RENDERED .mov, not the snapshot. In zsh a
 `rm` with one unmatched glob aborts the whole command and deletes nothing. Captions said "Shorts Studio"
 over audio saying "Genjutsu for Reels" (her choice). She posted it, then asked to delete everything.
+
+**Shorts flash + caption drift + dry ending (2026-11-09, redo of "[CP] Ignite 04 - 3 neoclouds to 300").**
+Her words: *"really quick flash across the screen… short unpleasant flashes, very gross"*, *"captions don't
+line up with the speaker's pace"*, *"if you are cropping to the speaker, go directly there without the weird
+transition and bumpy crops"*, and *"it cuts off 'supply demand curve' very brutally… way too dry"*. Three
+separate bugs, all upstream of anything she could see in the captions:
+- **The flash was `reframe.py` cropping every new camera shot's FIRST frame for the previous speaker.**
+  Shot detection read the source without `-fps_mode vfr`, so cuts were detected one frame late (true
+  108/217/406/566, detected 109/218/407/567), and the crop stepped on a truncated timestamp. One wide-shot
+  frame showed at every cut, in every short built with `reframe.py`. Fixed: cuts are frame indices (vfr),
+  the crop steps on `n`, and `reframe.py` now prints an `audit` (a cut must be ONE frame-to-frame spike;
+  a second spike on the next frame is the defect). Audit the output, not the plan. Do NOT run that audit on
+  finished exports: captions, cards and b-roll make most shorts read as "double spike" (45 of 53 did).
+- **Word times from whisper on the CUT audio drift up to ~0.5s near the joins** (43 of 110 words off by
+  >=0.1s). `preprocess.py` now transcribes the UNCUT source once (cached `source_words.json`) and maps
+  each word through the cut list; `--cut-transcript` restores the old behaviour. Checked against the
+  envelope: "measure/report/reflect" dips land where the mapped times say. Whisper's times are still ~0.3s
+  loose at the clip's very end, so a word landing in a removed gap is snapped to the nearest kept edge
+  (<0.4s) instead of dropped. The first version dropped "of", "this", "time" and the closing "curve".
+- **Flash captions.** `captions_overlay.py` re-splits any sentence holding a cue under 0.45s ("source"
+  alone for 0.28s) with a small DP: no line ends on a function word or a subject pronoun.
+- **The abrupt ending**: the recipe's 0.04s tail stopped 0.12s short of the end of "curve", still at
+  -38 dB. Extend the last segment to where the voice decays (~-50 dB) with an `overrides` `out`, and end
+  the clip before the other speaker's next word starts (here 162.60 in the source).
+The redo is in `output/Review/` and the shipped file is untouched. `shorts_title_cards.py --redo <stem>
+--out-dir output/Review --only "<name>"` builds from a fresh master. The other 52 shorts still carry the
+one-frame flash and the drifted captions: each needs reframe -> preprocess -> captions -> master -> title card.
+Trap: `pillow_crop.py --restore` replays the old crop by timestamp and a stale `frame_map.json`; a redo
+bypasses both, so do not run it on a rebuilt short.
+
+**Fable 5.2 x Higgsfield reel (2026-11-10): brief-driven, 26.2s vertical, picture plates built in ffmpeg.**
+Her ask: reaction opener over the voiceover, kit montage with each category named, screen-recording
+walkthrough, cut dead space, add captions; brief at the Higgsfield Notion page. `Fable 5.2 Launch.MP4` was her
+whole read (rotation -90, -18.3 LUFS, 31.6s -> 26.2s); the reaction clip is silent. Traps worth keeping:
+- **Whisper on the SOURCE collapses silence at the head**: "Anthropic" came back at 0.0-0.9s, before the first
+  kept segment, and was dropped from the captions. `preprocess.py --cut-transcript` (word-level on the cut audio)
+  gave clean times (commercials 4.80, Claude 9.03, Comment Fable 24.48). Use it on short clips with a lead-in.
+- **restore_speech's merges across 0.27-0.4s gaps were breaths** (isolated probes came back blank); only the
+  sub-0.2s slices and the tail extension (`out` 29.4 on "link") were kept.
+- **Opaque plates + alpha in one ffmpeg graph**: `overlay` drops a transparent base, so build the picture on
+  opaque black and the matte separately and `alphamerge` them. `alphaextract` then `signalstats` reads limited-range
+  junk; decode to rgba and read byte 3 instead. See `edit/build_fable52_plates.py`.
+- Landscape kit clips go fit-over-blur (1080 wide), vertical ones full-bleed; labels at y 1330 in Georgia Bold with
+  the cream hard edge. Captions at y 0.25 would sit on the phone UI, so the recording is shrunk to 78% and
+  the caption pass for that window is at y 0.855, spliced in with ffmpeg `concat` (frames 493-666).
+- A background `( ... ) &` subshell render is cancelled when the parent exits ("render_cancelled_parent_exited");
+  run renders in the foreground of a `run_in_background` Bash call. macOS `sed -i` needs `''`, and a failed sed
+  inside `&&` silently skipped the render chain.
+- The recording only shows connecting the connector (no video request, no result). Not faked.
+
+**Higgsfield Shorts Studio v3 reel (2026-11-10): brief-driven, kit on top / her on the bottom.** Brief is the Notion
+page `higgsfield-shorts-studio-v3` (a plain fetch returns just "Notion", so read it through Chrome `get_page_text`).
+Format: media-kit video on top, her below, word-by-word captions with key numbers highlighted, 25-60s, comment-CTA
+"SHORTS". Her read was her own wording, not the brief's script, so the brief's hook stats (2M creators, 1%) were not
+used. Kit is a Dropbox folder she gave in chat (`Video categories.zip`, 870 MB, 38 clips) unpacked to
+`footage/Higgsfield Shorts Kit/`; the zip has a stray "/" entry that breaks `unzip` — extract with Python. Built by
+`edit/build_hf3.py` (master -> layout -> caps): kit cover-cropped to 1080x1000 on top, her 1080x920 crop (row 300) below,
+captions at y 1138 on the wall between them. Locked recipe untouched (46.3 -> 38.9s, +0.07s on the last word's tail);
+all 17 restore_speech candidates transcribed blank in isolation, so none were applied. Captions are 1-3 word chunks
+(>=0.45s, <=16 chars), not strictly one word: her pace puts single words at 0.1-0.2s and those read as flashes.
+Preview: `output/Review/Higgsfield Shorts Studio v3.mp4`.

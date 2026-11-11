@@ -74,20 +74,43 @@ def letterbox(src, w, h, start, end):
 
 
 def shots(src, start, end, fps, thresh):
-    """camera cuts, in seconds relative to start"""
+    """camera cuts as FRAME indices into the decoded range, plus the diffs.
+
+    `-fps_mode vfr` matters: without it ffmpeg's default cfr output shifted every
+    detected cut one frame late against the real picture (kc-short3: true cuts at
+    frames 108/217/406/566, detected 109/218/407/567), so each new shot's first
+    frame was cropped for the PREVIOUS speaker -- a one-frame flash at every cut.
+    """
     sw = 160
     p = subprocess.run(
         ["ffmpeg", "-v", "error", "-ss", f"{start:.3f}", "-t", f"{end - start:.3f}",
-         "-i", src, "-vf", f"scale={sw}:90", "-f", "rawvideo", "-pix_fmt", "gray", "-"],
-        capture_output=True, check=True).stdout
+         "-i", src, "-fps_mode", "vfr", "-vf", f"scale={sw}:90", "-f", "rawvideo",
+         "-pix_fmt", "gray", "-"],
+        capture_output=True, stdin=subprocess.DEVNULL, check=True).stdout
     fr = np.frombuffer(p, np.uint8).reshape(-1, 90, sw).astype(np.int16)
     diff = np.abs(np.diff(fr, axis=0)).mean((1, 2))
-    cuts = [0.0]
+    cuts = [0]
     for i, d in enumerate(diff):
-        t = (i + 1) / fps
-        if d > thresh and t - cuts[-1] > 0.4:
-            cuts.append(t)
-    return cuts + [end - start], diff
+        f = i + 1
+        if d > thresh and (f - cuts[-1]) / fps > 0.4:
+            cuts.append(f)
+    # a cut the 0.4s rule swallowed is a flash cutaway, not a shot to follow
+    flashes = [i + 1 for i, d in enumerate(diff) if d > thresh and (i + 1) not in cuts]
+    return cuts + [len(fr)], diff, flashes
+
+
+def audit(path, thresh=6.0):
+    """Text check on a finished vertical: every camera cut must be ONE frame-to-frame
+    spike. A second spike on the next frame is a wrong-crop (or flash) frame."""
+    raw = subprocess.run(
+        ["ffmpeg", "-v", "error", "-i", str(path), "-fps_mode", "vfr", "-vf", "scale=90:160",
+         "-f", "rawvideo", "-pix_fmt", "gray", "-"],
+        capture_output=True, stdin=subprocess.DEVNULL, check=True).stdout
+    fr = np.frombuffer(raw, np.uint8).reshape(-1, 160, 90).astype(np.int16)
+    d = np.abs(np.diff(fr, axis=0)).mean((1, 2))
+    spikes = [i + 1 for i, x in enumerate(d) if x > thresh]
+    bad = [f for a, f in zip(spikes, spikes[1:]) if f == a + 1]
+    return spikes, bad
 
 
 def subject_x(src, t0, t1, w, h, top, hh, dets):
@@ -120,37 +143,46 @@ def main():
     cw = int(round(hh * 9 / 16)) // 2 * 2
     print(f"source {w}x{h} @ {fps:.3f}  active rows {top}-{top + hh}  crop {cw}x{hh}")
 
-    cuts, _ = shots(a.src, a.start, a.end, fps, a.cut_thresh)
+    cuts, _, flashes = shots(a.src, a.start, a.end, fps, a.cut_thresh)
+    if flashes:
+        print(f"  ! flash cutaways at frames {flashes}: shorter than 0.4s, merged into the "
+              f"surrounding shot. Cut them out of the edit if they are not speech.")
     front = cv2.CascadeClassifier(str(CASCADES / "haarcascade_frontalface_default.xml"))
     prof = cv2.CascadeClassifier(str(CASCADES / "haarcascade_profileface.xml"))
     dets = [(front, None, False), (prof, None, False), (prof, None, True)]
 
     plan, prev = [], w / 2
-    for t0, t1 in zip(cuts, cuts[1:]):
+    for f0, f1 in zip(cuts, cuts[1:]):
+        t0, t1 = f0 / fps, f1 / fps
         x = subject_x(a.src, a.start + t0, a.start + t1, w, h, top, hh, dets)
         found = x is not None
         cx = x if found else prev
         left = int(min(max(cx - cw / 2, 0), w - cw)) // 2 * 2
-        plan.append({"t0": round(t0, 3), "t1": round(t1, 3), "face_x": None if x is None else round(x),
+        plan.append({"t0": round(t0, 3), "t1": round(t1, 3), "f0": f0, "f1": f1,
+                     "face_x": None if x is None else round(x),
                      "crop_x": left, "found": found})
         prev = cx
         print(f"  shot {t0:7.2f}-{t1:7.2f}s  face_x {'—' if x is None else round(x):>5}  crop_x {left}")
 
     # crop x as a step function of t (t is relative to the -ss seek)
+    # Stepped on the FRAME NUMBER, not the timestamp: this camera writes truncated
+    # timestamps, so a timestamp compare kept the old crop on a cut's first frame.
     expr = str(plan[-1]["crop_x"])
-    for s in reversed(plan[:-1]):
-        expr = f"if(lt(t,{s['t1']}),{s['crop_x']},{expr})"
+    for sh in reversed(plan[:-1]):
+        expr = f"if(lt(n,{sh['f1']}),{sh['crop_x']},{expr})"
     vf = (f"crop={cw}:{hh}:'{expr}':{top},"
           f"scale={OUT_W}:{OUT_H}:flags=lanczos,setsar=1")
     out = Path(a.out); out.parent.mkdir(parents=True, exist_ok=True)
     subprocess.run(
         ["ffmpeg", "-v", "error", "-y", "-ss", f"{a.start:.3f}", "-t", f"{a.end - a.start:.3f}",
-         "-i", a.src, "-vf", vf, "-c:v", "libx264", "-crf", "12", "-preset", "slow",
+         "-i", a.src, "-fps_mode", "passthrough", "-vf", vf, "-c:v", "libx264", "-crf", "12", "-preset", "slow",
          "-pix_fmt", "yuv420p", "-af", "loudnorm=I=-18:TP=-2:LRA=11,aresample=48000",
          "-c:a", "aac", "-b:a", "320k", str(out)],
         check=True)
     json.dump({"source": a.src, "start": a.start, "end": a.end, "active": [top, hh],
                "crop": [cw, hh], "shots": plan}, open(str(out) + ".shots.json", "w"), indent=1)
+    spikes, bad = audit(out)
+    print(f"audit: {len(spikes)} spikes, {len(bad)} double-spike frames {bad}")
     miss = sum(not s["found"] for s in plan)
     print(f"wrote {out}  ({len(plan)} shots, {miss} without a face)")
 

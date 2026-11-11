@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "historyId": "ecc65810-b24f-497a-8e25-9702ac35af82",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "Inter-Medium.ttf": {
+      "hash": "8c883f63b2c4157d997319f2c8bc6995ed4357ef371940d31ca159004a4aae63",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/ecc65810-b24f-497a-8e25-9702ac35af82/blobs/8c/8c883f63b2c4157d997319f2c8bc6995ed4357ef371940d31ca159004a4aae63"
+    },
+    "index.html": {
+      "hash": "d55255cd2da3a23eab1b60f04d7ec6a55777e25b6540971fcba1d24d0da7034b",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/ecc65810-b24f-497a-8e25-9702ac35af82/blobs/d5/d55255cd2da3a23eab1b60f04d7ec6a55777e25b6540971fcba1d24d0da7034b"
+    },
+    "silicon-data-white.png": {
+      "hash": "f2688fa172cb2e0761c5aa8b35946eedcb8e59ea80532a03a0917d077380017b",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/ecc65810-b24f-497a-8e25-9702ac35af82/blobs/f2/f2688fa172cb2e0761c5aa8b35946eedcb8e59ea80532a03a0917d077380017b"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "e9c32cc2-8f05-48b2-a621-06d7e5905329",
+      "completedAt": 1794350652437,
+      "output": "/private/tmp/claude-501/redo_scratch/kc-short2-r3/cap.mov",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
+}

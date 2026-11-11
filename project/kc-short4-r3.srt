@@ -1,0 +1,152 @@
+1
+00:00:00,000 --> 00:00:01,190
+So compute is
+
+2
+00:00:01,213 --> 00:00:02,371
+a giant baby, right?
+
+3
+00:00:02,331 --> 00:00:03,711
+We're still very early
+
+4
+00:00:03,837 --> 00:00:04,836
+stage, but it's gigantic
+
+5
+00:00:04,836 --> 00:00:06,102
+in scale as everyone
+
+6
+00:00:06,102 --> 00:00:07,087
+talk about compute,
+
+7
+00:00:07,170 --> 00:00:08,630
+in trillions as a unit,
+
+8
+00:00:08,630 --> 00:00:09,630
+as a price unit, right?
+
+9
+00:00:09,630 --> 00:00:10,552
+It's kind of ridiculous,
+
+10
+00:00:10,593 --> 00:00:11,345
+but the market
+
+11
+00:00:11,345 --> 00:00:12,400
+definitely needs a lot
+
+12
+00:00:12,400 --> 00:00:13,648
+more transparency,
+
+13
+00:00:14,056 --> 00:00:14,685
+efficiency, right?
+
+14
+00:00:14,645 --> 00:00:15,641
+And risk management,
+
+15
+00:00:15,641 --> 00:00:16,452
+too. That's what Silicon
+
+16
+00:00:16,452 --> 00:00:17,184
+Data is here to provide.
+
+17
+00:00:17,236 --> 00:00:18,446
+You saw, Jensen, a half
+
+18
+00:00:18,446 --> 00:00:19,496
+a trillion capital
+
+19
+00:00:19,496 --> 00:00:20,812
+formation table, right?
+
+20
+00:00:20,837 --> 00:00:21,547
+All the people
+
+21
+00:00:21,547 --> 00:00:22,797
+on the table, they need
+
+22
+00:00:22,818 --> 00:00:23,982
+risk management layer.
+
+23
+00:00:23,982 --> 00:00:24,382
+Without
+
+24
+00:00:24,402 --> 00:00:25,362
+that, the capital
+
+25
+00:00:25,362 --> 00:00:26,322
+formation is going
+
+26
+00:00:26,322 --> 00:00:26,944
+to be very expensive.
+
+27
+00:00:26,981 --> 00:00:27,945
+We all know that, right?
+
+28
+00:00:27,951 --> 00:00:28,871
+So hedging out
+
+29
+00:00:28,871 --> 00:00:30,447
+the longer tail risks,
+
+30
+00:00:30,447 --> 00:00:31,532
+have the transparency
+
+31
+00:00:31,452 --> 00:00:32,412
+on the rental prices
+
+32
+00:00:32,412 --> 00:00:33,242
+going forward,
+
+33
+00:00:33,278 --> 00:00:34,658
+hedging out residual
+
+34
+00:00:34,743 --> 00:00:35,856
+value, lifespan of those
+
+35
+00:00:35,856 --> 00:00:36,968
+asset class, all
+
+36
+00:00:36,968 --> 00:00:38,413
+very critical to all
+
+37
+00:00:38,413 --> 00:00:39,503
+the financiers
+
+38
+00:00:39,503 --> 00:00:40,165
+and neoclouds.
+

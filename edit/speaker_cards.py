@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
-"""Speaker name cards for the opening of an interview — a white plate with an
-orange gradient bar and a black/orange corner tab, modelled on the YC-style
-references in footage/Editing Examples/. Each card swipes in, holds, swipes out.
+"""Speaker name cards for the opening of an interview — a white plate with a
+gradient bar and a black/blue corner tab in Silicon Data Index Blue #2151D1:
+the YC-style references in footage/Editing Examples/ with the orange swapped for
+the brand blue (her call, 2026-11-05). Index Blue is the deck's blue for white
+grounds, which is what the plate is. Each card swipes in, holds,
+swipes out. Bring each card in as early as possible, on the person's first shot.
 
 Config is a JSON list, one card per person:
 
@@ -58,8 +61,8 @@ def build(cfg):
     fps = cfg["fps"]
     top, bottom = cfg.get("safe", [0, h])
     k = w / 1920 * 1.15                # laid out at 1920, then sized up to the references
-    margin = round(cfg.get("margin", 50) * k)
-    lift = round(cfg.get("lift", 40) * k)         # gap above the picture's bottom edge
+    margin = round(cfg.get("margin", 26) * k)
+    lift = round(cfg.get("lift", 14) * k)         # gap above the picture's bottom edge
     cards = cfg["cards"]
     dur = round(max(c["out"] for c in cards) + 0.5, 3)
     secs = "\n".join(card_html(i, c) for i, c in enumerate(cards))
@@ -81,13 +84,13 @@ def build(cfg):
       .card.left {{ left:{margin}px; }}
       .card.right {{ right:{margin}px; }}
       .bar {{ height:{round(22*k)}px; margin-left:{round(22*k)}px;
-              background:linear-gradient(90deg, #FDF1E2 0%, #F4A55A 30%, #EC7A2C 70%, #E2602A 100%); }}
+              background:linear-gradient(90deg, #EEF2FC 0%, #7D9BE6 22%, #3A66D8 50%, #2151D1 100%); }}
       .tab {{ position:absolute; left:0; top:0; width:{round(22*k)}px; height:{round(44*k)}px;
-              background:linear-gradient(#000 0 50%, #EC7A2C 50% 100%); transform-origin:top; }}
-      .plate {{ background:#fff; padding:{round(26*k)}px {round(48*k)}px {round(34*k)}px {round(40*k)}px;
+              background:linear-gradient(#000 0 50%, #2151D1 50% 100%); transform-origin:top; z-index:2; }}
+      .plate {{ background:#fff; padding:{round(16*k)}px {round(41*k)}px {round(29*k)}px {round(33*k)}px;
                 margin-left:0; min-width:{round(600*k)}px; }}
       .name {{ font-weight:700; font-size:{round(72*k)}px; line-height:1.05; letter-spacing:-0.01em; color:#000; }}
-      .role {{ font-weight:400; font-size:{round(40*k)}px; line-height:1.2; margin-top:{round(10*k)}px; color:#111; }}
+      .role {{ font-weight:400; font-size:{round(45*k)}px; line-height:1.2; margin-top:{round(3*k)}px; color:#111; }}
     </style>
   </head>
   <body>

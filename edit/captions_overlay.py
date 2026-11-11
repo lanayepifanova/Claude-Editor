@@ -9,8 +9,14 @@ needs a screenshot to place.
     python3 edit/captions_overlay.py --analysis edit/analysis-Reddit \
         --out graphics/reddit-captions --res 1080x1920 --y 0.25
 """
-import argparse, json, re, shutil, sys
+import argparse, json, re, shutil, struct, sys
 from pathlib import Path
+
+REPO = Path(__file__).resolve().parent.parent
+# The brand fonts ship in graphics/fonts and are copied into each project, so the
+# render never depends on what is installed or on a silent CSS fallback.
+FONT_FILES = {("Inter", 400): "Inter-Regular.ttf", ("Inter", 500): "Inter-Medium.ttf",
+              ("Instrument Sans", 400): "InstrumentSans-Regular.ttf"}
 
 # TikTok-style: short punchy chunks, not broadcast single-lines
 MAX_CHARS = 26          # overwritten in main() from width / font size
@@ -86,7 +92,7 @@ def mark_highlights(words, phrases):
 
 
 def cue_html(c):
-    """Cue words as HTML, gold <em> runs on highlighted words. Trailing
+    """Cue words as HTML, Sky <em> runs on highlighted words. Trailing
     punctuation stays white so the accent sits on the word alone."""
     out = []
     for w in c["words"]:
@@ -101,24 +107,101 @@ def cue_html(c):
     return re.sub(r"</em> <em>", " ", " ".join(out))
 
 
-HL_CSS = "\n      /* key words in the gold accent, same edge — emphasis, not decoration */" \
-         "\n      .cue em { font-style:normal; color:#E8B33A; }"
+HL_CSS = "\n      /* key words in brand Sky, same edge — emphasis, not decoration */" \
+         "\n      .cue em { font-style:normal; color:#67DEF9; }"
+
+
+def font_face_css(font, weight, out=None):
+    """@font-face for a bundled brand font, copying the file into project dir
+    `out` when given. Any other family gets no rule and relies on the system."""
+    name = FONT_FILES.get((font, weight))
+    if not name:
+        return ""
+    if out is not None:
+        shutil.copy(REPO/"graphics"/"fonts"/name, Path(out)/name)
+    return (f"""\n      @font-face {{ font-family:"{font}"; src:url("{name}") format("truetype"); """
+            f"""font-weight:{weight}; font-style:normal; }}""")
+
+
+def png_size(path):
+    with open(path, "rb") as fh:
+        head = fh.read(24)
+    return struct.unpack(">II", head[16:24])
 
 
 def logo_markup(logo, dur):
     """(css, tag) for a static brand mark held for the whole cut — no entrance,
-    it is a watermark. Shared with brand_overlay.py."""
+    it is a watermark. Shared with brand_overlay.py.
+
+    Both dimensions are explicit and object-fit is off the table: height:auto
+    rendered the mark ~20x too tall in 3 of 53 overlays (2026-10-29), with no
+    trace in the log. Flat colour, no shadow or opacity (brand deck p.18-22)."""
     if not logo:
         return "", ""
     css = f"""
       #logo {{
         position:absolute; top:{logo["top"]}px; {logo["side"]}:{logo["inset"]}px;
-        width:{logo["w"]}px; height:auto; opacity:{logo["opacity"]};
-        filter:drop-shadow(0 2px 6px rgba(0,0,0,0.55));
+        width:{logo["w"]}px; height:{logo["h"]}px;
       }}"""
-    tag = (f'      <img id="logo" class="clip" src="{logo["src"]}" data-start="0" '
-           f'data-duration="{dur}" data-track-index="2" />')
+    tag = (f'      <img id="logo" class="clip" src="{logo["src"]}" width="{logo["w"]}" '
+           f'height="{logo["h"]}" data-start="0" data-duration="{dur}" data-track-index="2" />')
     return css, tag
+
+
+SUBJECT = {"i","we","you","they","he","she","there"}   # a line must not end on these
+FLASH = 0.45             # a cue shorter than this reads as a flicker, not a caption
+
+
+def resplit_flashes(cues, txt_of):
+    """Re-split any sentence that holds a flash cue (< FLASH s) so no word is
+    stranded alone for a blink ("source" for 0.28s, "was like," for 0.22s on
+    kc-short3, 2026-11-09). Only the sentence run containing the flash is touched;
+    everything else keeps the grouper's lines. Dynamic programme over the run's
+    words: a cue must fit MAX_CHARS and MAX_DUR, is penalised for being short, for
+    ending on a function word and for breaking off punctuation."""
+    runs, cur = [], []
+    for c in cues:
+        if cur and (re.search(r"[.!?]$", cur[-1]["text"]) or
+                    c["start"] - cur[-1]["end"] >= GAP_SPLIT):
+            runs.append(cur); cur = []
+        cur.append(c)
+    if cur:
+        runs.append(cur)
+    out = []
+    for run in runs:
+        if len(run) < 2 or all(c["end"] - c["start"] >= FLASH for c in run):
+            out.extend(run); continue
+        ws = [w for c in run for w in c["words"]]
+        m = len(ws)
+        INF = float("inf")
+        best = [INF] * (m + 1); best[0] = 0.0; prv = [0] * (m + 1)
+        for j in range(1, m + 1):
+            for i in range(j - 1, -1, -1):
+                seg = ws[i:j]
+                if len(txt_of(seg)) > MAX_CHARS and j - i > 1:
+                    break
+                dur = seg[-1]["t1"] - seg[0]["t0"]
+                if dur > MAX_DUR and j - i > 1:
+                    continue
+                cost = 0.6 + max(0.0, 0.7 - dur) * 8
+                last = seg[-1]["w"]
+                if j < m:
+                    if last.lower().strip(".,!?'\"") in ORPHAN | SUBJECT:
+                        cost += 4.0
+                    elif not re.search(r"[,;:.!?]$", last):
+                        cost += 0.4
+                if best[i] + cost < best[j]:
+                    best[j] = best[i] + cost; prv[j] = i
+        if best[m] == INF:
+            out.extend(run); continue
+        cuts, j = [], m
+        while j > 0:
+            cuts.append((prv[j], j)); j = prv[j]
+        for i, j in reversed(cuts):
+            seg = ws[i:j]
+            out.append({"start": seg[0]["t0"], "end": seg[-1]["t1"],
+                        "text": txt_of(seg), "words": seg})
+    return out
 
 
 def group(words):
@@ -237,6 +320,7 @@ def group(words):
             i += 1
         elif i > 0:
             i -= 1
+    cues = resplit_flashes(cues, txt_of)
     # enforce a readable minimum without colliding with the next cue
     for i, c in enumerate(cues):
         if c["end"] - c["start"] < MIN_DUR:
@@ -245,7 +329,14 @@ def group(words):
     return [c for c in cues if c["end"] > c["start"]]
 
 
-def build(cues, w, h, ypct, dur, fps, font, size, weight, maxw, logo=None):
+def logo_spec(src, w, side, top, frame_w):
+    """Logo geometry for logo_markup, height taken from the PNG's own proportions."""
+    pw, ph = png_size(src)
+    return {"src": Path(src).name, "side": side, "inset": round(frame_w * 0.055),
+            "top": top, "w": w, "h": round(w * ph / pw)}
+
+
+def build(cues, w, h, ypct, dur, fps, font, size, weight, maxw, logo=None, face=""):
     edge = max(3, round(size * 0.075))          # hard dark edge, no blur
     e2 = round(edge * 0.7)
     secs, tl = [], []
@@ -266,7 +357,7 @@ def build(cues, w, h, ypct, dur, fps, font, size, weight, maxw, logo=None):
     <meta name="viewport" content="width={w}, height={h}" />
     <title>captions</title>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
-    <style>
+    <style>{face}
       * {{ margin:0; padding:0; box-sizing:border-box; }}
       html, body {{ width:{w}px; height:{h}px; overflow:hidden; background:transparent; }}
       #root {{ position:relative; width:{w}px; height:{h}px; }}
@@ -278,14 +369,14 @@ def build(cues, w, h, ypct, dur, fps, font, size, weight, maxw, logo=None):
       }}
       .cue span {{
         display:inline-block; max-width:{round(w*maxw)}px; white-space:nowrap;
-        font-family:'{font}', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+        font-family:'{font}', sans-serif;
         font-weight:{weight}; font-size:{size}px; line-height:1.18;
         letter-spacing:-0.01em; color:#FFFFFF;
         /* hard edge, zero blur — reads on any background, never looks glowy */
         text-shadow:
-          {edge}px 0 0 #000, -{edge}px 0 0 #000, 0 {edge}px 0 #000, 0 -{edge}px 0 #000,
-          {e2}px {e2}px 0 #000, -{e2}px {e2}px 0 #000,
-          {e2}px -{e2}px 0 #000, -{e2}px -{e2}px 0 #000;
+          {edge}px 0 0 #09090B, -{edge}px 0 0 #09090B, 0 {edge}px 0 #09090B, 0 -{edge}px 0 #09090B,
+          {e2}px {e2}px 0 #09090B, -{e2}px {e2}px 0 #09090B,
+          {e2}px -{e2}px 0 #09090B, -{e2}px -{e2}px 0 #09090B;
       }}
 {HL_CSS}{logo_css}
     </style>
@@ -321,15 +412,15 @@ def main():
     ap.add_argument("--fps", type=float, default=None,
                     help="defaults to the fps preprocess.py detected and recorded "
                          "in silence.json — pass this only to override")
-    ap.add_argument("--font", default="Montserrat")
-    ap.add_argument("--weight", type=int, default=800)
+    ap.add_argument("--font", default="Inter")
+    ap.add_argument("--weight", type=int, default=500)
     ap.add_argument("--size", type=int, default=0, help="0 = scale from height")
     ap.add_argument("--maxw", type=float, default=0.72,
                     help="max text width as a fraction of frame width")
     ap.add_argument("--srt", default="")
     ap.add_argument("--fixes", default="", help="JSON {wrong: right} applied to cue text")
     ap.add_argument("--highlight", default="",
-                    help="JSON list of phrases to set in the gold accent")
+                    help="JSON list of phrases to set in brand Sky")
     ap.add_argument("--logo", default="", help="PNG brand mark, pinned to a top corner")
     ap.add_argument("--logo-corner", choices=["left", "right"], default="left")
     ap.add_argument("--logo-w", type=int, default=300, help="logo width, px")
@@ -386,7 +477,8 @@ def main():
         for ph in missed:
             print(f"  WARNING highlight not found in transcript: {ph!r}")
     global MAX_CHARS
-    # Montserrat 800 averages ~0.58em per character; keep every cue on one line
+    # Measured on Montserrat 800 (~0.58em per character). Inter is narrower, so
+    # the budget stays conservative and cue grouping does not shift; one line holds.
     MAX_CHARS = max(12, int((w * a.maxw) / (size * 0.58)))
     cues = group(words)
     for c in cues:                        # MIN_DUR padding can also overrun
@@ -397,9 +489,9 @@ def main():
         # the renderer serves the project dir, so the mark has to live inside it
         src = Path(a.logo)
         shutil.copy(src, out/src.name)
-        logo = {"src": src.name, "side": a.logo_corner, "inset": round(w * 0.055),
-                "top": a.logo_top, "w": a.logo_w, "opacity": 0.92}
-    html = build(cues, w, h, a.y, dur, a.fps, a.font, size, a.weight, a.maxw, logo)
+        logo = logo_spec(src, a.logo_w, a.logo_corner, a.logo_top, w)
+    face = font_face_css(a.font, a.weight, out)
+    html = build(cues, w, h, a.y, dur, a.fps, a.font, size, a.weight, a.maxw, logo, face)
     (out/"index.html").write_text(html)
 
     if a.srt:

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>captions</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family:"Inter"; src:url("Inter-Medium.ttf") format("truetype"); font-weight:500; font-style:normal; }
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:transparent; }
+      #root { position:relative; width:1080px; height:1920px; }
+      .cue {
+        position:absolute; left:0; right:0; top:65.0%;
+        transform:translateY(-50%);
+        display:flex; align-items:center; justify-content:center;
+        text-align:center;
+      }
+      .cue span {
+        display:inline-block; max-width:778px; white-space:nowrap;
+        font-family:'Inter', sans-serif;
+        font-weight:500; font-size:54px; line-height:1.18;
+        letter-spacing:-0.01em; color:#FFFFFF;
+        /* hard edge, zero blur — reads on any background, never looks glowy */
+        text-shadow:
+          4px 0 0 #09090B, -4px 0 0 #09090B, 0 4px 0 #09090B, 0 -4px 0 #09090B,
+          3px 3px 0 #09090B, -3px 3px 0 #09090B,
+          3px -3px 0 #09090B, -3px -3px 0 #09090B;
+      }
+      /* key words in brand Sky, same edge — emphasis, not decoration */
+      .cue em { font-style:normal; color:#67DEF9; }
+      #logo {
+        position:absolute; top:110px; left:59px;
+        width:300px; height:60px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="32.908"
+         data-width="1080" data-height="1920" data-fps="23.976"
+         data-layout-allow-overflow="true">
+      <div id="cue0" class="clip cue" data-start="0.0" data-duration="0.82" data-track-index="1"><span>When we started two</span></div>
+      <div id="cue1" class="clip cue" data-start="0.82" data-duration="0.88" data-track-index="1"><span>and a half years ago,</span></div>
+      <div id="cue2" class="clip cue" data-start="1.7" data-duration="0.636" data-track-index="1"><span>there was like, <em>what</em>,</span></div>
+      <div id="cue3" class="clip cue" data-start="2.336" data-duration="0.84" data-track-index="1"><span><em>three</em> neocloud</span></div>
+      <div id="cue4" class="clip cue" data-start="3.176" data-duration="0.661" data-track-index="1"><span>providers?</span></div>
+      <div id="cue5" class="clip cue" data-start="3.899" data-duration="1.43" data-track-index="1"><span>Now we <em>easily have 300</em></span></div>
+      <div id="cue6" class="clip cue" data-start="5.329" data-duration="1.05" data-track-index="1"><span>neocloud providers.</span></div>
+      <div id="cue7" class="clip cue" data-start="6.409" data-duration="0.81" data-track-index="1"><span>Is that right, 300?</span></div>
+      <div id="cue8" class="clip cue" data-start="7.269" data-duration="0.79" data-track-index="1"><span>It's awesome.</span></div>
+      <div id="cue9" class="clip cue" data-start="8.059" data-duration="1.012" data-track-index="1"><span>We want consumers,</span></div>
+      <div id="cue10" class="clip cue" data-start="9.071" data-duration="0.56" data-track-index="1"><span>you and me,</span></div>
+      <div id="cue11" class="clip cue" data-start="9.631" data-duration="1.15" data-track-index="1"><span>to be transparent,</span></div>
+      <div id="cue12" class="clip cue" data-start="10.781" data-duration="0.56" data-track-index="1"><span><em>have options</em>.</span></div>
+      <div id="cue13" class="clip cue" data-start="11.341" data-duration="1.04" data-track-index="1"><span>And also, even given</span></div>
+      <div id="cue14" class="clip cue" data-start="12.381" data-duration="0.98" data-track-index="1"><span>300 neocloud</span></div>
+      <div id="cue15" class="clip cue" data-start="13.361" data-duration="1.112" data-track-index="1"><span>providers globally,</span></div>
+      <div id="cue16" class="clip cue" data-start="14.473" data-duration="0.709" data-track-index="1"><span><em>still not enough</em>.</span></div>
+      <div id="cue17" class="clip cue" data-start="15.287" data-duration="0.295" data-track-index="1"><span>There's a lot</span></div>
+      <div id="cue18" class="clip cue" data-start="15.602" data-duration="0.771" data-track-index="1"><span>of questions, too.</span></div>
+      <div id="cue19" class="clip cue" data-start="16.373" data-duration="1.2" data-track-index="1"><span>So <em>the transparency</em>,</span></div>
+      <div id="cue20" class="clip cue" data-start="17.573" data-duration="0.78" data-track-index="1"><span><em>the accuracy</em>,</span></div>
+      <div id="cue21" class="clip cue" data-start="18.353" data-duration="0.66" data-track-index="1"><span>the information,</span></div>
+      <div id="cue22" class="clip cue" data-start="19.013" data-duration="0.38" data-track-index="1"><span>you need</span></div>
+      <div id="cue23" class="clip cue" data-start="19.413" data-duration="0.837" data-track-index="1"><span>a fantastic source</span></div>
+      <div id="cue24" class="clip cue" data-start="20.25" data-duration="0.49" data-track-index="1"><span>for this, and it's</span></div>
+      <div id="cue25" class="clip cue" data-start="20.76" data-duration="0.72" data-track-index="1"><span>changing all the time.</span></div>
+      <div id="cue26" class="clip cue" data-start="21.621" data-duration="0.8" data-track-index="1"><span>You need</span></div>
+      <div id="cue27" class="clip cue" data-start="22.421" data-duration="1.269" data-track-index="1"><span>very <em>unbiased</em></span></div>
+      <div id="cue28" class="clip cue" data-start="24.076" data-duration="1.063" data-track-index="1"><span>third-party, that's</span></div>
+      <div id="cue29" class="clip cue" data-start="25.139" data-duration="0.92" data-track-index="1"><span><em>the referee</em>, right?</span></div>
+      <div id="cue30" class="clip cue" data-start="26.059" data-duration="1.31" data-track-index="1"><span>So Silicon Data does not</span></div>
+      <div id="cue31" class="clip cue" data-start="27.369" data-duration="1.338" data-track-index="1"><span>have any principal</span></div>
+      <div id="cue32" class="clip cue" data-start="28.707" data-duration="1.031" data-track-index="1"><span>exposure to anyone.</span></div>
+      <div id="cue33" class="clip cue" data-start="29.746" data-duration="1.02" data-track-index="1"><span>We're here to measure,</span></div>
+      <div id="cue34" class="clip cue" data-start="30.766" data-duration="1.246" data-track-index="1"><span>to report, to reflect</span></div>
+      <div id="cue35" class="clip cue" data-start="32.012" data-duration="0.896" data-track-index="1"><span>the <em>supply demand curve</em>.</span></div>
+      <img id="logo" class="clip" src="silicon-data-white.png" width="300" height="60" data-start="0" data-duration="32.908" data-track-index="2" />
+    </div>
+    <script>
+      // GENERATED by edit/captions_overlay.py — do not hand-edit.
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // captions cut in and out with the clip window — no tweens by design
+      tl.set("#root", { opacity: 1 }, 0);
+      tl.set("#root", { opacity: 1 }, 32.908);
+      tl.seek(0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

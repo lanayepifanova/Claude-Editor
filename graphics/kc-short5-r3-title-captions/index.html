@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>captions</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family:"Inter"; src:url("Inter-Medium.ttf") format("truetype"); font-weight:500; font-style:normal; }
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:transparent; }
+      #root { position:relative; width:1080px; height:1920px; }
+      .cue {
+        position:absolute; left:0; right:0; top:77.5%;
+        transform:translateY(-50%);
+        display:flex; align-items:center; justify-content:center;
+        text-align:center;
+      }
+      .cue span {
+        display:inline-block; max-width:778px; white-space:nowrap;
+        font-family:'Inter', sans-serif;
+        font-weight:500; font-size:54px; line-height:1.18;
+        letter-spacing:-0.01em; color:#FFFFFF;
+        /* hard edge, zero blur — reads on any background, never looks glowy */
+        text-shadow:
+          4px 0 0 #09090B, -4px 0 0 #09090B, 0 4px 0 #09090B, 0 -4px 0 #09090B,
+          3px 3px 0 #09090B, -3px 3px 0 #09090B,
+          3px -3px 0 #09090B, -3px -3px 0 #09090B;
+      }
+      /* key words in brand Sky, same edge — emphasis, not decoration */
+      .cue em { font-style:normal; color:#67DEF9; }
+      /* key words in brand Sky, same edge — emphasis, not decoration */
+      .cue em { font-style:normal; color:#67DEF9; }
+      #logo {
+        position:absolute; top:110px; left:59px;
+        width:300px; height:60px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="39.873"
+         data-width="1080" data-height="1920" data-fps="23.976"
+         data-layout-allow-overflow="true">
+      <div id="cue0" class="clip cue" data-start="0.06" data-duration="1.06" data-track-index="1"><span>Token is a different</span></div>
+      <div id="cue1" class="clip cue" data-start="1.12" data-duration="1.693" data-track-index="1"><span>animal where new token,</span></div>
+      <div id="cue2" class="clip cue" data-start="2.813" data-duration="1.34" data-track-index="1"><span>the <em>new LLM</em> comes out</span></div>
+      <div id="cue3" class="clip cue" data-start="4.153" data-duration="0.831" data-track-index="1"><span>every other day,</span></div>
+      <div id="cue4" class="clip cue" data-start="4.984" data-duration="0.51" data-track-index="1"><span>I guess.</span></div>
+      <div id="cue5" class="clip cue" data-start="5.514" data-duration="1.114" data-track-index="1"><span>Yeah, what's today?</span></div>
+      <div id="cue6" class="clip cue" data-start="6.871" data-duration="0.9" data-track-index="1"><span>Exactly, I mean,</span></div>
+      <div id="cue7" class="clip cue" data-start="7.771" data-duration="0.9" data-track-index="1"><span>everything is going</span></div>
+      <div id="cue8" class="clip cue" data-start="8.72" data-duration="1.207" data-track-index="1"><span>at <em>lightning speed</em>,</span></div>
+      <div id="cue9" class="clip cue" data-start="9.927" data-duration="0.77" data-track-index="1"><span>pricing, right?</span></div>
+      <div id="cue10" class="clip cue" data-start="10.697" data-duration="0.8" data-track-index="1"><span>How do you figure out,</span></div>
+      <div id="cue11" class="clip cue" data-start="11.497" data-duration="0.77" data-track-index="1"><span>even from provider</span></div>
+      <div id="cue12" class="clip cue" data-start="12.267" data-duration="0.45" data-track-index="1"><span>point of view,</span></div>
+      <div id="cue13" class="clip cue" data-start="12.737" data-duration="1.277" data-track-index="1"><span>how do I price my GPU?</span></div>
+      <div id="cue14" class="clip cue" data-start="14.118" data-duration="1.04" data-track-index="1"><span>You pull up a token,</span></div>
+      <div id="cue15" class="clip cue" data-start="15.158" data-duration="1.47" data-track-index="1"><span><em>cache pricing</em>, like all</span></div>
+      <div id="cue16" class="clip cue" data-start="16.628" data-duration="1.223" data-track-index="1"><span>those, it's confusing.</span></div>
+      <div id="cue17" class="clip cue" data-start="17.851" data-duration="0.751" data-track-index="1"><span>Same time,</span></div>
+      <div id="cue18" class="clip cue" data-start="18.602" data-duration="1.039" data-track-index="1"><span>the customers, right?</span></div>
+      <div id="cue19" class="clip cue" data-start="19.561" data-duration="0.822" data-track-index="1"><span>How much are we paying?</span></div>
+      <div id="cue20" class="clip cue" data-start="20.383" data-duration="0.93" data-track-index="1"><span>Everything's <em>on demand</em></span></div>
+      <div id="cue21" class="clip cue" data-start="21.313" data-duration="0.803" data-track-index="1"><span>pricing, right?</span></div>
+      <div id="cue22" class="clip cue" data-start="22.116" data-duration="0.865" data-track-index="1"><span>'Cause any provider,</span></div>
+      <div id="cue23" class="clip cue" data-start="22.981" data-duration="0.868" data-track-index="1"><span>token price, right?</span></div>
+      <div id="cue24" class="clip cue" data-start="23.909" data-duration="0.87" data-track-index="1"><span>GPU, you <em>can lock</em></span></div>
+      <div id="cue25" class="clip cue" data-start="24.779" data-duration="0.79" data-track-index="1"><span>in your prices,</span></div>
+      <div id="cue26" class="clip cue" data-start="25.569" data-duration="0.7" data-track-index="1"><span>which is good for</span></div>
+      <div id="cue27" class="clip cue" data-start="26.269" data-duration="0.82" data-track-index="1"><span>us, right? You</span></div>
+      <div id="cue28" class="clip cue" data-start="27.089" data-duration="0.897" data-track-index="1"><span>can have the <em>certainty</em>.</span></div>
+      <div id="cue29" class="clip cue" data-start="28.033" data-duration="0.39" data-track-index="1"><span>For token,</span></div>
+      <div id="cue30" class="clip cue" data-start="28.443" data-duration="0.795" data-track-index="1"><span>everything's <em>on demand</em>.</span></div>
+      <div id="cue31" class="clip cue" data-start="29.245" data-duration="0.39" data-track-index="1"><span>So people</span></div>
+      <div id="cue32" class="clip cue" data-start="29.655" data-duration="0.82" data-track-index="1"><span>can change pricing</span></div>
+      <div id="cue33" class="clip cue" data-start="30.475" data-duration="1.137" data-track-index="1"><span>on you <em>through API</em>.</span></div>
+      <div id="cue34" class="clip cue" data-start="31.559" data-duration="1.255" data-track-index="1"><span>It's really any time,</span></div>
+      <div id="cue35" class="clip cue" data-start="32.814" data-duration="1.429" data-track-index="1"><span>any minute, real time,</span></div>
+      <div id="cue36" class="clip cue" data-start="34.302" data-duration="0.775" data-track-index="1"><span>they can change</span></div>
+      <div id="cue37" class="clip cue" data-start="35.077" data-duration="0.876" data-track-index="1"><span>your <em>quantization</em>,</span></div>
+      <div id="cue38" class="clip cue" data-start="36.17" data-duration="1.098" data-track-index="1"><span>right? <em>Latency</em>, again,</span></div>
+      <div id="cue39" class="clip cue" data-start="37.371" data-duration="0.87" data-track-index="1"><span>transparency, <em>latency</em></span></div>
+      <div id="cue40" class="clip cue" data-start="38.241" data-duration="0.987" data-track-index="1"><span>piece is is something we</span></div>
+      <div id="cue41" class="clip cue" data-start="39.228" data-duration="0.645" data-track-index="1"><span>care a lot more about.</span></div>
+      <img id="logo" class="clip" src="silicon-data-white.png" width="300" height="60" data-start="0" data-duration="39.873" data-track-index="2" />
+    </div>
+    <script>
+      // GENERATED by edit/captions_overlay.py — do not hand-edit.
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // captions cut in and out with the clip window — no tweens by design
+      tl.set("#root", { opacity: 1 }, 0);
+      tl.set("#root", { opacity: 1 }, 39.873);
+      tl.seek(0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "historyId": "6b2bd8be-4670-4da2-a63d-fc41544dd74a",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "BebasNeue-Regular.ttf": {
+      "hash": "08e4623805102d819f58601e46e345648846075e363b2ceb23313c2d1c83ec73",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/6b2bd8be-4670-4da2-a63d-fc41544dd74a/blobs/08/08e4623805102d819f58601e46e345648846075e363b2ceb23313c2d1c83ec73"
+    },
+    "index.html": {
+      "hash": "366e5cfcb8b6b854afd6a02af5af6701e237156e3c91cf4c06f38fb4b38e6ef5",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/6b2bd8be-4670-4da2-a63d-fc41544dd74a/blobs/36/366e5cfcb8b6b854afd6a02af5af6701e237156e3c91cf4c06f38fb4b38e6ef5"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": {
+      "revision": null,
+      "id": "386d5b7c-1363-4b5b-80c3-bc7c44d7e008-0"
+    },
+    "revisions": {},
+    "unversioned": [
+      {
+        "scope": "full",
+        "id": "386d5b7c-1363-4b5b-80c3-bc7c44d7e008-0",
+        "image": "/private/tmp/claude-501/-Users-lanayepifanova-Claude-Editor/a6cc4990-3e64-4f45-8b31-260fcaef2a1a/scratchpad/kc-short1-title-white/at-5s.png",
+        "time": 5,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793132185063,
+        "contentHash": "2e008b38d410005763d975e0c70f3a71891aa557364ecc9875239e47541557dd",
+        "revision": null,
+        "inputFingerprint": "9a17b09c010601bd9f5cd98a5223c4e08ed8a29269e66ac4588687683a37e4ff",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  }
+}

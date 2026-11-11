@@ -118,55 +118,40 @@ window.__timelines["main"] = tl;
         print(f"{self.name}: {self.n} elements -> {d/'index.html'}")
 
 
-# ============================================================ BACK (behind her)
-B = Comp("hf-shorts-back")
+# ============================================================ TOP BAND (no cutout)
+# The cutout is gone (client note 2026-11-06: visible edges at hair and shoulders), so
+# nothing sits behind her any more. What used to be full-frame plates behind her
+# cutout are cards in the band ABOVE her head (y 90-360), clear of the caption
+# (y 480) and her face. One composition, her real footage untouched underneath.
+F = Comp("hf-shorts-front")
+TOP = "left:60px;top:90px;width:960px;text-align:center;padding:18px 0 24px"
 
-# 1 hook — green plate with the title behind her: "Claude did."
-t_cl, t_did = W("Claude", 1.5), W("did.", 2.0)
-el = B.add(f'<div class="serif" style="position:absolute;left:0;right:0;top:150px;text-align:center;'
-           f'font-size:250px;line-height:1;color:{CREAM};white-space:nowrap">Claude<span id="did" style="display:inline-block;'
-           f'color:{GOLD};font-style:italic;opacity:0">&nbsp;did.</span></div>',
-           0.0, W("No", 2.5), style=f"left:0;top:0;width:1080px;height:1920px;background:{GREEN}")
-B.wipe(el, "left", 0.30)
-B.js_(f'tl.fromTo("#did",{{opacity:0,y:30}},{{opacity:1,y:0,duration:0.3,ease:"power3.out"}},{t_did:.3f});')
+# (opening "Claude did." title card removed 2026-11-08 - she doesn't want it)
 
-# 2 titles appear behind me
 t0 = W("titles", 8.0)
-el = B.add(f'<div class="serif" style="font-size:430px;line-height:1;color:{GREEN};text-align:center;'
-           f'">Titles</div>', t0, W("the", 9.6) + 0.25,
-           style="left:0;top:560px;width:1080px")
-B.wipe(el, "up", 0.35)
+el = F.add('<div class="serif" style="font-size:230px;line-height:1">Titles</div>',
+           t0, W("the", 9.6) + 0.25, cls="card", style=TOP)
+F.wipe(el, "up", 0.35)
 
-# 3 mood changes with the colours — plates cycle, her cutout stays
-t_mood, t_col = W("mood", 10.5), W("colors.", 11.5)
-t_end = W("All", 12.5)
+t_mood, t_end = W("mood", 10.5), W("All", 12.5)
 cols = [(GREEN, CREAM), ("#C8552F", CREAM), ("#D9A21B", GREEN2), ("#14264A", CREAM), ("#4B2A4F", CREAM)]
 step = (t_end - t_mood) / len(cols)
 for k, (bg, fg) in enumerate(cols):
     a = t_mood + k * step
-    b = t_end if k == len(cols) - 1 else a + step + 0.06
-    el = B.add(f'<div class="serif" style="position:absolute;left:0;right:0;top:170px;text-align:center;'
-               f'font-size:300px;line-height:1;color:{fg};font-style:italic">Colors</div>',
-               a, b, style=f"left:0;top:0;width:1080px;height:1920px;background:{bg}")
-    B.js_(f'tl.fromTo("#{el[0]}",{{clipPath:"inset(0 0 100% 0)"}},{{clipPath:"inset(0 0 0% 0)",duration:0.2,ease:"power3.out"}},{a:.3f});')
+    bb = t_end if k == len(cols) - 1 else a + step + 0.06
+    el = F.add('<div class="serif" style="font-size:200px;line-height:1;font-style:italic">Colors</div>',
+               a, bb, style=f"left:60px;top:90px;width:960px;text-align:center;padding:18px 0 24px;"
+               f"border-radius:18px;background:{bg};color:{fg}")
+    F.js_(f'tl.fromTo("#{el[0]}",{{clipPath:"inset(0 0 100% 0)"}},{{clipPath:"inset(0 0 0% 0)",duration:0.2,ease:"power3.out"}},{a:.3f});')
 
-# 4 product line
 a, b = W("I", 16.0), W("You", 19.2)
-el = B.add(f'<img src="higgsfield-icon.png" style="position:absolute;left:465px;top:70px;width:150px;height:150px;border-radius:34px">'
-           f'<div class="serif" style="position:absolute;left:0;right:0;top:250px;text-align:center;font-size:170px;'
-           f'line-height:1;color:{CREAM};white-space:nowrap">Shorts <em>Studio</em></div>',
-           a, b + 0.3, style=f"left:0;top:0;width:1080px;height:1920px;background:{GREEN}")
-B.wipe(el, "right", 0.3)
-
-# 5 CTA — REELS behind her
-a = W("Comment", 46.0)
-el = B.add('', a, DUR, style=f"left:0;top:0;width:1080px;height:1920px;background:{GREEN}")
-B.wipe(el, "left", 0.3)
-B.write()
+el = F.add(f'<img src="higgsfield-icon.png" style="width:120px;height:120px;border-radius:28px;flex:none">'
+           f'<div class="serif" style="font-size:96px;line-height:1.02;text-align:left">Higgsfield<br><em>Shorts Studio</em></div>',
+           a, b + 0.3, cls="dark",
+           style="left:90px;top:90px;width:900px;padding:22px 34px;display:flex;gap:28px;align-items:center;justify-content:center")
+F.wipe(el, "right", 0.3)
 
 # ============================================================ FRONT (over her)
-F = Comp("hf-shorts-front")
-
 # ---- captions: boxed serif pills, wording from the editable SRT --------------------
 def ts(s):
     h, m, r = s.split(":"); sec, ms = r.split(","); return int(h) * 3600 + int(m) * 60 + int(sec) + int(ms) / 1000
@@ -325,7 +310,7 @@ F.js_(f'tl.to("#{el[0]}",{{opacity:0,duration:0.14}},{b - 0.14:.3f});')
 a = W("Comment", 46.0)
 el = F.add('<div class="serif" style="font-size:110px;line-height:1">Comment <em>&ldquo;REELS&rdquo;</em></div>'
            f'<div class="sans" style="font-size:28px;margin-top:10px;color:{CREAM};opacity:.85">and I&rsquo;ll send you the command &amp; setup link</div>',
-           a, DUR, style=f"left:0;top:70px;width:1080px;text-align:center;color:{CREAM}")
+           a, DUR, cls="dark", style="left:60px;top:90px;width:960px;text-align:center;padding:22px 0 26px")
 F.pop(el, 0.3, -30)
 rl = "REELS"
 rc = "".join(f'<span class="ch" style="opacity:0">{c}</span>' for c in rl)

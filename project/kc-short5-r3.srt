@@ -1,0 +1,168 @@
+1
+00:00:00,060 --> 00:00:01,120
+Token is a different
+
+2
+00:00:01,120 --> 00:00:02,813
+animal where new token,
+
+3
+00:00:02,813 --> 00:00:04,153
+the new LLM comes out
+
+4
+00:00:04,153 --> 00:00:04,984
+every other day,
+
+5
+00:00:04,984 --> 00:00:05,494
+I guess.
+
+6
+00:00:05,514 --> 00:00:06,628
+Yeah, what's today?
+
+7
+00:00:06,871 --> 00:00:07,771
+Exactly, I mean,
+
+8
+00:00:07,771 --> 00:00:08,671
+everything is going
+
+9
+00:00:08,720 --> 00:00:09,927
+at lightning speed,
+
+10
+00:00:09,927 --> 00:00:10,697
+pricing, right?
+
+11
+00:00:10,697 --> 00:00:11,497
+How do you figure out,
+
+12
+00:00:11,497 --> 00:00:12,267
+even from provider
+
+13
+00:00:12,267 --> 00:00:12,717
+point of view,
+
+14
+00:00:12,737 --> 00:00:14,014
+how do I price my GPU?
+
+15
+00:00:14,118 --> 00:00:15,158
+You pull up a token,
+
+16
+00:00:15,158 --> 00:00:16,628
+cache pricing, like all
+
+17
+00:00:16,628 --> 00:00:17,851
+those, it's confusing.
+
+18
+00:00:17,851 --> 00:00:18,602
+Same time,
+
+19
+00:00:18,602 --> 00:00:19,641
+the customers, right?
+
+20
+00:00:19,561 --> 00:00:20,383
+How much are we paying?
+
+21
+00:00:20,383 --> 00:00:21,313
+Everything's on demand
+
+22
+00:00:21,313 --> 00:00:22,116
+pricing, right?
+
+23
+00:00:22,116 --> 00:00:22,981
+'Cause any provider,
+
+24
+00:00:22,981 --> 00:00:23,849
+token price, right?
+
+25
+00:00:23,909 --> 00:00:24,779
+GPU, you can lock
+
+26
+00:00:24,779 --> 00:00:25,569
+in your prices,
+
+27
+00:00:25,569 --> 00:00:26,269
+which is good for
+
+28
+00:00:26,269 --> 00:00:27,089
+us, right? You
+
+29
+00:00:27,089 --> 00:00:27,986
+can have the certainty.
+
+30
+00:00:28,033 --> 00:00:28,423
+For token,
+
+31
+00:00:28,443 --> 00:00:29,238
+everything's on demand.
+
+32
+00:00:29,245 --> 00:00:29,635
+So people
+
+33
+00:00:29,655 --> 00:00:30,475
+can change pricing
+
+34
+00:00:30,475 --> 00:00:31,612
+on you through API.
+
+35
+00:00:31,559 --> 00:00:32,814
+It's really any time,
+
+36
+00:00:32,814 --> 00:00:34,243
+any minute, real time,
+
+37
+00:00:34,302 --> 00:00:35,077
+they can change
+
+38
+00:00:35,077 --> 00:00:35,953
+your quantization,
+
+39
+00:00:36,170 --> 00:00:37,268
+right? Latency, again,
+
+40
+00:00:37,371 --> 00:00:38,241
+transparency, latency
+
+41
+00:00:38,241 --> 00:00:39,228
+piece is is something we
+
+42
+00:00:39,228 --> 00:00:39,873
+care a lot more about.
+

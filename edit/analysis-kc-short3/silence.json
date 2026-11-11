@@ -9,9 +9,9 @@
  },
  "source": "graphics/kc-short3-vertical.mp4",
  "fps": 23.976,
- "source_duration": 35.84,
- "cut_duration": 32.783,
- "removed_pct": 8.5,
+ "source_duration": 35.82,
+ "cut_duration": 32.908,
+ "removed_pct": 8.1,
  "segments": [
   [
    0.0,
@@ -83,7 +83,7 @@
   ],
   [
    33.867200533867205,
-   35.66066066066066
+   35.785785785785784
   ]
  ]
 }

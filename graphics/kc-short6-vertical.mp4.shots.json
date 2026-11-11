@@ -16,28 +16,32 @@
    "t1": 36.203,
    "face_x": 880,
    "crop_x": 596,
-   "found": true
+   "found": true,
+   "orig_crop_x": 596
   },
   {
    "t0": 36.203,
    "t1": 39.164,
    "face_x": 898,
    "crop_x": 612,
-   "found": true
+   "found": true,
+   "orig_crop_x": 612
   },
   {
    "t0": 39.164,
    "t1": 44.836,
    "face_x": 864,
    "crop_x": 580,
-   "found": true
+   "found": true,
+   "orig_crop_x": 580
   },
   {
    "t0": 44.836,
    "t1": 45.4,
    "face_x": 1194,
    "crop_x": 910,
-   "found": true
+   "found": true,
+   "orig_crop_x": 910
   }
  ]
 }

@@ -1,0 +1,220 @@
+1
+00:00:00,000 --> 00:00:00,984
+way, every economy goes
+
+2
+00:00:00,984 --> 00:00:01,754
+through cycles.
+
+3
+00:00:01,754 --> 00:00:02,874
+Every commodity
+
+4
+00:00:02,874 --> 00:00:03,360
+goes up and downs.
+
+5
+00:00:03,380 --> 00:00:04,550
+Oil gas electricity,
+
+6
+00:00:04,550 --> 00:00:05,881
+anything, that's normal.
+
+7
+00:00:05,932 --> 00:00:07,122
+What we do not want
+
+8
+00:00:07,102 --> 00:00:08,942
+from an economy point
+
+9
+00:00:08,942 --> 00:00:10,101
+of view is an overbuilt
+
+10
+00:00:10,101 --> 00:00:11,386
+of any asset class.
+
+11
+00:00:11,446 --> 00:00:12,396
+You want the market
+
+12
+00:00:12,396 --> 00:00:13,126
+to correct bubble,
+
+13
+00:00:13,126 --> 00:00:13,966
+if there's a bubble,
+
+14
+00:00:13,966 --> 00:00:14,686
+to correct bubble
+
+15
+00:00:14,686 --> 00:00:15,876
+efficiently and quickly
+
+16
+00:00:15,876 --> 00:00:16,597
+before it gets too big.
+
+17
+00:00:16,542 --> 00:00:17,712
+So that's why you need
+
+18
+00:00:17,712 --> 00:00:18,105
+financial instruments.
+
+19
+00:00:18,125 --> 00:00:18,695
+'Cause right
+
+20
+00:00:18,695 --> 00:00:19,561
+now, there's no way
+
+21
+00:00:19,561 --> 00:00:20,459
+for you to express
+
+22
+00:00:20,459 --> 00:00:21,355
+opinions if there's
+
+23
+00:00:21,355 --> 00:00:22,221
+an overbuilt
+
+24
+00:00:22,221 --> 00:00:22,634
+or something.
+
+25
+00:00:22,654 --> 00:00:23,274
+You wanna short
+
+26
+00:00:23,274 --> 00:00:23,709
+it, right?
+
+27
+00:00:23,729 --> 00:00:25,449
+That's if you wanna say,
+
+28
+00:00:25,449 --> 00:00:26,129
+hey, I think I know
+
+29
+00:00:26,129 --> 00:00:27,019
+something people no one
+
+30
+00:00:27,009 --> 00:00:28,025
+knows, I wanna short it.
+
+31
+00:00:27,997 --> 00:00:29,083
+There's no mechanism
+
+32
+00:00:29,083 --> 00:00:29,651
+for you to do so.
+
+33
+00:00:29,581 --> 00:00:30,656
+With futures, you can't.
+
+34
+00:00:30,700 --> 00:00:31,270
+Anyone
+
+35
+00:00:31,270 --> 00:00:32,241
+can express opinions.
+
+36
+00:00:32,289 --> 00:00:33,359
+You want long, you want
+
+37
+00:00:33,359 --> 00:00:34,129
+short, it's a fair
+
+38
+00:00:34,129 --> 00:00:34,868
+marketplaces.
+
+39
+00:00:34,868 --> 00:00:35,456
+And the price
+
+40
+00:00:35,456 --> 00:00:36,326
+transparency
+
+41
+00:00:36,326 --> 00:00:37,524
+and discovery is
+
+42
+00:00:37,524 --> 00:00:38,288
+what the market needs.
+
+43
+00:00:38,332 --> 00:00:38,922
+And you don't have
+
+44
+00:00:38,902 --> 00:00:39,572
+to ask me the question.
+
+45
+00:00:39,572 --> 00:00:40,132
+You can look
+
+46
+00:00:40,132 --> 00:00:40,916
+at the market trades.
+
+47
+00:00:40,990 --> 00:00:41,570
+Oh, there are people,
+
+48
+00:00:41,570 --> 00:00:42,730
+people selling it.
+
+49
+00:00:42,730 --> 00:00:43,530
+Okay, it means
+
+50
+00:00:43,530 --> 00:00:44,461
+something, right?
+
+51
+00:00:44,480 --> 00:00:45,260
+So that's exactly
+
+52
+00:00:45,260 --> 00:00:46,000
+the reason you need
+
+53
+00:00:46,000 --> 00:00:46,839
+compute futures,
+
+54
+00:00:46,861 --> 00:00:47,671
+right, for people
+
+55
+00:00:47,671 --> 00:00:48,382
+to do price discovery.
+

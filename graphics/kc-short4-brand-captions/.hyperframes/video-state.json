@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "historyId": "a5720644-0286-4db0-943e-df85eaf2c392",
+  "currentRevision": "afc01442-0c4d-4bce-acd1-c86c66d12b28",
+  "pendingChanges": false,
+  "files": {
+    "index.html": {
+      "hash": "b3fb7bc3c69f434d9bdcbf91ce18ade009f6c4d7546f885b477f89a4878d8a21",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/a5720644-0286-4db0-943e-df85eaf2c392/blobs/b3/b3fb7bc3c69f434d9bdcbf91ce18ade009f6c4d7546f885b477f89a4878d8a21"
+    },
+    "silicon-data-white.png": {
+      "hash": "f2688fa172cb2e0761c5aa8b35946eedcb8e59ea80532a03a0917d077380017b",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/a5720644-0286-4db0-943e-df85eaf2c392/blobs/f2/f2688fa172cb2e0761c5aa8b35946eedcb8e59ea80532a03a0917d077380017b"
+    },
+    "Inter-Medium.ttf": {
+      "hash": "8c883f63b2c4157d997319f2c8bc6995ed4357ef371940d31ca159004a4aae63",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/a5720644-0286-4db0-943e-df85eaf2c392/blobs/8c/8c883f63b2c4157d997319f2c8bc6995ed4357ef371940d31ca159004a4aae63"
+    }
+  },
+  "revisions": {
+    "afc01442-0c4d-4bce-acd1-c86c66d12b28": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793864331102,
+      "endedAt": 1793864331120,
+      "files": {
+        "index.html": {
+          "before": "/Users/lanayepifanova/.cache/hyperframes/history/a5720644-0286-4db0-943e-df85eaf2c392/blobs/93/936ddaf8391e64542c202126ae92dfe29a0058122a7c1e5cf3d3f9c7b1233c77",
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/a5720644-0286-4db0-943e-df85eaf2c392/blobs/b3/b3fb7bc3c69f434d9bdcbf91ce18ade009f6c4d7546f885b477f89a4878d8a21"
+        },
+        "Inter-Medium.ttf": {
+          "before": null,
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/a5720644-0286-4db0-943e-df85eaf2c392/blobs/8c/8c883f63b2c4157d997319f2c8bc6995ed4357ef371940d31ca159004a4aae63"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "0898c110-f5a6-4aa4-8689-a0ea4bcf8dc3",
+      "completedAt": 1793864402092,
+      "output": "/Users/lanayepifanova/Claude-Editor/graphics/kc-short4-brand-cap.new.mov",
+      "status": "completed",
+      "revision": "afc01442-0c4d-4bce-acd1-c86c66d12b28"
+    },
+    "retainedRevisions": [
+      "afc01442-0c4d-4bce-acd1-c86c66d12b28"
+    ]
+  },
+  "pendingArtifactCleanup": []
+}

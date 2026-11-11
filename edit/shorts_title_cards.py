@@ -58,6 +58,7 @@ BREAKS = {
     "Bitcoin miner to GPU cloud": ("Bitcoin miner", "to GPU cloud"),
     "They used to be called containers": ("They used to be", "called containers"),
     "This is pushing people": ("This is", "pushing people"),
+    "Running a cloud is a 24-7 grind": ("Running a cloud is", "a 24/7 grind"),
     "Compute grew 25X, the network 8X": ("Compute grew 25X,", "the network 8X"),
     "Does Upscale compete with NVIDIA": ("Does Upscale compete", "with NVIDIA"),
     "Not one technology suits every need": ("Not one technology", "suits every need"),
@@ -83,6 +84,7 @@ BREAKS = {
     "Developers already let agents rent GPUs": ("Developers already", "let agents rent GPUs"),
     "Everyone is just market making on compute": ("Everyone is just market", "making on compute"),
     "Long compute physically, short it on futures": ("Long compute physically,", "short it on futures"),
+    "From asset-light to reserving compute": ("From asset-light", "to reserving compute"),
 }
 
 
@@ -118,23 +120,31 @@ def raw_frames(cmd_in, vf, w, h, pix="gray"):
     p.wait()
 
 
-def build_one(name, only_check=False):
+def build_one(name, only_check=False, c=None, out_dir=None):
     m = re.match(r"\[(\w+)\] Ignite (\d+) - (.*)$", name)
     tag, nn, title = m.groups()
     pillar = {"CP": "[CP] Cloud Providers", "RP": "[RP] Reference Price", "SM": "[SM] SiliconMark"}[tag]
     shipped = SHORT / pillar / f"{name}.mp4"
-    assert shipped.exists(), shipped
-    sf = frames_of(shipped)
-    n_frames = int(sf["nb_read_packets"])
-    pre = "kc" if nn == "04" else f"ignite-{nn}"
-    cands = []
-    for mp in glob.glob(str(REPO / "graphics" / f"{pre}-short*-master.mp4")):
-        if "brand" in mp:
-            continue
-        if int(frames_of(mp)["nb_read_packets"]) == n_frames:
-            cands.append(Path(mp).name[:-len("-master.mp4")])
-    assert len(cands) == 1, (name, cands)
-    c = cands[0]
+    if c:
+        # REDO: a freshly cut master replaces the shipped cut. Nothing is looked up
+        # from the shipped file and the shipped file is never touched; the result
+        # goes to out_dir for her to review first.
+        master = REPO / "graphics" / f"{c}-master.mp4"
+        n_frames = int(frames_of(master)["nb_read_packets"])
+        shipped = None
+    else:
+        assert shipped.exists(), shipped
+        sf = frames_of(shipped)
+        n_frames = int(sf["nb_read_packets"])
+        pre = "kc" if nn == "04" else f"ignite-{nn}"
+        cands = []
+        for mp in glob.glob(str(REPO / "graphics" / f"{pre}-short*-master.mp4")):
+            if "brand" in mp:
+                continue
+            if int(frames_of(mp)["nb_read_packets"]) == n_frames:
+                cands.append(Path(mp).name[:-len("-master.mp4")])
+        assert len(cands) == 1, (name, cands)
+        c = cands[0]
     master = REPO / "graphics" / f"{c}-master.mp4"
     src_caps = REPO / "graphics" / f"{c}-brand-captions"
     assert (src_caps / "index.html").exists()
@@ -213,7 +223,9 @@ def build_one(name, only_check=False):
     log(f"caption band white-share (luma>200, caption frames): mean {white_mean:.1f}% p90 {white_p90:.1f}%")
 
     # 5. composite (same encode as burn.composite): master + card still + captions
-    out_tmp = SHORT / pillar / f".tmp-{c}.mp4"
+    dest_dir = Path(out_dir) if out_dir else SHORT / pillar
+    dest_dir.mkdir(parents=True, exist_ok=True)
+    out_tmp = dest_dir / f".tmp-{c}.mp4"
     dur = float(duration_of(master, "v:0")["duration"])
     graph = ("[0:v][1:v]overlay=0:0:format=auto:eof_action=pass[s1];"
              "[s1][2:v]overlay=0:0:format=auto:eof_action=pass[v]")
@@ -227,7 +239,7 @@ def build_one(name, only_check=False):
     # 6. verify
     v = frames_of(out_tmp)
     vd, ad = duration_of(out_tmp, "v:0"), duration_of(out_tmp, "a:0")
-    sd = float(duration_of(shipped, "v:0")["duration"])
+    sd = float(duration_of(shipped if shipped else master, "v:0")["duration"])
     checks = {
         "h264": v["codec_name"] == "h264", "aac": ad["codec_name"] == "aac",
         "1080x1920": (v["width"], v["height"]) == (W, H),
@@ -258,8 +270,12 @@ def build_one(name, only_check=False):
     log("checks " + " ".join(f"{k}={'ok' if x else 'FAIL'}" for k, x in checks.items()))
     res = dict(name=name, c=c, ok=ok, frames=n_frames, card_w=card_box[2] - card_box[0],
                gap=gap, white_mean=round(white_mean, 1), white_p90=round(white_p90, 1),
-               old_mb=round(shipped.stat().st_size / 1e6, 1), new_mb=round(out_tmp.stat().st_size / 1e6, 1))
-    if ok:
+               old_mb=round(shipped.stat().st_size / 1e6, 1) if shipped else 0, new_mb=round(out_tmp.stat().st_size / 1e6, 1))
+    if ok and not shipped:
+        target = dest_dir / f"{name}.mp4"
+        os.replace(out_tmp, target)
+        log(f"WROTE {target}")
+    elif ok:
         os.replace(out_tmp, shipped)           # atomic: same folder, same filename
         log(f"REPLACED {shipped.name}")
     else:
@@ -273,6 +289,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--ignite")
     ap.add_argument("--only")
+    ap.add_argument("--redo", help="project stem of a freshly cut master (e.g. kc-short3); builds into --out-dir "
+                                   "and leaves the shipped file alone. Needs --only.")
+    ap.add_argument("--out-dir", help="where a --redo build is written")
     ap.add_argument("--skip", action="append", default=[])
     a = ap.parse_args()
     names = []
@@ -291,7 +310,7 @@ def main():
     results = []
     for n in names:
         try:
-            results.append(build_one(n))
+            results.append(build_one(n, c=a.redo, out_dir=a.out_dir))
         except Exception as e:
             print(f"[{n}] ERROR {e}", flush=True)
             results.append(dict(name=n, ok=False, error=str(e)[:300]))

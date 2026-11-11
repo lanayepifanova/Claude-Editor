@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "historyId": "c5c1cee5-00ae-4cde-9145-5d4600b6ffec",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "BebasNeue-Regular.ttf": {
+      "hash": "08e4623805102d819f58601e46e345648846075e363b2ceb23313c2d1c83ec73",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/c5c1cee5-00ae-4cde-9145-5d4600b6ffec/blobs/08/08e4623805102d819f58601e46e345648846075e363b2ceb23313c2d1c83ec73"
+    },
+    "index.html": {
+      "hash": "627b9c6688f2bc303b23397e7154237fa883235e27d802de6a58d6576db98752",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/c5c1cee5-00ae-4cde-9145-5d4600b6ffec/blobs/62/627b9c6688f2bc303b23397e7154237fa883235e27d802de6a58d6576db98752"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": {
+      "revision": null,
+      "id": "f7c20ffc-5f23-4c82-8255-538661f47ea9-0"
+    },
+    "revisions": {},
+    "unversioned": [
+      {
+        "scope": "full",
+        "id": "f7c20ffc-5f23-4c82-8255-538661f47ea9-0",
+        "image": "/private/tmp/claude-501/-Users-lanayepifanova-Claude-Editor/a6cc4990-3e64-4f45-8b31-260fcaef2a1a/scratchpad/kc-short1-title/at-5s.png",
+        "time": 5,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793132182927,
+        "contentHash": "fb178948c4ef7a180e9a34419a825c37ece1e1ea2c80d159ea4972774fa42668",
+        "revision": null,
+        "inputFingerprint": "f7dfe307696bfa0d1e7397dd9c61bf48e123076a01cbe5a42744c6f78789ce8b",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "renders": {
+    "latest": {
+      "id": "0b4cdb5d-af35-4a7b-b323-8d36cd1531f9",
+      "completedAt": 1793132243970,
+      "output": "/Users/lanayepifanova/Claude-Editor/graphics/kc-short1-title.mov",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
+}

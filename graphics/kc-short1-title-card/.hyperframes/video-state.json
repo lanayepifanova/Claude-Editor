@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "historyId": "ee3d5349-b1d0-4d6c-934e-21a55012ba23",
+  "currentRevision": "76e35e16-1aa3-4b0e-b568-b81bc1358445",
+  "pendingChanges": false,
+  "files": {
+    "Figtree.ttf": {
+      "hash": "26ad3db9b31ff7dde67a91ff515d022d2f495cd506590699cf264f0bfe6fb714",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/ee3d5349-b1d0-4d6c-934e-21a55012ba23/blobs/26/26ad3db9b31ff7dde67a91ff515d022d2f495cd506590699cf264f0bfe6fb714"
+    },
+    "index.html": {
+      "hash": "000248ce65c1bdcde2344153f2d4e0250acd17cf144c1e5821a9f100856513b6",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/ee3d5349-b1d0-4d6c-934e-21a55012ba23/blobs/00/000248ce65c1bdcde2344153f2d4e0250acd17cf144c1e5821a9f100856513b6"
+    }
+  },
+  "revisions": {
+    "0149d215-1e1c-4f5f-a127-9e83d352017b": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793979837649,
+      "endedAt": 1793979837650,
+      "files": {
+        "index.html": {
+          "before": "/Users/lanayepifanova/.cache/hyperframes/history/ee3d5349-b1d0-4d6c-934e-21a55012ba23/blobs/1d/1d48b2e95e3bebc0feda0171cf7515df2de57293b1e6e00154d483184a6d1aa8",
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/ee3d5349-b1d0-4d6c-934e-21a55012ba23/blobs/45/4581638a94939d75549e668a0b5fc3bc3ec95bfbf98d2ad98f94c254fcb3238e"
+        }
+      }
+    },
+    "76e35e16-1aa3-4b0e-b568-b81bc1358445": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793980510614,
+      "endedAt": 1793980510615,
+      "files": {
+        "index.html": {
+          "before": "/Users/lanayepifanova/.cache/hyperframes/history/ee3d5349-b1d0-4d6c-934e-21a55012ba23/blobs/45/4581638a94939d75549e668a0b5fc3bc3ec95bfbf98d2ad98f94c254fcb3238e",
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/ee3d5349-b1d0-4d6c-934e-21a55012ba23/blobs/00/000248ce65c1bdcde2344153f2d4e0250acd17cf144c1e5821a9f100856513b6"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "08c8d84f-9a53-4f8f-9c37-672fa812a0c2",
+      "completedAt": 1793980594595,
+      "output": "/Users/lanayepifanova/Claude-Editor/graphics/kc-short1-title-card.mov",
+      "status": "completed",
+      "revision": "76e35e16-1aa3-4b0e-b568-b81bc1358445"
+    },
+    "retainedRevisions": [
+      "76e35e16-1aa3-4b0e-b568-b81bc1358445",
+      "0149d215-1e1c-4f5f-a127-9e83d352017b"
+    ]
+  },
+  "pendingArtifactCleanup": []
+}

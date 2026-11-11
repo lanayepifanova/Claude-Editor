@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "historyId": "191842a3-fd15-4d1c-8626-3a9b9f684ed7",
+  "currentRevision": "3ef68116-5678-412c-81b5-0262c9e68b1b",
+  "pendingChanges": false,
+  "files": {
+    "Inter-Medium.ttf": {
+      "hash": "8c883f63b2c4157d997319f2c8bc6995ed4357ef371940d31ca159004a4aae63",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/191842a3-fd15-4d1c-8626-3a9b9f684ed7/blobs/8c/8c883f63b2c4157d997319f2c8bc6995ed4357ef371940d31ca159004a4aae63"
+    },
+    "index.html": {
+      "hash": "13f0cfafaea6e0a0e95f6f1ad4a23fd9d4be93a95c53fd897162ffb70258e7fb",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/191842a3-fd15-4d1c-8626-3a9b9f684ed7/blobs/13/13f0cfafaea6e0a0e95f6f1ad4a23fd9d4be93a95c53fd897162ffb70258e7fb"
+    },
+    "silicon-data-white.png": {
+      "hash": "f2688fa172cb2e0761c5aa8b35946eedcb8e59ea80532a03a0917d077380017b",
+      "content": "/Users/lanayepifanova/.cache/hyperframes/history/191842a3-fd15-4d1c-8626-3a9b9f684ed7/blobs/f2/f2688fa172cb2e0761c5aa8b35946eedcb8e59ea80532a03a0917d077380017b"
+    }
+  },
+  "revisions": {
+    "3ef68116-5678-412c-81b5-0262c9e68b1b": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793980595994,
+      "endedAt": 1793980595997,
+      "files": {
+        "index.html": {
+          "before": "/Users/lanayepifanova/.cache/hyperframes/history/191842a3-fd15-4d1c-8626-3a9b9f684ed7/blobs/8b/8b250bf17fd03e2007604b59dbc62b13fe17533f35f7296aaf09079c21699541",
+          "after": "/Users/lanayepifanova/.cache/hyperframes/history/191842a3-fd15-4d1c-8626-3a9b9f684ed7/blobs/13/13f0cfafaea6e0a0e95f6f1ad4a23fd9d4be93a95c53fd897162ffb70258e7fb"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "2af82b30-db9c-4a1b-96e8-ac035c4b14a9",
+      "completedAt": 1793980692579,
+      "output": "/Users/lanayepifanova/Claude-Editor/graphics/kc-short1-title-cap.mov",
+      "status": "completed",
+      "revision": "3ef68116-5678-412c-81b5-0262c9e68b1b"
+    },
+    "retainedRevisions": [
+      "3ef68116-5678-412c-81b5-0262c9e68b1b",
+      "9deeb57b-2cf0-4c52-b84c-db3ace1aba36"
+    ]
+  },
+  "pendingArtifactCleanup": []
+}

@@ -1,8 +1,0 @@
-1/2  cutting 16 segments from ignite-10-short4-vertical.mp4 (36.1s -> 31.3s, 13.3% removed)
-     master 1080x1920 751f · ignite-10-short4-cap.mov 1080x1920 751f
-2/2  compositing 1 overlay(s)
-     verifying burn against the uncaptioned master …
-     706/751 frames carry ink (94% of the cut) · peak coverage 0.8% of frame
-
--> output/ignite-10-shorts/4 the token index everyone misreads.mp4  (26.1 MB)
-   master kept at graphics/ignite-10-short4-master.mp4

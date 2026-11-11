@@ -1,8 +1,0 @@
-1/2  cutting 30 segments from ignite-10-short1-vertical.mp4 (62.0s -> 54.6s, 11.9% removed)
-     master 1080x1920 1310f · ignite-10-short1-cap.mov 1080x1920 1311f
-2/2  compositing 1 overlay(s)
-     verifying burn against the uncaptioned master …
-     1277/1310 frames carry ink (97% of the cut) · peak coverage 0.8% of frame
-
--> output/ignite-10-shorts/1 Anthropic's trillion-dollar valuation.mp4  (44.7 MB)
-   master kept at graphics/ignite-10-short1-master.mp4

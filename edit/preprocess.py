@@ -216,6 +216,77 @@ def transcript(proof, model):
     return toks
 
 
+def transcript_mapped(media, segs, model, cache):
+    """Word timings on the CUT timeline, taken from the UNCUT source.
+
+    Whisper's word times on the cut audio drift up to ~0.5s near the joins
+    (kc-short3, 2026-11-09: "to report to reflect" 0.4s late, "third" 0.4s early,
+    43 of 110 words off by >=0.1s) because the hard splices break the context its
+    aligner leans on. The uncut clip is continuous speech, so its timings hold;
+    each word is carried through the cut list instead. Cached beside the analysis
+    because the source never changes between passes.
+    """
+    cache = Path(cache)
+    if cache.exists():
+        raw = json.load(open(cache))
+    else:
+        wav = tempfile.NamedTemporaryFile(suffix=".wav", delete=False).name
+        run(["ffmpeg", "-hide_banner", "-v", "error", "-y", "-i", media,
+             "-map", "0:a:0", "-ac", "1", "-ar", "16000", "-c:a", "pcm_s16le", wav])
+        stem = tempfile.mktemp()
+        r = run(["whisper-cli", "-m", model, "-f", wav, "-oj", "-ml", "1", "-of", stem,
+                 "--no-prints"])
+        os.unlink(wav)
+        if not os.path.exists(stem + ".json"):
+            print(f"  ! whisper failed ({r.stderr.strip()[:80]})", file=sys.stderr)
+            return None
+        d = json.load(open(stem + ".json"))
+        raw = [{"w": s["text"], "t0": s["offsets"]["from"]/1000.0,
+                "t1": s["offsets"]["to"]/1000.0}
+               for s in d["transcription"] if s["text"].strip()]
+        json.dump(raw, open(cache, "w"))
+    toks = []
+    for x in raw:
+        if toks and not x["w"].startswith(" "):
+            toks[-1]["w"] += x["w"]; toks[-1]["t1"] = x["t1"]
+        else:
+            toks.append(dict(x))
+    offs, c = [], 0.0
+    for a, b in segs:
+        offs.append((a, b, c)); c += b - a
+    out = []
+    for t in toks:
+        w = t["w"].strip()
+        if not w:
+            continue
+        mid = (t["t0"] + t["t1"]) / 2
+        hit = next(((a, b, o) for a, b, o in offs if a - 0.02 <= mid <= b + 0.02), None)
+        if hit:
+            a, b, o = hit
+            t0, t1 = o + max(t["t0"], a) - a, o + min(t["t1"], b) - a
+        else:
+            # whisper's times are loose by ~0.3s, so a word that lands in a removed
+            # gap is usually one the cut kept (kc-short3: "of", "this", and the
+            # closing "curve" all fell a few tenths outside). Snap it onto the
+            # nearest kept edge rather than drop it from the captions.
+            a, b, o = min(offs, key=lambda s: min(abs(mid - s[0]), abs(mid - s[1])))
+            d = min(abs(mid - a), abs(mid - b))
+            if d > 0.4:
+                continue
+            if mid < a:
+                t0, t1 = o, o + 0.08
+            else:
+                t0, t1 = o + (b - a) - 0.08, o + (b - a)
+        out.append({"w": w, "t0": t0, "t1": max(t1, t0 + 0.04)})
+    last = 0.0
+    for x in out:                       # monotonic, no overlap
+        x["t0"] = max(x["t0"], last)
+        x["t1"] = max(x["t1"], x["t0"] + 0.04)
+        last = x["t0"]
+        x["t0"], x["t1"] = round(x["t0"], 3), round(x["t1"], 3)
+    return out
+
+
 def framing(proof):
     """
     Sample the cut timeline and record, per cell, whether it's safe to place a
@@ -272,6 +343,9 @@ def main():
     ap.add_argument("--model",
                 default=str(Path.home()/".cache/whisper/ggml-small.en.bin"),
                 help="whisper.cpp model. small.en is the default because base.en\n                      mangles finance/hardware jargon — it produced 'trade GPU out',\n                      'Cash shuttle listed on Nimus', and once inverted a sentence\n                      to 'you will not be able to trade'.")
+    ap.add_argument("--cut-transcript", action="store_true",
+                    help="transcribe the cut audio instead of mapping the uncut "
+                         "transcript through the cut list (word times drift near joins)")
     ap.add_argument("--skip-framing", action="store_true")
     ap.add_argument("--overrides", default="",
                     help='JSON {"segments":{"0":{"out":4.80}}, "drop":[3], '
@@ -352,7 +426,11 @@ def main():
     proof = str(out/"cut_proof.mp4")
     print("3/4  cut proof + transcript …")
     proof_render(a.media, segs, proof)
-    toks = transcript(proof, a.model)
+    toks = None
+    if not a.cut_transcript:
+        toks = transcript_mapped(a.media, segs, a.model, out/"source_words.json")
+    if toks is None:
+        toks = transcript(proof, a.model)
     json.dump({"timeline": "cut", "words": toks}, open(out/"transcript.json", "w"))
     print(f"     {len(toks)} words")
 

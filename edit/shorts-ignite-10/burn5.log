@@ -1,8 +1,0 @@
-1/2  cutting 17 segments from ignite-10-short5-vertical.mp4 (43.0s -> 36.4s, 15.5% removed)
-     master 1080x1920 872f · ignite-10-short5-cap.mov 1080x1920 872f
-2/2  compositing 1 overlay(s)
-     verifying burn against the uncaptioned master …
-     863/872 frames carry ink (99% of the cut) · peak coverage 1.2% of frame
-
--> output/ignite-10-shorts/5 machine learning or glorified regression.mp4  (32.8 MB)
-   master kept at graphics/ignite-10-short5-master.mp4

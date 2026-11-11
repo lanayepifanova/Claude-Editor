@@ -16,14 +16,16 @@
    "t1": 45.42,
    "face_x": 906,
    "crop_x": 622,
-   "found": true
+   "found": true,
+   "orig_crop_x": 622
   },
   {
    "t0": 45.42,
    "t1": 45.96,
    "face_x": 880,
    "crop_x": 596,
-   "found": true
+   "found": true,
+   "orig_crop_x": 596
   }
  ]
 }
